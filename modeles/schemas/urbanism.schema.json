@@ -386,6 +386,17 @@
             "mastership": {
               "type": "string"
             },
+            "category": {
+              "description": "Classement visuel facultatif des capacités dans leur sous-domaine ; aucun niveau ni lien métier supplémentaire.",
+              "type": "object",
+              "required": ["id", "display_name"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+                "display_name": { "type": "string", "minLength": 1, "pattern": "\\S" },
+                "order": { "type": "integer" }
+              },
+              "additionalProperties": false
+            },
             "decomposition_rationale": {
               "type": "string"
             },

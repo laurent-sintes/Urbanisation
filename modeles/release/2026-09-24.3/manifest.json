@@ -1,0 +1,17 @@
+{
+  "kind": "git_release",
+  "schema_version": "1.0.0",
+  "version": "2026-09-24.3",
+  "model_path": "model.yaml",
+  "model_sha256": "d38c985a9da8b846d34427df23fc398b26e0b95258a78c8e7715d2413c995f39",
+  "source_state_sha256": "e657f746af5abefb9f50622132abb0d95e002a201991ad772461a588fcce90df",
+  "node_count": 163,
+  "capability_count": 64,
+  "complete_capability_count": 0,
+  "input_revision_path": "../../revisions/2026-09-24.3/backlog.yaml",
+  "input_revision_sha256": "348e3d9ed5bc02174da906f0b86595cf89bd5fdc1e803339011f50452728fedd",
+  "decisions_path": "../../decisions/2026-09-24.3.json",
+  "decisions_sha256": "82e51d8c9e28a56a074a85916457e86e7caa64ecd7a1ab96acf466bde00e7369",
+  "provenance_path": "../../provenance/2026-09-24.3/source-records.json",
+  "provenance_sha256": "93f6e9ed448e3023cbb966fa12147ae4c38d5be1564f5635920da1d3311b53e5"
+}

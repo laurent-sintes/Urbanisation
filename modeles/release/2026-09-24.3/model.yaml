@@ -1,6 +1,6 @@
 schema_version: 1.0.0
 model_id: flow-urbanism
-version: 2026-09-24.1
+version: 2026-09-24.3
 as_of: '2026-09-24'
 source_version: P81 0.9 + P82/U116 + libellés P84/P86 retenus en U118 + séparation D01 U125 (vocabulaire U126 ouvert) + nom
   D01.g adopté U129 + U141 univers Supply/Case et refonte D04 + U145 retrait D02 sans renumérotation + U154 D03 recomposé
@@ -309,7 +309,7 @@ principles:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 736ef0b637f2d40b74c4563c344cae4f50448157152b90b1fceb8490d0637898
 limitations:
-- Les 63 capacités du modèle figé sont publiées ; la publication ne valide pas leurs définitions, noms ou rattachements.
+- Les 64 capacités du modèle figé sont publiées ; la publication ne valide pas leurs définitions, noms ou rattachements.
 - approved_fields et les décisions associées délimitent les aspects validés ; proposed_fields restent à valider.
 - Les validations contextuelles restent partielles ; le réexamen du rattachement de Reservation demeure visible.
 - Les alternatives non intégrées et les illustrations restent dans le backlog.
@@ -13199,13 +13199,13 @@ glossary:
   last_modified: '2026-09-24T08:14:51.444432Z'
   content_sha256: f337d3f21ee285b1f4060d2fe0033dfa8317f088de795bef40ca73d5e5ecc51c
 element_versioning: 1
-revision: 23
-content_sha256: 536084b3f3e829a9800d39ebfb8e462a464af4896ad99da2c198f1998128cbb1
-last_modified: '2026-09-24T08:14:51.444432Z'
+revision: 24
+content_sha256: f393a52aa69ec1f7b754fb83aca5d29ed40f5b4263118954606c8f30199a22ff
+last_modified: '2026-09-24T12:08:57.506077Z'
 release_kind: published_snapshot
 publication:
   source_refs:
-  - U696
+  - U706
   note: Publication complète demandée par Laurent ; publier ne vaut pas valider.
 nodes:
 - id: universe-supply
@@ -13546,7 +13546,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-7ab2ae1b9581bb46d2eaac4e.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-f84e373c0d0295e3debff271.
       Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
       Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
@@ -13567,7 +13567,7 @@ nodes:
   last_modified: '2026-09-24T08:14:51.444432Z'
   content_sha256: 7e0dbd73046990f0cd20e065db0a473d30a7c0f105612a265266ad8fb10fa1c6
   adoption_ids:
-  - ADOPT-REASSESS-f84e373c0d0295e3debff271
+  - ADOPT-REASSESS-a594d354a178b5ac62639131
   approved_fields:
   - definition
   - name
@@ -13726,7 +13726,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-nodes-business-references-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-246dc1e547d636d2b40ff0b6.
       Note antérieure, qui ne qualifie pas cette révision : « Application de l’audit U673 ; accords de nom et rattachement
       capturés séparément. Corrections détaillées de périmètre proposées sans validation globale. »'
   lifecycle:
@@ -13750,7 +13750,7 @@ nodes:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 716c92a0931b62ade60b484a0c3a25df752968aed7bd4b6c29eed098fa9704aa
   adoption_ids:
-  - ADOPT-REASSESS-246dc1e547d636d2b40ff0b6
+  - ADOPT-REASSESS-e382b1d07589f689e58793b0
   approved_fields:
   - name
   proposed_fields:
@@ -17997,7 +17997,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-e53800ce2907395af9c944e8.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-18a4c5b425868c001f6ef179.
       Note antérieure, qui ne qualifie pas cette révision : « Application de l’audit U673 ; accords de nom et rattachement
       capturés séparément. Corrections détaillées de périmètre proposées sans validation globale. »'
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
@@ -18021,7 +18021,7 @@ nodes:
   last_modified: '2026-09-24T08:14:51.444432Z'
   content_sha256: d72a559e017188bad27434e9baffda82574f5212f930ce92c377834ff9db3c05
   adoption_ids:
-  - ADOPT-REASSESS-18a4c5b425868c001f6ef179
+  - ADOPT-REASSESS-f369394a8bfcbb1d3135747d
   approved_fields:
   - name
   proposed_fields:
@@ -20902,7 +20902,7 @@ nodes:
   - name
   - scope
 - id: D14
-  revision: 9
+  revision: 10
   kind: reference
   fields:
     name: Service Catalog
@@ -20921,6 +20921,8 @@ nodes:
       Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des sous-domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
 
       Familles explicites : Picking, Packing, Value-Added Services (étiquetage, réétiquetage, reconditionnement) et Cross-Docking. Décrire pour chacune le résultat offert, les conditions, unités, consignes et niveaux de service, sans stocker ici les instances commandées. Le catalogue ne fusionne pas les familles de capacités. Exemple fictif : proposer un réétiquetage selon une spécification ne prouve ni son acceptation pour un lot ni sa réalisation.
+
+      L’offre de transport précise origine et destination desservies, conditions de collecte et de livraison et variantes pertinentes. [Transport Order](model:service-order-transport) porte les exigences et engagements individuels du déplacement, composable avec les autres prestations.
     mastership: La vérité des données de référence vient d’une source externe au Domain Supply Chain Orchestration. Le domaine
       intègre les évolutions reçues et maintient leur représentation locale avec provenance ; il ne reprend pas leur CRUD
       maître.
@@ -21031,14 +21033,15 @@ nodes:
   - U650
   - U673
   - U682
+  - U698
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d14
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-22410d5141886c5ee428b1cd,
-      ADOPT-REASSESS-653e0e920ee746d1e8bf9904. Note antérieure, qui ne qualifie pas cette révision : « Application U682 ;
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-9e92637b8db367e1f8c515d6,
+      ADOPT-REASSESS-2e6a3c9847ca27def62a64f8. Note antérieure, qui ne qualifie pas cette révision : « Application U682 ;
       accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution détaillés proposés.
       »'
   lifecycle:
@@ -21054,11 +21057,11 @@ nodes:
     value_sha256:
       name: e1b8f1f7294a993f39f756478001d7f05aa1ba5f4474c5275d1450cebb04211b
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-  last_modified: '2026-09-24T08:14:51.444432Z'
-  content_sha256: d522b4b7b4d692e5b6f9235699fe99911b4afb98342660f62cf51d2cebb868a9
+  last_modified: '2026-09-24T12:08:57.506077Z'
+  content_sha256: 6382977f3ebb04568f3d4b246a7fd4c9785e116458f8df44ddc0d54e7e138080
   adoption_ids:
-  - ADOPT-REASSESS-9e92637b8db367e1f8c515d6
-  - ADOPT-REASSESS-2e6a3c9847ca27def62a64f8
+  - ADOPT-REASSESS-bdf4d49569be3bef3412ca8a
+  - ADOPT-REASSESS-ef77d59d7d36276b2b21151f
   approved_fields:
   - name
   proposed_fields:
@@ -21217,7 +21220,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-fe917e6d2dbe0ce12aa34c73.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-708575a6205261d2a7874e45.
       Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
       Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
@@ -21238,7 +21241,7 @@ nodes:
   last_modified: '2026-09-24T08:14:51.444432Z'
   content_sha256: 053d5b7d4fc65c82c7dea2c0c13100554a0c5651b03fff2b9a0bee8403626e88
   adoption_ids:
-  - ADOPT-REASSESS-708575a6205261d2a7874e45
+  - ADOPT-REASSESS-be936a536232a4264cfd83bb
   approved_fields:
   - name
   proposed_fields:
@@ -21390,7 +21393,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-968dbd1dee1e4b1dee87e993.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-15e5df7a264b56e4581bf339.
       Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
       Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
@@ -21413,7 +21416,7 @@ nodes:
   last_modified: '2026-09-24T08:14:51.444432Z'
   content_sha256: a8270b6873faed07c0f5b8230893fcc7eb011ba6f8991148b0b8f87d0dbd9309
   adoption_ids:
-  - ADOPT-REASSESS-15e5df7a264b56e4581bf339
+  - ADOPT-REASSESS-9c5e55849ceaf907ecbac237
   approved_fields:
   - definition
   - name
@@ -21424,7 +21427,7 @@ nodes:
   - nature
   - scope
 - id: D07.b
-  revision: 13
+  revision: 14
   kind: capability
   fields:
     name: Service Order Lifecycle
@@ -21436,7 +21439,7 @@ nodes:
     scope: |-
       Tenir l’activation immédiate, différée ou événementielle, la sollicitation, les réponses, les conditions acceptées, les révisions et la clôture des [Service Orders](glossary:TER066). Utiliser les constats et écarts pour déterminer ce qui reste ouvert dans la prestation ; une demande d’annulation ne prouve pas que le travail est arrêté. Une relance technique ne crée pas automatiquement une nouvelle prestation. La clôture s’appuie sur une fin vérifiée ; un acquittement API ou EDI ne prouve pas la réalisation physique.
 
-      Cette responsabilité commune et les capacités de familles sont sœurs sous Service Order Management, sans sous-capacité ni cycle uniforme imposé. Réception, transport et prestations humaines ou documentaires restent couverts même sans famille spécialisée dans ce lot. [Process Orchestration](model:D06.d) coordonne les dépendances entre prestations ; [Process Adaptation Decision](model:D06.f) choisit le recours à une solution de secours, dont le cycle de prise en charge est tenu ici. La Task représente la contribution au processus, sans être un second propriétaire de l’engagement de prestation.
+      Cette responsabilité commune et les capacités de familles sont sœurs sous Service Order Management, sans sous-capacité ni cycle uniforme imposé. Réception et prestations humaines ou documentaires restent couvertes même sans famille spécialisée dans ce lot. [Transport Order](model:service-order-transport) porte désormais les exigences propres au déplacement et mobilise ce cycle commun. [Process Orchestration](model:D06.d) coordonne les dépendances entre prestations ; [Process Adaptation Decision](model:D06.f) choisit le recours à une solution de secours, dont le cycle de prise en charge est tenu ici. La Task représente la contribution au processus, sans être un second propriétaire de l’engagement de prestation.
 
       Exemple fictif : une préparation partielle est constatée ; tenir le reste de prestation et la reprise autorisée, tandis qu’Order Management conserve le reste à satisfaire de la commande.
     market_comparisons:
@@ -21517,6 +21520,10 @@ nodes:
         - U682
         source_title: Service Order Management
         source_url: https://www.tmforum.org/oda/directory/components-map/production/TMFC007
+    category:
+      id: common
+      display_name: Gestion commune des ordres
+      order: 30
   source_refs:
   - P81
   - U03
@@ -21565,6 +21572,8 @@ nodes:
   - U626
   - U673
   - U682
+  - U698
+  - U701
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d07-b
@@ -21587,11 +21596,12 @@ nodes:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-24T08:14:51.444432Z'
-  content_sha256: 3feb43efb6f851b5d876b4f96d8fa2fe3295088fd433f4473908bc53ec677c37
+  last_modified: '2026-09-24T12:08:57.506077Z'
+  content_sha256: d3b799e6692bb354b321db23a523f2c7b44d31eb07c0a031d23ed92029ec6213
   adoption_ids: []
   approved_fields: []
   proposed_fields:
+  - category
   - definition
   - finality
   - market_comparisons
@@ -21925,7 +21935,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-bded166b66d52853545bede2.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-d9a72dd4516d43201474ba53.
       Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
       Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
@@ -21946,7 +21956,7 @@ nodes:
   last_modified: '2026-09-24T08:14:51.444432Z'
   content_sha256: c1566eb4e718bf309eea9911275581e5fb241cb91430a279ebda043773e8639a
   adoption_ids:
-  - ADOPT-REASSESS-d9a72dd4516d43201474ba53
+  - ADOPT-REASSESS-0be4e7a01a06b63c1c534d26
   approved_fields:
   - name
   proposed_fields:
@@ -22825,9 +22835,9 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-nodes-D06-FINAL. Note antérieure,
-      qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions,
-      comparaisons et choix de redistribution détaillés proposés. »'
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-414dad2d8b86cd9c2f636f5a,
+      INTENT-U692-D06. Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités
+      aux valeurs présentées. Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   editorial_basis: 'Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.'
   lifecycle:
     state: under_instruction
@@ -22847,8 +22857,8 @@ nodes:
   last_modified: '2026-09-24T08:14:51.444432Z'
   content_sha256: 1df62667f833d52cc5531f0256402a3ad0c2293bb371a40bf0b0d5f2e4bb8b48
   adoption_ids:
-  - ADOPT-REASSESS-414dad2d8b86cd9c2f636f5a
-  - INTENT-U692-D06
+  - ADOPT-REASSESS-d3f6f4152d779759d79fac11
+  - ADOPT-REASSESS-fb90fa2e40cda403d9a61d34
   approved_fields:
   - definition
   - name
@@ -23686,7 +23696,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-e07edfd9cd8585163944ec11.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-42f8bf4be667dbd4a32848b7.
       Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
       Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
@@ -23709,7 +23719,7 @@ nodes:
   last_modified: '2026-09-24T08:14:51.444432Z'
   content_sha256: f25724b08545c26bf79a869cbebfb5d19d2652a9bf26f0a24d47093709fea817
   adoption_ids:
-  - ADOPT-REASSESS-42f8bf4be667dbd4a32848b7
+  - ADOPT-REASSESS-7a0a8d18df515aed442d1b4d
   approved_fields:
   - definition
   - name
@@ -24009,7 +24019,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-ae521e289ebd40ce72147e6b.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-bacdeb3c863a4e4c53dc0a0f.
       Note antérieure, qui ne qualifie pas cette révision : « Application de l’audit U673 ; accords de nom et rattachement
       capturés séparément. Corrections détaillées de périmètre proposées sans validation globale. »'
   lifecycle:
@@ -24035,7 +24045,7 @@ nodes:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: c90ccf3bdaae3088cf12be5dbdb2dceb670126eca67a5b343620cca6426f8f49
   adoption_ids:
-  - ADOPT-REASSESS-bacdeb3c863a4e4c53dc0a0f
+  - ADOPT-REASSESS-09ea6d0c01c17d02f596d4d8
   approved_fields:
   - name
   proposed_fields:
@@ -24171,7 +24181,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-c2e9e8410115d06d45f065c3.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-926907b0c4c121e3ad72bf8b.
       Note antérieure, qui ne qualifie pas cette révision : « Application de l’audit U673 ; accords de nom et rattachement
       capturés séparément. Corrections détaillées de périmètre proposées sans validation globale. »'
   lifecycle:
@@ -24194,7 +24204,7 @@ nodes:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 4e9e80cc23574bff6e10c5b51ca1a7fe92849c05655cadd5277bb7876d5a4db2
   adoption_ids:
-  - ADOPT-REASSESS-926907b0c4c121e3ad72bf8b
+  - ADOPT-REASSESS-a1f72457f05a7dd741ce77d8
   approved_fields:
   - name
   proposed_fields:
@@ -31635,7 +31645,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-24208e2140f8eefe3bbc9079.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-e893f32a90f638305c5154cb.
       Note antérieure, qui ne qualifie pas cette révision : « Nom, responsabilité présentée et parent adoptés ; compléments
       et correspondances proposés. »'
   lifecycle:
@@ -31655,7 +31665,7 @@ nodes:
   last_modified: '2026-09-19T15:28:27.021633Z'
   content_sha256: e18998960bebfbd0443395eaeb074785281193ad75b08086f1d3fbc2cd6ef887
   adoption_ids:
-  - ADOPT-REASSESS-e893f32a90f638305c5154cb
+  - ADOPT-REASSESS-34d5da1bf23bdc4a8696ddfc
   approved_fields:
   - definition
   - name
@@ -37025,7 +37035,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-003154ee9a40d48f99f04353.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-69b68517fde7fc283db4c71c.
       Note antérieure, qui ne qualifie pas cette révision : « Application de l’audit U673 ; accords de nom et rattachement
       capturés séparément. Corrections détaillées de périmètre proposées sans validation globale. »'
   lifecycle:
@@ -37047,7 +37057,7 @@ nodes:
       inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
   content_sha256: 6e7657f8d3d9d458900503d7e6207678e0e6404e4f66548bb35b781192081dbe
   adoption_ids:
-  - ADOPT-REASSESS-69b68517fde7fc283db4c71c
+  - ADOPT-REASSESS-d546e9c821b444784d40ed31
   approved_fields:
   - name
   - nature
@@ -37564,9 +37574,9 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-nodes-D18-FINAL. Note antérieure,
-      qui ne qualifie pas cette révision : « Application de l’audit U673 ; accords de nom et rattachement capturés séparément.
-      Corrections détaillées de périmètre proposées sans validation globale. »'
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-98dabb11f54d73abb14deba8.
+      Note antérieure, qui ne qualifie pas cette révision : « Application de l’audit U673 ; accords de nom et rattachement
+      capturés séparément. Corrections détaillées de périmètre proposées sans validation globale. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-22T17:09:50.704739Z'
@@ -37586,7 +37596,7 @@ nodes:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 78e92bda8b05ca28ecc5d6f2d382aaf624549c2815468c6f7daabf93465c4f82
   adoption_ids:
-  - ADOPT-REASSESS-98dabb11f54d73abb14deba8
+  - ADOPT-REASSESS-ce518a8f56c604a26c1d6335
   approved_fields:
   - definition
   - name
@@ -37799,7 +37809,7 @@ nodes:
   review:
     state: partial
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-26d38a41eda6b8c98071cbb1.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-b1d0ebfbd0aea410ffac094c.
       Note antérieure, qui ne qualifie pas cette révision : « Application de l’audit U673 ; accords de nom et rattachement
       capturés séparément. Corrections détaillées de périmètre proposées sans validation globale. »'
   lifecycle:
@@ -37814,7 +37824,7 @@ nodes:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: c95f58a31b4d6dc52d3009f5a577bc13e102dd2917016f9863e6327208a67658
   adoption_ids:
-  - ADOPT-REASSESS-b1d0ebfbd0aea410ffac094c
+  - ADOPT-REASSESS-94f0964b81310a5609f2d953
   approved_fields:
   - name
   proposed_fields:
@@ -39231,13 +39241,13 @@ nodes:
   - nature
   - scope
 - id: subdomain-service-orders
-  revision: 1
+  revision: 2
   kind: area
   fields:
     name: Service Order Management
     definition: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
     scope: |-
-      Tenir les [Service Orders](glossary:TER066) avec les conditions demandées, acceptées et modifiées, les résultats attendus et les suites nécessaires. Les familles de prestations sont des capacités au même niveau que les Orders entrants. Le cycle commun conserve les sollicitations de réception, transport et services humains ou documentaires : la liste des familles explicites n’est pas exhaustive.
+      Tenir les [Service Orders](glossary:TER066) avec les conditions demandées, acceptées et modifiées, les résultats attendus et les suites nécessaires. Les familles de prestations sont des capacités au même niveau que les Orders entrants. [Transport Order](model:service-order-transport) rend explicites les demandes de déplacement, composables avec les prestations d’entrepôt. Le cycle commun conserve les sollicitations de réception et services humains ou documentaires : la liste des familles explicites n’est pas exhaustive.
 
       [Order Management](model:D04) porte la demande à satisfaire et sa promesse. [Fulfilment Orchestration](model:D06) compose les prestations, coordonne leurs dépendances et choisit les adaptations ; ce sous-domaine tient leurs engagements individuels. Le [Service Catalog](model:D14) décrit l’offre, les exécutants réalisent le travail. Un ordre n’impose ni achat, ni document, ni canal technique.
 
@@ -39365,15 +39375,19 @@ nodes:
   - ELM659
   - U691
   - U692
+  - U698
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u682
-  last_modified: '2026-09-24T08:14:51.444432Z'
+  last_modified: '2026-09-24T12:08:57.506077Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés. U692 valide le principe de commande composée et la frontière de responsabilités ; ne valide pas
-      globalement les autres passages du scope ou la nouvelle rédaction illustrative.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-subdomain-service-orders.
+      Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. U692 valide le principe de commande composée
+      et la frontière de responsabilités ; ne valide pas globalement les autres passages du scope ou la nouvelle rédaction
+      illustrative. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -39389,9 +39403,9 @@ nodes:
       name: 84e67c4fd85b3b69fb74e89c621506fa50de7a72bce3933dd51321c7bc630910
       definition: a50d2a16ddc03d34b4bcfc1127c5f20384e49939210cf0fde11052e2270ba7a4
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-  content_sha256: c73d811ece55f82a6b202935574c65a390558aade15ae4f1a075541d8388e007
+  content_sha256: 5b855cec4f2de0b0dc3601b7242902dbf48217d7a6161351df0e7348b4500199
   adoption_ids:
-  - INTENT-U692-subdomain-service-orders
+  - ADOPT-REASSESS-5a04493755101dc14e6941e0
   approved_fields:
   - definition
   - name
@@ -39401,7 +39415,7 @@ nodes:
   - market_inspiration
   - scope
 - id: service-order-picking
-  revision: 1
+  revision: 2
   kind: capability
   fields:
     name: Picking Order
@@ -39494,6 +39508,10 @@ nodes:
         - U682
         source_title: Warehouse Order
         source_url: https://help.sap.com/saphelp_ewm700_ehp02/helpdata/en/65/cccb53ad377114e10000000a174cb4/content.htm?no_cache=true
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
   source_refs:
   - U679
   - U681
@@ -39501,14 +39519,17 @@ nodes:
   - CMP273
   - ELM660
   - ELM659
+  - U701
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u682
-  last_modified: '2026-09-24T08:14:51.444432Z'
+  last_modified: '2026-09-24T12:08:57.506077Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-service-order-picking. Note
+      antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -39522,12 +39543,13 @@ nodes:
     value_sha256:
       name: 27e2d65ff387ddcb85d452d245627436e2b5b454dc848da92ab22ebf3eead202
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-  content_sha256: 49a4c09a0a4a26f518005b3c26c6a013948d983460a36edd0e4d237f238e5b9f
+  content_sha256: 5a05681724ea91b3cdc17994b9339d258b201c54ea49795e014fc4e754c1ee54
   adoption_ids:
-  - INTENT-U692-service-order-picking
+  - ADOPT-REASSESS-ccc5c8afd991f17382e0e6aa
   approved_fields:
   - name
   proposed_fields:
+  - category
   - definition
   - finality
   - market_comparisons
@@ -39535,7 +39557,7 @@ nodes:
   - nature
   - scope
 - id: service-order-packing
-  revision: 1
+  revision: 2
   kind: capability
   fields:
     name: Packing Order
@@ -39629,6 +39651,10 @@ nodes:
         - U682
         source_title: Packing work for packing outbound containers and processing shipments
         source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
   source_refs:
   - U679
   - U681
@@ -39636,14 +39662,17 @@ nodes:
   - CMP273
   - ELM656
   - ELM659
+  - U701
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u682
-  last_modified: '2026-09-24T08:14:51.444432Z'
+  last_modified: '2026-09-24T12:08:57.506077Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-service-order-packing. Note
+      antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -39657,12 +39686,13 @@ nodes:
     value_sha256:
       name: 659965ce6ebf29dc1c17afbbfbf8820995bd4096791e19fd3de7948d7de8d9cb
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-  content_sha256: 302dea8a4ec36920d27938fe1dfa6e900b0f180978350aa52762ed7c0137eed4
+  content_sha256: a533c7caa159e3afedc835610a006a391dbfb004fa26d2b0547f4d8ddd28662c
   adoption_ids:
-  - INTENT-U692-service-order-packing
+  - ADOPT-REASSESS-1d959154e385a64e2c308999
   approved_fields:
   - name
   proposed_fields:
+  - category
   - definition
   - finality
   - market_comparisons
@@ -39670,7 +39700,7 @@ nodes:
   - nature
   - scope
 - id: service-order-vas
-  revision: 1
+  revision: 2
   kind: capability
   fields:
     name: Value-Added Service Order
@@ -39768,6 +39798,10 @@ nodes:
     decomposition_rationale: 'Distinguer les variantes dont les exigences et écarts de conformité changent la gestion de l’ordre
       : information et version appliquées pour l’étiquetage, transformation du conditionnement existant pour le reconditionnement.
       Ce sont des variantes de prise en charge métier, pas des gestes opérateur ni des paramètres de catalogue.'
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
   source_refs:
   - U679
   - U681
@@ -39775,14 +39809,17 @@ nodes:
   - CMP273
   - ELM658
   - ELM661
+  - U701
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u682
-  last_modified: '2026-09-24T08:14:51.444432Z'
+  last_modified: '2026-09-24T12:08:57.506077Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-service-order-vas. Note antérieure,
+      qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions,
+      comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -39796,12 +39833,13 @@ nodes:
     value_sha256:
       name: ff33582d3ac10c6583e3d1e197f986da83186294907e85d31ca41fffcb3e90c5
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-  content_sha256: d2e1cb0d5df0bc15746860ce8685e061e3ff811d002e289c59da984d45c556ab
+  content_sha256: 69dff35ab5b8e1be5566364950e65efdd1e09f0f2a44591788ee786e19b1686e
   adoption_ids:
-  - INTENT-U692-service-order-vas
+  - ADOPT-REASSESS-d0c4ac8987ac987d2bb2a8ac
   approved_fields:
   - name
   proposed_fields:
+  - category
   - decomposition_rationale
   - definition
   - finality
@@ -39810,7 +39848,7 @@ nodes:
   - nature
   - scope
 - id: service-order-cross-docking
-  revision: 1
+  revision: 2
   kind: capability
   fields:
     name: Cross-Docking Order
@@ -39908,6 +39946,10 @@ nodes:
         - U682
         source_title: Planned cross docking
         source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/planned-cross-docking
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
   source_refs:
   - U679
   - U681
@@ -39915,14 +39957,17 @@ nodes:
   - CMP273
   - ELM657
   - ELM133
+  - U701
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u682
-  last_modified: '2026-09-24T08:14:51.444432Z'
+  last_modified: '2026-09-24T12:08:57.506077Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-service-order-cross-docking.
+      Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -39936,12 +39981,13 @@ nodes:
     value_sha256:
       name: cafd7f1655dd5725082af5e429c8ec85369406779b56ad05a19654684654115a
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
-  content_sha256: 8fc5e2183f97a7af0dd538420362c0dadfa38f56c1c71bac908b9999c57f5e07
+  content_sha256: f9a2b6e1d774e41844dbcac83a304c4959be7222c0cec1994bd756283ef7748b
   adoption_ids:
-  - INTENT-U692-service-order-cross-docking
+  - ADOPT-REASSESS-663200a336cd6bb1e7f6487a
   approved_fields:
   - name
   proposed_fields:
+  - category
   - definition
   - finality
   - market_comparisons
@@ -40056,8 +40102,10 @@ nodes:
   last_modified: '2026-09-24T08:14:51.444432Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-vas-labeling-relabeling.
+      Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -40073,7 +40121,7 @@ nodes:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   content_sha256: cb14e5d92f8806abec78ac51dd21c22723b435c0feac5c1956a89613d1bb2e7b
   adoption_ids:
-  - INTENT-U692-vas-labeling-relabeling
+  - ADOPT-REASSESS-cf56a2d30724519fd075a793
   approved_fields:
   - name
   proposed_fields:
@@ -40191,8 +40239,10 @@ nodes:
   last_modified: '2026-09-24T08:14:51.444432Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-vas-repacking. Note antérieure,
+      qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions,
+      comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -40208,11 +40258,157 @@ nodes:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   content_sha256: c0d372916158fd9245153098bceaded0d3c25d8579dc3526768f5880614928d7
   adoption_ids:
-  - INTENT-U692-vas-repacking
+  - ADOPT-REASSESS-7e86ded75e9e7a3259020b48
   approved_fields:
   - name
   proposed_fields:
   - definition
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
+  - scope
+- id: service-order-transport
+  revision: 1
+  kind: capability
+  fields:
+    name: Transport Order
+    definition: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de
+      collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+    scope: |-
+      Tenir les exigences de la prestation de transport confiée, ses conditions acceptées, leurs modifications et les suites à donner aux écarts. Un [Service Order](glossary:TER066) de transport peut être composé avec les prestations de prélèvement et de conditionnement. [Fulfilment Orchestration](model:D06) coordonne l’ensemble ; le transporteur organise ses moyens et ses opérations internes. Les choix d’exécutant et d’adaptation restent dans les responsabilités existantes de Fulfilment. Les constats de suivi et le rapprochement des résultats alimentent la tenue de l’ordre.
+
+      Une seule famille couvre les demandes de transport ; le mode, le transporteur et le type de trajet ne créent pas systématiquement de nouvelles capacités. Le [Service Catalog](model:D14) décrit les offres, variantes et conditions de service. L’engagement de prestation auprès du [Service Provider](glossary:TER088) reste distinct de la promesse de la commande portée par [Order Management](model:D04).
+
+      Exemple fictif : après préparation et emballage de 100 cartons, confier leur déplacement de l’entrepôt vers un magasin avec une fenêtre de collecte et une fenêtre de livraison. Un retard de collecte entraîne une suite de prestation et, si nécessaire, une adaptation coordonnée par Fulfilment ; il ne modifie pas automatiquement la promesse client.
+    finality: Tenir une demande de déplacement et ses engagements en cohérence avec les autres prestations logistiques.
+    nature: action
+    market_comparisons:
+    - vendor: SAP
+      product: SAP S/4HANA Transportation Management
+      element_name: Transportation Order
+      element_type: Objet ou interface de produit TMS
+      relationship: Recouvrement partiel
+      similarities: Une demande crée, modifie ou annule un ordre de transport de différentes catégories, notamment freight
+        order et freight booking.
+      differences: SAP distingue des catégories de documents et Oracle distingue demande à transporter et expéditions planifiées.
+        FLOW porte la gestion de la prestation confiée et ses engagements ; orchestration, choix des moyens et gestes physiques
+        restent distincts.
+      flow_position: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes
+        de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+      source_title: Maintain Generic Transportation Order
+      source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/733c8b37b3f546a1b08750e8aeabb887/9740cb5147dd9d55e10000000a423f68.html
+      source_version: 2025 FPS01 (février 2026)
+      source_locator: Definition ; Business Context and Use
+      consulted_on: '2026-09-24'
+      evidence_limits: Texte primaire indexé consulté le 24 septembre 2026 ; ouverture directe sans corps. Opération de service
+        et catégories SAP, pas équivalence de capacité ni découpage FLOW.
+      status: proposed
+      source_refs:
+      - ELM683
+      - CMP275
+      - U698
+      concept_name: Transportation Order
+      scope_summary: Une demande crée, modifie ou annule un ordre de transport de différentes catégories, notamment freight
+        order et freight booking.
+      approach_summary: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes
+        de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+      term_choice: Transport Order est le nom de la famille FLOW adopté U698 ; Transportation Order et Order Release sont
+        les termes natifs comparés, sans nomenclature universelle revendiquée.
+      definition_choice: Distinguer les exigences et engagements de déplacement des décisions de coordination et de la réalisation
+        du transport.
+    - vendor: Oracle
+      product: Oracle Transportation Management
+      element_name: Order Release
+      element_type: Objet ou interface de produit TMS
+      relationship: Recouvrement partiel
+      similarities: La demande contient des unités ou lignes à transporter, les lieux et dates, ainsi que des contraintes
+        utilisées pour planifier les expéditions.
+      differences: SAP distingue des catégories de documents et Oracle distingue demande à transporter et expéditions planifiées.
+        FLOW porte la gestion de la prestation confiée et ses engagements ; orchestration, choix des moyens et gestes physiques
+        restent distincts.
+      flow_position: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes
+        de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+      source_title: Order Release
+      source_url: https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm
+      source_version: 25C
+      source_locator: Introduction ; Adding Order Releases, fenêtres de collecte/livraison et origine/destination
+      consulted_on: '2026-09-24'
+      evidence_limits: Texte primaire ouvert et lu le 24 septembre 2026. L’Order Release exprime la demande de transport ;
+        ne prouve pas à lui seul un engagement de transporteur ni une correspondance un pour un avec les shipments.
+      status: proposed
+      source_refs:
+      - ELM684
+      - CMP275
+      - U698
+      concept_name: Order Release
+      scope_summary: La demande contient des unités ou lignes à transporter, les lieux et dates, ainsi que des contraintes
+        utilisées pour planifier les expéditions.
+      approach_summary: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes
+        de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+      term_choice: Transport Order est le nom de la famille FLOW adopté U698 ; Transportation Order et Order Release sont
+        les termes natifs comparés, sans nomenclature universelle revendiquée.
+      definition_choice: Distinguer les exigences et engagements de déplacement des décisions de coordination et de la réalisation
+        du transport.
+    market_inspiration:
+      choice: Une famille Transport Order indépendante des modes, cohérente avec les familles de Service Orders.
+      flow_scope: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes
+        de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+      flow_approach: Distinguer la demande et les engagements de transport de la coordination d’ensemble et des opérations
+        du transporteur.
+      synthesis:
+      - Les documents TMS étayent la demande de déplacement ; leurs catégories et cardinalités ne sont pas imposées au modèle.
+      examples:
+      - title: Exemple fictif
+        situation: Cent cartons préparés attendent une collecte pour un magasin.
+        outcome: Tenir les fenêtres convenues et la suite d’un retard, en articulation avec Fulfilment.
+        lesson: L’engagement de transport est distinct de la promesse commerciale ; aucune réalisation Beaumanoir déduite.
+        source_refs:
+        - U698
+        - ELM684
+        source_title: Order Release
+        source_url: https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm
+    category:
+      id: transport
+      display_name: Transport
+      order: 20
+  source_refs:
+  - U697
+  - U698
+  - CMP275
+  - ELM683
+  - ELM684
+  - U701
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u698
+  last_modified: '2026-09-24T12:08:57.506077Z'
+  review:
+    state: partial
+    note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 2b202211d03601b2e3a085c67818b33fd0e70853434547e2cb9b0a1f35fbcdfc
+      definition: e163ea1ee4867f39683d86fb04c55ba822c234c689566891a6ddcdb063311da2
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
+  content_sha256: 7673db09ecd585a85263755a0e05df5e7ef61561fdee4e3d1dae96fc1f8f0494
+  adoption_ids:
+  - INTENT-U701-service-order-transport-name
+  - INTENT-U701-service-order-transport-definition
+  approved_fields:
+  - definition
+  - name
+  proposed_fields:
+  - category
   - finality
   - market_comparisons
   - market_inspiration
@@ -40556,7 +40752,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D03.i-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-ff07f1c3ea48e81e31059910.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -40583,7 +40779,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 3920aa0431410997329094ea73f8aa11e3ebab9835da234e57bd855c293e1686
   adoption_ids:
-  - ADOPT-REASSESS-ff07f1c3ea48e81e31059910
+  - ADOPT-REASSESS-8f0f48e408fcfcb2651e26be
 - id: REL-MEMBER-D03.j
   revision: 4
   type: contains
@@ -40598,7 +40794,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D03.j-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-f512c829ce077fefd065a94c.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -40625,7 +40821,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 14ef3818bb15e0521b0b0f0edae090b42ed0e36a3ed4378a7889ff799a3a6ded
   adoption_ids:
-  - ADOPT-REASSESS-f512c829ce077fefd065a94c
+  - ADOPT-REASSESS-ad0cee62a93ec7827868e8e9
 - id: REL-MEMBER-D03.k
   revision: 4
   type: contains
@@ -40640,7 +40836,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D03.k-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-9bc9b71e0a4ffbb08af8a0b2.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -40667,7 +40863,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 320e9af7826d92417d38d2091f56b4d34f7c3056f03b011da53d094c1808f836
   adoption_ids:
-  - ADOPT-REASSESS-9bc9b71e0a4ffbb08af8a0b2
+  - ADOPT-REASSESS-6decdd75e1b974e0b47a02f1
 - id: REL-MEMBER-D05.f
   revision: 3
   type: contains
@@ -40887,7 +41083,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D06.b-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-851d6fc28f9279d47866f2aa.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -40923,7 +41119,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: c0627beaf71f9efbbd08ba48e681eb7d65945ba1b3e01afc499afcd23f546077
   adoption_ids:
-  - ADOPT-REASSESS-851d6fc28f9279d47866f2aa
+  - ADOPT-REASSESS-202c86e0739d71c67775428d
 - id: REL-MEMBER-D07.b
   revision: 5
   type: contains
@@ -40988,10 +41184,10 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-eaa1674b2568e6de99c27696,
-      INTENT-U673-relations-REL-MEMBER-D07.c-FINAL. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise
-      l’application du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de
-      coopération par extension. »'
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-20c5f4741df0867f96ce80e2,
+      ADOPT-REASSESS-3e47ab2c007982e206a1f857. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application
+      du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de coopération
+      par extension. »'
   lifecycle:
     state: urbanist_validated
     recorded_at: '2026-09-16T09:04:53.281745Z'
@@ -41014,8 +41210,8 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: c71b34ffe588c57f9b98982720df14735d0b04197ceed8a7bc5a79d612653cde
   adoption_ids:
-  - ADOPT-REASSESS-20c5f4741df0867f96ce80e2
-  - ADOPT-REASSESS-3e47ab2c007982e206a1f857
+  - ADOPT-REASSESS-42c374c5a86e3a76e2940094
+  - ADOPT-REASSESS-5953546a9dee035db02cdd2f
 - id: REL-MEMBER-D07.d
   revision: 4
   type: contains
@@ -41039,10 +41235,10 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-8fd4d041d8e6c9c330dc5810,
-      INTENT-U673-relations-REL-MEMBER-D07.d-FINAL. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise
-      l’application du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de
-      coopération par extension. »'
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-95c2aa9c2861501a4112fde6,
+      ADOPT-REASSESS-b2ec81d70e755015db99145a. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application
+      du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de coopération
+      par extension. »'
   lifecycle:
     state: urbanist_validated
     recorded_at: '2026-09-16T09:04:53.281745Z'
@@ -41065,8 +41261,8 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: cfa4413176ec2ed9b7b62f71a4bee586600d862f91ab1dac3c26a3dedb2e24e3
   adoption_ids:
-  - ADOPT-REASSESS-95c2aa9c2861501a4112fde6
-  - ADOPT-REASSESS-b2ec81d70e755015db99145a
+  - ADOPT-REASSESS-1e4e960562a7bbb66d13917c
+  - ADOPT-REASSESS-ce99522ae86363b90cc633e1
 - id: REL-MEMBER-D06.d
   revision: 2
   type: contains
@@ -41082,7 +41278,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D06.d-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-c6d12be234b758af5c9d4a43.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -41106,7 +41302,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: d5fe0fab739b3b3434f22ddf7b57ed5388a9c2098c284b71e09a23ba67455760
   adoption_ids:
-  - ADOPT-REASSESS-c6d12be234b758af5c9d4a43
+  - ADOPT-REASSESS-25acc07ee39240934f42ad11
 - id: REL-GROUP-D08
   revision: 4
   type: presents
@@ -41118,9 +41314,9 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-4b239b61d0b31cf0162e9705,
-      ADOPT-REASSESS-23d8c940a0bcd9a43f7663a8, INTENT-U673-relations-REL-GROUP-D08-FINAL. Note antérieure, qui ne qualifie
-      pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-e1a07b87f90788149296b3e4,
+      ADOPT-REASSESS-aa17a1ab232c8a223f802ae5, ADOPT-REASSESS-8c7107153bbae8f42f5aa1b5. Note antérieure, qui ne qualifie pas
+      cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
       des éléments ni des liens de coopération par extension. »'
   lifecycle:
     state: urbanist_validated
@@ -41145,9 +41341,9 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 65afb17386807a0dd692a497e5ef83a3f2210cc29d3b5d51555521b410db84da
   adoption_ids:
-  - ADOPT-REASSESS-e1a07b87f90788149296b3e4
-  - ADOPT-REASSESS-aa17a1ab232c8a223f802ae5
-  - ADOPT-REASSESS-8c7107153bbae8f42f5aa1b5
+  - ADOPT-REASSESS-4ff6e0a9cbc376a4c22f2277
+  - ADOPT-REASSESS-721f435f2e0aee5beaa14e4e
+  - ADOPT-REASSESS-3b80e8cc0f07cfa1e1bb2234
 - id: REL-MEMBER-D09.d
   revision: 3
   type: contains
@@ -41162,10 +41358,10 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-8db5a14bfdee1549f57ed827,
-      INTENT-U673-relations-REL-MEMBER-D09.d-FINAL. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise
-      l’application du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de
-      coopération par extension. »'
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-2d5084a5837fa32eca20d7c1,
+      ADOPT-REASSESS-a613be9b4789322f7891c072. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application
+      du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de coopération
+      par extension. »'
   lifecycle:
     state: urbanist_validated
     recorded_at: '2026-09-13T16:33:38.266961Z'
@@ -41188,8 +41384,8 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: f00fdc259ce3cd9c37d310387530bd616e34313330952bae5791783d0295b8fe
   adoption_ids:
-  - ADOPT-REASSESS-2d5084a5837fa32eca20d7c1
-  - ADOPT-REASSESS-a613be9b4789322f7891c072
+  - ADOPT-REASSESS-e51abd88c9834dae7c9374bd
+  - ADOPT-REASSESS-b39d01b0a961f74ec4ef0580
 - id: REL-GROUP-D09
   revision: 4
   type: presents
@@ -41201,9 +41397,9 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-d332f308bffbc91ca216bdcb,
-      ADOPT-REASSESS-0e9fbdab8a1c0d97d2c1f0a0, INTENT-U673-relations-REL-GROUP-D09-FINAL. Note antérieure, qui ne qualifie
-      pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-afce1813d63ff17474f334a1,
+      ADOPT-REASSESS-88f5f3b05da664990e10eb55, ADOPT-REASSESS-1ee5cfb9ef91cef20c70ffe2. Note antérieure, qui ne qualifie pas
+      cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
       des éléments ni des liens de coopération par extension. »'
   lifecycle:
     state: urbanist_validated
@@ -41228,9 +41424,9 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 361b83f31269d5574abe480f5efc5faadc10a09fe97d26b0506ca8c6c9beb1ed
   adoption_ids:
-  - ADOPT-REASSESS-afce1813d63ff17474f334a1
-  - ADOPT-REASSESS-88f5f3b05da664990e10eb55
-  - ADOPT-REASSESS-1ee5cfb9ef91cef20c70ffe2
+  - ADOPT-REASSESS-43b611ba039841e72102596a
+  - ADOPT-REASSESS-355017f1ff98817113a7c987
+  - ADOPT-REASSESS-4c5ab1416768e6672da1b407
 - id: REL-MEMBER-D11.a
   revision: 3
   type: contains
@@ -41285,9 +41481,9 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-eca9020c7a4a48bbd3bb94c1,
-      ADOPT-REASSESS-30c9dcf48a995c24513862ae, INTENT-U673-relations-REL-GROUP-D12-FINAL. Note antérieure, qui ne qualifie
-      pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-f00d12e5efff30c8c3396c02,
+      ADOPT-REASSESS-17693a4ec82804f821689244, ADOPT-REASSESS-8218cc12468f9bd5a99fd27e. Note antérieure, qui ne qualifie pas
+      cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
       des éléments ni des liens de coopération par extension. »'
   lifecycle:
     state: urbanist_validated
@@ -41312,9 +41508,9 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 922c2ec6788af62e53c085a52fcce4ccb2e1f3db2eb2444695c7cc3cf661084e
   adoption_ids:
-  - ADOPT-REASSESS-f00d12e5efff30c8c3396c02
-  - ADOPT-REASSESS-17693a4ec82804f821689244
-  - ADOPT-REASSESS-8218cc12468f9bd5a99fd27e
+  - ADOPT-REASSESS-f3f678c467d17cdb0dc458c7
+  - ADOPT-REASSESS-8962d71e62d86d33ab31b15f
+  - ADOPT-REASSESS-7d58f943c847524f5a3391f8
 - id: REL-GROUP-D16
   revision: 2
   last_modified: '2026-09-23T20:47:25.946747Z'
@@ -41327,8 +41523,8 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-f0903b22be1f98824abf6ee4,
-      INTENT-U673-relations-REL-GROUP-D16-FINAL. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-b8e70fe6e557434ad21cb31b,
+      ADOPT-REASSESS-e7ce4b5f20824a8a7466cd21. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application
       du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de coopération
       par extension. »'
   lifecycle:
@@ -41351,8 +41547,8 @@ relations:
       ni des liens de coopération par extension.
   content_sha256: c4d4acdc62b115cc5501b7a3ce0f3b005c370952199f26a9a661a469873f151e
   adoption_ids:
-  - ADOPT-REASSESS-b8e70fe6e557434ad21cb31b
-  - ADOPT-REASSESS-e7ce4b5f20824a8a7466cd21
+  - ADOPT-REASSESS-020469d1718dfe70afd7ca8c
+  - ADOPT-REASSESS-9ee4befa9ee5ca7a204fd1ad
 - id: REL-MEMBER-D08.d
   revision: 3
   type: contains
@@ -41407,9 +41603,9 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-0f42b52743b4b725a4bcbe90,
-      ADOPT-REASSESS-b92f6ec364a6dc9da6e285c6, INTENT-U673-relations-REL-GROUP-D11-FINAL. Note antérieure, qui ne qualifie
-      pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-eff5ac312384f01662cf941b,
+      ADOPT-REASSESS-3ab2e0f94b36d31d27ca306d, ADOPT-REASSESS-723578c369fcefc00040a81e. Note antérieure, qui ne qualifie pas
+      cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
       des éléments ni des liens de coopération par extension. »'
   lifecycle:
     state: urbanist_validated
@@ -41434,9 +41630,9 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: abfe6e35371e58fc9f23f938a969ea1a346080e1471633a29a2211960e7c154c
   adoption_ids:
-  - ADOPT-REASSESS-eff5ac312384f01662cf941b
-  - ADOPT-REASSESS-3ab2e0f94b36d31d27ca306d
-  - ADOPT-REASSESS-723578c369fcefc00040a81e
+  - ADOPT-REASSESS-4bbb8e36d00012c630c47361
+  - ADOPT-REASSESS-196c0ae645c987d175b47ae4
+  - ADOPT-REASSESS-2a577e7906e7af9af647de41
 - id: REL-MEMBER-D12.a
   revision: 3
   type: contains
@@ -41491,9 +41687,9 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-e85e63f89bb35ab56651822b,
-      ADOPT-REASSESS-451c3e5b10f6eb41b87a326e, INTENT-U673-relations-REL-GROUP-D13-FINAL. Note antérieure, qui ne qualifie
-      pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-0f397a4910639c33400f71df,
+      ADOPT-REASSESS-8efd1b37de7dbe7497463bb7, ADOPT-REASSESS-4ec9b4ddd673195b3361c593. Note antérieure, qui ne qualifie pas
+      cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
       des éléments ni des liens de coopération par extension. »'
   lifecycle:
     state: urbanist_validated
@@ -41518,9 +41714,9 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: b186a5bf0839a74ca1145f682adfdf83db10024db3b06bae01cbaf7d05dc3485
   adoption_ids:
-  - ADOPT-REASSESS-0f397a4910639c33400f71df
-  - ADOPT-REASSESS-8efd1b37de7dbe7497463bb7
-  - ADOPT-REASSESS-4ec9b4ddd673195b3361c593
+  - ADOPT-REASSESS-442268ddd2cb16d428611660
+  - ADOPT-REASSESS-3cc1623ca1684640932444dc
+  - ADOPT-REASSESS-85678b109577db5cd8ce9e9c
 - id: REL-MEMBER-D13.a
   revision: 3
   type: contains
@@ -41537,10 +41733,10 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-fb441cd81f0d326ae3a9a03b,
-      INTENT-U673-relations-REL-MEMBER-D13.a-FINAL. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise
-      l’application du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de
-      coopération par extension. »'
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-2d9d267aa60ac1a91a74b428,
+      ADOPT-REASSESS-c899decd9aaa2f029725f84c. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application
+      du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de coopération
+      par extension. »'
   lifecycle:
     state: urbanist_validated
     recorded_at: '2026-09-13T16:33:38.266961Z'
@@ -41563,8 +41759,8 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 49c773f2e3e93180dc95742d52c5eadde541598e75330a9760202b8d3c1aec49
   adoption_ids:
-  - ADOPT-REASSESS-2d9d267aa60ac1a91a74b428
-  - ADOPT-REASSESS-c899decd9aaa2f029725f84c
+  - ADOPT-REASSESS-91bba876e8f54ed365258e39
+  - ADOPT-REASSESS-8bae4349ba8702281bedb498
 - id: REL-UNIVERSE-SUPPLY-business-references
   revision: 3
   type: presents
@@ -41578,7 +41774,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-UNIVERSE-SUPPLY-business-references-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-f62c71f5ec2fd7ca6352e890.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -41605,7 +41801,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: bbb7075cc8ee8171b77bc18cb9f1c9d93690a3a9f53dc31ee1438bb335948835
   adoption_ids:
-  - ADOPT-REASSESS-f62c71f5ec2fd7ca6352e890
+  - ADOPT-REASSESS-c07daf74bb1b7ad6dfae0af6
 - id: REL-U673-PRESENTS-subdomain-policies
   revision: 1
   type: presents
@@ -41616,7 +41812,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-U673-PRESENTS-subdomain-policies-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-c205eeb47002053b4fc7f05c.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -41639,7 +41835,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: e3f38f17e4bcc66d3d7271b5a33afde38c5f18dc8309a9a6d25f01c2aa0a27c4
   adoption_ids:
-  - ADOPT-REASSESS-c205eeb47002053b4fc7f05c
+  - ADOPT-REASSESS-85dd18254e3e82dcaa200016
 - id: REL-U673-PRESENTS-subdomain-plans
   revision: 1
   type: presents
@@ -41650,7 +41846,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-U673-PRESENTS-subdomain-plans-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-a78a8f0c5db6042c7f5045e7.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -41673,7 +41869,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 9972b6fdf92345e98fffd721e08f9a57a1c1196320cf24b057a29166b22954ce
   adoption_ids:
-  - ADOPT-REASSESS-a78a8f0c5db6042c7f5045e7
+  - ADOPT-REASSESS-69a12dc73f435698390ab708
 - id: REL-UNIVERSE-SUPPLY-D04
   revision: 2
   type: presents
@@ -41686,7 +41882,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-UNIVERSE-SUPPLY-D04-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-38b2e9c41cf76154a1aacfe4.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -41712,7 +41908,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: dc035cacde3e5dc3f3afd287658ed799537c3425d03eceebca04502661db28ea
   adoption_ids:
-  - ADOPT-REASSESS-38b2e9c41cf76154a1aacfe4
+  - ADOPT-REASSESS-eedc85d108355c089ce10dd6
 - id: REL-UNIVERSE-SUPPLY-D01
   revision: 2
   type: presents
@@ -41725,7 +41921,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-UNIVERSE-SUPPLY-D01-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-99f5e6f82cceaecbccd912e0.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -41751,7 +41947,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 3668170ed2ae521fc34d9e9ddd76b26021cac99b79f7a15b2bd8f0782e4e8113
   adoption_ids:
-  - ADOPT-REASSESS-99f5e6f82cceaecbccd912e0
+  - ADOPT-REASSESS-0b285ba2724afb47c793f845
 - id: REL-MEMBER-D04.i
   revision: 3
   type: contains
@@ -41805,7 +42001,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D04.j-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-aed3f30dee50b486d0cef4ec.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -41829,7 +42025,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 0f82616c460642795473d31db2f4ac2dc4d7f98eec37fa986c4f2dc2ba5d70a7
   adoption_ids:
-  - ADOPT-REASSESS-aed3f30dee50b486d0cef4ec
+  - ADOPT-REASSESS-d503010a56cb1456b601100e
 - id: REL-MEMBER-D04.k
   revision: 3
   type: contains
@@ -42379,10 +42575,10 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-35149a358f8110852ff35838,
-      INTENT-U673-relations-REL-MEMBER-D07.a-FINAL. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise
-      l’application du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de
-      coopération par extension. »'
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-7519c907369563d1c8bf0795,
+      ADOPT-REASSESS-1194806ecf286f919e6e4a5f. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application
+      du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de coopération
+      par extension. »'
   lifecycle:
     state: urbanist_validated
     recorded_at: '2026-09-16T09:04:53.281745Z'
@@ -42405,8 +42601,8 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 0fc224d61d89c805d67dd84857859774c51d8bc2cd64a995c3e4a2bf52676c16
   adoption_ids:
-  - ADOPT-REASSESS-7519c907369563d1c8bf0795
-  - ADOPT-REASSESS-1194806ecf286f919e6e4a5f
+  - ADOPT-REASSESS-a414cd07d947f413a99c876a
+  - ADOPT-REASSESS-b4338f561b3ea0d0af4bf949
 - id: REL-GROUP-D14
   revision: 3
   type: presents
@@ -42423,9 +42619,9 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-274f646409ec5d18293a1fd8,
-      ADOPT-REASSESS-fc4288fe0d67a8ba8d73dd1d, INTENT-U673-relations-REL-GROUP-D14-FINAL. Note antérieure, qui ne qualifie
-      pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-eb0a8eb1bb833b63362f00d3,
+      ADOPT-REASSESS-c29a3e5bc59635c046226f9a, ADOPT-REASSESS-4b58186c3bfe7aa4eccaf361. Note antérieure, qui ne qualifie pas
+      cette révision : « U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions
       des éléments ni des liens de coopération par extension. »'
   lifecycle:
     state: urbanist_validated
@@ -42449,9 +42645,9 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: d2c87c9d0bb128e0c74d51bf74a1bd896148e41525b2c68f6e180849def27053
   adoption_ids:
-  - ADOPT-REASSESS-eb0a8eb1bb833b63362f00d3
-  - ADOPT-REASSESS-c29a3e5bc59635c046226f9a
-  - ADOPT-REASSESS-4b58186c3bfe7aa4eccaf361
+  - ADOPT-REASSESS-5d944b7f1c466c263c0a97a8
+  - ADOPT-REASSESS-3a4e425a59ed8ab4e89b7b7b
+  - ADOPT-REASSESS-838ee1295b6ab449b2482bfb
 - id: REL-MEMBER-D14.a
   revision: 2
   type: contains
@@ -42467,7 +42663,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D14.a-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-e9065ea5d85adea5ccd88b53.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -42491,7 +42687,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 7a2ee13c4135a52489dc95cee495e56ae0ec3fb893dba88234be1d2fff8a107d
   adoption_ids:
-  - ADOPT-REASSESS-e9065ea5d85adea5ccd88b53
+  - ADOPT-REASSESS-e61feff9d964573645c80872
 - id: REL-SERVICE-CATALOG-EXECUTION
   revision: 3
   type: provides-conditions
@@ -42713,7 +42909,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D06.e-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-e1fec82472412b43c4d418da.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -42739,7 +42935,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 0826b69d39d744cf223fae37591c73484cb0ca09fe4e08d888440ef2ae7150b3
   adoption_ids:
-  - ADOPT-REASSESS-e1fec82472412b43c4d418da
+  - ADOPT-REASSESS-b7a0bbfe0994a751a2eaa454
 - id: REL-MEMBER-D06.f
   revision: 2
   type: contains
@@ -42752,10 +42948,10 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-331e77a3a8d0a851b68302fd,
-      INTENT-U673-relations-REL-MEMBER-D06.f-FINAL. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise
-      l’application du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de
-      coopération par extension. »'
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-8f6369b04392ff0b20f265a1,
+      ADOPT-REASSESS-031033c79359523b9405d98c. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application
+      du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de coopération
+      par extension. »'
   lifecycle:
     state: urbanist_validated
     recorded_at: '2026-09-16T09:38:37.449364Z'
@@ -42779,8 +42975,8 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 99922fa81132eb3bff6dcaf2b1384853e2dc8d6967686181e785292884f11c40
   adoption_ids:
-  - ADOPT-REASSESS-8f6369b04392ff0b20f265a1
-  - ADOPT-REASSESS-031033c79359523b9405d98c
+  - ADOPT-REASSESS-eb6b177a772b483f143c748f
+  - ADOPT-REASSESS-7036b02b0fa770ede7eadaab
 - id: REL-EXECUTION-TRACKING-ADAPTATION
   revision: 1
   type: relates-to
@@ -43450,7 +43646,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D03.l-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-9f4559e207bde09005ca9435.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -43477,7 +43673,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 9624ee67a509c4010a13b0bf704d8cc319c9996c8fdd5621b841453bbd61ab87
   adoption_ids:
-  - ADOPT-REASSESS-9f4559e207bde09005ca9435
+  - ADOPT-REASSESS-c1e44bc6c584bab031f62cf8
 - id: REL-MEMBER-BHV016
   revision: 2
   type: contains
@@ -49192,7 +49388,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D05.i-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-94ed67dc296d8621f65dfd6a.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -49217,7 +49413,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 23d01fba50361a6da26f0315b0652f1ec8931aa5a8a0d68384b4ee10d525cf34
   adoption_ids:
-  - ADOPT-REASSESS-94ed67dc296d8621f65dfd6a
+  - ADOPT-REASSESS-3bdddde84dd077eb6b2a9f8f
 - id: REL-NEEDS-U380-01
   revision: 1
   type: relates-to
@@ -50001,7 +50197,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-33431497ae2e804e6ffb8b9e.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-e6a54457ce1a424aa8ce7599.
       Note antérieure, qui ne qualifie pas cette révision : « Rattachement adopté U391. »'
   lifecycle:
     state: urbanist_validated
@@ -50022,7 +50218,7 @@ relations:
   last_modified: '2026-09-19T00:29:36.814895Z'
   content_sha256: 624cde65b591905e52f6c2363a89ec52873907f9343006031d7187f15545c457
   adoption_ids:
-  - ADOPT-REASSESS-e6a54457ce1a424aa8ce7599
+  - ADOPT-REASSESS-22897192805f27596dcfded2
 - id: REL-BEHAVIOR-BHV059
   revision: 1
   type: contains
@@ -50036,7 +50232,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-44648ea8df4e0ea0e1808e3e.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-1898c34a30b7537323294f8c.
       Note antérieure, qui ne qualifie pas cette révision : « Rattachement adopté U391. »'
   lifecycle:
     state: urbanist_validated
@@ -50057,7 +50253,7 @@ relations:
   last_modified: '2026-09-19T00:29:36.814895Z'
   content_sha256: 58aad4c87a88146364cb85f304ee451b47d1e417a3a1e9b5ba979a4f5c14b26e
   adoption_ids:
-  - ADOPT-REASSESS-1898c34a30b7537323294f8c
+  - ADOPT-REASSESS-7c4c3e2946dee700ef4d0653
 - id: REL-BEHAVIOR-BHV060
   revision: 1
   type: contains
@@ -50071,7 +50267,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-7f3ee7da5e32cafcb5c39a1f.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-3871272f52d993a5a1dd331a.
       Note antérieure, qui ne qualifie pas cette révision : « Rattachement adopté U391. »'
   lifecycle:
     state: urbanist_validated
@@ -50092,7 +50288,7 @@ relations:
   last_modified: '2026-09-19T00:29:36.814895Z'
   content_sha256: ffd1b3771fa4c351ce44dd867a360a41a2ad98f4dfe438a1949486654f08db62
   adoption_ids:
-  - ADOPT-REASSESS-3871272f52d993a5a1dd331a
+  - ADOPT-REASSESS-fde2f9a3490678543c1db719
 - id: REL-NEEDS-U391-DIRECT-SALES
   revision: 2
   type: relates-to
@@ -51021,7 +51217,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-6619a040cbbd2e8353cbfe03.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-1da0af4ee6353b68cfabbea2.
       Note antérieure, qui ne qualifie pas cette révision : « Supplier Confirmation sous Purchase Order adopté U403. »'
   lifecycle:
     state: urbanist_validated
@@ -51042,7 +51238,7 @@ relations:
   last_modified: '2026-09-19T00:29:36.814895Z'
   content_sha256: 5447cc7de6aee5ac0b974f6de743c2a57999395eb81b6c8c3f58cdc35985d827
   adoption_ids:
-  - ADOPT-REASSESS-1da0af4ee6353b68cfabbea2
+  - ADOPT-REASSESS-c622a2af729defa14c93699a
 - id: REL-BEHAVIOR-BHV079
   revision: 1
   type: contains
@@ -51059,7 +51255,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-d8859ca457d13338beb913f4.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-951f65c97a178b7427222e6e.
       Note antérieure, qui ne qualifie pas cette révision : « Rattachement direct adopté, sans niveau intermédiaire. »'
   lifecycle:
     state: urbanist_validated
@@ -51080,7 +51276,7 @@ relations:
   last_modified: '2026-09-19T00:29:36.814895Z'
   content_sha256: 07291c998222a4c67cac0b6b3d9c0d577b0d46854dfdb0475e43fba60d193c94
   adoption_ids:
-  - ADOPT-REASSESS-951f65c97a178b7427222e6e
+  - ADOPT-REASSESS-cd7a16ff138c9f15d0653cb9
 - id: REL-BEHAVIOR-BHV080
   revision: 1
   type: contains
@@ -51097,7 +51293,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-9e6468dc362ee407a174cfeb.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-7bbe0b4c7c996fdef8cddbd6.
       Note antérieure, qui ne qualifie pas cette révision : « Rattachement direct adopté, sans niveau intermédiaire. »'
   lifecycle:
     state: urbanist_validated
@@ -51118,7 +51314,7 @@ relations:
   last_modified: '2026-09-19T00:29:36.814895Z'
   content_sha256: 53da4dbc49d735fd0821d4783f3c9028de13d562b9276e3c3af5d98a9c77899b
   adoption_ids:
-  - ADOPT-REASSESS-7bbe0b4c7c996fdef8cddbd6
+  - ADOPT-REASSESS-968e900ec5b6c40bd3152eb8
 - id: REL-BEHAVIOR-BHV081
   revision: 1
   type: contains
@@ -51135,7 +51331,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-cdd907a1ae219e589b1201f4.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-141e9c3d469a9adcaf7523b2.
       Note antérieure, qui ne qualifie pas cette révision : « Rattachement direct adopté, sans niveau intermédiaire. »'
   lifecycle:
     state: urbanist_validated
@@ -51157,7 +51353,7 @@ relations:
   last_modified: '2026-09-19T00:29:36.814895Z'
   content_sha256: 35397f617c2fc592a0164f8149b1ddb3d7ed548098228c7e4e051e94f894e6a3
   adoption_ids:
-  - ADOPT-REASSESS-141e9c3d469a9adcaf7523b2
+  - ADOPT-REASSESS-9aeaed94b43be9fe7fd617cb
 - id: REL-BEHAVIOR-BHV082
   revision: 1
   type: contains
@@ -51174,7 +51370,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-0bc315bf2c99cf835eaa7017.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-ed671e272e3516d51b8a8fbb.
       Note antérieure, qui ne qualifie pas cette révision : « Rattachement direct adopté, sans niveau intermédiaire. »'
   lifecycle:
     state: urbanist_validated
@@ -51195,7 +51391,7 @@ relations:
   last_modified: '2026-09-19T00:29:36.814895Z'
   content_sha256: 62f864070daf0e39609296302a5d8a61550a5607f106686719bc4e317c613aca
   adoption_ids:
-  - ADOPT-REASSESS-ed671e272e3516d51b8a8fbb
+  - ADOPT-REASSESS-85178bedce08e46f5b8f7d86
 - id: REL-MEMBER-D03.o
   revision: 3
   type: contains
@@ -52220,10 +52416,10 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-5b74581716d16c7727265138,
-      INTENT-U673-relations-REL-MEMBER-D14.b-FINAL. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise
-      l’application du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de
-      coopération par extension. »'
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-fe07a1a511bae9e89c861365,
+      ADOPT-REASSESS-8315df87d582e1844123d839. Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application
+      du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments ni des liens de coopération
+      par extension. »'
   lifecycle:
     state: urbanist_validated
     recorded_at: '2026-09-19T17:29:54.487177Z'
@@ -52246,8 +52442,8 @@ relations:
       ni des liens de coopération par extension.
   content_sha256: 3da67375d52a749822d581ac8c650f6237f7b51138ea76c57d0a23711659a2ca
   adoption_ids:
-  - ADOPT-REASSESS-fe07a1a511bae9e89c861365
-  - ADOPT-REASSESS-8315df87d582e1844123d839
+  - ADOPT-REASSESS-ae4f0352b1a47d4aabb2aacc
+  - ADOPT-REASSESS-42bad19ab75d2144e8beed6a
 - id: REL-MEMBER-D16.a
   revision: 2
   last_modified: '2026-09-23T20:47:25.946747Z'
@@ -52483,7 +52679,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-UNIVERSE-SUPPLY-D18-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-239f01029ee8d794bd860b57.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -52507,7 +52703,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 1c302a023c58bfb805432033ca011b61940d8ce80de86e4bf1eb56a3e356ee9d
   adoption_ids:
-  - ADOPT-REASSESS-239f01029ee8d794bd860b57
+  - ADOPT-REASSESS-1c76fc11f63cd53596fbf07d
 - id: REL-MEMBER-D18.a
   revision: 2
   type: contains
@@ -52518,7 +52714,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D18.a-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-cead6fd7f5b73d58f0dbfd76.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -52542,7 +52738,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 555fd2d005537412bb55874f33a6b2f50bdfb7913dad967c89eedaabc0b563d5
   adoption_ids:
-  - ADOPT-REASSESS-cead6fd7f5b73d58f0dbfd76
+  - ADOPT-REASSESS-5e96b3e0c964612d0643f758
 - id: REL-MEMBER-D19.a
   revision: 2
   type: contains
@@ -52554,7 +52750,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-MEMBER-D19.a-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-d601efd4025f043257597fee.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -52578,7 +52774,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 9d5b8575dd170797cda0a17f85a590144f983989a159629d027be7655ce4cc42
   adoption_ids:
-  - ADOPT-REASSESS-d601efd4025f043257597fee
+  - ADOPT-REASSESS-3d27cc268f81a2730f055b76
 - id: REL-MEMBER-D19.b
   revision: 2
   type: contains
@@ -52890,7 +53086,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-UNIVERSE-SUPPLY-D03-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-bd54cdc8a460fb4b654ef138.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -52916,7 +53112,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 1ac63b02e9524cc6f88b55b020f2285f86a9dbce94a1f2723473b6a33b3b2357
   adoption_ids:
-  - ADOPT-REASSESS-bd54cdc8a460fb4b654ef138
+  - ADOPT-REASSESS-dc04ec913c240b29fb346997
 - id: REL-UNIVERSE-SUPPLY-D06
   revision: 2
   type: presents
@@ -52929,7 +53125,7 @@ relations:
   review:
     state: accepted
     note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
-      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U673-relations-REL-UNIVERSE-SUPPLY-D06-FINAL.
+      validations antérieures suspendues. Validations conservées dans l’historique : ADOPT-REASSESS-0d779317068f786b8def053f.
       Note antérieure, qui ne qualifie pas cette révision : « U673 autorise l’application du rattachement présenté dans l’audit
       ; aucune validation des descriptions des éléments ni des liens de coopération par extension. »'
   lifecycle:
@@ -52955,7 +53151,7 @@ relations:
   last_modified: '2026-09-23T20:47:25.946747Z'
   content_sha256: 83bcf4ccb3f8ae3d9a7eba6d8534e5a46ad2fbaae1ca4dc98f89ef7651914c51
   adoption_ids:
-  - ADOPT-REASSESS-0d779317068f786b8def053f
+  - ADOPT-REASSESS-2b3c8c29fef6b3928e165f67
 - id: REL-U673-CONTAINS-plans-ingestion
   revision: 1
   type: contains
@@ -53373,8 +53569,10 @@ relations:
   last_modified: '2026-09-24T08:14:51.444432Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-REL-U692-PRESENTS-SERVICE-ORDERS.
+      Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -53394,7 +53592,7 @@ relations:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   content_sha256: 23e9ab50363c862b2b7d6f75f73b1ee776429b107620937833cb0676920266bf
   adoption_ids:
-  - INTENT-U692-REL-U692-PRESENTS-SERVICE-ORDERS
+  - ADOPT-REASSESS-a6400309beb63b2cdc9a397e
 - id: REL-U682-CONTAINS-service-order-picking
   revision: 1
   type: contains
@@ -53407,8 +53605,10 @@ relations:
   last_modified: '2026-09-24T08:14:51.444432Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-REL-U692-CONTAINS-service-order-picking.
+      Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -53428,7 +53628,7 @@ relations:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   content_sha256: 3aac3dd885e606f6ef957d9520aa6b2fda60316696fff74ce78651e7cef04984
   adoption_ids:
-  - INTENT-U692-REL-U692-CONTAINS-service-order-picking
+  - ADOPT-REASSESS-5025581a489f6ab0dda8765a
 - id: REL-U682-LIFECYCLE-service-order-picking
   revision: 1
   type: relates-to
@@ -53478,8 +53678,10 @@ relations:
   last_modified: '2026-09-24T08:14:51.444432Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-REL-U692-CONTAINS-service-order-packing.
+      Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -53499,7 +53701,7 @@ relations:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   content_sha256: c2532134a7db015622317c104fef176072ad7b0028c3b42e16f286e9d70c3ed1
   adoption_ids:
-  - INTENT-U692-REL-U692-CONTAINS-service-order-packing
+  - ADOPT-REASSESS-787340a14229a2e13cac8aa4
 - id: REL-U682-LIFECYCLE-service-order-packing
   revision: 1
   type: relates-to
@@ -53549,8 +53751,10 @@ relations:
   last_modified: '2026-09-24T08:14:51.444432Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-REL-U692-CONTAINS-service-order-vas.
+      Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -53570,7 +53774,7 @@ relations:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   content_sha256: 3e41d4481974cd6eaff81a86bf7edf8d9be36a51acd01cc2eed8977c73caf266
   adoption_ids:
-  - INTENT-U692-REL-U692-CONTAINS-service-order-vas
+  - ADOPT-REASSESS-af6ebc3f7953a0ed4cd119a7
 - id: REL-U682-LIFECYCLE-service-order-vas
   revision: 1
   type: relates-to
@@ -53620,8 +53824,10 @@ relations:
   last_modified: '2026-09-24T08:14:51.444432Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-REL-U692-CONTAINS-service-order-cross-docking.
+      Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -53641,7 +53847,7 @@ relations:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   content_sha256: 10e4d85408d29a7bfd53ee966d021da67816dfb301308df834693c8668a880cd
   adoption_ids:
-  - INTENT-U692-REL-U692-CONTAINS-service-order-cross-docking
+  - ADOPT-REASSESS-a0a681c250b081ede37fb566
 - id: REL-U682-LIFECYCLE-service-order-cross-docking
   revision: 1
   type: relates-to
@@ -53691,8 +53897,10 @@ relations:
   last_modified: '2026-09-24T08:14:51.444432Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-REL-U692-CONTAINS-vas-labeling-relabeling.
+      Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -53712,7 +53920,7 @@ relations:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   content_sha256: 3d0bb43b9b87832676ecbcc610637240c57d5ba7134393a444bb117d007c7e49
   adoption_ids:
-  - INTENT-U692-REL-U692-CONTAINS-vas-labeling-relabeling
+  - ADOPT-REASSESS-06615272406641990f1c6303
 - id: REL-U682-CONTAINS-vas-repacking
   revision: 1
   type: contains
@@ -53725,8 +53933,10 @@ relations:
   last_modified: '2026-09-24T08:14:51.444432Z'
   review:
     state: partial
-    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
-      détaillés proposés.
+    note: 'Seules les décisions applicables à cette version qualifient les champs validés ; elles ne rétablissent pas les
+      validations antérieures suspendues. Validations conservées dans l’historique : INTENT-U692-REL-U692-CONTAINS-vas-repacking.
+      Note antérieure, qui ne qualifie pas cette révision : « Application U682 ; accords U679/U681 limités aux valeurs présentées.
+      Descriptions, comparaisons et choix de redistribution détaillés proposés. »'
   lifecycle:
     state: under_instruction
     recorded_at: '2026-09-24T07:34:47.738310Z'
@@ -53746,7 +53956,7 @@ relations:
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   content_sha256: 9724df7f2decc53bfdc9d6460d09c94983977efa2384eec71a58bed3a7f43330
   adoption_ids:
-  - INTENT-U692-REL-U692-CONTAINS-vas-repacking
+  - ADOPT-REASSESS-312e416fce91d30962f3ba0d
 - id: REL-U682-ORCHESTRATION-SERVICE-ORDERS
   revision: 1
   type: provides-knowledge
@@ -53820,6 +54030,69 @@ relations:
     value_sha256: {}
     note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   content_sha256: e7828b8c9d82548046302d8ac494f454b07e1380f4ccd8cf434ac13db26804dd
+  adoption_ids: []
+- id: REL-U698-CONTAINS-service-order-transport
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-transport
+  source_refs:
+  - U698
+  last_modified: '2026-09-24T12:08:57.506077Z'
+  review:
+    state: partial
+    note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 6297e03ba7427e62d0a87febaedf096f9283e1dd3acb98824c4ed6a55871f762
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
+  content_sha256: b31d4f704bbfedbaff3a868d5217af69551520ccd054016fa67c1e08e041038d
+  adoption_ids:
+  - INTENT-U701-REL-U701-CONTAINS-service-order-transport-source_id
+- id: REL-U698-LIFECYCLE-service-order-transport
+  revision: 1
+  type: relates-to
+  source_id: service-order-transport
+  target_id: D07.b
+  source_refs:
+  - U698
+  qualification:
+    meaning: Transport Order porte les exigences propres au déplacement et mobilise le cycle commun pour tenir activation,
+      acceptation, changements et clôture de la prestation.
+    conditions:
+    - Lorsqu’une demande de transport est confiée ou évolue.
+    effects:
+    - Conserver la suite de l’engagement de transport, y compris en cas de collecte ou livraison en écart.
+    scope: Coopération proposée ; aucune décomposition ni duplication du suivi des faits physiques.
+  last_modified: '2026-09-24T12:08:57.506077Z'
+  review:
+    state: proposed
+    note: 'Aucune validation antérieure reprise pour cette révision ; aucune validation courante applicable enregistrée. Le
+      statut éditorial du backlog ne constitue pas une preuve de validation. Note antérieure, qui ne qualifie pas cette révision
+      : « U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés. »'
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields: []
+    value_sha256: {}
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
+  content_sha256: 89843e652d8d64948f6c89c1725b955f08d7a0f5a2e479cfdbedf28fa4aaad8c
   adoption_ids: []
 excluded_nodes:
 - id: ILL-OBJ-01

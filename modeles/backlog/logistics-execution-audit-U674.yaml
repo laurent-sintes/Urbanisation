@@ -1,7 +1,7 @@
 id: logistics-execution-audit-U674
 date: '2026-09-23'
 author: Codex
-status: subdomain_adopted_U679_vas_decomposition_agreed_U681_application_pending
+status: closed_U696
 source_refs:
 - U674
 - U675
@@ -12,12 +12,16 @@ source_refs:
 - U679
 - U680
 - U681
+- U682
+- U683
+- U684
+- U685
 baseline:
   commit: 8816726d2132df5a300c4089476004a72c8ae3f8
   model: modeles/backlog/model.yaml
   model_sha256: 280ea8390cf732391c6559afe7bb09241a55f644d1cb4a64163ff6ab5b0df267
   release: 2026-09-23.3
-canonical_model_changed: false
+canonical_model_changed: true
 scope: Audit ciblé de la visibilité des prestations logistiques, de leurs ordres et de la frontière de responsabilité ; pas
   audit historique des comportements.
 sources:
@@ -221,6 +225,36 @@ sources:
   definition_status: Reformulation du passage, pas citation.
   access: Texte primaire indexé
   reuse: Synthèse sélective et lien ; aucune reproduction substantielle.
+- id: ELM665
+  organization: Advanced Supply Chain
+  title: Box to Hang
+  url: https://advancedsupplychain.com/value-added-services/packing/box-to-hang/
+  edition: Page évolutive, édition et date de publication non établies
+  consulted_on: '2026-09-24'
+  native_nature: Prestation logistique commercialisée
+  native_label: Box to Hang
+  native_identifier: null
+  locator: Texte primaire ouvert ; introduction et Our Meticulous Box to Hang Process
+  access: Texte primaire ouvert ; introduction et Our Meticulous Box to Hang Process
+  finding: Offre de passage de vêtements conditionnés à plat vers des vêtements suspendus ; pose du cintre conforme aux spécifications,
+    avec prestations complémentaires possibles.
+  limits: Offre composite d’un prestataire ; ne rend ni toutes ses étapes obligatoires ni une nouvelle capacité FLOW nécessaire.
+  reuse: Synthèse sélective et lien uniquement.
+- id: ELM666
+  organization: Berry Services
+  title: Mise sur cintre
+  url: https://www.berryservices.fr/component/spsimpleportfolio/item/357-mise-sur-cintre
+  edition: Page évolutive, édition et date de publication non établies
+  consulted_on: '2026-09-24'
+  native_nature: Prestation logistique commercialisée
+  native_label: Mise sur cintre
+  native_identifier: null
+  locator: Extrait primaire indexé consulté ; ouverture directe en échec
+  access: Extrait primaire indexé consulté ; ouverture directe en échec
+  finding: Le prestataire décrit notamment déballage, pose d’un cintre avec indicateur de taille et préparation selon les
+    consignes des acheteurs.
+  limits: Exemple commercial composite ; corps complet inaccessible, aucune preuve de réalisation Beaumanoir.
+  reuse: Synthèse sélective et lien uniquement.
 comparisons:
 - target: D04 / D07.b
   sources:
@@ -357,13 +391,6 @@ proposal:
       qui préservent la promesse et les équilibres du Matching.
     Service Catalog: Description de l’offre mobilisable.
     Executants: Organisation de leurs opérations internes.
-  implementation_pending:
-  - Décomposer les responsabilités actuelles de D07.b sans perte ni duplication ; ne pas lui attribuer silencieusement le
-    nouveau nom de sous-domaine.
-  - Instruire les rattachements des capacités existantes de détermination des prestations, capacité, tracking et rapprochement
-    ; non présentés dans l’accord.
-  - Préciser les descriptions et comparaisons des capacités de familles ; aucune liste exhaustive adoptée.
-  - Clarifier TER066, instance métier et document, dans le lot d’application.
   granularity_rule: Définir des ordres distincts quand les prestations se confient, acceptent, suivent ou reprennent indépendamment
     ; ne pas imposer un ordre FLOW pour chaque tâche opérateur.
   granularity_rule_status: Proposition de mise en œuvre ; non condition à la reconnaissance du sous-domaine validé.
@@ -377,8 +404,8 @@ limits:
 - Étude ciblée SAP, Microsoft, Oracle et analogie TM Forum, pas classement exhaustif du marché.
 - Les gestes physiques et le dispatch opérateur restent chez les exécutants au périmètre FLOW courant. Leur cartographie en
   capacités propres exigerait d’élargir explicitement le périmètre étudié.
-- Découpage et frontières adoptés U679 ; application au modèle canonique et publication non réalisées. Détails non présentés
-  encore proposés.
+- Découpage et frontières adoptés U679 ; application partielle au modèle réalisée U682 puis U692 ; les publications sont suivies
+  par leur index. Détails non présentés encore proposés.
 naming_U676:
   question: Le marché désigne-t-il un sous-domaine Execution Services ou un terme voisin ?
   finding: Des périmètres voisins sont attestés, mais aucun sous-domaine transversal standard nommé Execution Services n’a
@@ -528,3 +555,139 @@ agreement_U681:
   - Application globale du découpage ou publication.
   capture_note: Accord sur annexe ; capture canonique via record_decision sur le lot final lors de son application. Aucun
     identifiant BHV réservé à ce stade.
+implementation_U682:
+  date: '2026-09-24'
+  subdomain_id: subdomain-service-orders
+  common_lifecycle:
+    id: D07.b
+    name: Service Order Lifecycle
+    status: editorial_proposal
+    reason: Préserver activation, réponses, reprises, vérification de fin et les services sans famille spécialisée ; pas de
+      sous-capacité.
+  capabilities:
+  - service-order-picking
+  - service-order-packing
+  - service-order-vas
+  - service-order-cross-docking
+  behaviors:
+  - vas-labeling-relabeling
+  - vas-repacking
+  conditional_not_applied:
+  - Kitting / Dekitting
+  retained_in_fulfilment:
+  - D07.a
+  - D06.b
+  - D06.d
+  - D06.e
+  - D06.f
+  - D07.d
+  - D07.c
+  - D05.i
+  placement_note: 'Choix d’application proposé : conserver composition/coordination, faits transversaux et rapprochement dans
+    Fulfilment ; tenir engagements individuels et leurs suites dans Service Order Management.'
+  prior_state_commit: ea9bbcbc7f20e54498700e4220596b4a5d880eb5
+  changed_nodes:
+  - universe-supply
+  - D14
+  - D06.b
+  - D07.a
+  - D07.b
+  - D07.c
+  - D07.d
+  - D06
+  - D06.d
+  - subdomain-service-orders
+  - service-order-picking
+  - service-order-packing
+  - service-order-vas
+  - service-order-cross-docking
+  - vas-labeling-relabeling
+  - vas-repacking
+  release_changed: false
+agreement_U684:
+  source: U684
+  author: Laurent
+  recorded_by: Codex
+  date: '2026-09-24'
+  status: accepted_scoped
+  values:
+    Repacking: Transformer le conditionnement sans changer la composition de l’ensemble.
+    Kitting: Constituer un ensemble avec les composants et quantités attendus.
+    Dekitting: Séparer un ensemble pour récupérer ses composants.
+    combination: Les prestations peuvent se combiner ; constituer un coffret et remplacer son emballage répondent à des exigences
+      distinctes.
+    item_reference: La constitution d’un ensemble n’implique pas nécessairement la création d’une nouvelle référence article.
+    behavior_scope: 'Décrire les exigences et le suivi des prestations commandées : conformité du conditionnement ou de la
+      composition.'
+  values_sha256: a34b98d07c6cdf98a581cadcfba818954fe340731ad0de2de865879442d3950e
+  scope_limit: Distinction sémantique adoptée ; ne lève pas la condition d’inclusion de Kitting / Dekitting, non proposée
+    dans la réponse validée.
+  market_basis:
+    source_refs:
+    - ELM658
+    - ELM661
+    - CMP273
+    reuse: Preuves VAS déjà consultées ; aucune nouvelle étude requise pour cet accord.
+    limit: Les sources étayent les familles de prestation ; cette distinction de gestion est une formulation FLOW validée,
+      sans consensus universel revendiqué.
+garment_hanging_U685:
+  status: accepted_scoped_U686
+  sources:
+  - ELM665
+  - ELM666
+  finding: La mise sur cintre est une prestation documentée. Box to Hang désigne plus spécifiquement le passage du conditionné
+    à plat au suspendu.
+  flow_position: Prestation VAS ; lorsqu’elle transforme le conditionnement, exemple possible de Repacking. Pas de constitution
+    d’un assortiment de composants par le seul ajout du cintre, donc pas du kitting dans le sens discuté.
+  proposal: Décrire résultat attendu, type de cintre, quantité et consignes pertinentes ; un comportement autonome ne serait
+    justifié que par des particularités de gestion significatives. Aucun sous-comportement créé.
+  canonical_change: false
+agreement_U686:
+  source: U686
+  author: Laurent
+  date: '2026-09-24'
+  status: accepted_scoped
+  values:
+    garment_hanging: Prestation VAS ; exemple de Repacking lorsqu’elle transforme le conditionnement.
+    kitting_boundary: Le seul ajout d’un cintre ne constitue pas un kit au sens retenu.
+    granularity: Pas de comportement autonome ou de sous-comportement créé pour la mise sur cintre.
+  values_sha256: 1cf410efe7762a449f7de377cf87d373ad047fc69fdb4bdfdfb6e89d6fcb88c7
+  scope_limit: Accord sur la réponse à U685 uniquement. La recherche et ses recommandations ne sont pas prévalidées.
+  market_basis:
+  - ELM665
+  - ELM666
+vas_research_U686:
+  path: modeles/backlog/value-added-logistics-review-U686.yaml
+  status: research_closed_proposals_in_backlog_annex
+agreement_U692:
+  source: U692
+  date: '2026-09-24'
+  author: Laurent
+  recorded_by: Codex
+  status: accepted_scoped
+  values:
+    composition: Une commande logistique peut porter plusieurs Orders avec leur enchaînement attendu.
+    constraints: Liste ordonnée pour une séquence ; dépendances, parallélisme ou conditions pour les cas plus riches.
+    ownership: Service Order Management conserve la demande d’ensemble, les exigences individuelles et les contraintes convenues
+      ; Fulfilment Orchestration organise et pilote la réalisation.
+    granularity: Une composition ne crée pas automatiquement une famille ; chaque opération interne ne devient pas nécessairement
+      un ordre.
+  values_sha256: 672eebd2fe05f3fd6f94374dcff002ed5fc461ec82c2227b23a0129a96696e94
+  applied_to: subdomain-service-orders.fields.scope
+  scope_limit: Accord sur les propositions de composition présentées, pas validation intégrale du champ scope rédigé ni des
+    fiches de familles. Capture limitée en annexe pour ne pas attribuer un accord au champ complet.
+  market_basis:
+  - ELM492
+  - ELM659
+  - CMP273
+  market_limit: Analogie de gestion et de fourniture de services ; structure composée et frontière de responsabilités validées
+    comme choix FLOW, sans contrat logistique universel revendiqué.
+closure_U696:
+  date: '2026-09-24'
+  source_refs:
+  - U695
+  - U696
+  scope: Analyse terminée ; constats et preuves conservés. Clôture indépendante de l’application des propositions restantes.
+  backlog: modeles/backlog/model.yaml
+  proposal_annex: modeles/backlog/value-added-logistics-review-U686.yaml
+  agreement_limit: Aucune adoption supplémentaire des familles ou formulations par la clôture ou la publication.

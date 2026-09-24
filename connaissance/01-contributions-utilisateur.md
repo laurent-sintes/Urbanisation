@@ -16805,3 +16805,585 @@ go
 **contexte et portée**
 
 Accord sur la proposition immédiatement présentée après U680 : décrire les particularités de gestion de l’ordre par Labeling / Relabeling (exigences, version attendue, conformité), Repacking (modification du conditionnement, consignes, résultat) et Kitting / Dekitting (assemblage ou séparation d’ensembles, composants attendus, écarts), ce dernier conditionné à son inclusion dans le périmètre. Une différence significative de gestion justifie le comportement ; un simple paramètre reste au catalogue. Ne valide pas les gestes physiques, les détails ajoutés ensuite, un catalogue exhaustif ou l’inclusion inconditionnelle du kitting/dekitting. Complément de l’audit avant application du sous-domaine ; aucune release, commit ou push demandé.
+
+
+## U682
+
+**id**
+
+U682
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Appliquer les derniers changements de l’audit des ordres de services
+
+**texte**
+
+Applique les derniers changements de l'audit
+
+**contexte et portée**
+
+Demande d’application au backlog des accords U679 et U681 : Service Order Management distinct, familles d’ordres au niveau capacité sans suffixe Management, comportements VAS et frontières avec Order Management, Fulfilment et Service Catalog. Préparer la redistribution des responsabilités existantes sans perte ni duplication ; conserver la condition non levée sur l’inclusion de Kitting / Dekitting. Les noms et responsabilités présentés et validés gardent leur portée ; les définitions détaillées et choix éditoriaux nécessaires à l’application ne deviennent pas globalement approuvés. Aucune release, commit ou push demandé.
+
+
+## U683
+
+**id**
+
+U683
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Distinguer Kitting / Dekitting et Repacking
+
+**texte**
+
+diff entre Kitting / Dekitting  et Repacking ?
+
+**contexte et portée**
+
+Demande de clarification : Repacking transforme le conditionnement ; Kitting constitue un ensemble de composants et Dekitting le sépare. La réponse distingue conformité du conditionnement et conformité de composition, précise leur combinaison possible et l’absence de création nécessaire d’une référence article.
+
+
+## U684
+
+**id**
+
+U684
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider la distinction conditionnement et composition
+
+**texte**
+
+Ok, je valide
+
+**contexte et portée**
+
+Accord sur la distinction présentée après U683 : Repacking modifie le conditionnement sans changer la composition ; Kitting constitue un ensemble et Dekitting le sépare, avec conformité des composants et quantités. Les prestations peuvent se combiner ; constituer un ensemble ne nécessite pas une nouvelle référence article. Au niveau comportement, décrire exigences et suivi de la prestation commandée. La réponse ne proposait pas de lever la condition d’inclusion de Kitting / Dekitting : cet accord valide le sens présenté, sans extension implicite de périmètre, application nouvelle ou publication.
+
+
+## U685
+
+**id**
+
+U685
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Vérifier la prestation de mise sur cintre
+
+**texte**
+
+Mettre sur cintre des vêtements, ça existe ?
+
+**contexte et portée**
+
+Question sur l’existence et le vocabulaire marché de la mise sur cintre dans le contexte des VAS et du reconditionnement. Ne constitue pas une demande de création ou un accord de comportement ; aucune réalisation Beaumanoir déduite.
+
+
+## U686
+
+**id**
+
+U686
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider la mise sur cintre et demander un inventaire des prestations logistiques à valeur ajoutée
+
+**texte**
+
+Je valide. tu peux faire une recherche exhaustive sur les opérations logistiques à valeur ajoutée ?
+
+**contexte et portée**
+
+Accord sur la proposition présentée après U685 : mise sur cintre comme prestation VAS, exemple de Repacking lorsqu’elle transforme le conditionnement, sans création automatique d’un comportement autonome ni assimilation au kitting. Demande de recherche marché approfondie sur les opérations logistiques à valeur ajoutée. Cet accord ne prévalide pas les familles ou les extensions qui résulteront de la recherche ; aucune réalisation Beaumanoir ni publication déduite.
+
+
+## U687
+
+**id**
+
+U687
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Limiter les familles de prestations à la fashion et examiner la décomposition de Value-Added Service Order
+
+**texte**
+
+Rester à un niveau "famille" me parait suffisant.
+Néanmoins il faut filtrer par rapport au métier de la fashion.
+Autre question : Value Added devient un gros fourre tout. Est-ce qu'il ne faut pas découper ?
+
+**contexte et portée**
+
+Laurent demande de conserver une maille de famille et de filtrer la recherche U686 au métier de la fashion. Il questionne le maintien de Value-Added Service Order comme regroupement trop large. Ne constitue pas un accord préalable sur les nouvelles capacités, leur nom, la fusion de Packing/Repacking ou le retrait de Value-Added Service Order.
+
+
+## U688
+
+**id**
+
+U688
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Distinguer light touch des responsabilités du modèle métier
+
+**texte**
+
+En termes de vocabulaire, light touch est une sorte de catégorisation logistique qui regroupe les opérations à valeur ajoutée qui sont légères, on est ok ? Du coup ça ne devrait pas apparaitre dans le modèle métier.
+Ton avis ?
+
+**contexte et portée**
+
+Laurent propose de considérer light touch comme une qualification logistique des interventions légères, sans en faire une notion structurante du modèle métier, et sollicite un avis. Pas de validation implicite des huit familles proposées U687.
+
+
+## U689
+
+**id**
+
+U689
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Préciser la liste des familles d’Orders
+
+**texte**
+
+Du coup on arriverait à quelle liste d'order ?
+
+**contexte et portée**
+
+Demande de synthèse ; réponse proposant dix familles fashion, sans accord enregistré sur la liste à ce stade.
+
+
+## U690
+
+**id**
+
+U690
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Examiner la composabilité des Orders
+
+**texte**
+
+Tous les orders sont composables ?
+
+**contexte et portée**
+
+Discussion de la composition des familles, avec contraintes et dépendances ; la composition ne crée pas automatiquement une nouvelle famille.
+
+
+## U691
+
+**id**
+
+U691
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Exprimer une commande logistique comme liste ordonnée
+
+**texte**
+
+Quand on passe une commande de logistique, on peut passer une liste ordonnée d'order, on est ok ?
+
+**contexte et portée**
+
+Proposition d’une demande d’ensemble portant plusieurs Orders et leur enchaînement. La réponse distingue séquence simple, dépendances, parallélisme et conditions ; gestion de la demande dans Service Order Management, réalisation coordonnée dans Fulfilment Orchestration.
+
+
+## U692
+
+**id**
+
+U692
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider et décrire les commandes composées dans le sous-domaine
+
+**texte**
+
+Cette information est importante à décrire dans le sous domaine.
+
+Je valide la proposition
+
+**contexte et portée**
+
+Accord explicite sur la proposition de commande composée discutée immédiatement avant, avec ses contraintes d’enchaînement et la répartition gestion de demande / orchestration. Demande de l’expliciter dans le sous-domaine. Ne vaut pas accord global sur les descriptions des dix familles ni sur tous les arbitrages de l’audit.
+
+
+## U693
+
+**id**
+
+U693
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Clôture de l’audit et backlog unique — U693
+
+**texte**
+
+Tu as enregistré tout ça dans l'audit ou la backlog ?
+
+**contexte et portée**
+
+Demande de statut ; composition appliquée, familles encore proposées.
+
+
+## U694
+
+**id**
+
+U694
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Clôture de l’audit et backlog unique — U694
+
+**texte**
+
+Que reste t-il en suspens dans l’audit ? Je souhaiterais le cloturer
+
+**contexte et portée**
+
+Demande de bilan et de clôture.
+
+
+## U695
+
+**id**
+
+U695
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Clôture de l’audit et backlog unique — U695
+
+**texte**
+
+L'audit commence à ressembler à une backlog vivante. On a une backlog et une seule.
+
+**contexte et portée**
+
+Un seul backlog ; l’audit conserve constats, preuves et conclusions, sans piloter les évolutions.
+
+
+## U696
+
+**id**
+
+U696
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Clôture de l’audit et backlog unique — U696
+
+**texte**
+
+Ok, cloture l'audit et appliquer une release
+
+**contexte et portée**
+
+Autorise la clôture de l’analyse et une release locale du backlog courant. Ne valide pas implicitement les familles proposées ni leurs descriptions. Pas de commit ou push demandé.
+
+
+## U697
+
+**id**
+
+U697
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Vérifier la couverture du transport au-delà des Orders d’entrepôt
+
+**texte**
+
+Les 10 familles d'order sont des order "entrepot". Est ce qu'on couvre le transport ?
+
+**contexte et portée**
+
+Demande d’examen de la couverture transport. Réponse : couverture générique existante, proposition de Transport Order au même niveau que les familles d’entrepôt dans Service Order Management.
+
+## U698
+
+**id**
+
+U698
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Adopter Transport Order dans Service Order Management
+
+**texte**
+
+Je valide ta proposition
+
+**contexte et portée**
+
+Accord sur Transport Order, famille de capacité de Service Order Management portant la demande de déplacement : marchandises et quantités, origine, destination, contraintes de collecte et livraison, conditions de transport, engagements acceptés et suites des écarts. Composable avec Picking et Packing ; Fulfilment Orchestration coordonne l’ensemble, le transporteur organise ses moyens et opérations internes. Une famille sans séparation systématique par mode, transporteur ou type de trajet ; variantes et conditions au catalogue. L’accord n’adopte pas par extension les dix familles encore proposées ni les formulations et comparaisons rédigées après cet accord. Application au backlog ; aucune release, aucun commit ou push demandé.
+
+
+## U699
+
+**id**
+
+U699
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Étudier les variantes métier de Transport Order
+
+**texte**
+
+Il faut réfléchir et étudier les comportements (variantes) du transport. Tu peux faire une recherche et faire une proposition ?
+
+**contexte et portée**
+
+Recherche et proposition de comportements sous Transport Order, après adoption U698. Distinguer variantes de gestion, paramètres de service et opérations internes du transporteur. Propositions dans le backlog unique ; ne rouvre pas l’audit clos, ne valide pas implicitement les nouveaux comportements et ne demande pas de publication.
+
+
+## U700
+
+**id**
+
+U700
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Éprouver plusieurs familles d’Orders pour le transport
+
+**texte**
+
+Si ça mérite d'avoir plusieurs orders pour le transport plutot qu'un order générique, il faut le dire
+
+**contexte et portée**
+
+Élargit l’étude U699 à la maille capacité : ne pas maintenir artificiellement une seule famille si des intentions, résultats et engagements distincts justifient plusieurs Orders. L’accord U698 reste l’état courant ; de nouvelles familles doivent être proposées avec bénéfices, frontières et compromis, sans adoption anticipée.
+
+
+## U701
+
+**id**
+
+U701
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Classer visuellement les capacités des sous-domaines dans Atlas
+
+**texte**
+
+Je pense que c'est une très bonne idée.
+Afin d'éviter dans ATLAS de tout mélanger, je suggère l'ajout d'un attribut "catégorie" ou "classement" avec "caption" ou "display-name" pour afficher des bandeaux "catégorie" dans les sous domaines
+
+**contexte et portée**
+
+Appréciation favorable de la proposition transport précédente, sans lever explicitement la condition métier de Transport Booking Order. Demande d’un attribut de classement avec libellé pour afficher des bandeaux dans les sous-domaines Atlas. Application comme métadonnée de présentation facultative, pas nouveau niveau Domain/Subdomain/Capability/Behavior. Le nom technique, les libellés et affectations initiaux sont des choix d’application proposés. Aucun déploiement des comportements transport ou nouvelle release demandé.
+
+
+## U702
+
+**id**
+
+U702
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Étudier les documents et l’encaissement dans le périmètre Supply
+
+**texte**
+
+Il y a un dernier type de service qui m'interroge : la production documentaire. Facture, bon de reception, doc pour la douane etc. Je me pose la question du processus d'encaissement.
+
+Est-ce  que ces services sont dans le scope de la Supply Chain Managemement ? Merci de vérifier auprès du marché.
+
+**contexte et portée**
+
+Demande de comparaison marché et de proposition de frontière ; aucun nouvel Order ni périmètre adopté.
+
+
+## U703
+
+**id**
+
+U703
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Autoriser l’étude d’un élargissement du périmètre
+
+**texte**
+
+L'étude du marché pourrait nous amener à élargir le scope si c'est perspicace
+
+**contexte et portée**
+
+Le périmètre courant ne constitue pas une exclusion a priori. Évaluer le bénéfice et les responsabilités d’un élargissement ; cette ouverture ne vaut pas adoption de toutes les fonctions financières du processus de bout en bout.
+
+
+## U704
+
+**id**
+
+U704
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Frontière entre orchestration et réalisation des services
+
+**texte**
+
+On reste dans le périmètre de l'orchestration, on doit avoir des order qui pilotent ces flux mais ce n'est pas une obligation de les implémenter dans le domaine. C'est ça ?
+
+**contexte et portée**
+
+Clarification de la frontière : porter les demandes et piloter les flux ne rend pas obligatoire la réalisation des services dans le domaine. Ne vaut pas adoption globale des familles et noms proposés.
+
+
+## U705
+
+**id**
+
+U705
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Suivi de la fin des processus exécutés à distance
+
+**texte**
+
+Si l'order pilote le processus, alors il peut demander le déclenchement du processus d'encaissement qui est exécuté ailleurs. Mais néanmoins, lorsque c'est un processus long, il faut qu'on recoive la notification de fin. Je pense que la captation de l'exécution des processus distants est déjà gérée par Fulfilment Orchestration.
+
+**contexte et portée**
+
+Précise le déclenchement distant et le retour de fin pour un processus long. Vérification du modèle : Operations Tracking et Process Tracking couvrent déjà la captation des résultats ; Process Orchestration coordonne la suite. Service Order Management conserve le cycle et les engagements de la demande. Aucune nouvelle capacité de tracking nécessaire, aucun accord global sur les nouvelles familles.
+
+
+## U706
+
+**id**
+
+U706
+
+**date**
+
+2026-09-24
+
+**titre**
+
+Valider le pilotage et le suivi des processus exécutés à distance
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord sur la réponse à U705 : Process Orchestration coordonne déclenchement, attente et poursuite ; Operations Tracking avec Process Tracking capte avancement et résultats distants ; Service Order Management conserve demande et engagements et actualise le cycle. L’accusé de réception ne vaut pas réalisation ; le retour distingue réussite, résultat partiel et échec. Aucune nouvelle capacité de suivi nécessaire. Cet accord ne vaut pas adoption globale des quatre familles et noms proposés en U702, ni publication.

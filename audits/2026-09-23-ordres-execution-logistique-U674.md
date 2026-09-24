@@ -1,6 +1,8 @@
 # Prestations logistiques et ordres d’exécution — audit U674–U679
 
-23 septembre 2026 — Codex. **Découpage, frontières et convention de maille adoptés par Laurent en U679. Application au modèle canonique en attente.** État étudié : backlog au commit `8816726`, release v022. [Proposition structurée et portée de l’accord](../modeles/backlog/logistics-execution-audit-U674.yaml), comparaison CMP273.
+**Audit clos le 24 septembre 2026 — U696.** Analyse et preuves conservées ; les propositions ci-dessous constituent les conclusions à la clôture, pas une liste de travail active. Le [backlog canonique](../modeles/backlog/model.yaml) reste l’unique modèle de travail ; ses [propositions en annexe](../modeles/backlog/value-added-logistics-review-U686.yaml) portent les arbitrages non appliqués. Clôturer ou publier ne les adopte pas implicitement.
+
+23 septembre 2026 — Codex. **Découpage, frontières et convention de maille adoptés par Laurent en U679. Application au backlog réalisée le 24 septembre 2026 en U682 ; publication inchangée.** État étudié : backlog au commit `8816726`, release v022. [Proposition structurée et portée de l’accord](../modeles/backlog/logistics-execution-audit-U674.yaml), comparaison CMP273.
 
 ## Décision adoptée
 
@@ -35,7 +37,7 @@ Sources primaires consultées le 23 septembre 2026. SAP VAS : passage indexé d�
 
 D07.b Service Task Management tient déjà activations, demandes, réponses, reprises et vérification de fin. Sa responsabilité devra être répartie explicitement dans la cible, sans perte ni création en doublon. Le fait qu’un Order soit formalisé par un ou plusieurs documents ne détermine pas le nombre de capacités métier.
 
-D06.d Process Orchestration et D06.f Process Adaptation Decision décrivent coordination et adaptation. D07.a détermine les prestations ; D07.d suit leur progression ; D07.c rapproche attendu et réalisé ; D06.b rend visible la capacité communiquée. **Le rattachement détaillé de ces capacités n’a pas été présenté dans l’accord U679.** Il reste à instruire lors de l’application.
+D06.d Process Orchestration et D06.f Process Adaptation Decision décrivent coordination et adaptation. D07.a détermine les prestations ; D07.d suit leur progression ; D07.c rapproche attendu et réalisé ; D06.b rend visible la capacité communiquée. Le rattachement détaillé n’était pas inclus dans U679. U682 conserve ces capacités dans Fulfilment, comme choix d’application proposé, et déplace D07.b dans Service Order Management.
 
 D14 Service Catalog doit rendre l’offre concrète : picking, packing, VAS et cross-docking, avec résultats, conditions et niveaux de service. Cette description ne remplace pas les capacités qui gèrent les engagements individuels.
 
@@ -68,7 +70,7 @@ Proposition de frontière pour le cross-docking : Matching arbitre quelles arriv
 
 L’accord U679 porte sur le sous-domaine Service Order Management, les frontières présentées, la maille capacité des familles et leur convention de nommage. Il ne valide pas toutes les descriptions de cet audit, les rattachements existants non présentés, une liste exhaustive des familles ou des pratiques installées.
 
-L’accord est enregistré avec ses valeurs et leur empreinte dans l’annexe YAML. Le modèle canonique et la release v022 restent inchangés à ce stade ; la redistribution des capacités constitue le lot d’application à préparer. Aucun commit, push ou nouvelle publication réalisé.
+L’accord est enregistré avec ses valeurs et leur empreinte dans l’annexe YAML. Le modèle canonique est mis à jour en U682 ; la release v022 reste inchangée. Aucun commit, push ou nouvelle publication réalisé.
 
 
 ## Complément U680/U681 — comportements de Value-Added Service Order
@@ -79,4 +81,20 @@ Ces comportements sont directement rattachés à Value-Added Service Order et re
 
 La section vas_behaviors_U681 de l’annexe précise des définitions, exemples et frontières proposés : ils ne sont pas implicitement adoptés par cet accord. La distinction Repacking / Packing Order reste à expliciter pour éviter de commander deux fois la même prestation. Les sources SAP ELM658 et Oracle ELM661 déjà consultées étayent les familles VAS, mais ne prescrivent pas cette décomposition en comportements de gestion ; le détail du dekitting n’est pas établi dans ces passages.
 
-Accord limité et empreinte enregistrés sous agreement_U681. Modèle canonique et publication inchangés ; aucune réouverture de l’audit historique des comportements.
+Accord limité et empreinte enregistrés sous agreement_U681. Labeling / Relabeling et Repacking sont appliqués au backlog U682. Kitting / Dekitting reste conditionnel dans l’annexe. Publication inchangée ; aucune réouverture de l’audit historique des comportements.
+
+
+## Application U682 — 24 septembre 2026
+
+Le backlog comporte neuf sous-domaines et 63 capacités. Service Order Management contient les quatre familles adoptées et D07.b conservé pour le cycle commun, sous le nom éditorial proposé **Service Order Lifecycle**. Les familles et le cycle sont des capacités sœurs ; aucun niveau de sous-capacité ajouté. Les prestations de réception, transport, humaines ou documentaires restent couvertes par le cycle commun : les quatre familles ne constituent pas un catalogue exhaustif.
+
+Value-Added Service Order contient deux comportements terminaux : **Labeling / Relabeling** et **Repacking**. La condition d’inclusion de Kitting / Dekitting reste à lever ; aucun troisième comportement actif ni accord inconditionnel ajouté. Les définitions développées, exemples et frontières de mise en œuvre restent proposés.
+
+Les identifiants existants et relations de coopération de D07.b sont conservés. Le catalogue rend les prestations explicites ; le lien de conditions de service vers la promesse cible maintenant Order Promising. Les notions Service Order et Task sont clarifiées. Les noms de familles et rattachements validés font l’objet d’une capture distincte ; aucun accord global sur les formulations détaillées. La publication n’a pas été modifiée.
+
+
+## Distinction adoptée U684 — 24 septembre 2026
+
+**Repacking** transforme le conditionnement sans changer la composition de l’ensemble. **Kitting** constitue un ensemble ; **Dekitting** le sépare. La conformité porte respectivement sur le conditionnement ou sur les composants et leurs quantités. Ces prestations peuvent se combiner et un ensemble n’implique pas nécessairement une nouvelle référence article. Les comportements portent les exigences et le suivi des prestations commandées.
+
+Cet accord sémantique est conservé dans agreement_U684 de l’annexe. La condition d’inclusion de Kitting / Dekitting n’était pas soumise dans la réponse validée ; elle reste ouverte. Aucun changement canonique ni publication dans ce complément. Appuis ELM658/ELM661 réutilisés dans leur portée, sans nouvelle comparaison de marché.

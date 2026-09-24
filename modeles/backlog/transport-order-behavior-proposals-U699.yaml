@@ -1,0 +1,287 @@
+id: TRANSPORT-VARIANTS-U699
+status: proposed_not_adopted
+date: '2026-09-24'
+author: Codex
+source_refs:
+- U698
+- U699
+- U700
+parent_capability: service-order-transport
+canonical_authority: modeles/backlog/model.yaml
+method_refs:
+- MOD006
+- U265
+- U389
+- modeles/backlog/behavior-typology.yaml
+decomposition_rationale: Distinguer les engagements par arrêt, par étape, par départ programmé et par conditions de remise.
+  Ces variantes changent la manière de tenir exigences, acceptations, modifications et clôture de l’ordre ; elles ne détaillent
+  ni boutons TMS ni gestes du transporteur. Elles sont terminales et combinables.
+sources:
+- id: ELM685
+  vendor: Oracle
+  reference: MKT20
+  title: 'Order Release: Order Stops'
+  url: https://docs.oracle.com/en/cloud/saas/transportation/26a/otmol/planning/order_manager/or_stops.htm
+  version: 26A
+  locator: Creating a Shipment Stop
+  access: direct
+  consulted_on: '2026-09-24'
+  reformulation: Arrêts intermédiaires, séquence, lieux et services associés à chaque arrêt.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM686
+  vendor: SAP
+  reference: MKT13
+  title: Multi-Pickup, Multi-Drop
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/7194e95ee2e447b9954dc449d3a06971.html
+  version: Version non établie dans le passage indexé
+  locator: Canceling Freight Orders, Canceling Stops
+  access: indexed
+  consulted_on: '2026-09-24'
+  reformulation: Un ordre routier peut comporter plusieurs arrêts ; modification et annulation dépendent de leur avancement.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM687
+  vendor: SAP
+  reference: MKT13
+  title: Transportation Stages and Dates/Times in the Freight Unit
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/9c8fdae3f57b48bc9cf4d5cfae3f130c.html
+  version: 2025 FPS01
+  locator: Transportation Stages
+  access: indexed
+  consulted_on: '2026-09-24'
+  reformulation: Étapes prédéfinies dans la demande distinguées des transbordements ajoutés par la planification.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM688
+  vendor: Oracle
+  reference: MKT20
+  title: Order Movement
+  url: https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/order_movement/order_movement.htm
+  version: 25C
+  locator: Creating an order movement
+  access: indexed
+  consulted_on: '2026-09-24'
+  reformulation: Un déplacement demandé peut être réparti entre plusieurs expéditions sans scinder la demande initiale.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM689
+  vendor: SAP
+  reference: MKT13
+  title: Use of Schedules
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/65978154f98b46c2b77906547c880936.html
+  version: Version non établie dans le passage indexé
+  locator: Features
+  access: indexed
+  consulted_on: '2026-09-24'
+  reformulation: Ordres associés à un départ programmé ; données et capacités reprises, changements du programme signalés.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM690
+  vendor: SAP
+  reference: MKT13
+  title: Ad Hoc Loading
+  url: https://help.sap.com/docs/PRODUCTS/f5d3e1005efd4e86acf9a65abf428082/df9df83274d04a79b186c38eb69e8d5b.html
+  version: 2025 FPS01
+  locator: Business Details
+  access: indexed
+  consulted_on: '2026-09-24'
+  reformulation: Des ordres routiers peuvent être préparés avant l’affectation des marchandises, avec reprise des arrêts d’un
+    programme.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM691
+  vendor: Oracle
+  reference: MKT20
+  title: Set Appointments
+  url: https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/general/appointments.htm
+  version: 25C
+  locator: Introduction ; Order Appointments ; Shipment Stop Appointments
+  access: direct
+  consulted_on: '2026-09-24'
+  reformulation: Le rendez-vous convenu avec le prestataire se distingue de l’horaire calculé ; vérification de compatibilité
+    entre arrêts.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM692
+  vendor: DHL
+  reference: MKT91
+  title: NZ Exporter’s Guide to Last Mile Delivery
+  url: https://www.dhl.com/discover/en-nz/logistics-advice/logistics-insights/last-mile-delivery-solutions
+  version: Page évolutive, édition non indiquée
+  locator: Can customers choose their delivery time? ; What happens if the customer isn’t home?
+  access: indexed
+  consulted_on: '2026-09-24'
+  reformulation: Choix de fenêtres, report ou redirection et solutions après absence du destinataire.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM693
+  vendor: UPS
+  reference: MKT94
+  title: Help and Support Center
+  url: https://www.ups.com/us/en/business-solutions/grow-your-business-solutions
+  version: Page évolutive, édition non indiquée
+  locator: How do I change a delivery I’m receiving?
+  access: indexed
+  consulted_on: '2026-09-24'
+  reformulation: Demande de changement de date ou lieu ; options pouvant être restreintes par l’expéditeur.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM694
+  vendor: SAP
+  reference: MKT13
+  title: Sample Ocean Freight Process for Shippers (Outbound)
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/ca69ceb75dad454bad9bbeb25613b198.html?version=latest
+  version: Version non établie dans le passage indexé
+  locator: Introduction du processus chargeur
+  access: indexed_direct_empty
+  consulted_on: '2026-09-24'
+  reformulation: Le chargeur commence par une pré-réservation de capacité via un ocean freight booking.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM695
+  vendor: DCSA
+  reference: MKT93
+  title: Booking standard
+  url: https://dcsa.org/standards/booking
+  version: Présentation publique évolutive ; version du standard non établie
+  locator: The problem ; The solution
+  access: direct
+  consulted_on: '2026-09-24'
+  reformulation: Échanges de données et suivi du booking d’espace maritime ; distinction avec les Shipping Instructions.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM696
+  vendor: SAP
+  reference: MKT13
+  title: Freight Booking – Confirm
+  url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/2f36056ae9a044bba55bcbad204b7bc5/2ef80c370bc645c19fc266b746d3094f.html
+  version: Version non établie dans le passage indexé
+  locator: 'Service Nodes : TransportationOrderBooking ; BookingCapacity'
+  access: indexed
+  consulted_on: '2026-09-24'
+  reformulation: Confirmation de capacité et de service dans les périodes convenues sous condition de remise à temps des marchandises.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+- id: ELM697
+  vendor: DHL
+  reference: MKT91
+  title: LTL Shipment Solutions
+  url: https://www.dhl.com/gb-en/home/ship/ltl-shipping.html
+  version: Page évolutive, édition non indiquée
+  locator: What’s the difference between LTL, PTL and FTL?
+  access: indexed
+  consulted_on: '2026-09-24'
+  reformulation: Offres distinguant mutualisation de chargement, charge partielle et véhicule complet ; différences de manutentions
+    et délais.
+  limits: Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses
+    et liens, pas de reproduction substantielle.
+proposed_behaviors:
+- name: Multi-Stop Transport
+  definition: Tenir une demande comportant plusieurs lieux de collecte ou livraison, les exigences par arrêt et les suites
+    d’un changement ou d’une réalisation partielle.
+  difference: 'Plusieurs points de résultat : une livraison effectuée ne clôture pas nécessairement l’ensemble de l’ordre.'
+  example: Une tournée dessert trois magasins ; deux sont livrés, le troisième reste à traiter.
+  boundary: L’ordre conserve les arrêts demandés et leurs contraintes. Optimiser la tournée ou décider de sa modification
+    reste dans la coordination ; les tournées internes d’un transporteur ne créent pas ce comportement si FLOW ne les commande
+    pas.
+  sources:
+  - ELM685
+  - ELM686
+- name: Multi-Leg Transport
+  definition: Tenir une demande de transport à plusieurs étapes explicites, avec points de remise, exigences intermédiaires
+    et résultat final convenus.
+  difference: La réalisation d’une étape ou d’un transbordement ne vaut pas livraison finale ; conditions et engagements intermédiaires
+    à préserver.
+  example: Pré-acheminement, traversée maritime puis livraison à l’entrepôt ; exigences de remise précisées aux interfaces.
+  boundary: Variante seulement si les étapes sont exposées dans la prestation confiée. Plusieurs Transport Orders confiés
+    séparément sont une composition pilotée par Fulfilment, pas des sous-Orders obligatoires ni des sous-comportements.
+  sources:
+  - ELM687
+  - ELM688
+- name: Scheduled Transport
+  definition: Tenir une demande rattachée à un départ ou à un service programmé, et les conséquences d’un changement de programme
+    ou d’un départ manqué.
+  difference: L’engagement dépend d’une occurrence de service identifiée ; changer de départ peut nécessiter une nouvelle
+    acceptation.
+  example: La navette entre deux entrepôts part chaque soir ; le lot doit être pris en charge sur le départ convenu.
+  boundary: Décrire le rattachement et ses suites, pas construire les horaires, le réseau ou une tournée. Une simple date
+    demandée ne suffit pas. Deux sources SAP attestent le mécanisme sans consensus interéditeurs.
+  sources:
+  - ELM689
+  - ELM690
+- name: Pickup & Delivery Appointments
+  definition: Tenir les créneaux de collecte ou livraison convenus avec les parties, leurs confirmations, modifications et
+    conséquences sur l’engagement.
+  difference: Distinguer une fenêtre souhaitée, un horaire estimé et un rendez-vous effectivement accepté.
+  example: Un magasin confirme un créneau de réception ; un retard impose de tenir le créneau renégocié.
+  boundary: Aucun Appointment Order systématique. Ne pas recopier la planification de quai ou la décision d’adaptation. Oracle
+    documente aussi la collecte ; DHL étaye surtout la livraison.
+  sources:
+  - ELM691
+  - ELM692
+- name: Delivery Rescheduling & Redirection
+  definition: Tenir les demandes autorisées de report ou changement de lieu de remise et les suites d’une tentative de livraison
+    infructueuse.
+  difference: Une instruction du destinataire peut modifier le résultat convenu ; conserver demande, acceptation et limites
+    données par l’expéditeur.
+  example: Après une absence, le destinataire demande un retrait en point relais ; tenir la nouvelle remise acceptée.
+  boundary: La demande de changement ne vaut ni acceptation ni modification automatique de la promesse commerciale. Fulfilment
+    choisit les adaptations ; Order Management conserve les engagements à satisfaire. Proche du rendez-vous, mais couvre aussi
+    changement de lieu et remise après échec.
+  sources:
+  - ELM692
+  - ELM693
+capacity_alternative:
+  name: Transport Booking Order
+  status: conditional_proposal_not_adopted
+  definition: Gérer une demande autonome de réservation de capacité de transport, sa confirmation, ses changements et sa libération,
+    avant ou indépendamment des instructions détaillées de déplacement.
+  decision: Recommander une capacité distincte si FLOW porte cet engagement de capacité pour lui-même. Si le booking est seulement
+    la prise en charge du même déplacement, rester dans Transport Order et son cycle de vie.
+  distinct_result: Capacité confirmée sur un service, départ ou période ; la confirmation ne prouve pas le déplacement des
+    marchandises.
+  example: Réserver de la place pour un départ maritime de collection, puis préciser les lots effectivement expédiés.
+  source_refs:
+  - ELM694
+  - ELM695
+  - ELM696
+  common: Booking et pré-réservation de capacité sont explicitement documentés.
+  difference: SAP peut confirmer simultanément capacité et prestation ; DCSA décrit un standard maritime d’échanges. Ni indépendance
+    obligatoire de tous les bookings, ni équivalence avec une capacité FLOW prouvée.
+  benefit: Rendre visible un engagement de capacité antérieur à l’expédition détaillée.
+  tradeoff: Éviter de doubler la même commande transport ; lien réservation-utilisation seulement lorsque deux engagements
+    sont réellement gérés.
+  boundaries:
+  - Une allocation interne de ressources reste Matching ; elle n’est pas une réservation commerciale auprès du prestataire.
+  - Un accord-cadre de capacité relève des accords de référence ; ne pas le transformer automatiquement en Order.
+  - Choix de l’offre et coordination des départs restent Fulfilment ; aucun lien un-à-un imposé entre booking et déplacements.
+  open_business_fact: Le domaine FLOW commande-t-il de la capacité transport avant ou indépendamment des instructions détaillées
+    de déplacement ? Aucun fait Beaumanoir déduit des sources marché.
+evaluated_other_splits:
+- candidate: Road / Ocean / Air / Rail Orders
+  position: Pas de capacités distinctes au seul titre du mode ; exigences et variantes de service.
+- candidate: Parcel / Freight / Last-Mile Orders
+  position: Pas de séparation prouvée par la seule taille, destination ou offre transporteur ; particularités de remise couvertes
+    par variantes proposées.
+- candidate: Dedicated / Groupage Transport
+  position: Conditions de service et d’engagement à conserver ; pas de comportement automatique pour le plan de chargement
+    interne. ELM697 étaye l’offre, pas une responsabilité distincte.
+- candidate: Return Transport Order
+  position: Sens du trajet et intention de retour portés par le contexte de la demande ; pas une famille transport supplémentaire
+    par défaut.
+- candidate: Freight Forwarding Order
+  position: Peut porter une organisation de bout en bout chez un prestataire ; corpus actuel insuffisant pour proposer une
+    capacité séparée dans FLOW.
+- candidate: Customs Clearance Order
+  position: Résultat différent du déplacement ; hors étude transport actuelle, ne pas absorber implicitement. Étude propre
+    nécessaire si le domaine doit commander cette prestation.
+not_behaviors:
+- 'Transport point à point standard : socle de la capacité, pas ajout obligatoire'
+- 'Modes, température, suspension sur cintre, urgence : spécifications sauf mécanisme métier distinct démontré'
+- 'Tendering, carrier selection, route optimization : décisions et coordination existantes, pas variantes d’Order'
+- 'Tracking et preuve de livraison : informations mobilisées, sans recopier les capacités de suivi'
+- 'Création/modification/annulation seules : cycle commun, pas comportement par étape CRUD'
+canonical_behavior_changes: false
+audit_reopened: false
+release_changed: false

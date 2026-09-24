@@ -8011,10 +8011,12 @@ terms:
       - CMP189
 - id: TER066
   name: Service Order
-  short_description: Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service
-    Provider](glossary:TER088), lorsqu’une telle formalisation est nécessaire.
-  definition: Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service Provider](glossary:TER088),
-    lorsqu’une telle formalisation est nécessaire.
+  short_description: Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses
+    exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire
+    et son canal d’échange sont distincts de l’engagement de prestation.
+  definition: Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses exigences,
+    les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire et
+    son canal d’échange sont distincts de l’engagement de prestation.
   context: Supply Chain Orchestration ; distinguer intention, engagement, pilotage, résultat et document.
   source_refs:
   - U169
@@ -8031,74 +8033,91 @@ terms:
   - U626
   - U646
   - U650
+  - U679
+  - U681
+  - U682
+  - CMP273
   source_locator:
     path: connaissance/19-glossaire-metier.md
     anchor: ''
   review:
-    state: partial
-    note: Principes issus des décisions citées ; rédaction et comparaisons consolidées U626, sans accord global supplémentaire.
+    state: proposed
+    note: Clarification éditoriale U682 des frontières adoptées ; définition détaillée non approuvée globalement.
   market_comparisons:
   - vendor: TM Forum
-    product: Service Ordering Management
-    source_title: TMF641 Service Ordering Management API REST Specification
-    source_url: https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf
-    source_version: Version 3.0.0, Release 18.5.0, janvier 2019
-    source_locator: 'Pages 5, 8–15 : Service Order ; dates ; dépendances ; états'
-    consulted_on: '2026-09-19'
-    evidence_limits: PDF primaire consulté ; référence télécom historique. Les états et cardinalités TMF ne sont pas adoptés
-      par FLOW.
-    element_name: Service Order
-    element_type: Concept documenté par la source primaire
+    product: Service Order Management
+    element_name: TMFC007
+    element_type: Composant ODA
     relationship: Recouvrement partiel
-    similarities: Actions demandées sur des services.
-    differences: La référence télécom ne définit pas le cycle de chaque prestation Supply. U616 restreint ici Service Order
-      au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
-    flow_position: Service Order désigne dans FLOW le document éventuel formalisant une sollicitation pilotée par une Task
-      ; le cycle complet de Task ne se déduit pas du document.
+    similarities: Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
+    differences: TM Forum et Oracle distinguent demande de prestation et réalisation ; FLOW ne réduit plus Service Order à
+      un document facultatif. Les cycles et canaux natifs ne sont pas transposés.
+    flow_position: Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses
+      exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire
+      et son canal d’échange sont distincts de l’engagement de prestation.
+    source_title: Service Order Management
+    source_url: https://www.tmforum.org/oda/directory/components-map/production/TMFC007
+    source_version: TMFC007 2.0.0 ; date affichée 2024-02-23
+    source_locator: Présentation ; Exposed APIs ; Dependent APIs
+    consulted_on: '2026-09-23'
+    evidence_limits: Analogie télécom, pas standard logistique ; inclut de l’orchestration, donc ne prouve pas une séparation
+      nécessaire entre gestion d’ordres et orchestration.
     status: proposed
     source_refs:
-    - U477
-    - ELM464
-    - CMP193
-    concept_name: Service Order
-    scope_summary: Actions demandées sur des services.
-    approach_summary: Tenir la demande, ses dates et ses réponses.
-  - vendor: Microsoft
-    product: Dynamics 365 Field Service
-    source_title: Work order architecture
-    source_url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture
-    source_version: Documentation évolutive consultée le 19 septembre 2026
-    source_locator: A work order is created ; scheduled ; performed ; reviewed and completed
-    consulted_on: '2026-09-19'
-    evidence_limits: Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
-    element_name: Work Order
-    element_type: Concept documenté par la source primaire
+    - ELM492
+    - CMP273
+    - U682
+    concept_name: TMFC007
+    scope_summary: Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
+    approach_summary: Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses
+      exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire
+      et son canal d’échange sont distincts de l’engagement de prestation.
+    term_choice: 'Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+    definition_choice: Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec
+      ses exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation
+      documentaire et son canal d’échange sont distincts de l’engagement de prestation.
+  - vendor: Oracle
+    product: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+    element_name: Shipment Request / Shipment Confirmation
+    element_type: Échanges amont-exécutant
     relationship: Recouvrement partiel
-    similarities: Travail à réaliser par un intervenant.
-    differences: Work Order vise surtout le terrain et inclut des fonctions plus larges. U616 restreint ici Service Order
-      au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
-    flow_position: Service Order désigne dans FLOW le document éventuel formalisant une sollicitation pilotée par une Task
-      ; le cycle complet de Task ne se déduit pas du document.
+    similarities: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+    differences: TM Forum et Oracle distinguent demande de prestation et réalisation ; FLOW ne réduit plus Service Order à
+      un document facultatif. Les cycles et canaux natifs ne sont pas transposés.
+    flow_position: Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses
+      exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire
+      et son canal d’échange sont distincts de l’engagement de prestation.
+    source_title: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html
+    source_version: Fusion Cloud SCM 25D
+    source_locator: Explanation of callouts, étapes 1 à 3
+    consulted_on: '2026-09-23'
+    evidence_limits: Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
     status: proposed
     source_refs:
-    - U477
-    - ELM397
-    - CMP193
-    concept_name: Work Order
-    scope_summary: Travail à réaliser par un intervenant.
-    approach_summary: Décrire puis planifier et suivre l’intervention.
+    - ELM659
+    - CMP273
+    - U682
+    concept_name: Shipment Request / Shipment Confirmation
+    scope_summary: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+    approach_summary: Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses
+      exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire
+      et son canal d’échange sont distincts de l’engagement de prestation.
+    term_choice: 'Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+    definition_choice: Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec
+      ses exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation
+      documentaire et son canal d’échange sont distincts de l’engagement de prestation.
   market_inspiration:
     choice: Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service Provider](glossary:TER088),
       lorsqu’une telle formalisation est nécessaire.
-    flow_scope: Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service
-      Provider](glossary:TER088), lorsqu’une telle formalisation est nécessaire.
-    flow_approach: Service Order désigne dans FLOW le document éventuel formalisant une sollicitation pilotée par une Task
-      ; le cycle complet de Task ne se déduit pas du document.
+    flow_scope: Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses exigences,
+      les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire
+      et son canal d’échange sont distincts de l’engagement de prestation.
+    flow_approach: Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses
+      exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire
+      et son canal d’échange sont distincts de l’engagement de prestation.
     synthesis:
-    - Actions demandées sur des services. La référence télécom ne définit pas le cycle de chaque prestation Supply. U616 restreint
-      ici Service Order au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
-    - Travail à réaliser par un intervenant. Work Order vise surtout le terrain et inclut des fonctions plus larges. U616
-      restreint ici Service Order au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
+    - Demande, contribution au processus, engagement, réalisation et document restent distincts.
     examples:
     - title: Illustration FLOW
       situation: Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service
@@ -8112,10 +8131,9 @@ terms:
       source_url: https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf
       source_refs:
       - U626
-  notes: La [Task](glossary:TER089) peut produire et transmettre ce document, par exemple un message EDI. Elle porte le pilotage,
-    les reprises et la vérification de fin. Une sollicitation numérique peut être gouvernée sans Service Order. [Purchase
-    Order](glossary:TER070) porte un acte d’achat ; tout Service Order n’en est pas un. Logistic Order est un cas logistique
-    de Service Order.
+  notes: Order Management porte la demande à satisfaire ; Service Order Management tient la prestation confiée ; Fulfilment
+    coordonne sa réalisation. Un acquittement technique ne prouve ni acceptation métier ni réalisation physique. Un ordre
+    peut regrouper plusieurs prestations ; aucune cardinalité universelle imposée.
 - id: TER068
   name: Profitable-to-Promise (PTP)
   short_description: Comparer et sélectionner les scénarios de promesse selon leurs coûts et conséquences économiques, dans
@@ -10222,33 +10240,40 @@ terms:
     status: proposed
 - id: TER089
   name: Task
-  short_description: Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification
-    de son achèvement.
-  definition: Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification
-    de son achèvement.
+  short_description: Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses
+    dépendances. Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements
+    individuels ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant.
+  definition: Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances.
+    Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels
+    ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant.
   context: Supply Chain Orchestration
-  notes: La Task déclenche la sollicitation immédiatement, à une échéance ou sur événement ; elle peut relancer ou mobiliser
-    un service de secours selon les conditions applicables. Elle se termine lorsque la fin du service est vérifiée. Un acquittement
-    technique ne prouve pas cette fin. Elle peut émettre un [Service Order](glossary:TER066) et reste distincte de la demande
-    initiale, du service et de son document.
+  notes: Une Task peut attendre une condition, déclencher une sollicitation et vérifier le résultat de sa contribution. Les
+    réponses et reprises de l’ordre sont tenues par Service Order Management ; l’orchestration coordonne les dépendances et
+    mobilise les adaptations décidées. Un acquittement ne prouve pas une fin physique.
   source_refs:
   - U616
   - U617
   - U626
   - U646
   - U650
+  - U679
+  - U681
+  - U682
+  - CMP273
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u626
   review:
     state: proposed
-    note: Définition et rapprochements proposés pour transcrire les principes cités ; aucun nouveau type de demande implicite.
+    note: Clarification éditoriale U682 des frontières adoptées ; définition détaillée non approuvée globalement.
   market_comparisons:
   - source_url: https://www.omg.org/spec/CMMN/1.1/PDF
     similarities: CMMN distingue le travail associé et la Task qui peut attendre sa fin.
-    differences: Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage FLOW.
-    flow_position: La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste
-      optionnel.
+    differences: La Task FLOW est une contribution à l’orchestration ; U682 sépare la tenue des engagements du Service Order.
+      Les tâches natives de la source ne sont pas un cycle universel FLOW.
+    flow_position: Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances.
+      Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels
+      ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant.
     relationship: Recouvrement partiel
     status: proposed
     vendor: OMG
@@ -10261,7 +10286,9 @@ terms:
     element_type: Concept documenté par une source primaire
     concept_name: Case Management Model and Notation 1.1
     scope_summary: CMMN distingue le travail associé et la Task qui peut attendre sa fin.
-    approach_summary: CMMN distingue le travail associé et la Task qui peut attendre sa fin.
+    approach_summary: Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses
+      dépendances. Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements
+      individuels ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant.
     evidence_limits: Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage
       FLOW. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
     source_refs:
@@ -10270,10 +10297,11 @@ terms:
     - U626
   - source_url: https://docs.camunda.io/docs/components/concepts/job-workers/
     similarities: Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
-    differences: Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours à gouverner
-      explicitement.
-    flow_position: La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste
-      optionnel.
+    differences: La Task FLOW est une contribution à l’orchestration ; U682 sépare la tenue des engagements du Service Order.
+      Les tâches natives de la source ne sont pas un cycle universel FLOW.
+    flow_position: Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances.
+      Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels
+      ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant.
     relationship: Recouvrement partiel
     status: proposed
     vendor: Camunda
@@ -10286,7 +10314,9 @@ terms:
     element_type: Concept documenté par une source primaire
     concept_name: Job workers
     scope_summary: Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
-    approach_summary: Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
+    approach_summary: Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses
+      dépendances. Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements
+      individuels ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant.
     evidence_limits: Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours
       à gouverner explicitement. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
     source_refs:
@@ -10296,15 +10326,14 @@ terms:
   market_inspiration:
     choice: Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification
       de son achèvement.
-    flow_scope: Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification
-      de son achèvement.
-    flow_approach: La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste
-      optionnel.
+    flow_scope: Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances.
+      Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels
+      ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant.
+    flow_approach: Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances.
+      Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels
+      ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant.
     synthesis:
-    - CMMN distingue le travail associé et la Task qui peut attendre sa fin. Le standard autorise aussi des Tasks non bloquantes
-      ; il ne prescrit pas tout le contrat de pilotage FLOW.
-    - Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite. Fin du job et fin de la prestation
-      métier ne sont pas automatiquement identiques ; service de secours à gouverner explicitement.
+    - Demande, contribution au processus, engagement, réalisation et document restent distincts.
     examples:
     - title: Illustration FLOW
       situation: Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "captured_at": "2026-09-23",
+  "captured_at": "2026-09-24",
   "records": [
     {
       "id": "U01",
@@ -5449,6 +5449,206 @@
       "line": 16787,
       "content_sha256": "2c2f0229b707b1f376e56c835c81f3ffe5092cc9a86b4a49c659a3c52cc829db",
       "captured_text": "## U681\n\n**id**\n\nU681\n\n**date**\n\n2026-09-23\n\n**titre**\n\nValider les comportements de Value-Added Service Order\n\n**texte**\n\ngo\n\n**contexte et portée**\n\nAccord sur la proposition immédiatement présentée après U680 : décrire les particularités de gestion de l’ordre par Labeling / Relabeling (exigences, version attendue, conformité), Repacking (modification du conditionnement, consignes, résultat) et Kitting / Dekitting (assemblage ou séparation d’ensembles, composants attendus, écarts), ce dernier conditionné à son inclusion dans le périmètre. Une différence significative de gestion justifie le comportement ; un simple paramètre reste au catalogue. Ne valide pas les gestes physiques, les détails ajoutés ensuite, un catalogue exhaustif ou l’inclusion inconditionnelle du kitting/dekitting. Complément de l’audit avant application du sous-domaine ; aucune release, commit ou push demandé."
+    },
+    {
+      "id": "U682",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u682",
+      "line": 16810,
+      "content_sha256": "9768026a61140cd84347f8df5d2ea350f0973af9d901087a1807f0628b28fda8",
+      "captured_text": "## U682\n\n**id**\n\nU682\n\n**date**\n\n2026-09-24\n\n**titre**\n\nAppliquer les derniers changements de l’audit des ordres de services\n\n**texte**\n\nApplique les derniers changements de l'audit\n\n**contexte et portée**\n\nDemande d’application au backlog des accords U679 et U681 : Service Order Management distinct, familles d’ordres au niveau capacité sans suffixe Management, comportements VAS et frontières avec Order Management, Fulfilment et Service Catalog. Préparer la redistribution des responsabilités existantes sans perte ni duplication ; conserver la condition non levée sur l’inclusion de Kitting / Dekitting. Les noms et responsabilités présentés et validés gardent leur portée ; les définitions détaillées et choix éditoriaux nécessaires à l’application ne deviennent pas globalement approuvés. Aucune release, commit ou push demandé."
+    },
+    {
+      "id": "U683",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u683",
+      "line": 16833,
+      "content_sha256": "b80797cc64216757b1a6ae179c6c6c9a62216d4250338d1627167d64f9cc8834",
+      "captured_text": "## U683\n\n**id**\n\nU683\n\n**date**\n\n2026-09-24\n\n**titre**\n\nDistinguer Kitting / Dekitting et Repacking\n\n**texte**\n\ndiff entre Kitting / Dekitting  et Repacking ?\n\n**contexte et portée**\n\nDemande de clarification : Repacking transforme le conditionnement ; Kitting constitue un ensemble de composants et Dekitting le sépare. La réponse distingue conformité du conditionnement et conformité de composition, précise leur combinaison possible et l’absence de création nécessaire d’une référence article."
+    },
+    {
+      "id": "U684",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u684",
+      "line": 16856,
+      "content_sha256": "69005e90752df76c8d7449d7d6eb90fc30e2a0a8fcc9146cba20d01a412121a8",
+      "captured_text": "## U684\n\n**id**\n\nU684\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la distinction conditionnement et composition\n\n**texte**\n\nOk, je valide\n\n**contexte et portée**\n\nAccord sur la distinction présentée après U683 : Repacking modifie le conditionnement sans changer la composition ; Kitting constitue un ensemble et Dekitting le sépare, avec conformité des composants et quantités. Les prestations peuvent se combiner ; constituer un ensemble ne nécessite pas une nouvelle référence article. Au niveau comportement, décrire exigences et suivi de la prestation commandée. La réponse ne proposait pas de lever la condition d’inclusion de Kitting / Dekitting : cet accord valide le sens présenté, sans extension implicite de périmètre, application nouvelle ou publication."
+    },
+    {
+      "id": "U685",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u685",
+      "line": 16879,
+      "content_sha256": "706df86a1680476bd678b63c2cdff0669799a9b5608c59adc4cf1ea6fa26a9cd",
+      "captured_text": "## U685\n\n**id**\n\nU685\n\n**date**\n\n2026-09-24\n\n**titre**\n\nVérifier la prestation de mise sur cintre\n\n**texte**\n\nMettre sur cintre des vêtements, ça existe ?\n\n**contexte et portée**\n\nQuestion sur l’existence et le vocabulaire marché de la mise sur cintre dans le contexte des VAS et du reconditionnement. Ne constitue pas une demande de création ou un accord de comportement ; aucune réalisation Beaumanoir déduite."
+    },
+    {
+      "id": "U686",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u686",
+      "line": 16902,
+      "content_sha256": "03e71ff3e4140bda24bf4b02c529c5eb8a9697ea3fbc2e7a97cb2cf0747da30d",
+      "captured_text": "## U686\n\n**id**\n\nU686\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la mise sur cintre et demander un inventaire des prestations logistiques à valeur ajoutée\n\n**texte**\n\nJe valide. tu peux faire une recherche exhaustive sur les opérations logistiques à valeur ajoutée ?\n\n**contexte et portée**\n\nAccord sur la proposition présentée après U685 : mise sur cintre comme prestation VAS, exemple de Repacking lorsqu’elle transforme le conditionnement, sans création automatique d’un comportement autonome ni assimilation au kitting. Demande de recherche marché approfondie sur les opérations logistiques à valeur ajoutée. Cet accord ne prévalide pas les familles ou les extensions qui résulteront de la recherche ; aucune réalisation Beaumanoir ni publication déduite."
+    },
+    {
+      "id": "U687",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u687",
+      "line": 16925,
+      "content_sha256": "6269d30dd772cdc855c6b6b213f8dc554e429340bd2250d1d5d292cffbd2bba9",
+      "captured_text": "## U687\n\n**id**\n\nU687\n\n**date**\n\n2026-09-24\n\n**titre**\n\nLimiter les familles de prestations à la fashion et examiner la décomposition de Value-Added Service Order\n\n**texte**\n\nRester à un niveau \"famille\" me parait suffisant.\nNéanmoins il faut filtrer par rapport au métier de la fashion.\nAutre question : Value Added devient un gros fourre tout. Est-ce qu'il ne faut pas découper ?\n\n**contexte et portée**\n\nLaurent demande de conserver une maille de famille et de filtrer la recherche U686 au métier de la fashion. Il questionne le maintien de Value-Added Service Order comme regroupement trop large. Ne constitue pas un accord préalable sur les nouvelles capacités, leur nom, la fusion de Packing/Repacking ou le retrait de Value-Added Service Order."
+    },
+    {
+      "id": "U688",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u688",
+      "line": 16950,
+      "content_sha256": "813577b93c8fc7a2eca9506bffd07dbf45dd2cebc0e8dbfd1b8c26c31939e035",
+      "captured_text": "## U688\n\n**id**\n\nU688\n\n**date**\n\n2026-09-24\n\n**titre**\n\nDistinguer light touch des responsabilités du modèle métier\n\n**texte**\n\nEn termes de vocabulaire, light touch est une sorte de catégorisation logistique qui regroupe les opérations à valeur ajoutée qui sont légères, on est ok ? Du coup ça ne devrait pas apparaitre dans le modèle métier.\nTon avis ?\n\n**contexte et portée**\n\nLaurent propose de considérer light touch comme une qualification logistique des interventions légères, sans en faire une notion structurante du modèle métier, et sollicite un avis. Pas de validation implicite des huit familles proposées U687."
+    },
+    {
+      "id": "U689",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u689",
+      "line": 16974,
+      "content_sha256": "1fb9abae8b8e2bfb4f94a6b347fbf3b0705e426dc6768670a51ec409f98ec829",
+      "captured_text": "## U689\n\n**id**\n\nU689\n\n**date**\n\n2026-09-24\n\n**titre**\n\nPréciser la liste des familles d’Orders\n\n**texte**\n\nDu coup on arriverait à quelle liste d'order ?\n\n**contexte et portée**\n\nDemande de synthèse ; réponse proposant dix familles fashion, sans accord enregistré sur la liste à ce stade."
+    },
+    {
+      "id": "U690",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u690",
+      "line": 16997,
+      "content_sha256": "bc84b48fbe6e97da886f6ec75ed45d9bb1290e2f5f836dfe67289c613e9ca460",
+      "captured_text": "## U690\n\n**id**\n\nU690\n\n**date**\n\n2026-09-24\n\n**titre**\n\nExaminer la composabilité des Orders\n\n**texte**\n\nTous les orders sont composables ?\n\n**contexte et portée**\n\nDiscussion de la composition des familles, avec contraintes et dépendances ; la composition ne crée pas automatiquement une nouvelle famille."
+    },
+    {
+      "id": "U691",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u691",
+      "line": 17020,
+      "content_sha256": "a97ae204a1fa4601010d926c286a337ce9a7edc2a6f80fbf519128df054201fc",
+      "captured_text": "## U691\n\n**id**\n\nU691\n\n**date**\n\n2026-09-24\n\n**titre**\n\nExprimer une commande logistique comme liste ordonnée\n\n**texte**\n\nQuand on passe une commande de logistique, on peut passer une liste ordonnée d'order, on est ok ?\n\n**contexte et portée**\n\nProposition d’une demande d’ensemble portant plusieurs Orders et leur enchaînement. La réponse distingue séquence simple, dépendances, parallélisme et conditions ; gestion de la demande dans Service Order Management, réalisation coordonnée dans Fulfilment Orchestration."
+    },
+    {
+      "id": "U692",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u692",
+      "line": 17043,
+      "content_sha256": "80d820618c059fff627e8ed906760dbde7f8bdc62f4bfe65c6c5b8db20e9cbe6",
+      "captured_text": "## U692\n\n**id**\n\nU692\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider et décrire les commandes composées dans le sous-domaine\n\n**texte**\n\nCette information est importante à décrire dans le sous domaine.\n\nJe valide la proposition\n\n**contexte et portée**\n\nAccord explicite sur la proposition de commande composée discutée immédiatement avant, avec ses contraintes d’enchaînement et la répartition gestion de demande / orchestration. Demande de l’expliciter dans le sous-domaine. Ne vaut pas accord global sur les descriptions des dix familles ni sur tous les arbitrages de l’audit."
+    },
+    {
+      "id": "U693",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u693",
+      "line": 17068,
+      "content_sha256": "67da76dc2232d46e8fef4dbc2b62b14c813c8b120847f6206f60903e519d3db5",
+      "captured_text": "## U693\n\n**id**\n\nU693\n\n**date**\n\n2026-09-24\n\n**titre**\n\nClôture de l’audit et backlog unique — U693\n\n**texte**\n\nTu as enregistré tout ça dans l'audit ou la backlog ?\n\n**contexte et portée**\n\nDemande de statut ; composition appliquée, familles encore proposées."
+    },
+    {
+      "id": "U694",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u694",
+      "line": 17091,
+      "content_sha256": "001c28b5c2e57436f7502078e963493f199886f74e9efb84e6bbfecac4b447b2",
+      "captured_text": "## U694\n\n**id**\n\nU694\n\n**date**\n\n2026-09-24\n\n**titre**\n\nClôture de l’audit et backlog unique — U694\n\n**texte**\n\nQue reste t-il en suspens dans l’audit ? Je souhaiterais le cloturer\n\n**contexte et portée**\n\nDemande de bilan et de clôture."
+    },
+    {
+      "id": "U695",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u695",
+      "line": 17114,
+      "content_sha256": "4926a907b7cbcebf80b2f965e791d151073d5ff7b9a37cf6c5b6cbd49f8b10a1",
+      "captured_text": "## U695\n\n**id**\n\nU695\n\n**date**\n\n2026-09-24\n\n**titre**\n\nClôture de l’audit et backlog unique — U695\n\n**texte**\n\nL'audit commence à ressembler à une backlog vivante. On a une backlog et une seule.\n\n**contexte et portée**\n\nUn seul backlog ; l’audit conserve constats, preuves et conclusions, sans piloter les évolutions."
+    },
+    {
+      "id": "U696",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u696",
+      "line": 17137,
+      "content_sha256": "aca1fd4b77fe37fcabf95b8f7ff395aeb321ee6706cb1763c046d5f657c8bfc8",
+      "captured_text": "## U696\n\n**id**\n\nU696\n\n**date**\n\n2026-09-24\n\n**titre**\n\nClôture de l’audit et backlog unique — U696\n\n**texte**\n\nOk, cloture l'audit et appliquer une release\n\n**contexte et portée**\n\nAutorise la clôture de l’analyse et une release locale du backlog courant. Ne valide pas implicitement les familles proposées ni leurs descriptions. Pas de commit ou push demandé."
+    },
+    {
+      "id": "U697",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u697",
+      "line": 17160,
+      "content_sha256": "b13612e6fa26a3627d8edd64fd1cdec4a5099152cbbdf2520d1689e7ea090f03",
+      "captured_text": "## U697\n\n**id**\n\nU697\n\n**date**\n\n2026-09-24\n\n**titre**\n\nVérifier la couverture du transport au-delà des Orders d’entrepôt\n\n**texte**\n\nLes 10 familles d'order sont des order \"entrepot\". Est ce qu'on couvre le transport ?\n\n**contexte et portée**\n\nDemande d’examen de la couverture transport. Réponse : couverture générique existante, proposition de Transport Order au même niveau que les familles d’entrepôt dans Service Order Management."
+    },
+    {
+      "id": "U698",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u698",
+      "line": 17182,
+      "content_sha256": "8c24aef090efc2fbd9b62e1b3f69cacec5a3566e3832c6d656582c5b3b5eab64",
+      "captured_text": "## U698\n\n**id**\n\nU698\n\n**date**\n\n2026-09-24\n\n**titre**\n\nAdopter Transport Order dans Service Order Management\n\n**texte**\n\nJe valide ta proposition\n\n**contexte et portée**\n\nAccord sur Transport Order, famille de capacité de Service Order Management portant la demande de déplacement : marchandises et quantités, origine, destination, contraintes de collecte et livraison, conditions de transport, engagements acceptés et suites des écarts. Composable avec Picking et Packing ; Fulfilment Orchestration coordonne l’ensemble, le transporteur organise ses moyens et opérations internes. Une famille sans séparation systématique par mode, transporteur ou type de trajet ; variantes et conditions au catalogue. L’accord n’adopte pas par extension les dix familles encore proposées ni les formulations et comparaisons rédigées après cet accord. Application au backlog ; aucune release, aucun commit ou push demandé."
+    },
+    {
+      "id": "U699",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u699",
+      "line": 17205,
+      "content_sha256": "c342829131e2bf45c83b4ceff2cc4833dee5b256279b025f50475a139008c665",
+      "captured_text": "## U699\n\n**id**\n\nU699\n\n**date**\n\n2026-09-24\n\n**titre**\n\nÉtudier les variantes métier de Transport Order\n\n**texte**\n\nIl faut réfléchir et étudier les comportements (variantes) du transport. Tu peux faire une recherche et faire une proposition ?\n\n**contexte et portée**\n\nRecherche et proposition de comportements sous Transport Order, après adoption U698. Distinguer variantes de gestion, paramètres de service et opérations internes du transporteur. Propositions dans le backlog unique ; ne rouvre pas l’audit clos, ne valide pas implicitement les nouveaux comportements et ne demande pas de publication."
+    },
+    {
+      "id": "U700",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u700",
+      "line": 17228,
+      "content_sha256": "c14c6c3597f3f93af7a1bf4aba59f5804c6021fca05523b5ee1844e2b3a23443",
+      "captured_text": "## U700\n\n**id**\n\nU700\n\n**date**\n\n2026-09-24\n\n**titre**\n\nÉprouver plusieurs familles d’Orders pour le transport\n\n**texte**\n\nSi ça mérite d'avoir plusieurs orders pour le transport plutot qu'un order générique, il faut le dire\n\n**contexte et portée**\n\nÉlargit l’étude U699 à la maille capacité : ne pas maintenir artificiellement une seule famille si des intentions, résultats et engagements distincts justifient plusieurs Orders. L’accord U698 reste l’état courant ; de nouvelles familles doivent être proposées avec bénéfices, frontières et compromis, sans adoption anticipée."
+    },
+    {
+      "id": "U701",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u701",
+      "line": 17251,
+      "content_sha256": "72832fb1851e73c69197bb5e4e45a43b4d508a2607a15c73de243fe4f4d3ba83",
+      "captured_text": "## U701\n\n**id**\n\nU701\n\n**date**\n\n2026-09-24\n\n**titre**\n\nClasser visuellement les capacités des sous-domaines dans Atlas\n\n**texte**\n\nJe pense que c'est une très bonne idée.\nAfin d'éviter dans ATLAS de tout mélanger, je suggère l'ajout d'un attribut \"catégorie\" ou \"classement\" avec \"caption\" ou \"display-name\" pour afficher des bandeaux \"catégorie\" dans les sous domaines\n\n**contexte et portée**\n\nAppréciation favorable de la proposition transport précédente, sans lever explicitement la condition métier de Transport Booking Order. Demande d’un attribut de classement avec libellé pour afficher des bandeaux dans les sous-domaines Atlas. Application comme métadonnée de présentation facultative, pas nouveau niveau Domain/Subdomain/Capability/Behavior. Le nom technique, les libellés et affectations initiaux sont des choix d’application proposés. Aucun déploiement des comportements transport ou nouvelle release demandé."
+    },
+    {
+      "id": "U702",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u702",
+      "line": 17275,
+      "content_sha256": "df19ef11ae0e879325d9a7679f45f9ed4bb5045161fe62fcbd19b5806efeaf73",
+      "captured_text": "## U702\n\n**id**\n\nU702\n\n**date**\n\n2026-09-24\n\n**titre**\n\nÉtudier les documents et l’encaissement dans le périmètre Supply\n\n**texte**\n\nIl y a un dernier type de service qui m'interroge : la production documentaire. Facture, bon de reception, doc pour la douane etc. Je me pose la question du processus d'encaissement.\n\nEst-ce  que ces services sont dans le scope de la Supply Chain Managemement ? Merci de vérifier auprès du marché.\n\n**contexte et portée**\n\nDemande de comparaison marché et de proposition de frontière ; aucun nouvel Order ni périmètre adopté."
+    },
+    {
+      "id": "U703",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u703",
+      "line": 17300,
+      "content_sha256": "961b25220b96f8756faefc1a791ccadebe5f2935d9dd40fe3690ba04f7221fe8",
+      "captured_text": "## U703\n\n**id**\n\nU703\n\n**date**\n\n2026-09-24\n\n**titre**\n\nAutoriser l’étude d’un élargissement du périmètre\n\n**texte**\n\nL'étude du marché pourrait nous amener à élargir le scope si c'est perspicace\n\n**contexte et portée**\n\nLe périmètre courant ne constitue pas une exclusion a priori. Évaluer le bénéfice et les responsabilités d’un élargissement ; cette ouverture ne vaut pas adoption de toutes les fonctions financières du processus de bout en bout."
+    },
+    {
+      "id": "U704",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u704",
+      "line": 17323,
+      "content_sha256": "d58ff642330e9036820ff94d77aedda022efc26f5713cbb6c3fe5784c8c04f87",
+      "captured_text": "## U704\n\n**id**\n\nU704\n\n**date**\n\n2026-09-24\n\n**titre**\n\nFrontière entre orchestration et réalisation des services\n\n**texte**\n\nOn reste dans le périmètre de l'orchestration, on doit avoir des order qui pilotent ces flux mais ce n'est pas une obligation de les implémenter dans le domaine. C'est ça ?\n\n**contexte et portée**\n\nClarification de la frontière : porter les demandes et piloter les flux ne rend pas obligatoire la réalisation des services dans le domaine. Ne vaut pas adoption globale des familles et noms proposés."
+    },
+    {
+      "id": "U705",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u705",
+      "line": 17346,
+      "content_sha256": "20b29754b08e6eb5b891eb95dca9bc8189206d1ce191cfd9f26daef94c946813",
+      "captured_text": "## U705\n\n**id**\n\nU705\n\n**date**\n\n2026-09-24\n\n**titre**\n\nSuivi de la fin des processus exécutés à distance\n\n**texte**\n\nSi l'order pilote le processus, alors il peut demander le déclenchement du processus d'encaissement qui est exécuté ailleurs. Mais néanmoins, lorsque c'est un processus long, il faut qu'on recoive la notification de fin. Je pense que la captation de l'exécution des processus distants est déjà gérée par Fulfilment Orchestration.\n\n**contexte et portée**\n\nPrécise le déclenchement distant et le retour de fin pour un processus long. Vérification du modèle : Operations Tracking et Process Tracking couvrent déjà la captation des résultats ; Process Orchestration coordonne la suite. Service Order Management conserve le cycle et les engagements de la demande. Aucune nouvelle capacité de tracking nécessaire, aucun accord global sur les nouvelles familles."
+    },
+    {
+      "id": "U706",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u706",
+      "line": 17369,
+      "content_sha256": "e217d87bebb92292d45ecedb5315f3c9d12c19413e4bf3d0a1c17bbd5663aed7",
+      "captured_text": "## U706\n\n**id**\n\nU706\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider le pilotage et le suivi des processus exécutés à distance\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur la réponse à U705 : Process Orchestration coordonne déclenchement, attente et poursuite ; Operations Tracking avec Process Tracking capte avancement et résultats distants ; Service Order Management conserve demande et engagements et actualise le cycle. L’accusé de réception ne vaut pas réalisation ; le retour distingue réussite, résultat partiel et échec. Aucune nouvelle capacité de suivi nécessaire. Cet accord ne vaut pas adoption globale des quatre familles et noms proposés en U702, ni publication."
     },
     {
       "id": "F001",
@@ -11707,6 +11907,78 @@
       "captured_text": "## MKT85\n\n**Référence :** Nick Tune, réflexion DDD sur Domain/Subdomain/Bounded Context. **Nature :** publication originale de praticien ; point de vue attribué, pas standard. [Article du 25 novembre 2020](https://nick-tune.me/blog/2020-11-25-domain-subdomain-bounded-context-problem-solution-space-in-d/), texte ouvert le 22 septembre 2026, sections Subdomains et frontières problème/solution. ELM634 / CMP265. Rôle : éprouver le caractère relatif du niveau sous-domaine. Synthèse et lien, pas de redistribution intégrale.\n\n**Réexamen U620/U621 — 22 septembre 2026 :** MKT01/03/04/06/07/18/25/26/69/85. Niveaux de regroupement, décomposition et responsabilités comparés dans [l’étude Area](etudes/2026-09-22-area-level.md). ELM633–642 documentent éditions, passages et limites ; TOGAF historique, extraits primaires indexés IBM/LeanIX/Ardoq, autres lectures directes. Pas de nouvelle taxonomie adoptée."
     },
     {
+      "id": "MKT86",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt86",
+      "line": 864,
+      "content_sha256": "a9ed9effc07a5791b478fbe9927ff841f56cc2382f1d120be5d3f75cfc7e340d",
+      "captured_text": "## MKT86\n\n**Référence / organisme :** CEVA, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM667, ELM678. Sources : [Logistics solutions for online returns](https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns), [Device Lifecycle Supply Chain Solutions](https://www.cevalogistics.com/en/your-industry/technology/device-lifecycle-solutions). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686."
+    },
+    {
+      "id": "MKT87",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt87",
+      "line": 869,
+      "content_sha256": "1ddd821f63bc8ae60d6cd65ea471879b5869e9bb2982cba24ed029413156fe69",
+      "captured_text": "## MKT87\n\n**Référence / organisme :** Advanced Supply Chain, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM668, ELM675, ELM676, ELM682. Sources : [Value Added Services in Logistics & Warehousing](https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/), [Garment Cleaning](https://www.advancedsupplychain.com/value-added-services/garment-cleaning/), [RFID](https://advancedsupplychain.com/rfid/), [Metal Detection](https://www.advancedsupplychain.com/metal-detection/). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686."
+    },
+    {
+      "id": "MKT88",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt88",
+      "line": 874,
+      "content_sha256": "1c2c75fe2a76df30c1b06d3e6c9730e1152c231308dcc7fb3c71affd25684f7a",
+      "captured_text": "## MKT88\n\n**Référence / organisme :** Ryder, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM669. Sources : [E-Commerce Services — Value Added Services](https://www.ryder.com/en-us/e-commerce/value-added-services). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686."
+    },
+    {
+      "id": "MKT89",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt89",
+      "line": 879,
+      "content_sha256": "654f7f77f84d2e1d435a6bc065cb4c1082385d1c20be6b10d8aceca15582fc6a",
+      "captured_text": "## MKT89\n\n**Référence / organisme :** Bleckmann, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM670, ELM677. Sources : [Value Added Services](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services), [RESCUE: Circular Fashion Made Simple & Profitable](https://www.bleckmann.com/resources/maximising-the-value-of-apparel-with-rescue-programme). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686."
+    },
+    {
+      "id": "MKT90",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt90",
+      "line": 884,
+      "content_sha256": "279939b5752419c55164db2d6b6fc4d155ed038e05cc4c42d869116b36428570",
+      "captured_text": "## MKT90\n\n**Référence / organisme :** GXO, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM671, ELM672. Sources : [Fashion and apparel](https://gxo.com/industries/fashion-apparel/), [Value-added services](https://gxo.com/supply-chain-mgmt/logistics-services/). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686."
+    },
+    {
+      "id": "MKT91",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt91",
+      "line": 889,
+      "content_sha256": "2eeb6c11eedb86c3e46715aa1411a385e464e0dc5328b5ebe9a268ec7e5baf75",
+      "captured_text": "## MKT91\n\n**Référence / organisme :** DHL, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM673, ELM679. Sources : [Packaging Solutions for Large Businesses](https://www.dhl.com/us-en/home/supply-chain/solutions/packaging.html), [Data center logistics](https://lot.dhl.com/glossary/data-center-logistics/). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686."
+    },
+    {
+      "id": "MKT92",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt92",
+      "line": 894,
+      "content_sha256": "fea6fe367c04b52b87e19f929e21c9d0cffecc402a02ae0d3e34bf7088d8c8f4",
+      "captured_text": "## MKT92\n\n**Référence / organisme :** DSV, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM674, ELM681. Sources : [Supporting core warehouse services](https://www.dsv.com/en-gb/our-solutions/modes-of-transport/value-added-services/warehouse-resources), [Contract logistics](https://www.dsv.com/en-ae/our-solutions/contract-logistics). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686."
+    },
+    {
+      "id": "MKT93",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt93",
+      "line": 899,
+      "content_sha256": "37cafeffe7856f8c49bb6abf5c14d436497bc84effcf872573ad4c3a720d18c5",
+      "captured_text": "## MKT93\n\n**Référence / organisme :** DCSA. **Nature :** Organisme de standardisation des échanges du transport maritime conteneurisé. **Rôle :** éprouver les variantes et frontières de Transport Order. **Source :** [publication primaire](https://dcsa.org/standards/booking), consultée le 24 septembre 2026. **Version :** page évolutive sans édition établie. **Contenu consulté :** passages décrits dans ELM695 pour DCSA et ELM693 pour UPS. **Limites :** Présentation publique du Booking standard seulement ; pas étude du schéma API complet ni généralisation aux autres modes. Synthèses et liens, pas de reproduction intégrale."
+    },
+    {
+      "id": "MKT94",
+      "path": "marche/catalogue.md",
+      "anchor": "mkt94",
+      "line": 904,
+      "content_sha256": "b708d6111b3064dad23b6e56d14c55301e703a41d21e7c5f0b97d035bc2232e4",
+      "captured_text": "## MKT94\n\n**Référence / organisme :** UPS. **Nature :** Prestataire de transport, support client primaire. **Rôle :** éprouver les variantes et frontières de Transport Order. **Source :** [publication primaire](https://www.ups.com/us/en/business-solutions/grow-your-business-solutions), consultée le 24 septembre 2026. **Version :** page évolutive sans édition établie. **Contenu consulté :** passages décrits dans ELM695 pour DCSA et ELM693 pour UPS. **Limites :** Offre et modalités de livraison ; disponibilité soumise aux options expéditeur et au contexte commercial. Synthèses et liens, pas de reproduction intégrale."
+    },
+    {
       "id": "CMP001",
       "path": "marche/comparaisons.md",
       "anchor": "cmp001",
@@ -13839,8 +14111,40 @@
       "path": "marche/comparaisons.md",
       "anchor": "cmp273",
       "line": 2625,
-      "content_sha256": "f5cac0449c3158ab300c71a84a91a255595eeebe3c5aed383742ba051f527a42",
-      "captured_text": "## CMP273\n\nU674/U675 — Codex, 23 septembre 2026. Audit proposé, non adopté. État comparé : backlog au commit 8816726, release 2026-09-23.3 ; empreinte exacte dans [l’audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml). Cibles D04, D06, D07.a–d, D14, D03 et TER066. Sources ELM129, ELM133, ELM492, ELM656–661 : documents natifs et processus logistiques, plus analogie ODA. Correspondances ciblées, différences et adaptations dans la section comparisons de l’annexe ; aucune équivalence globale ni couverture installée déduite.\n\nRecommandation : rendre explicite la gestion des ordres d’exécution dans Fulfilment Orchestration en clarifiant D07.b, enrichir Service Catalog et les descriptions de pilotage avec picking, packing, VAS (light touch précisé par U675) et cross-docking. Le catalogue seul ne tient pas les instances ; un neuvième sous-domaine n’est pas justifié par les seuls types de documents. Conserver les responsabilités existantes d’orchestration, adaptation, tracking et rapprochement ; éviter leur duplication par famille logistique. Les critères de séparation des ordres sont proposés, sans obligation d’un ordre par opération. Execution Order Management est un nom candidat FLOW, pas un consensus attesté. Bénéfice : lisibilité de la prestation confiée et de son résultat ; compromis : articulation explicite avec les tâches internes de l’exécutant. Aucun valideur ni date d’adoption ; modèle canonique inchangé.\n\n\nComplément CMP273 — U676 : comparaison lexicale et de périmètre du regroupement D06 avec ELM662/664 (Logistics Execution SAP) et ELM663 (Supply Chain Execution, brochure Oracle historique 2009), ainsi qu’ELM492/129 (Service Order Management et catalogue TM Forum). Ces preuves attestent des noms voisins, pas un sous-domaine standard Execution Services. Recommandation conservée : distinguer réalisation logistique et pilotage des prestations ; un renommage ou une séparation nécessite un choix de périmètre explicite. Aucun nom adopté.\n\n\nRéexamen CMP273 — U677/U678 et accord U679, 23 septembre 2026 : la recommandation de conserver tous les ordres sous Fulfilment est remplacée. Service Order Management est adopté comme sous-domaine distinct pour les exigences, engagements propres et évolutions des prestations confiées ; Fulfilment Orchestration conserve leur composition, coordination, dépendances et adaptation. Les familles sont au niveau capacité et sans suffixe Management, en cohérence avec Purchase Order et les autres Orders entrants. Les noms présentés sont Picking Order, Packing Order, Value-Added Service Order et Cross-Docking Order, sans liste exhaustive adoptée. Appuis ELM492/129 (nom et distinction catalogue/ordres), ELM133/659 (demande amont/prestation confiée) réutilisés ; ils ne prescrivent pas le découpage FLOW. Bénéfice : même maille pour des responsabilités comparables ; compromis : expliciter les coopérations entre gestion d’engagements et orchestration. Les rattachements détaillés existants restent à instruire. Accord et empreinte dans agreement_U679 de l’annexe ; modèle canonique inchangé.\n\n\nComplément CMP273 — U680/U681 : décomposition descriptive de Value-Added Service Order en variantes de gestion Labeling / Relabeling, Repacking et Kitting / Dekitting, ce dernier conditionné au périmètre retenu. ELM658 (SAP VAS) et ELM661 (Oracle repackaging/kitting) réutilisés comme appuis sémantiques des prestations ; pas preuve de cette maille descriptive ni du détail dekitting. Bénéfice FLOW : distinguer exigences de version, conditionnement et composition, avec leurs écarts. Gestes physiques exclus ; paramètres simples au catalogue. Accord limité aux noms, angles et condition présentés ; nouvelles définitions et exemples proposés dans vas_behaviors_U681, sans application canonique."
+      "content_sha256": "460299dfb1af81208f5a96ab37c2d409d796d7b8063de98aeb719b48510b06d1",
+      "captured_text": "## CMP273\n\nU674/U675 — Codex, 23 septembre 2026. Audit proposé, non adopté. État comparé : backlog au commit 8816726, release 2026-09-23.3 ; empreinte exacte dans [l’audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml). Cibles D04, D06, D07.a–d, D14, D03 et TER066. Sources ELM129, ELM133, ELM492, ELM656–661 : documents natifs et processus logistiques, plus analogie ODA. Correspondances ciblées, différences et adaptations dans la section comparisons de l’annexe ; aucune équivalence globale ni couverture installée déduite.\n\nRecommandation : rendre explicite la gestion des ordres d’exécution dans Fulfilment Orchestration en clarifiant D07.b, enrichir Service Catalog et les descriptions de pilotage avec picking, packing, VAS (light touch précisé par U675) et cross-docking. Le catalogue seul ne tient pas les instances ; un neuvième sous-domaine n’est pas justifié par les seuls types de documents. Conserver les responsabilités existantes d’orchestration, adaptation, tracking et rapprochement ; éviter leur duplication par famille logistique. Les critères de séparation des ordres sont proposés, sans obligation d’un ordre par opération. Execution Order Management est un nom candidat FLOW, pas un consensus attesté. Bénéfice : lisibilité de la prestation confiée et de son résultat ; compromis : articulation explicite avec les tâches internes de l’exécutant. Aucun valideur ni date d’adoption ; modèle canonique inchangé.\n\n\nComplément CMP273 — U676 : comparaison lexicale et de périmètre du regroupement D06 avec ELM662/664 (Logistics Execution SAP) et ELM663 (Supply Chain Execution, brochure Oracle historique 2009), ainsi qu’ELM492/129 (Service Order Management et catalogue TM Forum). Ces preuves attestent des noms voisins, pas un sous-domaine standard Execution Services. Recommandation conservée : distinguer réalisation logistique et pilotage des prestations ; un renommage ou une séparation nécessite un choix de périmètre explicite. Aucun nom adopté.\n\n\nRéexamen CMP273 — U677/U678 et accord U679, 23 septembre 2026 : la recommandation de conserver tous les ordres sous Fulfilment est remplacée. Service Order Management est adopté comme sous-domaine distinct pour les exigences, engagements propres et évolutions des prestations confiées ; Fulfilment Orchestration conserve leur composition, coordination, dépendances et adaptation. Les familles sont au niveau capacité et sans suffixe Management, en cohérence avec Purchase Order et les autres Orders entrants. Les noms présentés sont Picking Order, Packing Order, Value-Added Service Order et Cross-Docking Order, sans liste exhaustive adoptée. Appuis ELM492/129 (nom et distinction catalogue/ordres), ELM133/659 (demande amont/prestation confiée) réutilisés ; ils ne prescrivent pas le découpage FLOW. Bénéfice : même maille pour des responsabilités comparables ; compromis : expliciter les coopérations entre gestion d’engagements et orchestration. Les rattachements détaillés existants restent à instruire. Accord et empreinte dans agreement_U679 de l’annexe ; modèle canonique inchangé.\n\n\nComplément CMP273 — U680/U681 : décomposition descriptive de Value-Added Service Order en variantes de gestion Labeling / Relabeling, Repacking et Kitting / Dekitting, ce dernier conditionné au périmètre retenu. ELM658 (SAP VAS) et ELM661 (Oracle repackaging/kitting) réutilisés comme appuis sémantiques des prestations ; pas preuve de cette maille descriptive ni du détail dekitting. Bénéfice FLOW : distinguer exigences de version, conditionnement et composition, avec leurs écarts. Gestes physiques exclus ; paramètres simples au catalogue. Accord limité aux noms, angles et condition présentés ; nouvelles définitions et exemples proposés dans vas_behaviors_U681, sans application canonique.\n\n\nApplication CMP273 — U682, 24 septembre 2026 : Service Order Management et les quatre familles sont introduits dans le backlog ; D07.b conserve le cycle commun sous le nom proposé Service Order Lifecycle. Labeling / Relabeling et Repacking sont rattachés directement à Value-Added Service Order ; Kitting / Dekitting demeure conditionnel en annexe. Les preuves U674–U676 sont réutilisées, sans revendication de nouvelle consultation ; deux documents primaires au moins figurent sur chaque nouvelle fiche. Les comparaisons distinguent les tâches opérateur et les commandes confiées, et qualifient le découpage FLOW comme adaptation. Les placements détaillés de mise en œuvre, définitions et exemples ne sont pas globalement adoptés. La comparaison est maintenant portée dans les fiches ; aucun produit installé déduit et aucune publication déclenchée.\n\n\nComplément CMP273 — U685 : ELM665 Advanced Supply Chain (Box to Hang) et ELM666 Berry Services (Mise sur cintre, extrait indexé) attestent la prestation et apportent un appui sémantique à Value-Added Service Order / Repacking. Le passage à un conditionnement suspendu est une transformation de présentation, pas la constitution d’un ensemble de composants au sens Kitting discuté. Placement comme exemple de Repacking proposé par Codex, non adopté ; prestations composites des fournisseurs, pas taxonomie de comportements FLOW. Aucune modification canonique."
+    },
+    {
+      "id": "CMP274",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp274",
+      "line": 2647,
+      "content_sha256": "fa04840b943bbaf9f4c42ca984709d193e293a7ea2522d26858f77ef27793f2e",
+      "captured_text": "## CMP274\n\n**Objet :** opérations VAS et frontières de Value-Added Service Order, Repacking, Labeling / Relabeling, Service Catalog et Service Order Management. **État comparé :** backlog après U682, lu le 24 septembre 2026 ; publication inchangée. **Preuves :** ELM667–682, complétées par ELM665/666 et les appuis WMS ELM658/661. **Relation :** recouvrement partiel et appui sémantique, pas équivalence entre catalogue d’exécutant et capacité FLOW.\n\n**Commun :** prestations spécifiées sur des produits, conditionnements et compositions ; besoin de résultats conformes. **Différences :** les prestataires regroupent parfois aussi transport, conseil, photographie ou fin de vie sous VAS ; FLOW distingue demande de prestation, coordination et réalisation physique. Reconditioning est souvent plus large que Repacking. **Proposition et bénéfice :** conserver les familles existantes, examiner finition, nettoyage, réparation, personnalisation et inspection à partir de résultats distincts, plutôt qu’un comportement par geste. **Compromis :** visibilité métier sans recopier un catalogue WMS ; quelques frontières restent à arbitrer.\n\n**Statut :** recherche et recommandations proposées par Codex le 24 septembre 2026, non validées. U686 accepte seulement la mise sur cintre comme exemple conditionnel de Repacking et commande l’étude. Deux sources primaires distinctes sont associées à chaque recommandation dans [l’annexe](../modeles/backlog/value-added-logistics-review-U686.yaml) ; certaines opérations spécialisées ont une preuve unique, explicitée. Ni couverture universelle ni réalisation Beaumanoir. [Rapport](../audits/2026-09-24-operations-logistiques-valeur-ajoutee-U686.md).\n\n\n**CMP274 — réexamen ciblé U687, 24 septembre 2026.** Sources U686 réutilisées, passages et périmètres toujours pertinents. Filtre fashion et proposition de familles Order documentés dans la section `fashion_refinement_U687` de l’annexe. Deux sources par famille, sans prétendre que chaque variante est attestée par les deux. Le marché étaye les prestations ; la promotion de familles au niveau capacité, l’intégration de Repacking dans Packing Order et le retrait éventuel de Value-Added Service Order sont des recommandations FLOW non adoptées. Le Service Catalog conserve le détail et Fulfilment Orchestration les compositions.\n\n\n**CMP273 — précision U692, 24 septembre 2026.** Appuis ELM492 (TM Forum Service Order Management) et ELM659 (Oracle demandes et confirmations logistiques) réutilisés : ils étayent gestion des demandes et fourniture de prestations, sans établir un standard de commande composée de listes ordonnées. La conservation des exigences d’enchaînement par Service Order Management et le pilotage par Fulfilment Orchestration constituent un choix FLOW validé U692, décrit dans la fiche du sous-domaine. Ni nouvelle famille ni nouveau niveau de modèle induit."
+    },
+    {
+      "id": "CMP275",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp275",
+      "line": 2662,
+      "content_sha256": "185ba622f7175cb815990a4659231081bd9f35ca3d61b7119da953867d6dddaa",
+      "captured_text": "## CMP275\n\n**Objet FLOW :** Transport Order (`service-order-transport`), backlog du 24 septembre 2026. **Sources :** ELM683 (SAP S/4HANA 2025 FPS01, Maintain Generic Transportation Order) et ELM684 (Oracle OTM 25C, Order Release), passages consultés le 24 septembre 2026. **Relation :** recouvrement partiel. **Commun :** demande de déplacement, biens concernés et contraintes ; SAP documente création, modification et annulation, Oracle lieux et fenêtres temporelles. **Différences :** catégories de documents SAP et demande/expéditions Oracle ne sont pas une taxonomie de capacités ; aucun engagement de transporteur déduit du seul Order Release. **Position FLOW :** une famille de prestation confiée dans Service Order Management ; Fulfilment coordonne, le transporteur organise ses opérations, les modes restent variantes. **Bénéfice :** visibilité du transport à la même maille que les prestations d’entrepôt. **Compromis :** ne détaille pas toutes les responsabilités internes d’un TMS. **Statut :** famille et frontière adoptées par Laurent U698 le 24 septembre 2026 ; comparaison détaillée proposée par Codex, aucune preuve installée Beaumanoir. **Nom :** Transport Order adopté, voisin de Transportation Order ; pas de traduction universelle d’Order Release. **Définition :** gestion des exigences et engagements du déplacement, pas planification complète ou opération du transporteur."
+    },
+    {
+      "id": "CMP276",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp276",
+      "line": 2667,
+      "content_sha256": "1085c17aa7c0f41ff18858f5aa9a6ba89f6f8804761ef997dd20b939621afe2b",
+      "captured_text": "## CMP276\n\n**État comparé :** backlog du 24 septembre 2026, Transport Order adopté U698. **Question U699/U700 :** variantes de gestion ou plusieurs capacités ? **Sources :** ELM685–697 ; documents primaires SAP, Oracle, DHL, UPS et DCSA, passages et accès consignés. **Relation :** recouvrement partiel et appui sémantique. **Commun :** multi-arrêts, étapes, services programmés, rendez-vous, changements de remise et booking. **Différence :** les sources mêlent demande, planification, documents et services commerciaux ; FLOW décrit la tenue de l’engagement de prestation, la coordination restant dans Fulfilment.\n\n**Proposition Codex :** cinq comportements terminaux combinables sous Transport Order ; Transport Booking Order distinct seulement pour un engagement autonome de capacité. Deux documents primaires par proposition, avec portée de chacun précisée dans [l’annexe du backlog](../modeles/backlog/transport-order-behavior-proposals-U699.yaml). Scheduled Transport repose sur deux documents SAP, sans consensus interéditeurs revendiqué. Une demande transport peut avoir plusieurs étapes sans devenir plusieurs intentions ; inversement réserver de la capacité peut avoir une finalité propre. **Bénéfice :** clarifier les résultats attendus sans copier les écrans TMS. **Compromis :** aucune famille supplémentaire imposée par mode ; couverture du booking dans FLOW reste à qualifier. **Statut :** proposé le 24 septembre 2026, non validé ; auteur Codex. Pas de réalisation Beaumanoir déduite. [Synthèse de recherche](transport-orders-et-variantes-U699.md)."
+    },
+    {
+      "id": "CMP277",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp277",
+      "line": 2674,
+      "content_sha256": "aae74ed87d22597b3914d988f9ee17f0c5731bc13a7a153f79b16bb9963f5dd4",
+      "captured_text": "## CMP277\n\n**État comparé :** backlog du 24 septembre 2026, D14 Service Catalog, D07.b Service Order Lifecycle, Service Order Management et Fulfilment Orchestration. **Sources :** ELM698–705, ASCM, SAP, Oracle et DHL. **Relation :** recouvrement partiel et appui sémantique. **Commun :** documents logistiques, procédures douanières et orchestration de la facturation/paiement contribuent au processus SCM. **Différence :** SCOR décrit le processus de bout en bout ; les éditeurs séparent traitement financier et orchestration. Aucune taxonomie universelle des Orders établie.\n\n**Proposition Codex :** étendre les services orchestrés aux documents, au dédouanement et à la facturation ; encaissement seulement pour une demande active confiée à FLOW. Deux documents primaires distincts au moins par proposition, portées et limites dans [l’annexe du backlog unique](../modeles/backlog/document-financial-services-U702.yaml). **Bénéfice :** rendre explicites résultats, engagements et dépendances au-delà des seuls mouvements physiques. **Compromis :** distinguer production documentaire, procédure et effet financier ; pas d’absorption de toute la Finance ni de création systématique d’Order pour une sortie automatique. **Statut :** proposé, non adopté ; Codex, 2026-09-24 ; aucune preuve de réalisation Beaumanoir. U703 autorise l’étude de l’élargissement, pas son adoption."
     },
     {
       "id": "CMP003",
@@ -19153,6 +19457,334 @@
       "line": 5317,
       "content_sha256": "c026049579cf0ec5abf7a9bc730df6e4a742f9f6e9d09713c620f929aef5613e",
       "captured_text": "### ELM664\n\nMKT13 — [VAS Execution](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/9609b5f9e9304ef6850945b359a1f5d4/3771b65334e6b54ce10000000a174cb4.html?locale=en-US&state=PRODUCTION&version=2025.001). S/4HANA 2025 FPS01 (Feb 2026). Nature : Activité d’exécution dans un périmètre produit. Libellé natif : VAS Execution. Identifiant natif non établi. Consultation le 23 septembre 2026 : Texte primaire indexé, passage En-tête Logistics Execution (LE) ; Purpose ; Process Flow. Reformulation : L’exécution des VAS Orders est documentée sous Logistics Execution, avec travail aux postes et VAS supplémentaires pendant picking/putaway. Limite : Texte primaire indexé consulté. Confirme le rattachement documentaire actuel SAP, sans importer ses frontières dans FLOW. Synthèse sélective et lien. CMP273 / U676 ; [audit structuré](../modeles/backlog/logistics-execution-audit-U674.yaml)."
+    },
+    {
+      "id": "ELM665",
+      "path": "marche/elements.md",
+      "anchor": "elm665",
+      "line": 5322,
+      "content_sha256": "5488414af0a7f62f93bd5f3d5fe709f5bc985649f0bbd584a554780b20c8ffc6",
+      "captured_text": "### ELM665\n\nAdvanced Supply Chain — [Box to Hang](https://advancedsupplychain.com/value-added-services/packing/box-to-hang/). Prestation logistique commercialisée ; édition et date de publication non établies, identifiant natif non établi. Consulté le 24 septembre 2026 : Texte primaire ouvert ; introduction et Our Meticulous Box to Hang Process. Reformulation : Offre de passage de vêtements conditionnés à plat vers des vêtements suspendus ; pose du cintre conforme aux spécifications, avec prestations complémentaires possibles. Limite : Offre composite d’un prestataire ; ne rend ni toutes ses étapes obligatoires ni une nouvelle capacité FLOW nécessaire. Synthèse sélective et lien, sans reproduction substantielle. U685, CMP273."
+    },
+    {
+      "id": "ELM666",
+      "path": "marche/elements.md",
+      "anchor": "elm666",
+      "line": 5327,
+      "content_sha256": "b2cf4bd32a984758be21d2e4875961586786d4a54a00059e478124f3711b9fc9",
+      "captured_text": "### ELM666\n\nBerry Services — [Mise sur cintre](https://www.berryservices.fr/component/spsimpleportfolio/item/357-mise-sur-cintre). Prestation logistique commercialisée ; édition et date de publication non établies, identifiant natif non établi. Consulté le 24 septembre 2026 : Extrait primaire indexé consulté ; ouverture directe en échec. Reformulation : Le prestataire décrit notamment déballage, pose d’un cintre avec indicateur de taille et préparation selon les consignes des acheteurs. Limite : Exemple commercial composite ; corps complet inaccessible, aucune preuve de réalisation Beaumanoir. Synthèse sélective et lien, sans reproduction substantielle. U685, CMP273."
+    },
+    {
+      "id": "ELM667",
+      "path": "marche/elements.md",
+      "anchor": "elm667",
+      "line": 5332,
+      "content_sha256": "c3e9ee6d52296726b7599e96164d3f4d2fdbad04911cfeae686e13aa87ae7821",
+      "captured_text": "### ELM667\n\nMKT86 — [Logistics solutions for online returns](https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès direct. Passage : OUR SERVICES; WHAT MAKES US DIFFERENT. Reformulation : Grading, remise en état, réparation et préparation des retours. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM668",
+      "path": "marche/elements.md",
+      "anchor": "elm668",
+      "line": 5337,
+      "content_sha256": "d9df5f752643909d18e737996d5c17df9459a4a7012283af43b8460ab42233d8",
+      "captured_text": "### ELM668\n\nMKT87 — [Value Added Services in Logistics & Warehousing](https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès direct. Passage : Garment Finishing; Packing; Labelling; Quality Control; Returns and Repairs. Reformulation : Finition textile, recomposition des assortiments, contrôles et retouches. Publication du 31 juillet 2025. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM669",
+      "path": "marche/elements.md",
+      "anchor": "elm669",
+      "line": 5342,
+      "content_sha256": "7875052ca689c6d288b84077d58d1e2ae290bf8348378860424174a010852df1",
+      "captured_text": "### ELM669\n\nMKT88 — [E-Commerce Services — Value Added Services](https://www.ryder.com/en-us/e-commerce/value-added-services). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed_and_direct. Passage : E-commerce Value-Added Services; Apparel Value-Added Services. Reformulation : Liste détaillée des préparations textile et prestations e-commerce. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM670",
+      "path": "marche/elements.md",
+      "anchor": "elm670",
+      "line": 5347,
+      "content_sha256": "d16c7eb28259e654dfccf0cefe7a614198c4322251a6ed146035824e1111f7a4",
+      "captured_text": "### ELM670\n\nMKT89 — [Value Added Services](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed_and_direct. Passage : A complete range; Reconditioning; Personalisation; In-house photo studio. Reformulation : Contrôle, remise en état, personnalisation et photographie aux côtés du packing. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM671",
+      "path": "marche/elements.md",
+      "anchor": "elm671",
+      "line": 5352,
+      "content_sha256": "4fd507c08ad4a236d5126ea9c0bb1365abc55992dfce57d8a85bd2db64162e5e",
+      "captured_text": "### ELM671\n\nMKT90 — [Fashion and apparel](https://gxo.com/industries/fashion-apparel/). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed. Passage : Value-added services; We make it personal. Reformulation : Broderie, cadeaux, kits et présentation de marque. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM672",
+      "path": "marche/elements.md",
+      "anchor": "elm672",
+      "line": 5357,
+      "content_sha256": "7ee0ff2c3b64008dfe4f3a6504a05e19538a29719845514baab7d29eea10c648",
+      "captured_text": "### ELM672\n\nMKT90 — [Value-added services](https://gxo.com/supply-chain-mgmt/logistics-services/). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed. Passage : Value-added services include; Case study. Reformulation : Co-packing, montage promotionnel et réparation ; offre aussi des prestations de gestion. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM673",
+      "path": "marche/elements.md",
+      "anchor": "elm673",
+      "line": 5362,
+      "content_sha256": "e9d985b88cf94c80a6c106e7898f24a6fc07eaeebef265a00da7d95a5a4e0cd5",
+      "captured_text": "### ELM673\n\nMKT91 — [Packaging Solutions for Large Businesses](https://www.dhl.com/us-en/home/supply-chain/solutions/packaging.html). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed_and_direct. Passage : Packaging Execution. Reformulation : Personnalisation tardive, assemblage et kitting associés au packaging. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM674",
+      "path": "marche/elements.md",
+      "anchor": "elm674",
+      "line": 5367,
+      "content_sha256": "d65e27d18a041255d767ac017670af906c6cb047bb271933326e5b6dc7e1fb56",
+      "captured_text": "### ELM674\n\nMKT92 — [Supporting core warehouse services](https://www.dsv.com/en-gb/our-solutions/modes-of-transport/value-added-services/warehouse-resources). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed_and_direct. Passage : Assembly and kitting; Configuration test; Quality inspection and testing; Reworking and co-packing. Reformulation : Assemblage, tests, configuration de matériels et emballages adaptés aux marchés. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM675",
+      "path": "marche/elements.md",
+      "anchor": "elm675",
+      "line": 5372,
+      "content_sha256": "2d57f72ea64308c549a4772080f46bf68c529f780568d1e27f1a21802d862b16",
+      "captured_text": "### ELM675\n\nMKT87 — [Garment Cleaning](https://www.advancedsupplychain.com/value-added-services/garment-cleaning/). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed_and_direct. Passage : Spot Cleaning; Garment Finishing; Ozone Cleaning. Reformulation : Nettoyage ciblé, défroissage et traitement des odeurs proposés par le prestataire. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM676",
+      "path": "marche/elements.md",
+      "anchor": "elm676",
+      "line": 5377,
+      "content_sha256": "fc5ccdebbb98583be5f45f274c66401bce167a6fcbca50dbb40c4ae89592d09a",
+      "captured_text": "### ELM676\n\nMKT87 — [RFID](https://advancedsupplychain.com/rfid/). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed. Passage : Our Comprehensive RFID Labelling Solutions. Reformulation : Pose, encodage, association des données et vérification de lecture des étiquettes. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM677",
+      "path": "marche/elements.md",
+      "anchor": "elm677",
+      "line": 5382,
+      "content_sha256": "9123d6b33a6b1dc9c7994ab7acd0f15a2b17e29fd13df9a06bea11693a9be432",
+      "captured_text": "### ELM677\n\nMKT89 — [RESCUE: Circular Fashion Made Simple & Profitable](https://www.bleckmann.com/resources/maximising-the-value-of-apparel-with-rescue-programme). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed. Passage : So, how does the process work in practice?. Reformulation : Réparations de couture, boutons et fermetures ; tri préalable selon réparabilité. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM678",
+      "path": "marche/elements.md",
+      "anchor": "elm678",
+      "line": 5387,
+      "content_sha256": "80a4cfc414473d8dde72d78bde439c548444b3f5979e9c50bbabc2eb54f11eca",
+      "captured_text": "### ELM678\n\nMKT86 — [Device Lifecycle Supply Chain Solutions](https://www.cevalogistics.com/en/your-industry/technology/device-lifecycle-solutions). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed. Passage : In-Life Replacement & Repair; End-of-Contract Management. Reformulation : Configuration, nettoyage des données, réparation, classement et recyclage des appareils. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM679",
+      "path": "marche/elements.md",
+      "anchor": "elm679",
+      "line": 5392,
+      "content_sha256": "c0d58ecb8c55ea9ed7aafd0e2c3dd684b88ac42eb20ddc86b39e0cc6fbe9d85d",
+      "captured_text": "### ELM679\n\nMKT91 — [Data center logistics](https://lot.dhl.com/glossary/data-center-logistics/). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed. Passage : How does data center logistics handle upgrades and equipment lifecycle management?. Reformulation : Effacement des données et recyclage ou élimination en fin de vie. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM680",
+      "path": "marche/elements.md",
+      "anchor": "elm680",
+      "line": 5397,
+      "content_sha256": "b80b820b9151a6f09c61e2d9435c6e78d713006fcba3de204ddfafccd66cace8",
+      "captured_text": "### ELM680\n\nMKT20 — [Oracle Warehouse Management User’s Guide — Overview](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317761.htm). EBS 12.2. Identifiant natif non établi. Nature : Documentation WMS. Consulté le 24 septembre 2026 ; accès direct. Passage : Oracle Warehouse Management Value Added Services; Reverse Logistics. Reformulation : EBS 12.2 : kitting/dekitting et étiquetage ; reverse logistics séparée incluant remise en état et recyclage. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM681",
+      "path": "marche/elements.md",
+      "anchor": "elm681",
+      "line": 5402,
+      "content_sha256": "2978b75fd3f671c7a0e55a6a8e369d69331f675d705b677c65964f5552a470e6",
+      "captured_text": "### ELM681\n\nMKT92 — [Contract logistics](https://www.dsv.com/en-ae/our-solutions/contract-logistics). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès indexed. Passage : Value-added services; Distribution services. Reformulation : Tests, réparation, assemblage ; installation et white glove dans les prestations à livraison. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM682",
+      "path": "marche/elements.md",
+      "anchor": "elm682",
+      "line": 5407,
+      "content_sha256": "396b405c0eafb99573fb0b1ab8c20214a7aa6343e1ae48d754e4aa4d19c0d07d",
+      "captured_text": "### ELM682\n\nMKT87 — [Metal Detection](https://www.advancedsupplychain.com/metal-detection/). Page évolutive ; édition non indiquée. Identifiant natif non établi. Nature : Publication primaire de prestataire. Consulté le 24 septembre 2026 ; accès direct. Passage : Présentation Metal Detection. Reformulation : Prestation de détection de contaminants métalliques, également décrite dans le panorama ELM668. Limites : Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir. Synthèse et lien uniquement. CMP274 ; détails de couverture dans [la revue U686](../modeles/backlog/value-added-logistics-review-U686.yaml)."
+    },
+    {
+      "id": "ELM683",
+      "path": "marche/elements.md",
+      "anchor": "elm683",
+      "line": 5412,
+      "content_sha256": "92aeb82a32d8fc9c3dd778f9f4a4122ccfaecc0f55e5c1d791b9619420b7a3f8",
+      "captured_text": "### ELM683\n\nMKT13 — [Maintain Generic Transportation Order](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/733c8b37b3f546a1b08750e8aeabb887/9740cb5147dd9d55e10000000a423f68.html). 2025 FPS01 (février 2026). Terme natif : Transportation Order. Nature : objet/interface de produit TMS. Passage : Definition ; Business Context and Use. Reformulation : Une demande crée, modifie ou annule un ordre de transport de différentes catégories, notamment freight order et freight booking. Limites : Texte primaire indexé consulté le 24 septembre 2026 ; ouverture directe sans corps. Opération de service et catégories SAP, pas équivalence de capacité ni découpage FLOW. Synthèse sélective et lien ; aucune reproduction substantielle. CMP275 / U698."
+    },
+    {
+      "id": "ELM684",
+      "path": "marche/elements.md",
+      "anchor": "elm684",
+      "line": 5417,
+      "content_sha256": "af0c13609d8c425a341499658cbf0d5b5841fa5c577ac9f68c7d12e4e23f1be2",
+      "captured_text": "### ELM684\n\nMKT20 — [Order Release](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm). 25C. Terme natif : Order Release. Nature : objet/interface de produit TMS. Passage : Introduction ; Adding Order Releases, fenêtres de collecte/livraison et origine/destination. Reformulation : La demande contient des unités ou lignes à transporter, les lieux et dates, ainsi que des contraintes utilisées pour planifier les expéditions. Limites : Texte primaire ouvert et lu le 24 septembre 2026. L’Order Release exprime la demande de transport ; ne prouve pas à lui seul un engagement de transporteur ni une correspondance un pour un avec les shipments. Synthèse sélective et lien ; aucune reproduction substantielle. CMP275 / U698."
+    },
+    {
+      "id": "ELM685",
+      "path": "marche/elements.md",
+      "anchor": "elm685",
+      "line": 5422,
+      "content_sha256": "99701d3a5d86efdc62933b5ee3686655f726325e44bce687ac512f627fe25758",
+      "captured_text": "### ELM685\n\nMKT20 — [Order Release: Order Stops](https://docs.oracle.com/en/cloud/saas/transportation/26a/otmol/planning/order_manager/or_stops.htm). 26A. Consultation le 24 septembre 2026, accès direct. Passage : Creating a Shipment Stop. Identifiant natif non établi ; titre natif conservé. Reformulation : Arrêts intermédiaires, séquence, lieux et services associés à chaque arrêt. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM686",
+      "path": "marche/elements.md",
+      "anchor": "elm686",
+      "line": 5427,
+      "content_sha256": "e03522afb0cd05c8e80d7bc85fe88152ac2790c214bdf5d46ddc84186311c3da",
+      "captured_text": "### ELM686\n\nMKT13 — [Multi-Pickup, Multi-Drop](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/7194e95ee2e447b9954dc449d3a06971.html). Version non établie dans le passage indexé. Consultation le 24 septembre 2026, accès indexed. Passage : Canceling Freight Orders, Canceling Stops. Identifiant natif non établi ; titre natif conservé. Reformulation : Un ordre routier peut comporter plusieurs arrêts ; modification et annulation dépendent de leur avancement. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM687",
+      "path": "marche/elements.md",
+      "anchor": "elm687",
+      "line": 5432,
+      "content_sha256": "c10bc2ec9d8cd5cc47c685f850012d5f392ab0c1123baed47902255adaa2b6dd",
+      "captured_text": "### ELM687\n\nMKT13 — [Transportation Stages and Dates/Times in the Freight Unit](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/9c8fdae3f57b48bc9cf4d5cfae3f130c.html). 2025 FPS01. Consultation le 24 septembre 2026, accès indexed. Passage : Transportation Stages. Identifiant natif non établi ; titre natif conservé. Reformulation : Étapes prédéfinies dans la demande distinguées des transbordements ajoutés par la planification. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM688",
+      "path": "marche/elements.md",
+      "anchor": "elm688",
+      "line": 5437,
+      "content_sha256": "3be940d21e01fce010e8eb2f8e91ddd0735c57923f857a9d582f5039b87a9c2d",
+      "captured_text": "### ELM688\n\nMKT20 — [Order Movement](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/order_movement/order_movement.htm). 25C. Consultation le 24 septembre 2026, accès indexed. Passage : Creating an order movement. Identifiant natif non établi ; titre natif conservé. Reformulation : Un déplacement demandé peut être réparti entre plusieurs expéditions sans scinder la demande initiale. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM689",
+      "path": "marche/elements.md",
+      "anchor": "elm689",
+      "line": 5442,
+      "content_sha256": "84a481087dd3627c2dc51099aae784a1ea1c77a538be9844435c1a4d844cb3f1",
+      "captured_text": "### ELM689\n\nMKT13 — [Use of Schedules](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/65978154f98b46c2b77906547c880936.html). Version non établie dans le passage indexé. Consultation le 24 septembre 2026, accès indexed. Passage : Features. Identifiant natif non établi ; titre natif conservé. Reformulation : Ordres associés à un départ programmé ; données et capacités reprises, changements du programme signalés. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM690",
+      "path": "marche/elements.md",
+      "anchor": "elm690",
+      "line": 5447,
+      "content_sha256": "e77ee4a6b3a8c423fb13c1778f688170aa742fc44f99b6ec14a8cb2f3d9e7c69",
+      "captured_text": "### ELM690\n\nMKT13 — [Ad Hoc Loading](https://help.sap.com/docs/PRODUCTS/f5d3e1005efd4e86acf9a65abf428082/df9df83274d04a79b186c38eb69e8d5b.html). 2025 FPS01. Consultation le 24 septembre 2026, accès indexed. Passage : Business Details. Identifiant natif non établi ; titre natif conservé. Reformulation : Des ordres routiers peuvent être préparés avant l’affectation des marchandises, avec reprise des arrêts d’un programme. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM691",
+      "path": "marche/elements.md",
+      "anchor": "elm691",
+      "line": 5452,
+      "content_sha256": "cd47270c1325ecd94bbb64088375cf7c8ec6e36c4a2c053f59c6f4642f6b4f7b",
+      "captured_text": "### ELM691\n\nMKT20 — [Set Appointments](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/general/appointments.htm). 25C. Consultation le 24 septembre 2026, accès direct. Passage : Introduction ; Order Appointments ; Shipment Stop Appointments. Identifiant natif non établi ; titre natif conservé. Reformulation : Le rendez-vous convenu avec le prestataire se distingue de l’horaire calculé ; vérification de compatibilité entre arrêts. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM692",
+      "path": "marche/elements.md",
+      "anchor": "elm692",
+      "line": 5457,
+      "content_sha256": "0957c33f9477b3581f4b9509e2e60025f53828051407c410ba6bc854822008de",
+      "captured_text": "### ELM692\n\nMKT91 — [NZ Exporter’s Guide to Last Mile Delivery](https://www.dhl.com/discover/en-nz/logistics-advice/logistics-insights/last-mile-delivery-solutions). Page évolutive, édition non indiquée. Consultation le 24 septembre 2026, accès indexed. Passage : Can customers choose their delivery time? ; What happens if the customer isn’t home?. Identifiant natif non établi ; titre natif conservé. Reformulation : Choix de fenêtres, report ou redirection et solutions après absence du destinataire. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM693",
+      "path": "marche/elements.md",
+      "anchor": "elm693",
+      "line": 5462,
+      "content_sha256": "4a70db3506475565b477a3bbdd374c09a903b77ee21c60bb22568b05662992e7",
+      "captured_text": "### ELM693\n\nMKT94 — [Help and Support Center](https://www.ups.com/us/en/business-solutions/grow-your-business-solutions). Page évolutive, édition non indiquée. Consultation le 24 septembre 2026, accès indexed. Passage : How do I change a delivery I’m receiving?. Identifiant natif non établi ; titre natif conservé. Reformulation : Demande de changement de date ou lieu ; options pouvant être restreintes par l’expéditeur. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM694",
+      "path": "marche/elements.md",
+      "anchor": "elm694",
+      "line": 5467,
+      "content_sha256": "8e7b9ac60b32276f99e68aa427d31e34df32ff6b9d4a27959d36266c8df0738e",
+      "captured_text": "### ELM694\n\nMKT13 — [Sample Ocean Freight Process for Shippers (Outbound)](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/e3dc5400c1cc41d1bc0ae0e7fd9aa5a2/ca69ceb75dad454bad9bbeb25613b198.html?version=latest). Version non établie dans le passage indexé. Consultation le 24 septembre 2026, accès indexed_direct_empty. Passage : Introduction du processus chargeur. Identifiant natif non établi ; titre natif conservé. Reformulation : Le chargeur commence par une pré-réservation de capacité via un ocean freight booking. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM695",
+      "path": "marche/elements.md",
+      "anchor": "elm695",
+      "line": 5472,
+      "content_sha256": "15e869082862e89d0c71bd916b00d2aea4b94af7a3ad9ccbc737119843f17616",
+      "captured_text": "### ELM695\n\nMKT93 — [Booking standard](https://dcsa.org/standards/booking). Présentation publique évolutive ; version du standard non établie. Consultation le 24 septembre 2026, accès direct. Passage : The problem ; The solution. Identifiant natif non établi ; titre natif conservé. Reformulation : Échanges de données et suivi du booking d’espace maritime ; distinction avec les Shipping Instructions. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM696",
+      "path": "marche/elements.md",
+      "anchor": "elm696",
+      "line": 5477,
+      "content_sha256": "02a84b029c3f409f70ff406cea9830aa495f835b20845ad013b0085a36bb7a26",
+      "captured_text": "### ELM696\n\nMKT13 — [Freight Booking – Confirm](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/2f36056ae9a044bba55bcbad204b7bc5/2ef80c370bc645c19fc266b746d3094f.html). Version non établie dans le passage indexé. Consultation le 24 septembre 2026, accès indexed. Passage : Service Nodes : TransportationOrderBooking ; BookingCapacity. Identifiant natif non établi ; titre natif conservé. Reformulation : Confirmation de capacité et de service dans les périodes convenues sous condition de remise à temps des marchandises. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM697",
+      "path": "marche/elements.md",
+      "anchor": "elm697",
+      "line": 5482,
+      "content_sha256": "8814578be87bee4b724fee94a8d2d22d797c6bc02dafd0eef62abaf6d651abf0",
+      "captured_text": "### ELM697\n\nMKT91 — [LTL Shipment Solutions](https://www.dhl.com/gb-en/home/ship/ltl-shipping.html). Page évolutive, édition non indiquée. Consultation le 24 septembre 2026, accès indexed. Passage : What’s the difference between LTL, PTL and FTL?. Identifiant natif non établi ; titre natif conservé. Reformulation : Offres distinguant mutualisation de chargement, charge partielle et véhicule complet ; différences de manutentions et délais. Limite : Documentation produit ou offre publiée ; pas de preuve Beaumanoir ni de taxonomie universelle des capacités. Extraits/synthèses et liens, pas de reproduction substantielle. CMP276, U699/U700."
+    },
+    {
+      "id": "ELM698",
+      "path": "marche/elements.md",
+      "anchor": "elm698",
+      "line": 5487,
+      "content_sha256": "7ab2b89f27f9499333b92139db8744c48d998b1773d64cfddebd5c936e560938",
+      "captured_text": "### ELM698\n\nMKT56 — [Your Comprehensive Guide to Supply Chain Solutions for Improved Operations](https://www.ascm.org/ascm-insights/supply-chain-solutions-for-improved-operations/). Édition : 2026-07-10. Consultation : 2026-09-24 ; accès indexed_direct_error. Passage : What is SCOR?. Identifiant natif non établi. Reformulation : SCOR couvre les interactions depuis la commande jusqu’à la facture payée. Cadre de processus de bout en bout, sans prescription de frontières de domaines. Limites : Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir. CMP277, U702/U703."
+    },
+    {
+      "id": "ELM699",
+      "path": "marche/elements.md",
+      "anchor": "elm699",
+      "line": 5492,
+      "content_sha256": "758c41c43b218d71af51f215d037e089dc7244d295780917e2beb7f7143db71a",
+      "captured_text": "### ELM699\n\nMKT20 — [Overview of Executing Shipping Documents](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famlo/overview-of-executing-shipping-documents.html). Édition : 25D. Consultation : 2026-09-24 ; accès direct. Passage : Overview. Identifiant natif non établi. Reformulation : Shipping génère des documents, dont packing slip et commercial invoice, liés à l’expédition. Limites : Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir. CMP277, U702/U703."
+    },
+    {
+      "id": "ELM700",
+      "path": "marche/elements.md",
+      "anchor": "elm700",
+      "line": 5497,
+      "content_sha256": "b65e1e46252a3b83f481322973e1712d4276fc96f6a09e3cb5cfc16bd772e08e",
+      "captured_text": "### ELM700\n\nMKT13 — [Goods Receipt Slip (WE_SCHEINVERS2)](https://help.sap.com/docs/SAP_ERP/36ce973bca7242118fba2bee0511f4d6/8edae4535dd4414de10000000a174cb4.html). Édition : ERP 6.0 EHP8. Consultation : 2026-09-24 ; accès indexed. Passage : Purpose. Identifiant natif non établi. Reformulation : Le bon de réception est imprimable lors de la comptabilisation du mouvement de réception ; il en constitue un justificatif. Limites : Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir. CMP277, U702/U703."
+    },
+    {
+      "id": "ELM701",
+      "path": "marche/elements.md",
+      "anchor": "elm701",
+      "line": 5502,
+      "content_sha256": "c8b8709469edbdf2d852fc15cbd76c2aeabc514248eee4d9f9591fe0fc993cf7",
+      "captured_text": "### ELM701\n\nMKT20 — [How Order-to-Cash Works in Order Management](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/how-order-to-cash-works-in-order-management.html). Édition : 26A. Consultation : 2026-09-24 ; accès direct. Passage : Steps 3–5. Identifiant natif non établi. Reformulation : L’orchestration demande la facturation à Receivables et attend sa réponse ; Financials crée la facture et traite les paiements. Le processus traverse les responsabilités. Limites : Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir. CMP277, U702/U703."
+    },
+    {
+      "id": "ELM702",
+      "path": "marche/elements.md",
+      "anchor": "elm702",
+      "line": 5507,
+      "content_sha256": "e8c97278f5f6649f0f2f5685028ce17257ec49b960fb3348c6c199c9956616cf",
+      "captured_text": "### ELM702\n\nMKT13 — [Manual Incoming Payments](https://help.sap.com/docs/SAP_BUSINESS_BYDESIGN/2754875d2d2a403f95e58a41a9c7d6de/2c25dd46722d1014880ed85ecdf0cc88.html?locale=en-US). Édition : August 2026. Consultation : 2026-09-24 ; accès indexed. Passage : Overview. Identifiant natif non établi. Reformulation : Les encaissements relèvent des comptes clients, de la gestion des paiements et de la liquidité ; le rapprochement avec les créances fait partie du traitement financier. Limites : Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir. CMP277, U702/U703."
+    },
+    {
+      "id": "ELM703",
+      "path": "marche/elements.md",
+      "anchor": "elm703",
+      "line": 5512,
+      "content_sha256": "dd883ca93db3ba1aa35dce2e071a9dee2ed5bbfd8e25120b0e1dcec5158b0238",
+      "captured_text": "### ELM703\n\nMKT91 — [Customs Services](https://www.dhl.com/us-en/home/global-forwarding/products-and-solutions/customs-services.html). Édition : Page évolutive sans édition. Consultation : 2026-09-24 ; accès indexed. Passage : FAQ: customs services and customs broker. Identifiant natif non établi. Reformulation : Le service douanier couvre dédouanement, documentation et conformité. Il dépasse la seule production documentaire ; les autorités décident du dédouanement. Limites : Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir. CMP277, U702/U703."
+    },
+    {
+      "id": "ELM704",
+      "path": "marche/elements.md",
+      "anchor": "elm704",
+      "line": 5517,
+      "content_sha256": "6c5edf8c209312afa117fe71830a353d53fec9df931b75cb449b493cf90de6b3",
+      "captured_text": "### ELM704\n\nMKT13 — [Creating Documents — Customs Management](https://help.sap.com/docs/SAP_GLOBAL_TRADE_SERVICES/bdb1d2fb216941a69f6300006343e977/4c9ab10f125a0780e10000000a42189b.html). Édition : Version non établie. Consultation : 2026-09-24 ; accès indexed_direct_empty. Passage : Creating customs declarations and customs shipments. Identifiant natif non établi. Reformulation : Customs Management utilise les données logistiques du système source pour construire les documents des procédures douanières. Limites : Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir. CMP277, U702/U703."
+    },
+    {
+      "id": "ELM705",
+      "path": "marche/elements.md",
+      "anchor": "elm705",
+      "line": 5522,
+      "content_sha256": "fdfe55bf04466214553cb5cb93bdb163455035866020c773631c0d72bd6d6195",
+      "captured_text": "### ELM705\n\nMKT20 — [Overview of Setting Up Credit Cards](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/overview-of-setting-up-credit-cards.html). Édition : 26B. Consultation : 2026-09-24 ; accès direct. Passage : Overview and integration. Identifiant natif non établi. Reformulation : Order Management mobilise Oracle Payments pour le traitement carte ; l’autorisation peut venir du système amont avec Financials. Intégration explicite, pas propriété de toute la finance dans Order Management. Limites : Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle des Orders ni déploiement Beaumanoir. CMP277, U702/U703."
     },
     {
       "id": "ELM003",

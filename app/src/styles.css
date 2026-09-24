@@ -268,3 +268,7 @@ select { border: 1px solid var(--line); background: white; border-radius: 6px; p
   .workspace-header .view-bar { margin-bottom: 10px; }
   .workspace-header .view-tabs button { padding-top: 8px; padding-bottom: 9px; }
 }
+
+/* Published category bands are visual sections, not additional business nodes. */
+.category-banner { box-sizing: border-box; width: 100%; height: 40px; display: flex; align-items: center; padding: 0 14px; border-radius: 8px; background: #d9f2ea; color: #174b43; font-size: 15px; font-weight: 700; border-left: 4px solid #236159; }
+.category-list-banner { padding: 8px 10px; margin: 8px 0 4px; background: #d9f2ea; color: #174b43; border-radius: 5px; font-size: 12px; font-weight: 700; line-height: 1.4; }

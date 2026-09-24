@@ -10,7 +10,7 @@ Origine des demandes : **Frontoffice** désigne une sollicitation externe au Dom
 
 | Repère | Nom | Niveau | Contenu direct | Statut |
 | --- | --- | --- | --- | --- |
-| universe-supply | Supply Chain Orchestration | Domain | Master Data, Policies, Plans, Order Management, Inventory Management, Order Promising, Demand & Supply Matching, Fulfilment Orchestration | En cours d’instruction — portée : name, definition |
+| universe-supply | Supply Chain Orchestration | Domain | Master Data, Policies, Plans, Order Management, Inventory Management, Order Promising, Demand & Supply Matching, Fulfilment Orchestration, Service Order Management | En cours d’instruction — portée : name, definition |
 
 Les groupes de présentation conservent leur rôle distinct des niveaux de décomposition métier.
 
@@ -29,7 +29,8 @@ La Supply Chain Orchestration est l’organe de régulation qui organise et adap
 | D01 | Inventory Management | Sous-domaine | En cours d’instruction — portée : name |
 | D18 | Order Promising | Sous-domaine | En cours d’instruction — portée : definition, name |
 | D03 | Demand & Supply Matching | Sous-domaine | En cours d’instruction — portée : name |
-| D06 | Fulfilment Orchestration | Sous-domaine | En cours d’instruction — portée : name |
+| D06 | Fulfilment Orchestration | Sous-domaine | En cours d’instruction — portée : name, definition |
+| subdomain-service-orders | Service Order Management | Sous-domaine | En cours d’instruction — portée : name, definition |
 
 
 ## business-references — Master Data
@@ -177,14 +178,13 @@ Statut : **En cours d’instruction — portée : name**.
 
 ## D06 — Fulfilment Orchestration
 
-Statut : **En cours d’instruction — portée : name**.
+Statut : **En cours d’instruction — portée : name, definition**.
 
-Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats, et rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching.
+Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent la promesse et les équilibres du Matching.
 
 | Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- |
 | D06.b | Service Capacity Visibility | knowledge | En cours d’instruction — portée : name | Rendre visible la capacité opérationnelle communiquée par les exécutants, avec son contexte, sa période et sa fraîcheur, pour alimenter les décisions Supply. | Donner à D03, à D04 et aux décisions d’exécution une connaissance exploitable des capacités annoncées par les exécutants. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D07.b | Service Task Management | management | En cours d’instruction | Gouverner les Tasks qui sollicitent des services, depuis leurs conditions d’activation jusqu’à la vérification de leur fin, en tenant les demandes adressées, les réponses et les reprises nécessaires. | Assurer une sollicitation robuste et traçable des services jusqu’au résultat attendu. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D07.c | Service Reconciliation | action | En cours d’instruction | Rapprocher les résultats constatés des prestations attendues, qualifier les écarts et fournir les faits utiles aux sous-domaines consommateurs. | Expliquer les écarts de réalisation et alimenter le rapprochement des Orders sans confondre leurs reliquats. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D07.d | Operations Tracking | knowledge | En cours d’instruction — portée : name | Suivre les faits, jalons, estimations et résultats encore attendus des prestations pendant leur réalisation. | Donner une connaissance actualisée de l’exécution pour anticiper les écarts et permettre l’adaptation. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D06.d | Process Orchestration | orchestration | En cours d’instruction — portée : name, definition | Coordonner les prestations et leurs dépendances. | Coordonner la réalisation du plan retenu entre les exécutants. | Validé par l’urbaniste — portée : source_id, target_id, type |
@@ -247,6 +247,21 @@ Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors d
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | plans-ingestion | Plan Ingestion | action | Projection | En cours d’instruction — portée : name | Recevoir et intégrer les Supply et Demand Plans fournis par l’APS externe, avec leur origine, horizon, version et statut. Supply Plan désigne les prévisions d’entrées ou de sorties de stock hors achats. | Fournir des données prévisionnelles fiables aux décisions Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | plans-visibility | Plan Visibility | knowledge | Domain-View | En cours d’instruction — portée : name | Rendre consultables les projections de demande et de mouvements de stock hors achats, leurs versions, dates, conditions et fraîcheur pour éclairer la promesse et le Matching. | Fournir des données prévisionnelles fiables aux décisions Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
+
+## subdomain-service-orders — Service Order Management
+
+Statut : **En cours d’instruction — portée : name, definition**.
+
+Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+
+| Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
+| --- | --- | --- | --- | --- | --- | --- |
+| D07.b | Service Order Lifecycle | management | En cours d’instruction | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. | Conserver des engagements de prestation traçables jusqu’à leur conclusion sans confondre activation, acceptation et réalisation. | En cours d’instruction |
+| service-order-picking | Picking Order | action | En cours d’instruction — portée : name | Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-packing | Packing Order | action | En cours d’instruction — portée : name | Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-vas | Value-Added Service Order | action | En cours d’instruction — portée : name | Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-cross-docking | Cross-Docking Order | action | En cours d’instruction — portée : name | Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-transport | Transport Order | action | En cours d’instruction — portée : name, definition | Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts. | Tenir une demande de déplacement et ses engagements en cohérence avec les autres prestations logistiques. | En cours d’instruction — portée : source_id, target_id, type |
 
 **Justification de la décomposition — D01.d :** Établir une référence complète sur un périmètre, entretenir la fiabilité par contrôles récurrents et répondre rapidement à une situation ciblée correspondent à trois politiques ou variantes métier, avec des bénéfices distincts. Les mêmes responsabilités de rapprochement et de correction justifiée sont mobilisées ; les interfaces et outils de comptage ne créent pas de comportement supplémentaire.
 
@@ -516,6 +531,17 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | BHV063 | Consumption-Based Ownership Transfer | En cours d’instruction — portée : name, definition | Appliquer le transfert de propriété lors de la vente ou consommation prévue par l’accord. |
 | BHV064 | Aging-Based Ownership Transfer | En cours d’instruction — portée : name, definition | Appliquer l’acquisition à l’échéance d’une durée contractuelle. |
 | BHV065 | Consignment Exit | En cours d’instruction — portée : name, definition | Prendre en charge une sortie autorisée de la consignation ou de la détention : reprise fournisseur, orientation vers un soldeur, seconde main ou destruction selon l’accord et la décision retenue. |
+
+**Justification de la décomposition — service-order-vas :** Distinguer les variantes dont les exigences et écarts de conformité changent la gestion de l’ordre : information et version appliquées pour l’étiquetage, transformation du conditionnement existant pour le reconditionnement. Ce sont des variantes de prise en charge métier, pas des gestes opérateur ni des paramètres de catalogue.
+
+## Comportements — Value-Added Service Order
+
+Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
+
+| Repère | Comportement | Statut | Définition |
+| --- | --- | --- | --- |
+| vas-labeling-relabeling | Labeling / Relabeling | En cours d’instruction — portée : name | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. |
+| vas-repacking | Repacking | En cours d’instruction — portée : name | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. |
 
 ## Exemples concrets — universe-supply Supply Chain Orchestration
 
@@ -4293,70 +4319,77 @@ Service Ordering Management · Concept documenté par la source primaire · Reco
 
 Références : U477, ELM464, CMP193.
 
-## Sources d’inspiration — D07.b Service Task Management
+## Sources d’inspiration — D07.b Service Order Lifecycle
 
-Assurer une sollicitation robuste et traçable des services jusqu’au résultat attendu.
+Service Order Lifecycle rend explicite la responsabilité FLOW.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [OMG](https://www.omg.org/spec/CMMN/1.1/PDF) — Case Management Model and Notation 1.1 | CMMN distingue le travail associé et la Task qui peut attendre sa fin. | CMMN distingue le travail associé et la Task qui peut attendre sa fin. |
-| [Camunda](https://docs.camunda.io/docs/components/concepts/job-workers/) — Job workers | Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite. | Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite. |
-| Notre modèle — Service Task Management | Gouverner les Tasks qui sollicitent des services, depuis leurs conditions d’activation jusqu’à la vérification de leur fin, en tenant les demandes adressées, les réponses et les reprises nécessaires. | La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste optionnel. |
+| [TM Forum](https://www.tmforum.org/oda/directory/components-map/production/TMFC007) — TMFC007 | Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue. | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Shipment Request / Shipment Confirmation | Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation. | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. |
+| Notre modèle — Service Order Lifecycle | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. | Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires. |
 
 ### Ce que nous en retenons
 
-- CMMN distingue le travail associé et la Task qui peut attendre sa fin. Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage FLOW.
-- Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite. Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours à gouverner explicitement.
+- Service Order Lifecycle est un libellé de capacité proposé pour conserver D07.b ; TM Forum inclut aussi de l’orchestration, Oracle documente demande et confirmation. Aucun cycle produit uniforme importé.
 
-### Illustration FLOW
+### Exemple fictif
 
-Un service de préparation ne répond pas à l’échéance attendue.
+Tenir une reprise de préparation partielle sans la confondre avec une nouvelle commande client.
 
-**Ce qui se passe.** La Task suit la reprise autorisée et vérifie le résultat sans confondre réponse technique et prestation achevée.
+**Ce qui se passe.** Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires.
 
-**Ce que cela illustre dans FLOW.** Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
+**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
 
-Source : [Case Management Model and Notation 1.1](https://www.omg.org/spec/CMMN/1.1/PDF).
+Source : [Service Order Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC007).
 
-Références : U626.
+Références : ELM492, U682.
 
 ### Détails des références
 
-#### OMG — Case Management Model and Notation 1.1
+#### TM Forum — TMFC007
 
-Case Management Model and Notation 1.1 · Concept documenté par une source primaire · Recouvrement partiel · statut : proposed
+Service Order Management · Composant ODA · Recouvrement partiel · statut : proposed
 
-**Points communs.** CMMN distingue le travail associé et la Task qui peut attendre sa fin.
+**Pourquoi ce terme.** Service Order Lifecycle : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
 
-**Différences.** Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage FLOW.
+**Pourquoi cette définition.** Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires.
 
-**Position FLOW.** La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste optionnel.
+**Points communs.** Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
 
-[Case Management Model and Notation 1.1](https://www.omg.org/spec/CMMN/1.1/PDF) — Documentation consultée le 22 septembre 2026 ; édition non précisée, consulté le 2026-09-22.
+**Différences.** Service Order Lifecycle est un libellé de capacité proposé pour conserver D07.b ; TM Forum inclut aussi de l’orchestration, Oracle documente demande et confirmation. Aucun cycle produit uniforme importé.
 
-**Passage.** §5.4.10 ; table 5.39, isBlocking
+**Position FLOW.** Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires.
 
-**Limite de preuve.** Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage FLOW. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
+[Service Order Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC007) — TMFC007 2.0.0 ; date affichée 2024-02-23, consulté le 2026-09-23.
 
-Références : U617, U625, U626.
+**Passage.** Présentation ; Exposed APIs ; Dependent APIs
 
-#### Camunda — Job workers
+**Limite de preuve.** Analogie télécom, pas standard logistique ; inclut de l’orchestration, donc ne prouve pas une séparation nécessaire entre gestion d’ordres et orchestration.
 
-Job workers · Concept documenté par une source primaire · Recouvrement partiel · statut : proposed
+Références : ELM492, CMP273, U682.
 
-**Points communs.** Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
+#### Oracle — Shipment Request / Shipment Confirmation
 
-**Différences.** Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours à gouverner explicitement.
+Shipment Request and Shipment Confirmation Processes for External Systems Integration · Échanges amont-exécutant · Recouvrement partiel · statut : proposed
 
-**Position FLOW.** La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste optionnel.
+**Pourquoi ce terme.** Service Order Lifecycle : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
 
-[Job workers](https://docs.camunda.io/docs/components/concepts/job-workers/) — Documentation consultée le 22 septembre 2026 ; édition non précisée, consulté le 2026-09-22.
+**Pourquoi cette définition.** Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires.
 
-**Passage.** Completing or failing jobs ; retry back off
+**Points communs.** Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
 
-**Limite de preuve.** Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours à gouverner explicitement. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
+**Différences.** Service Order Lifecycle est un libellé de capacité proposé pour conserver D07.b ; TM Forum inclut aussi de l’orchestration, Oracle documente demande et confirmation. Aucun cycle produit uniforme importé.
 
-Références : U617, U625, U626.
+**Position FLOW.** Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes, réponses, engagements, changements et reprises nécessaires.
+
+[Shipment Request and Shipment Confirmation Processes for External Systems Integration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Fusion Cloud SCM 25D, consulté le 2026-09-23.
+
+**Passage.** Explanation of callouts, étapes 1 à 3
+
+**Limite de preuve.** Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
+
+Références : ELM659, CMP273, U682.
 
 ## Sources d’inspiration — D07.c Service Reconciliation
 
@@ -4768,9 +4801,9 @@ Fulfilment Orchestration exprime la responsabilité retenue dans le découpage U
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/orchestration-processes.html) — Overview of Orchestration Processes | Des tâches appellent les services des systèmes exécutants ; dépendances, suivi, changements et fin des prestations sont paramétrés. | Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats, et rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview) — Intelligent Order Management overview | Orchestration événementielle entre plateformes et partenaires, service de visibilité et choix optimisé du lieu de satisfaction. | Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats, et rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching. |
-| Notre modèle — Fulfilment Orchestration | Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats, et rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching. | Obtenir les prestations et adapter leur réalisation en préservant les engagements. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/orchestration-processes.html) — Overview of Orchestration Processes | Des tâches appellent les services des systèmes exécutants ; dépendances, suivi, changements et fin des prestations sont paramétrés. | Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent la promesse et les équilibres du Matching. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview) — Intelligent Order Management overview | Orchestration événementielle entre plateformes et partenaires, service de visibilité et choix optimisé du lieu de satisfaction. | Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent la promesse et les équilibres du Matching. |
+| Notre modèle — Fulfilment Orchestration | Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent la promesse et les équilibres du Matching. | Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent la promesse et les équilibres du Matching. |
 
 ### Ce que nous en retenons
 
@@ -4800,9 +4833,9 @@ Overview of Orchestration Processes · Concept ou fonction documenté dans un pr
 
 **Points communs.** Des tâches appellent les services des systèmes exécutants ; dépendances, suivi, changements et fin des prestations sont paramétrés.
 
-**Différences.** La coordination des services et retours d’exécution est étayée ; l’autonomie locale respectant Matching est un choix explicite FLOW U664.
+**Différences.** La coordination des services et retours d’exécution est étayée ; l’autonomie locale respectant Matching est un choix explicite FLOW U664. U682 sépare la tenue des engagements individuels dans Service Order Management de la coordination conservée ici ; les regroupements produits ne prescrivent pas cette frontière.
 
-**Position FLOW.** Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats, et rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching.
+**Position FLOW.** Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent la promesse et les équilibres du Matching.
 
 [Overview of Orchestration Processes](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/orchestration-processes.html) — Fusion Cloud SCM 26B, consulté le 2026-09-23.
 
@@ -4810,7 +4843,7 @@ Overview of Orchestration Processes · Concept ou fonction documenté dans un pr
 
 **Limite de preuve.** Exemple Sales Order incluant réservation et facturation ; ni périmètre identique FLOW ni workflow unique obligatoire. La coordination des services et retours d’exécution est étayée ; l’autonomie locale respectant Matching est un choix explicite FLOW U664.
 
-Références : ELM651, CMP269, CMP270, U673.
+Références : ELM651, CMP269, CMP270, U673, U682.
 
 #### Microsoft — Intelligent Order Management overview
 
@@ -4822,9 +4855,9 @@ Intelligent Order Management overview · Concept ou fonction documenté dans un 
 
 **Points communs.** Orchestration événementielle entre plateformes et partenaires, service de visibilité et choix optimisé du lieu de satisfaction.
 
-**Différences.** La coordination des services et retours d’exécution est étayée ; l’autonomie locale respectant Matching est un choix explicite FLOW U664.
+**Différences.** La coordination des services et retours d’exécution est étayée ; l’autonomie locale respectant Matching est un choix explicite FLOW U664. U682 sépare la tenue des engagements individuels dans Service Order Management de la coordination conservée ici ; les regroupements produits ne prescrivent pas cette frontière.
 
-**Position FLOW.** Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats, et rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching.
+**Position FLOW.** Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent la promesse et les équilibres du Matching.
 
 [Intelligent Order Management overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview) — Documentation évolutive, sans édition produit précise, consulté le 2026-09-23.
 
@@ -4832,7 +4865,7 @@ Intelligent Order Management overview · Concept ou fonction documenté dans un 
 
 **Limite de preuve.** La solution réunit plusieurs responsabilités FLOW et reste centrée sur les Orders. La coordination des services et retours d’exécution est étayée ; l’autonomie locale respectant Matching est un choix explicite FLOW U664.
 
-Références : ELM405, CMP269, CMP270, U673.
+Références : ELM405, CMP269, CMP270, U673, U682.
 
 ## Exemples concrets — D08.d Product Reference Ingestion
 
@@ -12182,6 +12215,605 @@ Outlining Program Planning · Concept ou fonction documenté dans un produit · 
 
 Références : ELM649, CMP269, CMP270, U673.
 
+## Sources d’inspiration — subdomain-service-orders Service Order Management
+
+Service Order Management rend explicite la responsabilité FLOW.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [TM Forum](https://www.tmforum.org/oda/directory/components-map/production/TMFC007) — TMFC007 | Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue. | Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-overview) — Inbound Shipment Order / Outbound Shipment Order | Documents logistiques séparés des commandes générales amont ; fonctions WMS autonomes. | Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Shipment Request / Shipment Confirmation | Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation. | Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions. |
+| Notre modèle — Service Order Management | Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions. | Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions. |
+
+### Ce que nous en retenons
+
+- TM Forum atteste le nom et inclut de l’orchestration ; Microsoft et Oracle distinguent commandes amont et sollicitations logistiques. Séparer ici engagements de prestation et coordination est un choix FLOW, sans équivalence aux modules.
+
+### Exemple fictif
+
+Une préparation et un réétiquetage concourent à la même livraison.
+
+**Ce qui se passe.** Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+
+**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
+
+Source : [Service Order Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC007).
+
+Références : ELM492, U682.
+
+### Détails des références
+
+#### TM Forum — TMFC007
+
+Service Order Management · Composant ODA · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Service Order Management : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+
+**Points communs.** Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
+
+**Différences.** TM Forum atteste le nom et inclut de l’orchestration ; Microsoft et Oracle distinguent commandes amont et sollicitations logistiques. Séparer ici engagements de prestation et coordination est un choix FLOW, sans équivalence aux modules. La commande composée et la conservation de ses contraintes dans FLOW sont précisées par U692 ; ces sources ne démontrent pas un contrat universel de liste ordonnée d’ordres logistiques.
+
+**Position FLOW.** Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+
+[Service Order Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC007) — TMFC007 2.0.0 ; date affichée 2024-02-23, consulté le 2026-09-23.
+
+**Passage.** Présentation ; Exposed APIs ; Dependent APIs
+
+**Limite de preuve.** Analogie télécom, pas standard logistique ; inclut de l’orchestration, donc ne prouve pas une séparation nécessaire entre gestion d’ordres et orchestration.
+
+Références : ELM492, CMP273, U682, U692.
+
+#### Microsoft — Inbound Shipment Order / Outbound Shipment Order
+
+Warehouse management only mode overview · Documents et frontière produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Service Order Management : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+
+**Points communs.** Documents logistiques séparés des commandes générales amont ; fonctions WMS autonomes.
+
+**Différences.** TM Forum atteste le nom et inclut de l’orchestration ; Microsoft et Oracle distinguent commandes amont et sollicitations logistiques. Séparer ici engagements de prestation et coordination est un choix FLOW, sans équivalence aux modules. La commande composée et la conservation de ses contraintes dans FLOW sont précisées par U692 ; ces sources ne démontrent pas un contrat universel de liste ordonnée d’ordres logistiques.
+
+**Position FLOW.** Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+
+[Warehouse management only mode overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-overview) — Documentation évolutive ; mise à jour affichée 2025-11-20, consulté le 2026-09-23.
+
+**Passage.** Introduction ; Unsupported processes
+
+**Limite de preuve.** Périmètre entrepôt ; restrictions retours, production et transport. Ne prescrit aucun sous-domaine FLOW.
+
+Références : ELM133, CMP273, U682, U692.
+
+#### Oracle — Shipment Request / Shipment Confirmation
+
+Shipment Request and Shipment Confirmation Processes for External Systems Integration · Échanges amont-exécutant · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Service Order Management : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+
+**Points communs.** Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+
+**Différences.** TM Forum atteste le nom et inclut de l’orchestration ; Microsoft et Oracle distinguent commandes amont et sollicitations logistiques. Séparer ici engagements de prestation et coordination est un choix FLOW, sans équivalence aux modules. La commande composée et la conservation de ses contraintes dans FLOW sont précisées par U692 ; ces sources ne démontrent pas un contrat universel de liste ordonnée d’ordres logistiques.
+
+**Position FLOW.** Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+
+[Shipment Request and Shipment Confirmation Processes for External Systems Integration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Fusion Cloud SCM 25D, consulté le 2026-09-23.
+
+**Passage.** Explanation of callouts, étapes 1 à 3
+
+**Limite de preuve.** Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
+
+Références : ELM659, CMP273, U682, U692.
+
+## Sources d’inspiration — service-order-picking Picking Order
+
+Picking Order rend explicite la responsabilité FLOW.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [SAP](https://help.sap.com/saphelp_ewm700_ehp02/helpdata/en/65/cccb53ad377114e10000000a174cb4/content.htm?no_cache=true) — Warehouse Order | Regroupe des tâches d’entrepôt ou postes d’inventaire dans un travail exécutable par un opérateur. | Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Shipment Request / Shipment Confirmation | Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation. | Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés. |
+| Notre modèle — Picking Order | Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés. | Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés. |
+
+### Ce que nous en retenons
+
+- Le Warehouse Order SAP est un lot opérateur ; Oracle confie pick-pack-ship ensemble. Picking Order nomme ici une capacité de gestion de prestation, sans imposer un document amont par tâche.
+
+### Exemple fictif
+
+Sur 100 pièces demandées, 96 sont prélevées : tenir la suite des quatre manquantes sans confondre le reliquat de prestation avec celui de la commande.
+
+**Ce qui se passe.** Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés.
+
+**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
+
+Source : [Warehouse Order](https://help.sap.com/saphelp_ewm700_ehp02/helpdata/en/65/cccb53ad377114e10000000a174cb4/content.htm?no_cache=true).
+
+Références : ELM660, U682.
+
+### Détails des références
+
+#### SAP — Warehouse Order
+
+Warehouse Order · Lot de travail interne · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Picking Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés.
+
+**Points communs.** Regroupe des tâches d’entrepôt ou postes d’inventaire dans un travail exécutable par un opérateur.
+
+**Différences.** Le Warehouse Order SAP est un lot opérateur ; Oracle confie pick-pack-ship ensemble. Picking Order nomme ici une capacité de gestion de prestation, sans imposer un document amont par tâche.
+
+**Position FLOW.** Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés.
+
+[Warehouse Order](https://help.sap.com/saphelp_ewm700_ehp02/helpdata/en/65/cccb53ad377114e10000000a174cb4/content.htm?no_cache=true) — Documentation EWM 7.0 EHP2 ; preuve historique de sémantique, consulté le 2026-09-23.
+
+**Passage.** Definition ; Use ; Example
+
+**Limite de preuve.** Maille interne WMS ; faux équivalent d’un ordre de prestation confié par FLOW. Pas de revendication de dernière version.
+
+Références : ELM660, CMP273, U682.
+
+#### Oracle — Shipment Request / Shipment Confirmation
+
+Shipment Request and Shipment Confirmation Processes for External Systems Integration · Échanges amont-exécutant · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Picking Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés.
+
+**Points communs.** Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+
+**Différences.** Le Warehouse Order SAP est un lot opérateur ; Oracle confie pick-pack-ship ensemble. Picking Order nomme ici une capacité de gestion de prestation, sans imposer un document amont par tâche.
+
+**Position FLOW.** Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés.
+
+[Shipment Request and Shipment Confirmation Processes for External Systems Integration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Fusion Cloud SCM 25D, consulté le 2026-09-23.
+
+**Passage.** Explanation of callouts, étapes 1 à 3
+
+**Limite de preuve.** Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
+
+Références : ELM659, CMP273, U682.
+
+## Sources d’inspiration — service-order-packing Packing Order
+
+Packing Order rend explicite la responsabilité FLOW.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work) — Packing work | Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions partielles. | Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Shipment Request / Shipment Confirmation | Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation. | Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées. |
+| Notre modèle — Packing Order | Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées. | Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées. |
+
+### Ce que nous en retenons
+
+- Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité FLOW gère les exigences de conditionnement et leurs suites, pas le travail opérateur.
+
+### Exemple fictif
+
+Constituer dix colis selon les consignes magasin ; un prélèvement achevé ne prouve pas la conformité des colis.
+
+**Ce qui se passe.** Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées.
+
+**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
+
+Source : [Packing work for packing outbound containers and processing shipments](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work).
+
+Références : ELM656, U682.
+
+### Détails des références
+
+#### Microsoft — Packing work
+
+Packing work for packing outbound containers and processing shipments · Travail interne WMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Packing Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées.
+
+**Points communs.** Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions partielles.
+
+**Différences.** Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité FLOW gère les exigences de conditionnement et leurs suites, pas le travail opérateur.
+
+**Position FLOW.** Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées.
+
+[Packing work for packing outbound containers and processing shipments](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work) — Documentation évolutive, version globale non figée, consulté le 2026-09-23.
+
+**Passage.** Introduction ; Set up a location for packing work
+
+**Limite de preuve.** Work order type interne au WMS ; pas preuve d’un Packing Order autonome à la frontière Supply.
+
+Références : ELM656, CMP273, U682.
+
+#### Oracle — Shipment Request / Shipment Confirmation
+
+Shipment Request and Shipment Confirmation Processes for External Systems Integration · Échanges amont-exécutant · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Packing Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées.
+
+**Points communs.** Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+
+**Différences.** Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité FLOW gère les exigences de conditionnement et leurs suites, pas le travail opérateur.
+
+**Position FLOW.** Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements et la conformité attendue des unités constituées.
+
+[Shipment Request and Shipment Confirmation Processes for External Systems Integration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Fusion Cloud SCM 25D, consulté le 2026-09-23.
+
+**Passage.** Explanation of callouts, étapes 1 à 3
+
+**Limite de preuve.** Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
+
+Références : ELM659, CMP273, U682.
+
+## Sources d’inspiration — service-order-vas Value-Added Service Order
+
+Value-Added Service Order rend explicite la responsabilité FLOW.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [SAP](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — VAS order | Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting. | Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart. |
+| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — Picking ; Bulk Picking ; Value Added Services | Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting. | Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart. |
+| Notre modèle — Value-Added Service Order | Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart. | Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart. |
+
+### Ce que nous en retenons
+
+- SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels plus larges des éditeurs ne sont pas tous inclus.
+
+### Exemple fictif
+
+Réétiqueter un lot selon une version de consigne puis distinguer les pièces traitées des pièces conformes.
+
+**Ce qui se passe.** Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart.
+
+**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
+
+Source : [Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html).
+
+Références : ELM658, U682.
+
+### Détails des références
+
+#### SAP — VAS order
+
+Value-Added Services (VAS) · Ordre et activités WMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Value-Added Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart.
+
+**Points communs.** Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+
+**Différences.** SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels plus larges des éditeurs ne sont pas tous inclus.
+
+**Position FLOW.** Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart.
+
+[Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — SAP EWM 9.5 FPS02, consulté le 2026-09-23.
+
+**Passage.** Use
+
+**Limite de preuve.** Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel FLOW.
+
+Références : ELM658, CMP273, U682.
+
+#### Oracle — Picking ; Bulk Picking ; Value Added Services
+
+Oracle Warehouse Management Outbound Logistics · Processus et tâches WMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Value-Added Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart.
+
+**Points communs.** Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting.
+
+**Différences.** SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels plus larges des éditeurs ne sont pas tous inclus.
+
+**Position FLOW.** Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements et les suites des résultats conformes ou en écart.
+
+[Oracle Warehouse Management Outbound Logistics](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — E-Business Suite 12.2, consulté le 2026-09-23.
+
+**Passage.** Overview of the Material Picking Process ; Bulk Picking / Value Added Services
+
+**Limite de preuve.** Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch ni découpage Supply imposé.
+
+Références : ELM661, CMP273, U682.
+
+## Sources d’inspiration — service-order-cross-docking Cross-Docking Order
+
+Cross-Docking Order rend explicite la responsabilité FLOW.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/planned-cross-docking) — Cross docking | Lien entre arrivées et sorties ; création du travail de passage vers la sortie. Des demandes cross-dock sont portées par les lignes des Shipment Orders en mode WMS autonome. | Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-overview) — Inbound Shipment Order / Outbound Shipment Order | Documents logistiques séparés des commandes générales amont ; fonctions WMS autonomes. | Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus. |
+| Notre modèle — Cross-Docking Order | Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus. | Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus. |
+
+### Ce que nous en retenons
+
+- Les documents Microsoft étayent les demandes liées aux entrées/sorties ; ils ne prouvent ni un Cross-Docking Order universel ni la frontière Matching/Fulfilment de FLOW. Deux documents du même éditeur ne constituent pas un consensus.
+
+### Exemple fictif
+
+Un lot attendu doit rejoindre un départ magasin ; le retard d’arrivée exige une suite de prestation et un arbitrage si la promesse est affectée.
+
+**Ce qui se passe.** Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus.
+
+**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
+
+Source : [Planned cross docking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/planned-cross-docking).
+
+Références : ELM657, U682.
+
+### Détails des références
+
+#### Microsoft — Cross docking
+
+Planned cross docking · Processus et travail WMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Cross-Docking Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus.
+
+**Points communs.** Lien entre arrivées et sorties ; création du travail de passage vers la sortie. Des demandes cross-dock sont portées par les lignes des Shipment Orders en mode WMS autonome.
+
+**Différences.** Les documents Microsoft étayent les demandes liées aux entrées/sorties ; ils ne prouvent ni un Cross-Docking Order universel ni la frontière Matching/Fulfilment de FLOW. Deux documents du même éditeur ne constituent pas un consensus.
+
+**Position FLOW.** Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus.
+
+[Planned cross docking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/planned-cross-docking) — Documentation évolutive, version globale non figée, consulté le 2026-09-23.
+
+**Passage.** Introduction ; Process the cross-docking ; note finale WMS only mode
+
+**Limite de preuve.** Le produit combine marquage, affectation et exécution ; ne détermine pas la frontière Matching/Fulfilment de FLOW.
+
+Références : ELM657, CMP273, U682.
+
+#### Microsoft — Inbound Shipment Order / Outbound Shipment Order
+
+Warehouse management only mode overview · Documents et frontière produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Cross-Docking Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus.
+
+**Points communs.** Documents logistiques séparés des commandes générales amont ; fonctions WMS autonomes.
+
+**Différences.** Les documents Microsoft étayent les demandes liées aux entrées/sorties ; ils ne prouvent ni un Cross-Docking Order universel ni la frontière Matching/Fulfilment de FLOW. Deux documents du même éditeur ne constituent pas un consensus.
+
+**Position FLOW.** Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus.
+
+[Warehouse management only mode overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-overview) — Documentation évolutive ; mise à jour affichée 2025-11-20, consulté le 2026-09-23.
+
+**Passage.** Introduction ; Unsupported processes
+
+**Limite de preuve.** Périmètre entrepôt ; restrictions retours, production et transport. Ne prescrit aucun sous-domaine FLOW.
+
+Références : ELM133, CMP273, U682.
+
+## Sources d’inspiration — vas-labeling-relabeling Labeling / Relabeling
+
+Labeling / Relabeling rend explicite la responsabilité FLOW.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [SAP](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — VAS order | Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting. | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. |
+| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — Picking ; Bulk Picking ; Value Added Services | Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting. | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. |
+| Notre modèle — Labeling / Relabeling | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. | Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué. |
+
+### Ce que nous en retenons
+
+- Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
+
+### Exemple fictif
+
+Un changement d’étiquette exige la version attendue pour le lot concerné ; une confirmation de traitement ne suffit pas si elle concerne une autre version.
+
+**Ce qui se passe.** Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué.
+
+**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
+
+Source : [Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html).
+
+Références : ELM658, U682.
+
+### Détails des références
+
+#### SAP — VAS order
+
+Value-Added Services (VAS) · Ordre et activités WMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Labeling / Relabeling : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué.
+
+**Points communs.** Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+
+**Différences.** Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
+
+**Position FLOW.** Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué.
+
+[Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — SAP EWM 9.5 FPS02, consulté le 2026-09-23.
+
+**Passage.** Use
+
+**Limite de preuve.** Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel FLOW.
+
+Références : ELM658, CMP273, U682.
+
+#### Oracle — Picking ; Bulk Picking ; Value Added Services
+
+Oracle Warehouse Management Outbound Logistics · Processus et tâches WMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Labeling / Relabeling : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué.
+
+**Points communs.** Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting.
+
+**Différences.** Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
+
+**Position FLOW.** Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue et la conformité du résultat communiqué.
+
+[Oracle Warehouse Management Outbound Logistics](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — E-Business Suite 12.2, consulté le 2026-09-23.
+
+**Passage.** Overview of the Material Picking Process ; Bulk Picking / Value Added Services
+
+**Limite de preuve.** Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch ni découpage Supply imposé.
+
+Références : ELM661, CMP273, U682.
+
+## Sources d’inspiration — vas-repacking Repacking
+
+Repacking rend explicite la responsabilité FLOW.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [SAP](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — VAS order | Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting. | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. |
+| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — Picking ; Bulk Picking ; Value Added Services | Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting. | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. |
+| Notre modèle — Repacking | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. | Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés. |
+
+### Ce que nous en retenons
+
+- Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
+
+### Exemple fictif
+
+Reconditionner un lot déjà emballé selon une nouvelle consigne ; distinguer quantité traitée et quantité conforme.
+
+**Ce qui se passe.** Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés.
+
+**Ce que cela illustre dans FLOW.** Illustration de la frontière FLOW, sans preuve de réalisation installée.
+
+Source : [Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html).
+
+Références : ELM658, U682.
+
+### Détails des références
+
+#### SAP — VAS order
+
+Value-Added Services (VAS) · Ordre et activités WMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Repacking : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés.
+
+**Points communs.** Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+
+**Différences.** Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
+
+**Position FLOW.** Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés.
+
+[Value-Added Services (VAS)](https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html) — SAP EWM 9.5 FPS02, consulté le 2026-09-23.
+
+**Passage.** Use
+
+**Limite de preuve.** Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel FLOW.
+
+Références : ELM658, CMP273, U682.
+
+#### Oracle — Picking ; Bulk Picking ; Value Added Services
+
+Oracle Warehouse Management Outbound Logistics · Processus et tâches WMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Repacking : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
+
+**Pourquoi cette définition.** Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés.
+
+**Points communs.** Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et kitting.
+
+**Différences.** Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW. Les sources ne prescrivent pas cette décomposition.
+
+**Position FLOW.** Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du conditionnement et en traitant les écarts signalés.
+
+[Oracle Warehouse Management Outbound Logistics](https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm) — E-Business Suite 12.2, consulté le 2026-09-23.
+
+**Passage.** Overview of the Material Picking Process ; Bulk Picking / Value Added Services
+
+**Limite de preuve.** Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch ni découpage Supply imposé.
+
+Références : ELM661, CMP273, U682.
+
+## Sources d’inspiration — service-order-transport Transport Order
+
+Une famille Transport Order indépendante des modes, cohérente avec les familles de Service Orders.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [SAP](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/733c8b37b3f546a1b08750e8aeabb887/9740cb5147dd9d55e10000000a423f68.html) — Transportation Order | Une demande crée, modifie ou annule un ordre de transport de différentes catégories, notamment freight order et freight booking. | Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm) — Order Release | La demande contient des unités ou lignes à transporter, les lieux et dates, ainsi que des contraintes utilisées pour planifier les expéditions. | Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts. |
+| Notre modèle — Transport Order | Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts. | Distinguer la demande et les engagements de transport de la coordination d’ensemble et des opérations du transporteur. |
+
+### Ce que nous en retenons
+
+- Les documents TMS étayent la demande de déplacement ; leurs catégories et cardinalités ne sont pas imposées au modèle.
+
+### Exemple fictif
+
+Cent cartons préparés attendent une collecte pour un magasin.
+
+**Ce qui se passe.** Tenir les fenêtres convenues et la suite d’un retard, en articulation avec Fulfilment.
+
+**Ce que cela illustre dans FLOW.** L’engagement de transport est distinct de la promesse commerciale ; aucune réalisation Beaumanoir déduite.
+
+Source : [Order Release](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm).
+
+Références : U698, ELM684.
+
+### Détails des références
+
+#### SAP — Transportation Order
+
+SAP S/4HANA Transportation Management · Objet ou interface de produit TMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Transport Order est le nom de la famille FLOW adopté U698 ; Transportation Order et Order Release sont les termes natifs comparés, sans nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Distinguer les exigences et engagements de déplacement des décisions de coordination et de la réalisation du transport.
+
+**Points communs.** Une demande crée, modifie ou annule un ordre de transport de différentes catégories, notamment freight order et freight booking.
+
+**Différences.** SAP distingue des catégories de documents et Oracle distingue demande à transporter et expéditions planifiées. FLOW porte la gestion de la prestation confiée et ses engagements ; orchestration, choix des moyens et gestes physiques restent distincts.
+
+**Position FLOW.** Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+
+[Maintain Generic Transportation Order](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/733c8b37b3f546a1b08750e8aeabb887/9740cb5147dd9d55e10000000a423f68.html) — 2025 FPS01 (février 2026), consulté le 2026-09-24.
+
+**Passage.** Definition ; Business Context and Use
+
+**Limite de preuve.** Texte primaire indexé consulté le 24 septembre 2026 ; ouverture directe sans corps. Opération de service et catégories SAP, pas équivalence de capacité ni découpage FLOW.
+
+Références : ELM683, CMP275, U698.
+
+#### Oracle — Order Release
+
+Oracle Transportation Management · Objet ou interface de produit TMS · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Transport Order est le nom de la famille FLOW adopté U698 ; Transportation Order et Order Release sont les termes natifs comparés, sans nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Distinguer les exigences et engagements de déplacement des décisions de coordination et de la réalisation du transport.
+
+**Points communs.** La demande contient des unités ou lignes à transporter, les lieux et dates, ainsi que des contraintes utilisées pour planifier les expéditions.
+
+**Différences.** SAP distingue des catégories de documents et Oracle distingue demande à transporter et expéditions planifiées. FLOW porte la gestion de la prestation confiée et ses engagements ; orchestration, choix des moyens et gestes physiques restent distincts.
+
+**Position FLOW.** Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+
+[Order Release](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm) — 25C, consulté le 2026-09-24.
+
+**Passage.** Introduction ; Adding Order Releases, fenêtres de collecte/livraison et origine/destination
+
+**Limite de preuve.** Texte primaire ouvert et lu le 24 septembre 2026. L’Order Release exprime la demande de transport ; ne prouve pas à lui seul un engagement de transporteur ni une correspondance un pour un avec les shipments.
+
+Références : ELM684, CMP275, U698.
+
 ## Sources d’inspiration — Capacité métier
 
 Décrire ce que l’entreprise sait faire permet de conserver un repère quand ses équipes ou ses outils changent. Capacité métier désigne cette aptitude durable.
@@ -18038,14 +18670,13 @@ Document métier qui formalise et qualifie une demande de [Service](glossary:TER
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [TM Forum](https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf) — Service Order | Actions demandées sur des services. | Tenir la demande, ses dates et ses réponses. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture) — Work Order | Travail à réaliser par un intervenant. | Décrire puis planifier et suivre l’intervention. |
-| Notre modèle — Service Order | Document métier qui formalise et qualifie une demande de [Service](glossary:TER075) adressée à un [Service Provider](glossary:TER088), lorsqu’une telle formalisation est nécessaire. | Service Order désigne dans FLOW le document éventuel formalisant une sollicitation pilotée par une Task ; le cycle complet de Task ne se déduit pas du document. |
+| [TM Forum](https://www.tmforum.org/oda/directory/components-map/production/TMFC007) — TMFC007 | Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue. | Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire et son canal d’échange sont distincts de l’engagement de prestation. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Shipment Request / Shipment Confirmation | Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation. | Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire et son canal d’échange sont distincts de l’engagement de prestation. |
+| Notre modèle — Service Order | Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire et son canal d’échange sont distincts de l’engagement de prestation. | Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire et son canal d’échange sont distincts de l’engagement de prestation. |
 
 ### Ce que nous en retenons
 
-- Actions demandées sur des services. La référence télécom ne définit pas le cycle de chaque prestation Supply. U616 restreint ici Service Order au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
-- Travail à réaliser par un intervenant. Work Order vise surtout le terrain et inclut des fonctions plus larges. U616 restreint ici Service Order au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
+- Demande, contribution au processus, engagement, réalisation et document restent distincts.
 
 ### Illustration FLOW
 
@@ -18061,41 +18692,49 @@ Références : U626.
 
 ### Détails des références
 
-#### TM Forum — Service Order
+#### TM Forum — TMFC007
 
-Service Ordering Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+Service Order Management · Composant ODA · Recouvrement partiel · statut : proposed
 
-**Points communs.** Actions demandées sur des services.
+**Pourquoi ce terme.** Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
 
-**Différences.** La référence télécom ne définit pas le cycle de chaque prestation Supply. U616 restreint ici Service Order au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
+**Pourquoi cette définition.** Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire et son canal d’échange sont distincts de l’engagement de prestation.
 
-**Position FLOW.** Service Order désigne dans FLOW le document éventuel formalisant une sollicitation pilotée par une Task ; le cycle complet de Task ne se déduit pas du document.
+**Points communs.** Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
 
-[TMF641 Service Ordering Management API REST Specification](https://tmf-open-api-table-documents.s3.eu-west-1.amazonaws.com/Historic/TMF641_Service_Ordering/3.0.0/user_guides/TMF641_Service_Ordering_Management_API_user_guides_18.5.1.pdf) — Version 3.0.0, Release 18.5.0, janvier 2019, consulté le 2026-09-19.
+**Différences.** TM Forum et Oracle distinguent demande de prestation et réalisation ; FLOW ne réduit plus Service Order à un document facultatif. Les cycles et canaux natifs ne sont pas transposés.
 
-**Passage.** Pages 5, 8–15 : Service Order ; dates ; dépendances ; états
+**Position FLOW.** Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire et son canal d’échange sont distincts de l’engagement de prestation.
 
-**Limite de preuve.** PDF primaire consulté ; référence télécom historique. Les états et cardinalités TMF ne sont pas adoptés par FLOW.
+[Service Order Management](https://www.tmforum.org/oda/directory/components-map/production/TMFC007) — TMFC007 2.0.0 ; date affichée 2024-02-23, consulté le 2026-09-23.
 
-Références : U477, ELM464, CMP193.
+**Passage.** Présentation ; Exposed APIs ; Dependent APIs
 
-#### Microsoft — Work Order
+**Limite de preuve.** Analogie télécom, pas standard logistique ; inclut de l’orchestration, donc ne prouve pas une séparation nécessaire entre gestion d’ordres et orchestration.
 
-Dynamics 365 Field Service · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+Références : ELM492, CMP273, U682.
 
-**Points communs.** Travail à réaliser par un intervenant.
+#### Oracle — Shipment Request / Shipment Confirmation
 
-**Différences.** Work Order vise surtout le terrain et inclut des fonctions plus larges. U616 restreint ici Service Order au document, sans reprendre intégralement le cycle de l’objet de commande du produit.
+Shipment Request and Shipment Confirmation Processes for External Systems Integration · Échanges amont-exécutant · Recouvrement partiel · statut : proposed
 
-**Position FLOW.** Service Order désigne dans FLOW le document éventuel formalisant une sollicitation pilotée par une Task ; le cycle complet de Task ne se déduit pas du document.
+**Pourquoi ce terme.** Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.
 
-[Work order architecture](https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-architecture) — Documentation évolutive consultée le 19 septembre 2026, consulté le 2026-09-19.
+**Pourquoi cette définition.** Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire et son canal d’échange sont distincts de l’engagement de prestation.
 
-**Passage.** A work order is created ; scheduled ; performed ; reviewed and completed
+**Points communs.** Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
 
-**Limite de preuve.** Document primaire consulté ; rapprochement de concepts, sans preuve de réalisation Beaumanoir.
+**Différences.** TM Forum et Oracle distinguent demande de prestation et réalisation ; FLOW ne réduit plus Service Order à un document facultatif. Les cycles et canaux natifs ne sont pas transposés.
 
-Références : U477, ELM397, CMP193.
+**Position FLOW.** Demande de [Service](glossary:TER075) confiée à un [Service Provider](glossary:TER088), tenue avec ses exigences, les conditions acceptées, ses évolutions et ses suites dans Service Order Management. Sa formalisation documentaire et son canal d’échange sont distincts de l’engagement de prestation.
+
+[Shipment Request and Shipment Confirmation Processes for External Systems Integration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html) — Fusion Cloud SCM 25D, consulté le 2026-09-23.
+
+**Passage.** Explanation of callouts, étapes 1 à 3
+
+**Limite de preuve.** Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
+
+Références : ELM659, CMP273, U682.
 
 ## Sources d’inspiration — Profitable-to-Promise (PTP)
 
@@ -19501,14 +20140,13 @@ Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER07
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [OMG](https://www.omg.org/spec/CMMN/1.1/PDF) — Case Management Model and Notation 1.1 | CMMN distingue le travail associé et la Task qui peut attendre sa fin. | CMMN distingue le travail associé et la Task qui peut attendre sa fin. |
-| [Camunda](https://docs.camunda.io/docs/components/concepts/job-workers/) — Job workers | Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite. | Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite. |
-| Notre modèle — Task | Objet de gouvernance qui pilote la sollicitation d’un [Service](glossary:TER075), son suivi et la vérification de son achèvement. | La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste optionnel. |
+| [OMG](https://www.omg.org/spec/CMMN/1.1/PDF) — Case Management Model and Notation 1.1 | CMMN distingue le travail associé et la Task qui peut attendre sa fin. | Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances. Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant. |
+| [Camunda](https://docs.camunda.io/docs/components/concepts/job-workers/) — Job workers | Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite. | Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances. Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant. |
+| Notre modèle — Task | Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances. Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant. | Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances. Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant. |
 
 ### Ce que nous en retenons
 
-- CMMN distingue le travail associé et la Task qui peut attendre sa fin. Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage FLOW.
-- Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite. Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours à gouverner explicitement.
+- Demande, contribution au processus, engagement, réalisation et document restent distincts.
 
 ### Illustration FLOW
 
@@ -19530,9 +20168,9 @@ Case Management Model and Notation 1.1 · Concept documenté par une source prim
 
 **Points communs.** CMMN distingue le travail associé et la Task qui peut attendre sa fin.
 
-**Différences.** Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage FLOW.
+**Différences.** La Task FLOW est une contribution à l’orchestration ; U682 sépare la tenue des engagements du Service Order. Les tâches natives de la source ne sont pas un cycle universel FLOW.
 
-**Position FLOW.** La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste optionnel.
+**Position FLOW.** Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances. Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant.
 
 [Case Management Model and Notation 1.1](https://www.omg.org/spec/CMMN/1.1/PDF) — Documentation consultée le 22 septembre 2026 ; édition non précisée, consulté le 2026-09-22.
 
@@ -19548,9 +20186,9 @@ Job workers · Concept documenté par une source primaire · Recouvrement partie
 
 **Points communs.** Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
 
-**Différences.** Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours à gouverner explicitement.
+**Différences.** La Task FLOW est une contribution à l’orchestration ; U682 sépare la tenue des engagements du Service Order. Les tâches natives de la source ne sont pas un cycle universel FLOW.
 
-**Position FLOW.** La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste optionnel.
+**Position FLOW.** Contribution pilotée au sein d’un processus d’orchestration, avec ses conditions d’activation et ses dépendances. Elle peut mobiliser des [Service Orders](glossary:TER066) dont Service Order Management tient les engagements individuels ; elle n’est ni l’ordre lui-même ni une tâche opérateur de l’exécutant.
 
 [Job workers](https://docs.camunda.io/docs/components/concepts/job-workers/) — Documentation consultée le 22 septembre 2026 ; édition non précisée, consulté le 2026-09-22.
 

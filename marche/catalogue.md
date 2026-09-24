@@ -859,3 +859,48 @@ Fluent Commerce — Fluent Order Management. Documentation officielle de workflo
 **Référence :** Nick Tune, réflexion DDD sur Domain/Subdomain/Bounded Context. **Nature :** publication originale de praticien ; point de vue attribué, pas standard. [Article du 25 novembre 2020](https://nick-tune.me/blog/2020-11-25-domain-subdomain-bounded-context-problem-solution-space-in-d/), texte ouvert le 22 septembre 2026, sections Subdomains et frontières problème/solution. ELM634 / CMP265. Rôle : éprouver le caractère relatif du niveau sous-domaine. Synthèse et lien, pas de redistribution intégrale.
 
 **Réexamen U620/U621 — 22 septembre 2026 :** MKT01/03/04/06/07/18/25/26/69/85. Niveaux de regroupement, décomposition et responsabilités comparés dans [l’étude Area](etudes/2026-09-22-area-level.md). ELM633–642 documentent éditions, passages et limites ; TOGAF historique, extraits primaires indexés IBM/LeanIX/Ardoq, autres lectures directes. Pas de nouvelle taxonomie adoptée.
+
+
+## MKT86
+
+**Référence / organisme :** CEVA, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM667, ELM678. Sources : [Logistics solutions for online returns](https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns), [Device Lifecycle Supply Chain Solutions](https://www.cevalogistics.com/en/your-industry/technology/device-lifecycle-solutions). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686.
+
+
+## MKT87
+
+**Référence / organisme :** Advanced Supply Chain, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM668, ELM675, ELM676, ELM682. Sources : [Value Added Services in Logistics & Warehousing](https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/), [Garment Cleaning](https://www.advancedsupplychain.com/value-added-services/garment-cleaning/), [RFID](https://advancedsupplychain.com/rfid/), [Metal Detection](https://www.advancedsupplychain.com/metal-detection/). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686.
+
+
+## MKT88
+
+**Référence / organisme :** Ryder, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM669. Sources : [E-Commerce Services — Value Added Services](https://www.ryder.com/en-us/e-commerce/value-added-services). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686.
+
+
+## MKT89
+
+**Référence / organisme :** Bleckmann, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM670, ELM677. Sources : [Value Added Services](https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services), [RESCUE: Circular Fashion Made Simple & Profitable](https://www.bleckmann.com/resources/maximising-the-value-of-apparel-with-rescue-programme). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686.
+
+
+## MKT90
+
+**Référence / organisme :** GXO, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM671, ELM672. Sources : [Fashion and apparel](https://gxo.com/industries/fashion-apparel/), [Value-added services](https://gxo.com/supply-chain-mgmt/logistics-services/). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686.
+
+
+## MKT91
+
+**Référence / organisme :** DHL, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM673, ELM679. Sources : [Packaging Solutions for Large Businesses](https://www.dhl.com/us-en/home/supply-chain/solutions/packaging.html), [Data center logistics](https://lot.dhl.com/glossary/data-center-logistics/). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686.
+
+
+## MKT92
+
+**Référence / organisme :** DSV, publications sur les prestations logistiques. **Nature :** catalogue commercial et publications originales. **Rôle :** vérifier opérations proposées et vocabulaire, pas imposer une architecture de capacités. **Édition :** pages évolutives, sans édition uniforme. **Consultation :** 24 septembre 2026. Passages et modes d’accès : ELM674, ELM681. Sources : [Supporting core warehouse services](https://www.dsv.com/en-gb/our-solutions/modes-of-transport/value-added-services/warehouse-resources), [Contract logistics](https://www.dsv.com/en-ae/our-solutions/contract-logistics). **Limites :** offres déclarées, pas preuve Beaumanoir ni consensus. Synthèses et liens uniquement ; droits de reproduction intégrale non présumés. Voir la revue U686.
+
+
+## MKT93
+
+**Référence / organisme :** DCSA. **Nature :** Organisme de standardisation des échanges du transport maritime conteneurisé. **Rôle :** éprouver les variantes et frontières de Transport Order. **Source :** [publication primaire](https://dcsa.org/standards/booking), consultée le 24 septembre 2026. **Version :** page évolutive sans édition établie. **Contenu consulté :** passages décrits dans ELM695 pour DCSA et ELM693 pour UPS. **Limites :** Présentation publique du Booking standard seulement ; pas étude du schéma API complet ni généralisation aux autres modes. Synthèses et liens, pas de reproduction intégrale.
+
+
+## MKT94
+
+**Référence / organisme :** UPS. **Nature :** Prestataire de transport, support client primaire. **Rôle :** éprouver les variantes et frontières de Transport Order. **Source :** [publication primaire](https://www.ups.com/us/en/business-solutions/grow-your-business-solutions), consultée le 24 septembre 2026. **Version :** page évolutive sans édition établie. **Contenu consulté :** passages décrits dans ELM695 pour DCSA et ELM693 pour UPS. **Limites :** Offre et modalités de livraison ; disponibilité soumise aux options expéditeur et au contexte commercial. Synthèses et liens, pas de reproduction intégrale.

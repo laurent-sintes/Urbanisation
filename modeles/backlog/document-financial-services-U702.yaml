@@ -1,0 +1,252 @@
+id: DOCUMENT-FINANCIAL-SERVICES-U702
+status: proposed_not_adopted
+date: '2026-09-24'
+author: Codex
+source_refs:
+- U702
+- U703
+- U704
+- U705
+- U706
+canonical_authority: modeles/backlog/model.yaml
+comparison_ref: CMP277
+sources:
+- id: ELM698
+  reference: MKT56
+  vendor: ASCM
+  title: Your Comprehensive Guide to Supply Chain Solutions for Improved Operations
+  url: https://www.ascm.org/ascm-insights/supply-chain-solutions-for-improved-operations/
+  version: '2026-07-10'
+  locator: What is SCOR?
+  access: indexed_direct_error
+  reformulation: SCOR couvre les interactions depuis la commande jusqu’à la facture payée. Cadre de processus de bout en bout,
+    sans prescription de frontières de domaines.
+  consulted_on: '2026-09-24'
+  native_id: null
+  limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle
+    des Orders ni déploiement Beaumanoir.
+- id: ELM699
+  reference: MKT20
+  vendor: Oracle
+  title: Overview of Executing Shipping Documents
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famlo/overview-of-executing-shipping-documents.html
+  version: 25D
+  locator: Overview
+  access: direct
+  reformulation: Shipping génère des documents, dont packing slip et commercial invoice, liés à l’expédition.
+  consulted_on: '2026-09-24'
+  native_id: null
+  limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle
+    des Orders ni déploiement Beaumanoir.
+- id: ELM700
+  reference: MKT13
+  vendor: SAP
+  title: Goods Receipt Slip (WE_SCHEINVERS2)
+  url: https://help.sap.com/docs/SAP_ERP/36ce973bca7242118fba2bee0511f4d6/8edae4535dd4414de10000000a174cb4.html
+  version: ERP 6.0 EHP8
+  locator: Purpose
+  access: indexed
+  reformulation: Le bon de réception est imprimable lors de la comptabilisation du mouvement de réception ; il en constitue
+    un justificatif.
+  consulted_on: '2026-09-24'
+  native_id: null
+  limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle
+    des Orders ni déploiement Beaumanoir.
+- id: ELM701
+  reference: MKT20
+  vendor: Oracle
+  title: How Order-to-Cash Works in Order Management
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/faiom/how-order-to-cash-works-in-order-management.html
+  version: 26A
+  locator: Steps 3–5
+  access: direct
+  reformulation: L’orchestration demande la facturation à Receivables et attend sa réponse ; Financials crée la facture et
+    traite les paiements. Le processus traverse les responsabilités.
+  consulted_on: '2026-09-24'
+  native_id: null
+  limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle
+    des Orders ni déploiement Beaumanoir.
+- id: ELM702
+  reference: MKT13
+  vendor: SAP
+  title: Manual Incoming Payments
+  url: https://help.sap.com/docs/SAP_BUSINESS_BYDESIGN/2754875d2d2a403f95e58a41a9c7d6de/2c25dd46722d1014880ed85ecdf0cc88.html?locale=en-US
+  version: August 2026
+  locator: Overview
+  access: indexed
+  reformulation: Les encaissements relèvent des comptes clients, de la gestion des paiements et de la liquidité ; le rapprochement
+    avec les créances fait partie du traitement financier.
+  consulted_on: '2026-09-24'
+  native_id: null
+  limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle
+    des Orders ni déploiement Beaumanoir.
+- id: ELM703
+  reference: MKT91
+  vendor: DHL
+  title: Customs Services
+  url: https://www.dhl.com/us-en/home/global-forwarding/products-and-solutions/customs-services.html
+  version: Page évolutive sans édition
+  locator: 'FAQ: customs services and customs broker'
+  access: indexed
+  reformulation: Le service douanier couvre dédouanement, documentation et conformité. Il dépasse la seule production documentaire
+    ; les autorités décident du dédouanement.
+  consulted_on: '2026-09-24'
+  native_id: null
+  limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle
+    des Orders ni déploiement Beaumanoir.
+- id: ELM704
+  reference: MKT13
+  vendor: SAP
+  title: Creating Documents — Customs Management
+  url: https://help.sap.com/docs/SAP_GLOBAL_TRADE_SERVICES/bdb1d2fb216941a69f6300006343e977/4c9ab10f125a0780e10000000a42189b.html
+  version: Version non établie
+  locator: Creating customs declarations and customs shipments
+  access: indexed_direct_empty
+  reformulation: Customs Management utilise les données logistiques du système source pour construire les documents des procédures
+    douanières.
+  consulted_on: '2026-09-24'
+  native_id: null
+  limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle
+    des Orders ni déploiement Beaumanoir.
+- id: ELM705
+  reference: MKT20
+  vendor: Oracle
+  title: Overview of Setting Up Credit Cards
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/overview-of-setting-up-credit-cards.html
+  version: 26B
+  locator: Overview and integration
+  access: direct
+  reformulation: Order Management mobilise Oracle Payments pour le traitement carte ; l’autorisation peut venir du système
+    amont avec Financials. Intégration explicite, pas propriété de toute la finance dans Order Management.
+  consulted_on: '2026-09-24'
+  native_id: null
+  limits: Synthèse et lien uniquement. Documentation primaire de processus, produit ou offre ; ne démontre ni taxonomie universelle
+    des Orders ni déploiement Beaumanoir.
+conclusion: Élargissement recommandé des prestations orchestrées aux documents, au dédouanement et à la facturation ; encaissement
+  conditionné à une responsabilité active. Ne pas confondre processus SCM complet et propriété de toutes ses fonctions financières.
+proposals:
+- name: Document Production Order
+  recommendation: recommended
+  result: Obtenir un document ou dossier logistique conforme aux données et exigences confiées, disponible et transmis aux
+    destinataires attendus.
+  sources:
+  - ELM699
+  - ELM700
+  boundary: La réception, le mouvement de stock et les faits douaniers ne sont pas créés par le document. Mettre en forme
+    ou joindre une facture existante ne vaut pas émettre une créance.
+  condition: Order autonome seulement si prestation explicitement confiée et suivie ; une sortie automatique de réception
+    ne crée pas systématiquement un Order.
+  benefit: Rendre visibles délai, complétude, rejet et reprise du livrable documentaire.
+  naming_limit: Nom proposé FLOW ; les sources parlent de shipping documents et goods receipt slip, pas d’une famille normalisée
+    Document Production Order.
+- name: Customs Clearance Order
+  recommendation: recommended
+  result: Confier et suivre une prestation de dédouanement pour des marchandises, depuis le dossier jusqu’au résultat de la
+    procédure et au traitement des écarts.
+  sources:
+  - ELM703
+  - ELM704
+  boundary: La production du dossier est un moyen. Le prestataire traite la procédure ; l’autorité conserve sa décision. La
+    politique globale de conformité commerce international n’est pas absorbée par cet Order.
+  benefit: Distinguer dossier prêt, déclaration traitée et marchandises effectivement libérées.
+  naming_limit: Customs clearance est établi ; suffixe Order et maille capacité sont une adaptation FLOW.
+- name: Billing Order
+  recommendation: recommended_scope_extension
+  result: Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation, rejet
+    et correction.
+  sources:
+  - ELM698
+  - ELM701
+  boundary: La responsabilité financière d’émission, des taxes, de la créance et de la comptabilisation reste chez le service
+    de facturation. FLOW porte la demande, les références et la progression nécessaire au flux.
+  benefit: Éviter une commande livrée dont la facturation nécessaire reste sans suivi.
+  naming_limit: Billing services est documenté ; Billing Order est une proposition locale, pas une nomenclature interéditeurs.
+- name: Payment Collection Order
+  recommendation: conditional_scope_extension
+  result: Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le
+    déclenchement et les suites.
+  sources:
+  - ELM701
+  - ELM702
+  - ELM705
+  boundary: Distinguer autorisation, capture, règlement reçu et affectation à une créance. Le service financier ou de paiement
+    exécute ; comptabilité, trésorerie, rapprochement et recouvrement des impayés ne sont pas automatiquement inclus.
+  condition: 'Si FLOW ne fait que recevoir un statut payé ou une autorisation de poursuivre, conserver une dépendance et un
+    statut : pas d’Order artificiel.'
+  benefit: Coordonner les étapes financières qui conditionnent l’exécution sans perdre les échecs ou paiements partiels.
+  naming_limit: Collection est ambigu avec recouvrement des impayés ; nom provisoire à préciser avec le résultat effectivement
+    confié. Autorisation carte seule ne vaut pas encaissement.
+model_integration:
+  service_catalog: Offres, résultats, conditions et fournisseurs des services.
+  service_order_management: Demandes confiées et engagements acceptés ; les nouveaux Orders proposés restent ici.
+  fulfilment_orchestration: Coordonne le déclenchement et l’attente ; Operations Tracking / Process Tracking captent avancement
+    et résultat métier des services distants ; Process Orchestration organise la suite. Retour des faits à Service Order Management
+    pour le cycle des Orders.
+  order_management: Commande entrante, promesse et états nécessaires ; pas de déplacement des demandes de services vers ce
+    sous-domaine.
+  matching: Pas d’intégration de comptabilité ou trésorerie dans le master plan de matching.
+  categories: 'Documents, Douane et Services financiers liés aux commandes : suggestions de présentation uniquement, non affectées.'
+  example: 'Exemple fictif fashion : dossier export prêt, procédure douanière suivie, transport, confirmation de livraison,
+    demande de facturation et, si confiée à FLOW, demande d’encaissement. Aucun ordre universel imposé : facturation et paiement
+    peuvent précéder le départ selon le contrat.'
+tradeoffs:
+- Un seul Document Order pour tout masquerait la différence entre produire une pièce, obtenir un dédouanement et encaisser.
+- Absorber toute la Finance élargirait fortement le domaine sans preuve de bénéfice dans le périmètre étudié.
+- Une famille ne doit pas naître de chaque format documentaire ou étape technique.
+- SCOR est un cadre de processus ; les suites éditeurs sont des réalisations. Aucun ne prescrit directement notre découpage.
+remote_execution_clarification:
+  source_refs:
+  - U704
+  - U705
+  canonical_check:
+  - D06.d
+  - D07.d
+  - BHV082
+  - D07.b
+  principle: Une demande de service peut déclencher un processus exécuté ailleurs et rester ouverte jusqu’à réception de son
+    résultat métier.
+  responsibilities:
+    service_order_management: Porte la demande, les engagements et le cycle de l’Order ; met à jour son état à partir des
+      résultats qualifiés.
+    process_orchestration: Coordonne le déclenchement, l’attente du résultat et la poursuite du flux.
+    operations_tracking: Capte les faits et résultats des services distants ; Process Tracking les relie à la progression
+      du processus.
+    executor: Exécute le processus confié et fournit le retour de fin et son résultat.
+  completion: L’acceptation de la demande ou l’accusé de réception du déclenchement ne valent pas fin de la prestation. La
+    notification de fin doit identifier la demande et le résultat métier, y compris échec ou résultat partiel ; une fin technique
+    ne prouve pas un encaissement réussi.
+  scope: Précision du fonctionnement déjà couvert ; pas de nouvelle capacité de suivi, pas de réalisation financière imposée
+    dans le domaine.
+  market_support:
+  - ELM701
+  - ELM705
+  market_comparison: Les services Oracle Create Billing Lines et Wait for Billing documentent demande et attente de retour
+    ; l’intégration Payments confirme un exécutant spécialisé. La généralisation à tous les services distants est un choix
+    cohérent du modèle FLOW, pas une taxonomie imposée par ces produits.
+remote_execution_agreement:
+  id: AGREEMENT-U706-REMOTE-EXECUTION
+  status: adopted
+  author: Laurent
+  recorded_by: Codex
+  decided_at: '2026-09-24'
+  source_refs:
+  - U705
+  - U706
+  interpretation: explicit
+  values:
+    process_orchestration: Coordonne le déclenchement, l’attente du résultat et la poursuite du processus.
+    operations_tracking: Avec Process Tracking, capte l’avancement et les résultats des prestations exécutées ailleurs.
+    service_order_management: Conserve la demande et ses engagements, puis actualise l’Order à partir des résultats.
+    completion: 'L’accusé de réception du déclenchement ne vaut pas réalisation. Le retour identifie le résultat métier :
+      réussi, partiel ou en échec.'
+    capability_impact: Aucune nouvelle capacité de suivi nécessaire.
+  value_sha256:
+    process_orchestration: 84b58c9fc9a704e05a5c8836ef9b5b371ee52b7b2de8b58e28150c3406998021
+    operations_tracking: e4bfd10e841c208b2ce8ed700f5ef4bc43b8442ab0057c6caff081b630202119
+    service_order_management: 83a2a8d0aa9112265606f39b64dc8c63b9d7dba54ab29bd77df402985d2dcd75
+    completion: 8b1a7f39b3146c76641f3aec1ce692afc286c08af1a047fc6d353706f4d8a727
+    capability_impact: 043d570389001a25762ffb173d55553a04c04a2eba3d9fa08370d6abb6996719
+  scope: Accord ciblé sur les énoncés présentés ; aucune approbation de champs canoniques entiers ni des nouvelles familles
+    proposées.
+  capture_note: Accord conservé dans l’annexe de proposition avec valeurs et empreintes. record_decision.py cible uniquement
+    les champs de nodes/relations ; aucune approbation plus large de scope n’est créée.

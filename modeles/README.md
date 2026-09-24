@@ -279,3 +279,8 @@ Les champs facultatifs `fields.request_origins` (capacité uniquement) et `field
 
 
 **Réexamen des intentions inédites — U509.** `record_decision.py --supersedes ID_ANTERIEUR` ajoute une nouvelle preuve explicitement réexaminée sans modifier l’ancienne. Même cible et champs identiques ou réduits ; aucun report automatique du contexte. Les preuves déjà publiées passent par le parcours de réexamen de publication. L’API `record_intents(root, parameters)` enregistre un lot relu sur un seul état final et une seule écriture atomique ; chaque accord garde sa source, ses champs et sa note.
+
+
+### Catégorie visuelle des capacités (U701)
+
+`fields.category` est facultatif : `id` stable, `display_name` affiché et `order` entier optionnel. Ces métadonnées classent visuellement les capacités à l’intérieur de leur sous-domaine sans modifier leur parent ni créer un niveau métier. Réutiliser les mêmes libellé et ordre pour un identifiant dans un même sous-domaine. Les publications historiques sans ce champ gardent leur présentation ; les nouvelles affectations restent des propositions éditoriales tant qu’elles ne sont pas adoptées.

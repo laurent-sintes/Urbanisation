@@ -38,7 +38,7 @@ source_files:
 space: backlog
 nodes:
 - id: universe-supply
-  revision: 11
+  revision: 12
   kind: domain
   fields:
     name: Supply Chain Orchestration
@@ -284,13 +284,15 @@ nodes:
     finality: Satisfaire les besoins de la chaîne d’approvisionnement avec des engagements explicites et une utilisation cohérente
       des ressources.
     scope: |-
-      Le Domain comprend huit sous-domaines : Master Data, Policies, Plans, Order Management, Inventory Management, Order Promising, Demand & Supply Matching et Fulfilment Orchestration. Ils coopèrent par des informations, des décisions et des engagements explicites, sans séquence universelle.
+      Le Domain comprend neuf sous-domaines : Master Data, Policies, Plans, Order Management, Inventory Management, Order Promising, Demand & Supply Matching, Service Order Management et Fulfilment Orchestration. Ils coopèrent par des informations, des décisions et des engagements explicites, sans séquence universelle.
 
       Plans reçoit les Demand Plans et Supply Plans par ingestion depuis l’APS externe. Supply Plan porte les prévisions d’entrées ou de sorties de stock hors achats. Le master plan de matching est un objet distinct, construit et géré dans Matching. L’APS n’est pas un sous-domaine.
 
       Order Promising évalue et recommande la promesse pour Order Management ou pour Matching ; Matching arbitre les affectations ; Order Management confirme, porte et révise les engagements. Fulfilment cherche des solutions locales préservant promesse et grands équilibres. Les exécutants réalisent les prestations et conservent leurs opérations internes.
 
       Les sources de vérité d’entreprise restent externes ; Master Data porte les références locales Supply, Policies les règles actives et Inventory les faits et réservations. Les responsabilités commerciales et financières ne sont pas absorbées.
+
+      Service Order Management porte les exigences et engagements propres des prestations confiées ; Fulfilment les compose et les coordonne. Les familles d’ordres de services sont des capacités, comme les familles d’Orders entrants.
     market_inspiration:
       choice: Supply Chain Orchestration orchestre les ressources et prestations pour satisfaire la demande, en reliant Matching
         & Balancing, application des changements et coordination de leur réalisation.
@@ -366,28 +368,31 @@ nodes:
   - U649
   - U650
   - U673
+  - U682
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u373
   review:
     state: partial
-    note: Application de l’audit U673 ; accords de nom et rattachement capturés séparément. Corrections détaillées de périmètre
-      proposées sans validation globale.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-23T15:00:46.992417Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U650
+    - U679
+    - U681
+    - U682
     validated_fields:
     - name
     - definition
     value_sha256:
       name: 9925b1127336fae5e805d2ed6df17bfb9944ae49acb73799038f3f8e433cd6f7
       definition: 99f600cb9b5838c914b14fd1ecfdbb305d20d12be44b5534dbc5ad24839275ca
-    note: Nom et définition adoptés U650 ; remplace U646 sur ces deux champs.
-  last_modified: '2026-09-23T20:35:38.517366Z'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  last_modified: '2026-09-24T07:34:47.738310Z'
   proposed_fields:
   - examples
   - finality
@@ -4352,7 +4357,7 @@ nodes:
   proposed_fields:
   - scope
 - id: D04.j
-  revision: 17
+  revision: 18
   kind: capability
   fields:
     name: Purchase Order
@@ -4371,7 +4376,7 @@ nodes:
 
       [Order Lifecycle Management](model:D04.o), dans D04, conserve brouillon, affermissement, gel, lancement, attente, report, annulation et clôture. [Order Structuring](model:D04.n), dans D04, porte split et composition et [Order Archiving](model:D04.q) la conservation. Aucune recopie de ces responsabilités sous les trois parcours.
 
-      [Demand & Supply Matching](model:D03) et [Demand & Supply Matching](model:D03) déterminent les réponses et besoins selon leur finalité. [Service Task Management](model:D07.b) et [Process Orchestration](model:D06.d) conservent sollicitation et pilotage des prestations ; un appel de service ne nécessite pas systématiquement une commande d’achat. [Inventory Management](model:D01) enregistre les états et mouvements. La finance traite facturation et règlement ; la négociation contractuelle et l’exécution physique fournisseur ne sont pas absorbées.
+      [Demand & Supply Matching](model:D03) et [Demand & Supply Matching](model:D03) déterminent les réponses et besoins selon leur finalité. [Service Order Lifecycle](model:D07.b) et [Process Orchestration](model:D06.d) conservent sollicitation et pilotage des prestations ; un appel de service ne nécessite pas systématiquement une commande d’achat. [Inventory Management](model:D01) enregistre les états et mouvements. La finance traite facturation et règlement ; la négociation contractuelle et l’exécution physique fournisseur ne sont pas absorbées.
 
       U391 : la consignation est instruite comme responsabilité de gestion du stock, pas comme quatrième comportement de Purchase Order. Un transfert de propriété peut mobiliser l’achat selon l’accord sans déplacer toute la consignation dans cette capacité. La reprise fournisseur et le remplacement demeurent liés à [Supplier Return](model:D04.m), sans comportement par origine du besoin.
 
@@ -4643,6 +4648,7 @@ nodes:
   - CMP234
   - U626
   - U673
+  - U682
   source_locator:
     path: connaissance/01-contributions-utilisateur.md
     anchor: u214
@@ -4669,7 +4675,7 @@ nodes:
       name: 42fbeacc04a9bc65ee40f55423024a3ebc39e330d515bbae8fc7f8ec98fc67fe
     note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
       inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
-  last_modified: '2026-09-23T20:35:38.517366Z'
+  last_modified: '2026-09-24T07:36:08.930342Z'
   proposed_fields:
   - market_comparisons
   - market_inspiration
@@ -7419,7 +7425,7 @@ nodes:
   - name
   - scope
 - id: D14
-  revision: 9
+  revision: 10
   kind: reference
   fields:
     name: Service Catalog
@@ -7433,9 +7439,13 @@ nodes:
 
       Exemple : un service de préparation à délai configuré, un transport et une génération de document ont des résultats et engagements différents. Le SLA exprime le service rendu, notamment lorsqu’il dépend du physique ; il reste distinct du temps de réponse informatique. L’identité métier d’un service est distincte de ses accès techniques ; un exécutant partiellement manuel peut être sollicité via une adaptation.
 
-      Charge actuelle, capacité contextuelle, demandes, engagements individuels, estimations et résultats relèvent de D06. Fulfillment Network décrit les lieux et relations, Party les parties, Agreement les accords maîtres et Catalog les offres commerciales. Aucun protocole ni endpoint unique imposé.
+      Charge et capacité contextuelles, estimations, tracking et rapprochement des résultats relèvent de Fulfilment ; les demandes de prestation et engagements individuels relèvent de Service Order Management. Fulfillment Network décrit les lieux et relations, Party les parties, Agreement les accords maîtres et Catalog les offres commerciales. Aucun protocole ni endpoint unique imposé.
 
       Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des sous-domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
+
+      Familles explicites : Picking, Packing, Value-Added Services (étiquetage, réétiquetage, reconditionnement) et Cross-Docking. Décrire pour chacune le résultat offert, les conditions, unités, consignes et niveaux de service, sans stocker ici les instances commandées. Le catalogue ne fusionne pas les familles de capacités. Exemple fictif : proposer un réétiquetage selon une spécification ne prouve ni son acceptation pour un lot ni sa réalisation.
+
+      L’offre de transport précise origine et destination desservies, conditions de collecte et de livraison et variantes pertinentes. [Transport Order](model:service-order-transport) porte les exigences et engagements individuels du déplacement, composable avec les autres prestations.
     mastership: La vérité des données de référence vient d’une source externe au Domain Supply Chain Orchestration. Le domaine
       intègre les évolutions reçues et maintient leur représentation locale avec provenance ; il ne reprend pas leur CRUD
       maître.
@@ -7545,38 +7555,42 @@ nodes:
   - U646
   - U650
   - U673
+  - U682
+  - U698
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d14
   review:
     state: partial
-    note: Application de l’audit U673 ; accords de nom et rattachement capturés séparément. Corrections détaillées de périmètre
-      proposées sans validation globale.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U240
-    - U244
-    - U409
-    - U497
-    - U626
+    - U679
+    - U681
+    - U682
     validated_fields:
     - name
     value_sha256:
       name: e1b8f1f7294a993f39f756478001d7f05aa1ba5f4474c5275d1450cebb04211b
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
-  last_modified: '2026-09-23T20:35:38.517366Z'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  last_modified: '2026-09-24T08:19:57.499780Z'
   proposed_fields:
+  - data_governance
+  - definition
+  - finality
   - market_comparisons
   - market_inspiration
   - mastership
   - scope
+  approved_fields:
+  - name
 - id: D06.b
-  revision: 11
+  revision: 12
   kind: capability
   fields:
     name: Service Capacity Visibility
@@ -7594,7 +7608,9 @@ nodes:
 
       Précision éditoriale U435 : contextualiser les créneaux et dates communiqués avec leur calendrier applicable, fuseau et éventuelle heure limite. Une fermeture ou une information périmée doit rester visible aux décisions consommatrices ; aucun disponible ni engagement de capacité n’est déduit d’un plafond communiqué.
 
-      Frontière U673 : Conserver chez Fulfilment, responsable du dialogue avec les exécutants ; Availability et Matching la consomment. Un plafond communiqué n’est pas un disponible calculé.
+      Frontière U673 : Conserver chez Fulfilment, responsable du dialogue avec les exécutants ; Order Promising et Matching la consomment. Un plafond communiqué n’est pas un disponible calculé.
+
+      Distinguer les capacités communiquées de picking, packing, VAS et cross-docking avec leur unité et leurs contraintes. Deux plafonds partageant les mêmes équipes ne sont pas nécessairement additifs.
     market_comparisons:
     - vendor: Microsoft
       product: Dynamics 365 Supply Chain Management
@@ -7714,37 +7730,42 @@ nodes:
   - CMP193
   - U626
   - U673
+  - U682
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d06-b
   review:
     state: partial
-    note: Application de l’audit U673 ; accords de nom et rattachement capturés séparément. Corrections détaillées de périmètre
-      proposées sans validation globale.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U246
-    - U290
-    - U409
-    - U626
+    - U679
+    - U681
+    - U682
     validated_fields:
     - name
     value_sha256:
       name: ba754539fb8b05eaf3b83c0247a709e0712e1ba4bd868b2e4633e3da81bcd541
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-23T20:35:38.517366Z'
+  last_modified: '2026-09-24T07:34:47.738310Z'
   proposed_fields:
+  - definition
   - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
   - scope
+  approved_fields:
+  - name
 - id: D07.a
-  revision: 11
+  revision: 12
   kind: capability
   fields:
     name: Service Requirements Decision
@@ -7754,13 +7775,15 @@ nodes:
     scope: |-
       Déterminer, à partir du besoin Supply et de ses contraintes, les prestations et résultats requis : préparation, réception, transport ou production de documents. Préciser biens ou documents concernés, quantités, destinataires, lieux et échéances utiles.
 
-      Exemple : réaliser la livraison requiert une préparation, un document et un transport. La décision explicite ces besoins ; Service Task Management tient ensuite les demandes adressées aux exécutants et leurs évolutions. La décision de service choisit les moyens de service pour y répondre.
+      Exemple : réaliser la livraison requiert une préparation, un document et un transport. La décision explicite ces besoins ; Service Order Lifecycle tient ensuite les demandes adressées aux exécutants et leurs évolutions. La décision de service choisit les moyens de service pour y répondre.
 
       La capacité ne se limite plus à formuler un message ou à exprimer un Service Order. Elle ne recrée ni l’autorisation de la commande D04, ni sa promesse D04, ni un Agreement ou un Case. D07.a conserve son identité pour la responsabilité de détermination des prestations, précisée par U245/U247.
 
       Frontière : Ne choisit pas encore l’exécutant et ne pilote pas ses opérations internes.
 
-      Frontière U673 : Peut être mobilisée en préparation de la promesse ; la consommation par Availability ne change pas son propriétaire.
+      Frontière U673 : Peut être mobilisée en préparation de la promesse ; la consommation par Order Promising ne change pas son propriétaire.
+
+      Les prestations requises peuvent distinguer picking, packing, réétiquetage, reconditionnement et cross-docking. Cette décision détermine le résultat nécessaire ; Service Order Management tient la prestation confiée et son engagement.
     market_comparisons:
     - vendor: Microsoft
       product: Dynamics 365 Field Service
@@ -7876,124 +7899,140 @@ nodes:
   - U496
   - U626
   - U673
+  - U682
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d07-a
   review:
     state: partial
-    note: Application de l’audit U673 ; accords de nom et rattachement capturés séparément. Corrections détaillées de périmètre
-      proposées sans validation globale.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U247
-    - U290
-    - U409
-    - U496
-    - U626
+    - U679
+    - U681
+    - U682
     validated_fields:
     - name
     - definition
     value_sha256:
       name: 7a3214271bd81ca9480d569371666b8a678b5ec93c4dac5c93fe4cd4fb79294b
       definition: de9c3fd2d14c094b57b79c4223788d922fdd1e54d5263888de252def51f67e6c
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-23T20:35:38.517366Z'
+  last_modified: '2026-09-24T07:34:47.738310Z'
   proposed_fields:
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
   - scope
+  approved_fields:
+  - name
+  - definition
 - id: D07.b
-  revision: 10
+  revision: 11
   kind: capability
   fields:
-    name: Service Task Management
-    definition: Gouverner les Tasks qui sollicitent des services, depuis leurs conditions d’activation jusqu’à la vérification
-      de leur fin, en tenant les demandes adressées, les réponses et les reprises nécessaires.
-    finality: Assurer une sollicitation robuste et traçable des services jusqu’au résultat attendu.
+    name: Service Order Lifecycle
+    definition: Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes,
+      réponses, engagements, changements et reprises nécessaires.
+    finality: Conserver des engagements de prestation traçables jusqu’à leur conclusion sans confondre activation, acceptation
+      et réalisation.
     nature: management
     scope: |-
-      Chaque Task porte la sollicitation d’un service, ses conditions d’activation immédiate, différée ou événementielle, ses réponses et son suivi. Elle peut produire un Service Order pour formaliser la demande. La gestion de ce document et de ses évolutions reste incluse, sans rendre le document obligatoire.
+      Tenir l’activation immédiate, différée ou événementielle, la sollicitation, les réponses, les conditions acceptées, les révisions et la clôture des [Service Orders](glossary:TER066). Utiliser les constats et écarts pour déterminer ce qui reste ouvert dans la prestation ; une demande d’annulation ne prouve pas que le travail est arrêté. Une relance technique ne crée pas automatiquement une nouvelle prestation. La clôture s’appuie sur une fin vérifiée ; un acquittement API ou EDI ne prouve pas la réalisation physique.
 
-      La Task peut relancer et mobiliser un service de secours dans le cadre applicable. [Process Orchestration](model:D06.d) coordonne les Tasks et leurs dépendances ; [Process Adaptation Decision](model:D06.f) choisit les adaptations ; le tracking fournit les constats. Une relance technique ne doit pas être assimilée à une nouvelle prestation indépendante sans tenir compte du travail déjà accepté ou réalisé.
+      Cette responsabilité commune et les capacités de familles sont sœurs sous Service Order Management, sans sous-capacité ni cycle uniforme imposé. Réception et prestations humaines ou documentaires restent couvertes même sans famille spécialisée dans ce lot. [Transport Order](model:service-order-transport) porte désormais les exigences propres au déplacement et mobilise ce cycle commun. [Process Orchestration](model:D06.d) coordonne les dépendances entre prestations ; [Process Adaptation Decision](model:D06.f) choisit le recours à une solution de secours, dont le cycle de prise en charge est tenu ici. La Task représente la contribution au processus, sans être un second propriétaire de l’engagement de prestation.
 
-      La Task se termine lorsque l’achèvement du service est vérifié ; une réponse d’API ou un acquittement EDI ne prouve pas automatiquement la préparation physique. Demand conserve la demande initiale et ses engagements. Exemple fictif : attendre la preuve de fin d’une préparation, constater un manque, puis suivre la sollicitation complémentaire autorisée depuis un autre site.
-
-      Frontière U673 : Task et Order restent distincts ; un acquittement technique ne prouve pas l’achèvement physique.
+      Exemple fictif : une préparation partielle est constatée ; tenir le reste de prestation et la reprise autorisée, tandis qu’Order Management conserve le reste à satisfaire de la commande.
     market_comparisons:
-    - source_url: https://www.omg.org/spec/CMMN/1.1/PDF
-      similarities: CMMN distingue le travail associé et la Task qui peut attendre sa fin.
-      differences: Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage FLOW.
-      flow_position: La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste
-        optionnel.
+    - vendor: TM Forum
+      product: Service Order Management
+      element_name: TMFC007
+      element_type: Composant ODA
       relationship: Recouvrement partiel
+      similarities: Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
+      differences: Service Order Lifecycle est un libellé de capacité proposé pour conserver D07.b ; TM Forum inclut aussi
+        de l’orchestration, Oracle documente demande et confirmation. Aucun cycle produit uniforme importé.
+      flow_position: Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant
+        demandes, réponses, engagements, changements et reprises nécessaires.
+      source_title: Service Order Management
+      source_url: https://www.tmforum.org/oda/directory/components-map/production/TMFC007
+      source_version: TMFC007 2.0.0 ; date affichée 2024-02-23
+      source_locator: Présentation ; Exposed APIs ; Dependent APIs
+      consulted_on: '2026-09-23'
+      evidence_limits: Analogie télécom, pas standard logistique ; inclut de l’orchestration, donc ne prouve pas une séparation
+        nécessaire entre gestion d’ordres et orchestration.
       status: proposed
-      vendor: OMG
-      product: Case Management Model and Notation 1.1
-      source_title: Case Management Model and Notation 1.1
-      source_version: Documentation consultée le 22 septembre 2026 ; édition non précisée
-      source_locator: §5.4.10 ; table 5.39, isBlocking
-      consulted_on: '2026-09-22'
-      element_name: Case Management Model and Notation 1.1
-      element_type: Concept documenté par une source primaire
-      concept_name: Case Management Model and Notation 1.1
-      scope_summary: CMMN distingue le travail associé et la Task qui peut attendre sa fin.
-      approach_summary: CMMN distingue le travail associé et la Task qui peut attendre sa fin.
-      evidence_limits: Le standard autorise aussi des Tasks non bloquantes ; il ne prescrit pas tout le contrat de pilotage
-        FLOW. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
       source_refs:
-      - U617
-      - U625
-      - U626
-    - source_url: https://docs.camunda.io/docs/components/concepts/job-workers/
-      similarities: Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
-      differences: Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours à
-        gouverner explicitement.
-      flow_position: La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste
-        optionnel.
+      - ELM492
+      - CMP273
+      - U682
+      concept_name: TMFC007
+      scope_summary: Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
+      approach_summary: Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant
+        demandes, réponses, engagements, changements et reprises nécessaires.
+      term_choice: 'Service Order Lifecycle : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant
+        demandes, réponses, engagements, changements et reprises nécessaires.
+    - vendor: Oracle
+      product: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+      element_name: Shipment Request / Shipment Confirmation
+      element_type: Échanges amont-exécutant
       relationship: Recouvrement partiel
+      similarities: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+      differences: Service Order Lifecycle est un libellé de capacité proposé pour conserver D07.b ; TM Forum inclut aussi
+        de l’orchestration, Oracle documente demande et confirmation. Aucun cycle produit uniforme importé.
+      flow_position: Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant
+        demandes, réponses, engagements, changements et reprises nécessaires.
+      source_title: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html
+      source_version: Fusion Cloud SCM 25D
+      source_locator: Explanation of callouts, étapes 1 à 3
+      consulted_on: '2026-09-23'
+      evidence_limits: Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
       status: proposed
-      vendor: Camunda
-      product: Job workers
-      source_title: Job workers
-      source_version: Documentation consultée le 22 septembre 2026 ; édition non précisée
-      source_locator: Completing or failing jobs ; retry back off
-      consulted_on: '2026-09-22'
-      element_name: Job workers
-      element_type: Concept documenté par une source primaire
-      concept_name: Job workers
-      scope_summary: Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
-      approach_summary: Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite.
-      evidence_limits: Fin du job et fin de la prestation métier ne sont pas automatiquement identiques ; service de secours
-        à gouverner explicitement. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
       source_refs:
-      - U617
-      - U625
-      - U626
+      - ELM659
+      - CMP273
+      - U682
+      concept_name: Shipment Request / Shipment Confirmation
+      scope_summary: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+      approach_summary: Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant
+        demandes, réponses, engagements, changements et reprises nécessaires.
+      term_choice: 'Service Order Lifecycle : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant
+        demandes, réponses, engagements, changements et reprises nécessaires.
     market_inspiration:
-      choice: Assurer une sollicitation robuste et traçable des services jusqu’au résultat attendu.
-      flow_scope: Gouverner les Tasks qui sollicitent des services, depuis leurs conditions d’activation jusqu’à la vérification
-        de leur fin, en tenant les demandes adressées, les réponses et les reprises nécessaires.
-      flow_approach: La Task FLOW gouverne la sollicitation et vérifie l’achèvement du service ; le document de commande reste
-        optionnel.
+      choice: Service Order Lifecycle rend explicite la responsabilité FLOW.
+      flow_scope: Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant
+        demandes, réponses, engagements, changements et reprises nécessaires.
+      flow_approach: Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant
+        demandes, réponses, engagements, changements et reprises nécessaires.
       synthesis:
-      - CMMN distingue le travail associé et la Task qui peut attendre sa fin. Le standard autorise aussi des Tasks non bloquantes
-        ; il ne prescrit pas tout le contrat de pilotage FLOW.
-      - Les jobs disposent de tentatives, d’un délai de reprise et d’une complétion explicite. Fin du job et fin de la prestation
-        métier ne sont pas automatiquement identiques ; service de secours à gouverner explicitement.
+      - Service Order Lifecycle est un libellé de capacité proposé pour conserver D07.b ; TM Forum inclut aussi de l’orchestration,
+        Oracle documente demande et confirmation. Aucun cycle produit uniforme importé.
       examples:
-      - title: Illustration FLOW
-        situation: Un service de préparation ne répond pas à l’échéance attendue.
-        outcome: La Task suit la reprise autorisée et vérifie le résultat sans confondre réponse technique et prestation achevée.
-        lesson: Les responsabilités coopèrent ; cet exemple ne décrit pas une installation Beaumanoir.
-        source_title: Case Management Model and Notation 1.1
-        source_url: https://www.omg.org/spec/CMMN/1.1/PDF
+      - title: Exemple fictif
+        situation: Tenir une reprise de préparation partielle sans la confondre avec une nouvelle commande client.
+        outcome: Tenir le cycle des ordres de prestation, de leurs conditions d’activation à leur clôture, en conservant demandes,
+          réponses, engagements, changements et reprises nécessaires.
+        lesson: Illustration de la frontière FLOW, sans preuve de réalisation installée.
         source_refs:
-        - U626
+        - ELM492
+        - U682
+        source_title: Service Order Management
+        source_url: https://www.tmforum.org/oda/directory/components-map/production/TMFC007
+    category:
+      id: common
+      display_name: Gestion commune des ordres
+      order: 30
   source_refs:
   - P81
   - U03
@@ -8041,39 +8080,43 @@ nodes:
   - U617
   - U626
   - U673
+  - U682
+  - U698
+  - U701
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d07-b
   review:
     state: partial
-    note: Application de l’audit U673 ; accords de nom et rattachement capturés séparément. Corrections détaillées de périmètre
-      proposées sans validation globale.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U247
-    - U290
-    - U497
-    - U626
+    - U679
+    - U681
+    - U682
     validated_fields: []
     value_sha256: {}
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-23T20:35:38.517366Z'
+  last_modified: '2026-09-24T08:19:57.499780Z'
   proposed_fields:
   - definition
   - finality
   - market_comparisons
   - market_inspiration
   - name
+  - nature
   - scope
+  - category
+  approved_fields: []
 - id: D07.c
-  revision: 7
+  revision: 8
   kind: capability
   fields:
     name: Service Reconciliation
@@ -8089,6 +8132,8 @@ nodes:
       Frontière : Reliquat prestation différent du reliquat Order ; aucun rapprochement financier.
 
       Frontière U673 : Fournir les écarts aux Orders et les faits à Inventory ; ne pas tenir à leur place le reliquat commande ou le stock.
+
+      Fournir les faits ou écarts qualifiés à Service Order Management pour les suites des ordres de prestation ; ne pas dupliquer la tenue de leurs engagements individuels.
     market_comparisons:
     - vendor: Microsoft
       product: Dynamics 365 Supply Chain Management
@@ -8199,41 +8244,40 @@ nodes:
   - U482
   - U626
   - U673
+  - U682
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d07-c
   review:
     state: partial
-    note: Application de l’audit U673 ; accords de nom et rattachement capturés séparément. Corrections détaillées de périmètre
-      proposées sans validation globale.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U237
-    - U238
-    - U240
-    - U242
-    - U243
-    - U244
-    - U290
-    - U626
+    - U679
+    - U681
+    - U682
     validated_fields: []
     value_sha256: {}
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-23T20:35:38.517366Z'
+  last_modified: '2026-09-24T07:34:47.738310Z'
   proposed_fields:
   - definition
+  - finality
   - market_comparisons
   - market_inspiration
+  - name
+  - nature
   - scope
+  approved_fields: []
 - id: D07.d
-  revision: 10
+  revision: 11
   kind: capability
   fields:
     name: Operations Tracking
@@ -8254,6 +8298,8 @@ nodes:
       Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des sous-domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
 
       Frontière U673 : Alimenter Supply Visibility pour les attendus consolidés ; ne pas constituer une seconde tenue des mêmes ressources futures.
+
+      Fournir les faits ou écarts qualifiés à Service Order Management pour les suites des ordres de prestation ; ne pas dupliquer la tenue de leurs engagements individuels.
     decomposition_rationale: Les trois périmètres physiques rendent lisibles les situations et opérations propres à l’entrepôt,
       au transport et au magasin ; livré ne signifie pas mis en rayon. Le suivi transversal des processus explique les résultats,
       attentes et blocages métier en reliant Tasks et appels sous-jacents. Ce sont des perspectives combinables aux bénéfices
@@ -8385,34 +8431,41 @@ nodes:
   - U482
   - U626
   - U673
+  - U682
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d07-d
   review:
     state: partial
-    note: Application de l’audit U673 ; accords de nom et rattachement capturés séparément. Corrections détaillées de périmètre
-      proposées sans validation globale.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U247
-    - U290
-    - U409
-    - U626
+    - U679
+    - U681
+    - U682
     validated_fields:
     - name
     value_sha256:
       name: 9131d6fda562bd126262226ca451d29a633d8edcf5394002ae7d119c9a905dc1
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-23T20:35:38.517366Z'
+  last_modified: '2026-09-24T07:34:47.738310Z'
   proposed_fields:
+  - decomposition_rationale
+  - definition
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
   - scope
+  approved_fields:
+  - name
 - id: D04
   revision: 16
   kind: area
@@ -9099,19 +9152,17 @@ nodes:
   - scope
   last_modified: '2026-09-23T20:35:38.517366Z'
 - id: D06
-  revision: 8
+  revision: 9
   kind: area
   fields:
     name: Fulfilment Orchestration
-    definition: Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats, et rechercher
-      des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching.
+    definition: Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent
+      la promesse et les équilibres du Matching.
     finality: Mener les prestations à leur résultat attendu malgré les aléas.
-    scope: 'Déterminer les prestations, choisir les services et exécutants, tenir les Tasks, suivre et rapprocher les résultats.
-      Conserver la connaissance des capacités opérationnelles communiquées et décider du devenir logistique des retours. Une
-      adaptation peut modifier les détails de réalisation ; si elle remet en cause la promesse ou les ressources partagées,
-      transmettre les impacts à Order Management et Matching. Les marges d’autonomie sont des règles, pas de nouvelles responsabilités.
-      Exemple fictif : retenir une autre collecte pour livrer à la date promise sans reprendre une ressource engagée pour
-      une autre commande.'
+    scope: |-
+      Déterminer les prestations requises, choisir les services et exécutants, coordonner leurs contributions et adapter le plan d’exécution. [Service Order Management](model:subdomain-service-orders) tient les exigences, engagements propres et évolutions des prestations confiées. Fulfilment conserve la visibilité des capacités communiquées, le tracking, le rapprochement des résultats et la décision de devenir logistique des retours.
+
+      Les Tasks expriment les contributions et dépendances du processus ; elles ne remplacent pas les Service Orders comme porteurs des engagements individuels. Une adaptation préserve la promesse d’Order Management et les grands équilibres du master plan de Matching ; transmettre les impacts non absorbables à leurs responsables. Les exécutants conservent leurs opérations internes. Exemple fictif : coordonner réétiquetage, préparation et collecte pour tenir une livraison, puis choisir une autre collecte si nécessaire.
     market_comparisons:
     - vendor: Oracle
       product: Overview of Orchestration Processes
@@ -9121,9 +9172,10 @@ nodes:
       similarities: Des tâches appellent les services des systèmes exécutants ; dépendances, suivi, changements et fin des
         prestations sont paramétrés.
       differences: La coordination des services et retours d’exécution est étayée ; l’autonomie locale respectant Matching
-        est un choix explicite FLOW U664.
-      flow_position: Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats,
-        et rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching.
+        est un choix explicite FLOW U664. U682 sépare la tenue des engagements individuels dans Service Order Management de
+        la coordination conservée ici ; les regroupements produits ne prescrivent pas cette frontière.
+      flow_position: Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent
+        la promesse et les équilibres du Matching.
       source_title: Overview of Orchestration Processes
       source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faiom/orchestration-processes.html
       source_version: Fusion Cloud SCM 26B
@@ -9138,6 +9190,7 @@ nodes:
       - CMP269
       - CMP270
       - U673
+      - U682
       term_choice: Nom du sous-domaine retenu pour la responsabilité FLOW ; pas de correspondance universelle aux modules
         éditeurs.
       definition_choice: Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats,
@@ -9145,8 +9198,8 @@ nodes:
       concept_name: Overview of Orchestration Processes
       scope_summary: Des tâches appellent les services des systèmes exécutants ; dépendances, suivi, changements et fin des
         prestations sont paramétrés.
-      approach_summary: Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats,
-        et rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching.
+      approach_summary: Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui
+        préservent la promesse et les équilibres du Matching.
     - vendor: Microsoft
       product: Intelligent Order Management overview
       element_name: Intelligent Order Management overview
@@ -9155,9 +9208,10 @@ nodes:
       similarities: Orchestration événementielle entre plateformes et partenaires, service de visibilité et choix optimisé
         du lieu de satisfaction.
       differences: La coordination des services et retours d’exécution est étayée ; l’autonomie locale respectant Matching
-        est un choix explicite FLOW U664.
-      flow_position: Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats,
-        et rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching.
+        est un choix explicite FLOW U664. U682 sépare la tenue des engagements individuels dans Service Order Management de
+        la coordination conservée ici ; les regroupements produits ne prescrivent pas cette frontière.
+      flow_position: Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent
+        la promesse et les équilibres du Matching.
       source_title: Intelligent Order Management overview
       source_url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/overview
       source_version: Documentation évolutive, sans édition produit précise
@@ -9172,6 +9226,7 @@ nodes:
       - CMP269
       - CMP270
       - U673
+      - U682
       term_choice: Nom du sous-domaine retenu pour la responsabilité FLOW ; pas de correspondance universelle aux modules
         éditeurs.
       definition_choice: Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats,
@@ -9179,13 +9234,14 @@ nodes:
       concept_name: Intelligent Order Management overview
       scope_summary: Orchestration événementielle entre plateformes et partenaires, service de visibilité et choix optimisé
         du lieu de satisfaction.
-      approach_summary: Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats,
-        et rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching.
+      approach_summary: Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui
+        préservent la promesse et les équilibres du Matching.
     market_inspiration:
       choice: Fulfilment Orchestration exprime la responsabilité retenue dans le découpage U667–U673.
-      flow_scope: Obtenir la réalisation attendue en coordonnant les prestations, leurs dépendances et leurs résultats, et
-        rechercher des adaptations locales qui préservent la promesse de l’Order et les grands équilibres du Matching.
-      flow_approach: Obtenir les prestations et adapter leur réalisation en préservant les engagements.
+      flow_scope: Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent
+        la promesse et les équilibres du Matching.
+      flow_approach: Composer et coordonner les prestations, suivre leurs dépendances et rechercher les adaptations qui préservent
+        la promesse et les équilibres du Matching.
       synthesis:
       - La coordination des services et retours d’exécution est étayée ; l’autonomie locale respectant Matching est un choix
         explicite FLOW U664.
@@ -9246,41 +9302,40 @@ nodes:
   - U642
   - CMP267
   - U673
+  - U682
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d06
   review:
     state: partial
-    note: Application de l’audit U673 ; accords de nom et rattachement capturés séparément. Corrections détaillées de périmètre
-      proposées sans validation globale.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   editorial_basis: 'Domain definition/finality: dated assistant summary from app/model-metadata.json, not independently approved.'
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U242
-    - U244
-    - U409
-    - U626
-    - U667
-    - U673
+    - U679
+    - U681
+    - U682
     validated_fields:
     - name
+    - definition
     value_sha256:
       name: 9074bee540ad12eece1de341cbd9092a8f4fd5b4241c96869b2c5e5bbb547aa3
-    note: U673 applique le nom présenté dans l’audit ; U672 adopte explicitement le nom et la responsabilité d’Order Promising.
-      Les autres descriptions restent proposées.
-  last_modified: '2026-09-23T20:35:38.517366Z'
+      definition: dc8a9ebb82881de6f354a50de503aed39bfbdf3440005897e7187d88e4d9d391
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  last_modified: '2026-09-24T07:34:47.738310Z'
   proposed_fields:
-  - definition
   - finality
   - market_comparisons
   - market_inspiration
   - scope
   approved_fields:
   - name
+  - definition
 - id: D08.d
   revision: 9
   kind: capability
@@ -10094,7 +10149,7 @@ nodes:
     note: Illustration proposée par l’IA ; aucune discussion spécifique ni validation de cet élément établie. Date de reprise
       du cycle, pas date historique de l’accord.
 - id: D06.d
-  revision: 7
+  revision: 8
   kind: capability
   fields:
     name: Process Orchestration
@@ -10102,7 +10157,7 @@ nodes:
     finality: Coordonner la réalisation du plan retenu entre les exécutants.
     nature: orchestration
     scope: |-
-      Coordonner le déclenchement et l’enchaînement des prestations du plan retenu, en tenant compte de leurs dépendances, des prises en charge et des faits d’exécution. Mobiliser Service Task Management pour tenir les demandes et leurs évolutions.
+      Coordonner le déclenchement et l’enchaînement des prestations du plan retenu, en tenant compte de leurs dépendances, des prises en charge et des faits d’exécution. Mobiliser Service Order Lifecycle pour tenir les demandes et leurs évolutions.
 
       Exemple : coordonner la préparation, la disponibilité du document et la collecte. Si la décision d’adaptation retient un autre transporteur, coordonner la modification des prestations concernées et leur nouvel enchaînement.
 
@@ -10113,6 +10168,8 @@ nodes:
       Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking rend visibles les opérations et Process Tracking leur contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des sous-domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
 
       Frontière U673 : Distinguer le plan d’exécution coordonné du master plan de matching arbitré dans Matching.
+
+      Service Order Management tient le cycle et les engagements des ordres de prestation. L’orchestration utilise leurs réponses et coordonne les conditions d’activation et dépendances ; elle ne recrée pas leur cycle.
     market_comparisons:
     - vendor: Camunda
       product: Process Orchestration
@@ -10215,37 +10272,42 @@ nodes:
   - U590
   - U626
   - U673
+  - U682
   source_locator:
     path: connaissance/32-execution-orchestration.md
     anchor: d06-d
   review:
     state: partial
-    note: Application de l’audit U673 ; accords de nom et rattachement capturés séparément. Corrections détaillées de périmètre
-      proposées sans validation globale.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   adoption_ids: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U247
-    - U290
-    - U409
-    - U496
-    - U626
+    - U679
+    - U681
+    - U682
     validated_fields:
     - name
     - definition
     value_sha256:
       name: 1fa13792cf41f7ea721310c3e7825f2a923c79cc4da176a36c4e808653fc9ae7
       definition: 37986dcc6a0f8277ea2a08ef87dc93778177143e4f7a835ed3ad6639af97ccb7
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   editorial_basis: 'Refonte U290 depuis la cible U286–U289. Formulations et exemples ajoutés restent éditoriaux ; accords
     antérieurs conservés seulement sur valeurs inchangées. Historique : audits/2026-09-17-refonte-appliquee/model-before.yaml.'
-  last_modified: '2026-09-23T20:35:38.517366Z'
+  last_modified: '2026-09-24T07:34:47.738310Z'
   proposed_fields:
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
   - scope
+  approved_fields:
+  - name
+  - definition
 - id: D14.a
   revision: 9
   kind: capability
@@ -24731,6 +24793,1148 @@ nodes:
   - scope
   approved_fields:
   - name
+- id: subdomain-service-orders
+  revision: 1
+  kind: area
+  fields:
+    name: Service Order Management
+    definition: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+    scope: |-
+      Tenir les [Service Orders](glossary:TER066) avec les conditions demandées, acceptées et modifiées, les résultats attendus et les suites nécessaires. Les familles de prestations sont des capacités au même niveau que les Orders entrants. [Transport Order](model:service-order-transport) rend explicites les demandes de déplacement, composables avec les prestations d’entrepôt. Le cycle commun conserve les sollicitations de réception et services humains ou documentaires : la liste des familles explicites n’est pas exhaustive.
+
+      [Order Management](model:D04) porte la demande à satisfaire et sa promesse. [Fulfilment Orchestration](model:D06) compose les prestations, coordonne leurs dépendances et choisit les adaptations ; ce sous-domaine tient leurs engagements individuels. Le [Service Catalog](model:D14) décrit l’offre, les exécutants réalisent le travail. Un ordre n’impose ni achat, ni document, ni canal technique.
+
+      Une commande de prestations logistiques peut porter plusieurs [Service Orders](glossary:TER066), avec l’enchaînement attendu. Une liste ordonnée exprime une séquence simple ; la demande peut aussi préciser des dépendances, des possibilités de réalisation en parallèle et des conditions. Service Order Management conserve la demande d’ensemble, les exigences de chaque ordre et les contraintes d’enchaînement demandées, acceptées ou modifiées. [Fulfilment Orchestration](model:D06) organise et pilote leur réalisation en respectant ces engagements. La composition ne crée pas automatiquement une nouvelle famille d’Order et n’impose pas un ordre distinct pour chaque opération interne.
+
+      Exemple fictif : une commande demande une inspection, puis un réétiquetage et une mise sur cintre. Chaque prestation porte ses exigences ; l’enchaînement convenu est conservé avec la demande et son exécution est coordonnée par Fulfilment Orchestration. Une réparation peut être conditionnée au constat de réparabilité issu de l’inspection.
+    finality: Disposer de prestations confiées et d’engagements opérationnels explicites jusqu’à leur conclusion.
+    market_comparisons:
+    - vendor: TM Forum
+      product: Service Order Management
+      element_name: TMFC007
+      element_type: Composant ODA
+      relationship: Recouvrement partiel
+      similarities: Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
+      differences: TM Forum atteste le nom et inclut de l’orchestration ; Microsoft et Oracle distinguent commandes amont
+        et sollicitations logistiques. Séparer ici engagements de prestation et coordination est un choix FLOW, sans équivalence
+        aux modules. La commande composée et la conservation de ses contraintes dans FLOW sont précisées par U692 ; ces sources
+        ne démontrent pas un contrat universel de liste ordonnée d’ordres logistiques.
+      flow_position: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+      source_title: Service Order Management
+      source_url: https://www.tmforum.org/oda/directory/components-map/production/TMFC007
+      source_version: TMFC007 2.0.0 ; date affichée 2024-02-23
+      source_locator: Présentation ; Exposed APIs ; Dependent APIs
+      consulted_on: '2026-09-23'
+      evidence_limits: Analogie télécom, pas standard logistique ; inclut de l’orchestration, donc ne prouve pas une séparation
+        nécessaire entre gestion d’ordres et orchestration.
+      status: proposed
+      source_refs:
+      - ELM492
+      - CMP273
+      - U682
+      - U692
+      concept_name: TMFC007
+      scope_summary: Le composant reçoit les Service Orders et orchestre leur fourniture, en utilisant notamment le catalogue.
+      approach_summary: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs
+        évolutions.
+      term_choice: 'Service Order Management : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs
+        évolutions.
+    - vendor: Microsoft
+      product: Warehouse management only mode overview
+      element_name: Inbound Shipment Order / Outbound Shipment Order
+      element_type: Documents et frontière produit
+      relationship: Recouvrement partiel
+      similarities: Documents logistiques séparés des commandes générales amont ; fonctions WMS autonomes.
+      differences: TM Forum atteste le nom et inclut de l’orchestration ; Microsoft et Oracle distinguent commandes amont
+        et sollicitations logistiques. Séparer ici engagements de prestation et coordination est un choix FLOW, sans équivalence
+        aux modules. La commande composée et la conservation de ses contraintes dans FLOW sont précisées par U692 ; ces sources
+        ne démontrent pas un contrat universel de liste ordonnée d’ordres logistiques.
+      flow_position: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+      source_title: Warehouse management only mode overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-overview
+      source_version: Documentation évolutive ; mise à jour affichée 2025-11-20
+      source_locator: Introduction ; Unsupported processes
+      consulted_on: '2026-09-23'
+      evidence_limits: Périmètre entrepôt ; restrictions retours, production et transport. Ne prescrit aucun sous-domaine
+        FLOW.
+      status: proposed
+      source_refs:
+      - ELM133
+      - CMP273
+      - U682
+      - U692
+      concept_name: Inbound Shipment Order / Outbound Shipment Order
+      scope_summary: Documents logistiques séparés des commandes générales amont ; fonctions WMS autonomes.
+      approach_summary: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs
+        évolutions.
+      term_choice: 'Service Order Management : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs
+        évolutions.
+    - vendor: Oracle
+      product: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+      element_name: Shipment Request / Shipment Confirmation
+      element_type: Échanges amont-exécutant
+      relationship: Recouvrement partiel
+      similarities: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+      differences: TM Forum atteste le nom et inclut de l’orchestration ; Microsoft et Oracle distinguent commandes amont
+        et sollicitations logistiques. Séparer ici engagements de prestation et coordination est un choix FLOW, sans équivalence
+        aux modules. La commande composée et la conservation de ses contraintes dans FLOW sont précisées par U692 ; ces sources
+        ne démontrent pas un contrat universel de liste ordonnée d’ordres logistiques.
+      flow_position: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+      source_title: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html
+      source_version: Fusion Cloud SCM 25D
+      source_locator: Explanation of callouts, étapes 1 à 3
+      consulted_on: '2026-09-23'
+      evidence_limits: Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
+      status: proposed
+      source_refs:
+      - ELM659
+      - CMP273
+      - U682
+      - U692
+      concept_name: Shipment Request / Shipment Confirmation
+      scope_summary: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+      approach_summary: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs
+        évolutions.
+      term_choice: 'Service Order Management : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs
+        évolutions.
+    market_inspiration:
+      choice: Service Order Management rend explicite la responsabilité FLOW.
+      flow_scope: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+      flow_approach: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+      synthesis:
+      - TM Forum atteste le nom et inclut de l’orchestration ; Microsoft et Oracle distinguent commandes amont et sollicitations
+        logistiques. Séparer ici engagements de prestation et coordination est un choix FLOW, sans équivalence aux modules.
+      examples:
+      - title: Exemple fictif
+        situation: Une préparation et un réétiquetage concourent à la même livraison.
+        outcome: Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagements propres et leurs évolutions.
+        lesson: Illustration de la frontière FLOW, sans preuve de réalisation installée.
+        source_refs:
+        - ELM492
+        - U682
+        source_title: Service Order Management
+        source_url: https://www.tmforum.org/oda/directory/components-map/production/TMFC007
+  source_refs:
+  - U679
+  - U681
+  - U682
+  - CMP273
+  - ELM492
+  - ELM133
+  - ELM659
+  - U691
+  - U692
+  - U698
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u682
+  adoption_ids: []
+  last_modified: '2026-09-24T08:19:57.499780Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés. U692 valide le principe de commande composée et la frontière de responsabilités ; ne valide pas
+      globalement les autres passages du scope ou la nouvelle rédaction illustrative.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 84e67c4fd85b3b69fb74e89c621506fa50de7a72bce3933dd51321c7bc630910
+      definition: a50d2a16ddc03d34b4bcfc1127c5f20384e49939210cf0fde11052e2270ba7a4
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - scope
+- id: service-order-picking
+  revision: 1
+  kind: capability
+  fields:
+    name: Picking Order
+    definition: Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs
+      engagements et les suites des manquants constatés.
+    scope: |-
+      Préciser les biens à prélever, les quantités, le lieu et l’échéance demandés ; tenir la prise en charge, les changements et le reste de prestation à traiter. Les constats proviennent du tracking et les écarts qualifiés du rapprochement. L’exécutant organise les emplacements, parcours et opérateurs. Aucun prélèvement ne réaffecte de lui-même les ressources d’une autre commande. La prestation peut appartenir à un ordre composite de préparation sans perdre ses exigences propres.
+
+      Exemple fictif : Sur 100 pièces demandées, 96 sont prélevées : tenir la suite des quatre manquantes sans confondre le reliquat de prestation avec celui de la commande.
+
+      La prestation est décrite dans le [Service Catalog](model:D14) ; le [Service Order](glossary:TER066) en porte les exigences et engagements individuels auprès du [Service Provider](glossary:TER088).
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: SAP
+      product: Warehouse Order
+      element_name: Warehouse Order
+      element_type: Lot de travail interne
+      relationship: Recouvrement partiel
+      similarities: Regroupe des tâches d’entrepôt ou postes d’inventaire dans un travail exécutable par un opérateur.
+      differences: Le Warehouse Order SAP est un lot opérateur ; Oracle confie pick-pack-ship ensemble. Picking Order nomme
+        ici une capacité de gestion de prestation, sans imposer un document amont par tâche.
+      flow_position: Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence,
+        leurs engagements et les suites des manquants constatés.
+      source_title: Warehouse Order
+      source_url: https://help.sap.com/saphelp_ewm700_ehp02/helpdata/en/65/cccb53ad377114e10000000a174cb4/content.htm?no_cache=true
+      source_version: Documentation EWM 7.0 EHP2 ; preuve historique de sémantique
+      source_locator: Definition ; Use ; Example
+      consulted_on: '2026-09-23'
+      evidence_limits: Maille interne WMS ; faux équivalent d’un ordre de prestation confié par FLOW. Pas de revendication
+        de dernière version.
+      status: proposed
+      source_refs:
+      - ELM660
+      - CMP273
+      - U682
+      concept_name: Warehouse Order
+      scope_summary: Regroupe des tâches d’entrepôt ou postes d’inventaire dans un travail exécutable par un opérateur.
+      approach_summary: Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence,
+        leurs engagements et les suites des manquants constatés.
+      term_choice: 'Picking Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence,
+        leurs engagements et les suites des manquants constatés.
+    - vendor: Oracle
+      product: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+      element_name: Shipment Request / Shipment Confirmation
+      element_type: Échanges amont-exécutant
+      relationship: Recouvrement partiel
+      similarities: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+      differences: Le Warehouse Order SAP est un lot opérateur ; Oracle confie pick-pack-ship ensemble. Picking Order nomme
+        ici une capacité de gestion de prestation, sans imposer un document amont par tâche.
+      flow_position: Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence,
+        leurs engagements et les suites des manquants constatés.
+      source_title: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html
+      source_version: Fusion Cloud SCM 25D
+      source_locator: Explanation of callouts, étapes 1 à 3
+      consulted_on: '2026-09-23'
+      evidence_limits: Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
+      status: proposed
+      source_refs:
+      - ELM659
+      - CMP273
+      - U682
+      concept_name: Shipment Request / Shipment Confirmation
+      scope_summary: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+      approach_summary: Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence,
+        leurs engagements et les suites des manquants constatés.
+      term_choice: 'Picking Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence,
+        leurs engagements et les suites des manquants constatés.
+    market_inspiration:
+      choice: Picking Order rend explicite la responsabilité FLOW.
+      flow_scope: Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence,
+        leurs engagements et les suites des manquants constatés.
+      flow_approach: Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence,
+        leurs engagements et les suites des manquants constatés.
+      synthesis:
+      - Le Warehouse Order SAP est un lot opérateur ; Oracle confie pick-pack-ship ensemble. Picking Order nomme ici une capacité
+        de gestion de prestation, sans imposer un document amont par tâche.
+      examples:
+      - title: Exemple fictif
+        situation: 'Sur 100 pièces demandées, 96 sont prélevées : tenir la suite des quatre manquantes sans confondre le reliquat
+          de prestation avec celui de la commande.'
+        outcome: Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs
+          engagements et les suites des manquants constatés.
+        lesson: Illustration de la frontière FLOW, sans preuve de réalisation installée.
+        source_refs:
+        - ELM660
+        - U682
+        source_title: Warehouse Order
+        source_url: https://help.sap.com/saphelp_ewm700_ehp02/helpdata/en/65/cccb53ad377114e10000000a174cb4/content.htm?no_cache=true
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+  source_refs:
+  - U679
+  - U681
+  - U682
+  - CMP273
+  - ELM660
+  - ELM659
+  - U701
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u682
+  adoption_ids: []
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - name
+    value_sha256:
+      name: 27e2d65ff387ddcb85d452d245627436e2b5b454dc848da92ab22ebf3eead202
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
+  - scope
+  - category
+- id: service-order-packing
+  revision: 1
+  kind: capability
+  fields:
+    name: Packing Order
+    definition: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
+      et la conformité attendue des unités constituées.
+    scope: |-
+      Porter les exigences d’emballage, de regroupement et d’échéance pertinentes et leurs modifications ; utiliser les faits communiqués pour tenir la prestation. L’exécutant choisit ses gestes et moyens. Le conditionnement initial relève de Packing Order ; la modification demandée d’un conditionnement existant peut relever de Repacking sous Value-Added Service Order. Cette frontière décrit le résultat requis et ne doit pas conduire à commander deux fois la même prestation.
+
+      Exemple fictif : Constituer dix colis selon les consignes magasin ; un prélèvement achevé ne prouve pas la conformité des colis.
+
+      La prestation est décrite dans le [Service Catalog](model:D14) ; le [Service Order](glossary:TER066) en porte les exigences et engagements individuels auprès du [Service Provider](glossary:TER088).
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: Microsoft
+      product: Packing work for packing outbound containers and processing shipments
+      element_name: Packing work
+      element_type: Travail interne WMS
+      relationship: Recouvrement partiel
+      similarities: Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions
+        partielles.
+      differences: Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité
+        FLOW gère les exigences de conditionnement et leurs suites, pas le travail opérateur.
+      flow_position: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
+        et la conformité attendue des unités constituées.
+      source_title: Packing work for packing outbound containers and processing shipments
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work
+      source_version: Documentation évolutive, version globale non figée
+      source_locator: Introduction ; Set up a location for packing work
+      consulted_on: '2026-09-23'
+      evidence_limits: Work order type interne au WMS ; pas preuve d’un Packing Order autonome à la frontière Supply.
+      status: proposed
+      source_refs:
+      - ELM656
+      - CMP273
+      - U682
+      concept_name: Packing work
+      scope_summary: Travail de packing distinct, créé en fonction des emplacements, lié aux contenants et aux expéditions
+        partielles.
+      approach_summary: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
+        et la conformité attendue des unités constituées.
+      term_choice: 'Packing Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
+        et la conformité attendue des unités constituées.
+    - vendor: Oracle
+      product: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+      element_name: Shipment Request / Shipment Confirmation
+      element_type: Échanges amont-exécutant
+      relationship: Recouvrement partiel
+      similarities: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+      differences: Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité
+        FLOW gère les exigences de conditionnement et leurs suites, pas le travail opérateur.
+      flow_position: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
+        et la conformité attendue des unités constituées.
+      source_title: Shipment Request and Shipment Confirmation Processes for External Systems Integration
+      source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faims/shipment-request-and-shipment-confirmation-processes-for.html
+      source_version: Fusion Cloud SCM 25D
+      source_locator: Explanation of callouts, étapes 1 à 3
+      consulted_on: '2026-09-23'
+      evidence_limits: Contexte sortant ; ne décrit pas un ordre individuel obligatoire par opération ni tout le cycle d’annulation.
+      status: proposed
+      source_refs:
+      - ELM659
+      - CMP273
+      - U682
+      concept_name: Shipment Request / Shipment Confirmation
+      scope_summary: Une demande au WMS ou 3PL est suivie du pick, pack et ship, puis d’une confirmation de réalisation.
+      approach_summary: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
+        et la conformité attendue des unités constituées.
+      term_choice: 'Packing Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
+        et la conformité attendue des unités constituées.
+    market_inspiration:
+      choice: Packing Order rend explicite la responsabilité FLOW.
+      flow_scope: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
+        et la conformité attendue des unités constituées.
+      flow_approach: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
+        et la conformité attendue des unités constituées.
+      synthesis:
+      - Packing work est interne au WMS et une Shipment Request peut couvrir plusieurs opérations. La capacité FLOW gère les
+        exigences de conditionnement et leurs suites, pas le travail opérateur.
+      examples:
+      - title: Exemple fictif
+        situation: Constituer dix colis selon les consignes magasin ; un prélèvement achevé ne prouve pas la conformité des
+          colis.
+        outcome: Gérer les demandes de conditionnement confiées aux exécutants, les consignes applicables, leurs engagements
+          et la conformité attendue des unités constituées.
+        lesson: Illustration de la frontière FLOW, sans preuve de réalisation installée.
+        source_refs:
+        - ELM656
+        - U682
+        source_title: Packing work for packing outbound containers and processing shipments
+        source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/packing-work
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+  source_refs:
+  - U679
+  - U681
+  - U682
+  - CMP273
+  - ELM656
+  - ELM659
+  - U701
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u682
+  adoption_ids: []
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - name
+    value_sha256:
+      name: 659965ce6ebf29dc1c17afbbfbf8820995bd4096791e19fd3de7948d7de8d9cb
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
+  - scope
+  - category
+- id: service-order-vas
+  revision: 1
+  kind: capability
+  fields:
+    name: Value-Added Service Order
+    definition: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
+      et les suites des résultats conformes ou en écart.
+    scope: |-
+      Préciser le traitement attendu, les produits et quantités concernés, les consignes applicables et l’échéance. Tenir les évolutions et suites de l’ordre à partir des constats et du rapprochement ; ne pas réaliser le traitement physique. Le light touch recouvre ici notamment étiquetage, réétiquetage et reconditionnement. Les comportements détaillent les particularités de gestion de ces variantes. Kitting / Dekitting reste une proposition conditionnelle dans l’audit, hors de la décomposition appliquée tant que son inclusion dans le périmètre n’est pas retenue.
+
+      Exemple fictif : Réétiqueter un lot selon une version de consigne puis distinguer les pièces traitées des pièces conformes.
+
+      La prestation est décrite dans le [Service Catalog](model:D14) ; le [Service Order](glossary:TER066) en porte les exigences et engagements individuels auprès du [Service Provider](glossary:TER088).
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: SAP
+      product: Value-Added Services (VAS)
+      element_name: VAS order
+      element_type: Ordre et activités WMS
+      relationship: Recouvrement partiel
+      similarities: Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+      differences: SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels
+        plus larges des éditeurs ne sont pas tous inclus.
+      flow_position: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
+        et les suites des résultats conformes ou en écart.
+      source_title: Value-Added Services (VAS)
+      source_url: https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html
+      source_version: SAP EWM 9.5 FPS02
+      source_locator: Use
+      consulted_on: '2026-09-23'
+      evidence_limits: Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel
+        FLOW.
+      status: proposed
+      source_refs:
+      - ELM658
+      - CMP273
+      - U682
+      concept_name: VAS order
+      scope_summary: Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+      approach_summary: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
+        et les suites des résultats conformes ou en écart.
+      term_choice: 'Value-Added Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
+        et les suites des résultats conformes ou en écart.
+    - vendor: Oracle
+      product: Oracle Warehouse Management Outbound Logistics
+      element_name: Picking ; Bulk Picking ; Value Added Services
+      element_type: Processus et tâches WMS
+      relationship: Recouvrement partiel
+      similarities: Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et
+        kitting.
+      differences: SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels
+        plus larges des éditeurs ne sont pas tous inclus.
+      flow_position: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
+        et les suites des résultats conformes ou en écart.
+      source_title: Oracle Warehouse Management Outbound Logistics
+      source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm
+      source_version: E-Business Suite 12.2
+      source_locator: Overview of the Material Picking Process ; Bulk Picking / Value Added Services
+      consulted_on: '2026-09-23'
+      evidence_limits: Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch
+        ni découpage Supply imposé.
+      status: proposed
+      source_refs:
+      - ELM661
+      - CMP273
+      - U682
+      concept_name: Picking ; Bulk Picking ; Value Added Services
+      scope_summary: Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et
+        kitting.
+      approach_summary: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
+        et les suites des résultats conformes ou en écart.
+      term_choice: 'Value-Added Service Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
+        et les suites des résultats conformes ou en écart.
+    market_inspiration:
+      choice: Value-Added Service Order rend explicite la responsabilité FLOW.
+      flow_scope: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
+        et les suites des résultats conformes ou en écart.
+      flow_approach: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
+        et les suites des résultats conformes ou en écart.
+      synthesis:
+      - SAP et Oracle décrivent des activités VAS ; FLOW modélise leur commande et leurs exigences. Les VAS industriels plus
+        larges des éditeurs ne sont pas tous inclus.
+      examples:
+      - title: Exemple fictif
+        situation: Réétiqueter un lot selon une version de consigne puis distinguer les pièces traitées des pièces conformes.
+        outcome: Gérer les demandes de traitements légers confiées aux exécutants, leurs spécifications, leurs engagements
+          et les suites des résultats conformes ou en écart.
+        lesson: Illustration de la frontière FLOW, sans preuve de réalisation installée.
+        source_refs:
+        - ELM658
+        - U682
+        source_title: Value-Added Services (VAS)
+        source_url: https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html
+    decomposition_rationale: 'Distinguer les variantes dont les exigences et écarts de conformité changent la gestion de l’ordre
+      : information et version appliquées pour l’étiquetage, transformation du conditionnement existant pour le reconditionnement.
+      Ce sont des variantes de prise en charge métier, pas des gestes opérateur ni des paramètres de catalogue.'
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+  source_refs:
+  - U679
+  - U681
+  - U682
+  - CMP273
+  - ELM658
+  - ELM661
+  - U701
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u682
+  adoption_ids: []
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - name
+    value_sha256:
+      name: ff33582d3ac10c6583e3d1e197f986da83186294907e85d31ca41fffcb3e90c5
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  approved_fields:
+  - name
+  proposed_fields:
+  - decomposition_rationale
+  - definition
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
+  - scope
+  - category
+- id: service-order-cross-docking
+  revision: 1
+  kind: capability
+  fields:
+    name: Cross-Docking Order
+    definition: Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues
+      vers les départs prévus.
+    scope: |-
+      Tenir les arrivées et sorties concernées, les quantités, fenêtres attendues, prises en charge et changements de prestation. Matching arbitre la couverture et les affectations partagées ; Fulfilment coordonne le passage et les adaptations locales. Une arrivée tardive ou un départ manqué produit des faits et suites explicites, sans réaffectation implicite d’autres commandes. L’instruction peut être autonome ou liée aux ordres entrants et sortants ; le cross-docking évite le stockage conventionnel sans imposer le même parcours à toutes les unités.
+
+      Exemple fictif : Un lot attendu doit rejoindre un départ magasin ; le retard d’arrivée exige une suite de prestation et un arbitrage si la promesse est affectée.
+
+      La prestation est décrite dans le [Service Catalog](model:D14) ; le [Service Order](glossary:TER066) en porte les exigences et engagements individuels auprès du [Service Provider](glossary:TER088).
+    finality: Tenir les exigences et engagements de la prestation et expliquer ses suites.
+    nature: action
+    market_comparisons:
+    - vendor: Microsoft
+      product: Planned cross docking
+      element_name: Cross docking
+      element_type: Processus et travail WMS
+      relationship: Recouvrement partiel
+      similarities: Lien entre arrivées et sorties ; création du travail de passage vers la sortie. Des demandes cross-dock
+        sont portées par les lignes des Shipment Orders en mode WMS autonome.
+      differences: Les documents Microsoft étayent les demandes liées aux entrées/sorties ; ils ne prouvent ni un Cross-Docking
+        Order universel ni la frontière Matching/Fulfilment de FLOW. Deux documents du même éditeur ne constituent pas un
+        consensus.
+      flow_position: Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises
+        reçues vers les départs prévus.
+      source_title: Planned cross docking
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/planned-cross-docking
+      source_version: Documentation évolutive, version globale non figée
+      source_locator: Introduction ; Process the cross-docking ; note finale WMS only mode
+      consulted_on: '2026-09-23'
+      evidence_limits: Le produit combine marquage, affectation et exécution ; ne détermine pas la frontière Matching/Fulfilment
+        de FLOW.
+      status: proposed
+      source_refs:
+      - ELM657
+      - CMP273
+      - U682
+      concept_name: Cross docking
+      scope_summary: Lien entre arrivées et sorties ; création du travail de passage vers la sortie. Des demandes cross-dock
+        sont portées par les lignes des Shipment Orders en mode WMS autonome.
+      approach_summary: Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises
+        reçues vers les départs prévus.
+      term_choice: 'Cross-Docking Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises
+        reçues vers les départs prévus.
+    - vendor: Microsoft
+      product: Warehouse management only mode overview
+      element_name: Inbound Shipment Order / Outbound Shipment Order
+      element_type: Documents et frontière produit
+      relationship: Recouvrement partiel
+      similarities: Documents logistiques séparés des commandes générales amont ; fonctions WMS autonomes.
+      differences: Les documents Microsoft étayent les demandes liées aux entrées/sorties ; ils ne prouvent ni un Cross-Docking
+        Order universel ni la frontière Matching/Fulfilment de FLOW. Deux documents du même éditeur ne constituent pas un
+        consensus.
+      flow_position: Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises
+        reçues vers les départs prévus.
+      source_title: Warehouse management only mode overview
+      source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-overview
+      source_version: Documentation évolutive ; mise à jour affichée 2025-11-20
+      source_locator: Introduction ; Unsupported processes
+      consulted_on: '2026-09-23'
+      evidence_limits: Périmètre entrepôt ; restrictions retours, production et transport. Ne prescrit aucun sous-domaine
+        FLOW.
+      status: proposed
+      source_refs:
+      - ELM133
+      - CMP273
+      - U682
+      concept_name: Inbound Shipment Order / Outbound Shipment Order
+      scope_summary: Documents logistiques séparés des commandes générales amont ; fonctions WMS autonomes.
+      approach_summary: Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises
+        reçues vers les départs prévus.
+      term_choice: 'Cross-Docking Order : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises
+        reçues vers les départs prévus.
+    market_inspiration:
+      choice: Cross-Docking Order rend explicite la responsabilité FLOW.
+      flow_scope: Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues
+        vers les départs prévus.
+      flow_approach: Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises
+        reçues vers les départs prévus.
+      synthesis:
+      - Les documents Microsoft étayent les demandes liées aux entrées/sorties ; ils ne prouvent ni un Cross-Docking Order
+        universel ni la frontière Matching/Fulfilment de FLOW. Deux documents du même éditeur ne constituent pas un consensus.
+      examples:
+      - title: Exemple fictif
+        situation: Un lot attendu doit rejoindre un départ magasin ; le retard d’arrivée exige une suite de prestation et
+          un arbitrage si la promesse est affectée.
+        outcome: Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues
+          vers les départs prévus.
+        lesson: Illustration de la frontière FLOW, sans preuve de réalisation installée.
+        source_refs:
+        - ELM657
+        - U682
+        source_title: Planned cross docking
+        source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/planned-cross-docking
+    category:
+      id: warehouse
+      display_name: Prestations d’entrepôt
+      order: 10
+  source_refs:
+  - U679
+  - U681
+  - U682
+  - CMP273
+  - ELM657
+  - ELM133
+  - U701
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u682
+  adoption_ids: []
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - name
+    value_sha256:
+      name: cafd7f1655dd5725082af5e429c8ec85369406779b56ad05a19654684654115a
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
+  - scope
+  - category
+- id: vas-labeling-relabeling
+  revision: 1
+  kind: behavior
+  fields:
+    name: Labeling / Relabeling
+    definition: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue
+      et la conformité du résultat communiqué.
+    scope: |-
+      La conformité porte sur l’information appliquée et sa version, pas seulement sur une quantité traitée. Les références des consignes relèvent du catalogue ; les exigences et engagements individuels sont tenus dans l’ordre. Le tracking et le rapprochement fournissent les constats et écarts ; l’exécutant réalise le geste physique.
+
+      Exemple fictif : Un changement d’étiquette exige la version attendue pour le lot concerné ; une confirmation de traitement ne suffit pas si elle concerne une autre version.
+    finality: Rendre explicables les exigences et suites propres à cette variante de prestation.
+    nature: process_variant
+    market_comparisons:
+    - vendor: SAP
+      product: Value-Added Services (VAS)
+      element_name: VAS order
+      element_type: Ordre et activités WMS
+      relationship: Recouvrement partiel
+      similarities: Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+      differences: Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un
+        choix FLOW. Les sources ne prescrivent pas cette décomposition.
+      flow_position: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification
+        attendue et la conformité du résultat communiqué.
+      source_title: Value-Added Services (VAS)
+      source_url: https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html
+      source_version: SAP EWM 9.5 FPS02
+      source_locator: Use
+      consulted_on: '2026-09-23'
+      evidence_limits: Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel
+        FLOW.
+      status: proposed
+      source_refs:
+      - ELM658
+      - CMP273
+      - U682
+      concept_name: VAS order
+      scope_summary: Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+      approach_summary: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification
+        attendue et la conformité du résultat communiqué.
+      term_choice: 'Labeling / Relabeling : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification
+        attendue et la conformité du résultat communiqué.
+    - vendor: Oracle
+      product: Oracle Warehouse Management Outbound Logistics
+      element_name: Picking ; Bulk Picking ; Value Added Services
+      element_type: Processus et tâches WMS
+      relationship: Recouvrement partiel
+      similarities: Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et
+        kitting.
+      differences: Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un
+        choix FLOW. Les sources ne prescrivent pas cette décomposition.
+      flow_position: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification
+        attendue et la conformité du résultat communiqué.
+      source_title: Oracle Warehouse Management Outbound Logistics
+      source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm
+      source_version: E-Business Suite 12.2
+      source_locator: Overview of the Material Picking Process ; Bulk Picking / Value Added Services
+      consulted_on: '2026-09-23'
+      evidence_limits: Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch
+        ni découpage Supply imposé.
+      status: proposed
+      source_refs:
+      - ELM661
+      - CMP273
+      - U682
+      concept_name: Picking ; Bulk Picking ; Value Added Services
+      scope_summary: Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et
+        kitting.
+      approach_summary: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification
+        attendue et la conformité du résultat communiqué.
+      term_choice: 'Labeling / Relabeling : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification
+        attendue et la conformité du résultat communiqué.
+    market_inspiration:
+      choice: Labeling / Relabeling rend explicite la responsabilité FLOW.
+      flow_scope: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue
+        et la conformité du résultat communiqué.
+      flow_approach: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification
+        attendue et la conformité du résultat communiqué.
+      synthesis:
+      - Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW.
+        Les sources ne prescrivent pas cette décomposition.
+      examples:
+      - title: Exemple fictif
+        situation: Un changement d’étiquette exige la version attendue pour le lot concerné ; une confirmation de traitement
+          ne suffit pas si elle concerne une autre version.
+        outcome: Qualifier et suivre la prestation d’étiquetage ou de réétiquetage confiée, en tenant la spécification attendue
+          et la conformité du résultat communiqué.
+        lesson: Illustration de la frontière FLOW, sans preuve de réalisation installée.
+        source_refs:
+        - ELM658
+        - U682
+        source_title: Value-Added Services (VAS)
+        source_url: https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html
+  source_refs:
+  - U679
+  - U681
+  - U682
+  - CMP273
+  - ELM658
+  - ELM661
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u682
+  adoption_ids: []
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - name
+    value_sha256:
+      name: c6e5367d7d31834cbc1007cd05871cd728385f6a65177112a6032787993eb3dc
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
+  - scope
+- id: vas-repacking
+  revision: 1
+  kind: behavior
+  fields:
+    name: Repacking
+    definition: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du
+      conditionnement et en traitant les écarts signalés.
+    scope: |-
+      Modifier un conditionnement existant ; clarifier la frontière avec Packing Order sans créer deux demandes pour la même prestation. Les références des consignes relèvent du catalogue ; les exigences et engagements individuels sont tenus dans l’ordre. Le tracking et le rapprochement fournissent les constats et écarts ; l’exécutant réalise le geste physique.
+
+      Exemple fictif : Reconditionner un lot déjà emballé selon une nouvelle consigne ; distinguer quantité traitée et quantité conforme.
+    finality: Rendre explicables les exigences et suites propres à cette variante de prestation.
+    nature: process_variant
+    market_comparisons:
+    - vendor: SAP
+      product: Value-Added Services (VAS)
+      element_name: VAS order
+      element_type: Ordre et activités WMS
+      relationship: Recouvrement partiel
+      similarities: Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+      differences: Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un
+        choix FLOW. Les sources ne prescrivent pas cette décomposition.
+      flow_position: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue
+        du conditionnement et en traitant les écarts signalés.
+      source_title: Value-Added Services (VAS)
+      source_url: https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html
+      source_version: SAP EWM 9.5 FPS02
+      source_locator: Use
+      consulted_on: '2026-09-23'
+      evidence_limits: Texte primaire indexé consulté ; ouverture directe sans corps. Ordre interne EWM, pas objet universel
+        FLOW.
+      status: proposed
+      source_refs:
+      - ELM658
+      - CMP273
+      - U682
+      concept_name: VAS order
+      scope_summary: Un ordre VAS porte des activités telles que assemblage, packing, étiquetage et kitting.
+      approach_summary: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue
+        du conditionnement et en traitant les écarts signalés.
+      term_choice: 'Repacking : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue
+        du conditionnement et en traitant les écarts signalés.
+    - vendor: Oracle
+      product: Oracle Warehouse Management Outbound Logistics
+      element_name: Picking ; Bulk Picking ; Value Added Services
+      element_type: Processus et tâches WMS
+      relationship: Recouvrement partiel
+      similarities: Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et
+        kitting.
+      differences: Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un
+        choix FLOW. Les sources ne prescrivent pas cette décomposition.
+      flow_position: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue
+        du conditionnement et en traitant les écarts signalés.
+      source_title: Oracle Warehouse Management Outbound Logistics
+      source_url: https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317987.htm
+      source_version: E-Business Suite 12.2
+      source_locator: Overview of the Material Picking Process ; Bulk Picking / Value Added Services
+      consulted_on: '2026-09-23'
+      evidence_limits: Documentation EBS, distincte du produit Fusion Cloud ; ni équivalence générale de tous les light touch
+        ni découpage Supply imposé.
+      status: proposed
+      source_refs:
+      - ELM661
+      - CMP273
+      - U682
+      concept_name: Picking ; Bulk Picking ; Value Added Services
+      scope_summary: Le travail de picking est affecté aux opérateurs et peut être groupé ; les VAS incluent repackaging et
+        kitting.
+      approach_summary: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue
+        du conditionnement et en traitant les écarts signalés.
+      term_choice: 'Repacking : nom FLOW ; le terme natif et son périmètre restent ceux de la source.'
+      definition_choice: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue
+        du conditionnement et en traitant les écarts signalés.
+    market_inspiration:
+      choice: Repacking rend explicite la responsabilité FLOW.
+      flow_scope: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue
+        du conditionnement et en traitant les écarts signalés.
+      flow_approach: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue
+        du conditionnement et en traitant les écarts signalés.
+      synthesis:
+      - Appuis sémantiques aux prestations VAS ; la variante de gestion de l’ordre et sa maille Behavior sont un choix FLOW.
+        Les sources ne prescrivent pas cette décomposition.
+      examples:
+      - title: Exemple fictif
+        situation: Reconditionner un lot déjà emballé selon une nouvelle consigne ; distinguer quantité traitée et quantité
+          conforme.
+        outcome: Qualifier et suivre la prestation de reconditionnement confiée, en précisant la transformation attendue du
+          conditionnement et en traitant les écarts signalés.
+        lesson: Illustration de la frontière FLOW, sans preuve de réalisation installée.
+        source_refs:
+        - ELM658
+        - U682
+        source_title: Value-Added Services (VAS)
+        source_url: https://help.sap.com/docs/SAP_EXTENDED_WAREHOUSE_MANAGEMENT/3d97bec9bf1649099384bb8167df3cf2/4cb48fea25d1664ce10000000a15822b.html
+  source_refs:
+  - U679
+  - U681
+  - U682
+  - CMP273
+  - ELM658
+  - ELM661
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u682
+  adoption_ids: []
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - name
+    value_sha256:
+      name: 9e04ca2132115f7ab5f784d5b16910c7a29843f124b4e99b07af1e580c28f736
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  approved_fields:
+  - name
+  proposed_fields:
+  - definition
+  - finality
+  - market_comparisons
+  - market_inspiration
+  - nature
+  - scope
+- id: service-order-transport
+  revision: 1
+  kind: capability
+  fields:
+    name: Transport Order
+    definition: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de
+      collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+    scope: |-
+      Tenir les exigences de la prestation de transport confiée, ses conditions acceptées, leurs modifications et les suites à donner aux écarts. Un [Service Order](glossary:TER066) de transport peut être composé avec les prestations de prélèvement et de conditionnement. [Fulfilment Orchestration](model:D06) coordonne l’ensemble ; le transporteur organise ses moyens et ses opérations internes. Les choix d’exécutant et d’adaptation restent dans les responsabilités existantes de Fulfilment. Les constats de suivi et le rapprochement des résultats alimentent la tenue de l’ordre.
+
+      Une seule famille couvre les demandes de transport ; le mode, le transporteur et le type de trajet ne créent pas systématiquement de nouvelles capacités. Le [Service Catalog](model:D14) décrit les offres, variantes et conditions de service. L’engagement de prestation auprès du [Service Provider](glossary:TER088) reste distinct de la promesse de la commande portée par [Order Management](model:D04).
+
+      Exemple fictif : après préparation et emballage de 100 cartons, confier leur déplacement de l’entrepôt vers un magasin avec une fenêtre de collecte et une fenêtre de livraison. Un retard de collecte entraîne une suite de prestation et, si nécessaire, une adaptation coordonnée par Fulfilment ; il ne modifie pas automatiquement la promesse client.
+    finality: Tenir une demande de déplacement et ses engagements en cohérence avec les autres prestations logistiques.
+    nature: action
+    market_comparisons:
+    - vendor: SAP
+      product: SAP S/4HANA Transportation Management
+      element_name: Transportation Order
+      element_type: Objet ou interface de produit TMS
+      relationship: Recouvrement partiel
+      similarities: Une demande crée, modifie ou annule un ordre de transport de différentes catégories, notamment freight
+        order et freight booking.
+      differences: SAP distingue des catégories de documents et Oracle distingue demande à transporter et expéditions planifiées.
+        FLOW porte la gestion de la prestation confiée et ses engagements ; orchestration, choix des moyens et gestes physiques
+        restent distincts.
+      flow_position: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes
+        de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+      source_title: Maintain Generic Transportation Order
+      source_url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/733c8b37b3f546a1b08750e8aeabb887/9740cb5147dd9d55e10000000a423f68.html
+      source_version: 2025 FPS01 (février 2026)
+      source_locator: Definition ; Business Context and Use
+      consulted_on: '2026-09-24'
+      evidence_limits: Texte primaire indexé consulté le 24 septembre 2026 ; ouverture directe sans corps. Opération de service
+        et catégories SAP, pas équivalence de capacité ni découpage FLOW.
+      status: proposed
+      source_refs:
+      - ELM683
+      - CMP275
+      - U698
+      concept_name: Transportation Order
+      scope_summary: Une demande crée, modifie ou annule un ordre de transport de différentes catégories, notamment freight
+        order et freight booking.
+      approach_summary: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes
+        de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+      term_choice: Transport Order est le nom de la famille FLOW adopté U698 ; Transportation Order et Order Release sont
+        les termes natifs comparés, sans nomenclature universelle revendiquée.
+      definition_choice: Distinguer les exigences et engagements de déplacement des décisions de coordination et de la réalisation
+        du transport.
+    - vendor: Oracle
+      product: Oracle Transportation Management
+      element_name: Order Release
+      element_type: Objet ou interface de produit TMS
+      relationship: Recouvrement partiel
+      similarities: La demande contient des unités ou lignes à transporter, les lieux et dates, ainsi que des contraintes
+        utilisées pour planifier les expéditions.
+      differences: SAP distingue des catégories de documents et Oracle distingue demande à transporter et expéditions planifiées.
+        FLOW porte la gestion de la prestation confiée et ses engagements ; orchestration, choix des moyens et gestes physiques
+        restent distincts.
+      flow_position: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes
+        de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+      source_title: Order Release
+      source_url: https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm
+      source_version: 25C
+      source_locator: Introduction ; Adding Order Releases, fenêtres de collecte/livraison et origine/destination
+      consulted_on: '2026-09-24'
+      evidence_limits: Texte primaire ouvert et lu le 24 septembre 2026. L’Order Release exprime la demande de transport ;
+        ne prouve pas à lui seul un engagement de transporteur ni une correspondance un pour un avec les shipments.
+      status: proposed
+      source_refs:
+      - ELM684
+      - CMP275
+      - U698
+      concept_name: Order Release
+      scope_summary: La demande contient des unités ou lignes à transporter, les lieux et dates, ainsi que des contraintes
+        utilisées pour planifier les expéditions.
+      approach_summary: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes
+        de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+      term_choice: Transport Order est le nom de la famille FLOW adopté U698 ; Transportation Order et Order Release sont
+        les termes natifs comparés, sans nomenclature universelle revendiquée.
+      definition_choice: Distinguer les exigences et engagements de déplacement des décisions de coordination et de la réalisation
+        du transport.
+    market_inspiration:
+      choice: Une famille Transport Order indépendante des modes, cohérente avec les familles de Service Orders.
+      flow_scope: Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes
+        de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts.
+      flow_approach: Distinguer la demande et les engagements de transport de la coordination d’ensemble et des opérations
+        du transporteur.
+      synthesis:
+      - Les documents TMS étayent la demande de déplacement ; leurs catégories et cardinalités ne sont pas imposées au modèle.
+      examples:
+      - title: Exemple fictif
+        situation: Cent cartons préparés attendent une collecte pour un magasin.
+        outcome: Tenir les fenêtres convenues et la suite d’un retard, en articulation avec Fulfilment.
+        lesson: L’engagement de transport est distinct de la promesse commerciale ; aucune réalisation Beaumanoir déduite.
+        source_refs:
+        - U698
+        - ELM684
+        source_title: Order Release
+        source_url: https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm
+    category:
+      id: transport
+      display_name: Transport
+      order: 20
+  source_refs:
+  - U697
+  - U698
+  - CMP275
+  - ELM683
+  - ELM684
+  - U701
+  source_locator:
+    path: connaissance/01-contributions-utilisateur.md
+    anchor: u698
+  adoption_ids: []
+  last_modified: '2026-09-24T08:19:57.499780Z'
+  review:
+    state: partial
+    note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields:
+    - name
+    - definition
+    value_sha256:
+      name: 2b202211d03601b2e3a085c67818b33fd0e70853434547e2cb9b0a1f35fbcdfc
+      definition: e163ea1ee4867f39683d86fb04c55ba822c234c689566891a6ddcdb063311da2
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
+  approved_fields:
+  - name
+  - definition
+  proposed_fields:
+  - scope
+  - finality
+  - nature
+  - market_comparisons
+  - market_inspiration
+  - category
 relations:
 - id: REL-MEMBER-D01.f
   revision: 1
@@ -25340,9 +26544,9 @@ relations:
     note: U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments
       ni des liens de coopération par extension.
 - id: REL-MEMBER-D07.b
-  revision: 2
+  revision: 3
   type: contains
-  source_id: D06
+  source_id: subdomain-service-orders
   target_id: D07.b
   source_refs:
   - P81
@@ -25359,29 +26563,23 @@ relations:
   - Q074
   - U238
   - U244
+  - U682
   review:
-    state: accepted
-    note: U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments
-      ni des liens de coopération par extension.
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   lifecycle:
-    state: urbanist_validated
-    recorded_at: '2026-09-16T09:04:53.281745Z'
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U238
-    - U244
-    - U667
-    - U673
-    validated_fields:
-    - source_id
-    - target_id
-    - type
-    value_sha256:
-      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
-      source_id: 17c128fc100f3fa90ffc5f6acdd8a736b5c1f6ceefffc66da48cb4529e9a55d4
-      target_id: 60a11eff3fe6e88134bd0381a5ec55c21bd376c4092b529753975534f8e2b9f8
-    note: U673 autorise l’application du rattachement présenté dans l’audit ; aucune validation des descriptions des éléments
-      ni des liens de coopération par extension.
+    - U679
+    - U681
+    - U682
+    validated_fields: []
+    value_sha256: {}
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  last_modified: '2026-09-24T07:34:47.738310Z'
 - id: REL-MEMBER-D07.c
   revision: 2
   type: contains
@@ -26893,10 +28091,10 @@ relations:
       inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
   last_modified: '2026-09-22T17:16:21.472666Z'
 - id: REL-SERVICE-CATALOG-PROMISING
-  revision: 3
+  revision: 4
   type: provides-conditions
   source_id: D14
-  target_id: D04
+  target_id: D18
   source_refs:
   - U237
   - U238
@@ -26906,27 +28104,29 @@ relations:
   - U244
   - U438
   - U626
+  - U682
   review:
     state: partial
-    note: Décisions antérieures transcrites ; nouvelles formulations et contextes proposés U626, sans accord global.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   qualification:
-    meaning: D04 utilise les conditions de service configurées pour construire la promesse, avec la capacité contextuelle
-      fournie par D06 et les autres informations Supply.
+    meaning: Order Promising utilise les conditions de service configurées avec la capacité contextuelle et les informations
+      Supply pour calculer la promesse recommandée ; Order Management confirme l’engagement.
     conditions: []
     effects: []
     scope: Responsabilité métier ; aucun contrat technique, seuil, automatisation ou cardinalité imposé.
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U244
-    - U626
+    - U679
+    - U681
+    - U682
     validated_fields: []
     value_sha256: {}
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
-  last_modified: '2026-09-22T17:16:21.472666Z'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  last_modified: '2026-09-24T07:34:47.738310Z'
 - id: REL-EXECUTION-PROMISING
   revision: 3
   type: provides-knowledge
@@ -27004,7 +28204,7 @@ relations:
     label: Fournit les faits utiles à la coordination
   last_modified: '2026-09-19T00:55:22.737470Z'
 - id: REL-EXECUTION-ORCHESTRATION-COMMITMENTS
-  revision: 4
+  revision: 5
   type: relates-to
   source_id: D06.d
   target_id: D07.b
@@ -27019,11 +28219,13 @@ relations:
   - U290
   - U497
   - U626
+  - U682
   review:
     state: partial
-    note: Décisions antérieures transcrites ; nouvelles formulations et contextes proposés U626, sans accord global.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   qualification:
-    meaning: L’orchestration mobilise Service Task Management pour tenir les demandes de prestation et leurs évolutions selon
+    meaning: L’orchestration mobilise Service Order Lifecycle pour tenir les demandes de prestation et leurs évolutions selon
       le plan retenu ; le choix d’une variation relève d’Adaptation Decision.
     conditions:
     - Si pertinent dans le cas ; pas d’appel systématique ni de séquence universelle.
@@ -27034,19 +28236,16 @@ relations:
     role: needs
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U245
-    - U246
-    - U247
-    - U290
-    - U626
+    - U679
+    - U681
+    - U682
     validated_fields: []
     value_sha256: {}
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
-  last_modified: '2026-09-22T17:16:21.472666Z'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+  last_modified: '2026-09-24T07:34:47.738310Z'
 - id: REL-MEMBER-D06.e
   revision: 1
   type: contains
@@ -27323,7 +28522,7 @@ relations:
     value_sha256: {}
     note: Intégration U290 ; détails éditoriaux proposés.
 - id: REL-EXECUTION-REQUIREMENTS-SERVICE-ORDER
-  revision: 4
+  revision: 5
   type: relates-to
   source_id: D07.a
   target_id: D07.b
@@ -27334,32 +28533,31 @@ relations:
   - U435
   - U497
   - U626
+  - U682
   review:
     state: partial
-    note: Décisions antérieures transcrites ; nouvelles formulations et contextes proposés U626, sans accord global.
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
   qualification:
-    meaning: Les prestations nécessaires déterminées alimentent les demandes tenues par Service Task Management, sans présumer
+    meaning: Les prestations nécessaires déterminées alimentent les demandes tenues par Service Order Lifecycle, sans présumer
       une cardinalité ou une émission automatique.
     scope: Relation métier sans hiérarchie entre capacités ni séquence technique universelle.
     conditions: []
     effects: []
   lifecycle:
     state: under_instruction
-    recorded_at: '2026-09-22T17:09:50.704739Z'
+    recorded_at: '2026-09-24T07:34:47.738310Z'
     recorded_by: Codex
     source_refs:
-    - U245
-    - U246
-    - U247
-    - U435
-    - U626
+    - U679
+    - U681
+    - U682
     validated_fields: []
     value_sha256: {}
-    note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
-      inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
   fields:
     label: Fournit les prestations requises à solliciter
-  last_modified: '2026-09-22T17:16:21.472666Z'
+  last_modified: '2026-09-24T07:34:47.738310Z'
 - id: REL-CTP-ORDER-PRIORITIZATION
   revision: 1
   type: relates-to
@@ -36516,6 +37714,477 @@ relations:
     - Respecter les règles, engagements et versions applicables ; données inconnues ou périmées explicites.
     effects:
     - Fournir le résultat au responsable consommateur sans transférer sa responsabilité.
+- id: REL-U682-PRESENTS-SERVICE-ORDERS
+  revision: 1
+  type: presents
+  source_id: universe-supply
+  target_id: subdomain-service-orders
+  source_refs:
+  - U679
+  - U681
+  - U682
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 8fce95e6cb23820ec5381094b850bb38115f1375fd18e259986cd2bd60aea415
+      target_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      type: 1346f9a6e83122d4948929d5b8c0a9ae9f38e9bdaebf0d64d15a196a8d50591a
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-CONTAINS-service-order-picking
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-picking
+  source_refs:
+  - U679
+  - U681
+  - U682
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: d29d50be965d5f7299e3aa88b6ceb4cbf20729724d0a8a341a6bc4c161825d57
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-LIFECYCLE-service-order-picking
+  revision: 1
+  type: relates-to
+  source_id: service-order-picking
+  target_id: D07.b
+  source_refs:
+  - U679
+  - U681
+  - U682
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields: []
+    value_sha256: {}
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-CONTAINS-service-order-packing
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-packing
+  source_refs:
+  - U679
+  - U681
+  - U682
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 6e52f844d22dd5ee16be6c89d6a91f8af02bfc4c4abe8dd4b1bc80f2735ede7f
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-LIFECYCLE-service-order-packing
+  revision: 1
+  type: relates-to
+  source_id: service-order-packing
+  target_id: D07.b
+  source_refs:
+  - U679
+  - U681
+  - U682
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields: []
+    value_sha256: {}
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-CONTAINS-service-order-vas
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-vas
+  source_refs:
+  - U679
+  - U681
+  - U682
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: c6f5ec2471a2f8366dd3cd281cbe4072baae8d6e0511b905e92cb4d9aad5c1ef
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-LIFECYCLE-service-order-vas
+  revision: 1
+  type: relates-to
+  source_id: service-order-vas
+  target_id: D07.b
+  source_refs:
+  - U679
+  - U681
+  - U682
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields: []
+    value_sha256: {}
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-CONTAINS-service-order-cross-docking
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-cross-docking
+  source_refs:
+  - U679
+  - U681
+  - U682
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 2e83e8ceb29e41b5af38f8e62150e71283c934afb8c2176f0ab228cb8a4eb267
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-LIFECYCLE-service-order-cross-docking
+  revision: 1
+  type: relates-to
+  source_id: service-order-cross-docking
+  target_id: D07.b
+  source_refs:
+  - U679
+  - U681
+  - U682
+  qualification:
+    meaning: La famille conserve les exigences et suites propres à sa prestation et mobilise le cycle commun de l’ordre ;
+      ce lien n’est pas une décomposition.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields: []
+    value_sha256: {}
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-CONTAINS-vas-labeling-relabeling
+  revision: 1
+  type: contains
+  source_id: service-order-vas
+  target_id: vas-labeling-relabeling
+  source_refs:
+  - U679
+  - U681
+  - U682
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c6f5ec2471a2f8366dd3cd281cbe4072baae8d6e0511b905e92cb4d9aad5c1ef
+      target_id: e6e67e03e22c75f9753a393ffcb6f9345bea8942044aa4a77a60bf43906838ec
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-CONTAINS-vas-repacking
+  revision: 1
+  type: contains
+  source_id: service-order-vas
+  target_id: vas-repacking
+  source_refs:
+  - U679
+  - U681
+  - U682
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: c6f5ec2471a2f8366dd3cd281cbe4072baae8d6e0511b905e92cb4d9aad5c1ef
+      target_id: e6309bb5ad40d74ea736906bad46a060eacff7fe2bad2d655dc7c3bef4f47d45
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-ORCHESTRATION-SERVICE-ORDERS
+  revision: 1
+  type: provides-knowledge
+  source_id: D06
+  target_id: subdomain-service-orders
+  source_refs:
+  - U679
+  - U681
+  - U682
+  qualification:
+    meaning: Fulfilment fournit les prestations à solliciter, leurs dépendances et les adaptations retenues ; Service Order
+      Management les utilise pour tenir et faire évoluer les ordres, sans reprendre la coordination d’ensemble.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields: []
+    value_sha256: {}
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U682-CATALOG-SERVICE-ORDERS
+  revision: 1
+  type: provides-conditions
+  source_id: D14
+  target_id: subdomain-service-orders
+  source_refs:
+  - U679
+  - U681
+  - U682
+  qualification:
+    meaning: Le catalogue fournit l’offre et les consignes de référence ; les ordres portent leurs exigences et conditions
+      acceptées pour chaque prestation.
+    conditions:
+    - Lorsqu’une prestation concernée est sollicitée ou évolue.
+    effects:
+    - Échanger les exigences, engagements ou constats sans transférer la responsabilité de leur propriétaire.
+    scope: Contrat métier proposé ; aucune cardinalité, API ou séquence universelle imposée.
+  last_modified: '2026-09-24T07:34:47.738310Z'
+  review:
+    state: partial
+    note: Application U682 ; accords U679/U681 limités aux valeurs présentées. Descriptions, comparaisons et choix de redistribution
+      détaillés proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T07:34:47.738310Z'
+    recorded_by: Codex
+    source_refs:
+    - U679
+    - U681
+    - U682
+    validated_fields: []
+    value_sha256: {}
+    note: Portée des accords capturée séparément ; aucun accord global sur les détails.
+- id: REL-U698-CONTAINS-service-order-transport
+  revision: 1
+  type: contains
+  source_id: subdomain-service-orders
+  target_id: service-order-transport
+  source_refs:
+  - U698
+  last_modified: '2026-09-24T08:19:57.499780Z'
+  review:
+    state: partial
+    note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields:
+    - source_id
+    - target_id
+    - type
+    value_sha256:
+      source_id: 6d3edae0d62dce73fff2944ac79533e34e9d390ac0a7f5765a50958e11a0cba7
+      target_id: 6297e03ba7427e62d0a87febaedf096f9283e1dd3acb98824c4ed6a55871f762
+      type: dde0e3dc0ad9a0daf42c9d0ab5a9a1c466093b12ccae1ca4c613754a34526930
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
+- id: REL-U698-LIFECYCLE-service-order-transport
+  revision: 1
+  type: relates-to
+  source_id: service-order-transport
+  target_id: D07.b
+  source_refs:
+  - U698
+  qualification:
+    meaning: Transport Order porte les exigences propres au déplacement et mobilise le cycle commun pour tenir activation,
+      acceptation, changements et clôture de la prestation.
+    conditions:
+    - Lorsqu’une demande de transport est confiée ou évolue.
+    effects:
+    - Conserver la suite de l’engagement de transport, y compris en cas de collecte ou livraison en écart.
+    scope: Coopération proposée ; aucune décomposition ni duplication du suivi des faits physiques.
+  last_modified: '2026-09-24T08:19:57.499780Z'
+  review:
+    state: partial
+    note: U698 adopte la famille, son rattachement et sa responsabilité ; détails éditoriaux, illustration et comparaisons
+      rédigés ensuite restent proposés.
+  lifecycle:
+    state: under_instruction
+    recorded_at: '2026-09-24T08:19:57.499780Z'
+    recorded_by: Codex
+    source_refs:
+    - U698
+    validated_fields: []
+    value_sha256: {}
+    note: Nom explicite et responsabilité reformulée à portée constante ; capture des intentions sur le lot final.
 alternatives: []
 principles:
 - id: PRINCIPLE-REFERENCE-PROJECTIONS

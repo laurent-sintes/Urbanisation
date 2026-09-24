@@ -274,3 +274,8 @@ Les mots clés explicitement reliés au glossaire ouvrent une infobulle au survo
 ## Origines des demandes et comportements — U501
 
 Les fiches affichent Frontoffice et Backoffice à partir des seules valeurs publiées de `fields.request_origins`, avec leur sens relatif au Domain. Les deux indicateurs peuvent coexister. Les comportements dotés de `fields.behavior_aspect` se lisent sous Déclenchement ou Activité ; ce regroupement est visuel et ne change pas leurs parents. Les fiches historiques sans ces métadonnées gardent leur lecture habituelle. Les libellés visibles sont recherchables dans le même snapshot. Tests ciblés : `node --test --test-isolation=none app/test-request-metadata.mjs app/test-reader-search.mjs app/test-behavior-types.mjs`.
+
+
+## Catégories de présentation — U701
+
+Les capacités peuvent porter `fields.category: { id, display_name, order? }`. Atlas regroupe les enfants d’un sous-domaine par catégorie, puis conserve le classement par nature dans chaque section. Les bandeaux apparaissent dans la carte du sous-domaine et dans ses listes de capacités sur les cartes d’ensemble. Les capacités non classées restent visibles sous « Autres capacités » lorsqu’un classement existe. Sans catégorie publiée, le rendu historique est conservé. Aucun nœud métier, parent, lien ou fil d’Ariane supplémentaire n’est créé ; les libellés sont lus exclusivement dans le snapshot affiché. `order` est un ordre visuel facultatif ; aucune priorité métier induite. Test : `node --test app/test-categories.mjs`.

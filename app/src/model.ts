@@ -5,6 +5,7 @@ import type {
 
 import { plainInlineText } from './inlineLinks.ts';
 import { sortCapabilitiesByType } from './capabilityTypes.ts';
+import { categorySections } from './categories.ts';
 import { searchPublication } from './search.ts';
 const structuralTypes = new Set<string>(['contains', 'presents']);
 export const isStructural = (relation: AtlasRelation): boolean => structuralTypes.has(relation.type);
@@ -156,7 +157,9 @@ export function structuralRelations(model: PublishedModel, type?: StructuralRela
 
 export function childrenOf(model: PublishedModel, id: string, type?: StructuralRelationType): AtlasNode[] {
   const children = structuralRelations(model, type).filter(relation => relation.sourceId === id).map(relation => model.nodeById.get(relation.targetId)!);
-  return ['domain', 'area', 'reference'].includes(model.nodeById.get(id)?.kind ?? '') ? sortCapabilitiesByType(children) : children;
+  const kind = model.nodeById.get(id)?.kind;
+  if (kind === 'area') return categorySections(children).flatMap(section => sortCapabilitiesByType(section.items));
+  return ['domain', 'reference'].includes(kind ?? '') ? sortCapabilitiesByType(children) : children;
 }
 
 export function parentsOf(model: PublishedModel, id: string, type?: StructuralRelationType): AtlasNode[] {

@@ -2,13 +2,15 @@
 
 Lire seulement les sections utiles lors d’un travail métier. AGENTS.md définit le workflow et les priorités. Ce document conserve les conventions détaillées transférées le 19 septembre 2026 ; il ne constitue pas un catalogue. Les noms, parents et états courants se lisent dans le YAML, qui prime sur les repères datés ci-dessous. Les étapes historiques ne réouvrent pas l’audit clos U431.
 
-## Découpage courant — U673
+## Découpage courant — U673 / U682
 
-Le backlog applique **Domain → Subdomain → Capability → Behavior** et les huit sous-domaines de [l’audit des capacités](modeles/backlog/capability-subdomain-audit-U667.yaml). Les sections U626 et antérieures ci-dessous conservent le cadrage de leur date ; elles ne rétablissent pas les six Purposes dans le modèle courant.
+Le backlog applique **Domain → Subdomain → Capability → Behavior** et neuf sous-domaines : le découpage de [l’audit des capacités](modeles/backlog/capability-subdomain-audit-U667.yaml) est complété par [Service Order Management](modeles/backlog/logistics-execution-audit-U674.yaml), appliqué U682. Les sections U626 et antérieures ci-dessous conservent le cadrage de leur date ; elles ne rétablissent pas les six Purposes dans le modèle courant.
 
 Order Promising calcule et recommande la promesse ; Matching construit et gère le master plan de matching ; Order Management porte les engagements ; Fulfilment adapte la réalisation en préservant promesse et grands équilibres. Les marges d’autonomie sont des règles, sans responsabilité supplémentaire. Plans reçoit les Supply et Demand Plans par ingestion depuis l’APS externe ; aucun sous-domaine APS. Supply Plan porte les prévisions d’entrées ou sorties de stock hors achats et reste distinct du master plan de matching.
 
 Les identifiants des capacités conservées restent stables. D17.a et BHV095 sortent du domaine avec leur histoire conservée dans Git. Plan Ingestion et Plan Visibility sont créées dans Plans. ATP/CTP/PTP restent à leur maille actuelle ; leurs frontières sont clarifiées sans fusion. Les placements appliqués n’adoptent pas globalement toutes les rédactions détaillées.
+
+U679/U681 appliqués U682 : Service Order Management tient les exigences et engagements des prestations confiées ; Fulfilment Orchestration les compose, les coordonne et les adapte. Picking Order, Packing Order, Value-Added Service Order et Cross-Docking Order sont des capacités, comme les familles d’Orders entrants. D07.b conserve le cycle commun sous le nom proposé Service Order Lifecycle, sans absorber les particularités de ces familles. Détermination des prestations, visibilité des capacités, tracking et rapprochement restent dans Fulfilment ; ces choix d’application ne constituent pas de nouveaux accords détaillés. Les seuls comportements VAS appliqués sont Labeling / Relabeling et Repacking ; Kitting / Dekitting reste conditionnel en annexe. Service Order est une demande métier suivie, distincte du document éventuel ; Task est une contribution au processus, distincte du porteur des engagements individuels.
 
 ## Consolidation historique — U626
 

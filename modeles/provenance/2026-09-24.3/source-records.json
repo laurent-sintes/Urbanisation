@@ -16473,6 +16473,62 @@
       "line": 17137,
       "content_sha256": "aca1fd4b77fe37fcabf95b8f7ff395aeb321ee6706cb1763c046d5f657c8bfc8",
       "captured_text": "## U696\n\n**id**\n\nU696\n\n**date**\n\n2026-09-24\n\n**titre**\n\nClôture de l’audit et backlog unique — U696\n\n**texte**\n\nOk, cloture l'audit et appliquer une release\n\n**contexte et portée**\n\nAutorise la clôture de l’analyse et une release locale du backlog courant. Ne valide pas implicitement les familles proposées ni leurs descriptions. Pas de commit ou push demandé."
+    },
+    {
+      "id": "CMP275",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp275",
+      "line": 2662,
+      "content_sha256": "185ba622f7175cb815990a4659231081bd9f35ca3d61b7119da953867d6dddaa",
+      "captured_text": "## CMP275\n\n**Objet FLOW :** Transport Order (`service-order-transport`), backlog du 24 septembre 2026. **Sources :** ELM683 (SAP S/4HANA 2025 FPS01, Maintain Generic Transportation Order) et ELM684 (Oracle OTM 25C, Order Release), passages consultés le 24 septembre 2026. **Relation :** recouvrement partiel. **Commun :** demande de déplacement, biens concernés et contraintes ; SAP documente création, modification et annulation, Oracle lieux et fenêtres temporelles. **Différences :** catégories de documents SAP et demande/expéditions Oracle ne sont pas une taxonomie de capacités ; aucun engagement de transporteur déduit du seul Order Release. **Position FLOW :** une famille de prestation confiée dans Service Order Management ; Fulfilment coordonne, le transporteur organise ses opérations, les modes restent variantes. **Bénéfice :** visibilité du transport à la même maille que les prestations d’entrepôt. **Compromis :** ne détaille pas toutes les responsabilités internes d’un TMS. **Statut :** famille et frontière adoptées par Laurent U698 le 24 septembre 2026 ; comparaison détaillée proposée par Codex, aucune preuve installée Beaumanoir. **Nom :** Transport Order adopté, voisin de Transportation Order ; pas de traduction universelle d’Order Release. **Définition :** gestion des exigences et engagements du déplacement, pas planification complète ou opération du transporteur."
+    },
+    {
+      "id": "ELM683",
+      "path": "marche/elements.md",
+      "anchor": "elm683",
+      "line": 5412,
+      "content_sha256": "92aeb82a32d8fc9c3dd778f9f4a4122ccfaecc0f55e5c1d791b9619420b7a3f8",
+      "captured_text": "### ELM683\n\nMKT13 — [Maintain Generic Transportation Order](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/733c8b37b3f546a1b08750e8aeabb887/9740cb5147dd9d55e10000000a423f68.html). 2025 FPS01 (février 2026). Terme natif : Transportation Order. Nature : objet/interface de produit TMS. Passage : Definition ; Business Context and Use. Reformulation : Une demande crée, modifie ou annule un ordre de transport de différentes catégories, notamment freight order et freight booking. Limites : Texte primaire indexé consulté le 24 septembre 2026 ; ouverture directe sans corps. Opération de service et catégories SAP, pas équivalence de capacité ni découpage FLOW. Synthèse sélective et lien ; aucune reproduction substantielle. CMP275 / U698."
+    },
+    {
+      "id": "ELM684",
+      "path": "marche/elements.md",
+      "anchor": "elm684",
+      "line": 5417,
+      "content_sha256": "af0c13609d8c425a341499658cbf0d5b5841fa5c577ac9f68c7d12e4e23f1be2",
+      "captured_text": "### ELM684\n\nMKT20 — [Order Release](https://docs.oracle.com/en/cloud/saas/transportation/25c/otmol/planning/order_manager/or_edit.htm). 25C. Terme natif : Order Release. Nature : objet/interface de produit TMS. Passage : Introduction ; Adding Order Releases, fenêtres de collecte/livraison et origine/destination. Reformulation : La demande contient des unités ou lignes à transporter, les lieux et dates, ainsi que des contraintes utilisées pour planifier les expéditions. Limites : Texte primaire ouvert et lu le 24 septembre 2026. L’Order Release exprime la demande de transport ; ne prouve pas à lui seul un engagement de transporteur ni une correspondance un pour un avec les shipments. Synthèse sélective et lien ; aucune reproduction substantielle. CMP275 / U698."
+    },
+    {
+      "id": "U697",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u697",
+      "line": 17160,
+      "content_sha256": "b13612e6fa26a3627d8edd64fd1cdec4a5099152cbbdf2520d1689e7ea090f03",
+      "captured_text": "## U697\n\n**id**\n\nU697\n\n**date**\n\n2026-09-24\n\n**titre**\n\nVérifier la couverture du transport au-delà des Orders d’entrepôt\n\n**texte**\n\nLes 10 familles d'order sont des order \"entrepot\". Est ce qu'on couvre le transport ?\n\n**contexte et portée**\n\nDemande d’examen de la couverture transport. Réponse : couverture générique existante, proposition de Transport Order au même niveau que les familles d’entrepôt dans Service Order Management."
+    },
+    {
+      "id": "U698",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u698",
+      "line": 17182,
+      "content_sha256": "8c24aef090efc2fbd9b62e1b3f69cacec5a3566e3832c6d656582c5b3b5eab64",
+      "captured_text": "## U698\n\n**id**\n\nU698\n\n**date**\n\n2026-09-24\n\n**titre**\n\nAdopter Transport Order dans Service Order Management\n\n**texte**\n\nJe valide ta proposition\n\n**contexte et portée**\n\nAccord sur Transport Order, famille de capacité de Service Order Management portant la demande de déplacement : marchandises et quantités, origine, destination, contraintes de collecte et livraison, conditions de transport, engagements acceptés et suites des écarts. Composable avec Picking et Packing ; Fulfilment Orchestration coordonne l’ensemble, le transporteur organise ses moyens et opérations internes. Une famille sans séparation systématique par mode, transporteur ou type de trajet ; variantes et conditions au catalogue. L’accord n’adopte pas par extension les dix familles encore proposées ni les formulations et comparaisons rédigées après cet accord. Application au backlog ; aucune release, aucun commit ou push demandé."
+    },
+    {
+      "id": "U701",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u701",
+      "line": 17251,
+      "content_sha256": "72832fb1851e73c69197bb5e4e45a43b4d508a2607a15c73de243fe4f4d3ba83",
+      "captured_text": "## U701\n\n**id**\n\nU701\n\n**date**\n\n2026-09-24\n\n**titre**\n\nClasser visuellement les capacités des sous-domaines dans Atlas\n\n**texte**\n\nJe pense que c'est une très bonne idée.\nAfin d'éviter dans ATLAS de tout mélanger, je suggère l'ajout d'un attribut \"catégorie\" ou \"classement\" avec \"caption\" ou \"display-name\" pour afficher des bandeaux \"catégorie\" dans les sous domaines\n\n**contexte et portée**\n\nAppréciation favorable de la proposition transport précédente, sans lever explicitement la condition métier de Transport Booking Order. Demande d’un attribut de classement avec libellé pour afficher des bandeaux dans les sous-domaines Atlas. Application comme métadonnée de présentation facultative, pas nouveau niveau Domain/Subdomain/Capability/Behavior. Le nom technique, les libellés et affectations initiaux sont des choix d’application proposés. Aucun déploiement des comportements transport ou nouvelle release demandé."
+    },
+    {
+      "id": "U706",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u706",
+      "line": 17369,
+      "content_sha256": "e217d87bebb92292d45ecedb5315f3c9d12c19413e4bf3d0a1c17bbd5663aed7",
+      "captured_text": "## U706\n\n**id**\n\nU706\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider le pilotage et le suivi des processus exécutés à distance\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord sur la réponse à U705 : Process Orchestration coordonne déclenchement, attente et poursuite ; Operations Tracking avec Process Tracking capte avancement et résultats distants ; Service Order Management conserve demande et engagements et actualise le cycle. L’accusé de réception ne vaut pas réalisation ; le retour distingue réussite, résultat partiel et échec. Aucune nouvelle capacité de suivi nécessaire. Cet accord ne vaut pas adoption globale des quatre familles et noms proposés en U702, ni publication."
     }
   ]
 }

@@ -3,6 +3,7 @@ import { ReactFlow, ReactFlowProvider, Background, Controls, useReactFlow, type 
 import { ArrowUpRight, FileText, LayoutGrid } from 'lucide-react';
 import { NodeIcon } from './icons';
 import { startsCapabilityTypeSection } from './capabilityTypes';
+import { categoryCaption, categoryOf, startsCategorySection } from './categories';
 import { ReferenceLink } from './components/ModelLinks';
 import { childrenOf, rootsOf, hasCapabilityCards, cardChildListOf, type CardChildList } from './model';
 import { kindLabel, shortText } from './presentation';
@@ -36,7 +37,7 @@ function BusinessCard({ data, selected }: NodeProps<Card>) {
     {data.childList && <div className="card-child-list nodrag nopan nowheel" onClick={event => event.stopPropagation()} onDoubleClick={event => event.stopPropagation()} onKeyDown={event => { if (['Enter', ' '].includes(event.key)) event.stopPropagation(); }}>
       <div className="child-list-heading">{listLabel} <span>{data.childList.items.length}</span></div>
       {data.childList.items.length ? <ul aria-label={`${listLabel} de ${data.item.name}`}>
-        {data.childList.items.map((child, index) => <li key={child.id} className={startsCapabilityTypeSection(data.childList!.items, index) ? 'capability-type-section-start' : undefined}><ReferenceLink target={child.id} showBehaviors={child.kind === 'capability'} className={`card-child-link ${child.kind === 'reference' ? 'reference-link' : child.kind === 'behavior' ? 'behavior-link' : 'capacity-link'}`}><NodeIcon node={child} size={16}/><span>{child.name}</span><ArrowUpRight size={12} className="child-arrow"/></ReferenceLink></li>)}
+        {data.childList.items.map((child, index) => <li key={child.id} className={startsCapabilityTypeSection(data.childList!.items, index) ? 'capability-type-section-start' : undefined}>{data.item.kind === 'area' && startsCategorySection(data.childList!.items, index) && <div className="category-list-banner">{categoryCaption(child)}</div>}<ReferenceLink target={child.id} showBehaviors={child.kind === 'capability'} className={`card-child-link ${child.kind === 'reference' ? 'reference-link' : child.kind === 'behavior' ? 'behavior-link' : 'capacity-link'}`}><NodeIcon node={child} size={16}/><span>{child.name}</span><ArrowUpRight size={12} className="child-arrow"/></ReferenceLink></li>)}
       </ul> : <p>Aucune capacité publiée.</p>}
     </div>}
     <div className="card-bottom"><span>{data.count ? `${data.count} éléments` : kindLabel(data.item)}</span><button className="nodrag nopan" aria-label={`${data.count ? 'Explorer' : 'Lire'} ${data.item.name}`} onClick={e => { e.stopPropagation(); (data.count ? data.onExplore : data.onRead)(data.item.id); }}>{data.count ? 'Explorer' : 'Fiche'}<ArrowUpRight size={13}/></button></div>
@@ -46,7 +47,10 @@ function GroupCard({ data }: NodeProps<Container>) {
   return <div className={`map-container ${data.item.kind === 'group' && data.item.groupRole !== 'urbanism_level' ? 'presentation-container' : ''}`}><div className="container-label"><NodeIcon node={data.item} size={20}/><strong><OverviewName item={data.item}/></strong><span>{kindLabel(data.item)}</span></div></div>;
 }
 function CapabilityTypeDivider() { return <div className="map-capability-type-divider" role="separator" aria-label="Changement de type de capacité"/>; }
-const nodeTypes = { business: BusinessCard, container: GroupCard, capabilityTypeDivider: CapabilityTypeDivider };
+function CategoryBanner({ data }: NodeProps<Node<{ caption: string }, 'categoryBanner'>>) {
+  return <div className="category-banner" role="heading" aria-level={3}>{data.caption}</div>;
+}
+const nodeTypes = { business: BusinessCard, container: GroupCard, capabilityTypeDivider: CapabilityTypeDivider, categoryBanner: CategoryBanner };
 
 export interface ReactFlowPaneProps {
   model: PublishedModel; selectedId: string; scopeId?: string;
@@ -99,13 +103,18 @@ function Canvas(props: ReactFlowPaneProps) {
     const inputs = items.map(n => ({ id: n.id, width: 300, height: childLists.has(n.id) ? cardHeights[n.id] || 260 + childLists.get(n.id)!.items.length * 34 : 220 }));
     // A bounded grid keeps cards readable; it does not create model relationships.
     const columns = Math.min(items.length, capabilityOverview ? Math.max(1, Math.min(3, Math.floor((canvasWidth - 60 + 28) / 328))) : items.length > 4 ? 3 : 2) || 1;
-    const boundaries = [0, ...items.flatMap((_, index) => startsCapabilityTypeSection(items, index) ? [index] : []), items.length];
+    const categorized = group?.kind === 'area' && items.some(categoryOf);
+    const boundaries = [0, ...items.flatMap((_, index) => index > 0 && (categorized && startsCategorySection(items, index) || startsCapabilityTypeSection(items, index)) ? [index] : []), items.length];
     const sections = boundaries.slice(0, -1).map((start, index) => inputs.slice(start, boundaries[index + 1]));
     const positioned: (typeof inputs[number] & { x: number; y: number })[] = [];
     let top = 16;
     const dividerPositions: number[] = [];
+    const banners: { caption: string; y: number }[] = [];
     sections.forEach((section, sectionIndex) => {
-      if (sectionIndex) { dividerPositions.push(top - 7); top += 14; }
+      const start = boundaries[sectionIndex];
+      if (categorized && startsCategorySection(items, start)) {
+        banners.push({ caption: categoryCaption(items[start]), y: top }); top += 52;
+      } else if (sectionIndex) { dividerPositions.push(top - 7); top += 14; }
       for (let offset = 0; offset < section.length; offset += columns) {
         const row = section.slice(offset, offset + columns);
         row.forEach((item, column) => positioned.push({ ...item, x: 16 + column * 328, y: top }));
@@ -120,6 +129,10 @@ function Canvas(props: ReactFlowPaneProps) {
       if (!current) return;
       const nodes: Node[] = [];
       if (group) nodes.push({ id: `group:${group.id}`, type: 'container', data: { item: group }, position: { x: 0, y: 0 }, width: (result.width || 380) + 28, height: (result.height || 250) + 70, style: { width: (result.width || 380) + 28, height: (result.height || 250) + 70 }, selectable: false, draggable: false, focusable: false });
+      banners.forEach((banner, index) => nodes.push({ id: `category-banner:${scopeId}:${index}`, type: 'categoryBanner', data: { caption: banner.caption },
+        position: { x: 16 + (group ? 14 : 0), y: banner.y + (group ? 54 : 0) },
+        ...(group ? { parentId: `group:${group.id}`, extent: 'parent' as const } : {}),
+        width: result.width - 32, height: 40, style: { width: result.width - 32, height: 40 }, selectable: false, draggable: false, focusable: false }));
       dividerPositions.forEach((dividerY, index) => nodes.push({ id: `capability-type-divider:${scopeId}:${index}`, type: 'capabilityTypeDivider', data: {},
         position: { x: 16 + (group ? 14 : 0), y: dividerY + (group ? 54 : 0) },
         ...(group ? { parentId: `group:${group.id}`, extent: 'parent' as const } : {}),

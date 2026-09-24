@@ -1,0 +1,711 @@
+id: VAS-REVIEW-U686
+date: '2026-09-24'
+status: research_closed_U696_backlog_proposals_pending
+source_refs:
+- U686
+scope: Inventaire approfondi textile, mode, chaussures, retail et e-commerce ; extensions techniques et services périphériques
+  pour tester les frontières.
+exhaustiveness: Couverture étendue du corpus, pas exhaustivité universelle. Taxonomie analytique locale ; une variante peut
+  être documentée par une seule source. Ni présence chez chaque prestataire ni réalisation installée déduites.
+sources:
+- id: ELM667
+  reference: MKT86
+  organization: CEVA
+  title: Logistics solutions for online returns
+  url: https://www.cevalogistics.com/en/your-industry/e-commerce/logistics-solutions-for-online-returns
+  locator: OUR SERVICES; WHAT MAKES US DIFFERENT
+  access: direct
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Grading, remise en état, réparation et préparation des retours.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM668
+  reference: MKT87
+  organization: Advanced Supply Chain
+  title: Value Added Services in Logistics & Warehousing
+  url: https://advancedsupplychain.com/latest/value-added-services-in-logistics-warehousing/
+  locator: Garment Finishing; Packing; Labelling; Quality Control; Returns and Repairs
+  access: direct
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Finition textile, recomposition des assortiments, contrôles et retouches. Publication du 31 juillet 2025.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM669
+  reference: MKT88
+  organization: Ryder
+  title: E-Commerce Services — Value Added Services
+  url: https://www.ryder.com/en-us/e-commerce/value-added-services
+  locator: E-commerce Value-Added Services; Apparel Value-Added Services
+  access: indexed_and_direct
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Liste détaillée des préparations textile et prestations e-commerce.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM670
+  reference: MKT89
+  organization: Bleckmann
+  title: Value Added Services
+  url: https://www.bleckmann.com/solutions/logistics-fulfilment/value-added-services
+  locator: A complete range; Reconditioning; Personalisation; In-house photo studio
+  access: indexed_and_direct
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Contrôle, remise en état, personnalisation et photographie aux côtés du packing.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM671
+  reference: MKT90
+  organization: GXO
+  title: Fashion and apparel
+  url: https://gxo.com/industries/fashion-apparel/
+  locator: Value-added services; We make it personal
+  access: indexed
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Broderie, cadeaux, kits et présentation de marque.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM672
+  reference: MKT90
+  organization: GXO
+  title: Value-added services
+  url: https://gxo.com/supply-chain-mgmt/logistics-services/
+  locator: Value-added services include; Case study
+  access: indexed
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Co-packing, montage promotionnel et réparation ; offre aussi des prestations de gestion.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM673
+  reference: MKT91
+  organization: DHL
+  title: Packaging Solutions for Large Businesses
+  url: https://www.dhl.com/us-en/home/supply-chain/solutions/packaging.html
+  locator: Packaging Execution
+  access: indexed_and_direct
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Personnalisation tardive, assemblage et kitting associés au packaging.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM674
+  reference: MKT92
+  organization: DSV
+  title: Supporting core warehouse services
+  url: https://www.dsv.com/en-gb/our-solutions/modes-of-transport/value-added-services/warehouse-resources
+  locator: Assembly and kitting; Configuration test; Quality inspection and testing; Reworking and co-packing
+  access: indexed_and_direct
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Assemblage, tests, configuration de matériels et emballages adaptés aux marchés.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM675
+  reference: MKT87
+  organization: Advanced Supply Chain
+  title: Garment Cleaning
+  url: https://www.advancedsupplychain.com/value-added-services/garment-cleaning/
+  locator: Spot Cleaning; Garment Finishing; Ozone Cleaning
+  access: indexed_and_direct
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Nettoyage ciblé, défroissage et traitement des odeurs proposés par le prestataire.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM676
+  reference: MKT87
+  organization: Advanced Supply Chain
+  title: RFID
+  url: https://advancedsupplychain.com/rfid/
+  locator: Our Comprehensive RFID Labelling Solutions
+  access: indexed
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Pose, encodage, association des données et vérification de lecture des étiquettes.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM677
+  reference: MKT89
+  organization: Bleckmann
+  title: 'RESCUE: Circular Fashion Made Simple & Profitable'
+  url: https://www.bleckmann.com/resources/maximising-the-value-of-apparel-with-rescue-programme
+  locator: So, how does the process work in practice?
+  access: indexed
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Réparations de couture, boutons et fermetures ; tri préalable selon réparabilité.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM678
+  reference: MKT86
+  organization: CEVA
+  title: Device Lifecycle Supply Chain Solutions
+  url: https://www.cevalogistics.com/en/your-industry/technology/device-lifecycle-solutions
+  locator: In-Life Replacement & Repair; End-of-Contract Management
+  access: indexed
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Configuration, nettoyage des données, réparation, classement et recyclage des appareils.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM679
+  reference: MKT91
+  organization: DHL
+  title: Data center logistics
+  url: https://lot.dhl.com/glossary/data-center-logistics/
+  locator: How does data center logistics handle upgrades and equipment lifecycle management?
+  access: indexed
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Effacement des données et recyclage ou élimination en fin de vie.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM680
+  reference: MKT20
+  organization: Oracle
+  title: Oracle Warehouse Management User’s Guide — Overview
+  url: https://docs.oracle.com/cd/E26401_01/doc.122/e48830/T211976T317761.htm
+  locator: Oracle Warehouse Management Value Added Services; Reverse Logistics
+  access: direct
+  consulted_on: '2026-09-24'
+  edition: EBS 12.2
+  native_id: null
+  nature: Documentation WMS
+  reformulation: 'EBS 12.2 : kitting/dekitting et étiquetage ; reverse logistics séparée incluant remise en état et recyclage.'
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM681
+  reference: MKT92
+  organization: DSV
+  title: Contract logistics
+  url: https://www.dsv.com/en-ae/our-solutions/contract-logistics
+  locator: Value-added services; Distribution services
+  access: indexed
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Tests, réparation, assemblage ; installation et white glove dans les prestations à livraison.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+- id: ELM682
+  reference: MKT87
+  organization: Advanced Supply Chain
+  title: Metal Detection
+  url: https://www.advancedsupplychain.com/metal-detection/
+  locator: Présentation Metal Detection
+  access: direct
+  consulted_on: '2026-09-24'
+  edition: Page évolutive ; édition non indiquée
+  native_id: null
+  nature: Publication primaire de prestataire
+  reformulation: Prestation de détection de contaminants métalliques, également décrite dans le panorama ELM668.
+  limits: Offre ou documentation du fournisseur ; pas une nomenclature normative, ni une preuve de réalisation Beaumanoir.
+    Synthèse et lien uniquement.
+reused_sources:
+- ELM665
+- ELM666
+- ELM658
+- ELM661
+families:
+- id: VAS-SURVEY-01
+  name: Labeling / Relabeling
+  result: Information appliquée conforme à la version demandée.
+  model_position: existing_behavior
+  operations:
+  - name: Étiquetage prix et changement de ticket
+    source_refs:
+    - ELM668
+    - ELM669
+  - name: Étiquetage code-barres unitaire
+    source_refs:
+    - ELM668
+  - name: Pose ou remplacement des étiquettes d’entretien
+    source_refs:
+    - ELM668
+    - ELM669
+  - name: Étiquetage de sachets et boîtes
+    source_refs:
+    - ELM667
+    - ELM670
+  - name: Adaptation des mentions au marché destinataire
+    source_refs:
+    - ELM668
+    - ELM680
+  - name: Réattache des étiquettes détachées
+    source_refs:
+    - ELM667
+- id: VAS-SURVEY-02
+  name: RFID & Security Tagging
+  result: Identification électronique et protection ; vérifier les exigences de lecture ou de pose.
+  model_position: catalogue_variants
+  operations:
+  - name: Pose d’étiquettes RFID
+    source_refs:
+    - ELM669
+    - ELM676
+  - name: Encodage et association RFID au produit
+    source_refs:
+    - ELM676
+  - name: Contrôle de lisibilité RFID
+    source_refs:
+    - ELM676
+  - name: Pose d’antivols / alarmes
+    source_refs:
+    - ELM668
+    - ELM669
+- id: VAS-SURVEY-03
+  name: Repacking & Presentation
+  result: Conditionnement ou présentation transformés sans changer la composition de l’ensemble.
+  model_position: existing_behavior
+  operations:
+  - name: Déballage et mise sur cintre
+    source_refs:
+    - ELM665
+    - ELM669
+  - name: Changement de cintre
+    source_refs:
+    - ELM669
+  - name: Pose d’indicateurs de taille sur cintre
+    source_refs:
+    - ELM666
+    - ELM669
+  - name: Pliage et présentation à plat
+    source_refs:
+    - ELM667
+    - ELM669
+  - name: Mise ou remise sous sachet
+    source_refs:
+    - ELM667
+    - ELM670
+  - name: Remplacement d’une boîte abîmée
+    source_refs:
+    - ELM674
+  - name: Adaptation de l’emballage à un pays, une langue ou un client
+    source_refs:
+    - ELM674
+  - name: Remplacement de protections hygiéniques
+    source_refs:
+    - ELM667
+  - name: Filmage rétractable
+    source_refs:
+    - ELM672
+- id: VAS-SURVEY-04
+  name: Gift & Promotional Packaging
+  result: Présentation cadeau et éléments ajoutés selon la commande.
+  model_position: packing_or_repacking_variant
+  operations:
+  - name: Emballage cadeau
+    source_refs:
+    - ELM669
+    - ELM671
+  - name: Message ou note personnalisée
+    source_refs:
+    - ELM669
+    - ELM671
+  - name: Insertion d’une étiquette de retour
+    source_refs:
+    - ELM669
+  - name: Conditionnement saisonnier ou promotionnel
+    source_refs:
+    - ELM669
+    - ELM672
+  - name: Présentation de déballage aux couleurs de la marque
+    source_refs:
+    - ELM671
+    - ELM672
+- id: VAS-SURVEY-05
+  name: Kitting / Dekitting
+  result: Composition de l’ensemble, composants et quantités attendus.
+  model_position: conditional_behavior
+  operations:
+  - name: Constitution de kits multi-produits
+    source_refs:
+    - ELM671
+    - ELM673
+  - name: Formation de multipacks et bundles
+    source_refs:
+    - ELM668
+    - ELM672
+  - name: Constitution de coffrets cadeaux
+    source_refs:
+    - ELM668
+    - ELM669
+  - name: Séparation d’un kit et récupération des composants
+    source_refs:
+    - ELM680
+  - name: Décomposition et recomposition de ratios tailles/couleurs/modèles
+    source_refs:
+    - ELM668
+- id: VAS-SURVEY-06
+  name: Light Assembly & Display Building
+  result: Assemblage confié et conformité de la structure obtenue.
+  model_position: extension_proposed
+  operations:
+  - name: Assemblage léger / sous-assemblage
+    source_refs:
+    - ELM669
+    - ELM674
+  - name: Montage de présentoirs promotionnels
+    source_refs:
+    - ELM668
+    - ELM672
+  - name: Préparation de modules de présentation sur palette
+    source_refs:
+    - ELM672
+- id: VAS-SURVEY-07
+  name: Garment Finishing
+  result: Aspect et forme attendus du vêtement.
+  model_position: behavior_candidate
+  operations:
+  - name: Repassage manuel
+    source_refs:
+    - ELM668
+    - ELM670
+  - name: Défroissage vapeur
+    source_refs:
+    - ELM669
+    - ELM670
+  - name: Passage en tunnel vapeur
+    source_refs:
+    - ELM668
+  - name: Mise en forme sur mannequin de pressage
+    source_refs:
+    - ELM668
+- id: VAS-SURVEY-08
+  name: Cleaning
+  result: Propreté attendue et traitement adapté au produit.
+  model_position: behavior_candidate
+  operations:
+  - name: Nettoyage léger au poste
+    source_refs:
+    - ELM667
+  - name: Détachage localisé textile ou chaussures
+    source_refs:
+    - ELM667
+    - ELM675
+  - name: Lavage externe
+    source_refs:
+    - ELM667
+  - name: Nettoyage à sec externe
+    source_refs:
+    - ELM667
+  - name: Traitement des odeurs à l’ozone
+    source_refs:
+    - ELM667
+    - ELM675
+  - name: Traitement UV proposé pour les retours
+    source_refs:
+    - ELM667
+- id: VAS-SURVEY-09
+  name: Repair & Alteration
+  result: Défaut à corriger ou modification physique autorisée ; résultat accepté ou écart.
+  model_position: behavior_candidate
+  operations:
+  - name: Réparation de couture
+    source_refs:
+    - ELM669
+    - ELM677
+  - name: Remplacement de boutons
+    source_refs:
+    - ELM677
+  - name: Remplacement de fermetures à glissière
+    source_refs:
+    - ELM677
+  - name: Retouches légères sur vêtements
+    source_refs:
+    - ELM668
+  - name: Réparation de chaussures
+    source_refs:
+    - ELM667
+  - name: Réparation / remise en état de produits techniques
+    source_refs:
+    - ELM674
+    - ELM678
+- id: VAS-SURVEY-10
+  name: Product Personalization
+  result: Modification du produit selon le contenu et les caractéristiques demandés.
+  model_position: behavior_candidate
+  operations:
+  - name: Broderie personnalisée
+    source_refs:
+    - ELM670
+    - ELM671
+  - name: Monogramme
+    source_refs:
+    - ELM670
+  - name: Gravure
+    source_refs:
+    - ELM670
+- id: VAS-SURVEY-11
+  name: Inspection, Testing & Grading
+  result: Rapport sur l’état ou la conformité ; à distinguer de la décision sur le devenir du stock.
+  model_position: boundary_to_arbitrate
+  operations:
+  - name: Inspection de conformité aux spécifications
+    source_refs:
+    - ELM669
+    - ELM670
+  - name: Classement d’état des retours
+    source_refs:
+    - ELM667
+    - ELM678
+  - name: Vérification de référence et quantité retournées
+    source_refs:
+    - ELM667
+  - name: Détection de contaminants métalliques
+    source_refs:
+    - ELM682
+  - name: Contrôles fonctionnels et de connexion
+    source_refs:
+    - ELM674
+  - name: Mesures et rapport d’erreurs
+    source_refs:
+    - ELM674
+  - name: Tests électriques PAT
+    source_refs:
+    - ELM668
+- id: VAS-SURVEY-12
+  name: Technical Configuration
+  result: Paramétrage attendu de matériels ; extension sectorielle.
+  model_position: outside_core_proposal
+  operations:
+  - name: Configuration de matériels informatiques
+    source_refs:
+    - ELM674
+    - ELM678
+  - name: Personnalisation technique selon le client
+    source_refs:
+    - ELM674
+    - ELM681
+  - name: Effacement de données sur appareils
+    source_refs:
+    - ELM678
+    - ELM679
+- id: VAS-SURVEY-13
+  name: Recovery & End-of-Life
+  result: Traitement matériel selon une orientation décidée ailleurs.
+  model_position: outside_core_proposal
+  operations:
+  - name: Récupération de pièces depuis des machines retournées
+    source_refs:
+    - ELM674
+  - name: Recyclage d’appareils
+    source_refs:
+    - ELM678
+    - ELM679
+  - name: Élimination en fin de vie
+    source_refs:
+    - ELM679
+- id: VAS-SURVEY-14
+  name: Product Content & On-site Services
+  result: Offres périphériques, pas extension automatique du VAS textile.
+  model_position: adjacent
+  operations:
+  - name: Photographie produit en studio logistique
+    source_refs:
+    - ELM670
+  - name: Installation chez le destinataire
+    source_refs:
+    - ELM681
+  - name: Livraison avec service white glove
+    source_refs:
+    - ELM681
+recommendations:
+- name: Labeling / Relabeling
+  position: Conserver
+  basis:
+  - ELM669
+  - ELM680
+  reason: Exigences sur information, version et lisibilité ; RFID et antivol restent des variantes tant que leurs engagements
+    ne justifient pas une décomposition.
+- name: Repacking
+  position: Conserver avec exemple de mise sur cintre accepté U686
+  basis:
+  - ELM665
+  - ELM669
+  reason: Transformation du conditionnement ; ne pas englober nettoyage ou réparation sous le mot français ambigu reconditionnement.
+- name: Kitting / Dekitting
+  position: Recommander l’inclusion, toujours à arbitrer
+  basis:
+  - ELM671
+  - ELM680
+  reason: Conformité de composition distincte de conformité du conditionnement. Défaire/refaire des assortiments nécessite
+    aussi une composition explicitement demandée.
+- name: Garment Finishing
+  position: Proposer un comportement
+  basis:
+  - ELM668
+  - ELM670
+  reason: Aspect obtenu, tolérances et produits admissibles diffèrent du conditionnement.
+- name: Cleaning
+  position: Proposer un comportement
+  basis:
+  - ELM667
+  - ELM675
+  reason: État de propreté attendu et résultat parfois partiel ; variantes de traitement dans le catalogue.
+- name: Repair & Alteration
+  position: Proposer un comportement
+  basis:
+  - ELM669
+  - ELM677
+  reason: Défaut ou transformation demandée, réparation autorisée et issue distincts d’un changement d’emballage.
+- name: Product Personalization
+  position: Proposer un comportement si le domaine couvre ce service
+  basis:
+  - ELM670
+  - ELM671
+  reason: Contenu individualisé et transformation du produit ; distinguer message cadeau et personnalisation de l’article.
+- name: Inspection, Testing & Grading
+  position: Examiner une famille Inspection Order si prestation autonome
+  basis:
+  - ELM667
+  - ELM674
+  reason: Livrable de constat plutôt que transformation. Un contrôle intégré au VAS reste une condition de résultat ; ne pas
+    créer systématiquement un ordre supplémentaire.
+canonical_changes: false
+release_changes: false
+fashion_refinement_U687:
+  source: U687
+  date: '2026-09-24'
+  status: proposal_not_adopted
+  author: Codex
+  accepted_direction: Maille famille et filtre fashion ; détails opérationnels conservés comme preuves et exemples.
+  scope: Vêtements, chaussures et accessoires ; flux neufs et retours.
+  proposal: Remplacer la capacité fourre-tout Value-Added Service Order par des familles de capacités Order dans Service Order
+    Management, sans nouveau sous-domaine VAS. Maintenir Picking Order et Cross-Docking Order.
+  families:
+  - name: Labeling Order
+    scope: Étiquetage et réétiquetage, RFID et pose d’antivols ; information, identification ou protection attendue.
+    source_refs:
+    - ELM669
+    - ELM676
+    boundary: Regroupe des variantes ; pas un ordre distinct pour chaque technologie.
+  - name: Packing Order
+    scope: Conditionnement initial, Repacking, pliage, mise sur cintre, présentation cadeau.
+    source_refs:
+    - ELM665
+    - ELM670
+    boundary: Élargissement proposé de la capacité existante ; conserver Repacking comme variante descriptive et son identifiant
+      lors d’une éventuelle application.
+  - name: Kitting Order
+    scope: Constitution, séparation et recomposition d’ensembles ou assortiments spécifiés.
+    source_refs:
+    - ELM668
+    - ELM680
+    boundary: Kitting / Dekitting regroupés ; ne décide pas des affectations de stock aux magasins. Inclusion encore proposée.
+  - name: Garment Finishing Order
+    scope: 'Finition d’aspect textile : repassage, défroissage, remise en forme.'
+    source_refs:
+    - ELM668
+    - ELM670
+    boundary: Se distingue du support de présentation et du nettoyage.
+  - name: Cleaning Order
+    scope: Nettoyage et détachage des vêtements, chaussures et accessoires.
+    source_refs:
+    - ELM667
+    - ELM675
+    boundary: Résultat de propreté ; techniques au catalogue.
+  - name: Repair & Alteration Order
+    scope: Correction de défauts et retouches confiées sur articles fashion.
+    source_refs:
+    - ELM669
+    - ELM677
+    boundary: Distinguer restauration et modification demandée dans les exigences.
+  - name: Personalization Order
+    scope: 'Personnalisation du produit : broderie, monogramme, gravure sur accessoires.'
+    source_refs:
+    - ELM670
+    - ELM671
+    boundary: La carte cadeau jointe relève de la présentation, pas d’une transformation du produit.
+  - name: Inspection Order
+    scope: Inspection autonome, contrôle de conformité et classement d’état des articles.
+    source_refs:
+    - ELM667
+    - ELM670
+    boundary: Le contrôle intégré à une autre prestation reste dans cette prestation ; le constat ne décide pas du devenir
+      du stock.
+  market_position: Les sources étayent les prestations et leurs résultats distincts, pas une nomenclature universelle de ces
+    huit capacités Order. La maille et les noms composés Order sont une proposition de cohérence FLOW.
+  excluded_from_fashion_core:
+  - Configuration et effacement de données sur appareils
+  - Tests électriques
+  - Installation à domicile et services techniques
+  - Assemblage industriel
+  adjacent_not_absent:
+  - 'Montage de présentoirs et PLV : logistique commerciale, à cadrer séparément'
+  - 'Photographie : production de contenu'
+  - 'Recyclage et destruction textile : pertinents pour la circularité, mais responsabilités propres à étudier'
+  composite_terms:
+  - Retail-ready
+  - Refurbishment
+  - Reconditioning
+  - Postponement
+  canonical_changes: false
+  migration_note: Si validé, préserver les identifiants existants utiles, reparentages explicites et historique du retrait
+    de la capacité VAS ; ne pas dupliquer Packing Order. Aucun déplacement réalisé ici.
+light_touch_U688:
+  source: U688
+  status: recommendation
+  position: Dans le sens employé ici, light touch qualifie la légèreté d’une intervention ; ce n’est pas une responsabilité
+    métier ni une famille homogène de résultats. Recommander de le retirer des définitions structurantes et de conserver les
+    familles de prestations concrètes.
+  market_basis:
+  - ELM669
+  - ELM670
+  market_limit: Les catalogues Ryder et Bleckmann documentent les familles concrètes et les VAS ; ils ne démontrent pas une
+    catégorie normalisée universelle light touch. La recherche ciblée complémentaire ne permet pas de poser cette équivalence
+    universelle.
+  model_occurrence: service-order-vas.fields.scope ; la définition emploie également traitements légers.
+  scope_limit: Proposition de vocabulaire uniquement ; pas d’application du découpage U687 ni de changement canonique. Les
+    verbatims historiques restent conservés.
+role: Annexe de preuves et propositions du backlog unique ; aucun pilotage de travail dans les rapports d’audit.
+closure_U696:
+  source_refs:
+  - U695
+  - U696
+  date: '2026-09-24'
+  research_status: closed
+  proposal_status: not_implicitly_adopted
+  canonical_authority: modeles/backlog/model.yaml
+backlog_pending:
+  source_refs:
+  - U687
+  - U688
+  - U689
+  proposal_location: fashion_refinement_U687 et light_touch_U688 dans cette annexe
+  scope: Dix familles fashion avec Picking et Cross-Docking, remplacement de VAS, intégration de Repacking dans Packing, retrait
+    du vocabulaire light touch ; conserver Service Order Lifecycle.
+  status: proposed_not_applied
+  editorial_followup: Descriptions détaillées et nom Service Order Lifecycle restent proposés ; aucune extension automatique
+    aux services adjacents.
