@@ -1,6 +1,6 @@
 from copy import deepcopy
 import unittest
-from scripts.business_scenarios import scenarios_for_node, validate_scenarios
+from scripts.business_scenarios import scenarios_for_node, validate_scenarios, scenario_coverage
 from scripts.json_contract import validate
 from scripts.structured_io import read
 from scripts.publish_release import compile_snapshot
@@ -73,5 +73,40 @@ class BusinessScenariosTests(unittest.TestCase):
         self.assertIn('Éclairer le choix.', output)
 
 
+    def test_step_mapping_requires_capabilities_and_survives_publication(self):
+        example = self.owner['fields']['examples'][0]
+        example['steps'] = [{'title': 'Étape', 'description': 'Un cas concret', 'outcome': 'Résultat attendu',
+            'contributions': [{'node_id': 'request', 'role': 'Rendre le service'}]}]
+        example['validation_points'] = ['Ne pas confondre demande et résultat.']
+        self.assertEqual(validate_scenarios(self.nodes), [])
+        before = deepcopy(self.snapshot)
+        published = compile_snapshot(self.snapshot, {'decisions': []}, '2026-09-25.99', ['U768'])
+        self.assertEqual(published['nodes'][0]['fields']['examples'][0]['steps'], example['steps'])
+        self.assertEqual(self.snapshot, before)
+        coverage = scenario_coverage(self.snapshot)
+        self.assertEqual(coverage['mapped_capabilities'], 1)
+        self.assertEqual(coverage['stories_with_steps'], 1)
+        contribution = example['steps'][0]['contributions'][0]
+        for identifier in ['area', 'reaction', 'missing']:
+            contribution['node_id'] = identifier
+            self.assertTrue(validate_scenarios(self.nodes))
+        contribution['node_id'] = 'request'
+        example['steps'][0]['contributions'].append(deepcopy(contribution))
+        self.assertTrue(validate_scenarios(self.nodes))
+        example['steps'][0]['contributions'].pop()
+        example.pop('id')
+        self.assertTrue(validate_scenarios(self.nodes))
+    def test_steps_contract_and_markdown(self):
+        example = self.owner['fields']['examples'][0]
+        example['steps'] = [{'title': 'Étape', 'description': 'Récit', 'outcome': 'Résultat de preuve',
+            'contributions': [{'node_id': 'request', 'role': 'Rôle de preuve'}]}]
+        contract = read('modeles/schemas/urbanism.schema.json')['$defs']['businessExamples']
+        self.assertEqual(validate([example], contract), [])
+        from scripts.render_models import render
+        output = render(self.snapshot, 'Test')
+        self.assertIn('Rôle de preuve', output)
+        self.assertIn('Résultat de preuve', output)
+        example['steps'][0]['outcome'] = ''
+        self.assertTrue(validate([example], contract))
 if __name__ == '__main__':
     unittest.main()

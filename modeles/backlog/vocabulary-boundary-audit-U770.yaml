@@ -1,0 +1,3118 @@
+id: VOCABULARY-DEFINITION-MARKET-BOUNDARY-AUDIT-U770
+status: applied
+business_arbitration: delegated_application_U771
+source_refs:
+- U770
+- CMP305
+- U771
+- CMP306
+baseline:
+  published_descriptor: urbanisation-v031-2026-09-25-120609.yaml
+  published_version: 2026-09-25.3
+  model_sha256: 7f82e3786457824024793f84cc0f2ff8ac524fb08412a90ef5598bdda69dc386
+  glossary_sha256: e58bc9368949e86257e3ead7ca51b7e7c20acdf029e7c7cdadc3e23723114561
+method:
+  scope: Modèle courant et glossaire métier ; 4 illustrations cachées hors analyse des capacités.
+  reading: Lecture des définitions, scan structurel de toutes les fiches et approfondissement des portées sur les frontières
+    et anomalies repérées ; inventaire par fiche joint.
+  market: 404 comparaisons contrôlées structurellement ; relecture ciblée de 10 documents primaires Microsoft/Oracle. Pas
+    de contrôle HTTP ni revalidation sémantique exhaustive des 218 URL.
+  classification: Incohérence démontrée, clarification, arbitrage de couverture, qualité de preuve et différence volontaire
+    sont distingués.
+  limits: Une fiche sans constat ne vaut pas validation complète. Deux URL ne prouvent ni deux documents primaires pertinents
+    ni consensus. Aucun déploiement ou changement de capacité déduit.
+metrics:
+  nodes: 168
+  business_sheets: 164
+  capabilities: 71
+  behaviors: 75
+  subdomains: 9
+  glossary_terms: 121
+  market_comparisons: 404
+  distinct_document_urls: 218
+  sheets_with_at_least_two_urls: 164
+  sheets_single_vendor: 27
+  comparisons_without_term_choice: 269
+  comparisons_without_definition_choice: 252
+  definition_choice_equal_to_definition: 141
+findings:
+- id: F01
+  axis: definitions
+  priority: P1
+  classification: demonstrated_inconsistency
+  title: PTP choisit dans le glossaire mais évalue dans la capacité
+  target_ids:
+  - TER068
+  - D03.k
+  - D03.l
+  evidence:
+  - 'TER068.definition et short_description : « Comparer et sélectionner les scénarios de promesse ».'
+  - 'D03.k.definition : « sans sélectionner la réponse ».'
+  risk: L’infobulle et la fiche attribuent le choix à deux responsables différents.
+  recommendation: Aligner définition et résumé de TER068 sur l’évaluation économique locale ; réserver la sélection à Promise
+    Selection Decision. Conserver séparément le sens natif Oracle, qui combine évaluation et choix.
+  acceptance_criterion: Aucune définition FLOW de PTP ne lui attribue une sélection ; le recouvrement partiel Oracle reste
+    explicite.
+  source_refs:
+  - U770
+  - ELM372
+  - ELM393
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F02
+  axis: definitions
+  priority: P1
+  classification: demonstrated_inconsistency
+  title: Le glossaire CTP conserve l’ancien périmètre d’adaptation
+  target_ids:
+  - TER045
+  - D03.j
+  - BHV075
+  - BHV076
+  evidence:
+  - 'TER045.definition : adaptation « des ressources ou des engagements » et mobilisation des décisions spécialisées.'
+  - D03.j.scope exclut création d’achat, affectation, engagement et adaptation décidée.
+  risk: CTP peut être lu comme une capacité d’arbitrage et de révision concurrente du Matching et du Fulfilment.
+  recommendation: Réécrire définition, résumé et contexte de TER045 selon la faisabilité conditionnelle et les deux profondeurs
+    adoptées. Isoler le repère U251 dans l’historique.
+  acceptance_criterion: Glossaire, capacité et comportements distinguent tous évaluation, décision de mobilisation et application.
+  source_refs:
+  - U770
+  - ELM746
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F03
+  axis: boundaries
+  priority: P1
+  classification: demonstrated_inconsistency
+  title: Master Planning situe encore Promising dans Inventory
+  target_ids:
+  - D05.f
+  - subdomain-order-promising
+  - D01
+  evidence:
+  - 'D05.f.scope : « ATP/CTP/PTP et le réexamen de promesse restent dans Inventory ».'
+  - D01.scope les place dans Order Promising ; rattachements explicites conformes à ce dernier.
+  risk: La lecture de Master Planning contredit l’arbre publié.
+  recommendation: Corriger le renvoi textuel vers Order Promising ; conserver les rattachements actuels.
+  acceptance_criterion: Aucun texte courant ne localise ces quatre capacités dans Inventory Management.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F04
+  axis: boundaries
+  priority: P1
+  classification: demonstrated_inconsistency
+  title: Plan Application conserve des noms et autorités devenus obsolètes
+  target_ids:
+  - D02.e
+  - D03.o
+  - D05.h
+  evidence:
+  - 'D02.e.scope : « Demand, Inventory et Master Data conservent commandes, engagements, réservations et politiques ».'
+  - 'Même scope : « Le mécanisme d’affectation conserve son sens métier Supply Assignment : matérialiser et maintenir les
+    liens ».'
+  - La fin de la fiche distingue correctement Supply Assignment qui choisit et Plan Application qui matérialise.
+  risk: Deux sens de Supply Assignment et une autorité des politiques mal localisée subsistent dans la même fiche.
+  recommendation: 'Conserver une seule frontière : Supply Assignment détermine, Plan Application fait appliquer et vérifie
+    la prise en compte ; Orders, Inventory et Policies possèdent leurs actes. Employer les noms canoniques au lieu des anciens
+    périmètres.'
+  acceptance_criterion: Le texte n’attribue plus aux deux capacités la même décision ni les politiques à Master Data.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F05
+  axis: definitions
+  priority: P1
+  classification: demonstrated_inconsistency
+  title: Replenishment inclut et exclut simultanément le lancement
+  target_ids:
+  - D05.e
+  - TER074
+  - TER079
+  - TER080
+  evidence:
+  - 'D05.e.definition : « apports initiaux et successifs ».'
+  - 'Début du scope : « après la constitution du stock de départ ».'
+  - 'Plus loin : « Replenishment conserve les apports de lancement ».'
+  - TER074 désigne encore Demand & Supply Optimization.
+  risk: La responsabilité des apports initiaux reste incertaine malgré leur intégration.
+  recommendation: Décrire l’ensemble des apports dès le début ; conserver Réassort comme cas d’alimentation continue et Implantation
+    comme contexte initial. Actualiser TER074 vers Matching.
+  acceptance_criterion: Aucune exclusion du lancement dans la portée de Replenishment ; termes français explicitement plus
+    étroits.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F06
+  axis: definitions
+  priority: P1
+  classification: demonstrated_inconsistency
+  title: Le glossaire Catalog porte encore les prix sans distinguer Price Book
+  target_ids:
+  - TER049
+  - D12.b
+  - price-book-visibility
+  - TER097
+  - master-data-ingestion
+  evidence:
+  - TER049.definition attribue les prix au Product Catalog.
+  - D12.b.scope sépare les tarifs dans Price Book Visibility.
+  - master-data-ingestion.scope conserve un ancien paragraphe catalogue/produits/prix.
+  risk: Offre et tarification de référence risquent de devenir deux sources concurrentes.
+  recommendation: Préciser que le catalogue décrit les offres et leur éligibilité, avec des liens tarifaires possibles ; Price
+    Book porte les tarifs. Une association n’impose ni duplication ni catalogue unique par tarif.
+  acceptance_criterion: Les trois fiches et le glossaire donnent la même distinction offre, tarif, prix contextualisé.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F07
+  axis: vocabulary
+  priority: P2
+  classification: demonstrated_inconsistency
+  title: Transfer Order reste limité au rééquilibrage dans le glossaire
+  target_ids:
+  - TER071
+  - D04.k
+  evidence:
+  - 'TER071.definition : déplacement « pour rééquilibrer leur répartition ».'
+  - D04.k et ses scénarios couvrent aussi implantation, réassort, consolidation et commande identifiée.
+  risk: Le glossaire réduit abusivement le périmètre de la capacité.
+  recommendation: Définir le déplacement demandé entre sites ; donner le rééquilibrage comme exemple parmi les finalités,
+    sans réintroduire les comportements retirés.
+  acceptance_criterion: Les cinq motifs conservés dans les scénarios sont compatibles avec la définition générale.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F08
+  axis: boundaries
+  priority: P1
+  classification: demonstrated_inconsistency
+  title: Orchestration conserve l’ancien partage Tracking / Visibility
+  target_ids:
+  - D06.d
+  - D07.c
+  - D07.d
+  - operations-visibility
+  - BHV082
+  evidence:
+  - 'D06.d.scope : Operations Tracking « rend visibles » et mentionne Process Tracking.'
+  - 'D07.c.scope : « Le tracking rend visible l’avancement ».'
+  - D07.d intègre les faits ; Operations Visibility expose les résultats et porte Process Visibility.
+  risk: Le lecteur peut reconstruire une capacité de suivi retirée ou attribuer la restitution à Integration.
+  recommendation: Remplacer les formulations historiques par captation/intégration, rapprochement et restitution ; désigner
+    Process Visibility comme perspective de Operations Visibility.
+  acceptance_criterion: Aucune capacité Process Tracking implicite ; les liens et le texte suivent le partage courant.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F09
+  axis: market
+  priority: P1
+  classification: demonstrated_inconsistency
+  title: Attribution erronée du terme Consignment Fill-up à Microsoft
+  target_ids:
+  - D04.r
+  - TER091
+  evidence:
+  - 'D04.r.scope : « Microsoft emploie Consignment Fill-up Order ».'
+  - Deux documents Microsoft consultés utilisent Consignment replenishment order pour l’apport entrant.
+  risk: La justification du nom donne une fausse convergence lexicale interéditeurs.
+  recommendation: Conserver le choix FLOW/SAP Fill-up si souhaité, mais corriger l’attribution Microsoft et expliciter la
+    perspective fournisseur entrant documentée.
+  acceptance_criterion: Libellé natif, perspective et adaptation FLOW sont distingués sans prétendre à un nom Microsoft Fill-up.
+  source_refs:
+  - U770
+  - ELM739
+  - ELM781
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F10
+  axis: market
+  priority: P1
+  classification: demonstrated_inconsistency
+  title: Commentaires marché en retard sur les types et responsabilités
+  target_ids:
+  - D03.k
+  - D08.e
+  - D14.b
+  evidence:
+  - Deux comparaisons D03.k parlent encore d’« évaluation économique Knowledge ».
+  - D08.e et D14.b limitent FLOW à la consultation alors que les définitions incluent construction et rafraîchissement de
+    la vue locale.
+  risk: La partie marché contredit la partie métier et minore l’autorité locale de la connaissance.
+  recommendation: Actualiser la position FLOW en Evaluation pour PTP ; préciser pour Visibility la composition et maintenance
+    de la vue locale sans maîtrise d’entreprise externe.
+  acceptance_criterion: Les commentaires ne réintroduisent ni ancien type ni projection passive.
+  source_refs:
+  - U770
+  - ELM372
+  - ELM393
+  - ELM507
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F11
+  axis: market
+  priority: P2
+  classification: evidence_quality
+  title: Des comparaisons CTP héritées soutiennent surtout des fonctions voisines
+  target_ids:
+  - D03.j
+  - BHV075
+  - BHV076
+  evidence:
+  - D03.j conserve ABC (autres sites/produits) et BOP (réexamen des confirmations).
+  - D03.j.scope précise qu’une simple alternative de stock/site/produit n’est pas automatiquement du CTP.
+  - Microsoft présente principalement CTP par la prise en compte des matières et capacités.
+  risk: Le nombre de références peut donner l’impression que ces pages prouvent les deux profondeurs FLOW.
+  recommendation: Conserver ABC/BOP comme appuis adjacents ou renvoyer aux bonnes fiches ; faire des sources de faisabilité
+    les appuis directs. Présenter Supply-Based / Capacity-Constrained comme structuration FLOW argumentée, pas nomenclature
+    Microsoft.
+  acceptance_criterion: Chaque comparaison indique le résultat précis soutenu et ce qu’elle ne démontre pas.
+  source_refs:
+  - U770
+  - ELM746
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F12
+  axis: market
+  priority: P2
+  classification: evidence_quality
+  title: Le volume documentaire ne constitue pas une justification par fiche
+  target_ids:
+  - D02.e
+  - D05.f
+  evidence:
+  - 164 fiches possèdent au moins deux URL distinctes, mais cela ne vérifie pas la pertinence des passages.
+  - 141 definition_choice reproduisent exactement la définition de la fiche ; 252 comparaisons ne renseignent pas ce champ.
+  - Master Planning contient deux URL répétées ; Plan Application porte 21 comparaisons de mailles diverses.
+  risk: Accumulation et textes génériques rendent difficiles la lecture du choix de nom et la preuve du périmètre.
+  recommendation: Hiérarchiser deux appuis directs par fiche, conserver les sources adjacentes avec leur rôle, dédupliquer
+    les répétitions et remplacer les justifications circulaires par un raisonnement. L’absence d’un champ ne prouve pas à
+    elle seule l’absence d’argument dans les autres champs.
+  acceptance_criterion: Deux passages pertinents et un argument propre au nom/périmètre sont identifiables ; aucun consensus
+    déduit du seul nombre de liens.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: 389 raisons circulaires ou absentes remplacées par le rapprochement et la limite propres à la comparaison ;
+    doublons de Master Planning regroupés ; appuis directs ordonnés sur les fiches surchargées. Pas de certification globale
+    des URL ou de consensus.
+- id: F13
+  axis: vocabulary
+  priority: P2
+  classification: intentional_difference
+  title: Supply Plan et master plan sont des sens FLOW à rendre plus explicites
+  target_ids:
+  - plans-visibility
+  - subdomain-plans
+  - D05.f
+  - TER078
+  evidence:
+  - FLOW limite Supply Plan aux mouvements prévus hors achats et réserve le master plan au Matching.
+  - Microsoft traite des supply forecasts conduisant notamment à des achats planifiés ; ses master plans englobent plusieurs
+    calculs.
+  - Le glossaire ne possède pas d’entrée distincte Supply Plan ni Demand Plan.
+  risk: Un lecteur du marché peut supposer un périmètre plus large ou confondre le plan externe avec le plan interne.
+  recommendation: Conserver le découpage validé ; ajouter au glossaire les sens FLOW de Supply Plan, Demand Plan et master
+    plan de matching, avec différences explicites et exemple d’achat projeté. Ne pas renommer automatiquement.
+  acceptance_criterion: Un achat projeté APS, un mouvement prévu hors achats et une affectation interne sont distinguables.
+  source_refs:
+  - U770
+  - ELM748
+  - ELM782
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F14
+  axis: boundaries
+  priority: P2
+  classification: clarification
+  title: 'Sélection de promesse, de service et adaptation locale : expliciter les décisions'
+  target_ids:
+  - D03.l
+  - D06.e
+  - D06.f
+  - service-order-release-decision
+  - D03.o
+  evidence:
+  - Promise Selection choisit une proposition ; Service Selection choisit les moyens ; Process Adaptation choisit les adaptations
+    ; Release choisit ensembles et moments.
+  - D06.e.scope renvoie encore aux possibilités de promesse D18, identifiant absent du modèle courant.
+  risk: Sur une alternative express ou autre site, plusieurs capacités peuvent sembler choisir la même solution.
+  recommendation: 'Conserver les capacités ; expliciter leurs sorties et coopérations : option de promesse, prestation/exécutant,
+    révision locale du plan, décision de libération, affectation collective. Corriger D18. Aucune chaîne universelle ni nouvelle
+    règle d’autorité nécessaire.'
+  acceptance_criterion: Le scénario transport retardé identifie une seule responsabilité par décision et le recours à Promising/Matching
+    si leurs engagements sont touchés.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F15
+  axis: boundaries
+  priority: P2
+  classification: clarification
+  title: 'Service Reconciliation et encaissement : distinguer résultat et comptabilité'
+  target_ids:
+  - D07.c
+  - service-order-payment-collection
+  evidence:
+  - 'D07.c.scope : « aucun rapprochement financier ».'
+  - Le scénario remote-payment-ambiguous lui fait rapprocher 600 reçus sur 1 000 demandés, doublons et contradiction.
+  - Payment Collection exclut l’absorption automatique du rapprochement financier.
+  risk: L’exclusion générale peut interdire le rapprochement du résultat de la prestation que le scénario demande pourtant.
+  recommendation: Distinguer rapprochement opérationnel demande/résultat de collecte et rapprochement bancaire/comptable restant
+    externe. La preuve financière est fournie par le service compétent ; Service Reconciliation qualifie le résultat reçu.
+  acceptance_criterion: Le cas partiel est traitable sans que FLOW certifie les écritures, le règlement bancaire ou l’affectation
+    comptable.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F16
+  axis: boundaries
+  priority: P2
+  classification: open_modeling_choice
+  title: 'Réception : responsabilité annoncée mais aucune famille spécialisée'
+  target_ids:
+  - subdomain-service-orders
+  - D07.a
+  - D07.c
+  evidence:
+  - Le scope de Service Order Management conserve explicitement les prestations de réception sans famille spécialisée.
+  - Les 16 familles d’Orders actuelles ne comportent pas de Receiving Order.
+  - Microsoft distingue demandes entrantes d’entrepôt et retours de réception ; cela atteste un objet de prestation, pas une
+    capacité FLOW obligatoire.
+  risk: Un cas de réception confiée ne peut pas pointer une capacité d’Order explicite ; les 71 capacités mobilisées ne prouvent
+    donc pas que toutes les responsabilités annoncées sont couvertes.
+  recommendation: Arbitrer Receiving Order si la réception est une prestation autonome commandée et suivie ; sinon documenter
+    sa prise en charge exacte par une famille existante. Ne pas créer un ordre par fait reçu ni automatiquement Putaway/Storage
+    Orders.
+  acceptance_criterion: Un scénario de réception confiée désigne la capacité qui porte demande, engagement et reste à satisfaire.
+  source_refs:
+  - U770
+  - ELM364
+  - ELM445
+  status: applied_U771
+  application: Receiving Order ajouté avec deux documents primaires, catégorie entrepôt, cycle propre et scénario de réception
+    partielle.
+- id: F17
+  axis: boundaries
+  priority: P2
+  classification: clarification
+  title: 'Ingestion des référentiels et maintien des vues : préciser la remise de responsabilité'
+  target_ids:
+  - master-data-ingestion
+  - D08.e
+  - D09.e
+  - D11.b
+  - D12.b
+  - D13.b
+  - D14.b
+  - D16.b
+  - price-book-visibility
+  evidence:
+  - Master Data Ingestion intègre les apports et maintient les références locales.
+  - Les sept Visibility historiques construisent et rafraîchissent leurs vues ; Price Book Visibility décrit surtout la consultation.
+  - Le scope Ingestion accumule les anciennes descriptions par référentiel et répète les mêmes frontières.
+  risk: Deux capacités peuvent être comprises comme responsables de la même correction ou de la même fraîcheur.
+  recommendation: 'Préciser sans ajouter de capacité : ingestion reconnaît et intègre les apports sourcés ; la connaissance
+    compose et expose la référence locale utilisable, sa validité et ses incohérences. Harmoniser Price Book et condenser
+    le texte sans perdre les huit sujets.'
+  acceptance_criterion: Le scénario de correction d’un prix permet d’identifier prise en compte du fait, version locale exposée
+    et utilisation aval.
+  source_refs:
+  - U770
+  - ELM507
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F18
+  axis: definitions
+  priority: P2
+  classification: editorial_precision
+  title: Des définitions trop courtes ne rendent pas le service concret
+  target_ids:
+  - D07.a
+  - D06.d
+  - BHV079
+  - BHV080
+  - BHV081
+  evidence:
+  - 'D07.a : « Déterminer les prestations nécessaires ».'
+  - 'D06.d : « Coordonner les prestations et leurs dépendances ».'
+  - BHV079–081 listent surtout des opérations ou lieux.
+  risk: Le lecteur doit lire toute la portée pour comprendre entrée, résultat et frontière.
+  recommendation: 'Faire commencer la définition par le résultat rendu : exigences de service établies, progression coordonnée
+    jusqu’au résultat, état d’avancement restitué. Garder les détails et exemples dans la portée.'
+  acceptance_criterion: Chaque définition seule permet de comprendre ce qui est produit sans absorber décision voisine ou
+    exécution physique.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F19
+  axis: vocabulary
+  priority: P3
+  classification: editorial_precision
+  title: Convention lexicale et références de travail à harmoniser
+  target_ids:
+  - D06
+  - D13
+  - D13.b
+  - D07.a
+  - service-order-inspection
+  - service-order-transport-booking
+  - service-order-payment-collection
+  evidence:
+  - Fulfilment Orchestration coexiste avec Fulfillment Network et Fulfillment Cost Evaluation.
+  - 'Inspection Order : « demandes de inspection ».'
+  - Des fiches conservent « Recommander une capacité distincte » ou « nom provisoire » ; Payment Collection porte une ambiguïté
+    déjà reconnue.
+  risk: Des écarts de style et de maturité sont perçus comme des différences métier.
+  recommendation: Choisir une convention orthographique FLOW en préservant les intitulés natifs cités ; corriger la grammaire.
+    Séparer description cible, conditions d’applicabilité et réserves internes. Ne pas ajouter Decision/Management partout
+    ni renommer un terme validé sur préférence seule.
+  acceptance_criterion: Même sens, même graphie hors citations ; descriptions compréhensibles sans historique de la conversation.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F20
+  axis: vocabulary
+  priority: P2
+  classification: demonstrated_inconsistency
+  title: Le glossaire garde des sens historiques ou trop généraux
+  target_ids:
+  - TER056
+  - TER065
+  - TER030
+  - VER019
+  - VER002
+  evidence:
+  - TER056 présente encore Inventory Ledger Management comme candidat non adopté, au milieu de la définition du registre.
+  - TER030.context décrit Purpose alors que la hiérarchie utilise Subdomain.
+  - VER019 limite Libérer à la levée d’une restriction, alors que Service Order Release autorise le lancement.
+  - Supply Order est un terme local générique ; Oracle distingue supply order et sales order.
+  risk: Les infobulles réintroduisent des concepts remplacés ou confondent deux sens de release.
+  recommendation: Séparer sens courant et historique ; qualifier Libérer une ressource / Libérer un ordre pour exécution.
+    Pour Supply Order, marquer le sens local et le distinguer du document Oracle ; conserver les identifiants historiques
+    et renvois méthodologiques.
+  acceptance_criterion: La lecture métier ne présente ni Purpose comme niveau courant ni un seul sens ambigu de release.
+  source_refs:
+  - U770
+  - ELM364
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F21
+  axis: boundaries
+  priority: P2
+  classification: clarification
+  title: 'Protection de ressources et protection de demandes : deux axes à conserver'
+  target_ids:
+  - D02.b
+  - D19.b
+  - D05.d
+  - D03.m
+  evidence:
+  - Supply Protection porte enveloppes, plafonds et règles sur ressources ; Demand Protection porte éligibilité, priorité
+    et protection contre réoptimisation.
+  - Un même groupe web peut apparaître des deux côtés.
+  risk: La même condition pourrait être saisie deux fois et diverger si son objet protégé n’est pas explicite.
+  recommendation: 'Garder les deux capacités : déclarer pour chaque règle si elle contraint la ressource mobilisable ou le
+    traitement d’une demande. Les optimisations proposent, les Policy activent, les décisions consomment. Référencer la même
+    règle lorsque nécessaire plutôt que la dupliquer.'
+  acceptance_criterion: Le cas stock protégé pour le web distingue enveloppe ressource, demande prioritaire et réservation
+    individuelle.
+  source_refs:
+  - U770
+  status: applied_U771
+  application: Correction ou clarification appliquée aux champs concernés ; les choix FLOW et responsabilités distinctes sont
+    conservés.
+- id: F22
+  axis: market
+  priority: P2
+  classification: intentional_difference
+  title: 'Noms d’Orders de services et PTP : conserver les adaptations FLOW explicites'
+  target_ids:
+  - subdomain-service-orders
+  - D03.k
+  - service-order-document-production
+  - service-order-billing
+  - service-order-payment-collection
+  evidence:
+  - Les fiches d’Orders fashion indiquent correctement que les prestataires documentent des opérations, pas une taxonomie
+    normalisée d’Orders.
+  - Oracle PTP sélectionne une possibilité de moindre coût ; FLOW sépare l’évaluation de la sélection.
+  - Microsoft DOM optimise également les sources ; il n’est pas une capacité native nommée PTP.
+  risk: Une simplification des commentaires pourrait transformer une analogie pertinente en équivalence de marché non démontrée.
+  recommendation: Préserver ces écarts volontaires ; présenter les noms composés comme FLOW et la correspondance comme appui
+    sémantique ou recouvrement partiel. Aucun renommage automatique ni fusion pour coller à un produit.
+  acceptance_criterion: Les fiches distinguent toujours choix FLOW, terme natif et résultat réellement étayé.
+  source_refs:
+  - U770
+  - ELM372
+  - ELM393
+  status: applied_U771
+  application: Écarts volontaires conservés et explicités ; aucune équivalence native ajoutée.
+boundary_matrix:
+- pair: Inventory Tracking / Ledger / Visibility
+  diagnosis: Coopération saine
+  recommendation: Recevoir les faits ; tenir les écritures reconnues ; composer les positions. Ne pas fusionner intégration,
+    registre et consultation.
+- pair: Inventory Visibility / ATP
+  diagnosis: Coopération saine
+  recommendation: La vue décrit les ressources et engagements ; ATP évalue leur admissibilité pour une demande. Le stock projeté
+    ne vaut pas une promesse.
+- pair: ATP / CTP
+  diagnosis: Frontière définie, glossaire à corriger
+  recommendation: Ressources admissibles de référence / faisabilité conditionnelle de ressources à obtenir ou constituer.
+    Une autre date ou un autre site ne suffit pas à caractériser CTP.
+- pair: PTP / Promise Selection
+  diagnosis: Frontière définie, glossaire contradictoire
+  recommendation: Dossier économique local / proposition choisie. Pas de fusion.
+- pair: Supply Assignment / Plan Application
+  diagnosis: Frontière définie, prose résiduelle ambiguë
+  recommendation: Déterminer les liens / matérialiser les changements autorisés et recueillir leur résultat.
+- pair: Purchase Order de service / Service Order
+  diagnosis: Coopération saine
+  recommendation: Engagement d’achat envers le fournisseur / exigences et engagement de la prestation confiée. Pas de rapport
+    un-à-un obligatoire.
+- pair: Transfer Order / Transport Order
+  diagnosis: Coopération saine
+  recommendation: Besoin de déplacement entre sites / prestation d’acheminement confiée ; un transfert peut mobiliser plusieurs
+    prestations.
+- pair: Transport Booking / Reservation
+  diagnosis: Coopération saine
+  recommendation: Engagement de capacité auprès d’un prestataire / droit interne sur une ressource pour un besoin. Des noms
+    proches ne justifient pas une fusion.
+- pair: Return Order / Return Disposition / Repair Order
+  diagnosis: Coopération saine après U769
+  recommendation: Tenir le retour / déterminer le devenir / tenir la prestation de réparation. Les scénarios racontent leur
+    coopération.
+- pair: Document Production / Billing / Customs Clearance
+  diagnosis: Coopération saine à préserver
+  recommendation: Produire ou assembler un livrable / demander émission de facture / confier une procédure douanière. Une
+    pièce documentaire peut servir les deux autres sans créer leurs faits.
+- pair: Operations Tracking / Service Reconciliation / Operations Visibility / Service Orders
+  diagnosis: Clarification ciblée F08/F15
+  recommendation: Faits intégrés / conformité et écarts / état restitué / engagement et solde individuels ; la même donnée
+    consommée ne constitue pas un doublon de responsabilité.
+- pair: Master Planning / Simulation / décisions spécialisées
+  diagnosis: Coopération saine
+  recommendation: Pilotage du plan / comparaison d’alternatives / décisions contributrices. Les quatre comportements Schedule/Run/Stop/Rerun
+    ne deviennent pas des capacités ou des scénarios par cet audit.
+sheet_coverage:
+- id: universe-supply
+  name: Supply Chain Orchestration
+  kind: domain
+  market_entries: 7
+  distinct_urls: 7
+  reading: definition_and_structural_scan
+  findings: []
+- id: business-references
+  name: Master Data
+  kind: area
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings: []
+- id: D08
+  name: Product Reference
+  kind: reference
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D01.f
+  name: Inventory Tracking
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D01.g
+  name: Inventory Ledger
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings: []
+- id: D01.c
+  name: Inventory Visibility
+  kind: capability
+  market_entries: 4
+  distinct_urls: 4
+  reading: definition_and_structural_scan
+  findings: []
+- id: D01.d
+  name: Stocktaking
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D02.b
+  name: Supply Protection Policy
+  kind: capability
+  market_entries: 5
+  distinct_urls: 5
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F21
+- id: D02.c
+  name: Reservation
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings: []
+- id: D09
+  name: Party / Role
+  kind: reference
+  market_entries: 4
+  distinct_urls: 4
+  reading: definition_and_structural_scan
+  findings: []
+- id: D12
+  name: Product Catalog
+  kind: reference
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D16
+  name: Assortment
+  kind: reference
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D02.e
+  name: Plan Application
+  kind: capability
+  market_entries: 21
+  distinct_urls: 21
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F04
+  - F12
+- id: D03.i
+  name: Available-to-Promise (ATP)
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings: []
+- id: D03.j
+  name: Capable-to-Promise (CTP)
+  kind: capability
+  market_entries: 5
+  distinct_urls: 5
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F02
+  - F11
+- id: D03.k
+  name: Profitable-to-Promise (PTP)
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F01
+  - F10
+  - F22
+- id: D03.l
+  name: Promise Selection Decision
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F01
+  - F14
+- id: D03.m
+  name: Demand Prioritization
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F21
+- id: D11
+  name: Agreement
+  kind: reference
+  market_entries: 4
+  distinct_urls: 4
+  reading: definition_and_structural_scan
+  findings: []
+- id: D04.i
+  name: Sales Order
+  kind: capability
+  market_entries: 3
+  distinct_urls: 3
+  reading: definition_and_structural_scan
+  findings: []
+- id: D04.j
+  name: Purchase Order
+  kind: capability
+  market_entries: 5
+  distinct_urls: 5
+  reading: definition_and_targeted_scope_review
+  findings: []
+- id: D04.k
+  name: Transfer Order
+  kind: capability
+  market_entries: 4
+  distinct_urls: 4
+  reading: definition_and_structural_scan
+  findings:
+  - F07
+- id: D04.l
+  name: Return Order
+  kind: capability
+  market_entries: 3
+  distinct_urls: 3
+  reading: definition_and_structural_scan
+  findings: []
+- id: D04.m
+  name: Supplier Return Order
+  kind: capability
+  market_entries: 3
+  distinct_urls: 3
+  reading: definition_and_structural_scan
+  findings: []
+- id: D04.n
+  name: Order Structuring
+  kind: capability
+  market_entries: 3
+  distinct_urls: 3
+  reading: definition_and_structural_scan
+  findings: []
+- id: D13
+  name: Fulfillment Network
+  kind: reference
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F19
+- id: D05.a
+  name: Inventory Target Optimization
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D05.d
+  name: Group Protection Optimization
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F21
+- id: D05.e
+  name: Replenishment
+  kind: capability
+  market_entries: 4
+  distinct_urls: 4
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F05
+- id: D05.c
+  name: Stock Redistribution
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings: []
+- id: D05.f
+  name: Master Planning
+  kind: capability
+  market_entries: 15
+  distinct_urls: 13
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F03
+  - F12
+  - F13
+- id: D14
+  name: Service Catalog
+  kind: reference
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D06.b
+  name: Service Capacity Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D07.a
+  name: Service Requirements Decision
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F16
+  - F18
+  - F19
+- id: D07.c
+  name: Service Reconciliation
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F08
+  - F15
+  - F16
+- id: D07.d
+  name: Operations Tracking
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F08
+- id: D04
+  name: Order Management
+  kind: area
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D01
+  name: Inventory Management
+  kind: area
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F03
+- id: D06
+  name: Fulfilment Orchestration
+  kind: area
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F19
+- id: D03
+  name: Demand & Supply Matching
+  kind: area
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings: []
+- id: D06.d
+  name: Process Orchestration
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F08
+  - F18
+- id: D06.e
+  name: Service Selection Decision
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F14
+- id: D06.f
+  name: Process Adaptation Decision
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F14
+- id: BHV002
+  name: On-Hand ATP
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV004
+  name: Projected ATP
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV006
+  name: Simulation & Analysis
+  kind: capability
+  market_entries: 6
+  distinct_urls: 6
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV016
+  name: Adjust Plan
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV017
+  name: Group Supply Protection
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV018
+  name: Consumption Capping
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV019
+  name: Safety Stock Policy
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV020
+  name: Replenishment Regulation
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV024
+  name: Inventory Rebalancing
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV025
+  name: Stock Consolidation
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV026
+  name: Store Demand & Supply Optimization
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV027
+  name: Distribution Center Demand & Supply Optimization
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV028
+  name: Multi-Echelon Demand & Supply Optimization
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV029
+  name: Periodic Physical Inventory
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV030
+  name: Cycle Counting
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV031
+  name: Spot Counting
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D05.h
+  name: Reservation Policy Optimization
+  kind: capability
+  market_entries: 3
+  distinct_urls: 3
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F04
+- id: BHV032
+  name: Milestone-Based Reservation Policy
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV033
+  name: Time-Fenced Reservation Policy
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV034
+  name: Demand-Differentiated Reservation Policy
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV035
+  name: Risk-Adaptive Reservation Policy
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV044
+  name: Order Splitting
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D03.o
+  name: Supply Assignment
+  kind: capability
+  market_entries: 7
+  distinct_urls: 7
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F04
+  - F14
+- id: D05.i
+  name: Return Disposition Decision
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV048
+  name: Policy-based Disposition
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV049
+  name: Value Recovery Optimization
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV050
+  name: Return to Stock
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV051
+  name: Repair and Refurbishment
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV052
+  name: Return to Supplier
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV053
+  name: Return to Customer
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV054
+  name: Scrapping
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV055
+  name: Return for Credit
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV056
+  name: Return for Replacement
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV057
+  name: Return for Repair
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV058
+  name: Stock Procurement
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV059
+  name: Direct Delivery
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV060
+  name: Service Procurement
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D04.r
+  name: Consignment Fill-up Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F09
+- id: D01.h
+  name: Inventory Ownership Transfer Decision
+  kind: capability
+  market_entries: 3
+  distinct_urls: 3
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV063
+  name: Consumption-Based Ownership Transfer
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV064
+  name: Aging-Based Ownership Transfer
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV066
+  name: Ship to Customer
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV067
+  name: Customer Pickup
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV068
+  name: Direct Delivery
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV069
+  name: Intercompany Sales
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV075
+  name: Supply-Based CTP
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F02
+  - F11
+- id: BHV076
+  name: Capacity-Constrained CTP
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F02
+  - F11
+- id: BHV078
+  name: Supplier Confirmation
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV079
+  name: Warehouse Visibility
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F18
+- id: BHV080
+  name: Transportation Visibility
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F18
+- id: BHV081
+  name: Store Visibility
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F18
+- id: BHV082
+  name: Process Visibility
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F08
+- id: BHV083
+  name: Requirement-based Replenishment
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV084
+  name: Target-based Replenishment
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV085
+  name: Replenishment Adjustment
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV086
+  name: Order Grouping
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV087
+  name: Order Merging
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D04.s
+  name: Scope Planning
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D08.e
+  name: Product Reference Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F10
+  - F17
+- id: D09.e
+  name: Party / Role Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F17
+- id: D11.b
+  name: Agreement Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F17
+- id: D12.b
+  name: Product Catalog Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F06
+  - F17
+- id: D13.b
+  name: Fulfillment Network Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F17
+  - F19
+- id: D14.b
+  name: Service Catalog Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F10
+  - F17
+- id: D16.b
+  name: Assortment Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F17
+- id: BHV096
+  name: Consignment Issue
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D19.a
+  name: Service Provider Policy
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: D19.b
+  name: Demand Protection Policy
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F21
+- id: D04.t
+  name: Consignment Pick-up Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV097
+  name: Schedule Planning
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV098
+  name: Run Planning
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV099
+  name: Stop Planning
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV100
+  name: Rerun Planning
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV101
+  name: Monitor Plan
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: subdomain-policies
+  name: Policies
+  kind: area
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: subdomain-plans
+  name: Plan Visibility
+  kind: area
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F13
+- id: plans-ingestion
+  name: Plan Ingestion
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: plans-visibility
+  name: Supply Plan Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F13
+- id: subdomain-service-orders
+  name: Service Order Management
+  kind: area
+  market_entries: 3
+  distinct_urls: 3
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F16
+  - F22
+- id: service-order-picking
+  name: Picking Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-packing
+  name: Packing Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-cross-docking
+  name: Cross-Docking Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-transport
+  name: Transport Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings: []
+- id: service-order-labeling
+  name: Labeling Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-kitting
+  name: Kitting Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-garment-finishing
+  name: Garment Finishing Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-cleaning
+  name: Cleaning Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-repair-alteration
+  name: Repair & Alteration Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-personalization
+  name: Personalization Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-inspection
+  name: Inspection Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F19
+- id: transport-multi-stop
+  name: Multi-Stop Transport
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: transport-multi-leg
+  name: Multi-Leg Transport
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: transport-scheduled
+  name: Scheduled Transport
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: transport-appointments
+  name: Pickup & Delivery Appointments
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: transport-rescheduling-redirection
+  name: Delivery Rescheduling & Redirection
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-transport-booking
+  name: Transport Booking Order
+  kind: capability
+  market_entries: 3
+  distinct_urls: 3
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F19
+- id: service-order-document-production
+  name: Document Production Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F22
+- id: service-order-customs-clearance
+  name: Customs Clearance Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: service-order-billing
+  name: Billing Order
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F22
+- id: service-order-payment-collection
+  name: Payment Collection Order
+  kind: capability
+  market_entries: 3
+  distinct_urls: 3
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F15
+  - F19
+  - F22
+- id: demand-plan-visibility
+  name: Demand Plan Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: master-data-ingestion
+  name: Master Data Ingestion
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F06
+  - F17
+- id: operations-visibility
+  name: Operations Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings:
+  - F08
+- id: master-data-ingestion-commerce
+  name: Commerce Ingestion
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: master-data-ingestion-finance
+  name: Finance Ingestion
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: master-data-ingestion-design
+  name: Design Ingestion
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: price-book
+  name: Price Book
+  kind: reference
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: price-book-visibility
+  name: Price Book Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F06
+  - F17
+- id: order-visibility
+  name: Order Visibility
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV102
+  name: Commitment-Preserving Assignment
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV103
+  name: Supply Reassignment
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: inventory-ownership-ledger
+  name: Inventory Ownership Ledger
+  kind: capability
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV104
+  name: Contractual Milestone-Based Ownership Transfer
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings: []
+- id: service-order-release-decision
+  name: Service Order Release Decision
+  kind: capability
+  market_entries: 3
+  distinct_urls: 3
+  reading: definition_and_structural_scan
+  findings:
+  - F14
+- id: BHV105
+  name: Batch Release
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV106
+  name: Consolidated Release
+  kind: behavior
+  market_entries: 3
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: subdomain-order-promising
+  name: Order Promising
+  kind: area
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_targeted_scope_review
+  findings:
+  - F03
+- id: BHV107
+  name: Fulfillment Cost Evaluation
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV108
+  name: Contextual Economic Impact Evaluation
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV109
+  name: Initial Promise Selection
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+- id: BHV110
+  name: Promise Reassessment
+  kind: behavior
+  market_entries: 2
+  distinct_urls: 2
+  reading: definition_and_structural_scan
+  findings: []
+recommended_batches:
+- id: A
+  purpose: Cohérence prioritaire sans changement d’architecture
+  findings:
+  - F01
+  - F02
+  - F03
+  - F04
+  - F05
+  - F06
+  - F07
+  - F08
+  - F09
+  - F10
+- id: B
+  purpose: Clarifications et appuis marché
+  findings:
+  - F11
+  - F12
+  - F13
+  - F14
+  - F15
+  - F17
+  - F18
+  - F19
+  - F20
+  - F21
+  - F22
+- id: C
+  purpose: Arbitrage métier explicite sur la réception confiée
+  findings:
+  - F16
+publication_delivery:
+  state: applied
+  source_refs:
+  - U770
+  - U771
+  summary: 'Audit lexical appliqué : glossaire et frontières cohérents, appuis marché explicités, Receiving Order et scénario
+    ajoutés.'
+  required_nodes:
+  - id: D02.e
+    fields:
+      scope: |-
+        Le plan porte l’échéancier des mises à jour. Plan Application peut appliquer une partie des changements. Il distingue les changements appliqués, en attente ou refusés.
+
+        L’application peut être progressive selon cet échéancier ou sélective sur une partie des changements. Cette sélection volontaire est distincte d’une application incomplète provoquée par un refus. L’échéancier concerne la mise en application des changements ; [Schedule Planning](model:BHV097) programme le travail de planification. Ces modalités restent décrites dans Plan Application, sans sous-comportement.
+
+        Faire appliquer les recommandations autorisées du plan commun et établir les effets effectivement pris en compte, refusés ou partiels. Vérifier leurs conditions et interdépendances au moment de l'application ; une recommandation devenue inapplicable reste visible pour réexamen. Aucun retour arrière global ni transaction atomique du plan n'est supposé.
+
+        Les familles d'effets comprennent les liens ressources-besoins, les nouveaux apports et ajustements d'Orders, les changements autorisés d'échéanciers et de promesses et les politiques à rendre applicables. Elles décrivent le contenu de cette capacité, sans décomposition systématique. Les décisions gardent les arbitrages ; Order Management porte commandes et engagements, Inventory Management les réservations, et Policies les règles actives. Fulfilment Orchestration coordonne les prestations.
+
+        L’application des affectations retenues par Supply Assignment consiste à matérialiser et maintenir les liens entre ressources présentes ou futures et commandes ou besoins prévisionnels identifiés, même avant toute commande. Compléter des liens existants, réaffecter ou libérer ceux qui sont modifiables restent des modalités combinables. Seule la réservation bloque les usages concurrents ; l'affectation ne crée ni réservation ni promesse. Une prévision ne devient pas une commande du seul fait d'un lien de couverture. Les protections de groupe et gels restent applicables ; préserver un lien pendant un traitement ne crée pas un gel durable.
+
+        Exemples fictifs : affecter 40 pièces d'un arrivage à une commande puis en changer la provenance admissible ; lier 300 pièces attendues aux ventes web encore prévues en novembre. Pour des besoins de 100 et 200 et une ressource de 150, un prorata illustratif de 50 et 100 serait choisi par les décisions, puis matérialisé ici ; il ne réduit pas les demandes ni ne prescrit une politique universelle.
+
+        [Purchase Order](model:D04.j), [Transfer Order](model:D04.k), [Consignment Fill-up Order](model:D04.r) et [les familles d’Orders](model:D04) portent les demandes et leurs changements autorisés. [les engagements portés par les Orders](model:D04) porte les propositions et engagements de satisfaction ; une affectation peut changer sans modifier la promesse, et réciproquement. [Reservation](model:D02.c) tient les engagements de réservation. [Supply Protection Policy](model:D02.b) et les autres capacités Policy mettent en vigueur les règles retenues. L'application les mobilise sans transférer leur responsabilité et sans créer un engagement fournisseur implicite.
+
+        Le résultat et les écarts alimentent [Monitor Plan](model:BHV101) et [Adjust Plan](model:BHV016). Une sollicitation acceptée n'établit pas l'application complète ; l'application partielle ne devient pas silencieusement un nouveau plan. La réalisation physique reste distincte. Exemple fictif : un transfert de 30 pièces est pris en compte mais un achat de 70 est refusé ; conserver le transfert et le refus, rendre visible le manque et faire réexaminer les possibilités. Une politique appliquée et un transfert partiel sont également deux résultats distincts ; le reliquat reste explicite.
+
+        Plan Application vérifie ou recueille les autorisations nécessaires à l’application des changements sélectionnés, puis fait appliquer ceux qui sont autorisés. Une autorisation ne prouve pas leur prise en compte effective. Les capacités responsables conservent l’autorisation de modifier leurs commandes, promesses ou politiques. L’autorisation peut être humaine ou fondée sur des règles, et différer selon les changements et leurs échéances ; elle ne remplace pas les contrôles des partenaires.
+
+        Pour une commande partiellement engagée, faire examiner chaque changement à la maille de la partie concernée, selon son état réel, ses engagements, protections et dépendances. Une partie non démarrée peut être révisée sous ces conditions ; une partie engagée exige d’examiner les possibilités d’adaptation, d’arrêt ou de reprise avec Fulfilment. Conserver les effets réalisés et traiter explicitement toute correction ou opération inverse. Une livraison complète peut lier les quantités non démarrées aux quantités déjà préparées.
+
+        Supply Assignment choisit les liens ; Plan Application en matérialise les changements autorisés et vérifie leur prise en compte. Les propriétaires des Orders, réservations et politiques conservent leur autorité. La promotion en capacité est locale au Matching et ne généralise pas ce découpage à tout Planning.
+  - id: D05.e
+    fields:
+      scope: |-
+        Déterminer les apports initiaux d’[implantation](glossary:TER079), les apports successifs de [réassort](glossary:TER080) et leurs ajustements. Chez Beaumanoir, l’alimentation continue des magasins est guidée par des seuils ; la cadence de révision, les formules et le degré d’automatisation ne sont pas imposés par ce constat. Le réapprovisionnement continu peut aussi concerner les stocks du réseau et les compléments fournisseur déjà couverts par cette capacité.
+
+        **Politique selon les besoins datés.** Déterminer les apports nécessaires à partir des besoins nets et de leurs dates. Les besoins peuvent être traités individuellement ou regroupés dans une période lorsque les contraintes le permettent ; cette agrégation ne justifie pas un comportement par cadence. Exemple fictif : 120 pièces nécessaires à J+7, 70 utilisables et 20 attendues à temps conduisent à examiner un apport complémentaire de 30, avant contraintes de lot et de délai.
+
+        **Politique selon un seuil et une cible.** Déterminer l’apport lorsqu’une position de stock projetée passe sous le seuil applicable, pour retrouver la cible retenue. Exemple fictif : position projetée de 50, seuil de 60 et cible de 100 conduisent à proposer 50 en l’absence d’autres besoins ou restrictions. Si les apports doivent être des multiples de 12, examiner 60 et l’excédent associé. Il ne s’agit pas d’une formule Min/Max universelle.
+
+        [Inventory Target Optimization](model:D05.a) détermine les objectifs et seuils, qui peuvent dépendre des besoins et varier par produit, lieu et période ; ils ne sont pas présumés stables ou indépendants de la demande. [Supply Protection Policy](model:D02.b) gouverne et applique les versions opérationnelles de ces paramètres. Replenishment les utilise pour déterminer les quantités et dates d’apport. Les deux politiques ci-dessus ne forment pas une chaîne où les apports calculés par la première détermineraient les seuils de la seconde.
+
+        Dans les deux politiques, évaluer le stock admissible, les entrées attendues à temps, les actions déjà engagées et les contraintes. Préciser l’horizon, la maille et les règles d’admissibilité ; ne pas déduire deux fois des demandes déjà intégrées à une cible ou couvrir deux fois le même manque. Une décision intègre ses calculs ; aucune capacité Calculation autonome.
+
+        **Ajustement des apports existants.** Réexaminer les apports prévus ou engagés lorsqu’évoluent besoins, cibles ou contraintes. Recommander une augmentation, une réduction, une avance, un report ou, si pertinent, une annulation admissible ; ce n’est pas un mécanisme limité à la création de commandes supplémentaires. Exemple fictif : la cible passe de 100 à 80, alors que 30 pièces sont présentes et 70 attendues. Examiner une réduction ou un report de 20. Si l’engagement fournisseur empêche la modification, expliciter l’excédent résiduel et les options encore possibles. Aucune modification d’un Order ferme n’est déduite du seul recalcul.
+
+        [Replenishment](model:D05.e) conserve les apports de lancement. Le réassort tient compte des apports d’implantation encore attendus, sans les recréer. [Stock Redistribution](model:D05.c) examine le rééquilibrage du stock existant ; coordonner les résultats pour éviter les doublons. Un transfert peut matérialiser un apport courant ou une redistribution selon sa finalité.
+
+        Les résultats précisent quantités, dates et ajustements recommandés. [Order Management](model:D04) et [les familles d’Orders](model:D04) vérifient et appliquent les changements autorisés, avec les accords et protections applicables. [Demand & Supply Matching](model:D03) décide de la satisfaction des demandes et D06 orchestre les services et leur adaptation. La recommandation ne crée ni promesse, ni modification automatique d’un Order, ni mouvement physique. Une application automatisée reste possible selon les règles et autorités ; le porteur détaillé du déclenchement reste à préciser.
+
+        U427 adopte trois comportements : Requirement-based Replenishment, Target-based Replenishment et Replenishment Adjustment. Les deux premiers rendent explicites des politiques distinctes de détermination des apports ; le troisième révise les apports existants et se combine avec les deux. Cette décomposition remplace la conclusion de non-décomposition U425 ; les codes, paramètres et formules produits ne créent pas de sous-comportement. Le point réassort de l’audit est traité, sans présumer une couverture exhaustive du marché.
+
+        Frontière U673 : Les compléments fournisseur ne dupliquent pas les achats projetés par l’APS. Garder les arbitrages opérationnels de couverture et remonter les besoins de révision du plan externe.
+
+        Implantation initiale : Décider les apports d’[implantation](glossary:TER079) destinés à constituer le stock de départ de chaque magasin à la date de lancement. Chez Beaumanoir, les deux saisons été/hiver constituent le contexte rapporté ; collections, capsules ou périodes plus fines sont des extensions possibles, pas des pratiques actuelles déduites. Le résultat précise produits ou variantes, magasins, quantités, dates et éventuels besoins non couverts.
+
+        L’assortiment retenu, les objectifs de stock et les contraintes constituent les entrées. [Inventory Target Optimization](model:D05.a) conserve la détermination des cibles ; cette décision détermine les apports pour les atteindre au lancement. Examiner stock déjà présent et admissible, apports attendus à temps, conditionnements, protections et contraintes de disponibilité. Le calcul net fait partie de la décision ; ne pas compter deux fois les mêmes entrées.
+
+        Exemple fictif : pour un lancement au 1er mars, une cible de 100 pièces, 20 pièces admissibles déjà présentes et 30 attendues à temps laissent 50 pièces à apporter. Si seulement 40 peuvent être disponibles, expliciter le manque de 10 et les options à examiner ; ne pas annoncer implicitement une promesse ni modifier la cible sans mobiliser la décision responsable. Les tailles, couleurs et conditionnements peuvent contraindre le résultat sans constituer automatiquement des comportements supplémentaires.
+
+        Au sein de Replenishment, la finalité distingue l’implantation initiale du réassort en cours de commercialisation. Un complément tardif destiné à achever la mise en place initiale reste à qualifier selon cette finalité ; la date seule ne suffit pas à le transformer en réassort. Les apports d’implantation engagés restent visibles pour les décisions ultérieures de réassort, afin d’éviter les doublons.
+
+        [Master Planning](model:D05.f) mobilise la décision pour ses scénarios. D04 gère les Orders nécessaires, D03 décide comment les satisfaire et D06 pilote les prestations ; retenir ces apports ne réalise ni livraison ni mise en rayon. [Plan Application](model:D02.e) conserve l’affectation des ressources aux commandes. Le choix de l’assortiment et la planification commerciale de saison ne deviennent pas des responsabilités de cette capacité.
+
+        Frontière U673 : La frontière avec le calcul externe est la suivante : déterminer et ajuster les apports de couverture du lancement, sans recalculer l’assortiment ni le plan prévisionnel amont.
+  - id: D05.f
+    fields:
+      scope: |-
+        Cadrer le périmètre, l’horizon et les objectifs du master plan commun, puis coordonner sa construction, son suivi et ses révisions. Couvrir commandes et prévision résiduelle sans double compte, à partir des plans externes et ressources admissibles.
+
+        [Demand Prioritization](model:D03.m) établit les priorités ; [Supply Assignment](model:D03.o) détermine les liens ressources-besoins ; [Replenishment](model:D05.e) recommande les apports et [Stock Redistribution](model:D05.c) les transferts utiles. Les capacités de Policy Optimization recommandent les cibles et protections, sans activer les politiques.
+
+        [Simulation & Analysis](model:BHV006) compare les scénarios ; [Plan Application](model:D02.e) fait appliquer les changements autorisés. Ces capacités coopèrent au même plan sans être des sous-capacités de Master Planning. Aucun moteur unique ni ordre universel des calculs n’est imposé.
+
+        Scope, Schedule, Run, Stop, Rerun, Monitor et Adjust décrivent les pratiques de pilotage. Arrêter un calcul n’annule pas ses effets appliqués. Adjust Plan prépare les révisions en préservant les effets acquis et en faisant examiner les impacts sur les commandes. La comparaison des décalages relève de Simulation & Analysis et le choix des liens révisés de Supply Assignment.
+
+        Exemple : une réception retardée déclenche un réexamen ciblé ; comparer les alternatives, retenir un plan cohérent, puis faire appliquer les changements autorisés. Les confirmations restent portées par les Orders ; ATP/CTP/PTP et le réexamen de promesse relèvent d’[Order Promising](model:subdomain-order-promising). Le plan interne ne remplace pas l’APS et Fulfilment conserve les adaptations locales.
+
+        Le [Matching Master Plan](glossary:TER100) est le plan interne commun ; les [Supply Plans](glossary:TER098) et [Demand Plans](glossary:TER099) sont des informations externes consommées. Cette séparation est propre au périmètre FLOW et ne recopie pas tous les calculs regroupés dans le master planning Microsoft.
+  - id: D07.c
+    fields:
+      scope: |-
+        Rapprocher production, préparation, expédition, réception, consommation et résultats documentaires des prestations demandées et engagées. Les quantités manquantes, écarts et résultats partiels sont qualifiés à la maille pertinente.
+
+        Exemple : 80 unités sont reçues sur les 100 attendues ; qualifier l’écart de prestation et en transmettre les faits à la commande concernée. D04 conserve le reliquat de l’Order et D01 la représentation des mouvements de stock. Les cinq contributions existantes vers les capacités par type d’Order sont conservées, avec leur statut proposé. Operations Tracking intègre les faits ; Operations Visibility restitue l’avancement ; Service Reconciliation qualifie le réalisé au regard de l’attendu.
+
+        Frontière : Reliquat prestation différent du reliquat Order ; le rapprochement bancaire ou comptable reste externe.
+
+        Frontière U673 : Fournir les écarts aux Orders et les faits à Inventory ; ne pas tenir à leur place le reliquat commande ou le stock.
+
+        Fournir les faits ou écarts qualifiés à Service Order Management pour les suites des ordres de prestation ; ne pas dupliquer la tenue de leurs engagements individuels.
+
+        Pour une prestation d’encaissement, rapprocher la demande du résultat métier communiqué par le service financier : montant confirmé, partiel, rejeté ou non encore qualifié. Ce contrôle du résultat confié ne certifie ni écriture comptable, ni règlement bancaire, ni affectation à une créance. Une notification dupliquée ne produit pas un second résultat.
+  - id: D06.d
+    fields:
+      definition: Coordonner le déclenchement, les dépendances et la progression des prestations jusqu’aux résultats attendus,
+        en tenant compte des faits d’exécution et des adaptations autorisées.
+      scope: |-
+        Coordonner le déclenchement et l’enchaînement des prestations du plan retenu, en tenant compte de leurs dépendances, des prises en charge et des faits d’exécution. Mobiliser les familles de Service Orders pour tenir les demandes et leurs évolutions.
+
+        Exemple : coordonner la préparation, la disponibilité du document et la collecte. Si la décision d’adaptation retient un autre transporteur, coordonner la modification des prestations concernées et leur nouvel enchaînement.
+
+        La détermination de la variation du plan appartient à Process Adaptation Decision. L’orchestration peut lui transmettre un aléa, mais ne porte plus cette décision dans sa propre définition. Les exécutants conservent l’organisation de leurs opérations internes. Aucun moteur de workflow, contrôle humain systématique ou rollback physique universel n’est présumé.
+
+        Frontière : Décision D06.f séparée ; pas de rollback physique ni seconde promesse.
+
+        Convention U409 : le Process orchestre des Services. Les Tasks expriment les contributions au processus ; les services réalisent les prestations sollicitées, humaines, physiques ou numériques. Un appel informatique est un moyen de sollicitation ou de feedback, pas le service métier lui-même. Process Orchestration coordonne la progression ; Process Adaptation Decision choisit les adaptations ; Operations Tracking intègre les faits d’exécution ; Operations Visibility restitue leur avancement et Process Visibility en expose la contribution à la progression du processus. Les exécutants gardent leurs opérations internes. Le périmètre Supply et les responsabilités des sous-domaines restent inchangés ; aucun moteur de workflow ou nouveau niveau descriptif imposé.
+
+        Frontière U673 : Distinguer le plan d’exécution coordonné du master plan de matching arbitré dans Matching.
+
+        Service Order Management tient le cycle et les engagements des ordres de prestation. L’orchestration utilise leurs réponses et coordonne les conditions d’activation et dépendances ; elle ne recrée pas leur cycle.
+
+        U706/U709 : Coordonner aussi les prestations exécutées à distance : solliciter le service, attendre son résultat métier et poursuivre le flux selon ce résultat. Une acceptation du déclenchement ne vaut pas réalisation.
+
+        Appliquer les attentes et libérations retenues par [Service Order Release Decision](model:service-order-release-decision), puis suivre la prise en charge des ordres. Un lot ne fusionne pas leurs identités. Distinguer une information anticipée de l’autorisation de lancement ; ne pas considérer la transmission comme preuve de réalisation.
+  - id: service-order-receiving
+    fields:
+      name: Receiving Order
+      definition: Gérer les demandes de réception de marchandises confiées aux exécutants, leurs quantités et conditions attendues,
+        leurs engagements et les suites des réceptions partielles, refusées ou non conformes.
+      scope: |-
+        Porter l’origine attendue, les articles et quantités, le lieu, les créneaux, les consignes de prise en charge et les preuves attendues. Suivre acceptation, révisions, annulation, réception partielle et clôture avec le reste à réaliser. Une annonce d’arrivée ou un document ne prouve pas la réception.
+
+        Une demande de réception peut être liée à un Purchase Order, Transfer Order, Return Order ou apport consigné ; elle ne remplace pas leurs engagements. Le prestataire reçoit physiquement et organise ses tâches internes. Une inspection autonome peut être confiée à Inspection Order ; un contrôle intégré demeure dans la réception. Receiving Order ne décide pas du devenir d’un retour et ne garantit pas que le stock est vendable.
+
+        Fulfilment Orchestration coordonne les prestations. Operations Tracking capte leur résultat et Service Reconciliation qualifie l’écart ; Receiving Order tient le solde de sa prestation. Inventory Tracking et Inventory Ledger prennent en compte les faits de stock reconnus. L’instruction de réception ne crée ni mouvement, ni changement automatique de propriété, ni nouvel achat.
+
+        Créer cet Order lorsqu’une réception est explicitement confiée et suivie comme prestation. Recevoir seulement une notification ne justifie pas un ordre artificiel. Aucune famille supplémentaire de rangement ou de stockage ni réalisation Beaumanoir n’est déduite.
+      nature: action
+      category:
+        id: warehouse
+        display_name: Prestations d’entrepôt
+        order: 10
+      examples:
+      - id: partial-receiving
+        title: Recevoir un lot partiel sans solder prématurément l’achat
+        situation: Illustration FLOW fictive. Un fournisseur doit livrer 100 vestes. L’entrepôt est chargé de les recevoir
+          ; 80 arrivent, dont 5 attendent un contrôle de conformité.
+        steps:
+        - title: Confier la réception
+          description: Le créneau, les 100 vestes attendues et les consignes sont transmis au prestataire.
+          outcome: L’achat et la prestation de réception possèdent des engagements liés mais distincts.
+          contributions:
+          - node_id: D04.j
+            role: Porter les 100 vestes dues par le fournisseur.
+          - node_id: service-order-receiving
+            role: Porter la réception confiée et ses conditions.
+          - node_id: D06.d
+            role: Coordonner la prise en charge et les dépendances.
+        - title: Qualifier les 80 arrivées
+          description: Le prestataire confirme 80 reçues et signale les 5 à contrôler.
+          outcome: Réception et disponibilité vendable sont distinguées.
+          contributions:
+          - node_id: D07.d
+            role: Intégrer le résultat communiqué.
+          - node_id: D07.c
+            role: Rapprocher résultat et prestation attendue.
+          - node_id: service-order-inspection
+            role: Porter le contrôle autonome si celui-ci est explicitement confié.
+        - title: Tenir les deux soldes et le stock
+          description: La prestation conserve 20 à recevoir si aucune clôture partielle n’est autorisée ; l’achat reste également
+            à rapprocher du solde fournisseur.
+          outcome: 80 pièces reçues ne deviennent ni 100 reçues ni 80 immédiatement vendables.
+          contributions:
+          - node_id: service-order-receiving
+            role: Tenir le solde et la clôture autorisée de la prestation.
+          - node_id: D04.j
+            role: Tenir le reste dû selon l’engagement fournisseur.
+          - node_id: D01.f
+            role: Intégrer les faits de stock.
+          - node_id: D01.g
+            role: Enregistrer les états reconnus.
+          - node_id: D01.c
+            role: Exposer les positions selon leur disponibilité reconnue.
+        outcome: La prestation, l’achat et le stock portent des résultats cohérents sans fusionner leurs responsabilités.
+        validation_points:
+        - Une instruction ne vaut pas réception.
+        - Le solde de prestation, le solde achat et le stock disponible sont distincts.
+        - La réception ne transfère pas automatiquement la propriété.
+        source_refs:
+        - U771
+comparison_duplicates_before_U771:
+- node_id: D05.f
+  comparison:
+    vendor: Oracle
+    product: Fusion Cloud Supply Chain Planning
+    source_title: Manually Release Plan Recommendations
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html
+    source_version: 26B
+    source_locator: Introduction ; Release ; exceptions
+    consulted_on: '2026-09-21'
+    element_name: Release plan recommendations
+    element_type: Processus ou fonction produit
+    relationship: Appui fonctionnel et méthodologique
+    similarities: Distinguer recommandations, mise en application et exceptions de prise en compte.
+    differences: Le cas Oracle couvre surtout la création ou modification d’Orders Supply ; appui partiel au principe d’application,
+      pas équivalence des affectations FLOW.
+    flow_position: 'Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning
+      porte le travail demandé, l’étude et l’actualisation des scénarios, leurs suites autorisées et l’application des affectations.
+      Décisions, configuration et engagements partenaires gardent leurs responsabilités. Le regroupement de ces travaux sous
+      une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.'
+    status: proposed
+    source_refs:
+    - U537
+    - ELM566
+    - CMP220
+    - CMP221
+    - U560
+    - CMP234
+    evidence_limits: Fonctions et parcours produit ; aucune hiérarchie de capacités FLOW ni réalisation Beaumanoir démontrée.
+      Deux pages Oracle ne constituent pas un consensus interéditeurs.
+    concept_name: Release plan recommendations
+    scope_summary: Recommandations nouvelles ou révisées et suites sur les Orders.
+    approach_summary: Sélectionner les recommandations, les transmettre et examiner les exceptions.
+- node_id: D05.f
+  comparison:
+    vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management — Master planning
+    element_name: Master plans overview
+    concept_name: Master plans overview
+    element_type: Mécanisme ou processus de planification documenté dans un produit
+    relationship: Recouvrement partiel
+    scope_summary: Le master planning peut utiliser un achat existant retardé ou proposer un nouvel achat planifié ; le plan
+      dynamique est lié au CTP.
+    approach_summary: Arbitrer la couverture en fonction de l’horizon et des délais.
+    similarities: Éclaire la coordination entre besoins, ressources, propositions et contraintes.
+    differences: Plusieurs plans et simulations sont possibles ; le document n’impose ni plan technique unique ni optimum
+      mathématique.
+    flow_position: 'Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : La couverture des commandes
+      et les propositions de nouveaux apports peuvent appartenir à un même plan. Ce constat motive le réexamen de la frontière
+      de couverture du Planning FLOW. Le regroupement de ces travaux sous une capacité Planning conserve les responsables
+      des décisions, des Orders, des engagements et des politiques.'
+    source_title: Master plans overview
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans
+    source_version: Documentation évolutive ; mise à jour affichée 25 mars 2026
+    source_locator: Using master plans ; Firming ; Negative days
+    consulted_on: '2026-09-21'
+    evidence_limits: Document primaire directement consulté. Aucun déploiement Beaumanoir ou optimum universel déduit.
+    status: proposed
+    source_refs:
+    - U567
+    - ELM303
+    - CMP237
+previous_qualification_U771:
+  D13:
+    lifecycle:
+      state: under_instruction
+      recorded_at: '2026-09-22T17:09:50.704739Z'
+      recorded_by: Codex
+      source_refs:
+      - U131
+      - U102
+      - U626
+      validated_fields:
+      - independence
+      - name
+      value_sha256:
+        independence: 2093ef74bde62d6235e327806ee878c1051c56192d9f9633ff7f029b0bce0981
+        name: 088fd0853f65b926594df6648cf35deff367abbae8b3d319be17be9b156d0a31
+      note: 'Consolidation U626 : anciennes preuves conservées dans le registre et la capture avant modification ; seuls champs
+        inchangés rappelés ici. Nouveaux textes et contextes à qualifier.'
+    changed_validated_fields:
+    - name
+  BHV079:
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-18T22:12:15.256084Z'
+      recorded_by: Codex
+      source_refs:
+      - U305
+      validated_fields:
+      - name
+      - definition
+      value_sha256:
+        name: a442e0d72da60b89186ac60632146dd478e19e5960014d2e83f16165d83c0fa2
+        definition: 35595911e232c1865ac06ff1a1b38ead86f18803128d6748cd34fbeb803c9314
+      note: Intégration U406. Les définitions physiques reprennent exactement les périmètres adoptés U305/U308 ; nom et définition
+        Business Process Tracking adoptés U406. Descriptions développées et comparaisons éditoriales.
+    changed_validated_fields:
+    - definition
+  BHV080:
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-18T22:12:15.256084Z'
+      recorded_by: Codex
+      source_refs:
+      - U305
+      validated_fields:
+      - name
+      - definition
+      value_sha256:
+        name: b6d56892456c27c5b826710e38c25a37e01957adce2559d7de6489b31acd476c
+        definition: 4139df7a797acc0d8fbc758998fe951e874e35eba05feaf69680db6a6fe01ee8
+      note: Intégration U406. Les définitions physiques reprennent exactement les périmètres adoptés U305/U308 ; nom et définition
+        Business Process Tracking adoptés U406. Descriptions développées et comparaisons éditoriales.
+    changed_validated_fields:
+    - definition
+  BHV081:
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-18T22:12:15.256084Z'
+      recorded_by: Codex
+      source_refs:
+      - U305
+      - U308
+      validated_fields:
+      - name
+      - definition
+      value_sha256:
+        name: 93aa42130e2a4d754ce2d432ec1feaab6174801ad26cfbd0b96fc8b8d1add812
+        definition: 63a1fa639f74647d39e258d7ccd17079e2ca1559aa7316ff7350a88be3b26b21
+      note: Intégration U406. Les définitions physiques reprennent exactement les périmètres adoptés U305/U308 ; nom et définition
+        Business Process Tracking adoptés U406. Descriptions développées et comparaisons éditoriales.
+    changed_validated_fields:
+    - definition
+  D13.b:
+    lifecycle:
+      state: urbanist_validated
+      recorded_at: '2026-09-19T17:29:54.487177Z'
+      recorded_by: Codex
+      source_refs:
+      - U505
+      - CMP204
+      - U507
+      validated_fields:
+      - name
+      - nature
+      value_sha256:
+        name: c0ea2b309fe7731c4d98e9afe4cd79a27631fbf1d07107783f56f6f4a53b2aa0
+        nature: 1cacae8bf92e48145bac0fb9fbd4a6219018593e43884ce458b74e938beb4bed
+      note: 'U507 adopte la capacité Visibility de connaissance du référentiel : recherche, consultation et compréhension
+        de la référence locale. Nom décliné par référentiel, nature knowledge. Descriptions détaillées, exemples et inspirations
+        proposés ; aucune maîtrise externe transférée.'
+    changed_validated_fields:
+    - name
+application_U771:
+  changed_fields:
+    universe-supply:
+    - market_comparisons
+    business-references:
+    - market_comparisons
+    - scope
+    - market_inspiration
+    D08:
+    - market_comparisons
+    D01.f:
+    - market_comparisons
+    D01.g:
+    - market_comparisons
+    D01.c:
+    - market_comparisons
+    D01.d:
+    - market_comparisons
+    D02.b:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D02.c:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D09:
+    - market_comparisons
+    - scope
+    - market_inspiration
+    D12:
+    - market_comparisons
+    D16:
+    - market_comparisons
+    D02.e:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D03.i:
+    - market_comparisons
+    D03.j:
+    - market_comparisons
+    - market_inspiration
+    D03.k:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D03.l:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D03.m:
+    - market_comparisons
+    D11:
+    - market_comparisons
+    D04.i:
+    - market_comparisons
+    D04.j:
+    - market_comparisons
+    D04.k:
+    - market_comparisons
+    D04.l:
+    - market_comparisons
+    D04.m:
+    - market_comparisons
+    D04.n:
+    - market_comparisons
+    D13:
+    - name
+    - market_comparisons
+    - market_inspiration
+    D05.a:
+    - market_comparisons
+    D05.d:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D05.e:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D05.c:
+    - market_comparisons
+    D05.f:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D14:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D06.b:
+    - market_comparisons
+    D07.a:
+    - definition
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D07.c:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D07.d:
+    - market_comparisons
+    D04:
+    - market_comparisons
+    D01:
+    - market_comparisons
+    D03:
+    - market_comparisons
+    D06.d:
+    - definition
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D06.e:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D06.f:
+    - market_comparisons
+    BHV002:
+    - market_comparisons
+    BHV004:
+    - market_comparisons
+    BHV006:
+    - market_comparisons
+    BHV016:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    BHV017:
+    - market_comparisons
+    BHV018:
+    - market_comparisons
+    BHV019:
+    - market_comparisons
+    BHV020:
+    - market_comparisons
+    BHV024:
+    - market_comparisons
+    BHV025:
+    - market_comparisons
+    BHV026:
+    - market_comparisons
+    - scope
+    - market_inspiration
+    BHV027:
+    - market_comparisons
+    - scope
+    - market_inspiration
+    BHV028:
+    - market_comparisons
+    - scope
+    - market_inspiration
+    BHV029:
+    - market_comparisons
+    BHV030:
+    - market_comparisons
+    BHV031:
+    - market_comparisons
+    D05.h:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    BHV032:
+    - market_comparisons
+    BHV033:
+    - market_comparisons
+    BHV034:
+    - market_comparisons
+    BHV035:
+    - market_comparisons
+    BHV044:
+    - market_comparisons
+    D03.o:
+    - market_comparisons
+    D05.i:
+    - market_comparisons
+    BHV048:
+    - market_comparisons
+    BHV049:
+    - market_comparisons
+    BHV050:
+    - market_comparisons
+    BHV051:
+    - market_comparisons
+    BHV052:
+    - market_comparisons
+    BHV053:
+    - market_comparisons
+    BHV054:
+    - market_comparisons
+    BHV055:
+    - market_comparisons
+    BHV056:
+    - market_comparisons
+    BHV057:
+    - market_comparisons
+    BHV058:
+    - market_comparisons
+    BHV059:
+    - market_comparisons
+    BHV060:
+    - market_comparisons
+    D04.r:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D01.h:
+    - market_comparisons
+    BHV063:
+    - market_comparisons
+    BHV064:
+    - market_comparisons
+    BHV066:
+    - market_comparisons
+    BHV067:
+    - market_comparisons
+    BHV068:
+    - market_comparisons
+    BHV069:
+    - market_comparisons
+    BHV075:
+    - market_comparisons
+    BHV076:
+    - market_comparisons
+    BHV078:
+    - market_comparisons
+    BHV079:
+    - definition
+    - market_comparisons
+    - market_inspiration
+    BHV080:
+    - definition
+    - market_comparisons
+    - market_inspiration
+    BHV081:
+    - definition
+    - market_comparisons
+    - market_inspiration
+    BHV082:
+    - market_comparisons
+    BHV083:
+    - market_comparisons
+    BHV084:
+    - market_comparisons
+    BHV085:
+    - market_comparisons
+    BHV086:
+    - market_comparisons
+    BHV087:
+    - market_comparisons
+    D04.s:
+    - market_comparisons
+    D08.e:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D09.e:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D11.b:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D12.b:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D13.b:
+    - name
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D14.b:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    D16.b:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    BHV096:
+    - market_comparisons
+    D19.a:
+    - market_comparisons
+    D19.b:
+    - scope
+    - market_comparisons
+    D04.t:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    BHV097:
+    - market_comparisons
+    BHV098:
+    - market_comparisons
+    BHV099:
+    - market_comparisons
+    BHV100:
+    - market_comparisons
+    BHV101:
+    - market_comparisons
+    subdomain-policies:
+    - market_comparisons
+    subdomain-plans:
+    - market_comparisons
+    plans-ingestion:
+    - market_comparisons
+    plans-visibility:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    subdomain-service-orders:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    service-order-picking:
+    - market_comparisons
+    service-order-packing:
+    - market_comparisons
+    service-order-cross-docking:
+    - market_comparisons
+    service-order-labeling:
+    - market_comparisons
+    service-order-kitting:
+    - market_comparisons
+    service-order-garment-finishing:
+    - market_comparisons
+    service-order-cleaning:
+    - market_comparisons
+    service-order-repair-alteration:
+    - market_comparisons
+    service-order-personalization:
+    - market_comparisons
+    service-order-inspection:
+    - definition
+    - market_comparisons
+    - market_inspiration
+    transport-multi-stop:
+    - market_comparisons
+    transport-multi-leg:
+    - market_comparisons
+    transport-scheduled:
+    - market_comparisons
+    transport-appointments:
+    - market_comparisons
+    transport-rescheduling-redirection:
+    - market_comparisons
+    service-order-transport-booking:
+    - scope
+    - market_comparisons
+    service-order-document-production:
+    - market_comparisons
+    service-order-customs-clearance:
+    - market_comparisons
+    service-order-billing:
+    - market_comparisons
+    service-order-payment-collection:
+    - scope
+    - market_comparisons
+    demand-plan-visibility:
+    - market_comparisons
+    master-data-ingestion:
+    - scope
+    - market_comparisons
+    - market_inspiration
+    operations-visibility:
+    - market_comparisons
+    master-data-ingestion-commerce:
+    - market_comparisons
+    master-data-ingestion-finance:
+    - market_comparisons
+    master-data-ingestion-design:
+    - market_comparisons
+    price-book:
+    - market_comparisons
+    price-book-visibility:
+    - definition
+    - scope
+    - market_comparisons
+    - market_inspiration
+    order-visibility:
+    - market_comparisons
+    BHV102:
+    - market_comparisons
+    BHV103:
+    - market_comparisons
+    inventory-ownership-ledger:
+    - market_comparisons
+    BHV104:
+    - market_comparisons
+    service-order-release-decision:
+    - market_comparisons
+    BHV105:
+    - market_comparisons
+    BHV106:
+    - market_comparisons
+    BHV107:
+    - name
+    - market_comparisons
+    BHV108:
+    - market_comparisons
+    BHV109:
+    - market_comparisons
+    BHV110:
+    - market_comparisons
+    service-order-receiving:
+    - name
+    - definition
+    - scope
+    - nature
+    - category
+    - market_comparisons
+    - examples
+  changed_terms:
+  - TER030
+  - VER002
+  - VER019
+  - TER045
+  - TER049
+  - TER054
+  - TER056
+  - TER065
+  - TER068
+  - TER071
+  - TER074
+  - TER085
+  - TER098
+  - TER099
+  - TER100
+  new_capability: service-order-receiving
+  new_terms:
+  - TER098
+  - TER099
+  - TER100
+  updated_delivery_guards:
+  - inventory-management-review-U726.yaml
+  spelling: Fulfilment dans le vocabulaire FLOW ; graphies natives des sources préservées.
+  agreement_scope: Autorisation autonome du lot U770 ; choix de réception et rédactions détaillées documentés comme mise en
+    œuvre, sans accord mot à mot ni preuve installée.
+  scenario_coverage:
+    structured_examples: 40
+    mapped_scenarios: 23
+    stories_with_steps: 23
+    capabilities: 72
+    mapped_capabilities: 72
+    unmapped_capabilities: []
+    scenarios:
+    - owner_id: universe-supply
+      scenario_id: null
+      index: 0
+      title: Livrer 100 tee-shirts à un magasin vendredi
+      steps: 0
+      capability_ids: []
+    - owner_id: universe-supply
+      scenario_id: null
+      index: 1
+      title: Recevoir une nouvelle référence produit
+      steps: 0
+      capability_ids: []
+    - owner_id: universe-supply
+      scenario_id: b2b-partial-stock
+      index: 2
+      title: Livrer une commande B2B avec un stock partiel
+      steps: 4
+      capability_ids:
+      - D01.c
+      - D02.e
+      - D03.i
+      - D03.j
+      - D03.k
+      - D03.l
+      - D03.o
+      - D04.i
+      - D06.d
+      - service-order-packing
+      - service-order-release-decision
+    - owner_id: universe-supply
+      scenario_id: return-fashion-recovery
+      index: 3
+      title: Remettre en vente une robe retournée
+      steps: 3
+      capability_ids:
+      - D01.c
+      - D01.f
+      - D01.g
+      - D04.l
+      - D05.i
+      - D06.d
+      - D07.d
+      - service-order-inspection
+      - service-order-repair-alteration
+    - owner_id: universe-supply
+      scenario_id: consignment-sale-pickup
+      index: 4
+      title: Vendre une partie du stock consigné puis reprendre le solde
+      steps: 3
+      capability_ids:
+      - D01.c
+      - D01.f
+      - D01.g
+      - D01.h
+      - D04.i
+      - D04.r
+      - D04.t
+      - D06.d
+      - D11.b
+      - inventory-ownership-ledger
+    - owner_id: universe-supply
+      scenario_id: fashion-launch
+      index: 5
+      title: Préparer une capsule pour l’ouverture de magasins
+      steps: 3
+      capability_ids:
+      - D02.e
+      - D03.o
+      - D04.k
+      - D05.e
+      - D06.d
+      - D07.d
+      - demand-plan-visibility
+      - master-data-ingestion
+      - plans-ingestion
+      - plans-visibility
+      - service-order-garment-finishing
+      - service-order-labeling
+      - service-order-packing
+      - service-order-transport
+    - owner_id: universe-supply
+      scenario_id: shortage-reassessment
+      index: 6
+      title: Réagir à une pénurie sans confondre promesse et affectation
+      steps: 3
+      capability_ids:
+      - BHV006
+      - D01.c
+      - D01.f
+      - D02.e
+      - D03.i
+      - D03.k
+      - D03.l
+      - D03.m
+      - D03.o
+      - D04.i
+      - D05.f
+      - D19.b
+      - order-visibility
+    - owner_id: universe-supply
+      scenario_id: export-remote-services
+      index: 7
+      title: Exporter des vêtements et attendre la fin des prestations distantes
+      steps: 3
+      capability_ids:
+      - D06.d
+      - D07.a
+      - D07.c
+      - D07.d
+      - D11.b
+      - operations-visibility
+      - service-order-billing
+      - service-order-customs-clearance
+      - service-order-document-production
+      - service-order-payment-collection
+      - service-order-release-decision
+      - service-order-transport
+      - service-order-transport-booking
+    - owner_id: universe-supply
+      scenario_id: stocktaking-variance
+      index: 8
+      title: Traiter un écart de comptage avant de repromettre
+      steps: 2
+      capability_ids:
+      - D01.c
+      - D01.d
+      - D01.g
+      - D03.i
+      - D03.l
+      - D04.i
+    - owner_id: universe-supply
+      scenario_id: last-item-concurrency
+      index: 9
+      title: Deux clients veulent le dernier pull
+      steps: 3
+      capability_ids:
+      - D01.c
+      - D02.c
+      - D03.i
+      - D03.l
+      - D04.i
+    - owner_id: universe-supply
+      scenario_id: substitution-price-service
+      index: 10
+      title: Comparer une substitution, un autre site et un transport express
+      steps: 3
+      capability_ids:
+      - D03.i
+      - D03.k
+      - D03.l
+      - D04.i
+      - D06.e
+      - D12.b
+      - D16.b
+      - price-book-visibility
+    - owner_id: universe-supply
+      scenario_id: additional-purchase-partial
+      index: 11
+      title: Approvisionner une vente et traiter une confirmation fournisseur partielle
+      steps: 3
+      capability_ids:
+      - D01.f
+      - D02.e
+      - D03.i
+      - D03.j
+      - D03.l
+      - D03.o
+      - D04.i
+      - D04.j
+      - D05.f
+    - owner_id: universe-supply
+      scenario_id: pickup-or-direct-shipment
+      index: 12
+      title: Traiter un retrait non honoré ou une livraison directe partielle
+      steps: 3
+      capability_ids:
+      - D01.c
+      - D02.c
+      - D03.l
+      - D04.i
+      - D04.j
+      - D06.d
+      - D07.d
+    - owner_id: universe-supply
+      scenario_id: transport-missed-connection
+      index: 13
+      title: Sauver une livraison après une correspondance manquée
+      steps: 3
+      capability_ids:
+      - D03.k
+      - D03.l
+      - D03.o
+      - D06.b
+      - D06.d
+      - D06.e
+      - D06.f
+      - D07.c
+      - D07.d
+      - service-order-transport
+      - service-order-transport-booking
+    - owner_id: universe-supply
+      scenario_id: remote-payment-ambiguous
+      index: 14
+      title: Attendre un encaissement malgré des notifications ambiguës
+      steps: 3
+      capability_ids:
+      - D06.d
+      - D07.c
+      - D07.d
+      - operations-visibility
+      - service-order-payment-collection
+    - owner_id: universe-supply
+      scenario_id: reference-plan-correction
+      index: 15
+      title: Réexaminer une préparation après correction des données sources
+      steps: 3
+      capability_ids:
+      - D05.f
+      - D08.e
+      - D09.e
+      - D11.b
+      - D12.b
+      - D13.b
+      - D14.b
+      - D16.b
+      - demand-plan-visibility
+      - master-data-ingestion
+      - plans-ingestion
+      - price-book-visibility
+    - owner_id: universe-supply
+      scenario_id: redistribute-protected-stock
+      index: 16
+      title: Rééquilibrer et consolider des stocks sous protections
+      steps: 3
+      capability_ids:
+      - D02.b
+      - D02.e
+      - D03.m
+      - D03.o
+      - D04.k
+      - D05.a
+      - D05.c
+      - D05.d
+      - D05.f
+      - D05.h
+      - D19.b
+    - owner_id: universe-supply
+      scenario_id: supplier-return-outcomes
+      index: 17
+      title: Suivre trois issues contractuelles d’un retour fournisseur
+      steps: 3
+      capability_ids:
+      - D01.g
+      - D04.l
+      - D04.m
+      - D05.i
+      - D06.d
+    - owner_id: universe-supply
+      scenario_id: gift-kits-crossdock
+      index: 18
+      title: Composer des coffrets personnalisés puis traiter les reliquats
+      steps: 3
+      capability_ids:
+      - D01.c
+      - D01.g
+      - D06.d
+      - D07.c
+      - service-order-cleaning
+      - service-order-cross-docking
+      - service-order-kitting
+      - service-order-packing
+      - service-order-personalization
+      - service-order-picking
+    - owner_id: universe-supply
+      scenario_id: ownership-transit-deadline
+      index: 19
+      title: Distinguer transfert contractuel, transit et formalité douanière
+      steps: 3
+      capability_ids:
+      - D01.c
+      - D01.g
+      - D01.h
+      - D11.b
+      - inventory-ownership-ledger
+      - service-order-customs-clearance
+    - owner_id: universe-supply
+      scenario_id: order-structuring-engaged
+      index: 20
+      title: Scinder, regrouper ou fusionner sans perdre les engagements
+      steps: 3
+      capability_ids:
+      - D02.c
+      - D03.o
+      - D04.i
+      - D04.j
+      - D04.k
+      - D04.n
+      - D06.d
+    - owner_id: universe-supply
+      scenario_id: b2b-release-deadline
+      index: 21
+      title: Libérer une préparation B2B à l’approche de sa limite d’attente
+      steps: 3
+      capability_ids:
+      - D03.l
+      - D06.b
+      - D06.d
+      - D06.e
+      - D06.f
+      - D07.a
+      - D19.a
+      - service-order-packing
+      - service-order-picking
+      - service-order-release-decision
+    - owner_id: D08
+      scenario_id: null
+      index: 0
+      title: Une variante, plusieurs offres et plusieurs exemplaires
+      steps: 0
+      capability_ids: []
+    - owner_id: D02.c
+      scenario_id: null
+      index: 0
+      title: Réserver avant de choisir le lot
+      steps: 0
+      capability_ids: []
+    - owner_id: D02.e
+      scenario_id: null
+      index: 0
+      title: Répartir une pénurie sans scinder les commandes
+      steps: 0
+      capability_ids: []
+    - owner_id: D02.e
+      scenario_id: null
+      index: 1
+      title: Affecter ne réserve pas
+      steps: 0
+      capability_ids: []
+    - owner_id: D02.e
+      scenario_id: null
+      index: 2
+      title: Affecter avant la commande
+      steps: 0
+      capability_ids: []
+    - owner_id: D03.k
+      scenario_id: transport-speed
+      index: 0
+      title: Comparer un transport standard et un transport express
+      steps: 0
+      capability_ids: []
+    - owner_id: D03.k
+      scenario_id: substitution
+      index: 1
+      title: Comparer un article demandé et un article de remplacement
+      steps: 0
+      capability_ids: []
+    - owner_id: D03.k
+      scenario_id: alternate-site
+      index: 2
+      title: Comparer deux sites de départ
+      steps: 0
+      capability_ids: []
+    - owner_id: D03.k
+      scenario_id: additional-supply
+      index: 3
+      title: Éclairer une option avec approvisionnement supplémentaire
+      steps: 0
+      capability_ids: []
+    - owner_id: D04.j
+      scenario_id: null
+      index: 0
+      title: 'Réception partielle : rendre visible le reliquat'
+      steps: 0
+      capability_ids: []
+    - owner_id: D04.j
+      scenario_id: null
+      index: 1
+      title: Le fournisseur propose un autre échéancier
+      steps: 0
+      capability_ids: []
+    - owner_id: D04.k
+      scenario_id: transfer-replenishment-order-driven
+      index: 0
+      title: Réapprovisionner un magasin ou servir une commande identifiée
+      steps: 3
+      capability_ids:
+      - D01.f
+      - D02.e
+      - D03.o
+      - D04.i
+      - D04.k
+      - D05.e
+    - owner_id: D04.n
+      scenario_id: null
+      index: 0
+      title: Scinder
+      steps: 0
+      capability_ids: []
+    - owner_id: D04.n
+      scenario_id: null
+      index: 1
+      title: Regrouper en conservant les identités
+      steps: 0
+      capability_ids: []
+    - owner_id: D04.n
+      scenario_id: null
+      index: 2
+      title: Fusionner des demandes compatibles
+      steps: 0
+      capability_ids: []
+    - owner_id: D05.a
+      scenario_id: null
+      index: 0
+      title: Choisir où porter le stock de sécurité
+      steps: 0
+      capability_ids: []
+    - owner_id: D04.r
+      scenario_id: consignment-launch-replenishment
+      index: 0
+      title: Implanter puis réalimenter un stock consigné
+      steps: 3
+      capability_ids:
+      - D01.c
+      - D01.f
+      - D04.r
+      - D05.e
+    - owner_id: service-order-receiving
+      scenario_id: partial-receiving
+      index: 0
+      title: Recevoir un lot partiel sans solder prématurément l’achat
+      steps: 3
+      capability_ids:
+      - D01.c
+      - D01.f
+      - D01.g
+      - D04.j
+      - D06.d
+      - D07.c
+      - D07.d
+      - service-order-inspection
+      - service-order-receiving
+    meaning: Mapping explicite illustratif ; ni couverture de réalisation ni validation du modèle métier.
+verification_U771:
+  model_validation: 'OK: 0 error(s)'
+  scenario_tests: 7 tests passed
+  delivery_guards: No errors
+  backlog_render: Generated
+  mapped_capabilities: 72
+  mapped_scenarios: 23
+  publication: 'Unchanged: 2026-09-25.3'

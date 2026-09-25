@@ -11,6 +11,18 @@ def validate_scenarios(nodes):
         seen = set()
         for example in fields.get('examples', []):
             key = example.get('id')
+            if example.get('steps') and (not key or node['kind'] not in LEVELS):
+                errors.append(f'{identifier}/examples: mapped scenario requires an id and a supported owner')
+            for step in example.get('steps', []):
+                contributors = set()
+                for contribution in step.get('contributions', []):
+                    target_id = contribution['node_id']
+                    target = nodes.get(target_id)
+                    if not target or target['kind'] != 'capability':
+                        errors.append(f'{identifier}/examples/steps: contribution must reference a capability: {target_id}')
+                    if target_id in contributors:
+                        errors.append(f'{identifier}/examples/steps: duplicate capability {target_id}')
+                    contributors.add(target_id)
             if key:
                 if node['kind'] not in LEVELS:
                     errors.append(f'{identifier}/examples: shared scenarios require a domain, subdomain or capability')
@@ -35,6 +47,28 @@ def validate_scenarios(nodes):
             ):
                 errors.append(f'{identifier}/scenario_refs: missing directly defined scenario {pair}')
     return errors
+
+
+def scenario_coverage(model):
+    """Measure explicit mapping only. Mentioning a node in prose is not coverage."""
+    capabilities = {n['id'] for n in model['nodes'] if n['kind'] == 'capability'}
+    mapped = set()
+    scenarios = []
+    for node in model['nodes']:
+        for index, example in enumerate(node.get('fields', {}).get('examples', [])):
+            referenced = {c['node_id'] for c in example.get('contributions', [])}
+            for step in example.get('steps', []):
+                referenced.update(c['node_id'] for c in step['contributions'])
+            covered = capabilities & referenced
+            mapped.update(covered)
+            scenarios.append({'owner_id': node['id'], 'scenario_id': example.get('id'),
+                              'index': index, 'title': example['title'], 'steps': len(example.get('steps', [])),
+                              'capability_ids': sorted(covered)})
+    return {'structured_examples': len(scenarios), 'mapped_scenarios': sum(bool(s['capability_ids']) for s in scenarios),
+            'stories_with_steps': sum(bool(s['steps']) for s in scenarios), 'capabilities': len(capabilities),
+            'mapped_capabilities': len(mapped), 'unmapped_capabilities': sorted(capabilities - mapped),
+            'scenarios': scenarios,
+            'meaning': 'Mapping explicite illustratif ; ni couverture de réalisation ni validation du modèle métier.'}
 
 
 def scenarios_for_node(node, nodes):

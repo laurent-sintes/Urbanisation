@@ -1,0 +1,17 @@
+# Procédures de travail de l’agent
+
+Règles transférées d’AGENTS.md sous U772, sans changement de portée. Lire la section concernée avant inspection, capture d’accords, publication, réexamen ou accès à l’historique. Les chemins et commandes sont relatifs à la racine du dépôt. Les skills restent obligatoires pour leurs opérations respectives.
+
+Lire le périmètre utile avec `python scripts/inspect_model.py D04.j --fields name definition scope` ; ajouter `--relations` si les liens sont concernés, `--collection terms` pour le glossaire, `--space release --version VERSION` pour un état publié. Sans identifiant : recherche `--query` et pagination. Le résultat provient directement du YAML désigné, sans catalogue concurrent. Les champs non sélectionnés ne sont pas réputés absents.
+
+Réduire les sorties aux compteurs, champs et erreurs concernés. Après troncature, filtrer les données utiles plutôt que relancer une lecture ou un calcul complet. Conserver un artefact détaillé seulement s’il sert à la tâche. Pour une opération longue, attendre son résultat avec un délai adapté ; ne pas lancer une seconde écriture pour vérifier ou accélérer la première.
+
+Publication : `scripts/release.py --source SOURCE --activate` utilise le parcours léger (`lean_release.py`). Une construction et une validation du candidat ; préparation temporaire sous `.runtime/publication/`, contrôle des empreintes avant activation, puis vérification Atlas. Aucun rejeu historique ni validation globale du projet dans ce parcours. `validate_models.py` reste le contrôle complet explicite. Les anciennes commandes de publication servent uniquement aux fixtures et à la compatibilité historique ; ne pas les utiliser sur le dépôt migré.
+
+Accords : utiliser `scripts/record_decision.py` sur le lot final ; `record_intents` pour une capture groupée. `decision-intents.yaml` contient seulement les accords en attente, avec leurs valeurs et empreintes de contexte. Les accords publiés figurent dans les décisions de la publication courante. Après publication, les captures consommées quittent le registre actif ; Git conserve leur passé. Une modification de contexte métier exige un réexamen explicite ; un accord inchangé garde son identifiant, sans nouveau récit de report.
+
+Réexamen : `needs_review` fournit le dossier ciblé. Lire `prepare_release.py inspect DOSSIER --section review --id ID`, renseigner `assessment.yaml`, puis reprendre `release.py --review DOSSIER`. `retain_partial` ne conserve que les champs historiques explicitement sélectionnés et inchangés. Publier ne vaut jamais approuver.
+
+Historique : `modeles/release/index.json` conserve le catalogue. Le lecteur `scripts/git_history.py` résout les artefacts retirés par commit exact et chemin, sans recréer une arborescence parallèle. La publication courante et son état source restent autonomes. Avant de retirer une ancienne publication, le parcours exige que ses octets soient déjà conservés dans Git. Il ne crée pas de commit implicitement. Le modèle de travail peut être modifié ; les sources et le code sont liés à la préparation par empreinte et revérifiés avant activation.
+
+Les recherches marché, les contributions utiles et les arbitrages courants restent suivis. Ne pas créer de copie « avant », de journal cumulatif des réflexions ni de rapport historique permanent. Les caches et préparations sont temporaires et ignorés. Le cache de parsing ne remplace ni contrôle d’intégrité ni accord métier.

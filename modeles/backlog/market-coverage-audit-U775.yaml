@@ -1,0 +1,649 @@
+id: MARKET-COVERAGE-U775
+status: proposed
+source_refs:
+- U775
+- CMP308
+scope: Backlog courant Supply Chain Orchestration ; aucun audit historique rouvert.
+method:
+  model: Lecture des noms et définitions des 72 capacités et 75 comportements ; examen des périmètres, exemples et autres
+    champs métier concernés, puis recherche transversale hors commentaires marché pour écarter les faux manques.
+  market: Balayage des neuf sous-domaines avec réemploi des sources U774, puis recherche primaire ciblée Dynamics et S/4HANA
+    sur les écarts. Couverture structurée, pas certification exhaustive de toutes les fonctions du marché.
+  classification: Distinguer responsabilité absente, extension de périmètre, comportements différenciants, précision de référence,
+    famille conditionnelle, scénario transverse et hors périmètre.
+  independence: Les noms et décompositions proposés sont des choix FLOW ; les sources étayent la responsabilité sans imposer
+    un produit, une organisation ou une implémentation interne.
+model_state:
+  sha256: fd4a234b0bbb8cebdb1aa05e26952ab8bc4d9f4390418d7bc14cedace8b96254
+  capabilities: 72
+  behaviors: 75
+  subdomains: 9
+sources:
+- key: a0
+  id: ELM828
+  vendor: Microsoft
+  product: Microsoft Dynamics 365
+  title: Inventory blocking - Supply Chain Management | Dynamics 365 | Microsoft Learn
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-blocking
+  locator: Inventory blocking ; blocking manually, quality orders and inventory status
+  consulted_on: '2026-09-25'
+  summary: Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer.
+  limits: Le produit combine règles, décisions et écritures ; ne pas assimiler le blocage qualité à une réservation pour une
+    demande.
+- key: a1
+  id: ELM829
+  vendor: SAP
+  product: SAP S/4HANA
+  title: Performing Internal Inspections in the Warehouse
+  url: https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/performing-internal-inspections-in-the-warehouse_a8dd0fcf-85c3-47d5-9da2-0058a81ebed5
+  locator: Warehouse Internal Inspections ; usage decision and follow-up actions
+  consulted_on: '2026-09-25'
+  summary: Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut.
+  limits: Le parcours comprend réalisation et écritures ; FLOW peut recevoir les résultats et décisions de responsables externes.
+- key: a2
+  id: ELM830
+  vendor: Microsoft
+  product: Microsoft Dynamics 365
+  title: Item and raw material tracing in inventory, production, and sales - Supply Chain Management | Dynamics 365 | Microsoft
+    Learn
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/trace-items-raw-materials-inventory-production-sales
+  locator: What is item tracing? ; limitations ; trace direction
+  consulted_on: '2026-09-25'
+  summary: La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions
+    et identifiants de suivi.
+  limits: La traçabilité dépend des données captées ; restrictions natives par entité juridique et profondeur. Aucun historique
+    externe inventé.
+- key: a3
+  id: ELM831
+  vendor: SAP
+  product: SAP S/4HANA
+  title: Batch Management & Traceability in SAP S/4HANA Cloud
+  url: https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-execution/batch-management-traceability-in-sap-s-4hana-cloud_d396525c-87eb-4af9-a718-041af5cba51c
+  locator: 'End-to-End Visibility: The Batch Information Cockpit'
+  consulted_on: '2026-09-25'
+  summary: Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires
+    affectés.
+  limits: Exemple de production par lots ; ne prouve pas des données de généalogie disponibles dans la fashion ni une réalisation
+    Beaumanoir.
+- key: b1
+  id: ELM832
+  vendor: Microsoft
+  product: Microsoft Dynamics 365
+  title: Load building workbench - Supply Chain Management | Dynamics 365 | Microsoft Learn
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/tasks/load-building-workbench
+  locator: Create a load building strategy ; use a load building strategy
+  consulted_on: '2026-09-25'
+  summary: La constitution de chargements rapproche les marchandises et les contraintes de poids et de volume des moyens de
+    transport.
+  limits: La stratégie standard documentée est fondée sur le volume ; pas de preuve d’un optimiseur universel ni d’une maille
+    métier imposée.
+- key: b2
+  id: ELM833
+  vendor: SAP
+  product: SAP S/4HANA
+  title: Carrying out Warehouse Ad Hoc Goods Issue
+  url: https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/carrying-out-warehouse-ad-hoc-goods-issue_e15b00c8-2b28-4341-9cdc-7da58ded5b89
+  locator: Warehouse Ad Hoc Goods Issue ; scrapping
+  consulted_on: '2026-09-25'
+  summary: La mise au rebut mobilise une demande de changement, un travail de déplacement vers la zone prévue, puis une sortie
+    reconnue.
+  limits: Une écriture de sortie ne prouve pas une destruction ; le document ne définit pas un ordre de service externe universel.
+- key: c0
+  id: ELM834
+  vendor: SAP
+  product: SAP S/4HANA
+  title: Planning Loads
+  url: https://learning.sap.com/courses/business-processes-in-sap-s-4hana-transportation-management/planning-loads_e752a3f5-f4a9-4957-9f4d-e6e550c15409
+  locator: Load Planning as Part of the Planning Process ; Load Consolidation
+  consulted_on: '2026-09-25'
+  summary: La consolidation répartit les marchandises entre ressources de transport, avec contraintes de capacité et de compatibilité.
+  limits: Le produit descend aussi au placement physique 3D ; cette partie reste hors proposition FLOW. Le plan d’acheminement
+    n’est pas le master plan Supply.
+- key: c1
+  id: ELM805
+  vendor: Microsoft
+  product: Microsoft Dynamics 365
+  title: Plan freight transportation routes with multiple stops - Supply Chain Management | Dynamics 365 | Microsoft Learn
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/plan-freight-transportation-routes-multiple-stops
+  locator: Route plans ; Route guides ; Scheduled routes ; Load building workbench
+  consulted_on: '2026-09-25'
+  summary: Les itinéraires, arrêts, dates, adresses et capacités servent à constituer et affecter les chargements aux trajets.
+  limits: Appui à la décision de transport ; ni reprise des tournées internes d’un prestataire ni preuve d’une optimisation
+    globale identique entre éditeurs.
+- key: d0
+  id: ELM835
+  vendor: Microsoft
+  product: Microsoft Dynamics 365
+  title: Quarantine orders - Supply Chain Management | Dynamics 365 | Microsoft Learn
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/quarantine-orders
+  locator: Quarantine order scrap ; quarantine order statuses
+  consulted_on: '2026-09-25'
+  summary: Le parcours de quarantaine permet une sortie au rebut distincte de la remise en stock.
+  limits: Avec les processus WMS, la page limite ce parcours de quarantine order aux retours de vente ; ne pas généraliser
+    sa disponibilité native.
+- key: d1
+  id: ELM836
+  vendor: Microsoft
+  product: Microsoft Dynamics 365
+  title: Manual order orchestration in Intelligent Order Management | Microsoft Learn
+  url: https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/manual-order-orchestration
+  locator: Simple substitution ; determine when an account is on credit hold
+  consulted_on: '2026-09-25'
+  summary: Les relations entre produits permettent une substitution, et des contraintes de compte sont visibles dans la prise
+    de commande.
+  limits: Page signalée preview ; substitution simple à la création, première correspondance retenue, sans réexécution lors
+    des modifications. FLOW ne reprend pas cet algorithme.
+- key: d2
+  id: ELM540
+  vendor: SAP
+  product: SAP S/4HANA
+  title: Outlining Alternative-based Confirmation
+  url: https://learning.sap.com/courses/exploring-aatp-in-sap-s-4hana/outlining-alternative-based-confirmation
+  locator: Alternative-based confirmation ; Configure Alternative Control
+  consulted_on: '2026-09-25'
+  summary: Des stratégies et conditions explicites gouvernent les alternatives de site utilisées pour confirmer une demande.
+  limits: Les passages lus portent principalement sur la substitution de site ; ils ne prouvent pas toute substitution commerciale
+    entre produits.
+- key: d3
+  id: ELM207
+  vendor: Microsoft
+  product: Microsoft Dynamics 365
+  title: Cycle counting - Supply Chain Management | Dynamics 365 | Microsoft Learn
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting
+  locator: Cycle counting process ; automatically create work ; spot cycle counting
+  consulted_on: '2026-09-25'
+  summary: Le comptage peut être programmé, déclenché par seuil ou ponctuel ; les écarts font l’objet d’une revue.
+  limits: Le work WMS éclaire le comptage confié mais ne prouve pas une famille métier universelle Stocktaking Order.
+- key: e0
+  id: ELM825
+  vendor: SAP
+  product: SAP S/4HANA
+  title: Performing a Physical Inventory
+  url: https://learning.sap.com/courses/processes-in-sap-s-4hana-ewm-br/performing-a-physical-inventory
+  locator: Physical Inventory Procedures ; Physical Inventory Document ; external system
+  consulted_on: '2026-09-25'
+  summary: Les inventaires périodiques, tournants, ad hoc et externes partagent des documents de comptage et des rapprochements.
+  limits: Inventaire statistique mentionné mais non détaillé ; aucun support Dynamics équivalent établi pour une extrapolation
+    statistique du stock.
+- key: f0
+  id: ELM837
+  vendor: SAP
+  product: SAP S/4HANA
+  title: Setting up Sample Determination
+  url: https://learning.sap.com/courses/implementing-sap-s-4hana-quality-management/setting-up-sample-determination_c29dda80-ff64-443e-bead-dc36904a7463
+  locator: Sampling Procedure ; sample types ; valuation modes
+  consulted_on: '2026-09-25'
+  summary: La procédure distingue contrôle exhaustif et échantillonnage, avec règles d’évaluation des résultats.
+  limits: SAP présente aussi ces choix comme paramètres ; des comportements FLOW ne se justifient que par des obligations
+    et preuves de service différentes.
+- key: f1
+  id: ELM838
+  vendor: Microsoft
+  product: Microsoft Dynamics 365
+  title: Acceptance sampling - Supply Chain Management | Dynamics 365 | Microsoft Learn
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/quality-acceptance-sampling
+  locator: Single sampling strategy ; quality orders ; prerequisites
+  consulted_on: '2026-09-25'
+  summary: L’échantillonnage d’acceptation utilise une preuve sur échantillon pour apprécier un lot selon des seuils.
+  limits: Dynamics 365 SCM 10.0.45 ou ultérieur ; la page ne documente que le plan simple. Ne pas confondre ce contrôle qualité
+    avec un inventaire statistique.
+- key: f2
+  id: ELM839
+  vendor: Microsoft
+  product: Microsoft Dynamics 365
+  title: Quality management item sampling - Supply Chain Management | Dynamics 365 | Microsoft Learn
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/quality-item-sampling
+  locator: Set up item sampling ; sampling quantity ; full blocking
+  consulted_on: '2026-09-25'
+  summary: L’étendue du contrôle peut être une quantité, un pourcentage ou une unité logistique complète ; elle diffère du
+    périmètre éventuellement bloqué.
+  limits: Un pourcentage ou une technique de prélèvement ne justifie pas à lui seul un comportement métier.
+coverage_matrix:
+- subdomain_id: business-references
+  scope: Identités, parties, offres, assortiment, réseau, accords, tarifs et ingestion
+  checked_node_ids:
+  - D08
+  - D09
+  - D12
+  - D13
+  - D14
+  - D16
+  - master-data-ingestion
+  - price-book
+  reused_primary_source_refs:
+  - ELM063
+  - ELM281
+  - ELM063
+  - ELM516
+  assessment: Couverture structurelle présente ; préciser les relations d’alternatives autorisées (GAP-07).
+- subdomain_id: subdomain-policies
+  scope: Protections, priorités, recours aux fournisseurs
+  checked_node_ids:
+  - D02.b
+  - D19.a
+  - D19.b
+  reused_primary_source_refs:
+  - ELM018
+  - ELM754
+  - ELM793
+  assessment: Les règles sont couvertes ; ne pas créer une capacité pour chaque seuil ou critère.
+- subdomain_id: subdomain-plans
+  scope: Plans externes Supply et Demand
+  checked_node_ids:
+  - plans-ingestion
+  - plans-visibility
+  - demand-plan-visibility
+  reused_primary_source_refs:
+  - ELM600
+  - ELM784
+  assessment: Couvert selon le périmètre FLOW ; forecasting APS et fabrication restent externes.
+- subdomain_id: D04
+  scope: Demandes, engagements, changements, suspension, reprise, retours et consignation
+  checked_node_ids:
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  - D04.n
+  - D04.r
+  - D04.t
+  reused_primary_source_refs:
+  - ELM789
+  - ELM790
+  - ELM806
+  - ELM807
+  assessment: Pas de nouvelle capacité Lifecycle/Hold. Les familles et invariants portent déjà ces responsabilités.
+- subdomain_id: D01
+  scope: Stock, mouvements, comptage, propriété, réservation et connaissance
+  checked_node_ids:
+  - D01.c
+  - D01.d
+  - D01.g
+  - D01.h
+  - D02.c
+  reused_primary_source_refs:
+  - ELM786
+  - ELM807
+  - ELM070
+  - ELM825
+  assessment: 'Deux manques de responsabilité explicite : droits d’usage et traçabilité (GAP-01/02).'
+- subdomain_id: subdomain-order-promising
+  scope: Faisabilité, disponibilité, économie et sélection/réexamen
+  checked_node_ids:
+  - D03.i
+  - D03.j
+  - D03.k
+  - D03.l
+  reused_primary_source_refs:
+  - ELM783
+  - ELM458
+  - ELM720
+  - ELM794
+  assessment: Pas de nouvelle capacité ATP/CTP/PTP ni de comportement par option ; la lacune d’alternatives est référentielle.
+- subdomain_id: D03
+  scope: Plan commun, affectation, priorités, apports, redistribution et protections
+  checked_node_ids:
+  - D05.f
+  - D03.o
+  - D03.m
+  - D05.e
+  - D05.c
+  - D05.a
+  reused_primary_source_refs:
+  - ELM208
+  - ELM784
+  - ELM754
+  - ELM816
+  assessment: Responsabilités présentes ; les contraintes FIFO, délais ou risque ne deviennent pas automatiquement des comportements.
+- subdomain_id: subdomain-service-orders
+  scope: Prestations entrepôt, transport, documents, douane et finance confiées
+  checked_node_ids:
+  - service-order-inspection
+  - service-order-transport
+  - service-order-receiving
+  reused_primary_source_refs:
+  - ELM792
+  - ELM803
+  - ELM812
+  - ELM813
+  assessment: GAP-04 et GAP-06 ; comptage et entreposage autonomes conditionnels, pas un Order par tâche WMS.
+- subdomain_id: D06
+  scope: Exigences, sélection, libération, coordination, adaptation et résultats
+  checked_node_ids:
+  - D06.e
+  - D06.d
+  - D06.f
+  - D07.c
+  - D07.d
+  reused_primary_source_refs:
+  - ELM279
+  - ELM801
+  - ELM827
+  - ELM785
+  assessment: Expliciter le plan de transport (GAP-03) et étendre la disposition hors retours (GAP-05).
+findings:
+- id: GAP-01
+  title: Inventory Usage Decision
+  status: proposed
+  classification: new_capability
+  priority: P1
+  current_model_ids:
+  - D01.f
+  - D01.g
+  - D01.c
+  - D02.c
+  - service-order-inspection
+  - D05.i
+  market_source_refs:
+  - ELM828
+  - ELM829
+  market_keys:
+  - a0
+  - a1
+  diagnosis: Les faits et statuts sont tenus ; Inspection Order fournit un constat et Return Disposition Decision ne traite
+    que les retours. La décision de restreindre ou réautoriser l’usage d’un stock hors retour n’a pas de responsabilité explicite.
+  recommendation: 'Ajouter Inventory Usage Decision dans Inventory Management, type decision, catégorie Inventory Foundation
+    : déterminer les usages autorisés ou interdits, quantités, portée et conditions de levée à partir des constats et autorisations
+    applicables. Zéro comportement initial ; bloquer puis libérer constitue un cycle, pas deux variantes artificielles.'
+  boundaries: 'La décision peut être prise par un responsable qualité externe : le modèle métier reste indépendant de son
+    implantation. Inventory Tracking capte les faits ; le Ledger tient l’état reconnu. Ni réservation pour une demande, ni
+    affectation Matching, ni inspection physique. Clarifier U436 : l’exclusivité de réservation concerne les usages concurrents,
+    pas toute interdiction qualité ou réglementaire.'
+  illustrative_scenario: 'Des boutons présentent un défaut sur 500 vestes déjà reçues : interdire leur usage, faire contrôler
+    le lot, puis libérer uniquement les quantités autorisées sans modifier leur présence physique.'
+  proposed_behaviors: []
+- id: GAP-02
+  title: Inventory Traceability
+  status: proposed
+  classification: new_capability
+  priority: P1
+  current_model_ids:
+  - D01.c
+  - D01.g
+  - D01.f
+  - operations-visibility
+  - service-order-kitting
+  market_source_refs:
+  - ELM830
+  - ELM831
+  market_keys:
+  - a2
+  - a3
+  diagnosis: Les positions, mouvements et progressions existent. Reconstituer la chaîne des origines, transformations et destinations
+    pour identifier les biens et demandes touchés n’est pas explicite ; un journal seul ne produit pas cette réponse.
+  recommendation: Ajouter Inventory Traceability dans Inventory Management, type knowledge, catégorie Inventory Visibility.
+    Produire une connaissance de provenance et de propagation à partir des faits tracés, sans nouvelle source de vérité concurrente.
+  boundaries: Tracking reste de type integration. Les identifiants de lots/unités, liens de transformation et limites de couverture
+    sont indispensables ; ne pas inventer une généalogie à partir d’un solde. Les données de production peuvent venir d’un
+    exécutant externe ; la production n’entre pas dans le domaine.
+  illustrative_scenario: Retrouver les kits contenant un accessoire défectueux, les magasins livrés et les commandes encore
+    ouvertes, puis remonter au lot fournisseur.
+  proposed_behaviors:
+  - name: Backward Traceability
+    definition: Reconstituer les origines et transformations ayant contribué aux biens concernés, avec preuves et lacunes.
+  - name: Forward Traceability
+    definition: Identifier les biens dérivés, destinations, livraisons et demandes exposées à partir d’une origine identifiée.
+- id: GAP-03
+  title: Transport Plan Decision
+  status: proposed
+  classification: new_capability
+  priority: P1
+  current_model_ids:
+  - D06.e
+  - D06.d
+  - D06.f
+  - service-order-release-decision
+  - service-order-transport
+  - transport-multi-stop
+  - transport-multi-leg
+  market_source_refs:
+  - ELM832
+  - ELM834
+  - ELM805
+  market_keys:
+  - b1
+  - c0
+  - c1
+  diagnosis: Le modèle conserve la demande de trajet, sélectionne les prestataires et libère des lots d’ordres. Le choix d’un
+    ensemble cohérent de chargements, arrêts et acheminements est seulement renvoyé à la coordination, sans capacité explicite.
+  recommendation: 'Ajouter Transport Plan Decision dans Fulfilment Orchestration, type decision, catégorie Définir et choisir
+    les prestations : déterminer le plan de transport demandé, ses regroupements et acheminements compatibles. Le nom est
+    une adaptation FLOW des fonctions Transportation/Load Planning.'
+  boundaries: Préserver promesses et affectations Matching. Service Selection Decision garde le choix de services/exécutants
+    ; Release Decision garde le moment de sollicitation. Les Transport Orders portent le plan confié. Placement 3D, conduite
+    et tournées internes non commandées restent chez le prestataire. Ne pas créer un second master plan de matching.
+  illustrative_scenario: 'Six magasins doivent recevoir vendredi : regrouper les expéditions en deux chargements compatibles
+    et déterminer les arrêts, plutôt que seulement envoyer six ordres au même moment.'
+  proposed_behaviors:
+  - name: Load Consolidation
+    definition: Constituer des chargements compatibles selon marchandises, capacités, destinations et échéances.
+  - name: Routing & Scheduling
+    definition: Déterminer les étapes, arrêts et échéances du plan confié selon les trajets et contraintes admissibles.
+- id: GAP-04
+  title: Scrapping Order
+  status: proposed
+  classification: new_capability
+  priority: P1
+  current_model_ids:
+  - BHV054
+  - D05.i
+  - service-order-picking
+  - service-order-transport
+  - D01.g
+  - subdomain-service-orders
+  market_source_refs:
+  - ELM835
+  - ELM833
+  market_keys:
+  - d0
+  - b2
+  diagnosis: Scrapping est un comportement de Return Order qui conserve la suite du retour. Il ne constitue pas la demande
+    de mise au rebut confiée à un exécutant, notamment pour un stock détérioré sans retour.
+  recommendation: 'Ajouter Scrapping Order dans Service Order Management, type action, catégorie Prestations d’entrepôt :
+    tenir la prestation autorisée de mise au rebut, les quantités, consignes, justificatifs et reliquats. Zéro comportement
+    initial.'
+  boundaries: La décision d’orientation reste distincte. Une écriture comptable ou une sortie de stock ne prouve pas la réalisation
+    physique. Le nom de famille est un choix FLOW, non un ordre natif commun aux deux éditeurs. Ne pas étendre automatiquement
+    aux dons, ventes de déstockage ou à toutes les filières de recyclage.
+  illustrative_scenario: Des articles abîmés sur site sont orientés vers une filière autorisée ; confier le traitement et
+    attendre la preuve portant sur les quantités effectivement traitées.
+  proposed_behaviors: []
+- id: GAP-05
+  title: Étendre Return Disposition Decision
+  status: proposed
+  classification: scope_extension
+  priority: P1
+  current_model_ids:
+  - D05.i
+  - BHV048
+  - BHV049
+  - service-order-inspection
+  market_source_refs:
+  - ELM828
+  - ELM829
+  - ELM835
+  - ELM833
+  market_keys:
+  - a0
+  - a1
+  - d0
+  - b2
+  diagnosis: Le choix du devenir logistique est limité aux produits retournés. Un stock endommagé pendant le stockage ou refusé
+    au contrôle peut nécessiter les mêmes arbitrages sans Return Order.
+  recommendation: Généraliser D05.i en Inventory Disposition Decision, dans Fulfilment Orchestration, en conservant son identité
+    et ses deux stratégies Policy-based Disposition et Value Recovery Optimization. Ne pas ajouter une seconde capacité presque
+    identique.
+  boundaries: 'GAP-01 décide les droits d’usage ; cette décision choisit réparation, reconditionnement, retour fournisseur
+    ou sortie définitive autorisée. Matching conserve les déplacements et affectations ; Commerce et Finance conservent leurs
+    décisions. Marché : blocage et orientation sont parfois combinés, leur séparation est un choix de responsabilité FLOW.'
+  illustrative_scenario: 'Un dégât des eaux touche des manteaux en réserve : comparer nettoyage, réparation et sortie autorisée,
+    même sans retour client.'
+  proposed_behaviors: []
+- id: GAP-06
+  title: Deux variantes de prestation d’inspection
+  status: proposed
+  classification: behavior_gap
+  priority: P2
+  current_model_ids:
+  - service-order-inspection
+  - D07.a
+  - D05.i
+  market_source_refs:
+  - ELM837
+  - ELM838
+  - ELM839
+  market_keys:
+  - f0
+  - f1
+  - f2
+  diagnosis: Inspection Order décrit le résultat attendu de façon générique. Il ne distingue pas preuve individuelle et conclusion
+    portant sur un lot à partir d’un échantillon.
+  recommendation: 'Ajouter deux comportements si cette distinction contractuelle est retenue : Unit-by-Unit Inspection et
+    Sampling-Based Inspection. Décrire obligations, portée du résultat et conditions de clôture, plutôt que les techniques
+    de prélèvement.'
+  boundaries: Un taux, une quantité fixe, un écran ou une méthode de test restent des paramètres. L’intérêt de la décomposition
+    est la nature de la preuve attendue ; sinon conserver ces précisions dans le protocole de l’Order. La conclusion d’inspection
+    ne remplace pas la décision d’usage ou de disposition.
+  illustrative_scenario: Contrôler individuellement 50 vestes réparées exige un résultat pour chacune ; apprécier un lot neuf
+    de 2 000 pièces par échantillon exige le protocole, l’échantillon et la portée de la conclusion.
+  proposed_behaviors:
+  - name: Unit-by-Unit Inspection
+    definition: Tenir la demande d’un contrôle de chaque unité du périmètre convenu et rapprocher les résultats individuels
+      attendus.
+  - name: Sampling-Based Inspection
+    definition: Tenir la demande d’une appréciation de lot à partir d’un échantillon convenu, avec protocole, preuves et limites
+      de représentativité.
+- id: GAP-07
+  title: 'Alternatives autorisées : expliciter leur provenance'
+  status: proposed
+  classification: reference_clarification
+  priority: P2
+  current_model_ids:
+  - D08
+  - D08.e
+  - D12
+  - D03.j
+  - D03.l
+  - D03
+  market_source_refs:
+  - ELM836
+  - ELM540
+  market_keys:
+  - d1
+  - d2
+  diagnosis: Les substitutions autorisées sont supposées par CTP, PTP, Matching et un scénario, mais leur provenance, validité
+    et conditions de consommation ne sont pas clairement attribuées au référentiel local.
+  recommendation: Expliciter dans Product Reference et son ingestion/Visibility les relations d’alternative reçues, leur sens,
+    validité et autorité. Les conditions commerciales restent auprès de leur source ; aucune capacité de substitution supplémentaire
+    proposée.
+  boundaries: 'La similarité produit n’autorise pas une substitution. Les commandes préservent le demandé et l’accepté ; ATP/CTP
+    évaluent les options, Promise Selection choisit une proposition. Source SAP lue surtout sur alternatives de site : correspondance
+    partielle, pas preuve complète d’équivalences produit.'
+  illustrative_scenario: Une référence remplacée par sa nouvelle version est autorisée pour une période ; une couleur seulement
+    ressemblante ne devient pas substituable sans accord.
+  proposed_behaviors: []
+- id: GAP-08
+  title: 'Stocktaking Order : famille conditionnelle'
+  status: proposed
+  classification: conditional_service_family
+  priority: P2
+  current_model_ids:
+  - D01.d
+  - BHV029
+  - BHV030
+  - BHV031
+  - subdomain-service-orders
+  market_source_refs:
+  - ELM207
+  - ELM825
+  market_keys:
+  - d3
+  - e0
+  diagnosis: Stocktaking couvre déjà la politique, la demande de contrôle et le rapprochement. Il n’existe pas de famille
+    distincte pour le comptage confié avec un engagement de prestation autonome.
+  recommendation: Ne pas créer par défaut. Si FLOW commande et suit le comptage comme prestation distincte, envisager Stocktaking
+    Order dans Service Order Management ; Stocktaking conserverait politique, rapprochement et corrections.
+  boundaries: Les work/document éditeurs prouvent des travaux demandés, pas un besoin d’Order autonome dans tous les contextes.
+    Sans engagement propre, la capacité existante suffit ; ne pas dupliquer ses trois comportements.
+  illustrative_scenario: Un prestataire accepte d’inventorier quatre magasins à une date, livre des résultats partiels puis
+    un solde ; cet engagement pourrait justifier la famille.
+  proposed_behaviors: []
+not_recommended:
+- topic: Order Lifecycle / Order Hold Management
+  reason: Suspension, reprise, gel, annulation, reliquat et engagements sont explicitement communs aux familles Order. Ne
+    pas recréer une capacité retirée.
+  model_ids:
+  - D04
+  - subdomain-service-orders
+- topic: Nouvelles variantes ATP par site, transport ou substitution
+  reason: Options déjà évaluables ; les comportements retenus distinguent la profondeur. Une alternative n’est pas automatiquement
+    du CTP.
+  model_ids:
+  - D03.i
+  - D03.j
+  - D03.k
+  - D03.l
+- topic: Comptage sur seuil ou anomalie
+  reason: BHV030 prévoit déjà un seuil ; BHV031 couvre la sollicitation ponctuelle. Aucun manque démontré.
+  model_ids:
+  - BHV030
+  - BHV031
+  source_refs:
+  - ELM207
+  - ELM825
+- topic: Recall Management autonome
+  reason: 'Le rappel est d’abord un scénario transverse : retrouver les biens concernés, interdire les usages, suspendre les
+    Orders, organiser les retours et leur traitement. La décision de rappel et la communication réglementaire/commerciale
+    restent sous leur autorité externe ; ne pas importer tout le Quality Management.'
+  model_ids:
+  - D04
+  - D04.l
+  - D06.d
+  - D05.i
+  depends_on:
+  - GAP-01
+  - GAP-02
+- topic: Putaway / Storage Order systématiques
+  reason: Le rangement interne appartient à l’exécutant et Receiving Order ne crée pas implicitement une prestation autonome.
+    Une garde avec engagements de durée, conditions et restitution mériterait une famille seulement si elle est réellement
+    confiée. Pas de double appui primaire assez précis établi sur ce contrat de service dans cette recherche ; piste conditionnelle,
+    non recommandation ferme.
+  model_ids:
+  - service-order-receiving
+  - subdomain-service-orders
+- topic: Inventaire statistique
+  reason: SAP mentionne une voie externe de sample-based inventory ; l’acceptance sampling Dynamics vérifie la qualité, pas
+    une extrapolation des quantités de stock. Ne pas fabriquer une équivalence ni un comportement sur cette preuve.
+  source_refs:
+  - ELM825
+  - ELM838
+- topic: Fonctions ERP/WMS/TMS internes
+  reason: Comptabilité de stock, paie et charge du personnel, slotting, pilotage machines, conduite et placement 3D ne sont
+    pas ajoutés. Leurs contraintes et résultats peuvent alimenter l’orchestration sans absorber leur réalisation.
+glossary_alignment:
+  status: reviewed_no_canonical_change
+  affected_existing_terms:
+  - TER007
+  - TER009
+  - TER016
+  - TER059
+  - TER063
+  - TER066
+  - TER072
+  - TER075
+  required_if_adopted:
+  - Distinguer restriction d’usage et réservation ; revoir la portée du mot disponibilité.
+  - Définir lot et traçabilité amont/aval sans transformer Tracking integration en connaissance.
+  - Distinguer retour, décision de disposition et prestation de mise au rebut.
+  - Définir chargement et plan de transport distincts du master plan Matching.
+  - Préciser preuve d’inspection et représentativité ; aucune définition d’inventaire statistique déduite.
+  note: Aucune définition, capacité ou comportement canonique changé à ce stade ; les propositions et leur futur alignement
+    sont dans cette annexe du backlog.
+acceptance: Arbitrer le lot proposé avant création ou extension canonique. Les scénarios devront référencer les identifiants
+  retenus ; les nouveaux identifiants ne seront attribués qu’à l’application, sans réutilisation d’identifiants retirés.
+limitations:
+- Aucune preuve de réalisation Beaumanoir et aucune obligation d’implémenter les capacités dans FLOW.
+- La page SAP Transportation Planning ciblée a renvoyé 404 ; remplacée par Planning Loads, passages consultés.
+- Les familles fashion étudiées U774 ne sont pas réputées absentes du marché faute de sources exactes.
+- Aucune publication, aucun commit ni push demandés.

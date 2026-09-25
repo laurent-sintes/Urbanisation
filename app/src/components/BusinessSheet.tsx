@@ -10,7 +10,7 @@ import { ModelText, ReferenceLink } from './ModelLinks';
 import { NodeIcon } from '../icons';
 import { childrenOf, relatedTo } from '../model';
 import { capabilityTypeLabel, startsCapabilityTypeSection } from '../capabilityTypes';
-import { businessExamples } from '../examples';
+import { examplesForNode } from '../examples';
 import { BusinessExamples } from './BusinessExamples';
 import { behaviorAspect, behaviorAspectLabels, behaviorReadingGroups, requestOrigins, requestOriginLabels } from '../requestMetadata';
 
@@ -42,7 +42,7 @@ export function BusinessSheet({ model, node, onShowMarket }: { model: PublishedM
   const aspect = behaviorAspect(node);
   const otherChildren = children.filter(child => child.kind !== 'behavior');
   const fields = businessFields(node.fields);
-  const examples = businessExamples(node.fields, id => model.nodeById.get(id)?.fields);
+  const examples = examplesForNode(model, node);
   const marketCount = (node.fields.market_comparisons as readonly MarketComparison[] | undefined)?.length || 0;
   const relations = relatedTo(model, node.id);
   const [scopeSummary, ...scopeDetails] = (fields.scope || '').trim().split(/\n\s*\n/);

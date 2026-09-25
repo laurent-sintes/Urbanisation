@@ -165,6 +165,15 @@ def render(model, label):
                 for key, label in [('outcome', 'Ce qui se passe'), ('lesson', 'Ce que cela illustre')]:
                     if example.get(key):
                         lines += ['**' + label + '.** ' + example[key], '']
+                for index, step in enumerate(example.get('steps', []), 1):
+                    lines += [f"#### {index}. {step['title']}", '', step['description'], '',
+                              '| Capacité mobilisée | Contribution |', '| --- | --- |']
+                    for contribution in step['contributions']:
+                        target = nodes[contribution['node_id']]
+                        lines += ['| ' + cell(target['fields']['name'] + ' (' + target['id'] + ')') + ' | ' + cell(contribution['role']) + ' |']
+                    lines += ['', '**Résultat attendu.** ' + step['outcome'], '']
+                if example.get('validation_points'):
+                    lines += ['**Ce que ce cas permet de vérifier**', ''] + ['- ' + point for point in example['validation_points']] + ['']
                 lines += ['Références : ' + ', '.join(example['source_refs']) + '.', '']
         entries = node['fields'].get('market_comparisons', [])
         if entries:

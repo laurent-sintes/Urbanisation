@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { businessExamples, exampleSearchText } from './src/examples.ts';
+import { businessExamples, exampleSearchText, examplesForNode } from './src/examples.ts';
 import { marketSearchText, marketComparisonsForReading } from './src/marketContent.ts';
 import { adaptPublication } from './src/model.ts';
 import { searchPublication } from './src/search.ts';
@@ -72,4 +72,24 @@ test('example contents and naming reasons are searchable, internal sources are n
   assert.equal(searchPublication(model, 'frontière économique')[0].id, 'C');
   assert.deepEqual(searchPublication(model, 'ultrasecret'), []);
   assert.match(marketSearchText(model.nodes[0].fields.market_comparisons), /Choix lexical explicite/);
+});
+test('step mappings yield snapshot-local capability links, reverse stories and searchable roles', () => {
+  const data = {space: 'release', version: 'mapped', relations: [], nodes: [
+    {id: 'D', kind: 'domain', fields: {name: 'Supply', examples: [{id: 's', title: 'Robe', situation: 'Cas fictif',
+      steps: [{title: 'Restaurer', description: 'Couture ouverte', outcome: 'Robe vendable', contributions: [{node_id: 'C', role: 'Réparation ciblée'}]}],
+      validation_points: ['Preuve de conformité']}] }},
+    {id: 'C', kind: 'capability', fields: {name: 'Repair Order', scenario_refs: [{node_id: 'D', scenario_id: 's', contribution: 'Réparer'}]}}
+  ]};
+  const before = structuredClone(data), model = adaptPublication(data);
+  const examples = examplesForNode(model, model.nodeById.get('C'));
+  assert.equal(examples.length, 1);
+  assert.equal(examples[0].steps[0].contributions[0].name, 'Repair Order');
+  assert.ok(searchPublication(model, 'preuve de conformité').some(n => n.id === 'C'));
+  data.nodes[1].fields.scenario_refs = [];
+  const reverse = adaptPublication(data);
+  assert.equal(examplesForNode(reverse, reverse.nodeById.get('C')).length, 1);
+  const older = adaptPublication({...data, nodes: [data.nodes[1]]});
+  assert.deepEqual(examplesForNode(older, older.nodeById.get('C')), []);
+  examples[0].steps[0].contributions[0].role = 'Changed';
+  assert.deepEqual(data.nodes[0], before.nodes[0]);
 });

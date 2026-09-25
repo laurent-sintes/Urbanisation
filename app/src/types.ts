@@ -13,6 +13,8 @@ export interface MarketComparison {
 
 export interface BusinessExample {
   title: string; situation: string; outcome?: string; lesson?: string;
+  steps?: { title: string; description: string; contributions: { node_id: string; role: string }[]; outcome: string }[];
+  validation_points?: string[];
   id?: string; trigger?: string; objective?: string; constraints?: string[];
   options?: { title: string; description: string }[];
   contributions?: { node_id: string; role: string }[];

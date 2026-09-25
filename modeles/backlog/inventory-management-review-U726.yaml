@@ -551,7 +551,7 @@ publication_delivery:
   - id: BHV107
     parent: D03.k
     fields:
-      name: Fulfillment Cost Evaluation
+      name: Fulfilment Cost Evaluation
   - id: BHV108
     parent: D03.k
     fields:
@@ -1650,3 +1650,10 @@ status_reconciliation_U757:
   - U757
   reason: U733/U736/U750 appliqués ; lot propriété U756 appliqué ; seuls les arbitrages de visibilité et de promesse restent
     ouverts dans audit_U751. Les sections historiques ne sont pas des tâches concurrentes.
+delivery_alignment_U771:
+  source_refs:
+  - U771
+  fields:
+  - id: BHV107
+    field: name
+  note: Attendus actualisés sur le lot courant ; preuves et constats historiques conservés.

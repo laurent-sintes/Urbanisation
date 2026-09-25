@@ -15,9 +15,16 @@ export function BusinessExamples({ examples, id }: { examples: readonly ReaderEx
       {example.objective && <p><strong>Résultat recherché. </strong><ModelText text={example.objective}/></p>}
       {!!example.constraints?.length && <><h4>Contraintes</h4><ul>{example.constraints.map((text, i) => <li key={i}><ModelText text={text}/></li>)}</ul></>}
       {!!example.options?.length && <><h4>Options examinées</h4><ul>{example.options.map((option, i) => <li key={i}><strong>{option.title}. </strong><ModelText text={option.description}/></li>)}</ul></>}
-      {!!example.contributions?.length && <><h4>Contributions métier</h4><ul>{example.contributions.map((contribution, i) => <li key={i}><ModelText text={contribution.role}/></li>)}</ul></>}
+      {!!example.steps?.length && <div className="scenario-story"><h4>Comment ce cas est résolu</h4><ol>{example.steps.map((step, i) => <li key={i}>
+        <h5>{step.title}</h5><p><ModelText text={step.description}/></p>
+        <ul className="scenario-capabilities" aria-label={`Capacités mobilisées : ${step.title}`}>{step.contributions.map((c, j) => <li key={j}>
+          <ReferenceLink target={c.node_id}>{c.name || c.node_id}</ReferenceLink><span> — <ModelText text={c.role}/></span>
+        </li>)}</ul><p className="scenario-result"><strong>Résultat de cette étape. </strong><ModelText text={step.outcome}/></p>
+      </li>)}</ol></div>}
+      {!!example.contributions?.length && <><h4>Contributions métier</h4><ul>{example.contributions.map((c, i) => <li key={i}><ReferenceLink target={c.node_id}>{c.name || c.node_id}</ReferenceLink> — <ModelText text={c.role}/></li>)}</ul></>}
       {example.outcome && <p><strong>Ce qui se passe. </strong><ModelText text={example.outcome}/></p>}
       {example.lesson && <p className="example-lesson"><strong>Ce que cela illustre. </strong><ModelText text={example.lesson}/></p>}
+      {!!example.validation_points?.length && <><h4>Ce que ce cas permet de vérifier</h4><ul>{example.validation_points.map((text, i) => <li key={i}><ModelText text={text}/></li>)}</ul></>}
     </article>)}</div>
   </section>;
 }

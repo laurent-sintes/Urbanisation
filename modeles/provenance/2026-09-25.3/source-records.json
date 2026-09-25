@@ -17457,6 +17457,22 @@
       "line": 18866,
       "content_sha256": "bd02482b0e41d4fe98070e6b5859b208837f279d49c77c61be02799399260e56",
       "captured_text": "## U767\n\n**id**\n\nU767\n\n**date**\n\n2026-09-25\n\n**titre**\n\nClore les arbitrages Inventory Visibility et Order Promising\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif sur les trois arbitrages récapitulés : deux profondeurs d’évaluation pour ATP (stock courant, extension aux disponibilités futures), CTP (faisabilité selon sources, matières et délais ; contrôle des capacités finies) et PTP (coûts ; avantages/inconvénients économiques contextuels). Réunir Inventory Visibility et Supply Visibility dans Inventory Visibility en préservant le détail des apports. Expliciter sélection initiale et réexamen individuel ou collectif des promesses dans Promise Selection Decision, sans transfert d’affectation depuis Matching. Formaliser Evaluation pour ATP/CTP/PTP applique le principe déjà acquis U760. Les noms détaillés et rédactions de mise en œuvre sont étayés par la proposition U761 ; pas d’approbation implicite de nouvelles observations Beaumanoir ni de release."
+    },
+    {
+      "id": "U768",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u768",
+      "line": 18889,
+      "content_sha256": "158f89478c5fcc0377f74a3615f1f134e9cabd8cd3c3654289a95ec558c2b6f5",
+      "captured_text": "## U768\n\n**id**\n\nU768\n\n**date**\n\n2026-09-25\n\n**titre**\n\nAuditer les comportements et confronter le modèle aux scénarios métier\n\n**texte**\n\nlance un audit sur les comportements et les scénarios.\nJe veux savoir les scénarios qui manqueraient\nJe veux savoir les comportements qui ressemblent à des scénarios\n\nJe souhaite que les scénarios racontent une histoire concrète mais montrent les capacités mises en oeuvre pour résoudre le use case métier. Ce mapping doit être dans le modèle et présenté dans ATLAS. Cela permettra de valider le modèle business d'ATLAS via une confrontation par les use cases.\n\n**contexte et portée**\n\nAudit courant des comportements et de la couverture par scénarios, distinct du rejeu historique de l’audit U431 clos. Identifier les cas manquants et les confusions entre variantes d’une capacité et récits mobilisant plusieurs capacités. Matérialiser dans le modèle et le lecteur Atlas la correspondance entre une histoire métier concrète et les capacités contributrices. Les illustrations et diagnostics produits par Codex restent des propositions, pas des observations Beaumanoir ni une validation automatique du modèle. Aucune publication ou suppression de comportement implicite."
+    },
+    {
+      "id": "U769",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u769",
+      "line": 18916,
+      "content_sha256": "bf7a9b6c2ac840d1d617d9683374aafa4d3ecc2e2129fc036ba0d7b34cba1e5e",
+      "captured_text": "## U769\n\n**id**\n\nU769\n\n**date**\n\n2026-09-25\n\n**titre**\n\nAppliquer l’audit des comportements et scénarios\n\n**texte**\n\nApplique l’audit\n\n**contexte et portée**\n\nApplication de la proposition complète U768 : retirer les sept comportements qui décrivent des motifs de commande en conservant ces situations dans les scénarios, préciser les cinq variantes de Return Order, compléter les treize familles de scénarios recensées et leur mapping explicite. Les quatre comportements de pilotage Master Planning sont conservés conformément à la recommandation de ne pas les reclasser en scénarios ; leur granularité reste une question distincte, sans refacto implicite. Les sept récits pilotes préexistants sont inclus dans le lot accepté ; les nouvelles rédactions sont une mise en œuvre illustrative, pas des faits Beaumanoir ni une validation exhaustive du modèle. Pas de release, commit ou push demandé."
     }
   ]
 }

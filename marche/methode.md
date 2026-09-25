@@ -86,10 +86,17 @@ Application éditoriale : comparer question métier, informations mobilisées, c
 U329 valide cette méthode de comparaison et le nom Inventory Target Decision pour D05.a. Cet accord ne valide pas automatiquement les correspondances fonctionnelles ni les réalisations techniques citées.
 
 
-## Deux références pertinentes par fiche — U470/U471
+## Références minimales par fiche — U470/U471, renforcées par U772
 
-Dès qu’une fiche comporte des références marché, présenter au moins deux documents primaires distincts effectivement consultés. Deux ancres, traductions ou liens de suivi vers le même document ne constituent pas deux références. Rechercher une diversité d’organismes lorsque pertinente ; deux documents d’un même éditeur restent recevables mais ne prouvent pas un consensus interéditeurs. Conserver titre, édition ou absence d’édition, passage, date, proximité et différences pour chaque appui. Un exemple partiel doit être nommé comme tel ; ne pas ajouter un lien générique pour atteindre le nombre.
+Dès qu’une fiche comporte des références marché, présenter au moins deux documents primaires distincts effectivement consultés. Deux ancres, traductions ou liens de suivi vers le même document ne constituent pas deux références. U772 impose désormais, dans chaque fiche comparée, au moins un document primaire pertinent Microsoft Dynamics et un document primaire pertinent SAP S/4HANA, effectivement consultés. Deux documents d’un seul éditeur ne satisfont plus ce minimum ; les autres éditeurs restent complémentaires. Distinguer les produits et éditions : une source SAP générique, SAP ECC ou SAP autonome ne prouve pas une couverture S/4HANA, et une source Microsoft générique ne prouve pas une couverture Dynamics. Deux éditeurs ne constituent pas à eux seuls un consensus. Conserver titre, édition ou absence d’édition, passage, date, proximité et différences pour chaque appui. Un exemple partiel doit être nommé comme tel ; ne pas ajouter un lien générique pour atteindre le nombre.
 
 Le nom et le périmètre d’un univers se comparent à des définitions et périmètres de même portée, pas à une addition d’exemples de ses capacités. Distinguer la terminologie établie, un usage propre à un produit et l’adaptation FLOW. L’absence d’équivalent exact ne démontre aucune innovation.
 
 Le marqueur `market_reference_policy: two_primary_sources` active le contrôle de pluralité sur les nœuds non illustratifs, relations et termes du glossaire des nouvelles préparations. Les snapshots historiques gardent leur contrat. Le contrôle compte les documents, pas leur qualité : la pertinence et la nature primaire restent une vérification éditoriale. Le catalogue Informations métier, conservé en interne et masqué par U470, n’est pas étendu par ce lot.
+
+
+### Application de U772
+
+Rechercher les deux familles de produits pour chaque fiche créée ou réexaminée, à sa propre maille métier. Si aucun appui pertinent n’est établi, documenter le fournisseur manquant, la recherche et sa limite dans le backlog ; la fiche reste incomplète au regard de la règle. Ne pas remplacer une preuve par une page commerciale générique, inventer une correspondance, ni importer un découpage produit pour satisfaire le minimum. Un document indisponible n’est pas réputé consulté.
+
+Cette exigence s’applique aux références courantes ; les publications historiques restent figées. L’enregistrement de la règle ne certifie pas rétroactivement la conformité des fiches existantes. Le contrôle technique `two_primary_sources` vérifie actuellement la pluralité de documents, pas la présence de ces deux familles produit : vérifier aussi cette exigence éditorialement et ne pas confondre validation technique et conformité au marché.

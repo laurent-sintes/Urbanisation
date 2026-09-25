@@ -18884,3 +18884,193 @@ Je valide
 **contexte et portée**
 
 Accord cumulatif sur les trois arbitrages récapitulés : deux profondeurs d’évaluation pour ATP (stock courant, extension aux disponibilités futures), CTP (faisabilité selon sources, matières et délais ; contrôle des capacités finies) et PTP (coûts ; avantages/inconvénients économiques contextuels). Réunir Inventory Visibility et Supply Visibility dans Inventory Visibility en préservant le détail des apports. Expliciter sélection initiale et réexamen individuel ou collectif des promesses dans Promise Selection Decision, sans transfert d’affectation depuis Matching. Formaliser Evaluation pour ATP/CTP/PTP applique le principe déjà acquis U760. Les noms détaillés et rédactions de mise en œuvre sont étayés par la proposition U761 ; pas d’approbation implicite de nouvelles observations Beaumanoir ni de release.
+
+
+## U768
+
+**id**
+
+U768
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Auditer les comportements et confronter le modèle aux scénarios métier
+
+**texte**
+
+lance un audit sur les comportements et les scénarios.
+Je veux savoir les scénarios qui manqueraient
+Je veux savoir les comportements qui ressemblent à des scénarios
+
+Je souhaite que les scénarios racontent une histoire concrète mais montrent les capacités mises en oeuvre pour résoudre le use case métier. Ce mapping doit être dans le modèle et présenté dans ATLAS. Cela permettra de valider le modèle business d'ATLAS via une confrontation par les use cases.
+
+**contexte et portée**
+
+Audit courant des comportements et de la couverture par scénarios, distinct du rejeu historique de l’audit U431 clos. Identifier les cas manquants et les confusions entre variantes d’une capacité et récits mobilisant plusieurs capacités. Matérialiser dans le modèle et le lecteur Atlas la correspondance entre une histoire métier concrète et les capacités contributrices. Les illustrations et diagnostics produits par Codex restent des propositions, pas des observations Beaumanoir ni une validation automatique du modèle. Aucune publication ou suppression de comportement implicite.
+
+
+## U769
+
+**id**
+
+U769
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Appliquer l’audit des comportements et scénarios
+
+**texte**
+
+Applique l’audit
+
+**contexte et portée**
+
+Application de la proposition complète U768 : retirer les sept comportements qui décrivent des motifs de commande en conservant ces situations dans les scénarios, préciser les cinq variantes de Return Order, compléter les treize familles de scénarios recensées et leur mapping explicite. Les quatre comportements de pilotage Master Planning sont conservés conformément à la recommandation de ne pas les reclasser en scénarios ; leur granularité reste une question distincte, sans refacto implicite. Les sept récits pilotes préexistants sont inclus dans le lot accepté ; les nouvelles rédactions sont une mise en œuvre illustrative, pas des faits Beaumanoir ni une validation exhaustive du modèle. Pas de release, commit ou push demandé.
+
+
+## U770
+
+**id**
+
+U770
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Audit du vocabulaire, des définitions, du marché et des frontières
+
+**texte**
+
+Je veux un audit du vocabulaire, des définitions, des références au marché, des chevauchements de périmètre
+
+**contexte et portée**
+
+Auditer le modèle courant sur les quatre axes demandés, en distinguant incohérences démontrées, ambiguïtés, coopérations légitimes et insuffisances de preuve. Comparer les formulations actuelles aux sources primaires pertinentes. Produire des recommandations traçables dans le backlog sans appliquer automatiquement de renommage, refonte, publication ou extension des accords métier.
+
+
+## U771
+
+**id**
+
+U771
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Appliquer en autonomie l’audit du vocabulaire et des frontières
+
+**texte**
+
+Tu peux mettre à jour en autonomie ?
+
+**contexte et portée**
+
+Autorisation d’appliquer le lot cohérent U770 : corriger les contradictions du glossaire et des fiches, clarifier les responsabilités, améliorer les justifications marché et traiter le point de couverture de la réception confiée. Préserver les choix validés, les écarts FLOW assumés, les preuves et publications historiques. La délégation couvre les choix rédactionnels et de modélisation nécessaires ; elle ne constitue pas une approbation textuelle anticipée de nouvelles définitions ni une preuve de réalisation Beaumanoir. Aucune release, commit ou push demandé.
+
+
+## U772
+
+**id**
+
+U772
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Synchroniser modèle et glossaire, simplifier les instructions et imposer deux éditeurs de référence
+
+**texte**
+
+les pb de désalignement de entre le glossaire et le modèle ne devrait pas arriver. A chaque changement il faut aligner les 2 référentiels. => Règle à enregistrer.
+
+Revois agents.md pour l'alléger, le simplifier, sans perdre de comportement.
+
+Je souhaite que systématiquement, dans les références de marché, on ait au minimum microsoft dynamics et SAP S/4.
+
+**contexte et portée**
+
+Règles permanentes : vérifier et maintenir l’alignement du modèle et du glossaire métier dans le même lot à chaque changement concerné, dans les deux sens. Réorganiser les instructions sans supprimer leurs obligations, exceptions ou procédures. Chaque fiche comparée doit comporter des appuis primaires pertinents Microsoft Dynamics et SAP S/4HANA ; les autres références restent complémentaires. Un appui manquant ou inaccessible est une lacune explicite, jamais une équivalence inventée ni une dispense silencieuse. Cette demande enregistre les règles ; elle ne démontre pas que les fiches existantes satisfont déjà ce minimum et ne déclenche pas une réécriture des publications historiques.
+
+
+## U773
+
+**id**
+
+U773
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Vérifier le respect des règles dans le modèle courant
+
+**texte**
+
+Et vérifie dans le modèle si toutes les règles sont respectées
+
+**contexte et portée**
+
+Étendre la mise à jour des instructions U772 à un contrôle du backlog courant : invariants structurels, cohérence modèle/glossaire, minimum Microsoft Dynamics et SAP S/4HANA, traçabilité et scénarios. Distinguer contrôles automatiques, présence documentaire et pertinence sémantique. Ne pas certifier toutes les règles par un simple succès du validateur ; documenter les écarts et les limites. Aucune publication ni réécriture des sources historiques demandée.
+
+## U774
+
+**id**
+
+U774
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Rechercher les correspondances marché à partir du modèle
+
+**texte**
+
+Je veux que par rapport au modèle tu trouve les refs du marché qui correspondent afin de vérifier les règles de agents.md
+
+**contexte et portée**
+
+Recherche primaire Microsoft Dynamics et SAP S/4HANA à partir des responsabilités et notions du backlog, au-delà du constat de références manquantes U773. Enrichir les correspondances pertinentes dans les fiches et le glossaire ; qualifier recouvrements, différences et lacunes sans importer les frontières produits ni inventer une équivalence. Vérifier la conformité documentaire et distinguer appui pertinent, appui partiel et preuve insuffisante. Aucune release, commit ou push demandé.
+
+## U775
+
+**id**
+
+U775
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Rechercher les capacités et comportements manquants par confrontation au marché
+
+**texte**
+
+Maintenant, je voudrais que tu recherches dans le marché si des capacités ou comportements manquent dans le modèle.
+
+**contexte et portée**
+
+Comparer le backlog courant aux responsabilités et variantes documentées chez Microsoft Dynamics et SAP S/4HANA. Rechercher des écarts de couverture métier, distinguer capacité absente, comportement ou précision insuffisante, scénario transverse, couverture existante et hors périmètre. Préserver le périmètre orchestration, les arbitrages précédents et les audits historiques clos. Les propositions restent à arbitrer ; aucune création canonique ni publication déduite de la demande d’étude.
