@@ -1,5 +1,5 @@
 id: INVENTORY-MANAGEMENT-REVIEW-U726
-status: applied_U733
+status: applied_current_arbitrations_closed_U767
 source_refs:
 - U726
 - U727
@@ -16,6 +16,24 @@ source_refs:
 - U738
 - U739
 - U740
+- U754
+- CMP297
+- ELM764
+- U755
+- CMP298
+- ELM765
+- ELM766
+- U756
+- U757
+- U760
+- CMP301
+- U761
+- CMP302
+- U762
+- U765
+- CMP303
+- U766
+- U767
 scope:
   model: modeles/backlog/model.yaml
   publication_baseline: 2026-09-24.9
@@ -374,11 +392,18 @@ publication_delivery:
   - U733
   - U735
   - U736
-  summary: Inventory Management absorbe Promising ; deux catégories, Ledger Knowledge, Ownership Transfer Action, ATP/CTP/PTP
-    Knowledge et choix préservés.
+  - U750
+  - U756
+  - U766
+  - U767
+  summary: U766 Order Promising autonome ; U767 Evaluation, profondeurs, réexamen des promesses et Inventory Visibility fusionnée
+    appliqués.
   absent_nodes:
   - BHV065
   - D18
+  - D18.a
+  - BHV001
+  - BHV003
   required_nodes:
   - id: D01.f
     parent: D01
@@ -393,7 +418,7 @@ publication_delivery:
     parent: D01
     fields:
       name: Inventory Ledger
-      nature: knowledge
+      nature: ledger
       category:
         id: inventory-foundation
         display_name: Inventory Foundation
@@ -419,8 +444,8 @@ publication_delivery:
   - id: D01.h
     parent: D01
     fields:
-      name: Inventory Ownership Transfer
-      nature: action
+      name: Inventory Ownership Transfer Decision
+      nature: decision
       category:
         id: inventory-foundation
         display_name: Inventory Foundation
@@ -431,58 +456,114 @@ publication_delivery:
       name: Inventory Visibility
       nature: knowledge
       category:
-        id: availability-promising
-        display_name: Availability & Promising
-        order: 20
-  - id: D18.a
-    parent: D01
-    fields:
-      name: Supply Visibility
-      nature: knowledge
-      category:
-        id: availability-promising
-        display_name: Availability & Promising
+        id: inventory-visibility
+        display_name: Inventory Visibility
         order: 20
   - id: D03.i
-    parent: D01
+    parent: subdomain-order-promising
     fields:
       name: Available-to-Promise (ATP)
-      nature: knowledge
+      nature: evaluation
       category:
-        id: availability-promising
-        display_name: Availability & Promising
-        order: 20
+        id: promise-evaluation
+        display_name: Promise Evaluation
+        order: 10
   - id: D03.j
-    parent: D01
+    parent: subdomain-order-promising
     fields:
       name: Capable-to-Promise (CTP)
-      nature: knowledge
+      nature: evaluation
       category:
-        id: availability-promising
-        display_name: Availability & Promising
-        order: 20
+        id: promise-evaluation
+        display_name: Promise Evaluation
+        order: 10
   - id: D03.k
-    parent: D01
+    parent: subdomain-order-promising
     fields:
       name: Profitable-to-Promise (PTP)
-      nature: knowledge
+      nature: evaluation
       category:
-        id: availability-promising
-        display_name: Availability & Promising
-        order: 20
+        id: promise-evaluation
+        display_name: Promise Evaluation
+        order: 10
   - id: D03.l
-    parent: D01
+    parent: subdomain-order-promising
     fields:
-      name: Promise Selection
+      name: Promise Selection Decision
       nature: decision
       category:
-        id: availability-promising
-        display_name: Availability & Promising
+        id: promise-selection
+        display_name: Promise Selection
         order: 20
-  - id: BHV077
-    parent: D05.f
+  - id: inventory-ownership-ledger
+    parent: D01
     fields:
-      name: Order Rescheduling
+      name: Inventory Ownership Ledger
+      nature: ledger
+  - id: BHV063
+    parent: D01.h
+    fields:
+      name: Consumption-Based Ownership Transfer
+      nature: business_effect
+  - id: BHV064
+    parent: D01.h
+    fields:
+      name: Aging-Based Ownership Transfer
+      nature: business_effect
+  - id: BHV104
+    parent: D01.h
+    fields:
+      name: Contractual Milestone-Based Ownership Transfer
+      nature: business_effect
+  - id: subdomain-order-promising
+    fields:
+      name: Order Promising
+      definition: Évaluer les possibilités de satisfaction d’une demande et sélectionner une proposition de promesse, en explicitant
+        quantités, dates, conditions et conséquences économiques.
+      scope: |-
+        ATP, CTP et PTP produisent des évaluations indépendamment mobilisables. Promise Selection Decision choisit une proposition dans les possibilités admissibles. Les catégories Promise Evaluation et Promise Selection Decision facilitent la lecture sans ajouter de niveau.
+
+        Order Promising peut être sollicité avant la prise d’une commande, pendant sa révision, lors de la construction ou de la révision du master plan de Matching et pendant l’adaptation du Fulfilment. Le contexte détermine les évaluations utiles ; aucune séquence universelle ATP puis CTP puis PTP ni recalcul à chaque changement d’état n’est imposé.
+
+        Inventory Management fournit la connaissance des stocks, apports et engagements de quantité ; Plan Visibility fournit les plans. Les capacités logistiques, calendriers, tarifs et règles sont consommés auprès de leurs responsables. PTP expose les avantages et inconvénients économiques locaux ; CTP ne déclenche pas les achats.
+
+        Matching conserve le master plan, les arbitrages collectifs et les affectations. Fulfilment coordonne les prestations et recherche des solutions locales préservant la promesse et les grands équilibres du Matching. Les Orders portent la confirmation et les révisions autorisées de l’engagement. Une proposition recalculée ne confirme, ne réserve et ne réaffecte rien à elle seule.
+  - id: D01
+    fields:
+      definition: Établir et fiabiliser la référence de stock, ses mouvements, sa propriété, ses disponibilités et ses engagements
+        de quantité.
+  - id: BHV002
+    parent: D03.i
+    fields:
+      name: On-Hand ATP
+  - id: BHV004
+    parent: D03.i
+    fields:
+      name: Projected ATP
+  - id: BHV075
+    parent: D03.j
+    fields:
+      name: Supply-Based CTP
+  - id: BHV076
+    parent: D03.j
+    fields:
+      name: Capacity-Constrained CTP
+  - id: BHV107
+    parent: D03.k
+    fields:
+      name: Fulfillment Cost Evaluation
+  - id: BHV108
+    parent: D03.k
+    fields:
+      name: Contextual Economic Impact Evaluation
+  - id: BHV109
+    parent: D03.l
+    fields:
+      name: Initial Promise Selection
+  - id: BHV110
+    parent: D03.l
+    fields:
+      name: Promise Reassessment
 category_proposal_U732:
   status: applied_U733
   integration_direction: Réintégration appliquée U733.
@@ -563,7 +644,7 @@ sap_bop_U737:
     le réexamen des quantités ET dates du carnet, y compris commandes déjà confirmées ; pas seulement les commandes en retard.
     Pas de nouveau renommage appliqué.
 master_planning_U738:
-  status: proposal_pending
+  status: superseded_by_applied_matching_U750
   sources:
   - ELM748
   - ELM751
@@ -578,8 +659,10 @@ master_planning_U738:
     Pas de nouveau renommage ni de retrait sans accord.
   boundary: Master plan de matching interne distinct des Supply/Demand Plans APS externes ; Order Management porte la confirmation,
     Matching l’arbitrage.
+  current_reference: modeles/backlog/matching-refactoring-U747.yaml
+  resolution: Affectations et master plan appliqués U750 ; le BOP de promesse reste dans Inventory et ouvert dans audit_U751.
 policy_driven_matching_U739:
-  status: proposal_pending
+  status: superseded_by_applied_matching_U750
   sources:
   - ELM748
   - ELM751
@@ -597,6 +680,8 @@ policy_driven_matching_U739:
     multiplier les capacités ou variantes par paramètre.
   boundary: Politiques gouvernées dans Policies ; Matching les consomme et décide ; leur changement ne révoque pas les engagements.
     Autorisation/application et confirmation par Orders restent distinctes. APS externe non absorbé.
+  current_reference: modeles/backlog/matching-refactoring-U747.yaml
+  resolution: Affectations et master plan appliqués U750 ; le BOP de promesse reste dans Inventory et ouvert dans audit_U751.
 confirmation_vs_assignment_U740:
   status: clarification_recorded
   source_refs:
@@ -640,7 +725,7 @@ microsoft_reading_U744:
   limit: Aucun mode policy=BOP ni équivalent Microsoft complet de SAP BOP démontré par ces sources. Pas de modification du
     catalogue dans cette analyse.
 matching_strategies_U745:
-  status: target_structure_validated_U749
+  status: applied_U750
   source_refs:
   - U745
   - CMP291
@@ -663,6 +748,905 @@ matching_strategies_U745:
     D05.a: Conserver le calcul des cibles si nécessaire ; distinguer cibles APS reçues et recommandations locales.
     D05.d: Distinguer recommandation de protection et protection active gouvernée dans Policies.
     D05.h: Distinguer calcul/recommandation contextuelle et règles actives ; Reservation applique les blocages.
-  limits: Ne pas absorber BOP dans Matching au motif qu’il est collectif. Pas de conversion automatique de toutes les décisions
-    en stratégies, pas de retrait canonique à ce stade.
+  limits: 'Refonte appliquée U750 : trois catégories, dix capacités ; ne pas absorber BOP dans Matching. Les anciennes candidates
+    conservent le contexte de discussion, pas une seconde cible à appliquer.'
   proposal_ref: modeles/backlog/matching-refactoring-U747.yaml
+audit_U751:
+  id: INVENTORY-AUDIT-U751
+  status: closed_applied_U767
+  source_refs:
+  - U751
+  - CMP295
+  - U752
+  - CMP296
+  - U753
+  - U756
+  - U757
+  - U760
+  - CMP301
+  - U761
+  - CMP302
+  - U762
+  - U765
+  - CMP303
+  - U766
+  - U767
+  baseline:
+    path: modeles/backlog/model.yaml
+    sha256: 4e03b2cbc337c82d11fb0e877d4d017741a132b2443317375d65538459b628a6
+    published_version: 2026-09-25.1
+  method: Service durable rendu par des humains, indépendamment de leurs outils et de leur organisation. Les domaines regroupent
+    finalités, connaissances et problématiques ; pas des équipes ni des modules.
+  findings:
+  - id: D01.f
+    current_name: Inventory Tracking
+    current_nature: integration
+    verdict: retained_no_change_required
+    paper_and_pen: Recueillir les relevés de réception, expédition, retour et correction transmis par les partenaires.
+    recommendation: Conserver Integration ; responsabilité d’échange, pas obligation d’API ni ingestion confondue avec reconnaissance
+      définitive des faits.
+    source_refs:
+    - ELM734
+    - ELM738
+  - id: D01.g
+    verdict: applied_U756
+    paper_and_pen: Tenir le registre justifié des mouvements, états et propriétaires, puis corriger les erreurs sans effacer
+      les preuves.
+    recommendation: Inventory Ledger de type Ledger appliqué U756.
+    source_refs:
+    - ELM736
+    - ELM737
+    - U756
+    baseline_name: Inventory Ledger
+    baseline_nature: knowledge
+    current_name: Inventory Ledger
+    current_nature: ledger
+  - id: D01.d
+    current_name: Stocktaking
+    current_nature: action
+    verdict: retained_no_change_required
+    paper_and_pen: Compter, comparer au registre, expliquer les écarts et faire reconnaître les corrections.
+    recommendation: Conserver Action et les trois modalités de comptage ; distinguer constat, autorisation de correction et
+      écriture au Ledger.
+    source_refs:
+    - ELM741
+    - ELM742
+  - id: D02.c
+    current_name: Reservation
+    current_nature: action
+    verdict: retained_no_change_required
+    paper_and_pen: Mettre une quantité de côté pour un besoin et tenir à jour ce droit face aux usages concurrents.
+    recommendation: Conserver Action ; une affectation de plan ou une promesse ne réserve pas implicitement.
+    source_refs:
+    - ELM743
+    - ELM744
+  - id: D01.h
+    verdict: applied_U756
+    paper_and_pen: Établir que certaines pièces changent de propriétaire selon un acte ou une condition convenue, le notifier
+      et en tenir la preuve.
+    recommendation: Inventory Ownership Transfer Decision appliquée U756, avec Inventory Ownership Ledger distinct et trois
+      mécanismes de détermination.
+    source_refs:
+    - ELM739
+    - ELM740
+    - U756
+    baseline_name: Inventory Ownership Transfer
+    baseline_nature: action
+    current_name: Inventory Ownership Transfer Decision
+    current_nature: decision
+  - id: D01.c
+    current_name: Inventory Visibility
+    current_nature: knowledge
+    verdict: applied_U767
+    paper_and_pen: Dire ce qui est présent, où, pour qui et dans quel état ; expliquer ce qui est attendu et la position projetée.
+    recommendation: Conserver Inventory Visibility, Knowledge, en réunissant D18.a. Décrire Current Inventory Position et
+      Projected Inventory Position si leur bénéfice justifie les deux comportements. Garder détail des apports, confirmations,
+      reliquats, provenance et fraîcheur.
+    source_refs:
+    - ELM734
+    - ELM761
+    resolution: Voir application_U767 et modèle canonique ; ancienne proposition conservée comme preuve de discussion.
+  - id: D18.a
+    current_name: Supply Visibility
+    current_nature: knowledge
+    verdict: applied_U767
+    paper_and_pen: Rapprocher les apports attendus et leur avancement pour expliquer le stock futur.
+    recommendation: Intégrer au même service de visibilité ; ne pas absorber la visibilité des capacités de production, transport
+      ou prestation qui reste chez ses responsables. Garder Orders/Plans maîtres de leurs données.
+    source_refs:
+    - ELM734
+    - ELM761
+    resolution: Voir application_U767 et modèle canonique ; ancienne proposition conservée comme preuve de discussion.
+  - id: D03.i
+    current_name: Available-to-Promise (ATP)
+    current_nature: knowledge
+    verdict: applied_U767
+    paper_and_pen: Calculer combien et quand peut être proposé compte tenu du stock, des apports admissibles et des engagements.
+    recommendation: 'U760 : responsabilité d’évaluation distincte de la décision ; type Evaluation proposé. Préserver contraintes,
+      horizons et absence de réservation/confirmation. Les quatre comportements actuels sont surtout des dimensions de calcul
+      ; les relire avant toute suppression, sans découpage automatique par entrée.'
+    source_refs:
+    - ELM727
+    - ELM761
+    next_step: Aucune action restante sur cet arbitrage ; application_U767 décrit le résultat.
+    resolution: Voir application_U767 et modèle canonique ; ancienne proposition conservée comme preuve de discussion.
+  - id: D03.j
+    current_name: Capable-to-Promise (CTP)
+    current_nature: knowledge
+    verdict: applied_U767
+    paper_and_pen: Calculer sous quelles conditions de ressources ou capacités supplémentaires une demande pourrait être servie.
+    recommendation: 'U760 : responsabilité d’évaluation distincte de la décision ; type Evaluation proposé. Conserver scénarios
+      conditionnels ; Matching propose/arbitre la mobilisation, Orders portent les actes. Corriger l’écart de portée de BHV076,
+      plus large que le texte actuel de CTP.'
+    source_refs:
+    - ELM746
+    - ELM747
+    next_step: Aucune action restante sur cet arbitrage ; application_U767 décrit le résultat.
+    resolution: Voir application_U767 et modèle canonique ; ancienne proposition conservée comme preuve de discussion.
+  - id: D03.k
+    current_name: Profitable-to-Promise (PTP)
+    current_nature: knowledge
+    verdict: applied_U767
+    paper_and_pen: Chiffrer les options, coûts, hypothèses et conséquences économiques pour permettre leur comparaison.
+    recommendation: Conserver Profitable-to-Promise (PTP). Évaluer les coûts et conséquences économiques des solutions sans
+      en sélectionner une ; Promise Selection Decision porte le choix. Retirer le renommage Promise Cost Evaluation. Type
+      Evaluation proposé à formaliser. Le périmètre FLOW reste plus étroit que le PTP Oracle qui peut sélectionner.
+    source_refs:
+    - ELM762
+    - ELM763
+    - U760
+    next_step: Aucune action restante sur cet arbitrage ; application_U767 décrit le résultat.
+    resolution: Voir application_U767 et modèle canonique ; ancienne proposition conservée comme preuve de discussion.
+  - id: D03.l
+    current_name: Promise Selection
+    current_nature: decision
+    verdict: applied_U767
+    paper_and_pen: Choisir quelle quantité, date et quelles conditions proposer, puis faire porter la confirmation par l’Order.
+    recommendation: Promise Selection Decision, type Decision. Clarifier sélection initiale et réexamen des promesses existantes,
+      y compris collectif de type BOP. Une réaffectation nécessaire coopère avec Matching ; une mise en attente seule ne détermine
+      pas le sous-domaine responsable.
+    source_refs:
+    - ELM727
+    - ELM726
+    - ELM749
+    - ELM750
+    resolution: Voir application_U767 et modèle canonique ; ancienne proposition conservée comme preuve de discussion.
+  target_proposal:
+    capability_count: 11
+    categories:
+      Inventory Foundation:
+      - Inventory Tracking
+      - Inventory Ledger
+      - Stocktaking
+      - Reservation
+      - Inventory Ownership Transfer Decision
+      - Inventory Ownership Ledger
+      Availability & Promising:
+      - Inventory Visibility
+      - Available-to-Promise (ATP)
+      - Capable-to-Promise (CTP)
+      - Profitable-to-Promise (PTP)
+      - Promise Selection Decision
+    names_not_market_standards:
+    - Promise Selection Decision
+    retain_subdomain_name: 'Inventory Management : connaissance fiable du stock, engagements de quantité et évaluation/sélection
+      de promesse ; pas de WMS complet.'
+    status: superseded_by_applied_U766_U767
+    note: Vue historique ; cible canonique dans model.yaml, Order Promising autonome et Inventory Visibility fusionnée.
+  calculation_type:
+    status: applied_evaluation_U767
+    definition: Produire des quantités, dates, coûts ou possibilités dérivées de faits, hypothèses et règles, sans choisir
+      le résultat à engager.
+    decision: Choisir ou recommander une réponse parmi les possibilités admissibles ; un choix automatisé reste une décision.
+    knowledge: Établir une représentation compréhensible de la situation ; elle peut comporter agrégations et projections
+      calculées.
+    guardrail: 'Ne pas créer une capacité de calcul pour chaque formule interne : Calculation ne se justifie que si l’évaluation
+      est un service métier autonome consommé par plusieurs choix. Decision conserve ses calculs internes.'
+    affected_contracts:
+    - glossaire méthodologique et conventions
+    - types autorisés/validation du modèle
+    - types, libellés et icônes Atlas
+    - captures et gardes de publication
+    alternative: Classer ATP/CTP/PTP en Decision reste compatible avec les types actuels, mais masque la distinction explicite
+      entre évaluer sans choix et sélectionner ; non recommandé avec les définitions actuelles.
+    current_direction: Evaluation appliqué pour ATP/CTP/PTP ; Decision conserve ses calculs internes.
+  ownership_migration:
+    D01.h: 'Appliqué U756 : Inventory Ownership Transfer Decision ; Inventory Ownership Ledger distinct créé.'
+    BHV063: Préserver le cas consommation/vente prévue par contrat dans Ledger, liens aux Orders et descriptions des conditions.
+    BHV064: Préserver l’échéance contractuelle, le suivi de la condition et le résultat d’acquisition ; pas un simple champ
+      owner modifié.
+    case: 'Exemple : 100 pièces fournisseur présentes, 20 reconnues acquises selon accord. Quantité physique inchangée ; 20
+      et 80 appartiennent désormais à des propriétaires distincts. L’acte et ses suites ne se réduisent pas au registre.'
+  additional_findings:
+  - issue: PTP definition/finality contradiction
+    evidence: D03.k definition exclut la sélection ; finality dit Retenir une solution.
+    proposal: Aligner la finalité PTP sur l’évaluation économique sans choix, conformément à U760 ; aucun renommage nécessaire.
+    status: applied_U766_U767
+    resolution: Finalité PTP corrigée U766 ; comportements et frontière CTP, réexamen des promesses appliqués U767.
+  - issue: BOP encore insuffisamment explicite
+    evidence: U743 place BOP avec ATP mais D03.l reste formulé principalement pour une commande.
+    proposal: 'Deux variantes possibles : Initial Promise Selection et Promise Reassessment ; préciser protections et arbitrage
+      entre promesses sans importer une fonction de réaffectation.'
+    status: applied_U766_U767
+    resolution: Finalité PTP corrigée U766 ; comportements et frontière CTP, réexamen des promesses appliqués U767.
+  - issue: Frontière CTP héritée
+    evidence: BHV076 parle de toute modification des modalités ; D03.j exige capacités ou apports supplémentaires.
+    proposal: Restreindre l’exemple de CTP aux ressources/capacités supplémentaires ; une autre date ATP ne devient pas CTP.
+    status: applied_U766_U767
+    resolution: Finalité PTP corrigée U766 ; comportements et frontière CTP, réexamen des promesses appliqués U767.
+  - issue: Nature du domaine vs organisation
+    evidence: Le vocabulaire de services de données a favorisé une lecture applicative de Ledger et Ownership Transfer.
+    proposal: Réécrire les débuts de fiches par le résultat métier, sans déduire équipes, applications ou maîtres d’entreprise.
+    status: addressed_U753_U756
+    resolution: Définition méthodologique mise à jour U753 ; fiches des registres et de la décision réécrites U756.
+  validation_boundary: Les arbitrages actifs de visibilité, typage et comportements ATP/CTP/PTP et réexamen des promesses
+    sont appliqués U767. Aucune validation globale des rédactions ni des réalisations installées.
+  ledger_type_U752:
+    status: applied_U756
+    user_basis: Orders, registres et données agrégées sont des actifs métier représentables, indépendamment de l’organisation
+      et des outils.
+    definition: Tenir un registre métier durable de faits reconnus, datés et justifiés, en assurant leur traçabilité et leurs
+      corrections.
+    proposed_capabilities:
+    - id: D01.g
+      name: Inventory Ledger
+      scope: Mouvements et états de stock ; quantité, lieu et statut, avec preuves et références.
+    - name: Inventory Ownership Ledger
+      scope: 'Changements de propriétaire : quantités, ancien et nouveau propriétaires, date d’effet, acte ou condition déclenchante
+        et preuve.'
+      id_assignment: Identifiant créé et appliqué U756 ; D01.h porte la décision.
+      id: inventory-ownership-ledger
+    boundaries:
+    - Tracking recueille/intègre ; Ledger reconnaît et conserve ; Visibility compose et explique.
+    - Les noms des actifs désignent les capacités de les tenir ; pas de nouveau niveau dans la hiérarchie.
+    - Une écriture de propriété peut exister sans mouvement physique ; les deux registres relient leurs effets sans double
+      compte.
+    - Corrections traçables ; aucune technologie, blockchain, immutabilité technique ou mécanisme comptable imposé.
+    - Les conditions consommation/échéance sont conservées ; leur maintien comme deux Behaviors du Ledger doit être réexaminé
+      plutôt que recopié automatiquement.
+    market_refs:
+    - ELM736
+    - ELM737
+    - ELM739
+    - ELM740
+    supersedes: La recommandation Action pour D01.g et le retrait simple de D01.h dans U751.
+    implementation_impact:
+    - glossaire méthodologique
+    - types autorisés et schéma
+    - libellés/icônes Atlas
+    - descriptions, liens et accords des capacités concernées
+  ownership_decision_U754:
+    status: applied_U756
+    source_refs:
+    - U754
+    - CMP297
+    - ELM739
+    - ELM764
+    - ELM740
+    category: Inventory Foundation
+    capabilities:
+    - id: D01.f
+      name: Inventory Tracking
+      type: integration
+      change: Recevoir les faits des stocks et des processus, dont les résultats transmis par Operations Tracking ; ne pas
+        créer un Ownership Tracking supplémentaire.
+    - id: D01.h
+      name: Inventory Ownership Transfer Decision
+      type: decision
+      definition: Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent
+        à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date,
+        avec ou sans consignation.
+      behaviors:
+      - id: BHV063
+        proposed_name: Consumption-Based Ownership Transfer
+        scope: Déterminer les conséquences d’une consommation ou vente prévue par accord.
+      - id: BHV064
+        proposed_name: Aging-Based Ownership Transfer
+        scope: Déterminer les conséquences d’une échéance contractuelle ; ne dépend pas uniquement d’un événement de clôture
+          d’Order.
+      decomposition_rationale: 'Deux mécanismes déclencheurs distincts : fait de consommation/vente et échéance contractuelle.
+        Adapter les définitions de l’application vers la détermination ; aucune règle universelle.'
+      behavior_review: 'U755 : ces deux comportements restent des cas à préserver ; leur couverture doit être réexaminée pour
+        le périmètre élargi aux jalons des achats, ventes et biens en transit.'
+    - name: Inventory Ownership Ledger
+      type: ledger
+      id_assignment: À créer lors de l’application ; D01.h est conservé pour la responsabilité de détermination issue du transfert.
+      definition: Tenir le registre des changements de propriétaire reconnus, avec quantités, parties, date d’effet, accord,
+        fait déclencheur, acte éventuel et preuve.
+      behaviors: []
+    - id: D01.g
+      name: Inventory Ledger
+      type: ledger
+      change: Tenir mouvements et états de stock ; référencer les écritures de propriété et leurs effets sans registre de
+        propriété concurrent.
+    flow:
+    - Les Orders portent demandes et engagements ; Agreement porte les conditions applicables.
+    - Operations Tracking et/ou Inventory Tracking fournissent les faits reconnus ; les échéances convenues peuvent également
+      déclencher un examen.
+    - La décision applique les conditions et détermine les conséquences métier.
+    - Quand un acte distinct est requis, les Orders et Fulfilment portent son exécution locale ou distante et le résultat
+      revient par Tracking.
+    - Le registre inscrit seulement le transfert reconnu ; une proposition ne suffit pas. Un transfert déjà établi par une
+      autorité externe est intégré sans seconde décision ni exécution.
+    - Inventory Visibility compose les positions par propriétaire à partir des registres.
+    example: '100 vêtements fournisseur présents ; une vente de 20 satisfait la clause de transfert convenue. Le registre
+      conserve la preuve : 20 deviennent propres, 80 restent fournisseur. Ce changement seul ne modifie pas les 100 pièces
+      physiques ; leur expédition éventuelle est un autre effet.'
+    market_limit: Microsoft documente préparation et comptabilisation du journal ; pas un moteur autonome écoutant les processus.
+      Le traitement automatique du journal est explicitement non pris en charge dans la procédure consultée.
+    supersedes: U752 proposait D01.h comme Ledger ; U754 conserve D01.h comme Decision et propose un Ledger distinct. Pas
+      de validation globale implicite de l’audit.
+    implementation:
+    - Introduire le type Ledger dans méthode, schémas, validation et Atlas.
+    - Réécrire D01.h et ses deux comportements ; créer le registre ; préciser les liens, faits déclencheurs, résultats et
+      conditions.
+    - Actualiser D01.f, D01.g, D01.c et les interactions avec Agreement, Orders et Fulfilment ; conserver exécution et notification
+      des résultats.
+    - Actualiser les comparaisons avec deux sources primaires pertinentes par fiche, gardes de livraison et captures du lot
+      final validé.
+    scope_extension_U755:
+      status: proposal_refined
+      source_refs:
+      - U755
+      - CMP298
+      - ELM765
+      - ELM766
+      scope: Changements de propriété du stock dans les achats et ventes avec ou sans consignation, y compris biens en transit
+        ; faits issus des processus et faits douaniers pertinents selon les conditions applicables.
+      decision: Croiser les faits reçus, les échéances et les conditions applicables de l’accord pour déterminer les conséquences
+        sur la propriété ; ne pas faire porter l’interprétation contractuelle au Tracking.
+      ledger: Conserver ancien/nouveau propriétaire, quantité, date d’effet, accord et condition appliquée, fait déclencheur,
+        justificatif et acte éventuel. Conserver les corrections traçables.
+      boundaries:
+      - Un fait douanier est à qualifier ; aucun transfert automatique déduit de son seul statut.
+      - Distinguer propriétaire, détenteur, disponibilité physique et statut douanier.
+      - Les mécanismes comptables Microsoft ne sont pas une règle juridique universelle.
+      behavior_review: Consommation et échéance sont des cas conservés mais ne couvrent pas tous les processus. Réexaminer
+        les comportements proposés pour couvrir les jalons contractuels des achats/ventes et du transit, sans comportement
+        par événement ni second catalogue.
+      example: Une réception peut laisser la propriété au fournisseur dans un accord et matérialiser la condition d’acquisition
+        dans un autre ; les faits du parcours ne portent pas seuls leur conséquence sur la propriété.
+    application:
+      source_refs:
+      - U756
+      nodes:
+      - D01.g
+      - D01.h
+      - inventory-ownership-ledger
+      - BHV063
+      - BHV064
+      - BHV104
+      scope: Lot propriété uniquement ; les autres pistes U751 restent proposées.
+      new_wording: Le nom anglais du comportement BHV104 et les nouvelles rédactions détaillées restent proposés ; le mécanisme
+        des autres jalons est autorisé U756.
+      decision_intents:
+      - DEC-U756-D01.g
+      - DEC-U756-D01.h
+      - DEC-U756-inventory-ownership-ledger
+      - DEC-U756-BHV063
+      - DEC-U756-BHV064
+      - DEC-U756-PARENT-D01.g
+      - DEC-U756-PARENT-D01.h
+      - DEC-U756-PARENT-inventory-ownership-ledger
+      - DEC-U756-PARENT-BHV063
+      - DEC-U756-PARENT-BHV064
+      - DEC-U756-PARENT-BHV104
+      current_inventory_capabilities: 12
+      capture_scope: Noms/types/catégories des trois capacités concernées, définition déjà présentée du registre dédié, noms
+        des variantes conservées et rattachements. Autres rédactions et nom anglais du nouveau comportement restent proposés
+        ; accord métier complet tracé U756 sans adoption implicite de champs nouveaux.
+  evaluation_clarification_U760:
+    status: applied_U767
+    source_refs:
+    - U760
+    - ELM762
+    - ELM763
+    - CMP301
+    ATP: Évaluer quantités et dates promettables avec les ressources admissibles.
+    CTP: Évaluer les possibilités conditionnelles mobilisant des ressources ou capacités supplémentaires.
+    PTP: Produire le micro dossier local et contextuel des avantages et inconvénients économiques des options, sans choix
+      (U762).
+    selection: Promise Selection Decision choisit la réponse à proposer ; Order Management porte la confirmation.
+    type_proposal: Evaluation appliqué aux trois capacités ; définition méthodologique MOD021.
+    superseded:
+    - Renommage PTP en Promise Cost Evaluation.
+    - Recommandation Codex du tour précédent de classer ces trois capacités en Decision.
+    market_difference: Oracle peut réunir évaluation économique et sélection dans PTP. FLOW conserve le nom et sépare explicitement
+      la sélection ; aucune équivalence complète revendiquée.
+    followup: Typage et profondeurs appliqués U767.
+  evaluation_depth_U761:
+    status: applied_U767
+    source_refs:
+    - U760
+    - U761
+    - CMP302
+    - ELM727
+    - ELM746
+    - ELM762
+    - ELM763
+    - ELM772
+    - ELM773
+    - ELM774
+    - ELM775
+    - ELM776
+    - ELM777
+    - U762
+    method: Revue des mécanismes, profondeur, hypothèses et résultats ; pas de réouverture de l’audit des comportements clos
+      U431. Couverture ciblée des trois évaluations dans le périmètre FLOW.
+    sources:
+    - id: ELM772
+      vendor: SAP
+      title: Defining the Product Availability Check
+      url: https://help.sap.com/docs/SAP_S4HANA_CLOUD/32da8359c8ee4e8b8e8c5e15cacba5aa/741d645473c50d4ee10000000a423f68.html
+      finding: Disponibilité selon stock ou éléments de réception ; certains modes limités au stock excluent les commandes
+        et demandes d’achat.
+      limits: Passages primaires indexés consultés ; page ouverte sans corps exploitable. Options de produit, pas taxonomie
+        FLOW.
+    - id: ELM773
+      vendor: SAP
+      title: Determining Alternatives
+      url: https://help.sap.com/docs/SAP_S4HANA_CLOUD/32da8359c8ee4e8b8e8c5e15cacba5aa/21afef7a7724417daa91a26b6d071e5e.html
+      finding: Alternative-Based Confirmation recherche des sites, emplacements ou produits alternatifs ; la sélection suit
+        une stratégie.
+      limits: Texte primaire indexé consulté. Une alternative ne prouve pas une création de supply ni un contrôle capacitaire
+        ; sélection séparée dans FLOW.
+    - id: ELM774
+      vendor: Oracle
+      title: See How Promising Estimates Availability
+      url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/determine-how-order-promising-gets-and-estimates-availability.html
+      finding: Distingue recherche de supply, estimation par lead times et disponibilité infinie sans examen des ressources.
+      limits: Page primaire ouverte, 25C ; modes du moteur GOP, pas trois capacités métier ni garantie de disponibilité.
+    - id: ELM775
+      vendor: Oracle
+      title: Overview of the Order Promising Work Area
+      url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-the-order-promising-work-area.html
+      finding: Financial Performance expose revenus, fulfillment costs et pourcentage de marge selon les dates.
+      limits: Page primaire ouverte et passage indexé consulté, 25C. Vue analytique, pas preuve d’un mode PTP natif distinct
+        de sélection.
+    - id: ELM776
+      vendor: Oracle
+      title: 'AI Agent: Gross Margin Analyst'
+      url: https://docs.oracle.com/en/cloud/saas/readiness/scm/26b/inv26b/26B-inventory-wn-f42401.htm
+      finding: Évaluer marge par commande et article et éclairer les options de sourcing sensibles à la marge.
+      limits: Page primaire ouverte, annonce 26B. Fonction d’analyse adjacente au promising ; ne pas confondre annonce, installation
+        et taxonomie. Aucun agent IA requis dans FLOW.
+    - id: ELM777
+      vendor: SAP
+      title: Scenarios and Supported Features of PPAC and PAC with Supply Creation
+      url: https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/95cbb18b60da470cac8d340f0c6f5251.html
+      finding: Création de supply avec planification multiniveau, capacités finies/infinies et sources alternatives selon
+        les scénarios PP/DS.
+      limits: Passage primaire indexé consulté ; page ouverte sans corps exploitable, édition non affichée. Création/confirmation
+        intégrées au produit, séparées de l’évaluation FLOW.
+    verdict: 'Le catalogue actuel ne décrit pas les profondeurs demandées : ATP mélange contraintes et horizons, CTP couvre
+      des familles d’adaptation avec une variante trop large, PTP n’a aucun comportement.'
+    target_behaviors:
+    - capability: D03.i
+      name: On-Hand ATP
+      depth: 1
+      definition: Évaluer les quantités et dates promettables à partir du stock courant admissible, après engagements et contraintes
+        applicables, sans ajouter de réception future.
+      sources:
+      - ELM727
+      - ELM772
+      migration: BHV002 peut conserver son identité en reformulant le périmètre ; le réseau reste possible au même niveau.
+    - capability: D03.i
+      name: Projected ATP
+      depth: 2
+      definition: Étendre l’évaluation aux réceptions attendues admissibles et aux besoins/engagements sur l’horizon, sans
+        créer de nouvel apport.
+      sources:
+      - ELM727
+      - ELM761
+      - ELM762
+      migration: Conserver BHV004 et préciser le calcul temporel, les hypothèses et la non-duplication entre plans et Orders.
+    - capability: D03.j
+      name: Supply-Based CTP
+      depth: 1
+      definition: Évaluer la possibilité d’obtenir ou de constituer un apport à partir des sources, matières/composants et
+        délais connus, sans contrôle détaillé des capacités finies.
+      sources:
+      - ELM746
+      - ELM762
+      migration: Recentrer BHV075 ; distinguer disponibilité matière établie et délai fournisseur seulement estimé. Ne crée
+        ni achat ni affectation.
+    - capability: D03.j
+      name: Capacity-Constrained CTP
+      depth: 2
+      definition: Étendre la faisabilité aux ressources et capacités finies nécessaires, à leurs calendriers, charges et dépendances
+        pertinentes.
+      sources:
+      - ELM746
+      - ELM762
+      - ELM777
+      migration: Recentrer BHV076 ; la capacité peut déjà exister. Fabrication/assemblage multiniveau et prestations nécessaires
+        se décrivent ici sans un comportement par ressource. L’extension aux contraintes logistiques est une adaptation FLOW,
+        les exemples primaires étant surtout manufacturiers.
+    - capability: D03.k
+      name: Fulfillment Cost Evaluation
+      depth: 1
+      definition: Chiffrer les coûts pertinents de chaque option de promesse sur une base explicite et comparable, en distinguant
+        ce qui est connu, estimé ou absent.
+      sources:
+      - ELM762
+      - ELM763
+      migration: Nouveau comportement proposé ; coûts composants/ressources multiniveaux et effets de fractionnement/consolidation
+        sont inclus quand pertinents. Distinguer coût complet et coût additionnel, sans double compte.
+    - capability: D03.k
+      name: Contextual Economic Impact Evaluation
+      depth: 2
+      definition: Compléter le chiffrage par les avantages et inconvénients économiques des options dans le contexte local
+        de la demande, avec écarts, hypothèses et incertitudes, sans choisir.
+      sources:
+      - ELM762
+      - ELM763
+      migration: 'U762 corrige Margin Evaluation : le résultat est un micro dossier économique comparatif. Marge, revenus,
+        coûts évités ou autres impacts ne sont inclus que s’ils sont pertinents et étayés ; pas un objectif de rentabilité
+        globale. Nom anglais proposé.'
+    shared_requirements:
+    - Protections, réservations, engagements concurrents et droits de propriété restent appliqués à chaque profondeur ; stock
+      courant ne signifie pas stock brut.
+    - Périmètre local/réseau, produits substituables autorisés et sources externes sont des périmètres de recherche, pas automatiquement
+      des profondeurs ni du CTP.
+    - Calendriers, heures limites, délais opérationnels et transport sont nécessaires aux dates ; vérifier des délais diffère
+      d’un contrôle des capacités finies.
+    - Provenance, fraîcheur, hypothèses, confiance, contraintes non évaluées et conditions restantes accompagnent tout résultat
+      ; profond ne signifie pas certain.
+    - Complétude, ship-together, fractionnements et regroupements sont des contraintes/scénarios évalués, pas des capacités
+      ou comportements par option.
+    - Les évaluations ne réservent ni n’affectent, ne créent pas les Orders et ne confirment pas la promesse. Promise Selection
+      Decision choisit, les responsables matérialisent.
+    coverage_matrix:
+    - case: Stock courant net des engagements
+      covered_by: On-Hand ATP + exigences communes
+    - case: Réceptions futures, retard, concurrence temporelle, prévisions/Orders sans double compte
+      covered_by: Projected ATP
+    - case: Autre site, fournisseur avec stock existant, produit substituable autorisé, livraison directe
+      covered_by: Périmètre et hypothèses ATP ; CTP seulement si une faisabilité d’apport/capacité reste à établir
+    - case: Nouvel apport achat ou approvisionnement, assemblage à partir de composants
+      covered_by: Supply-Based CTP
+    - case: Nomenclature multiniveau, capacités de fabrication, ressources finies et calendrier
+      covered_by: Capacity-Constrained CTP ; profondeur et données réellement vérifiées explicites
+    - case: Capacité logistique finie nécessaire malgré du stock produit existant
+      covered_by: Capacity-Constrained CTP en complément ATP ; adaptation FLOW via capacités communiquées, sans absorption
+        du WMS
+    - case: Simple délai standard sans contrôle ou disponibilité supposée infinie
+      covered_by: Hypothèse/repli explicitement déclaré ; pas une preuve de faisabilité ni comportement CTP détaillé
+    - case: Coût matière, achat, transferts amont/aval, composants/ressources, prestations, fractionnement, consolidation
+      covered_by: Fulfillment Cost Evaluation
+    - case: Revenu, remise applicable, substitution tarifée et marge
+      covered_by: Contextual Economic Impact Evaluation, lorsque ces données éclairent effectivement les options locales ;
+        marge non obligatoire.
+    - case: Incertitude ou hypothèses économiques
+      covered_by: Hypothèses/scénarios des évaluations ; aucune prévision de risque inventée
+    - case: Comparaison de commandes, BOP, arbitrage de priorités
+      covered_by: Évaluations utilisables collectivement ; choix chez Promise Selection Decision et affectation chez Matching
+    - case: Simulation, temps réel/batch, API, cache, recours à un APS
+      covered_by: Modes ou moyens de réalisation ; pas de profondeur de comportement
+    existing_migration:
+      BHV001: Intégrer ses exigences d’engagements/protections au périmètre commun ATP ; retrait du comportement seulement
+        lors de l’application validée.
+      BHV002: On-Hand ATP proposé ; conserver le périmètre réseau en exigences communes.
+      BHV003: Intégrer délais/calendriers dans les exigences communes ATP et leurs liens aux services ; retrait du comportement
+        seulement lors de l’application validée.
+      BHV004: Projected ATP proposé.
+      BHV075: Supply-Based CTP proposé.
+      BHV076: Capacity-Constrained CTP proposé ; supprimer l’équivalence erronée entre alternative quelconque et CTP.
+      D03.k: Deux nouveaux comportements proposés ; conserver le nom PTP et l’absence de sélection.
+    parent_changes:
+    - Formaliser Evaluation pour les trois capacités.
+    - Corriger CTP pour inclure la vérification de capacités existantes, pas uniquement supplémentaires ; aucune création
+      automatique de supply.
+    - Aligner finality PTP sur l’évaluation sans sélection ; dossier économique local et contextuel des avantages/inconvénients
+      réaffirmé U762.
+    - Renommer Promise Selection Decision selon U760 et conserver le choix distinct des évaluations.
+    exhaustiveness_limit: Les familles documentées sont couvertes par ce découpage et ses contraintes communes ; pas d’exhaustivité
+      universelle certifiable. Les noms des comportements sont des propositions FLOW, les niveaux CTP et PTP ne sont pas une
+      nomenclature native uniforme des éditeurs.
+    validation_boundary: Deux profondeurs par capacité validées et appliquées U767 ; les noms détaillés et formulations sont
+      des mises en œuvre FLOW étayées, pas une taxonomie universelle.
+    PTP_clarification_U762:
+      status: applied_U767
+      source_refs:
+      - U760
+      - U762
+      - ELM762
+      - ELM763
+      result: Micro dossier économique local et contextuel des options, sans gagnant.
+      contents:
+      - Options et périmètre de comparaison
+      - Coûts connus/estimés et postes manquants
+      - Écarts, gains, surcoûts et coûts évités par rapport à une référence explicite
+      - Revenus ou marge seulement lorsqu’ils sont pertinents et documentés
+      - Conditions, hypothèses, incertitudes et avantages/inconvénients économiques
+      excluded:
+      - Sélection de l’option
+      - Score économique assimilé à un choix automatique
+      - Optimisation globale des affectations du Matching
+      - Décision tarifaire ou modification du prix confirmé
+      example: Pour une demande, comparer expédition immédiate fractionnée, attente permettant consolidation et service express
+        ; expliciter coûts et économies de chaque option, conditions de délai, éventuels impacts contractuels chiffrables.
+        Les impacts inconnus restent inconnus ; Promise Selection Decision arbitre.
+  promising_boundary_U765:
+    status: applied_U766
+    source_refs:
+    - U765
+    - CMP303
+    - ELM727
+    - ELM778
+    - ELM779
+    - ELM780
+    - U766
+    current_state: Order Promising autonome appliqué U766 ; U730/U733 conservent leur portée historique.
+    finding: La réutilisation ne suffit pas à définir une frontière métier ; la finalité propre de qualification et sélection
+      d’une proposition d’engagement justifie de séparer Promising de la connaissance et de la tenue du stock.
+    recommendation:
+      name: Order Promising
+      level: Subdomain
+      definition: Évaluer les quantités, dates, conditions et conséquences économiques des possibilités de satisfaction d’une
+        demande, puis sélectionner une proposition de promesse utilisable par les processus concernés, sans confirmer l’engagement
+        ni affecter les ressources.
+      name_reason: Order Promising est documenté par Microsoft et Oracle ; Order précise l’objet de la promesse, pas son moment
+        dans le processus ni un rattachement à Order Management. Promising seul est plus court mais laisse l’objet implicite.
+      capabilities:
+      - D03.i
+      - D03.j
+      - D03.k
+      - D03.l
+      proposed_categories:
+      - name: Promise Evaluation
+        members:
+        - D03.i
+        - D03.j
+        - D03.k
+      - name: Promise Selection
+        members:
+        - D03.l
+      nature_boundary: ATP/CTP/PTP évaluent ; Promise Selection Decision sélectionne une proposition. Les types et comportements
+        détaillés restent dans la proposition evaluation_depth_U761.
+    cooperation:
+      Inventory Management: Fournit stock, disponibilités et engagements de quantité ; conserve ledger, ownership et réservations.
+        Supply Visibility reste amont ; son rapprochement avec Inventory Visibility reste un arbitrage distinct.
+      Plan Visibility: Fournit Supply Plan et Demand Plan sans absorber l’APS externe.
+      Demand & Supply Matching: Mobilise les évaluations pour éprouver les possibilités ; garde master plan, arbitrages collectifs
+        et affectations.
+      Fulfilment Orchestration: Réévalue les solutions locales utiles en cherchant à préserver la promesse et les équilibres
+        du Matching.
+      Order Management: Demande une évaluation ou une proposition lors de la prise ou de la révision d’une commande ; les
+        Orders portent l’engagement confirmé.
+    limits:
+    - Usage à plusieurs étapes, pas séquence universelle ni appel automatique à chaque changement d’état.
+    - Une capacité peut être sollicitée seule ; PTP ne choisit pas et CTP ne déclenche pas les achats.
+    - Une proposition recalculée ne remplace pas automatiquement une promesse confirmée.
+    - Aucun nouveau sous-domaine créé ni identifiant retiré réutilisé dans cette proposition ; conserver les identifiants
+      des capacités lors d’une éventuelle application.
+    market_comparison: Oracle décrit explicitement un appel de l’orchestration à GOP ; Microsoft expose l’ATP via Inventory
+      Visibility. Réutilisation documentée, pas frontière universelle. Le découpage FLOW est recommandé sur sa cohérence métier.
+    validation_scope: Discussion enregistrée dans la backlog unique ; placement U733 réexaminé mais pas annulé. Les catégories
+      sont proposées, pas des capacités supplémentaires.
+    application:
+      source_refs:
+      - U766
+      subdomain: subdomain-order-promising
+      moved_capabilities:
+      - D03.i
+      - D03.j
+      - D03.k
+      - D03.l
+      changed_nodes:
+      - universe-supply
+      - D01.c
+      - D03.i
+      - D03.j
+      - D03.k
+      - D03.l
+      - D03.m
+      - D04.i
+      - D04.k
+      - D06.b
+      - D07.a
+      - D04
+      - D01
+      - D06
+      - D03
+      - BHV006
+      - BHV016
+      - BHV066
+      - BHV067
+      - BHV068
+      - BHV069
+      - BHV070
+      - BHV071
+      - BHV072
+      - BHV073
+      - BHV074
+      - D18.a
+      - subdomain-plans
+      - subdomain-order-promising
+      remaining_scope: Arbitrages détaillés appliqués U767.
+      decision_intents:
+      - DEC-U766-CONTEXT-1
+      - DEC-U766-CONTEXT-2
+      - DEC-U766-CONTEXT-3
+      - DEC-U766-CONTEXT-4
+      - DEC-U766-CONTEXT-5
+      - DEC-U766-CONTEXT-6
+      - DEC-U766-CONTEXT-7
+      - DEC-U766-CONTEXT-8
+      - DEC-U766-CONTEXT-9
+      - DEC-U766-CONTEXT-10
+      - DEC-U766-CONTEXT-11
+      - DEC-U766-CONTEXT-12
+      - DEC-U766-CONTEXT-13
+      - DEC-U766-CONTEXT-14
+      - DEC-U766-CONTEXT-15
+      - DEC-U766-CONTEXT-16
+      - DEC-U766-CONTEXT-17
+      - DEC-U766-CONTEXT-18
+      - DEC-U766-subdomain-order-promising
+      - DEC-U766-D03.l
+      - DEC-U766-REL-U766-PRESENTS-PROMISING
+      - DEC-U766-REL-MEMBER-D03.i
+      - DEC-U766-REL-MEMBER-D03.j
+      - DEC-U766-REL-MEMBER-D03.k
+      - DEC-U766-REL-MEMBER-D03.l
+      - DEC-U766-FINAL-CONTEXT-1
+      - DEC-U766-FINAL-CONTEXT-2
+      - DEC-U766-FINAL-CONTEXT-3
+      - DEC-U766-FINAL-CONTEXT-4
+      - DEC-U766-FINAL-CONTEXT-5
+      - DEC-U766-FINAL-CONTEXT-6
+      - DEC-U766-FINAL-CONTEXT-7
+      - DEC-U766-FINAL-CONTEXT-8
+      - DEC-U766-FINAL-CONTEXT-9
+      - DEC-U766-FINAL-CONTEXT-10
+      - DEC-U766-FINAL-CONTEXT-11
+    publication_delivery:
+      state: applied
+      source_refs:
+      - U766
+      summary: Frontière et quatre capacités de promesse appliquées.
+      required_nodes:
+      - id: subdomain-order-promising
+        parent: universe-supply
+        fields:
+          name: Order Promising
+          definition: Évaluer les possibilités de satisfaction d’une demande et sélectionner une proposition de promesse,
+            en explicitant quantités, dates, conditions et conséquences économiques.
+      - id: D03.i
+        parent: subdomain-order-promising
+        fields:
+          name: Available-to-Promise (ATP)
+          category:
+            id: promise-evaluation
+            display_name: Promise Evaluation
+            order: 10
+      - id: D03.j
+        parent: subdomain-order-promising
+        fields:
+          name: Capable-to-Promise (CTP)
+          category:
+            id: promise-evaluation
+            display_name: Promise Evaluation
+            order: 10
+      - id: D03.k
+        parent: subdomain-order-promising
+        fields:
+          name: Profitable-to-Promise (PTP)
+          category:
+            id: promise-evaluation
+            display_name: Promise Evaluation
+            order: 10
+      - id: D03.l
+        parent: subdomain-order-promising
+        fields:
+          name: Promise Selection Decision
+          category:
+            id: promise-selection
+            display_name: Promise Selection
+            order: 20
+      - id: D01
+        fields:
+          definition: Établir et fiabiliser la référence de stock, ses mouvements, sa propriété, ses disponibilités et ses
+            engagements de quantité.
+      absent_nodes:
+      - D18
+  application_U767:
+    source_refs:
+    - U767
+    changed_nodes:
+    - D01.c
+    - D03.i
+    - D03.j
+    - D03.k
+    - D03.l
+    - D07.d
+    - D01
+    - BHV002
+    - BHV004
+    - BHV075
+    - BHV076
+    - operations-visibility
+    - BHV107
+    - BHV108
+    - BHV109
+    - BHV110
+    retired_nodes:
+      D18.a: D01.c
+      BHV001: D03.i
+      BHV003: D03.i
+    new_behaviors:
+    - BHV107
+    - BHV108
+    - BHV109
+    - BHV110
+    evaluation_behaviors:
+      BHV002: On-Hand ATP
+      BHV004: Projected ATP
+      BHV075: Supply-Based CTP
+      BHV076: Capacity-Constrained CTP
+      BHV107: Fulfillment Cost Evaluation
+      BHV108: Contextual Economic Impact Evaluation
+    selection_behaviors:
+    - BHV109
+    - BHV110
+    preserved_requirements:
+    - engagements et protections
+    - réseau admissible
+    - calendriers, délais et fraîcheur
+    - origines, confirmations et reliquats des apports
+    - absence de choix dans PTP
+    - absence de réaffectation dans le réexamen des promesses
+    decision_intents:
+    - DEC-U767-CONTEXT-1
+    - DEC-U767-CONTEXT-2
+    - DEC-U767-CONTEXT-3
+    - DEC-U767-CONTEXT-4
+    - DEC-U767-CONTEXT-5
+    - DEC-U767-CONTEXT-6
+    - DEC-U767-CONTEXT-7
+    - DEC-U767-CONTEXT-8
+    - DEC-U767-CONTEXT-9
+    - DEC-U767-CONTEXT-10
+    - DEC-U767-CONTEXT-11
+    - DEC-U767-CONTEXT-12
+    - DEC-U767-CONTEXT-13
+    - DEC-U767-CONTEXT-14
+    - DEC-U767-CONTEXT-15
+    - DEC-U767-CONTEXT-16
+    - DEC-U767-CONTEXT-17
+    - DEC-U767-CONTEXT-18
+    - DEC-U767-CONTEXT-19
+    - DEC-U767-CONTEXT-20
+    - DEC-U767-CONTEXT-21
+    - DEC-U767-CONTEXT-22
+    - DEC-U767-CONTEXT-23
+    - DEC-U767-CONTEXT-24
+    - DEC-U767-CONTEXT-25
+    - DEC-U767-TYPE-D03.i
+    - DEC-U767-TYPE-D03.j
+    - DEC-U767-TYPE-D03.k
+    - DEC-U767-PARENT-BHV002
+    - DEC-U767-PARENT-BHV004
+    - DEC-U767-PARENT-BHV075
+    - DEC-U767-PARENT-BHV076
+    - DEC-U767-PARENT-BHV107
+    - DEC-U767-PARENT-BHV108
+    - DEC-U767-PARENT-BHV109
+    - DEC-U767-PARENT-BHV110
+  closure_U767:
+    source_refs:
+    - U767
+    status: closed
+    scope: Les trois arbitrages actifs et la formalisation Evaluation sont appliqués et leurs obligations de publication contrôlées.
+    remaining_business_arbitrations: []
+    limits: Les formulations éditoriales proposées et la couverture réelle des SI restent distinctes de ces accords ; aucun
+      audit historique rouvert.
+status_reconciliation_U757:
+  source_refs:
+  - U753
+  - U750
+  - U756
+  - U757
+  reason: U733/U736/U750 appliqués ; lot propriété U756 appliqué ; seuls les arbitrages de visibilité et de promesse restent
+    ouverts dans audit_U751. Les sections historiques ne sont pas des tâches concurrentes.

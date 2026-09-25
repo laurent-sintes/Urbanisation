@@ -1,12 +1,13 @@
 id: demand-planning-review-U651
 date: '2026-09-23'
-status: proposed
+status: superseded_outside_domain_U673
 author: Codex
 source_refs:
 - U651
 - ELM556
 - ELM557
 - CMP218
+- U757
 target_id: D17.a
 finding: Classement sous Demand Management et type planning cohérents. Le scope laisse explicitement ouverts les arbitrages
   de la demande retenue ; BHV095 est le seul comportement nommé.
@@ -75,3 +76,12 @@ superseded_by_U673:
   - U656
   - U669
   - U673
+status_reconciliation_U757:
+  previous_status: proposed
+  reason: superseded_by_U673 retire le calcul des Demand Plans du domaine ; ingestion et visibilité appliquées U717.
+  source_refs:
+  - U673
+  - U717
+  - U757
+  note: Mise en cohérence du suivi ; ne vaut ni nouvel accord métier ni adoption des formulations historiques.
+  current_reference: modeles/backlog/plan-visibility-U714.yaml

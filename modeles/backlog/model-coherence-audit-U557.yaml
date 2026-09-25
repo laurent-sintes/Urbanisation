@@ -3,7 +3,8 @@ date: '2026-09-21'
 source_refs:
 - U557
 - CMP231
-status: audit terminé ; recommandations non appliquées et non adoptées
+- U757
+status: findings_followed_by_U560
 scope: Backlog hors Authoritative Data et ses descendants ; audit de cohérence et couverture à maille capacité, sans micro-règles
   ni preuve de réalisation installée.
 baseline: audits/2026-09-21-model-coherence-U557/baseline.yaml
@@ -2248,3 +2249,12 @@ follow_up_U565:
     arbitre commandes et prévisions.'
   remaining_open: Nom du Planning, sans impact sur la responsabilité désormais attribuée.
   evidence: modeles/backlog/supply-assignment-cases-U562.yaml
+status_reconciliation_U757:
+  previous_status: audit terminé ; recommandations non appliquées et non adoptées
+  reason: L’application des recommandations et le reliquat sont suivis dans model-consolidation-U560 ; le diagnostic historique
+    n’est pas une liste indépendante de changements à appliquer.
+  source_refs:
+  - U560
+  - U757
+  note: Mise en cohérence du suivi ; ne vaut ni nouvel accord métier ni adoption des formulations historiques.
+  current_reference: modeles/backlog/model-consolidation-U560.yaml

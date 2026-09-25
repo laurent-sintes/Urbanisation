@@ -8715,9 +8715,9 @@ terms:
     leur mise en action selon les règles et autorisations applicables.
   context: Sens de travail proposé, aligné sur la frontière analytique/opérationnelle U224 et la refonte D03 U235.
   notes: |-
-    [Replenishment Decision](model:D05.e) intègre les calculs des besoins nets et détermine les quantités et dates à retenir. La décision, la mise à jour transactionnelle, les Orders nécessaires, leurs promesses et les mouvements physiques restent distincts. Une application automatique est possible ; aucune création directe de Purchase Order ni validation humaine systématique n’est présumée.
+    [Replenishment](model:D05.e) intègre les calculs des besoins nets et détermine les quantités et dates à retenir. La décision, la mise à jour transactionnelle, les Orders nécessaires, leurs promesses et les mouvements physiques restent distincts. Une application automatique est possible ; aucune création directe de Purchase Order ni validation humaine systématique n’est présumée.
 
-    U313/U316 : dans le contexte retail discuté, distinguer le réassort continu de l’[implantation](glossary:TER079), dont les apports sont décidés par [Initial Stocking Decision](model:D05.g). Un produit couvrant les deux ne fusionne pas ces responsabilités.
+    U313/U316 : dans le contexte retail discuté, distinguer le réassort continu de l’[implantation](glossary:TER079), dont les apports sont décidés par [Replenishment](model:D05.e). Un produit couvrant les deux ne fusionne pas ces responsabilités.
   source_refs:
   - U221
   - U224
@@ -9236,7 +9236,7 @@ terms:
   notes: |-
     L’existant rapporté utilise deux saisons annuelles, été/hiver. Des périodes plus fines ou capsules sont envisagées pour la cible, sans pratique installée déduite. Rapprochement marché : Initial Allocation chez SAP et RELEX ; allocation désigne ici la distribution retail vers les magasins, pas les enveloppes de protection ni automatiquement Supply Assignment. Décider les apports et réaliser la livraison restent distincts.
 
-    U316 : Initial Stocking est le terme anglais adopté pour l’implantation. [Initial Stocking Decision](model:D05.g) porte la décision ; [Replenishment Decision](model:D05.e) reste distincte pour le réassort continu. Initial Distribution est une alternative de marché documentée, pas le nom retenu.
+    U316 : Initial Stocking est le terme anglais adopté pour l’implantation. [Replenishment](model:D05.e) porte la décision ; [Replenishment](model:D05.e) reste distincte pour le réassort continu. Initial Distribution est une alternative de marché documentée, pas le nom retenu.
   source_refs:
   - U310
   - CMP106
@@ -9370,8 +9370,8 @@ terms:
   context: Terme métier Beaumanoir défini par Laurent U310.
   notes: Le sens local est plus précis que Replenishment pris génériquement. Le réassort magasin ne désigne pas ici la seule
     mise en rayon depuis la réserve. Les seuils ne permettent pas de déduire une formule min/max exacte, une cadence fixe
-    ou une validation humaine systématique. Le calcul des apports relève de Replenishment Decision ; l’application aux Orders
-    et la livraison gardent leurs responsabilités.
+    ou une validation humaine systématique. Le calcul des apports relève de Replenishment ; l’application aux Orders et la
+    livraison gardent leurs responsabilités.
   source_refs:
   - U310
   - CMP106

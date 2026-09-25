@@ -12,6 +12,8 @@ source_refs:
 - U713
 - U714
 - U717
+- U756
+- U767
 field: fields.nature
 scope: Une nature principale explicite par capacité, selon le résultat métier dominant. Aucun nouveau niveau ni reclassement
   des couches.
@@ -97,6 +99,34 @@ types:
   review:
     state: accepted
     note: Type et frontière adoptés cumulativement U717.
+- id: ledger
+  name: Ledger
+  label_fr: Registre
+  definition: Tenir un registre métier durable de faits reconnus, datés et justifiés, en assurant leur traçabilité et leurs
+    corrections.
+  boundary: Integration reçoit les faits, Decision détermine la réponse métier, Ledger tient le registre reconnu et Knowledge
+    compose la connaissance. Aucun journal technique, comptabilité générale ou technologie imposés.
+  source_refs:
+  - U752
+  - U756
+  - CMP296
+  - CMP297
+  market_refs:
+  - ELM736
+  - ELM737
+  - ELM739
+  - ELM764
+  review:
+    state: partial
+    adopted_scope: Existence et définition du type Ledger ; registres Inventory et Inventory Ownership U756.
+    proposed_scope: Compléments rédactionnels.
+- id: evaluation
+  name: Evaluation
+  label_fr: Évaluation
+  definition: Type de capacité qui évalue des possibilités, leur faisabilité ou leurs conséquences à partir de faits, règles
+    et hypothèses, en explicitant résultats, conditions et incertitudes, sans sélectionner une réponse ni engager sa réalisation.
+  boundary: Évaluer sans choisir, confirmer, réserver ni affecter. Decision conserve ses calculs internes ; aucune décomposition
+    systématique par formule.
 presentation:
   order: Partition stable des capacités de chaque domaine ou référentiel ; non-décisions puis décisions, ordre relatif conservé
     dans chaque partie.
@@ -232,3 +262,13 @@ history_before_U586:
     nœud.
 current_type_scope_U586: Sept natures ; aucune requalification des capacités du modèle ni modification des publications historiques.
   Les six natures citées dans la comparaison U449 ci-dessous décrivent son état daté.
+evaluation_U767:
+  status: applied
+  capabilities:
+  - D03.i
+  - D03.j
+  - D03.k
+  methodology_term: MOD021
+  source_refs:
+  - U760
+  - U767

@@ -13,7 +13,8 @@ source_refs:
 - CMP245
 - U581
 - CMP246
-status: placement_principle_validated_detailed_structure_proposed
+- U757
+status: structure_superseded_by_applied_matching_U750
 proposed_area:
   current_id: D17
   current_name: Supply Planning
@@ -496,3 +497,13 @@ implementation_U631:
   application_behavior: D02.e
   boundary: Les propositions historiques ci-dessus conservent leur portée ; la présente étape ne valide pas tous les noms
     ni les dix comportements proposés. Les cinq actes U578 restent à expliciter.
+status_reconciliation_U757:
+  previous_status: placement_principle_validated_detailed_structure_proposed
+  reason: La structure proposée a été remplacée par trois catégories et dix capacités appliquées U750 ; les anciennes formulations
+    gardent leur statut de preuve.
+  source_refs:
+  - U749
+  - U750
+  - U757
+  note: Mise en cohérence du suivi ; ne vaut ni nouvel accord métier ni adoption des formulations historiques.
+  current_reference: modeles/backlog/matching-refactoring-U747.yaml

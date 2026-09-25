@@ -14,12 +14,14 @@ from pathlib import Path
 import re
 
 try:
+    from .business_scenarios import validate_scenarios
     from .git_history import read_bytes
     from .glossary import validate as validate_glossary
     from .json_contract import validate as validate_contract
     from .release_catalog import resolve_release
     from .structured_io import read as read_document, working_path
 except ImportError:
+    from business_scenarios import validate_scenarios
     from git_history import read_bytes
     from glossary import validate as validate_glossary
     from json_contract import validate as validate_contract
@@ -29,7 +31,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 PANORAMA_COLLECTIONS = ("objects", "flows", "information_authorities", "decision_responsibilities")
-CAPABILITY_NATURES = {'integration', 'action', 'management', 'knowledge', 'orchestration', 'planning', 'policy', 'decision'}
+CAPABILITY_NATURES = {'evaluation', 'ledger', 'integration', 'action', 'management', 'knowledge', 'orchestration', 'planning', 'policy', 'decision'}
 BEHAVIOR_NATURES = {'policy_strategy', 'process_variant', 'intervention_mechanism', 'business_scope', 'decision_dimension', 'business_effect', 'planning_practice'}
 REQUEST_ORIGINS = {'frontoffice', 'backoffice'}
 BEHAVIOR_ASPECTS = {'trigger', 'activity'}
@@ -132,6 +134,7 @@ def validate_urbanism(model, sources, schema=None):
     errors.extend(validate_reference_policy(model))
     errors.extend(validate_information(model))
     nodes = _index(model["nodes"], "nodes", errors)
+    errors.extend(validate_scenarios(nodes))
     relations = _index(model["relations"], "relations", errors)
     for item in model['nodes'] + model['relations']:
         if 'market_comparisons' in item.get('fields', {}):
@@ -173,6 +176,19 @@ def validate_urbanism(model, sources, schema=None):
             errors.append(f"nodes/{identifier}: urbanism_level requires an explicit level_ref")
         if level is not None and role != "urbanism_level":
             errors.append(f"nodes/{identifier}: level_ref is not a presentation grouping")
+    # U757 opts current models into exhaustive presentation categories; frozen models remain unchanged.
+    if any(p.get('id') == 'PRINCIPLE-CAPABILITY-CATEGORY' for p in model.get('principles', [])):
+        for identifier, node in nodes.items():
+            if node.get('kind') != 'capability':
+                continue
+            category = node.get('fields', {}).get('category')
+            if (not isinstance(category, dict)
+                    or not isinstance(category.get('id'), str)
+                    or re.fullmatch(r'[a-z][a-z0-9-]*', category['id']) is None
+                    or not isinstance(category.get('display_name'), str)
+                    or not category['display_name'].strip()
+                    or type(category.get('order')) is not int):
+                errors.append(f'nodes/{identifier}: capability category requires id, display_name and integer order')
     # Opt-in convention: immutable publications before U449 remain valid unchanged.
     if any(p.get('id') == 'PRINCIPLE-BEHAVIOR-NATURE' for p in model.get('principles', [])):
         for identifier, node in nodes.items():

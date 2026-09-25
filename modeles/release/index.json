@@ -1,8 +1,12 @@
 {
   "schema_version": "1.0.0",
   "model_id": "flow-urbanism",
-  "current": "urbanisation-v028-2026-09-24-152642.yaml",
+  "current": "urbanisation-v029-2026-09-25-074351.yaml",
   "publications": [
+    {
+      "descriptor": "urbanisation-v029-2026-09-25-074351.yaml",
+      "sha256": "b288f7d0eed4b1b4c1c47723bbaccc2909e1c4be5f424a56c5e504cbaf69a9d6"
+    },
     {
       "descriptor": "urbanisation-v028-2026-09-24-152642.yaml",
       "sha256": "31437c9c634167e1aaa9a075f67f226ad107be1358f87ce0323130bb1c1a9766"

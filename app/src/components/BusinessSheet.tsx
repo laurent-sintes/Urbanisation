@@ -42,11 +42,11 @@ export function BusinessSheet({ model, node, onShowMarket }: { model: PublishedM
   const aspect = behaviorAspect(node);
   const otherChildren = children.filter(child => child.kind !== 'behavior');
   const fields = businessFields(node.fields);
-  const examples = businessExamples(node.fields);
+  const examples = businessExamples(node.fields, id => model.nodeById.get(id)?.fields);
   const marketCount = (node.fields.market_comparisons as readonly MarketComparison[] | undefined)?.length || 0;
   const relations = relatedTo(model, node.id);
   const [scopeSummary, ...scopeDetails] = (fields.scope || '').trim().split(/\n\s*\n/);
-  const sections = [examples.length > 0 && ['examples', 'Exemples'], fields.scope && ['scope', 'Périmètre'], relations.length > 0 && ['interactions', 'Interactions'], behaviors.length > 0 && ['behaviors', 'Comportements'], ['market_comparisons', 'Sources d’inspiration']].filter(Boolean) as string[][];
+  const sections = [examples.length > 0 && ['examples', 'Scénarios métier'], fields.scope && ['scope', 'Périmètre'], relations.length > 0 && ['interactions', 'Interactions'], behaviors.length > 0 && ['behaviors', 'Comportements'], ['market_comparisons', 'Sources d’inspiration']].filter(Boolean) as string[][];
   const jump = (field: string) => {
     if (field === 'market_comparisons') { onShowMarket(); return; }
     const target = document.getElementById(`field-${node.id}-${field}`);

@@ -1,5 +1,5 @@
 id: MATCHING-REFACTORING-U747
-status: target_structure_validated_U749_implementation_pending
+status: applied_U750
 source_refs:
 - U745
 - U747
@@ -7,6 +7,8 @@ source_refs:
 - U748
 - U749
 - CMP293
+- U750
+- CMP294
 canonical_model: modeles/backlog/model.yaml
 scope:
   subdomain: D03
@@ -150,6 +152,7 @@ proposal:
     evidence_limits: Microsoft documente une fonction conditionnelle à la version et au paramétrage ; dans FLOW, protection
       ne signifie ni réservation implicite ni garantie contre un aléa physique.
     validation: Principe du comportement validé U749 ; nom anglais et description détaillée proposés.
+    id: BHV102
   - key: reassign
     name: Supply Reassignment
     definition: Revoir les liens ressources-besoins autorisés à évoluer afin de produire un plan cohérent lorsque la situation
@@ -163,6 +166,7 @@ proposal:
     evidence_limits: Recalcul des affectations ; le réexamen des confirmations de type BOP reste dans Availability & Promising.
       Adjust Plan pilote la révision ; ce comportement choisit les liens révisés.
     validation: Principe du comportement validé U749 ; nom anglais et description détaillée proposés.
+    id: BHV103
   source_refs:
   - ELM757
   - ELM758
@@ -1383,7 +1387,7 @@ acceptance_scenarios:
   expect: Cadrage, arrêt, relance, suivi et application restent disponibles ; aucun effet de la simulation sur les Orders.
 validation_package:
   source: U749
-  status: recorded_on_proposal
+  status: captured_on_canonical_model_U750
   approved:
     categories:
     - id: master-plan-management
@@ -1432,12 +1436,11 @@ validation_package:
       - consolidation des stocks dispersés
   approved_sha256: 7def2557a30670ff9ba68371b0ace555834a6dc4cbc4ee455493aadc98074819
   not_implied:
-  - types ou descriptions détaillées nouvellement proposés
-  - élargissement exact de Demand Prioritization aux prévisions sans Order
-  - détail des successions de Initial Stocking et Order Rescheduling
-  - application canonique immédiate, release, commit ou push
-  capture_note: L’accord porte sur la cible préparée. record_intents capturera les champs correspondants sur l’état canonique
-    final lors de l’application ; ne pas capturer les anciennes valeurs du modèle actuel.
+  - Approbation globale des rédactions nouvelles et types proposés
+  - release, commit ou push
+  capture_note: Accords U749 capturés sur les noms, catégories et rattachements ; la promotion en capacité est aussi tracée
+    dans la succession du modèle final. Types et rédactions nouvelles restent proposés. Réexamens limités aux valeurs antérieures
+    strictement identiques ; rattachement retiré BHV077 suspendu avec provenance.
   method: Conserver Planning mobilise des capacités Decision ; U749 remplace la proposition de réduction à trois capacités,
     pas les frontières métier.
 implementation_sequence:
@@ -1468,3 +1471,241 @@ supersession:
   reason: Les trois ensembles sont des catégories ; conserver des capacités métier autonomes qui contribuent au même plan.
   history: État antérieur conservé par Git s’il est enregistré ; l’accord U749 et U748 tracent la correction. Aucun accord
     sur la cible à trois capacités.
+application:
+  source: U750
+  retired_nodes:
+    D05.g: D05.e
+    BHV077: BHV006
+  new_behaviors:
+    preserve: BHV102
+    reassign: BHV103
+  removed_relations:
+  - REL-MEMBER-D05.g
+  - REL-BEHAVIOR-BHV077
+  history_commit: 0df52a35fce3d518fb50f00df27c37bce0d94442
+  note: Descriptions et détails techniques proposés ; noms, catégories et capacités validés U749 appliqués au catalogue. L’application
+    U750 autorise la succession préparée ; aucune publication.
+  decision_intents:
+  - DEC-U750-CONTEXT-1
+  - DEC-U750-CONTEXT-2
+  - DEC-U750-CONTEXT-3
+  - DEC-U750-CONTEXT-4
+  - DEC-U750-CONTEXT-5
+  - DEC-U750-CONTEXT-6
+  - DEC-U750-CONTEXT-7
+  - DEC-U750-CONTEXT-8
+  - DEC-U750-CONTEXT-9
+  - DEC-U750-CONTEXT-10
+  - DEC-U750-CONTEXT-11
+  - DEC-U750-CONTEXT-12
+  - DEC-U750-CONTEXT-13
+  - DEC-U750-CONTEXT-14
+  - DEC-U750-CONTEXT-15
+  - DEC-U750-CONTEXT-16
+  - DEC-U750-CONTEXT-17
+  - DEC-U749-U750-D05.f
+  - DEC-U749-U750-PARENT-D05.f
+  - DEC-U749-U750-BHV006
+  - DEC-U749-U750-PARENT-BHV006
+  - DEC-U749-U750-D02.e
+  - DEC-U749-U750-PARENT-D02.e
+  - DEC-U749-U750-D03.m
+  - DEC-U749-U750-PARENT-D03.m
+  - DEC-U749-U750-D03.o
+  - DEC-U749-U750-PARENT-D03.o
+  - DEC-U749-U750-D05.e
+  - DEC-U749-U750-PARENT-D05.e
+  - DEC-U749-U750-D05.c
+  - DEC-U749-U750-PARENT-D05.c
+  - DEC-U749-U750-D05.a
+  - DEC-U749-U750-PARENT-D05.a
+  - DEC-U749-U750-D05.d
+  - DEC-U749-U750-PARENT-D05.d
+  - DEC-U749-U750-D05.h
+  - DEC-U749-U750-PARENT-D05.h
+  - DEC-U749-U750-PARENT-BHV102
+  - DEC-U749-U750-PARENT-BHV103
+publication_delivery:
+  state: applied
+  source_refs:
+  - U749
+  - U750
+  summary: 'Matching : trois catégories, dix capacités et stratégies différenciantes ; master plan commun.'
+  absent_nodes:
+  - D05.g
+  - BHV077
+  required_nodes:
+  - id: D05.f
+    parent: D03
+    fields:
+      name: Master Planning
+      nature: planning
+      category:
+        id: master-plan-management
+        display_name: Master Plan Management
+        order: 10
+  - id: D04.s
+    parent: D05.f
+    fields:
+      name: Scope Planning
+  - id: BHV097
+    parent: D05.f
+    fields:
+      name: Schedule Planning
+  - id: BHV098
+    parent: D05.f
+    fields:
+      name: Run Planning
+  - id: BHV099
+    parent: D05.f
+    fields:
+      name: Stop Planning
+  - id: BHV100
+    parent: D05.f
+    fields:
+      name: Rerun Planning
+  - id: BHV101
+    parent: D05.f
+    fields:
+      name: Monitor Plan
+  - id: BHV016
+    parent: D05.f
+    fields:
+      name: Adjust Plan
+  - id: BHV006
+    parent: D03
+    fields:
+      name: Simulation & Analysis
+      nature: planning
+      category:
+        id: master-plan-management
+        display_name: Master Plan Management
+        order: 10
+  - id: D02.e
+    parent: D03
+    fields:
+      name: Plan Application
+      nature: action
+      category:
+        id: master-plan-management
+        display_name: Master Plan Management
+        order: 10
+  - id: D03.m
+    parent: D03
+    fields:
+      name: Demand Prioritization
+      nature: decision
+      category:
+        id: supply-matching
+        display_name: Supply Matching
+        order: 20
+  - id: D03.o
+    parent: D03
+    fields:
+      name: Supply Assignment
+      nature: decision
+      category:
+        id: supply-matching
+        display_name: Supply Matching
+        order: 20
+  - id: BHV102
+    parent: D03.o
+    fields:
+      name: Commitment-Preserving Assignment
+  - id: BHV103
+    parent: D03.o
+    fields:
+      name: Supply Reassignment
+  - id: D05.e
+    parent: D03
+    fields:
+      name: Replenishment
+      nature: decision
+      category:
+        id: supply-matching
+        display_name: Supply Matching
+        order: 20
+  - id: BHV083
+    parent: D05.e
+    fields:
+      name: Requirement-based Replenishment
+  - id: BHV084
+    parent: D05.e
+    fields:
+      name: Target-based Replenishment
+  - id: BHV085
+    parent: D05.e
+    fields:
+      name: Replenishment Adjustment
+  - id: D05.c
+    parent: D03
+    fields:
+      name: Stock Redistribution
+      nature: decision
+      category:
+        id: supply-matching
+        display_name: Supply Matching
+        order: 20
+  - id: BHV024
+    parent: D05.c
+    fields:
+      name: Inventory Rebalancing
+  - id: BHV025
+    parent: D05.c
+    fields:
+      name: Stock Consolidation
+  - id: D05.a
+    parent: D03
+    fields:
+      name: Inventory Target Optimization
+      nature: decision
+      category:
+        id: policy-optimization
+        display_name: Policy Optimization
+        order: 30
+  - id: BHV026
+    parent: D05.a
+    fields:
+      name: Store Demand & Supply Optimization
+  - id: BHV027
+    parent: D05.a
+    fields:
+      name: Distribution Center Demand & Supply Optimization
+  - id: BHV028
+    parent: D05.a
+    fields:
+      name: Multi-Echelon Demand & Supply Optimization
+  - id: D05.d
+    parent: D03
+    fields:
+      name: Group Protection Optimization
+      nature: decision
+      category:
+        id: policy-optimization
+        display_name: Policy Optimization
+        order: 30
+  - id: D05.h
+    parent: D03
+    fields:
+      name: Reservation Policy Optimization
+      nature: decision
+      category:
+        id: policy-optimization
+        display_name: Policy Optimization
+        order: 30
+  - id: BHV032
+    parent: D05.h
+    fields:
+      name: Milestone-Based Reservation Policy
+  - id: BHV033
+    parent: D05.h
+    fields:
+      name: Time-Fenced Reservation Policy
+  - id: BHV034
+    parent: D05.h
+    fields:
+      name: Demand-Differentiated Reservation Policy
+  - id: BHV035
+    parent: D05.h
+    fields:
+      name: Risk-Adaptive Reservation Policy

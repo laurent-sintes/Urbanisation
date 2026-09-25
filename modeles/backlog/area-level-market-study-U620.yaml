@@ -4,7 +4,8 @@ source_refs:
 - U620
 - U621
 - CMP265
-status: research_completed_recommendation_not_adopted
+- U757
+status: terminology_superseded_by_subdomain_U673
 author: Codex
 scope: Définition et justification du niveau intermédiaire entre Domain et Capability ; comparaison élargie avant toute migration.
 sources:
@@ -190,7 +191,6 @@ flow_examples:
 canonical_model_changed: false
 approval_boundary: U620/U621 autorisent l’étude. La définition proposée, les tests et les formulations d’exemples ne sont
   pas des accords sur MOD013 ni sur les Areas.
-
 clarification_U622:
   source_refs:
   - U622
@@ -218,7 +218,6 @@ clarification_U622:
       access: PDF primaire ouvert ; métamodèle Architecture Entity Cards
       support: Business Capability Group L2 attesté dans le métamodèle SKF.
       limit: Pratique d’entreprise présentée à The Open Group, pas norme TOGAF ni consensus universel.
-
 naming_review_U623:
   source_refs:
   - U623
@@ -260,7 +259,6 @@ naming_review_U623:
     locator: '§5.2 : Outcome'
     support: Outcome désigne un résultat ou produit final conséquent à une action ou un événement ; pas une Area.
   canonical_name_changed: false
-
 adoption_U624:
   source_refs:
   - U624
@@ -286,3 +284,12 @@ adoption_U624:
     cible nodes/relations et ne capture pas les entrées méthodologiques ; accord champ par champ conservé dans cette annexe.
   technical_alignment: Les codes techniques area et les restitutions publiées restent ceux de leur schéma/snapshot ; leur
     migration sera traitée lors de la mise en cohérence du catalogue.
+status_reconciliation_U757:
+  previous_status: research_completed_recommendation_not_adopted
+  reason: Le niveau courant est Subdomain ; l’ancienne proposition Area n’est plus un choix terminologique en attente. Les
+    comparaisons historiques restent conservées.
+  source_refs:
+  - U673
+  - U757
+  note: Mise en cohérence du suivi ; ne vaut ni nouvel accord métier ni adoption des formulations historiques.
+  current_reference: modeles/backlog/capability-subdomain-audit-U667.yaml

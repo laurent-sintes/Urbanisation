@@ -12,6 +12,7 @@ source_refs:
 - U716
 - U717
 - U718
+- U757
 sources:
 - id: ELM710
   reference: MKT13
@@ -187,6 +188,10 @@ publication_delivery:
     fields:
       name: Master Data Ingestion
       nature: integration
+      category:
+        id: integration
+        display_name: Intégration
+        order: 10
   - id: operations-visibility
     fields:
       name: Operations Visibility
@@ -223,3 +228,12 @@ publication_delivery:
     parent: master-data-ingestion
     fields:
       name: Design Ingestion
+category_confirmation_U757:
+  status: applied
+  capability: master-data-ingestion
+  nature: integration
+  category:
+    id: integration
+    display_name: Intégration
+    order: 10
+  note: Le type existait déjà U717 ; la catégorie manquante est ajoutée U757.

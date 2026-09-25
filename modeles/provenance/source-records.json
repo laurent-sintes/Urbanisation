@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "captured_at": "2026-09-24",
+  "captured_at": "2026-09-25",
   "records": [
     {
       "id": "U01",
@@ -5993,6 +5993,150 @@
       "line": 18431,
       "content_sha256": "c0d3f374a4ac7bc132b97c743b89a6002a6955cb2f75fb1cd700263a25c7cdbb",
       "captured_text": "## U749\n\n**id**\n\nU749\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la cible Matching à trois catégories et dix capacités\n\n**texte**\n\nC'est bcp mieux. Je valide\n\n**contexte et portée**\n\nAccord sur la proposition complète présentée après U748 : catégories Master Plan Management, Supply Matching, Policy Optimization ; dix capacités nommées ; stratégies comme comportements, exemples de Supply Assignment, Replenishment et Stock Redistribution ; master plan commun. Cet accord remplace la cible à trois capacités U747. Les descriptions et migrations nouvelles non présentées gardent leur qualification proposée. Préparation à valider : cet accord est enregistré dans le dossier, sans publication ni application immédiate implicite."
+    },
+    {
+      "id": "U750",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u750",
+      "line": 18454,
+      "content_sha256": "3ec337fc492f873bfd25b5e01a545c12921cee3c5cdda71c96efb207577f23ed",
+      "captured_text": "## U750\n\n**id**\n\nU750\n\n**date**\n\n2026-09-25\n\n**titre**\n\nAppliquer le refactoring Matching validé\n\n**texte**\n\nLance le refacto\n\n**contexte et portée**\n\nAppliquer au modèle canonique la cible complète U749 : trois catégories et dix capacités, comportements différenciants, master plan commun et frontières conservées. Les modalités détaillées préparées dans le dossier U747 sont mises en œuvre sans étendre les accords aux rédactions nouvelles. Aucun commit, push ou release implicite."
+    },
+    {
+      "id": "U751",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u751",
+      "line": 18477,
+      "content_sha256": "289b331112b0f18ef6019b56f5a7ceb9d0e60941aa15939f17dd47bc3ad25345",
+      "captured_text": "## U751\n\n**id**\n\nU751\n\n**date**\n\n2026-09-25\n\n**titre**\n\nAuditer Inventory par responsabilités métier, visibilité et calcul\n\n**texte**\n\nSous domaine Inventory Management :\n\n- Inventory Ownership Transfer : je vois l'idée de loin mais je n'arrive pas à comprendre pourquoi c'est une capacité. Je rappelle qu'une capacité est ce que sait faire l'entreprise en dehors de l'organisation et des outils. Pour être plus précis, il faut imaginer l'entreprise avec uniquement des humains avec du papier et un stylo et se poser la question : que font il pour faire tourner l'entreprise ?Les domaines sont un découpage ni organisationnelle ni technologique. C'est uniquement un regroupement par finalité ou connaissance ou problématique. Il faut s'imaginer que des humains se regroupent pour partager et collaborer. Grace à l'informatique et son pouvoir de mutualisation et d'automatisation, l'organisation d'entreprise ne fitte pas sur les domaines mais c'est normal.\n- Inventory Visibility et Supply Visibility pourraient être rapprochés : je veux ton avis.\n- ATP, CTP, PTP, ce n'est pas un type visibility, c'est un type calcul ou décision, comme Promise Selection qui devrait s'appeler Promise Selection Decision à mon avis.\n\nAudite  le sous domaine stp\n\n**contexte et portée**\n\nCritère méthodologique explicite : capacités indépendantes des outils et de l’organisation ; domaines regroupés par finalité, connaissance ou problématique, sans organigramme implicite. Audit demandé : autonomie du transfert de propriété, rapprochement des visibilités, distinction calcul/décision et nom Promise Selection Decision. La classification Knowledge des calculs est contestée ; pas encore d’accord sur un nouveau type Calculation ni sur les fusions exactes. Préparer un diagnostic et une proposition, sans release ni application canonique de l’audit."
+    },
+    {
+      "id": "U752",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u752",
+      "line": 18506,
+      "content_sha256": "d14d358a0bb568335974b076e6a4819d2668699e32e0c76ed555f9daf855fa5c",
+      "captured_text": "## U752\n\n**id**\n\nU752\n\n**date**\n\n2026-09-25\n\n**titre**\n\nReconnaître les registres comme actifs métier et proposer le type Ledger\n\n**texte**\n\n\"Microsoft décrit un journal de changement de propriété  \" => L'idée est fantastique, j'aimerais l'intégrer. Un type de capacité \"ledger\" qui recense les ledger pourrait être une bonne idée. Je pars du principe que les humains ont un stylo des calepins. Certains deviennent des assets de l'entreprise : Orders, ledger, données aggrégés => pas choquant de l'avoir dans la cartographie métier\n\n**contexte et portée**\n\nLaurent souhaite intégrer l’idée du journal de propriété et propose un type Ledger. Orders, registres et données agrégées sont des actifs métier légitimes, indépendamment des outils. Corriger la proposition Action pour Inventory Ledger et le retrait sans représentation propre du journal de propriété. Les noms, frontières des registres et modalités du nouveau type ci-après restent à préciser ; pas de validation globale de l’audit U751."
+    },
+    {
+      "id": "U753",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u753",
+      "line": 18529,
+      "content_sha256": "4ac61015fdf7745adbf49150e50fc1f25cbcc0e481b05e01f2a169e4433b4e29",
+      "captured_text": "## U753\n\n**id**\n\nU753\n\n**date**\n\n2026-09-25\n\n**titre**\n\nIntégrer les actifs métier dans la définition de capacité\n\n**texte**\n\nmets à jour la définition de capacité également\n\n**contexte et portée**\n\nAppliquer à la définition méthodologique de Capability les précisions U751/U752 : indépendance organisation/outillage, critère humains-papier-stylo, légitimité des Orders, registres et données agrégées comme actifs métier portés dans la cartographie. Actualiser le principe canonique correspondant et les conventions ; aucun nouveau type technique ni nouveau découpage d’Inventory implicitement validé."
+    },
+    {
+      "id": "U754",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u754",
+      "line": 18552,
+      "content_sha256": "d9edebb944f66c23e0a8d43fcd304ff4054a41ddf848a50929f0d6442977b250",
+      "captured_text": "## U754\n\n**id**\n\nU754\n\n**date**\n\n2026-09-25\n\n**titre**\n\nDistinguer décision de transfert et registre de propriété\n\n**texte**\n\nDu coup, on ne devrait pas avoir ce fameux ledger de changement de propriété ? On pourrait imaginer une capa décision qui écoute les processus soutenus par les orders pour détecter les changements de propriétaire.\n\nQue dit microsoft ? Si c'est ok, comment mettre à jour le sous domaine en ce sens ?\n\n**contexte et portée**\n\nÉtudier la séparation entre réception des faits, détermination du changement de propriété et tenue du registre. Comparaison Microsoft et proposition de mise à jour du sous-domaine ; ne vaut pas validation globale de l’audit Inventory ni publication."
+    },
+    {
+      "id": "U755",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u755",
+      "line": 18577,
+      "content_sha256": "00bacdf55f445de28ad86c376b7923bebede5d404746b89c28cf8abd03562c96",
+      "captured_text": "## U755\n\n**id**\n\nU755\n\n**date**\n\n2026-09-25\n\n**titre**\n\nPortée contractuelle et processus du registre de propriété\n\n**texte**\n\nCe journal est interessant car les événements qui provoquent des changement de propriété dépend des contrats (consignation ou sans), des processus, de la douane etc.\n\n**contexte et portée**\n\nPrécision métier : le registre et la détermination des changements de propriété dépassent la consignation ; considérer conditions contractuelles, processus et faits douaniers pertinents. Ne pas interpréter chaque événement douanier comme un transfert automatique ni cette précision comme un accord global sur les propositions de l’audit."
+    },
+    {
+      "id": "U756",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u756",
+      "line": 18600,
+      "content_sha256": "80eccb05dcd18fea4610f2be7190ab175e0502bb04d27ebfd072caee7125318e",
+      "captured_text": "## U756\n\n**id**\n\nU756\n\n**date**\n\n2026-09-25\n\n**titre**\n\nValider le lot décision et registres de propriété\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif U752–U755 : type Ledger, Inventory Ledger et Inventory Ownership Ledger distincts, Inventory Ownership Transfer Decision, Tracking pour la réception des faits, conditions Agreement, actes et résultats via Orders/Fulfilment, visibilité par propriétaire. Périmètre au-delà de la consignation : achats/ventes, transit, échéances et faits douaniers pertinents sans transfert automatique déduit de leur seul statut. Préserver consommation/échéance et couvrir les autres jalons contractuels ; les nouvelles formulations détaillées restent proposées. N’inclut pas les autres pistes de l’audit U751 (fusion des Visibility, Calculation, renommages ATP/CTP/PTP/Promise Selection). Appliquer ce lot au catalogue et conserver sa garde de publication ; aucune release implicite."
+    },
+    {
+      "id": "U757",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u757",
+      "line": 18623,
+      "content_sha256": "c67e2715945a3c7fa57fa4d11fc367b52a546febc8fd43d78b0a4e7b5a6aa51c",
+      "captured_text": "## U757\n\n**id**\n\nU757\n\n**date**\n\n2026-09-25\n\n**titre**\n\nHarmoniser les statuts et généraliser les catégories de capacités\n\n**texte**\n\nOk pour remettre les statuts en cohérence.\n\nJe rajoute aussi :\n\nMaster data : la capacité d'ingestion devrait être de type intégration et mise dans une catégorie intégration.\nD'un point de vue général, je souhaite que toutes les capacités soient associées à une catégorie.\n\nEnsuite on va discuter ATP / CTP / PTP pour clore le sujet\n\n**contexte et portée**\n\nAutorise la mise en cohérence des statuts des annexes avec les accords, clôtures et applications effectives, sans transformer des propositions non arbitrées en décisions ni créer une seconde backlog. Confirme Master Data Ingestion de type Integration et impose sa catégorie Intégration. Généralise la présence d’une catégorie à toutes les capacités ; les classements complémentaires relèvent de la mise en œuvre de présentation et ne modifient pas leurs responsabilités. ATP/CTP/PTP restent ouverts pour une discussion ultérieure ; aucune release demandée."
+    },
+    {
+      "id": "U758",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u758",
+      "line": 18653,
+      "content_sha256": "836bef11c28e5dac6c9cab1facf7823df9802f414de65cdb3e8d3d463adc3d92",
+      "captured_text": "## U758\n\n**id**\n\nU758\n\n**date**\n\n2026-09-25\n\n**titre**\n\nÉtudier la rétention et la libération groupée des ordres logistiques\n\n**texte**\n\nJe pense qu'il manque quelque chose dans le fullfilment Orchestration : l'optimisation de l'envoi des ordres logistiques. L'idée est d'en faire une rétention pour envoyer les ordres en une fois à l'entrepot. C'est plus facile pour l'entrepot de tout recevoir en une seule fois pour organiser le travail. L'autre raison c'est dans le cas d'entrepots spécialisés B2B, on retient les ordres de préparation pour les envoyer en une fois quand on sait à l'avance que c'est pour un gros client et que c'est plus interessant de traiter la commande en entier pour packager une seule palette par exemple.\n\nTu peux vérifier le marché pour gérer cette capacité d'optimisation dans le cadre de l'orchestration ?\n\n**contexte et portée**\n\nDemande d’étude marché et de proposition : arbitrer la rétention puis libération groupée d’ordres logistiques, pour organiser la charge d’entrepôt ou consolider le traitement d’un client B2B. Distinguer décision d’orchestration, transmission des ordres, consolidation de préparation/expédition et vagues internes du WMS. Aucun changement de catalogue ni accord sur un nouveau nom implicitement demandé. ATP/CTP/PTP restent ouverts."
+    },
+    {
+      "id": "U759",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u759",
+      "line": 18678,
+      "content_sha256": "b1b959aa9969f0581c48126daa01aaaeb4d14f5c7cf9cb54c24423644cf52208",
+      "captured_text": "## U759\n\n**id**\n\nU759\n\n**date**\n\n2026-09-25\n\n**titre**\n\nValider la décision de libération des ordres de prestation\n\n**texte**\n\nJe valide !\n\n**contexte et portée**\n\nAccord cumulatif sur la proposition U758 : Service Order Release Decision, type Decision, sous Fulfilment Orchestration, catégorie Coordonner et adapter ; comportements Batch Release et Consolidated Release. Décider quels ordres retenir/libérer ensemble et quand, en respectant promesse et affectations ; Process Orchestration applique. Les familles Picking/Packing portent le traitement commun requis, sans confondre libération, expédition, palette et vagues internes WMS. Paramètres de rétention et complétude restent des règles. Application canonique autorisée ; aucune release implicite."
+    },
+    {
+      "id": "U760",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u760",
+      "line": 18701,
+      "content_sha256": "94316ba05067e762374e52413435c1f781cfa8b871259baab9d5b8086e3e3ca2",
+      "captured_text": "## U760\n\n**id**\n\nU760\n\n**date**\n\n2026-09-25\n\n**titre**\n\nConserver ATP CTP PTP comme capacités d’évaluation\n\n**texte**\n\nPour moi, ATP, CTP et PTP sont des capacité d'évaluation, la décision étant portée par la capacité Promise Selection Decision. Donc PTP est exactement la définition que tu donnes pour Promise Cost Evaluation\n\n**contexte et portée**\n\nClarification de responsabilité : ATP, CTP et PTP évaluent ; Promise Selection Decision choisit. Conserver PTP pour l’évaluation économique sans sélection, retirer le renommage Promise Cost Evaluation de la proposition. Le classement de ces évaluations en Decision recommandé au tour précédent par Codex ne correspond pas à cette séparation. Le type technique Evaluation et sa définition méthodologique restent à formaliser ; cette précision ne clôt pas les autres sujets de l’audit."
+    },
+    {
+      "id": "U761",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u761",
+      "line": 18724,
+      "content_sha256": "a07b507c64beacf6ceac004ac4a622b86ace653972d4be4d67ec67b0d961da82",
+      "captured_text": "## U761\n\n**id**\n\nU761\n\n**date**\n\n2026-09-25\n\n**titre**\n\nAuditer la profondeur des évaluations ATP CTP PTP\n\n**texte**\n\nLes comportements d'ATP, CTP et PTP doivent refleter le niveau de profondeur de l'évaluation. Par exemple, ATP peut évaluer par rapport au stock courant mais peut prendre en compte aussi les stocks futurs.\n\nTu peux scanner le marché et vérifier que les comportements des ces 3 capacités sont exhaustifs ?\n\n**contexte et portée**\n\nÉtude marché des variantes par profondeur d’évaluation, comparaison aux quatre comportements ATP, deux CTP et absence de comportement PTP du backlog. Respecter U760 : évaluation sans sélection ; pas d’application du nouveau découpage avant validation. Rechercher une couverture explicite du périmètre Supply orchestration, sans promettre une exhaustivité universelle ni copier chaque option produit comme comportement."
+    },
+    {
+      "id": "U762",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u762",
+      "line": 18749,
+      "content_sha256": "6ca6a7e242a4490d28f707a3c4295998e77d3ccbe1e2c206f202a46846a01960",
+      "captured_text": "## U762\n\n**id**\n\nU762\n\n**date**\n\n2026-09-25\n\n**titre**\n\nPTP produit le dossier économique local des options\n\n**texte**\n\nC'est ce qu'on a dit : PTP évalue mais ne choisit pas. PTP permet de produire un micro dossier local et contextuel des avantages inconvénients des options du point de vue pognon.\n\n**contexte et portée**\n\nRéaffirmation U760 : PTP éclaire le choix sans le porter. Son résultat est un dossier économique local et contextuel des avantages et inconvénients des options, pas un gagnant ni une analyse globale de rentabilité. Corrige une proposition de profondeur trop centrée sur la marge ; cette dernière peut contribuer si pertinente et documentée, sans devenir un niveau obligatoire. L’étude U761 se poursuit sur cette base, sans validation implicite de tous les comportements proposés."
+    },
+    {
+      "id": "U763",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u763",
+      "line": 18772,
+      "content_sha256": "bc642bed8e04212088bf1c65216b3d0c4f45ae39586ddba6674c80c01860c104",
+      "captured_text": "## U763\n\n**id**\n\nU763\n\n**date**\n\n2026-09-25\n\n**titre**\n\nRendre les scénarios métier explicites dans les fiches\n\n**texte**\n\nIl ne manque pas au niveau capacité, domaine ou sous domaine un espace scénario ou use case pour expliquer les différentes situations ?\n\n**contexte et portée**\n\nQuestion sur un espace illustratif de scénarios métier aux niveaux Domain, Subdomain et Capability, pour expliquer les situations sans les transformer en comportements. Examiner l’existant fields.examples et sa présentation Atlas ; pas de nouveau niveau hiérarchique ni catalogue indépendant implicitement validé."
+    },
+    {
+      "id": "U764",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u764",
+      "line": 18795,
+      "content_sha256": "b89bda1ba6b323acb5dccc6c15bd53bb461a98f5f215645db0c627f52740e1fa",
+      "captured_text": "## U764\n\n**id**\n\nU764\n\n**date**\n\n2026-09-25\n\n**titre**\n\nValider les scénarios métier multiples et partagés\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif U763 et échange suivant : rubrique Scénarios métier facultative, plusieurs scénarios sans nombre imposé aux niveaux Domain, Subdomain et Capability. Situation, résultat recherché, contraintes, options pertinentes, contributions et résultat illustratif. Un scénario peut mobiliser plusieurs comportements et être référencé par plusieurs fiches avec une contribution locale, sans nouveau niveau de décomposition ni duplication du récit. Réutiliser les exemples structurés existants ; aucune validation implicite des propositions ATP/CTP/PTP en attente ni des nouvelles rédactions illustratives."
+    },
+    {
+      "id": "U765",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u765",
+      "line": 18818,
+      "content_sha256": "0c0c10cf57d6cf0ed8177f27c05858c16bc8f1d0757d5f0a235829709fa01a7d",
+      "captured_text": "## U765\n\n**id**\n\nU765\n\n**date**\n\n2026-09-25\n\n**titre**\n\nRéexaminer un sous-domaine autonome de promesse réutilisable\n\n**texte**\n\nDernier point : je commence à comprendre pourquoi le marché présente toujours un domaine ou un sous domaine Order Promising \"à part\". C'est parce que les évaluations de promesse peuvent être utilisées à tout moment : pendant le matching, à l'orchestration du fulfilment, au changement d'état d'un order etc.\n\nAvec cette vision, il ne faudrait pas un sous domaine Order Promising ou plus simplement Promising ?\n\n**contexte et portée**\n\nLaurent propose de réexaminer la frontière Inventory Management / Promising au regard de la réutilisation des évaluations dans plusieurs processus. Question sur la pertinence d’un sous-domaine autonome et son nom ; aucune validation d’un déplacement ni d’un renommage à ce stade. Vérifier la généralisation sur le marché et distinguer rattachement métier, usages transversaux, sélection de proposition et engagement porté par les Orders."
+    },
+    {
+      "id": "U766",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u766",
+      "line": 18843,
+      "content_sha256": "9ea7159476cef46e16d7d2af824eda6bdeace34d3aebffabfe7ac908a9a4568e",
+      "captured_text": "## U766\n\n**id**\n\nU766\n\n**date**\n\n2026-09-25\n\n**titre**\n\nValider le sous-domaine Order Promising autonome\n\n**texte**\n\nJe valide ta proposition\n\n**contexte et portée**\n\nAccord sur la proposition complète U765 : Order Promising devient un sous-domaine autonome par finalité, portant ATP, CTP, PTP et Promise Selection Decision. Évaluations réutilisables pendant Matching, Fulfilment et prise ou révision des Orders, sans pipeline universel ni recalcul systématique. Inventory Management conserve stocks, mouvements, propriété et engagements de quantité ; Matching conserve master plan et affectations ; Fulfilment coordonne les prestations en préservant la promesse ; Order Management porte l’engagement confirmé et ses révisions autorisées. Une réévaluation ne modifie pas seule l’engagement. Le nom Order Promising est retenu. Les formulations illustratives, catégories de présentation et le détail des comportements d’évaluation ne sont pas implicitement adoptés par cet accord de frontière."
+    },
+    {
+      "id": "U767",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u767",
+      "line": 18866,
+      "content_sha256": "bd02482b0e41d4fe98070e6b5859b208837f279d49c77c61be02799399260e56",
+      "captured_text": "## U767\n\n**id**\n\nU767\n\n**date**\n\n2026-09-25\n\n**titre**\n\nClore les arbitrages Inventory Visibility et Order Promising\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif sur les trois arbitrages récapitulés : deux profondeurs d’évaluation pour ATP (stock courant, extension aux disponibilités futures), CTP (faisabilité selon sources, matières et délais ; contrôle des capacités finies) et PTP (coûts ; avantages/inconvénients économiques contextuels). Réunir Inventory Visibility et Supply Visibility dans Inventory Visibility en préservant le détail des apports. Expliciter sélection initiale et réexamen individuel ou collectif des promesses dans Promise Selection Decision, sans transfert d’affectation depuis Matching. Formaliser Evaluation pour ATP/CTP/PTP applique le principe déjà acquis U760. Les noms détaillés et rédactions de mise en œuvre sont étayés par la proposition U761 ; pas d’approbation implicite de nouvelles observations Beaumanoir ni de release."
     },
     {
       "id": "F001",
@@ -14635,6 +14779,86 @@
       "captured_text": "## CMP293\n\nU748/U749 — Codex, 24 septembre 2026. Correction validée de la cible CMP292 : les trois ensembles deviennent des catégories, avec dix capacités autonomes et un master plan commun. Réutilisation des sources Microsoft ELM748/751/753/757/758/759 et des comparaisons existantes. La documentation décrit les mécanismes de calcul, le pegging, les recommandations et le paramétrage ; elle ne prescrit pas une taxonomie métier à trois ni à dix capacités. FLOW retient la maille des responsabilités et place les stratégies en comportements. Master Plan Management regroupe Master Planning, Simulation & Analysis et Plan Application ; Supply Matching regroupe Demand Prioritization, Supply Assignment, Replenishment et Stock Redistribution ; Policy Optimization regroupe Inventory Target Optimization, Group Protection Optimization et Reservation Policy Optimization. Les preuves fashion complémentaires restent utiles. Accord U749 enregistré sur la structure et les familles de stratégies effectivement présentées ; descriptions, types et migrations non présentés restent proposés. La réduction à trois capacités de CMP292 est remplacée, sans rétablir une fragmentation par paramètre. Le modèle canonique n’est pas modifié par cet enregistrement de validation."
     },
     {
+      "id": "CMP294",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp294",
+      "line": 2784,
+      "content_sha256": "7ced720ab36e3d443276e9c4e8fa6afdc69462787901ca1e93c6ec819c748565",
+      "captured_text": "## CMP294\n\nU749/U750 — Codex, 25 septembre 2026. Application canonique de CMP293 : trois catégories et dix capacités, sans adopter la cible abandonnée à trois capacités. Sources Microsoft déjà consultées ELM748/751/753/754/757/758/759 réutilisées, avec sources complémentaires des fiches existantes. Supply Assignment distingue préservation et réaffectation ; le pegging Microsoft éclaire le choix de liens tandis que Plan Application matérialise les changements autorisés et Reservation bloque les usages concurrents. Simulation & Analysis et Plan Application deviennent des capacités locales au Matching, exception explicitée au principe historique, sans généralisation. Initial Stocking est intégré à Replenishment avec ses descriptions et preuves fashion ; BHV077 est intégré dans simulation, révision et réaffectation sans absorber BOP. Les comparaisons de produit ne valident pas automatiquement le type ou les nouvelles descriptions FLOW. U750 autorise l’application de la succession préparée ; aucune release implicite."
+    },
+    {
+      "id": "CMP295",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp295",
+      "line": 2789,
+      "content_sha256": "be91b51b7a78a166f81cd2cc6c60b4652ce90f8bda667431a6de4706f5851dc4",
+      "captured_text": "## CMP295\n\nU751 — Codex, 25 septembre 2026. Audit Inventory sur le critère de responsabilité indépendante de l’organisation et des outils. Relecture de Microsoft consignment (ELM739) et Oracle aging (ELM740) : transfert de propriété métier réel, mais transaction de consignation ne prouvant pas une capacité autonome. Proposer sa répartition entre conditions Agreement, actes autorisés des Orders, intégration des résultats, tenue du Ledger et visibilité ; conserver déclencheurs consommation/échéance et preuves. Microsoft Inventory Visibility (ELM734) et calendrier/ATP (ELM761) appuient une visibilité stock et apports réunie, en distinguant projection et quantité promettable. Microsoft Order promising et CTP (ELM727/746), Oracle Database Promising (ELM747), établissent des calculs : le nom d’un produit Visibility ne justifie pas Knowledge. Proposition de type Calculation pour une réponse dérivée sans choix, Decision pour la sélection ; exception à formaliser au cadre méthodologique actuel, sans séparation de chaque calcul interne d’une décision. Oracle PTP (ELM762/763) sélectionne selon les coûts : notre PTP limité à l’évaluation est plus étroit. Proposer Promise Cost Evaluation pour cette évaluation et conserver le choix économique dans Promise Selection Decision, sans revendiquer ce nom comme standard marché. Ledger (ELM736/737 relus) tient les faits : Action recommandé pour sa responsabilité active, Knowledge pour la vue. Les mécanismes Stocktaking, Reservation et Tracking gardent leurs responsabilités ; leurs appuis antérieurs restent valables. Modèle canonique non modifié ; recommandations non encore approuvées."
+    },
+    {
+      "id": "CMP296",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp296",
+      "line": 2794,
+      "content_sha256": "87b866256e3bd78e8806bac01a8acc7db47fa439a85579b25565cee68b2f0916",
+      "captured_text": "## CMP296\n\nU752 — Codex, 25 septembre 2026. Réutilisation des documents primaires effectivement consultés : Microsoft Inventory posting (ELM737) distingue écritures de quantité et valeur, Oracle Item Ledger (ELM736) expose l’historique, Microsoft consignment (ELM739) décrit un journal de changements de propriété et Oracle aging (ELM740) les conditions de transfert. Ces registres sont des actifs métier reconnaissables hors informatique. Proposition FLOW : Ledger qualifie la responsabilité de tenir un registre durable, daté et justifié ; le nom du registre est une convention courte pour cette capacité, comme les Orders. Ce type n’est pas une taxonomie Microsoft attestée. Proposer Inventory Ledger pour mouvements/états de stock et Inventory Ownership Ledger pour les changements de propriétaire, sous Inventory Foundation. Un même événement peut porter deux effets reliés sans compter deux fois le stock. Tracking recueille les faits, Ledger les reconnaît et les conserve, Visibility compose la situation. Le registre ne constitue pas seul l’acte d’acquisition ni la comptabilité financière. Cette proposition remplace le retypage Action et le retrait simple de D01.h envisagés dans CMP295 ; aucune refonte du catalogue appliquée à ce stade."
+    },
+    {
+      "id": "CMP297",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp297",
+      "line": 2799,
+      "content_sha256": "21b26b1cb66ad5e806a51c28a3af681cbd53b71725d75aa029c4188171932d9d",
+      "captured_text": "## CMP297\n\nU754 — Codex, 25 septembre 2026. Documents primaires Microsoft effectivement relus : Set up consignment (ELM739), section Inventory ownership change journal, et Change the ownership of consignment inventory based on production demand (ELM764). Recouvrement partiel : une demande de production prépare des changements de propriété ; un journal enregistre les changements lors de sa comptabilisation. FLOW propose de séparer réception des faits (Inventory Tracking, alimenté notamment par Operations Tracking), détermination métier du transfert selon accord (Inventory Ownership Transfer Decision), tenue du registre (Inventory Ownership Ledger), puis restitution du propriétaire dans Inventory Visibility. La décision détermine nécessité/admissibilité, quantité, parties et date ; elle ne déduit pas un transfert universel de toute réception ou consommation. Si un transfert est déjà établi par une source autorisée, l’intégrer sans redécider ni réexécuter. Une décision de transfert à réaliser ne vaut pas transfert réalisé : Order/Fulfilment porte l’acte et son résultat quand une exécution distincte est nécessaire. L’intégration réactive et le découpage Decision/Ledger sont des recommandations FLOW, pas une taxonomie Microsoft ni une automatisation native démontrée ; la procédure indique explicitement l’absence de traitement automatique du journal. Le cas d’échéance conserve son appui Oracle ELM740, sans l’attribuer à Microsoft. Noms anglais proposés locaux ; Ledger plus étendu que le journal de consignation entrante Microsoft. Bénéfice : distinguer preuve reçue, conséquence déterminée et fait reconnu sans multiplier les Tracking ni déplacer l’orchestration. Proposition non appliquée au catalogue."
+    },
+    {
+      "id": "CMP298",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp298",
+      "line": 2804,
+      "content_sha256": "41ce882530d4828f5a2250ac326defc38b491969e8425d2f1f7da532dea7befd",
+      "captured_text": "## CMP298\n\nU755 — Codex, 25 septembre 2026. ELM765/ELM766 Microsoft Landed cost effectivement consultés complètent la consignation ELM739/ELM764 : propriété reconnue avant réception physique dans le parcours goods-in-transit. Appui fonctionnel à une responsabilité transversale dépassant la consignation, pas équivalence à un moteur général de détermination de propriété. Proposition FLOW : Inventory Ownership Transfer Decision croise les faits et jalons pertinents avec les conditions applicables de l’accord ; Inventory Ownership Ledger conserve changement reconnu, date, quantités, parties, fait et fondement. Élargir les cas aux achats/ventes ordinaires et biens en transit ; intégrer les faits douaniers pertinents comme éléments à qualifier, sans déduire automatiquement un transfert d’un changement de statut douanier. Propriété, détention, disponibilité et statut douanier doivent rester distincts dans le modèle. Les deux comportements consommation/échéance proposés en U754 ne constituent plus une couverture exhaustive ; réexaminer les variantes de la décision sans créer une capacité ou un comportement par événement. Cette précision enrichit la proposition existante ; catalogue canonique inchangé."
+    },
+    {
+      "id": "CMP299",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp299",
+      "line": 2809,
+      "content_sha256": "d88e9c153fa036815f6a44daffa8b170fb591c9cdfc78c1f31ff759352102e5d",
+      "captured_text": "## CMP299\n\nU756 — Codex, 25 septembre 2026. Application du lot cumulatif U752–U755 sur les sources déjà consultées CMP296/CMP297/CMP298 : Inventory Ledger devient Ledger ; Inventory Ownership Ledger distinct ; D01.h devient Inventory Ownership Transfer Decision. Consommation et échéance sont conservées avec leur responsabilité de détermination ; un comportement de jalons contractuels couvre les autres cas, son nom anglais et sa rédaction restant proposés. Sources Microsoft ELM739/ELM764/ELM765/ELM766 portées aux fiches ; preuves antérieures Oracle conservées. Typologie Ledger et présentation Atlas mises en cohérence. Deux registres reliés, réception des faits et transfert déjà établi, décision, acte éventuel et résultat sont distingués ; statut douanier sans conséquence automatique sur la propriété. Les autres pistes U751 ne sont pas étendues à cet accord."
+    },
+    {
+      "id": "CMP300",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp300",
+      "line": 2814,
+      "content_sha256": "6974a429cadd427d56970b9d0d867258d2816820a154160ee6ff7260eab6e3f7",
+      "captured_text": "## CMP300\n\nU758 — Codex, 25 septembre 2026. Microsoft ELM767/ELM768/ELM769 et IBM ELM770/ELM771 étayent la libération groupée, la consolidation pilotée par client et la rétention économique dans une fenêtre de délai autorisée. Comparaison du backlog : Process Orchestration D06.d coordonne les activations et dépendances, mais ne détermine pas explicitement les ensembles et moments de libération ; Process Adaptation Decision D06.f répond aux aléas et ne couvre pas naturellement la rétention anticipée en fonctionnement normal. Proposition : Service Order Release Decision dans Fulfilment Orchestration, type Decision, catégorie existante coordinate-adapt. Déterminer quels ordres éligibles retenir/libérer ensemble et quand, selon complétude, compatibilités, charge communiquée, bénéfice logistique et échéances. Deux comportements : Batch Release (fenêtres/lots de transmission pour organiser la charge) et Consolidated Release (complétude ou regroupement client/commande/destination pour traitement commun). Process Orchestration applique ; les familles de Service Orders conservent identité et engagements. Le besoin de préparation/palettisation commune doit être porté explicitement par Picking/Packing Order : transmettre simultanément ne garantit ni une préparation commune ni une seule palette. Le WMS conserve vagues, trajets, tâches et palettisation détaillée ; consolidation de release, shipment et palette restent distinctes. Order Management porte les exigences client ; Matching conserve les affectations ; aucun délai de rétention ne modifie silencieusement la promesse. Les fenêtres et seuils sont des règles, pas des capacités. Le nom FLOW est une adaptation des notions Order Release/Release to warehouse et consolidation, pas une appellation de capacité consensuelle attestée. Proposition uniquement, aucun catalogue modifié ni réouverture d’un audit clos."
+    },
+    {
+      "id": "CMP301",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp301",
+      "line": 2819,
+      "content_sha256": "c9ffbfaa583f586beb1ed5aa92b7fb02079b433eaf0b0136c8229d5af6584b8e",
+      "captured_text": "## CMP301\n\nU760 — Codex, 25 septembre 2026. Clarification sans nouvelle étude : réutiliser les sources Oracle ELM762/ELM763 déjà consultées. Oracle PTP peut sélectionner la solution la moins coûteuse parmi des possibilités à date compatible ; FLOW conserve le nom PTP pour l’évaluation économique et place le choix dans Promise Selection Decision. Recouvrement partiel explicitement assumé, pas équivalence complète. Retirer le renommage Promise Cost Evaluation et la recommandation Codex de classer les évaluations comme Decision ; proposer Evaluation pour la responsabilité distincte de calcul/qualification des possibilités. Type non encore appliqué ; aucun élargissement du périmètre ni validation globale de l’audit."
+    },
+    {
+      "id": "CMP302",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp302",
+      "line": 2824,
+      "content_sha256": "26d52498ba1715796dbf251c7eee2d32a03abea824c9a0db360762355a9dbcbb",
+      "captured_text": "## CMP302\n\nU761 — Codex, 25 septembre 2026. Scan ciblé Microsoft, Oracle et SAP, avec lecture primaire Microsoft Order promising et CTP (ELM727/ELM746), Oracle supply-chain search/alternative cost (ELM762/ELM763), et compléments ELM772–ELM777. Les passages SAP sont indexés, pages ouvertes sans corps exploitable ; limites conservées. Recommandation par profondeur, pas catalogue de boutons : ATP On-Hand / Projected ; CTP Supply-Based / Capacity-Constrained ; PTP Fulfillment Cost / Margin. Réservations, protections, réseau, calendriers, complétude, fractionnement, alternatives autorisées et qualité des données traversent les niveaux ; ne pas les perdre en absorbant BHV001/BHV003. Un CTP plus profond teste des capacités existantes, sans exiger leur augmentation : corriger le mot supplémentaires s’il exclut cette situation. Calcul par seuls délais et disponibilité infinie sont des estimations sans contrôle de ressources, pas une preuve d’ATP/CTP ; les documenter comme hypothèses ou repli explicite, sans nouveau comportement automatique. Les fabrications et nomenclatures multiniveaux sont couvertes par les faisabilités matière/capacité, potentiellement calculées ailleurs ; aucun sous-domaine APS créé. PTP Oracle mêle évaluation et sélection ; FLOW conserve l’évaluation et Promise Selection Decision choisit (U760). L’évaluation de marge au-delà des coûts est une proposition complémentaire appuyée par deux fonctions analytiques Oracle, pas un mode PTP standard attesté ni une décision tarifaire. Coûts amont, composants, ressources, transport, fractionnement et consolidation alimentent une évaluation de coût cohérente, sans comportement par poste de coût. Exhaustivité recherchée au niveau des familles de mécanismes dans le périmètre FLOW ; aucune liste universelle ni consensus sur les six noms proposés revendiqués. Aucun changement canonique appliqué.\n\n\n### Précision CMP302 — U762\n\nLe second niveau PTP proposé comme Margin Evaluation était trop restrictif. Laurent réaffirme un micro dossier local et contextuel des avantages/inconvénients économiques des options. Les scénarios comparés et coûts détaillés d’Oracle ELM762/ELM763, déjà consultés, étayent le chiffrage comparatif ; FLOW exclut explicitement la sélection portée dans certaines fonctions produit. Contextual Economic Impact Evaluation remplace le nom de comportement proposé ; marge/revenus seulement si utiles et étayés. Aucun nouveau scan requis pour cette clarification, aucune décision ni optimisation globale transférée à PTP."
+    },
+    {
+      "id": "CMP303",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp303",
+      "line": 2834,
+      "content_sha256": "a854c7cdef78e1d964022b2f3788da6dd5f2da15b2100477468a654d9dfe5a25",
+      "captured_text": "## CMP303\n\nU765 — Frontière Inventory Management / Order Promising. État comparé : backlog du 25 septembre 2026, après U764 ; ATP/CTP/PTP et Promise Selection encore sous Inventory Management. Auteur : Codex, 25 septembre 2026. Statut : proposition à valider, aucun déplacement canonique.\n\nRéférences : Oracle ELM778 (26B, orchestration qui interroge GOP) et ELM779 (26C, consultations et options alternatives exposées), Microsoft ELM780 (ATP réutilisable dans Inventory Visibility) et ELM727 (Order promising, page relue le 25 septembre 2026 : dates ATP/CTP et réévaluation liée aux modifications d’une commande). Relations : recouvrement partiel des responsabilités ; appui lexical pour Order Promising ; contre-exemple à un découpage produit universellement autonome. Oracle distingue une responsabilité sollicitée par l’orchestration ; Microsoft confirme la réutilisation mais rattache aussi ATP à Inventory Visibility. Ces deux éditeurs ne prescrivent pas le métamodèle FLOW.\n\nRecommandation : sous-domaine Order Promising autonome par finalité — évaluer les possibilités d’engagement et sélectionner une proposition — et non par seule mutualisation logicielle. Son nom exprime l’objet de la promesse et reste applicable avant création, pendant révision ou durant orchestration. Promising est une abréviation possible mais moins précise comme libellé canonique ; aucun élargissement au-delà de la satisfaction des demandes n’est établi.\n\nPérimètre proposé : ATP, CTP, PTP (évaluations indépendamment mobilisables) et Promise Selection Decision (choix de proposition). Inventory Management reste responsable des stocks et engagements de quantité ; Supply Visibility y reste une connaissance amont, sans déplacement automatique. Plan Visibility fournit les plans ; Matching conserve le master plan et les affectations ; Fulfilment coordonne les prestations en cherchant à préserver la promesse ; les Orders portent la confirmation et les révisions d’engagement. Le BOP éventuel relève de la réévaluation et sélection de promesses dans cette frontière, sans création automatique d’une capacité ni transfert de l’affectation des ressources. Limites : usage dans Matching et Fulfilment recommandé pour FLOW, pas affirmation de tous les parcours natifs des produits ; aucune invocation systématique des trois évaluations, aucun recalcul à chaque changement d’état imposé."
+    },
+    {
       "id": "CMP003",
       "path": "marche/comparaisons.md",
       "anchor": "",
@@ -20713,6 +20937,166 @@
       "line": 5794,
       "content_sha256": "9983ba9aa5fd607b7421992c4cef991118baf746bdc670f4153e1437d6d55caa",
       "captured_text": "### ELM760\n\nMKT14 — Microsoft, [Inventory Visibility inventory allocation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Introduction et concepts d’allocation. Reformulation : Protection de quantités pour des groupes, canaux ou clients, avec consommation du pool. Allocation ne signifie pas ici automatiquement affectation d’une réception identifiée à une ligne de commande. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744."
+    },
+    {
+      "id": "ELM761",
+      "path": "marche/elements.md",
+      "anchor": "elm761",
+      "line": 5799,
+      "content_sha256": "ae8163e077fa2a4a587f64509749b846bd8bd67f23cbd74008d501a2e3e0beb5",
+      "captured_text": "### ELM761\n\nMKT14 — [Inventory Visibility on-hand change schedules and ATP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-available-to-promise). Documentation primaire consultée le 25 septembre 2026 ; passage : How the on-hand change schedule and ATP calculations work. Reformulation : Microsoft rapproche stock présent, entrées/sorties planifiées et calcul ATP. Une attente ne devient un fait qu’après reconnaissance ; éviter le double compte. Le produit Inventory Visibility inclut un calcul sans imposer son type métier. Limites : fonction produit, pas taxonomie de capacités ni preuve de réalisation Beaumanoir. CMP295, U751."
+    },
+    {
+      "id": "ELM762",
+      "path": "marche/elements.md",
+      "anchor": "elm762",
+      "line": 5804,
+      "content_sha256": "b797aad7cf561663adbf6a3f804ca4cc25a5e9e35946cfb3430510706a8b31b3",
+      "captured_text": "### ELM762\n\nMKT20 — [Set Attributes on Your Supply Chain Search](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/promising-attributes-for-supply-chain-availability-searches.html). Documentation primaire consultée le 25 septembre 2026 ; passage : Profitable to Promise. Reformulation : Oracle 25D calcule les coûts et choisit l’option la moins coûteuse parmi les possibilités pour une même date ; la priorité de sourcing peut être remplacée. Le coût ne justifie pas automatiquement de retarder la date demandée. Limites : fonction produit, pas taxonomie de capacités ni preuve de réalisation Beaumanoir. CMP295, U751."
+    },
+    {
+      "id": "ELM763",
+      "path": "marche/elements.md",
+      "anchor": "elm763",
+      "line": 5809,
+      "content_sha256": "c222911bd214772d90974d8345d055563ebfaae89d2ad7a0d0c06cfaa60c9c9c",
+      "captured_text": "### ELM763\n\nMKT20 — [Create Alternative Fulfillment Scenarios to Reduce Cost](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html). Documentation primaire consultée le 25 septembre 2026 ; passage : Introduction et Check Availability. Reformulation : Oracle 25D distingue les options, leurs coûts, dates et lieux ; le parcours permet de conserver l’option ou de choisir une alternative. Calcul économique et sélection peuvent être distingués dans FLOW même si le produit les compose. Limites : fonction produit, pas taxonomie de capacités ni preuve de réalisation Beaumanoir. CMP295, U751."
+    },
+    {
+      "id": "ELM764",
+      "path": "marche/elements.md",
+      "anchor": "elm764",
+      "line": 5814,
+      "content_sha256": "1eb25ee03af21b1f2129e9861072bd1bc1c9056144a580a8d7b389798c71a2fe",
+      "captured_text": "### ELM764\n\nMKT14 — Microsoft, [Change the ownership of consignment inventory based on production demand](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/tasks/change-ownership-consignment). Dynamics 365 SCM, documentation mise à jour le 10 avril 2025, consultée le 25 septembre 2026 ; introduction, Create an inventory ownership journal, Post the inventory ownership change journal. Identifiant natif : aucun identifié. Nature : procédure produit. Reformulation : les lignes du journal peuvent être créées manuellement ou depuis les besoins des ordres de production, filtrés par statut et date. La comptabilisation du journal constate la sortie fournisseur et la réception par l’entité acheteuse. La page précise que la consignation sortante et le traitement automatique du journal ne sont pas pris en charge nativement. Limites : périmètre consignation entrante et scénario production ; ne prouve ni moteur événementiel automatique ni capacité de décision générale chez Microsoft. Comparaison CMP297, U754. Synthèse seulement, aucun contenu substantiel reproduit."
+    },
+    {
+      "id": "ELM765",
+      "path": "marche/elements.md",
+      "anchor": "elm765",
+      "line": 5819,
+      "content_sha256": "08d80b92dea1b580dfa86e85b9e2cfeb8f5595be8dac34d0d0cb65346e023f27",
+      "captured_text": "### ELM765\n\nMKT14 — Microsoft, [Landed cost module overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/landed-cost-overview). Documentation Dynamics 365 SCM évolutive consultée le 25 septembre 2026. Nature : fonction produit ; identifiant natif non identifié. Reformulation : Sections Item ownership et Setup and configuration : gestion de biens acquis avant réception physique ; paramétrage goods-in-transit associé aux conditions de livraison de la commande. Limites : mécanismes produit et reconnaissance financière ; aucune règle juridique universelle de transfert ni causalité douane/propriété démontrée. Synthèse sans reproduction substantielle. U755, CMP298."
+    },
+    {
+      "id": "ELM766",
+      "path": "marche/elements.md",
+      "anchor": "elm766",
+      "line": 5824,
+      "content_sha256": "271c81665bfb08477b6a9f2a73d19d8c3f472bed57093d0d1456758da7454d6f",
+      "captured_text": "### ELM766\n\nMKT14 — Microsoft, [Goods-in-transit processing and receiving](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/in-transit-processing). Documentation Dynamics 365 SCM évolutive consultée le 25 septembre 2026. Nature : fonction produit ; identifiant natif non identifié. Reformulation : Introduction : facturation avant réception et représentation des biens en transit ; leur acquisition et leur disponibilité physique à destination sont distinctes. Limites : mécanismes produit et reconnaissance financière ; aucune règle juridique universelle de transfert ni causalité douane/propriété démontrée. Synthèse sans reproduction substantielle. U755, CMP298."
+    },
+    {
+      "id": "ELM767",
+      "path": "marche/elements.md",
+      "anchor": "elm767",
+      "line": 5829,
+      "content_sha256": "4c3c54f948de4a525063dfe78077a469d88e89146579e7a1603dd2b22d3628a3",
+      "captured_text": "### ELM767\n\nMKT14 — Microsoft, [Release to warehouse](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process). Documentation produit évolutive, édition précise non indiquée ; consultée le 25 septembre 2026. Passage : Automatic release to the warehouse. Nature : fonction/processus produit. Reformulation : Libération de plusieurs ordres, traitement récurrent, sélection des quantités et regroupement par client. La création de vagues et de travail dépend du paramétrage. Limites : Page primaire ouverte ; mécanisme produit, pas taxonomie FLOW ni garantie d’optimisation. Synthèse sans reproduction substantielle. U758, CMP300."
+    },
+    {
+      "id": "ELM768",
+      "path": "marche/elements.md",
+      "anchor": "elm768",
+      "line": 5834,
+      "content_sha256": "2c478ce5eb453e21dcc9d909d3d559cbf36166cf973e7b3304922d3ed89cacd0",
+      "captured_text": "### ELM768\n\nMKT14 — Microsoft, [Configure shipment consolidation policies](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/configure-shipment-consolidation-policies). Documentation produit évolutive, édition précise non indiquée ; consultée le 25 septembre 2026. Passage : Scenario 3, Order pool, client-driven consolidation. Nature : fonction/processus produit. Reformulation : Regrouper des lignes de plusieurs commandes pour un même compte, entrepôt et mode de livraison selon un pool ; la documentation distingue explicitement le besoin piloté par le client. Limites : Page primaire ouverte ; consolidation d’expéditions, pas garantie d’une seule palette. Synthèse sans reproduction substantielle. U758, CMP300."
+    },
+    {
+      "id": "ELM769",
+      "path": "marche/elements.md",
+      "anchor": "elm769",
+      "line": 5839,
+      "content_sha256": "0f9d028d6e61cb958fee13b41c0cdf14c8ebff9ba584a4bef11a5941772dce8e",
+      "captured_text": "### ELM769\n\nMKT14 — Microsoft, [Wave creation and processing](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wave-processing). Documentation produit évolutive, édition précise non indiquée ; consultée le 25 septembre 2026. Passage : Wave processing ; release to picking and packing. Nature : fonction/processus produit. Reformulation : La constitution, le traitement et la libération des vagues organisent le travail de préparation dans l’entrepôt. Limites : Page primaire consultée ; responsabilité WMS plus détaillée que la libération des ordres par FLOW. Synthèse sans reproduction substantielle. U758, CMP300."
+    },
+    {
+      "id": "ELM770",
+      "path": "marche/elements.md",
+      "anchor": "elm770",
+      "line": 5844,
+      "content_sha256": "dee92a5cc4bbf09d8f1eb6b3b3667e4c9b19f1b6dadceab324db204369e164e8",
+      "captured_text": "### ELM770\n\nMKT23 — IBM, [Using economic shipping parameters](https://www.ibm.com/docs/en/order-management?topic=features-using-economic-shipping-parameters). Documentation produit évolutive, édition précise non indiquée ; consultée le 25 septembre 2026. Passage : Scenarios ; Allow shipment delay ; shipping window. Nature : fonction/processus produit. Reformulation : Un ordre ou une expédition peut être retenu en anticipation d’un autre pour consolidation ; délai autorisé et fenêtre d’expédition limitent les regroupements. Limites : Passages primaires indexés consultés ; ouverture directe refusée HTTP 403. Rétention économique documentée, pas preuve d’optimisation de toutes les charges WMS. Synthèse sans reproduction substantielle. U758, CMP300."
+    },
+    {
+      "id": "ELM771",
+      "path": "marche/elements.md",
+      "anchor": "elm771",
+      "line": 5849,
+      "content_sha256": "2f0d8d3405cb8855b1d9df8a65b4f6bedb0c00545f3ecbac18133148588b159d",
+      "captured_text": "### ELM771\n\nMKT23 — IBM, [Consolidate to shipment](https://www.ibm.com/docs/en/order-management?topic=transactions-consolidate-shipment). Documentation produit évolutive, édition précise non indiquée ; consultée le 25 septembre 2026. Passage : Transaction CONSOLIDATE_TO_SHIPMENT ; conditions de compatibilité. Nature : fonction/processus produit. Reformulation : La transaction du pipeline Order Fulfillment cherche une expédition compatible avec la release, selon site, destination, vendeur, transporteur et statuts modifiables. Limites : Texte primaire indexé consulté ; ouverture directe en erreur. Consolidation logique d’expédition, pas algorithme de palettisation. Synthèse sans reproduction substantielle. U758, CMP300."
+    },
+    {
+      "id": "ELM772",
+      "path": "marche/elements.md",
+      "anchor": "elm772",
+      "line": 5854,
+      "content_sha256": "3e3c532a91fac9af5d78e5109dee269cf24ba4fbf3c42b176c556afbb5c51e57",
+      "captured_text": "### ELM772\n\nMKT13 — SAP, [Defining the Product Availability Check](https://help.sap.com/docs/SAP_S4HANA_CLOUD/32da8359c8ee4e8b8e8c5e15cacba5aa/741d645473c50d4ee10000000a423f68.html). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Disponibilité selon stock ou éléments de réception ; certains modes limités au stock excluent les commandes et demandes d’achat. Limites : Passages primaires indexés consultés ; page ouverte sans corps exploitable. Options de produit, pas taxonomie FLOW. Synthèse sans copie substantielle. U761, CMP302."
+    },
+    {
+      "id": "ELM773",
+      "path": "marche/elements.md",
+      "anchor": "elm773",
+      "line": 5859,
+      "content_sha256": "3505fa5c674910cc46ee3d53dbc8d0a0807c46bd614f6a81b01c719f850cc77e",
+      "captured_text": "### ELM773\n\nMKT13 — SAP, [Determining Alternatives](https://help.sap.com/docs/SAP_S4HANA_CLOUD/32da8359c8ee4e8b8e8c5e15cacba5aa/21afef7a7724417daa91a26b6d071e5e.html). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Alternative-Based Confirmation recherche des sites, emplacements ou produits alternatifs ; la sélection suit une stratégie. Limites : Texte primaire indexé consulté. Une alternative ne prouve pas une création de supply ni un contrôle capacitaire ; sélection séparée dans FLOW. Synthèse sans copie substantielle. U761, CMP302."
+    },
+    {
+      "id": "ELM774",
+      "path": "marche/elements.md",
+      "anchor": "elm774",
+      "line": 5864,
+      "content_sha256": "c052e0c4b61353e926dad4ffe36d770c4b7035ddfd47c0fb31b11493a93d9186",
+      "captured_text": "### ELM774\n\nMKT20 — Oracle, [See How Promising Estimates Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/determine-how-order-promising-gets-and-estimates-availability.html). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Distingue recherche de supply, estimation par lead times et disponibilité infinie sans examen des ressources. Limites : Page primaire ouverte, 25C ; modes du moteur GOP, pas trois capacités métier ni garantie de disponibilité. Synthèse sans copie substantielle. U761, CMP302."
+    },
+    {
+      "id": "ELM775",
+      "path": "marche/elements.md",
+      "anchor": "elm775",
+      "line": 5869,
+      "content_sha256": "cc6ed34e890148be0f8d6a64ed32c9dc110684929733eb34a1371dbbce424184",
+      "captured_text": "### ELM775\n\nMKT20 — Oracle, [Overview of the Order Promising Work Area](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-the-order-promising-work-area.html). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Financial Performance expose revenus, fulfillment costs et pourcentage de marge selon les dates. Limites : Page primaire ouverte et passage indexé consulté, 25C. Vue analytique, pas preuve d’un mode PTP natif distinct de sélection. Synthèse sans copie substantielle. U761, CMP302."
+    },
+    {
+      "id": "ELM776",
+      "path": "marche/elements.md",
+      "anchor": "elm776",
+      "line": 5874,
+      "content_sha256": "d80c2bb8571dd8a301d500aa0efb4bc2f96d40b804c667e4bb23294777d20731",
+      "captured_text": "### ELM776\n\nMKT20 — Oracle, [AI Agent: Gross Margin Analyst](https://docs.oracle.com/en/cloud/saas/readiness/scm/26b/inv26b/26B-inventory-wn-f42401.htm). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Évaluer marge par commande et article et éclairer les options de sourcing sensibles à la marge. Limites : Page primaire ouverte, annonce 26B. Fonction d’analyse adjacente au promising ; ne pas confondre annonce, installation et taxonomie. Aucun agent IA requis dans FLOW. Synthèse sans copie substantielle. U761, CMP302."
+    },
+    {
+      "id": "ELM777",
+      "path": "marche/elements.md",
+      "anchor": "elm777",
+      "line": 5879,
+      "content_sha256": "63c59fff7c6a5dd374e0692d8c93c06d3d3dc7108f8392faabbc6a56c9b3f869",
+      "captured_text": "### ELM777\n\nMKT13 — SAP, [Scenarios and Supported Features of PPAC and PAC with Supply Creation](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/95cbb18b60da470cac8d340f0c6f5251.html). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Création de supply avec planification multiniveau, capacités finies/infinies et sources alternatives selon les scénarios PP/DS. Limites : Passage primaire indexé consulté ; page ouverte sans corps exploitable, édition non affichée. Création/confirmation intégrées au produit, séparées de l’évaluation FLOW. Synthèse sans copie substantielle. U761, CMP302."
+    },
+    {
+      "id": "ELM778",
+      "path": "marche/elements.md",
+      "anchor": "elm778",
+      "line": 5884,
+      "content_sha256": "aae6db14748a6fbb75907828a68e5e7c11c465a723285912db11645b5875e665",
+      "captured_text": "### ELM778\n\nMKT20 — Oracle, [How the Order Orchestration and Order Promising Processes Use the Collected Planning Data](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/how-the-order-orchestration-and-order-promising-processes-use.html). Consulté le 25 septembre 2026, page primaire ouverte et passages lus. Nature : fonction/processus ou contrat de produit, pas capacité métier native ; identifiant natif distinct non identifié. Localisateur : 26B, sections Data Collections, Order Orchestration et Order Promising. Reformulation : L’orchestration transmet à Global Order Promising des demandes de scheduling ou de vérification de disponibilité ; Promising construit sa réponse à partir des données collectées. Planning, orchestration et promising utilisent des informations communes sans constituer un processus unique. Limites : Organisation fonctionnelle et technique d’Oracle ; ne prouve ni invocation à chaque état ni taxonomie universelle de sous-domaines. Synthèse sans reproduction substantielle. U765, CMP303."
+    },
+    {
+      "id": "ELM779",
+      "path": "marche/elements.md",
+      "anchor": "elm779",
+      "line": 5889,
+      "content_sha256": "6029bca3385fd4753191a73ff0f68dd0e3a3b31e94e073d07d1198e00eec92d7",
+      "captured_text": "### ELM779\n\nMKT20 — Oracle, [Order Promises REST Endpoints](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fasrp/api-order-management-order-promises.html). Consulté le 25 septembre 2026, page primaire ouverte et passages lus. Nature : fonction/processus ou contrat de produit, pas capacité métier native ; identifiant natif distinct non identifié. Localisateur : 26C, Order Management/Order Promises. Reformulation : La ressource fournit les résultats de consultation et les options alternatives de disponibilité ; elle couvre aussi des mises à jour et annulations de commandes dans GOP. Limites : Cette interface rassemble lectures et mutations ; FLOW conserve la séparation évaluation, sélection de proposition et engagement dans les Orders. Aucune garantie de temps de réponse ni périmètre métier déduit de la seule API. Synthèse sans reproduction substantielle. U765, CMP303."
+    },
+    {
+      "id": "ELM780",
+      "path": "marche/elements.md",
+      "anchor": "elm780",
+      "line": 5894,
+      "content_sha256": "7d37518ef71d24c949f3fa56976897435c391bbb09d60e20a11ac64434385d90",
+      "captured_text": "### ELM780\n\nMKT14 — Microsoft, [Track time-series inventory in Inventory Visibility](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-track-atp). Consulté le 25 septembre 2026, page primaire ouverte et passages lus. Nature : fonction/processus ou contrat de produit, pas capacité métier native ; identifiant natif distinct non identifié. Localisateur : Documentation évolutive, mise à jour affichée 27 juillet 2026 ; introduction et Query and post ATP data using the Inventory Visibility API. Reformulation : Inventory Visibility rapproche les entrées et sorties attendues, calcule un ATP omnicanal et permet aux systèmes externes d’interroger les disponibilités futures par API, en quasi temps réel. Limites : Réutilisabilité documentée malgré le rattachement à Inventory Visibility ; contre-exemple au caractère systématiquement autonome de Promising dans les produits. Ne prescrit pas de sous-domaine FLOW. Synthèse sans reproduction substantielle. U765, CMP303."
     },
     {
       "id": "ELM003",

@@ -5794,3 +5794,103 @@ MKT14 — Microsoft, [Keep supply for confirmed demand in Planning Optimization]
 ### ELM760
 
 MKT14 — Microsoft, [Inventory Visibility inventory allocation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Introduction et concepts d’allocation. Reformulation : Protection de quantités pour des groupes, canaux ou clients, avec consommation du pool. Allocation ne signifie pas ici automatiquement affectation d’une réception identifiée à une ligne de commande. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744.
+
+
+### ELM761
+
+MKT14 — [Inventory Visibility on-hand change schedules and ATP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-available-to-promise). Documentation primaire consultée le 25 septembre 2026 ; passage : How the on-hand change schedule and ATP calculations work. Reformulation : Microsoft rapproche stock présent, entrées/sorties planifiées et calcul ATP. Une attente ne devient un fait qu’après reconnaissance ; éviter le double compte. Le produit Inventory Visibility inclut un calcul sans imposer son type métier. Limites : fonction produit, pas taxonomie de capacités ni preuve de réalisation Beaumanoir. CMP295, U751.
+
+
+### ELM762
+
+MKT20 — [Set Attributes on Your Supply Chain Search](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/promising-attributes-for-supply-chain-availability-searches.html). Documentation primaire consultée le 25 septembre 2026 ; passage : Profitable to Promise. Reformulation : Oracle 25D calcule les coûts et choisit l’option la moins coûteuse parmi les possibilités pour une même date ; la priorité de sourcing peut être remplacée. Le coût ne justifie pas automatiquement de retarder la date demandée. Limites : fonction produit, pas taxonomie de capacités ni preuve de réalisation Beaumanoir. CMP295, U751.
+
+
+### ELM763
+
+MKT20 — [Create Alternative Fulfillment Scenarios to Reduce Cost](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html). Documentation primaire consultée le 25 septembre 2026 ; passage : Introduction et Check Availability. Reformulation : Oracle 25D distingue les options, leurs coûts, dates et lieux ; le parcours permet de conserver l’option ou de choisir une alternative. Calcul économique et sélection peuvent être distingués dans FLOW même si le produit les compose. Limites : fonction produit, pas taxonomie de capacités ni preuve de réalisation Beaumanoir. CMP295, U751.
+
+
+### ELM764
+
+MKT14 — Microsoft, [Change the ownership of consignment inventory based on production demand](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/tasks/change-ownership-consignment). Dynamics 365 SCM, documentation mise à jour le 10 avril 2025, consultée le 25 septembre 2026 ; introduction, Create an inventory ownership journal, Post the inventory ownership change journal. Identifiant natif : aucun identifié. Nature : procédure produit. Reformulation : les lignes du journal peuvent être créées manuellement ou depuis les besoins des ordres de production, filtrés par statut et date. La comptabilisation du journal constate la sortie fournisseur et la réception par l’entité acheteuse. La page précise que la consignation sortante et le traitement automatique du journal ne sont pas pris en charge nativement. Limites : périmètre consignation entrante et scénario production ; ne prouve ni moteur événementiel automatique ni capacité de décision générale chez Microsoft. Comparaison CMP297, U754. Synthèse seulement, aucun contenu substantiel reproduit.
+
+
+### ELM765
+
+MKT14 — Microsoft, [Landed cost module overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/landed-cost-overview). Documentation Dynamics 365 SCM évolutive consultée le 25 septembre 2026. Nature : fonction produit ; identifiant natif non identifié. Reformulation : Sections Item ownership et Setup and configuration : gestion de biens acquis avant réception physique ; paramétrage goods-in-transit associé aux conditions de livraison de la commande. Limites : mécanismes produit et reconnaissance financière ; aucune règle juridique universelle de transfert ni causalité douane/propriété démontrée. Synthèse sans reproduction substantielle. U755, CMP298.
+
+
+### ELM766
+
+MKT14 — Microsoft, [Goods-in-transit processing and receiving](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/in-transit-processing). Documentation Dynamics 365 SCM évolutive consultée le 25 septembre 2026. Nature : fonction produit ; identifiant natif non identifié. Reformulation : Introduction : facturation avant réception et représentation des biens en transit ; leur acquisition et leur disponibilité physique à destination sont distinctes. Limites : mécanismes produit et reconnaissance financière ; aucune règle juridique universelle de transfert ni causalité douane/propriété démontrée. Synthèse sans reproduction substantielle. U755, CMP298.
+
+
+### ELM767
+
+MKT14 — Microsoft, [Release to warehouse](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process). Documentation produit évolutive, édition précise non indiquée ; consultée le 25 septembre 2026. Passage : Automatic release to the warehouse. Nature : fonction/processus produit. Reformulation : Libération de plusieurs ordres, traitement récurrent, sélection des quantités et regroupement par client. La création de vagues et de travail dépend du paramétrage. Limites : Page primaire ouverte ; mécanisme produit, pas taxonomie FLOW ni garantie d’optimisation. Synthèse sans reproduction substantielle. U758, CMP300.
+
+
+### ELM768
+
+MKT14 — Microsoft, [Configure shipment consolidation policies](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/configure-shipment-consolidation-policies). Documentation produit évolutive, édition précise non indiquée ; consultée le 25 septembre 2026. Passage : Scenario 3, Order pool, client-driven consolidation. Nature : fonction/processus produit. Reformulation : Regrouper des lignes de plusieurs commandes pour un même compte, entrepôt et mode de livraison selon un pool ; la documentation distingue explicitement le besoin piloté par le client. Limites : Page primaire ouverte ; consolidation d’expéditions, pas garantie d’une seule palette. Synthèse sans reproduction substantielle. U758, CMP300.
+
+
+### ELM769
+
+MKT14 — Microsoft, [Wave creation and processing](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wave-processing). Documentation produit évolutive, édition précise non indiquée ; consultée le 25 septembre 2026. Passage : Wave processing ; release to picking and packing. Nature : fonction/processus produit. Reformulation : La constitution, le traitement et la libération des vagues organisent le travail de préparation dans l’entrepôt. Limites : Page primaire consultée ; responsabilité WMS plus détaillée que la libération des ordres par FLOW. Synthèse sans reproduction substantielle. U758, CMP300.
+
+
+### ELM770
+
+MKT23 — IBM, [Using economic shipping parameters](https://www.ibm.com/docs/en/order-management?topic=features-using-economic-shipping-parameters). Documentation produit évolutive, édition précise non indiquée ; consultée le 25 septembre 2026. Passage : Scenarios ; Allow shipment delay ; shipping window. Nature : fonction/processus produit. Reformulation : Un ordre ou une expédition peut être retenu en anticipation d’un autre pour consolidation ; délai autorisé et fenêtre d’expédition limitent les regroupements. Limites : Passages primaires indexés consultés ; ouverture directe refusée HTTP 403. Rétention économique documentée, pas preuve d’optimisation de toutes les charges WMS. Synthèse sans reproduction substantielle. U758, CMP300.
+
+
+### ELM771
+
+MKT23 — IBM, [Consolidate to shipment](https://www.ibm.com/docs/en/order-management?topic=transactions-consolidate-shipment). Documentation produit évolutive, édition précise non indiquée ; consultée le 25 septembre 2026. Passage : Transaction CONSOLIDATE_TO_SHIPMENT ; conditions de compatibilité. Nature : fonction/processus produit. Reformulation : La transaction du pipeline Order Fulfillment cherche une expédition compatible avec la release, selon site, destination, vendeur, transporteur et statuts modifiables. Limites : Texte primaire indexé consulté ; ouverture directe en erreur. Consolidation logique d’expédition, pas algorithme de palettisation. Synthèse sans reproduction substantielle. U758, CMP300.
+
+
+### ELM772
+
+MKT13 — SAP, [Defining the Product Availability Check](https://help.sap.com/docs/SAP_S4HANA_CLOUD/32da8359c8ee4e8b8e8c5e15cacba5aa/741d645473c50d4ee10000000a423f68.html). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Disponibilité selon stock ou éléments de réception ; certains modes limités au stock excluent les commandes et demandes d’achat. Limites : Passages primaires indexés consultés ; page ouverte sans corps exploitable. Options de produit, pas taxonomie FLOW. Synthèse sans copie substantielle. U761, CMP302.
+
+
+### ELM773
+
+MKT13 — SAP, [Determining Alternatives](https://help.sap.com/docs/SAP_S4HANA_CLOUD/32da8359c8ee4e8b8e8c5e15cacba5aa/21afef7a7724417daa91a26b6d071e5e.html). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Alternative-Based Confirmation recherche des sites, emplacements ou produits alternatifs ; la sélection suit une stratégie. Limites : Texte primaire indexé consulté. Une alternative ne prouve pas une création de supply ni un contrôle capacitaire ; sélection séparée dans FLOW. Synthèse sans copie substantielle. U761, CMP302.
+
+
+### ELM774
+
+MKT20 — Oracle, [See How Promising Estimates Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/determine-how-order-promising-gets-and-estimates-availability.html). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Distingue recherche de supply, estimation par lead times et disponibilité infinie sans examen des ressources. Limites : Page primaire ouverte, 25C ; modes du moteur GOP, pas trois capacités métier ni garantie de disponibilité. Synthèse sans copie substantielle. U761, CMP302.
+
+
+### ELM775
+
+MKT20 — Oracle, [Overview of the Order Promising Work Area](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-the-order-promising-work-area.html). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Financial Performance expose revenus, fulfillment costs et pourcentage de marge selon les dates. Limites : Page primaire ouverte et passage indexé consulté, 25C. Vue analytique, pas preuve d’un mode PTP natif distinct de sélection. Synthèse sans copie substantielle. U761, CMP302.
+
+
+### ELM776
+
+MKT20 — Oracle, [AI Agent: Gross Margin Analyst](https://docs.oracle.com/en/cloud/saas/readiness/scm/26b/inv26b/26B-inventory-wn-f42401.htm). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Évaluer marge par commande et article et éclairer les options de sourcing sensibles à la marge. Limites : Page primaire ouverte, annonce 26B. Fonction d’analyse adjacente au promising ; ne pas confondre annonce, installation et taxonomie. Aucun agent IA requis dans FLOW. Synthèse sans copie substantielle. U761, CMP302.
+
+
+### ELM777
+
+MKT13 — SAP, [Scenarios and Supported Features of PPAC and PAC with Supply Creation](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/95cbb18b60da470cac8d340f0c6f5251.html). Consulté le 25 septembre 2026. Nature : fonction ou option produit ; aucun identifiant natif autonome identifié. Reformulation : Création de supply avec planification multiniveau, capacités finies/infinies et sources alternatives selon les scénarios PP/DS. Limites : Passage primaire indexé consulté ; page ouverte sans corps exploitable, édition non affichée. Création/confirmation intégrées au produit, séparées de l’évaluation FLOW. Synthèse sans copie substantielle. U761, CMP302.
+
+
+### ELM778
+
+MKT20 — Oracle, [How the Order Orchestration and Order Promising Processes Use the Collected Planning Data](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/how-the-order-orchestration-and-order-promising-processes-use.html). Consulté le 25 septembre 2026, page primaire ouverte et passages lus. Nature : fonction/processus ou contrat de produit, pas capacité métier native ; identifiant natif distinct non identifié. Localisateur : 26B, sections Data Collections, Order Orchestration et Order Promising. Reformulation : L’orchestration transmet à Global Order Promising des demandes de scheduling ou de vérification de disponibilité ; Promising construit sa réponse à partir des données collectées. Planning, orchestration et promising utilisent des informations communes sans constituer un processus unique. Limites : Organisation fonctionnelle et technique d’Oracle ; ne prouve ni invocation à chaque état ni taxonomie universelle de sous-domaines. Synthèse sans reproduction substantielle. U765, CMP303.
+
+
+### ELM779
+
+MKT20 — Oracle, [Order Promises REST Endpoints](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fasrp/api-order-management-order-promises.html). Consulté le 25 septembre 2026, page primaire ouverte et passages lus. Nature : fonction/processus ou contrat de produit, pas capacité métier native ; identifiant natif distinct non identifié. Localisateur : 26C, Order Management/Order Promises. Reformulation : La ressource fournit les résultats de consultation et les options alternatives de disponibilité ; elle couvre aussi des mises à jour et annulations de commandes dans GOP. Limites : Cette interface rassemble lectures et mutations ; FLOW conserve la séparation évaluation, sélection de proposition et engagement dans les Orders. Aucune garantie de temps de réponse ni périmètre métier déduit de la seule API. Synthèse sans reproduction substantielle. U765, CMP303.
+
+
+### ELM780
+
+MKT14 — Microsoft, [Track time-series inventory in Inventory Visibility](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-track-atp). Consulté le 25 septembre 2026, page primaire ouverte et passages lus. Nature : fonction/processus ou contrat de produit, pas capacité métier native ; identifiant natif distinct non identifié. Localisateur : Documentation évolutive, mise à jour affichée 27 juillet 2026 ; introduction et Query and post ATP data using the Inventory Visibility API. Reformulation : Inventory Visibility rapproche les entrées et sorties attendues, calcule un ATP omnicanal et permet aux systèmes externes d’interroger les disponibilités futures par API, en quasi temps réel. Limites : Réutilisabilité documentée malgré le rattachement à Inventory Visibility ; contre-exemple au caractère systématiquement autonome de Promising dans les produits. Ne prescrit pas de sous-domaine FLOW. Synthèse sans reproduction substantielle. U765, CMP303.

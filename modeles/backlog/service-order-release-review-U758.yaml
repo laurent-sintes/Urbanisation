@@ -1,0 +1,162 @@
+id: SERVICE-ORDER-RELEASE-REVIEW-U758
+status: applied_U759
+source_refs:
+- U758
+- CMP300
+- ELM767
+- ELM768
+- ELM769
+- ELM770
+- ELM771
+- U759
+scope: Proposition courante de libération groupée d’ordres logistiques dans le backlog ; pas un audit parallèle.
+sources:
+- id: ELM767
+  reference: MKT14
+  vendor: Microsoft
+  title: Release to warehouse
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process
+  locator: Automatic release to the warehouse
+  finding: Libération de plusieurs ordres, traitement récurrent, sélection des quantités et regroupement par client. La création
+    de vagues et de travail dépend du paramétrage.
+  limits: Page primaire ouverte ; mécanisme produit, pas taxonomie FLOW ni garantie d’optimisation.
+  consulted_on: '2026-09-25'
+- id: ELM768
+  reference: MKT14
+  vendor: Microsoft
+  title: Configure shipment consolidation policies
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/configure-shipment-consolidation-policies
+  locator: Scenario 3, Order pool, client-driven consolidation
+  finding: Regrouper des lignes de plusieurs commandes pour un même compte, entrepôt et mode de livraison selon un pool ;
+    la documentation distingue explicitement le besoin piloté par le client.
+  limits: Page primaire ouverte ; consolidation d’expéditions, pas garantie d’une seule palette.
+  consulted_on: '2026-09-25'
+- id: ELM769
+  reference: MKT14
+  vendor: Microsoft
+  title: Wave creation and processing
+  url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wave-processing
+  locator: Wave processing ; release to picking and packing
+  finding: La constitution, le traitement et la libération des vagues organisent le travail de préparation dans l’entrepôt.
+  limits: Page primaire consultée ; responsabilité WMS plus détaillée que la libération des ordres par FLOW.
+  consulted_on: '2026-09-25'
+- id: ELM770
+  reference: MKT23
+  vendor: IBM
+  title: Using economic shipping parameters
+  url: https://www.ibm.com/docs/en/order-management?topic=features-using-economic-shipping-parameters
+  locator: Scenarios ; Allow shipment delay ; shipping window
+  finding: Un ordre ou une expédition peut être retenu en anticipation d’un autre pour consolidation ; délai autorisé et fenêtre
+    d’expédition limitent les regroupements.
+  limits: Passages primaires indexés consultés ; ouverture directe refusée HTTP 403. Rétention économique documentée, pas
+    preuve d’optimisation de toutes les charges WMS.
+  consulted_on: '2026-09-25'
+- id: ELM771
+  reference: MKT23
+  vendor: IBM
+  title: Consolidate to shipment
+  url: https://www.ibm.com/docs/en/order-management?topic=transactions-consolidate-shipment
+  locator: Transaction CONSOLIDATE_TO_SHIPMENT ; conditions de compatibilité
+  finding: La transaction du pipeline Order Fulfillment cherche une expédition compatible avec la release, selon site, destination,
+    vendeur, transporteur et statuts modifiables.
+  limits: Texte primaire indexé consulté ; ouverture directe en erreur. Consolidation logique d’expédition, pas algorithme
+    de palettisation.
+  consulted_on: '2026-09-25'
+current_model:
+  D06.d: Coordonne activations et dépendances ; choix des groupes et du moment de libération non explicite.
+  D06.f: Adapte face aux aléas ; ne suffit pas à décrire une rétention anticipée en fonctionnement normal.
+  D07.a: Détermine les prestations nécessaires, dont préparation/packing communs ; distinct du moment de leur libération.
+proposal:
+  name: Service Order Release Decision
+  nature: decision
+  parent: D06
+  category:
+    id: coordinate-adapt
+    display_name: Coordonner et adapter
+    order: 20
+  definition: Déterminer quels ordres de prestation retenir ou libérer ensemble, et à quel moment, pour organiser leur traitement
+    et favoriser les regroupements utiles tout en respectant les engagements.
+  result: Ensemble d’ordres et quantités à libérer, moment ou condition de libération, éléments maintenus en attente et justification.
+  behaviors:
+  - name: Batch Release
+    definition: Regrouper les ordres éligibles en lots de libération selon les fenêtres et la charge communiquée par l’exécutant.
+  - name: Consolidated Release
+    definition: Retenir les ordres ou quantités compatibles jusqu’à une complétude ou un regroupement utile pour leur traitement
+      commun, notamment pour une commande ou un client B2B.
+  decomposition_rationale: 'Deux bénéfices et mécanismes distincts : organiser la réception de charge et éviter la fragmentation
+    du traitement d’un ensemble client. Fenêtres, volumes et délais restent des paramètres de règles.'
+  example: Une commande B2B de 300 pièces arrive en trois ensembles éligibles. Retenir les deux premiers jusqu’à la disponibilité
+    prévue du troisième, dans la limite de l’engagement ; libérer ensemble avec une exigence de packing commun. Une seule
+    palette reste conditionnée par la compatibilité et la capacité réelle.
+boundaries:
+- Process Orchestration matérialise attente et libération puis suit la prise en charge ; l’envoi seul n’est pas une décision.
+- Service Order Management conserve les ordres et leurs engagements. Un lot de libération ne fusionne pas les commandes ni
+  les identités.
+- Order Management porte les exigences de livraison complète ; Fulfilment optimise dans leur respect.
+- Matching conserve l’affectation des ressources ; aucun arbitrage de supply caché dans la rétention.
+- Les informations sur ordres à venir et charge sont des entrées datées ; aucune certitude d’arrivée inventée.
+- Le WMS organise ses vagues et opérations internes. Regroupement de messages, expédition et palette ne sont pas équivalents.
+- Si les ordres sont transmis en avance, distinguer information de prévision et autorisation de lancement ; aucune architecture
+  de transmission imposée.
+- Process Adaptation Decision traite un aléa qui remet le plan en cause ; la décision de libération peut être réévaluée sans
+  recréer une seconde promesse.
+market_position:
+  common: Release to warehouse, consolidation d’expédition et rétention économique attestées.
+  difference: Capacité métier et frontière FLOW proposées ; les sources éditeurs mélangent parfois orchestration et opérations
+    WMS.
+  naming: Service Order Release Decision proposé, sans consensus de nom revendiqué.
+  tradeoff: Bénéfice de regroupement à comparer à l’attente, aux délais de préparation et aux capacités ; tout transmettre
+    en une fois n’est pas toujours meilleur.
+publication_delivery:
+  state: applied
+  source_refs:
+  - U758
+  - U759
+  summary: Décision de libération et deux stratégies appliquées ; frontière avec orchestration, traitement commun et WMS conservée.
+  required_nodes:
+  - id: service-order-release-decision
+    parent: D06
+    fields:
+      name: Service Order Release Decision
+      nature: decision
+      category:
+        id: coordinate-adapt
+        display_name: Coordonner et adapter
+        order: 20
+      definition: Déterminer quels ordres de prestation retenir ou libérer ensemble, et à quel moment, pour organiser leur
+        traitement et favoriser les regroupements utiles tout en respectant les engagements.
+  - id: BHV105
+    parent: service-order-release-decision
+    fields:
+      name: Batch Release
+  - id: BHV106
+    parent: service-order-release-decision
+    fields:
+      name: Consolidated Release
+application:
+  source_refs:
+  - U759
+  capability: service-order-release-decision
+  behaviors:
+  - BHV105
+  - BHV106
+  updated_nodes:
+  - D06
+  - D06.d
+  - D06.f
+  - D07.a
+  - service-order-picking
+  - service-order-packing
+  note: Lot complet appliqué ; types de comportements et nouvelles descriptions détaillées proposés, noms et définition de
+    capacité présentés validés.
+  decision_intents:
+  - DEC-U759-CONTEXT-1
+  - DEC-U759-CONTEXT-2
+  - DEC-U759-CONTEXT-3
+  - DEC-U759-CONTEXT-4
+  - DEC-U759-RELEASE
+  - DEC-U759-BHV105
+  - DEC-U759-BHV106
+  - DEC-U759-PARENT-service-order-release-decision
+  - DEC-U759-PARENT-BHV105
+  - DEC-U759-PARENT-BHV106

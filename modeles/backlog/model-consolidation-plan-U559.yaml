@@ -5,7 +5,8 @@ source_refs:
 - U557
 - U558
 - CMP233
-status: proposé ; refacto non exécuté ; aucun arbitrage adopté
+- U757
+status: implementation_followed_by_U560
 objective: Consolider les responsabilités, leurs coopérations et leurs inspirations à partir des dix constats U557/U558, au
   niveau capacité et comportement existant.
 scope: Backlog Supply Chain Orchestration hors Authoritative Data et descendants ; aucune extension au Commerce, au catalogue
@@ -255,3 +256,12 @@ follow_up_U560:
   implementation: modeles/backlog/model-consolidation-U560.yaml
   status: mise en œuvre autonome ; constat initial conservé ; résultats détaillés dans le manifest
   remaining_open: Cas historiques non identifiés de besoins prévisionnels sans commande, AUD557-05.
+status_reconciliation_U757:
+  previous_status: proposé ; refacto non exécuté ; aucun arbitrage adopté
+  reason: Le plan proposé a donné lieu à l’application de travail documentée U560 ; ne pas conserver « refacto non exécuté
+    » comme état courant ni déduire une validation métier globale.
+  source_refs:
+  - U560
+  - U757
+  note: Mise en cohérence du suivi ; ne vaut ni nouvel accord métier ni adoption des formulations historiques.
+  current_reference: modeles/backlog/model-consolidation-U560.yaml

@@ -1,6 +1,6 @@
 id: flow-modeling-glossary
 kind: modeling_glossary
-as_of: '2026-09-22'
+as_of: '2026-09-25'
 source_refs:
 - U229
 - U230
@@ -40,6 +40,11 @@ source_refs:
 - U615
 - U624
 - U626
+- U751
+- U752
+- U753
+- U756
+- U767
 purpose: Vocabulaire de modélisation en support à la définition des objets du modèle ; distinct du glossaire métier.
 boundary:
   business_glossary: modeles/backlog/glossary.yaml
@@ -374,6 +379,7 @@ terms:
     paramètre ni nouveau niveau hiérarchique.
   - Un plan peut proposer une révision de politique et faire appliquer sa version autorisée, y compris automatiquement selon
     une délégation ; une hypothèse de simulation ne modifie pas le cadre actif.
+  - 'U767 : Evaluation complète les types pour ATP/CTP/PTP, indépendamment de leur mise en œuvre humaine ou automatisée.'
   analysis_ref: modeles/backlog/capability-types-U449.yaml
   source_refs:
   - U449
@@ -387,6 +393,7 @@ terms:
   - U618
   - U624
   - U626
+  - U767
   review:
     state: partial
     adopted_scope: 'Typage exhaustif, icônes associées, décisions en fin de liste et séparation légère U449. U586 : nouveau
@@ -593,18 +600,36 @@ terms:
 - id: MOD015
   name: Capability
   label_fr: Capacité
-  definition: Ce que sait faire durablement l’entreprise, indépendamment de son organisation et de ses outils.
-  role: Décrire une aptitude métier au sein d’un Purpose ; ses comportements en précisent les manières d’agir.
+  definition: Ce que sait faire durablement l’entreprise pour fonctionner et remplir ses finalités, indépendamment de son
+    organisation et de ses outils. Cela inclut la production, la tenue et l’exploitation des actifs métier qu’elle utilise
+    pour agir, décider, partager une connaissance et collaborer, notamment les Orders, les registres et les données agrégées.
+  role: Décrire une aptitude métier au sein d’un sous-domaine ; ses comportements en précisent les manières de l’exercer.
   notes:
   - Un produit peut contribuer à plusieurs capacités ; une fonctionnalité ne suffit pas à définir une capacité.
   - Le glossaire métier TER001 conserve un renvoi historique vers cette autorité méthodologique.
+  - 'Critère U751/U752 : imaginer des humains avec du papier, un stylo et des calepins, puis décrire ce qu’ils font et les
+    actifs qu’ils tiennent pour faire fonctionner l’entreprise. Ce test révèle la responsabilité métier ; il ne prescrit pas
+    une réalisation manuelle.'
+  - 'Certains documents, registres et ensembles de données constituent des actifs durables de l’entreprise. Leur nom peut
+    désigner une capacité de les produire, les tenir ou les exploiter : Sales Order, Inventory Ledger ou Inventory Visibility,
+    avec une définition qui explicite le service rendu.'
+  - La présence d’un actif ne crée pas automatiquement une capacité par document, table, champ ou écriture. Justifier la responsabilité
+    durable, son résultat et sa maille ; un nom orienté actif n’est pas à lui seul un défaut de modélisation.
+  - Les domaines et sous-domaines regroupent finalités, connaissances ou problématiques pour partager et collaborer. Ils ne
+    reproduisent ni organigramme ni découpage technologique ; automatisation et mutualisation peuvent conduire à des réalisations
+    transversales.
   source_refs:
   - U33
   - U624
   - U626
+  - U751
+  - U752
+  - U753
+  - CMP296
   review:
     state: partial
-    note: Définition U33 conservée ; matérialisation méthodologique et renvois U626 proposés.
+    note: Principes U751/U752 intégrés à la demande U753 ; formulation de synthèse Codex. Aucun nouveau type ni regroupement
+      de capacités validé par extension.
   market_comparisons:
   - vendor: The Open Group
     product: TOGAF Series Guide
@@ -616,7 +641,8 @@ terms:
     approach_summary: Séparer aptitude et moyens.
     similarities: Le besoin survit aux changements d’organisation.
     differences: Le guide propose sa propre structuration de carte.
-    flow_position: FLOW reprend le principe, avec sa décomposition propre.
+    flow_position: FLOW reprend le principe, avec sa décomposition propre. U751–U753 explicitent les actifs métier et leur
+      tenue dans la convention FLOW ; cette précision n’est pas attribuée comme taxonomie native à la source.
     source_title: Business Capabilities
     source_url: https://governance.foundation/assets/frameworks/togaf/g189%20-%20Business%20Capbility.pdf
     source_version: Guide G189, 2018
@@ -639,7 +665,8 @@ terms:
     approach_summary: Relier besoin et raison d’être.
     similarities: La capacité ne prescrit pas le logiciel.
     differences: GEA-NZ vise des administrations et leur modèle de fonctionnement.
-    flow_position: FLOW l’applique à ses responsabilités métier.
+    flow_position: FLOW l’applique à ses responsabilités métier. U751–U753 explicitent les actifs métier et leur tenue dans
+      la convention FLOW ; cette précision n’est pas attribuée comme taxonomie native à la source.
     source_title: Business capabilities
     source_url: https://dns.govt.nz/standards-and-guidance/technology-and-architecture/government-enterprise-architecture/gea-nz-framework/business-capabilities
     source_version: Page institutionnelle évolutive, édition non indiquée
@@ -890,3 +917,174 @@ terms:
   review:
     state: proposed
     note: Organisation méthodologique U626 ; sens antérieur conservé.
+- id: MOD020
+  name: Ledger
+  definition: Type de capacité qui tient un registre métier durable de faits reconnus, datés et justifiés, en assurant leur
+    traçabilité et leurs corrections.
+  role: Distinguer la tenue du registre de l’intégration des faits, de la décision et de la visibilité.
+  notes:
+  - Le registre est un actif métier ; son nom désigne la capacité de le tenir.
+  - Une écriture proposée ne vaut pas un fait reconnu ; conserver fondement et corrections.
+  - Convention de typage FLOW, pas une taxonomie éditeur ni une technologie imposée.
+  source_refs:
+  - U752
+  - U753
+  - U756
+  - CMP296
+  - CMP297
+  market_comparisons:
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    element_name: Set up consignment
+    concept_name: Set up consignment
+    element_type: Fonction produit documentée
+    relationship: Recouvrement partiel
+    similarities: Le journal conserve les transferts du fournisseur à l’entité acquéreuse ; propriété et présence physique
+      sont distinctes.
+    differences: Consignation entrante ; la généralisation à tous les contrats et le type Ledger sont des choix FLOW.
+    flow_position: Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent
+      à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date,
+      avec ou sans consignation.
+    term_choice: Nom FLOW décrivant la responsabilité métier ; pas un nom de fonction Microsoft repris à l’identique.
+    definition_choice: Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent
+      à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date,
+      avec ou sans consignation.
+    scope_summary: Le journal conserve les transferts du fournisseur à l’entité acquéreuse ; propriété et présence physique
+      sont distinctes.
+    approach_summary: Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent
+      à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date,
+      avec ou sans consignation.
+    source_title: Set up consignment
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment
+    source_version: Documentation évolutive
+    source_locator: Introduction et processus de propriété
+    consulted_on: '2026-09-25'
+    evidence_limits: Consignation entrante ; la généralisation à tous les contrats et le type Ledger sont des choix FLOW.
+    status: proposed
+    source_refs:
+    - ELM739
+    - CMP297
+    - CMP298
+    - U756
+  - vendor: Microsoft
+    product: Dynamics 365 Supply Chain Management
+    element_name: Change the ownership of consignment inventory based on production demand
+    concept_name: Change the ownership of consignment inventory based on production demand
+    element_type: Fonction produit documentée
+    relationship: Recouvrement partiel
+    similarities: Les lignes du journal peuvent être préparées à partir des besoins de production et des statuts pertinents.
+    differences: Le traitement automatique du journal est explicitement non pris en charge ; pas preuve d’un moteur réactif
+      de décision.
+    flow_position: Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent
+      à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date,
+      avec ou sans consignation.
+    term_choice: Nom FLOW décrivant la responsabilité métier ; pas un nom de fonction Microsoft repris à l’identique.
+    definition_choice: Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent
+      à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date,
+      avec ou sans consignation.
+    scope_summary: Les lignes du journal peuvent être préparées à partir des besoins de production et des statuts pertinents.
+    approach_summary: Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent
+      à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date,
+      avec ou sans consignation.
+    source_title: Change the ownership of consignment inventory based on production demand
+    source_url: https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/tasks/change-ownership-consignment
+    source_version: Documentation évolutive
+    source_locator: Introduction et processus de propriété
+    consulted_on: '2026-09-25'
+    evidence_limits: Le traitement automatique du journal est explicitement non pris en charge ; pas preuve d’un moteur réactif
+      de décision.
+    status: proposed
+    source_refs:
+    - ELM764
+    - CMP297
+    - CMP298
+    - U756
+  review:
+    state: partial
+    note: Type et définition validés U756 ; formulation méthodologique complémentaire proposée.
+- id: MOD021
+  name: Evaluation
+  definition: Type de capacité qui évalue des possibilités, leur faisabilité ou leurs conséquences à partir de faits, règles
+    et hypothèses, en explicitant résultats, conditions et incertitudes, sans sélectionner une réponse ni engager sa réalisation.
+  role: Distinguer une évaluation métier autonome, réutilisable par plusieurs décisions, de la sélection d’une réponse.
+  notes:
+  - ATP, CTP et PTP sont de type Evaluation ; Promise Selection Decision choisit une proposition.
+  - 'Une décision conserve ses calculs internes : aucune capacité créée pour chaque formule.'
+  - Knowledge établit et expose la connaissance de la situation ; Evaluation apprécie des possibilités dans un contexte.
+  - Convention FLOW ; le marché peut réunir évaluation et sélection dans une même fonction.
+  source_refs:
+  - U760
+  - U762
+  - U767
+  - ELM762
+  - ELM763
+  market_comparisons:
+  - vendor: Oracle
+    product: Global Order Promising
+    element_name: Promising Attributes for Supply Chain Availability Searches
+    concept_name: Promising Attributes for Supply Chain Availability Searches
+    element_type: Fonction produit documentée
+    relationship: Recouvrement partiel
+    similarities: Coûts des options et composants ou ressources mobilisés
+    differences: FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements
+      sont des variantes métier et non une taxonomie uniforme des éditeurs.
+    flow_position: Type de capacité qui évalue des possibilités, leur faisabilité ou leurs conséquences à partir de faits,
+      règles et hypothèses, en explicitant résultats, conditions et incertitudes, sans sélectionner une réponse ni engager
+      sa réalisation.
+    term_choice: Evaluation qualifie le résultat dominant dans FLOW ; aucun type métier uniformément adopté par les éditeurs
+      n’est revendiqué.
+    definition_choice: Formaliser l’évaluation autonome d’options, distincte de leur sélection ; la fonction Oracle peut combiner
+      ces responsabilités.
+    scope_summary: Coûts des options et composants ou ressources mobilisés
+    approach_summary: Type de capacité qui évalue des possibilités, leur faisabilité ou leurs conséquences à partir de faits,
+      règles et hypothèses, en explicitant résultats, conditions et incertitudes, sans sélectionner une réponse ni engager
+      sa réalisation.
+    source_title: Promising Attributes for Supply Chain Availability Searches
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/promising-attributes-for-supply-chain-availability-searches.html
+    source_version: 25D
+    consulted_on: '2026-09-25'
+    source_locator: Coûts des options et composants ou ressources mobilisés
+    evidence_limits: Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent
+      pas un consensus. Aucune réalisation Beaumanoir déduite.
+    status: proposed
+    source_refs:
+    - ELM762
+    - U761
+    - U765
+    - U767
+  - vendor: Oracle
+    product: Global Order Promising
+    element_name: Create Alternative Fulfillment Scenarios to Reduce Cost
+    concept_name: Create Alternative Fulfillment Scenarios to Reduce Cost
+    element_type: Fonction produit documentée
+    relationship: Recouvrement partiel
+    similarities: Comparaison des dates et coûts de scénarios alternatifs
+    differences: FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements
+      sont des variantes métier et non une taxonomie uniforme des éditeurs.
+    flow_position: Type de capacité qui évalue des possibilités, leur faisabilité ou leurs conséquences à partir de faits,
+      règles et hypothèses, en explicitant résultats, conditions et incertitudes, sans sélectionner une réponse ni engager
+      sa réalisation.
+    term_choice: Evaluation qualifie le résultat dominant dans FLOW ; aucun type métier uniformément adopté par les éditeurs
+      n’est revendiqué.
+    definition_choice: Formaliser l’évaluation autonome d’options, distincte de leur sélection ; la fonction Oracle peut combiner
+      ces responsabilités.
+    scope_summary: Comparaison des dates et coûts de scénarios alternatifs
+    approach_summary: Type de capacité qui évalue des possibilités, leur faisabilité ou leurs conséquences à partir de faits,
+      règles et hypothèses, en explicitant résultats, conditions et incertitudes, sans sélectionner une réponse ni engager
+      sa réalisation.
+    source_title: Create Alternative Fulfillment Scenarios to Reduce Cost
+    source_url: https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html
+    source_version: 25D
+    consulted_on: '2026-09-25'
+    source_locator: Comparaison des dates et coûts de scénarios alternatifs
+    evidence_limits: Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent
+      pas un consensus. Aucune réalisation Beaumanoir déduite.
+    status: proposed
+    source_refs:
+    - ELM763
+    - U761
+    - U765
+    - U767
+  review:
+    state: partial
+    note: Distinction évaluation/sélection validée ; définition méthodologique rédigée pour l’appliquer.

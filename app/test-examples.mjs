@@ -5,6 +5,36 @@ import { marketSearchText, marketComparisonsForReading } from './src/marketConte
 import { adaptPublication } from './src/model.ts';
 import { searchPublication } from './src/search.ts';
 
+test('shared scenarios resolve only direct definitions from the supplied snapshot and never mutate them', () => {
+  const owner = { examples: [{ id: 'partial', title: 'Commande partielle', situation: 'Illustration.',
+    trigger: 'Commande reçue', objective: 'Promettre', constraints: ['Date demandée'],
+    options: [{ title: 'Regrouper', description: 'Une palette unique' }],
+    contributions: [{ node_id: 'C', role: 'Comparer les coûts' }], source_refs: ['secret'] }] };
+  const local = { examples: [], scenario_refs: [{ node_id: 'D', scenario_id: 'partial', contribution: 'Dossier contextuel' }] };
+  const before = structuredClone(owner);
+  const resolve = id => id === 'D' ? owner : undefined;
+  assert.equal(businessExamples(local, resolve).length, 1);
+  assert.equal(businessExamples(local, resolve)[0].contribution, 'Dossier contextuel');
+  assert.match(exampleSearchText(local, resolve), /Une palette unique/);
+  assert.match(exampleSearchText(local, resolve), /Dossier contextuel/);
+  assert.doesNotMatch(exampleSearchText(local, resolve), /secret/);
+  businessExamples(local, resolve)[0].options[0].title = 'Mutated';
+  assert.deepEqual(owner, before);
+  assert.deepEqual(businessExamples(local), []);
+  assert.deepEqual(businessExamples(local, () => local), []);
+});
+
+test('shared scenario details are searchable on the referencing sheet in that publication only', () => {
+  const model = adaptPublication({ space: 'release', version: 'scenario', relations: [], nodes: [
+    { id: 'D', kind: 'domain', fields: { name: 'Supply', examples: [{ id: 's', title: 'Cas', situation: 'Situation', options: [{ title: 'Express', description: 'Transport accéléré' }] }] } },
+    { id: 'C', kind: 'capability', fields: { name: 'PTP', scenario_refs: [{ node_id: 'D', scenario_id: 's', contribution: 'Surcoût local' }] } },
+  ] });
+  assert.ok(searchPublication(model, 'transport accéléré').some(hit => hit.id === 'C'));
+  assert.equal(searchPublication(model, 'surcoût local')[0].id, 'C');
+  const old = adaptPublication({ space: 'release', version: 'older', relations: [], nodes: [model.nodes[1]] });
+  assert.deepEqual(searchPublication(old, 'transport accéléré'), []);
+});
+
 test('explicit examples preserve situation, result and lesson without exposing their provenance', () => {
   const fields = { examples: [{ title: 'Réception partielle', situation: '60 reçues sur 100.', outcome: '40 restantes.', lesson: 'Annonce et réception diffèrent.', source_refs: ['sourceprivee'], review: 'secret' }] };
   assert.deepEqual(businessExamples(fields), [{ title: 'Réception partielle', situation: '60 reçues sur 100.', outcome: '40 restantes.', lesson: 'Annonce et réception diffèrent.' }]);

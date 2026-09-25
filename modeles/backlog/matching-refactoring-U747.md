@@ -1,6 +1,6 @@
 # Refactoring du Matching — cible validée U749
 
-> Vue de lecture générée depuis [matching-refactoring-U747.yaml](matching-refactoring-U747.yaml). La cible à trois capacités est remplacée par trois catégories et dix capacités. Structure validée ; application au modèle canonique en attente.
+> Vue de lecture générée depuis [matching-refactoring-U747.yaml](matching-refactoring-U747.yaml). La cible à trois capacités est remplacée par trois catégories et dix capacités. Structure validée U749 et appliquée au modèle canonique U750.
 
 Un master plan commun mobilise plusieurs capacités métier autonomes. Les stratégies sont leurs comportements ; elles ne justifient pas de réduire toutes les décisions à une capacité unique. Microsoft reste l’inspiration principale.
 
@@ -29,7 +29,7 @@ U749 valide ensemble les trois catégories, les dix capacités nommées, le mast
 
 Les capacités existantes d’optimisation des cibles, protections et conditions de réservation sont conservées. Policies porte les règles actives ; les capacités de décision en recommandent les évolutions. Disponibilité et réexamen des promesses restent dans Inventory ; confirmation dans Orders ; exécution dans Fulfilment.
 
-## Correspondances préparées
+## Correspondances appliquées
 
 | Existant | Cible | Traitement |
 | --- | --- | --- |
@@ -65,15 +65,18 @@ Les capacités existantes d’optimisation des cibles, protections et conditions
 | BHV100 Rerun Planning | BHV100 | Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées. |
 | BHV101 Monitor Plan | BHV101 | Conserver le comportement, son parent et ses descriptions ; requalifier seulement les références touchées. |
 
-## Points de mise en œuvre encore proposés
+## Précisions de mise en œuvre
 
 - Détail du maintien de l’implantation initiale dans Replenishment : assortiment, quantités par site et date de lancement.
 - Répartition des responsabilités d’Order Rescheduling entre révision du plan, simulation et réaffectation, sans absorber le BOP.
 - Portée exacte du nouveau nom Demand Prioritization vis-à-vis des besoins prévisionnels.
 - Promotion de Simulation & Analysis et Plan Application en capacités, types et requalification des relations. La position en capacité est validée ; les détails techniques et descriptions nouvelles restent proposés.
 
-Ces précisions ne remettent pas en attente l’accord sur la structure. Les 31 éléments existants possèdent une destination préparée et les 98 relations concernées sont inventoriées dans le YAML.
+Ces précisions ne remettent pas en attente l’accord sur la structure. Les 31 éléments existants possèdent une destination appliquée et les 98 relations concernées sont inventoriées dans le YAML.
 
 ## Appuis marché
 
 [Master plans Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans), [couverture](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/coverage-settings), [pegging et marking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking), [sélection des ressources](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/make-to-order-supply-automation). Ces sources appuient les mécanismes et le plan commun ; le découpage en dix capacités est une décision de modélisation FLOW. Les sources complémentaires fashion sont conservées dans le YAML et les fiches existantes.
+
+
+Application U750 : les identifiants BHV006 et D02.e sont conservés lors de leur promotion en capacités ; BHV102 et BHV103 décrivent les deux stratégies de Supply Assignment. D05.g et BHV077 sont retirés avec succession conservée dans le YAML. Les trois catégories et dix capacités sont présentes dans model.yaml ; aucune release effectuée.

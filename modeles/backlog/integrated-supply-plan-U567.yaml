@@ -3,7 +3,8 @@ date: '2026-09-21'
 source_refs:
 - U567
 - CMP237
-status: market_verification_complete_architecture_refactor_pending
+- U757
+status: structural_refactor_applied_U750
 baseline: audits/2026-09-21-integrated-supply-plan-U567/model-before.yaml
 verification:
   microsoft_common_plan_ctp_and_new_purchases: confirmed
@@ -224,3 +225,13 @@ changed_model_fields:
 business_definitions_unchanged: true
 conclusion: Principe d’intégration étayé ; l’unicité du plan retenu est le choix FLOW formulé par Laurent. Aucun moteur universel,
   séquence imposée ou optimum global garanti ne découle du seul nom ARun/Master Plan/CTP.
+status_reconciliation_U757:
+  previous_status: market_verification_complete_architecture_refactor_pending
+  reason: Le master plan interne commun et la distinction des plans externes sont appliqués. La discussion datée n’est plus
+    une refonte en attente.
+  source_refs:
+  - U673
+  - U750
+  - U757
+  note: Mise en cohérence du suivi ; ne vaut ni nouvel accord métier ni adoption des formulations historiques.
+  current_reference: modeles/backlog/matching-refactoring-U747.yaml

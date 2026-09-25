@@ -2,6 +2,8 @@ id: MODEL-READABILITY-U710
 source_refs:
 - U710
 - U711
+- U757
+- U763
 status: applied_U711
 date: '2026-09-24'
 sources:
@@ -159,55 +161,16 @@ publication_delivery:
   - U711
   - U717
   - U733
-  summary: Rôles dominants, catégories ciblées, retrait du cycle générique et des comportements isolés.
+  - U750
+  - U757
+  summary: 'Rôles dominants, catégories ciblées, retrait du cycle générique et des comportements isolés. U757 : toutes les
+    capacités classées ; catégorie Intégration de Master Data Ingestion.'
   required_nodes:
   - id: business-references
     fields:
       dominant_role:
         id: data-state
         display_name: Données et état
-  - id: D03.m
-    fields:
-      category:
-        id: order-coverage
-        display_name: Priorités et couverture des commandes
-        order: 30
-  - id: D05.a
-    fields:
-      category:
-        id: stock-flows
-        display_name: Décisions de stock et de flux
-        order: 20
-  - id: D05.d
-    fields:
-      category:
-        id: stock-flows
-        display_name: Décisions de stock et de flux
-        order: 20
-  - id: D05.g
-    fields:
-      category:
-        id: stock-flows
-        display_name: Décisions de stock et de flux
-        order: 20
-  - id: D05.e
-    fields:
-      category:
-        id: stock-flows
-        display_name: Décisions de stock et de flux
-        order: 20
-  - id: D05.c
-    fields:
-      category:
-        id: stock-flows
-        display_name: Décisions de stock et de flux
-        order: 20
-  - id: D05.f
-    fields:
-      category:
-        id: global-plan
-        display_name: Plan global
-        order: 10
   - id: D06.b
     fields:
       category:
@@ -270,18 +233,6 @@ publication_delivery:
         id: coordinate-adapt
         display_name: Coordonner et adapter
         order: 20
-  - id: D05.h
-    fields:
-      category:
-        id: stock-flows
-        display_name: Décisions de stock et de flux
-        order: 20
-  - id: D03.o
-    fields:
-      category:
-        id: order-coverage
-        display_name: Priorités et couverture des commandes
-        order: 30
   - id: D05.i
     fields:
       category:
@@ -303,9 +254,488 @@ publication_delivery:
       dominant_role:
         id: commitments
         display_name: Gestion des engagements
+  - id: D02.b
+    parent: subdomain-policies
+    fields:
+      category:
+        id: operating-policies
+        display_name: Operating Policies
+        order: 10
+  - id: D04.i
+    parent: D04
+    fields:
+      category:
+        id: incoming-orders
+        display_name: Incoming Orders
+        order: 10
+  - id: D04.j
+    parent: D04
+    fields:
+      category:
+        id: incoming-orders
+        display_name: Incoming Orders
+        order: 10
+  - id: D04.k
+    parent: D04
+    fields:
+      category:
+        id: incoming-orders
+        display_name: Incoming Orders
+        order: 10
+  - id: D04.l
+    parent: D04
+    fields:
+      category:
+        id: incoming-orders
+        display_name: Incoming Orders
+        order: 10
+  - id: D04.m
+    parent: D04
+    fields:
+      category:
+        id: incoming-orders
+        display_name: Incoming Orders
+        order: 10
+  - id: D04.n
+    parent: D04
+    fields:
+      category:
+        id: order-support
+        display_name: Order Support
+        order: 20
+  - id: D04.r
+    parent: D04
+    fields:
+      category:
+        id: incoming-orders
+        display_name: Incoming Orders
+        order: 10
+  - id: D08.e
+    parent: D08
+    fields:
+      category:
+        id: reference-visibility
+        display_name: Reference Visibility
+        order: 20
+  - id: D09.e
+    parent: D09
+    fields:
+      category:
+        id: reference-visibility
+        display_name: Reference Visibility
+        order: 20
+  - id: D11.b
+    parent: D11
+    fields:
+      category:
+        id: reference-visibility
+        display_name: Reference Visibility
+        order: 20
+  - id: D12.b
+    parent: D12
+    fields:
+      category:
+        id: reference-visibility
+        display_name: Reference Visibility
+        order: 20
+  - id: D13.b
+    parent: D13
+    fields:
+      category:
+        id: reference-visibility
+        display_name: Reference Visibility
+        order: 20
+  - id: D14.b
+    parent: D14
+    fields:
+      category:
+        id: reference-visibility
+        display_name: Reference Visibility
+        order: 20
+  - id: D16.b
+    parent: D16
+    fields:
+      category:
+        id: reference-visibility
+        display_name: Reference Visibility
+        order: 20
+  - id: D19.a
+    parent: subdomain-policies
+    fields:
+      category:
+        id: operating-policies
+        display_name: Operating Policies
+        order: 10
+  - id: D19.b
+    parent: subdomain-policies
+    fields:
+      category:
+        id: operating-policies
+        display_name: Operating Policies
+        order: 10
+  - id: D04.t
+    parent: D04
+    fields:
+      category:
+        id: incoming-orders
+        display_name: Incoming Orders
+        order: 10
+  - id: plans-ingestion
+    parent: subdomain-plans
+    fields:
+      category:
+        id: integration
+        display_name: Intégration
+        order: 10
+  - id: plans-visibility
+    parent: subdomain-plans
+    fields:
+      category:
+        id: plan-visibility
+        display_name: Plan Visibility
+        order: 20
+  - id: demand-plan-visibility
+    parent: subdomain-plans
+    fields:
+      category:
+        id: plan-visibility
+        display_name: Plan Visibility
+        order: 20
+  - id: master-data-ingestion
+    parent: business-references
+    fields:
+      category:
+        id: integration
+        display_name: Intégration
+        order: 10
+  - id: price-book-visibility
+    parent: price-book
+    fields:
+      category:
+        id: reference-visibility
+        display_name: Reference Visibility
+        order: 20
+  - id: order-visibility
+    parent: D04
+    fields:
+      category:
+        id: order-support
+        display_name: Order Support
+        order: 20
   absent_nodes:
   - D07.b
   - vas-repacking
   - vas-labeling-relabeling
 superseded_U733: D18 retiré et ses capacités réintégrées à D01 ; son rôle dominant historique ne devient pas une exigence
   de présence.
+superseded_U750:
+  source_refs:
+  - U749
+  - U750
+  scope: Catégories et structure du Matching remplacées ; gardes courantes dans matching-refactoring-U747.yaml. Les autres
+    contrôles U710 sont conservés.
+category_requirement_U757:
+  status: applied
+  rule: Toutes les capacités ont une catégorie, sans décomposition ni type déduit de son nom.
+  source_refs:
+  - U757
+  changed_capabilities:
+  - D02.b
+  - D04.i
+  - D04.j
+  - D04.k
+  - D04.l
+  - D04.m
+  - D04.n
+  - D04.r
+  - D08.e
+  - D09.e
+  - D11.b
+  - D12.b
+  - D13.b
+  - D14.b
+  - D16.b
+  - D19.a
+  - D19.b
+  - D04.t
+  - plans-ingestion
+  - plans-visibility
+  - demand-plan-visibility
+  - master-data-ingestion
+  - price-book-visibility
+  - order-visibility
+  coverage:
+    capabilities: 71
+    without_category: 0
+  classification_note: 'Classements complémentaires de présentation : Incoming Orders et Order Support ; Operating Policies
+    ; Reference Visibility ; Plan Visibility ; Intégration pour les ingestions. Les catégories déjà présentes sont conservées.
+    Noms complémentaires proposés par Codex, responsabilités inchangées.'
+  market_basis: Réutilisation de la distinction classification/hiérarchie U711 et du type/catégorie Intégration U717 ; aucun
+    standard de catégories métier ni nouvelle étude revendiqués.
+  decision_intents:
+  - DEC-U757-CONTEXT-1
+  - DEC-U757-CONTEXT-2
+  - DEC-U757-CONTEXT-3
+  - DEC-U757-CONTEXT-4
+  - DEC-U757-CONTEXT-5
+  - DEC-U757-CONTEXT-6
+  - DEC-U757-CONTEXT-7
+  - DEC-U757-CONTEXT-8
+  - DEC-U757-CONTEXT-9
+  - DEC-U757-CONTEXT-10
+  - DEC-U757-CONTEXT-11
+  - DEC-U757-MASTER-DATA-INTEGRATION
+business_scenarios_U763:
+  status: applied_U764
+  source_refs:
+  - U763
+  - ELM763
+  - ELM767
+  - ELM768
+  - U764
+  existing_support:
+    model: 'fields.examples : exemples structurés ; title, situation, outcome, lesson.'
+    atlas: businessExamples lit les exemples structurés ou les exemples explicites du scope ; section Exemples sur les fiches,
+      indexée dans la recherche.
+    gap: Aucune structure spécifique aux alternatives et contributions croisées ; les exemples narratifs ne garantissent pas
+      l’explication des situations de bout en bout.
+  proposal:
+    label: Scénarios métier
+    levels:
+    - Domain
+    - Subdomain
+    - Capability
+    principle: Enrichir et rendre plus explicite la rubrique illustrative des fiches, sans niveau dans l’arbre et sans nouvelle
+      backlog.
+    content:
+    - Situation et déclencheur
+    - Résultat recherché et contraintes utiles
+    - Options examinées lorsque pertinentes
+    - Contribution des capacités et interactions
+    - Résultat produit ou issue illustrative explicitement hypothétique
+    scope_by_level:
+      Domain: Situation de bout en bout mobilisant plusieurs sous-domaines.
+      Subdomain: Coopération des capacités pour traiter la situation.
+      Capability: Résultat propre dans un contexte concret et variantes examinées.
+    example: 'Livrer une commande B2B avec stock partiel : ATP évalue courant/futur, CTP les faisabilités supplémentaires
+      pertinentes, PTP expose les conséquences économiques, Promise Selection Decision choisit et Fulfilment coordonne la
+      libération des prestations.'
+    reuse: Conserver fields.examples comme point d’ancrage ; qualifier les besoins de champs structurés et liens avant extension.
+      Éviter de recopier le même récit aux trois niveaux.
+    boundary: Un scénario illustre une collaboration ; les comportements décrivent la profondeur ou la manière d’évaluer.
+      Pas de scénario érigé en capacité, ni parcours universel imposé.
+  market_comparison: Oracle ELM763 illustre des scénarios alternatifs avec coûts/dates ; Microsoft ELM767/ELM768 décrit des
+    parcours et cas de consolidation. Les sources déjà consultées appuient l’illustration par situations, pas une prescription
+    de métamodèle ni les champs proposés.
+  application:
+    source_refs:
+    - U764
+    canonical_fields:
+    - examples
+    - scenario_refs
+    nodes:
+    - universe-supply
+    - D01
+    - D06
+    - D03.k
+    illustrations: Un scénario partagé et quatre scénarios locaux PTP. Rédaction illustrative de Codex, distincte de la validation
+      du mécanisme et de tout choix ATP/CTP/PTP encore ouvert.
+    context_decision_intents:
+    - DEC-U764-CONTEXT-1
+    - DEC-U764-CONTEXT-2
+    - DEC-U764-CONTEXT-3
+    - DEC-U764-CONTEXT-4
+    - DEC-U764-CONTEXT-5
+    - DEC-U764-CONTEXT-6
+    - DEC-U764-CONTEXT-7
+    - DEC-U764-CONTEXT-8
+    - DEC-U764-CONTEXT-9
+    - DEC-U764-CONTEXT-10
+    - DEC-U764-CONTEXT-11
+    - DEC-U764-CONTEXT-12
+    - DEC-U764-CONTEXT-13
+    - DEC-U764-CONTEXT-14
+    - DEC-U764-CONTEXT-15
+    - DEC-U764-CONTEXT-16
+    - DEC-U764-CONTEXT-17
+    - DEC-U764-CONTEXT-18
+    boundary_update_U766: Contribution Inventory recentrée sur les stocks ; Order Promising référence le scénario partagé.
+      Libellé Promise Selection Decision aligné.
+  publication_delivery:
+    state: applied
+    source_refs:
+    - U764
+    summary: Scénarios métier multiples et partagés appliqués au modèle ; exemples optionnels, sans niveau supplémentaire.
+    required_nodes:
+    - id: universe-supply
+      fields:
+        examples:
+        - title: Livrer 100 tee-shirts à un magasin vendredi
+          situation: Le magasin attend 100 tee-shirts pour vendredi. Un entrepôt en détient 60 et un fournisseur doit en livrer
+            40 jeudi.
+          outcome: La Supply vérifie si les 100 peuvent être livrés à temps, établit la quantité et la date promises, puis
+            coordonne préparation et transport. Si les 40 sont retardés, elle examine les alternatives et les conséquences
+            sur la commande.
+          lesson: La Supply organise et suit la satisfaction de la demande ; les exécutants réalisent les opérations physiques.
+            La promesse ne réserve pas implicitement le stock.
+          source_refs:
+          - U470
+          - U436
+        - title: Recevoir une nouvelle référence produit
+          situation: Une nouvelle variante de tee-shirt, bleu taille M, est créée dans l’application qui fait autorité sur
+            les produits.
+          outcome: Son identifiant et ses caractéristiques utiles sont reçus dans [Product Reference](glossary:TER052). La
+            Supply peut alors utiliser cette référence dans ses commandes et ses stocks.
+          lesson: La projection sert aux opérations Supply. La création et les corrections de la référence restent dans la
+            source de vérité externe.
+          source_refs:
+          - U470
+          - U97
+          - U460
+        - id: b2b-partial-stock
+          title: Livrer une commande B2B avec un stock partiel
+          situation: 'Illustration FLOW fictive : un client B2B attend 100 vêtements ; 60 sont disponibles et une rentrée
+            de 40 est annoncée. Plusieurs solutions de livraison sont examinées.'
+          trigger: Une commande nécessite une proposition de quantité et de date.
+          objective: Préparer une promesse réalisable et expliquer les conséquences économiques des options.
+          constraints:
+          - Date demandée et fractionnement autorisé par le client.
+          - Disponibilité effective, fiabilité de la rentrée et délais de préparation et de transport.
+          - Engagements existants et règles de protection du stock.
+          options:
+          - title: Livraison fractionnée
+            description: 'Expédier les 60 disponibles, puis les 40 attendus : rendre visible le service anticipé et le coût
+              des deux expéditions.'
+          - title: Livraison regroupée
+            description: 'Attendre les 40 pour préparer et expédier ensemble : examiner le gain logistique, le délai et les
+              conséquences économiques d’une attente.'
+          contributions:
+          - node_id: D03.i
+            role: '[Available-to-Promise (ATP)](model:D03.i) évalue ce que permettent le stock courant et les disponibilités
+              futures pertinentes.'
+          - node_id: D03.j
+            role: '[Capable-to-Promise (CTP)](model:D03.j) évalue les faisabilités supplémentaires utiles si les disponibilités
+              ne suffisent pas ; son invocation n’est pas systématique.'
+          - node_id: D03.k
+            role: '[Profitable-to-Promise (PTP)](model:D03.k) expose, par option, les coûts, bénéfices, risques économiques
+              et hypothèses disponibles, sans choisir.'
+          - node_id: D03.l
+            role: '[Promise Selection Decision](model:D03.l) choisit la proposition en tenant compte des évaluations et des
+              règles applicables.'
+          - node_id: D06
+            role: '[Fulfilment Orchestration](model:D06) coordonne les prestations après engagement et détermine leur libération,
+              en cherchant à préserver la promesse.'
+          outcome: Un dossier présente les options avec quantité, date et conséquences économiques ; le choix reste explicite
+            et distinct de l’évaluation. Aucun gagnant n’est présumé.
+          lesson: Les capacités coopèrent selon le besoin ; ce récit n’impose ni pipeline universel ni modification des grands
+            équilibres du Matching. Promettre, affecter les ressources et libérer les prestations restent distincts.
+          source_refs:
+          - U763
+          - U764
+          - U762
+          - ELM763
+          - ELM767
+          - ELM768
+    - id: D01
+      fields:
+        scenario_refs:
+        - node_id: universe-supply
+          scenario_id: b2b-partial-stock
+          contribution: Fournir les positions de stock, les engagements de quantité et les apports attendus qui alimentent
+            les évaluations d’Order Promising.
+    - id: D06
+      fields:
+        scenario_refs:
+        - node_id: universe-supply
+          scenario_id: b2b-partial-stock
+          contribution: Retenir ou libérer les ordres de prestation en cohérence avec la promesse, notamment pour permettre
+            une préparation regroupée.
+    - id: D03.k
+      fields:
+        examples:
+        - id: transport-speed
+          title: Comparer un transport standard et un transport express
+          situation: 'Illustration FLOW fictive : Deux modes peuvent être envisagés pour une même commande.'
+          objective: Produire un dossier économique local et contextuel permettant de comprendre les avantages et inconvénients
+            des options.
+          options:
+          - title: Transport standard
+            description: Évaluer le coût et les conséquences économiques de la date obtenue.
+          - title: Transport express
+            description: Évaluer le surcoût et les pertes ou pénalités éventuellement évitées.
+          outcome: Les montants comparables, hypothèses, incertitudes et données manquantes sont exposés pour chaque option.
+            [Promise Selection Decision](model:D03.l) porte le choix.
+          lesson: Séparer les montants connus des hypothèses ; un gain de délai ne devient pas automatiquement un gain financier.
+          source_refs:
+          - U762
+          - U763
+          - U764
+          - ELM762
+          - ELM763
+        - id: substitution
+          title: Comparer un article demandé et un article de remplacement
+          situation: 'Illustration FLOW fictive : Une pénurie conduit à examiner un remplacement autorisé par les règles commerciales.'
+          objective: Produire un dossier économique local et contextuel permettant de comprendre les avantages et inconvénients
+            des options.
+          options:
+          - title: Article demandé différé
+            description: Évaluer l’attente, ses coûts et ses risques économiques.
+          - title: Article de remplacement
+            description: Évaluer le prix applicable, le coût produit et les gestes commerciaux éventuels.
+          outcome: Les montants comparables, hypothèses, incertitudes et données manquantes sont exposés pour chaque option.
+            [Promise Selection Decision](model:D03.l) porte le choix.
+          lesson: L’acceptabilité du remplacement et les règles de prix sont des contraintes fournies ; PTP ne les invente
+            pas.
+          source_refs:
+          - U762
+          - U763
+          - U764
+          - ELM762
+          - ELM763
+        - id: alternate-site
+          title: Comparer deux sites de départ
+          situation: 'Illustration FLOW fictive : Deux entrepôts offrent des options de satisfaction pour une commande.'
+          objective: Produire un dossier économique local et contextuel permettant de comprendre les avantages et inconvénients
+            des options.
+          options:
+          - title: Site habituel
+            description: Évaluer les coûts de préparation et de transport ainsi que la date associée.
+          - title: Autre site
+            description: Évaluer le trajet, les prestations et les éventuels coûts de transfert associés.
+          outcome: Les montants comparables, hypothèses, incertitudes et données manquantes sont exposés pour chaque option.
+            [Promise Selection Decision](model:D03.l) porte le choix.
+          lesson: Conserver le même périmètre de coût pour comparer les options ; l’évaluation locale n’affecte pas les ressources
+            et ne rééquilibre pas le master plan.
+          source_refs:
+          - U762
+          - U763
+          - U764
+          - ELM762
+          - ELM763
+        - id: additional-supply
+          title: Éclairer une option avec approvisionnement supplémentaire
+          situation: 'Illustration FLOW fictive : Une option conditionnelle repose sur un approvisionnement supplémentaire
+            dont la faisabilité doit être établie.'
+          objective: Produire un dossier économique local et contextuel permettant de comprendre les avantages et inconvénients
+            des options.
+          options:
+          - title: Disponibilités déjà prévues
+            description: Évaluer les conséquences économiques des quantités et dates accessibles.
+          - title: Approvisionnement supplémentaire
+            description: Évaluer les coûts additionnels de fourniture, transport et prestations, ainsi que les effets économiques
+              attendus.
+          outcome: Les montants comparables, hypothèses, incertitudes et données manquantes sont exposés pour chaque option.
+            [Promise Selection Decision](model:D03.l) porte le choix.
+          lesson: PTP éclaire une option fournie ; les décisions de réapprovisionnement et les affectations restent dans Matching.
+            Aucun achat n’est déclenché par cette évaluation.
+          source_refs:
+          - U762
+          - U763
+          - U764
+          - ELM762
+          - ELM763
+        scenario_refs:
+        - node_id: universe-supply
+          scenario_id: b2b-partial-stock
+          contribution: Comparer les effets économiques locaux de la livraison fractionnée et de la livraison regroupée. Ne
+            pas décider à la place de Promise Selection Decision.

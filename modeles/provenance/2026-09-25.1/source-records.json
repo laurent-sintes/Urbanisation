@@ -16993,6 +16993,174 @@
       "line": 17838,
       "content_sha256": "f2a928e083d6556871271f46cad108b272eba8ad64843350fa6bbbf01d8c2861",
       "captured_text": "## U725\n\n**id**\n\nU725\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la simplification complète d’Order Management\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif sur U724 : retirer les capacités autonomes Lifecycle, Fulfillment Commitment et Archiving avec transfert de leurs responsabilités aux familles et contrat du sous-domaine ; conserver Order Structuring ; ajouter Order Visibility Knowledge ; retyper les deux Consignment Orders en Action ; renommer Supplier Return Order ; corriger descriptions et liens obsolètes. Préserver les distinctions entre demande, proposition, engagement, réalisation, réservation et les variantes spécifiques. Détails rédactionnels ultérieurs proposés ; aucune release implicite."
+    },
+    {
+      "id": "CMP284",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp284",
+      "line": 2723,
+      "content_sha256": "a0de79be03e6a405ed9432abee34bc9df5202199663066b6c166e84441a65d3b",
+      "captured_text": "## CMP284\n\nU726/U727 — Codex, 24 septembre 2026. Audit des six capacités et six comportements d’Inventory Management dans le backlog après U725 ; proposition détaillée et deux documents primaires par fiche dans [l’analyse](../modeles/backlog/inventory-management-review-U726.yaml). ELM734–745 consultés ; ELM726/727 relus pour Promising. Microsoft regroupe états, intégration, réservations et ATP dans Inventory Visibility ; Oracle distingue également transactions, vues et Promising. Les regroupements produits ne sont pas un consensus de capacités. Ledger est étayé par Oracle Item Ledger et Microsoft Item Ledger Entries ; le type Knowledge est un choix FLOW, qui inclut établir et actualiser des faits.\n\nRecommandation : distinguer Tracking, Ledger et Visibility ; conserver Stocktaking et Reservation ; remplacer le regroupement Consigned Inventory Management par Inventory Ownership Transfer avec ses deux déclencheurs contractuels existants. Répartir les autres suites dans les responsabilités déjà présentes. Inventory Visibility expose une position actuelle ou projetée, Supply Visibility les apports qualifiés, Promising une réponse calculée à une commande. Maintenir Promising autonome compte tenu des capacités, transports et contraintes économiques. Bénéfice : supprimer les doubles responsabilités et corriger les dépendances inversées ; compromis : documenter précisément l’autorisation des écritures et la provenance des projections. Propositions non appliquées, aucune équivalence de taxonomie ni réalisation Beaumanoir présumée.\n\n\n**Réexamen U728 de CMP284 :** le calcul ne suffit pas à classer Promising en Decision. Microsoft Inventory Visibility inclut ATP (ELM734), et Order promising décrit ATP/CTP comme calculs de quantités, dates et capacités (ELM727) ; Oracle Check Availability sépare exploration et mise en effet (ELM726). Le modèle actuel décrit ATP et CTP comme établissement de possibilités : Knowledge est recommandé. PTP dit explicitement sélectionner : il ne devient Knowledge qu’en limitant son périmètre à l’évaluation économique et en réattribuant la sélection. La séparation du sous-domaine repose sur l’étendue des ressources et le résultat rendu, non sur le seul type Decision. Hypothèses non appliquées ; ces sources ne prescrivent aucune taxonomie universelle des trois capacités.\n\n\n**Réexamen U730–U732 de CMP284 :** Laurent demande la réintégration de Promising dans Inventory Management. Deux catégories proposées : Inventory Foundation (tenue et fiabilité de la référence) et Availability & Promising (vues et possibilités de satisfaction). Relecture des documents ELM734 Microsoft Inventory Visibility, ELM727 Microsoft Order promising et ELM726 Oracle Check Availability le 24 septembre 2026 : Microsoft rassemble états/réservations/ATP ; CTP est documenté dans Order promising, pas prouvé comme fonctionnalité du produit Inventory Visibility. Oracle conserve un périmètre Global Order Promising pour explorer les possibilités. La séparation référence/exploitation est pertinente pour FLOW, pas une nomenclature standard du marché. Inventory Foundation est notre libellé ; Availability et Promising sont attestés, leur association en catégorie est locale. Le regroupement ne fusionne ni les capacités ni les responsabilités d’arbitrage et d’engagement. Répartition PTP et Delivery Schedule à finaliser ; ne pas perpétuer la recommandation précédente de D18 autonome."
+    },
+    {
+      "id": "CMP294",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp294",
+      "line": 2784,
+      "content_sha256": "7ced720ab36e3d443276e9c4e8fa6afdc69462787901ca1e93c6ec819c748565",
+      "captured_text": "## CMP294\n\nU749/U750 — Codex, 25 septembre 2026. Application canonique de CMP293 : trois catégories et dix capacités, sans adopter la cible abandonnée à trois capacités. Sources Microsoft déjà consultées ELM748/751/753/754/757/758/759 réutilisées, avec sources complémentaires des fiches existantes. Supply Assignment distingue préservation et réaffectation ; le pegging Microsoft éclaire le choix de liens tandis que Plan Application matérialise les changements autorisés et Reservation bloque les usages concurrents. Simulation & Analysis et Plan Application deviennent des capacités locales au Matching, exception explicitée au principe historique, sans généralisation. Initial Stocking est intégré à Replenishment avec ses descriptions et preuves fashion ; BHV077 est intégré dans simulation, révision et réaffectation sans absorber BOP. Les comparaisons de produit ne valident pas automatiquement le type ou les nouvelles descriptions FLOW. U750 autorise l’application de la succession préparée ; aucune release implicite."
+    },
+    {
+      "id": "ELM734",
+      "path": "marche/elements.md",
+      "anchor": "elm734",
+      "line": 5666,
+      "content_sha256": "c213a595a04f437cee7c24e02cce80c1c309ec75084691df11c7a4deea0f1217",
+      "captured_text": "### ELM734\n\nMKT14 — Microsoft, [Inventory Visibility Add-in overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility). Page évolutive, 2025-08-14. Consulté le 24 septembre 2026 ; passages : Global view / Central adjustment / Soft reservation / ATP. Reformulation : Le produit réunit ingestion, états, réservations et ATP ; ce regroupement logiciel ne prescrit pas les frontières FLOW. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM736",
+      "path": "marche/elements.md",
+      "anchor": "elm736",
+      "line": 5676,
+      "content_sha256": "0f817f8ee35b97a0227cd4f488dc933469a2fd2a1e37bb6a13950c2352c0ea2d",
+      "captured_text": "### ELM736\n\nMKT20 — Oracle, [Item Ledger Information](https://docs.oracle.com/en/applications/jd-edwards/supply-chain-manufacturing/9.2/eoash/item-ledger-information.html). JD Edwards EnterpriseOne 9.2. Consulté le 24 septembre 2026 ; passages : Item Ledger CARDEX. Reformulation : Historique détaillé des transactions par article, distinct de leur simple réception technique. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM737",
+      "path": "marche/elements.md",
+      "anchor": "elm737",
+      "line": 5681,
+      "content_sha256": "b9957b46a2abbe80fc4b1a8d7a72fe94900ad9e7f8294d4dd6bf10a89755b997",
+      "captured_text": "### ELM737\n\nMKT14 — Microsoft, [Design details: Inventory posting](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting). Business Central, page évolutive. Consulté le 24 septembre 2026 ; passages : Entry types. Reformulation : Les item ledger entries portent les variations de quantité ; les value entries et la comptabilité générale ont des responsabilités distinctes. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM738",
+      "path": "marche/elements.md",
+      "anchor": "elm738",
+      "line": 5686,
+      "content_sha256": "5595ad9e1cce9392fb4052c4424d7a9e933ad70c00e86ae8c1e1df48b86fa59b",
+      "captured_text": "### ELM738\n\nMKT42 — GS1, [EPCIS and CBV Implementation Guideline](https://ref.gs1.org/guidelines/epcis-cbv/2.0.0/). 2.0 ratifiée mars 2023. Consulté le 24 septembre 2026 ; passages : 5.2 / 5.9. Reformulation : Propriété et possession distinguées dans les événements ; erreurs et corrections explicites. Standard de partage de faits, pas catalogue de capacités. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM739",
+      "path": "marche/elements.md",
+      "anchor": "elm739",
+      "line": 5691,
+      "content_sha256": "4813612dd1047302984dbe02d3c05580d11d466a33771e810d2b7e85aa7836a1",
+      "captured_text": "### ELM739\n\nMKT14 — Microsoft, [Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment). Page évolutive, 2026-05-06. Consulté le 24 septembre 2026 ; passages : Ownership change journal / Owner dimension. Reformulation : Détention fournisseur séparée de propriété ; changement de propriétaire enregistré séparément. Scénario entrant de production, pas toutes les consignations fashion. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM740",
+      "path": "marche/elements.md",
+      "anchor": "elm740",
+      "line": 5696,
+      "content_sha256": "b5ce816ffbff892d15777809aadeb484924bfe731873146e273f07294f75b2a0",
+      "captured_text": "### ELM740\n\nMKT20 — Oracle, [Consigned Inventory Aging](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/consigned-inventory-aging.html). Fusion 25C. Consulté le 24 septembre 2026 ; passages : Aging process / Transfer to Owned. Reformulation : Échéance convenue et transfert de propriété distinct du mouvement ; la page décrit un transfert manuel, sans automatisme universel. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM741",
+      "path": "marche/elements.md",
+      "anchor": "elm741",
+      "line": 5701,
+      "content_sha256": "144ecab1519867a883d35dce9136a0e581c0b9f7396b5efd4a22832e72f9aacd",
+      "captured_text": "### ELM741\n\nMKT14 — Microsoft, [Cycle counting](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/cycle-counting). Page évolutive. Consulté le 24 septembre 2026 ; passages : Create / Spot counting / Resolve differences. Reformulation : Demande de comptage, résultat et revue des écarts distingués. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM742",
+      "path": "marche/elements.md",
+      "anchor": "elm742",
+      "line": 5706,
+      "content_sha256": "e904454ff1e5ffe3295c5be48d9e0bc5b96374bab8d28017a36d64a992d85efc",
+      "captured_text": "### ELM742\n\nMKT20 — Oracle, [Mobile Supply Chain Applications User’s Guide](https://docs.oracle.com/cd/E26401_01/doc.122/e48826/T256582T257763.htm). EBS 12.2. Consulté le 24 septembre 2026 ; passages : Cycle Counting / Physical Inventory. Reformulation : Comptages cycliques et inventaire physique rapprochent quantités enregistrées et constatées ; réalisation produit distincte de la responsabilité FLOW. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM743",
+      "path": "marche/elements.md",
+      "anchor": "elm743",
+      "line": 5711,
+      "content_sha256": "b3447f82c0df11ab702aa0349d18f5bac740558e4100c4b771d052a966c0dfb9",
+      "captured_text": "### ELM743\n\nMKT14 — Microsoft, [Inventory Visibility reservations](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations). Page évolutive. Consulté le 24 septembre 2026 ; passages : Sample use case / offsets. Reformulation : Réservation réduit les quantités disponibles pour réservation sans sortie physique ; consommation et libération évitent le double compte. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM744",
+      "path": "marche/elements.md",
+      "anchor": "elm744",
+      "line": 5716,
+      "content_sha256": "d8e1b1c6511d154fa5dff3700f3a7327449fdb21c0144076698a493cfea2448e",
+      "captured_text": "### ELM744\n\nMKT20 — Oracle, [Reservations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html). Fusion 25C. Consulté le 24 septembre 2026 ; passages : Reservation types / Supply source types. Reformulation : Réservations à maille haute ou détaillée, pouvant porter sur stock ou apports attendus ; aucun blocage physique universel. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM745",
+      "path": "marche/elements.md",
+      "anchor": "elm745",
+      "line": 5721,
+      "content_sha256": "dd1ed4818951c6dfb05c4bd4a178554b23ca561cba7b012a09c35ded3b3c7c93",
+      "captured_text": "### ELM745\n\nMKT20 — Oracle, [How You Review Item Supply and Demand](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html). Fusion 25D. Consulté le 24 septembre 2026 ; passages : Summary / Quantities / Supply and Demand types. Reformulation : Vue temporelle du stock, des apports et des besoins ; règles de non-double compte. Pas de taxonomie universelle séparant les deux Visibility. Limite : Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document. CMP284, U726/U727."
+    },
+    {
+      "id": "ELM757",
+      "path": "marche/elements.md",
+      "anchor": "elm757",
+      "line": 5779,
+      "content_sha256": "49938194c0412c15810e6f8c9c64635221eddae3bba4163ea86d5f2d27ba1556",
+      "captured_text": "### ELM757\n\nMKT14 — Microsoft, [Inventory marking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Introduction et options de marquage. Reformulation : Le pegging est le lien de couverture recalculable par master planning ; le marking est plus durable, reste révocable et est respecté par le calcul. Les réservations existantes sont prises en compte. Ne pas assimiler tout lien de planification à une réservation. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744."
+    },
+    {
+      "id": "ELM758",
+      "path": "marche/elements.md",
+      "anchor": "elm758",
+      "line": 5784,
+      "content_sha256": "83030e77e201da512d848c561fc061802ac49de176b3d31232e436029f7846c4",
+      "captured_text": "### ELM758\n\nMKT14 — Microsoft, [Make-to-order supply automation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/make-to-order-supply-automation). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Control the pegging sequence used during master planning. Reformulation : La séquence de couverture peut privilégier des réceptions futures compatibles afin de préserver le stock pour les commandes proches. Paramètres au niveau plan, article ou groupe ; pas un unique argument universel policy. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744."
+    },
+    {
+      "id": "ELM759",
+      "path": "marche/elements.md",
+      "anchor": "elm759",
+      "line": 5789,
+      "content_sha256": "7cd7da7760693b69a20094deb9e0ca685db250d0190a455e3e9918d3cde62f4b",
+      "captured_text": "### ELM759\n\nMKT14 — Microsoft, [Keep supply for confirmed demand in Planning Optimization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand). Documentation Dynamics 365 SCM évolutive consultée le 24 septembre 2026 ; passages : Introduction, configuration et Interaction with approved planned orders and the freezing time fence. Reformulation : Une fonctionnalité paramétrable protège les besoins, ordres planifiés et liens de couverture associés aux lignes confirmées entre calculs, jusqu’aux niveaux de nomenclature. Protection liée aux confirmations, distincte des seuls horizons de gel. Limites : fonctions produit selon configuration et version ; aucune équivalence intégrale avec SAP BOP/ARun ni taxonomie FLOW imposée. CMP290, U744."
+    },
+    {
+      "id": "U733",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u733",
+      "line": 18048,
+      "content_sha256": "5742f9fe90b03702a744123ccbe9c6cf8a26e475170b4ef948eb185c4443152e",
+      "captured_text": "## U733\n\n**id**\n\nU733\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la refonte Inventory Management en deux catégories\n\n**texte**\n\nJe valide\n\n**contexte et portée**\n\nAccord cumulatif U726–U732 : réintégrer Order Promising dans Inventory Management ; catégories Inventory Foundation et Availability & Promising ; Tracking Integration, Ledger Knowledge, Stocktaking et Reservation conservés ; Ownership Transfer Action remplace le regroupement Consigned Inventory Management avec conservation des responsabilités. ATP/CTP Knowledge ; PTP évaluation économique Knowledge, sélection et échéancier explicitement préservés. Les précisions rédactionnelles de mise en œuvre restent proposées ; aucune release implicite."
+    },
+    {
+      "id": "U735",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u735",
+      "line": 18094,
+      "content_sha256": "f58406e6130ac7626c10f440f8c52fed8fc4a06b074b00710ef46b70dda6ac5c",
+      "captured_text": "## U735\n\n**id**\n\nU735\n\n**date**\n\n2026-09-24\n\n**titre**\n\nAdopter Promise Selection et réexaminer la frontière CTP / Matching\n\n**texte**\n\nPromise Selection : je valide.\n\nLe scope de CTP me parait trop large. Est-ce que la proposition de commandes d'achat supplémentaire, ça ne devrait pas être dans Matching ?\n\nQue dit le marché ?\n\n**contexte et portée**\n\nAccord explicite sur le nom Promise Selection et la responsabilité présentée de choix de réponse à proposer, sans confirmation de l’engagement. Question ouverte sur la frontière entre faisabilité CTP et proposition d’achats supplémentaires dans Matching ; comparer au marché avant modification de cette frontière."
+    },
+    {
+      "id": "U736",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u736",
+      "line": 18121,
+      "content_sha256": "b6dc86bbb8d69cf04ec6a33c3d077afdb4584dfec49ccfd51e06976f39b0baf0",
+      "captured_text": "## U736\n\n**id**\n\nU736\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la frontière CTP et déplacer le rééchelonnement dans Matching\n\n**texte**\n\nPour Commitment Rebalancing Feasibility  je suis d'accord pour le déplacer. Mais on ne peut pas avoir un nom qui fait moins peur ?\n\nà part ça, je valide.\n\n**contexte et portée**\n\nAccord cumulatif sur U735 : CTP évalue les apports possibles ; Matching propose et arbitre leur réalisation ; Purchase Order porte la commande autorisée ; APS reste externe. Déplacer BHV077 vers Matching et proposer un nom simple. Order Rescheduling est le nom de mise en œuvre proposé, pas un libellé présenté avant cet accord."
+    },
+    {
+      "id": "U749",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u749",
+      "line": 18431,
+      "content_sha256": "c0d3f374a4ac7bc132b97c743b89a6002a6955cb2f75fb1cd700263a25c7cdbb",
+      "captured_text": "## U749\n\n**id**\n\nU749\n\n**date**\n\n2026-09-24\n\n**titre**\n\nValider la cible Matching à trois catégories et dix capacités\n\n**texte**\n\nC'est bcp mieux. Je valide\n\n**contexte et portée**\n\nAccord sur la proposition complète présentée après U748 : catégories Master Plan Management, Supply Matching, Policy Optimization ; dix capacités nommées ; stratégies comme comportements, exemples de Supply Assignment, Replenishment et Stock Redistribution ; master plan commun. Cet accord remplace la cible à trois capacités U747. Les descriptions et migrations nouvelles non présentées gardent leur qualification proposée. Préparation à valider : cet accord est enregistré dans le dossier, sans publication ni application immédiate implicite."
+    },
+    {
+      "id": "U750",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u750",
+      "line": 18454,
+      "content_sha256": "3ec337fc492f873bfd25b5e01a545c12921cee3c5cdda71c96efb207577f23ed",
+      "captured_text": "## U750\n\n**id**\n\nU750\n\n**date**\n\n2026-09-25\n\n**titre**\n\nAppliquer le refactoring Matching validé\n\n**texte**\n\nLance le refacto\n\n**contexte et portée**\n\nAppliquer au modèle canonique la cible complète U749 : trois catégories et dix capacités, comportements différenciants, master plan commun et frontières conservées. Les modalités détaillées préparées dans le dossier U747 sont mises en œuvre sans étendre les accords aux rédactions nouvelles. Aucun commit, push ou release implicite."
     }
   ]
 }

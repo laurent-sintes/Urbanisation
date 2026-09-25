@@ -8,7 +8,8 @@ source_refs:
 - U565
 - U566
 - CMP236
-status: common_planning_confirmed_name_under_review
+- U757
+status: structure_and_name_superseded_by_applied_matching_U750
 baseline: audits/2026-09-21-supply-assignment-U562/model-before.yaml
 explicit_agreement: L’affectation de ressources à un besoin prévisionnel identifié sans commande appartient à Supply Assignment.
 not_inferred:
@@ -224,3 +225,13 @@ follow_up_U565:
     - market_inspiration
   changed_terms:
   - TER078
+status_reconciliation_U757:
+  previous_status: common_planning_confirmed_name_under_review
+  reason: Supply Assignment et les cas de préservation/réaffectation sont décrits dans le Matching appliqué U750 ; pas un
+    renommage encore à effectuer.
+  source_refs:
+  - U749
+  - U750
+  - U757
+  note: Mise en cohérence du suivi ; ne vaut ni nouvel accord métier ni adoption des formulations historiques.
+  current_reference: modeles/backlog/matching-refactoring-U747.yaml

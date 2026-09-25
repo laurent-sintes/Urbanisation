@@ -6,7 +6,8 @@ source_refs:
 - U628
 - U572
 - U578
-status: applied_scoped_agreement_decomposition_pending
+- U757
+status: applied_decomposition_superseded_U750
 agreement:
   definition: Construire, comparer et maintenir un plan cohérent de couverture des commandes et des besoins prévisionnels
     restants ; mobiliser les décisions spécialisées, faire appliquer les recommandations autorisées et suivre leurs effets.
@@ -135,6 +136,8 @@ pending_decomposition:
   monitoring_and_adjustment: Distinguer suivi des effets et révision du plan ; le suivi technique du calcul demeure distinct.
   rule: Les noms hérités et les six comportements courants constituent une étape de consolidation ; pas la validation de la
     décomposition finale.
+  status: superseded_by_applied_matching_U750
+  current_reference: modeles/backlog/matching-refactoring-U747.yaml
 market_review:
   reused: Audit U628 M01 et sources des deux capacités et comportements prédécesseurs, conservées dans les fiches fusionnées.
   rechecked_on: '2026-09-23'
@@ -163,3 +166,13 @@ implementation_U633:
   status: monitor_and_adjust_applied
   path: modeles/backlog/planning-monitor-adjust-U633.yaml
   note: Les mentions en attente U631/U632 ci-dessus décrivent leur étape historique ; U633 adopte Monitor Plan et Adjust Plan.
+status_reconciliation_U757:
+  previous_status: applied_scoped_agreement_decomposition_pending
+  reason: Le pilotage et la décomposition sont appliqués dans le refactoring Matching U750 ; la liste historique pending_decomposition
+    ne constitue plus un chantier autonome.
+  source_refs:
+  - U631
+  - U750
+  - U757
+  note: Mise en cohérence du suivi ; ne vaut ni nouvel accord métier ni adoption des formulations historiques.
+  current_reference: modeles/backlog/matching-refactoring-U747.yaml

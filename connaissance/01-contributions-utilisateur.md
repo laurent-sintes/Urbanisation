@@ -18449,3 +18449,438 @@ C'est bcp mieux. Je valide
 **contexte et portée**
 
 Accord sur la proposition complète présentée après U748 : catégories Master Plan Management, Supply Matching, Policy Optimization ; dix capacités nommées ; stratégies comme comportements, exemples de Supply Assignment, Replenishment et Stock Redistribution ; master plan commun. Cet accord remplace la cible à trois capacités U747. Les descriptions et migrations nouvelles non présentées gardent leur qualification proposée. Préparation à valider : cet accord est enregistré dans le dossier, sans publication ni application immédiate implicite.
+
+
+## U750
+
+**id**
+
+U750
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Appliquer le refactoring Matching validé
+
+**texte**
+
+Lance le refacto
+
+**contexte et portée**
+
+Appliquer au modèle canonique la cible complète U749 : trois catégories et dix capacités, comportements différenciants, master plan commun et frontières conservées. Les modalités détaillées préparées dans le dossier U747 sont mises en œuvre sans étendre les accords aux rédactions nouvelles. Aucun commit, push ou release implicite.
+
+
+## U751
+
+**id**
+
+U751
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Auditer Inventory par responsabilités métier, visibilité et calcul
+
+**texte**
+
+Sous domaine Inventory Management :
+
+- Inventory Ownership Transfer : je vois l'idée de loin mais je n'arrive pas à comprendre pourquoi c'est une capacité. Je rappelle qu'une capacité est ce que sait faire l'entreprise en dehors de l'organisation et des outils. Pour être plus précis, il faut imaginer l'entreprise avec uniquement des humains avec du papier et un stylo et se poser la question : que font il pour faire tourner l'entreprise ?Les domaines sont un découpage ni organisationnelle ni technologique. C'est uniquement un regroupement par finalité ou connaissance ou problématique. Il faut s'imaginer que des humains se regroupent pour partager et collaborer. Grace à l'informatique et son pouvoir de mutualisation et d'automatisation, l'organisation d'entreprise ne fitte pas sur les domaines mais c'est normal.
+- Inventory Visibility et Supply Visibility pourraient être rapprochés : je veux ton avis.
+- ATP, CTP, PTP, ce n'est pas un type visibility, c'est un type calcul ou décision, comme Promise Selection qui devrait s'appeler Promise Selection Decision à mon avis.
+
+Audite  le sous domaine stp
+
+**contexte et portée**
+
+Critère méthodologique explicite : capacités indépendantes des outils et de l’organisation ; domaines regroupés par finalité, connaissance ou problématique, sans organigramme implicite. Audit demandé : autonomie du transfert de propriété, rapprochement des visibilités, distinction calcul/décision et nom Promise Selection Decision. La classification Knowledge des calculs est contestée ; pas encore d’accord sur un nouveau type Calculation ni sur les fusions exactes. Préparer un diagnostic et une proposition, sans release ni application canonique de l’audit.
+
+
+## U752
+
+**id**
+
+U752
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Reconnaître les registres comme actifs métier et proposer le type Ledger
+
+**texte**
+
+"Microsoft décrit un journal de changement de propriété  " => L'idée est fantastique, j'aimerais l'intégrer. Un type de capacité "ledger" qui recense les ledger pourrait être une bonne idée. Je pars du principe que les humains ont un stylo des calepins. Certains deviennent des assets de l'entreprise : Orders, ledger, données aggrégés => pas choquant de l'avoir dans la cartographie métier
+
+**contexte et portée**
+
+Laurent souhaite intégrer l’idée du journal de propriété et propose un type Ledger. Orders, registres et données agrégées sont des actifs métier légitimes, indépendamment des outils. Corriger la proposition Action pour Inventory Ledger et le retrait sans représentation propre du journal de propriété. Les noms, frontières des registres et modalités du nouveau type ci-après restent à préciser ; pas de validation globale de l’audit U751.
+
+
+## U753
+
+**id**
+
+U753
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Intégrer les actifs métier dans la définition de capacité
+
+**texte**
+
+mets à jour la définition de capacité également
+
+**contexte et portée**
+
+Appliquer à la définition méthodologique de Capability les précisions U751/U752 : indépendance organisation/outillage, critère humains-papier-stylo, légitimité des Orders, registres et données agrégées comme actifs métier portés dans la cartographie. Actualiser le principe canonique correspondant et les conventions ; aucun nouveau type technique ni nouveau découpage d’Inventory implicitement validé.
+
+
+## U754
+
+**id**
+
+U754
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Distinguer décision de transfert et registre de propriété
+
+**texte**
+
+Du coup, on ne devrait pas avoir ce fameux ledger de changement de propriété ? On pourrait imaginer une capa décision qui écoute les processus soutenus par les orders pour détecter les changements de propriétaire.
+
+Que dit microsoft ? Si c'est ok, comment mettre à jour le sous domaine en ce sens ?
+
+**contexte et portée**
+
+Étudier la séparation entre réception des faits, détermination du changement de propriété et tenue du registre. Comparaison Microsoft et proposition de mise à jour du sous-domaine ; ne vaut pas validation globale de l’audit Inventory ni publication.
+
+
+## U755
+
+**id**
+
+U755
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Portée contractuelle et processus du registre de propriété
+
+**texte**
+
+Ce journal est interessant car les événements qui provoquent des changement de propriété dépend des contrats (consignation ou sans), des processus, de la douane etc.
+
+**contexte et portée**
+
+Précision métier : le registre et la détermination des changements de propriété dépassent la consignation ; considérer conditions contractuelles, processus et faits douaniers pertinents. Ne pas interpréter chaque événement douanier comme un transfert automatique ni cette précision comme un accord global sur les propositions de l’audit.
+
+
+## U756
+
+**id**
+
+U756
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Valider le lot décision et registres de propriété
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord cumulatif U752–U755 : type Ledger, Inventory Ledger et Inventory Ownership Ledger distincts, Inventory Ownership Transfer Decision, Tracking pour la réception des faits, conditions Agreement, actes et résultats via Orders/Fulfilment, visibilité par propriétaire. Périmètre au-delà de la consignation : achats/ventes, transit, échéances et faits douaniers pertinents sans transfert automatique déduit de leur seul statut. Préserver consommation/échéance et couvrir les autres jalons contractuels ; les nouvelles formulations détaillées restent proposées. N’inclut pas les autres pistes de l’audit U751 (fusion des Visibility, Calculation, renommages ATP/CTP/PTP/Promise Selection). Appliquer ce lot au catalogue et conserver sa garde de publication ; aucune release implicite.
+
+
+## U757
+
+**id**
+
+U757
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Harmoniser les statuts et généraliser les catégories de capacités
+
+**texte**
+
+Ok pour remettre les statuts en cohérence.
+
+Je rajoute aussi :
+
+Master data : la capacité d'ingestion devrait être de type intégration et mise dans une catégorie intégration.
+D'un point de vue général, je souhaite que toutes les capacités soient associées à une catégorie.
+
+Ensuite on va discuter ATP / CTP / PTP pour clore le sujet
+
+**contexte et portée**
+
+Autorise la mise en cohérence des statuts des annexes avec les accords, clôtures et applications effectives, sans transformer des propositions non arbitrées en décisions ni créer une seconde backlog. Confirme Master Data Ingestion de type Integration et impose sa catégorie Intégration. Généralise la présence d’une catégorie à toutes les capacités ; les classements complémentaires relèvent de la mise en œuvre de présentation et ne modifient pas leurs responsabilités. ATP/CTP/PTP restent ouverts pour une discussion ultérieure ; aucune release demandée.
+
+
+## U758
+
+**id**
+
+U758
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Étudier la rétention et la libération groupée des ordres logistiques
+
+**texte**
+
+Je pense qu'il manque quelque chose dans le fullfilment Orchestration : l'optimisation de l'envoi des ordres logistiques. L'idée est d'en faire une rétention pour envoyer les ordres en une fois à l'entrepot. C'est plus facile pour l'entrepot de tout recevoir en une seule fois pour organiser le travail. L'autre raison c'est dans le cas d'entrepots spécialisés B2B, on retient les ordres de préparation pour les envoyer en une fois quand on sait à l'avance que c'est pour un gros client et que c'est plus interessant de traiter la commande en entier pour packager une seule palette par exemple.
+
+Tu peux vérifier le marché pour gérer cette capacité d'optimisation dans le cadre de l'orchestration ?
+
+**contexte et portée**
+
+Demande d’étude marché et de proposition : arbitrer la rétention puis libération groupée d’ordres logistiques, pour organiser la charge d’entrepôt ou consolider le traitement d’un client B2B. Distinguer décision d’orchestration, transmission des ordres, consolidation de préparation/expédition et vagues internes du WMS. Aucun changement de catalogue ni accord sur un nouveau nom implicitement demandé. ATP/CTP/PTP restent ouverts.
+
+
+## U759
+
+**id**
+
+U759
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Valider la décision de libération des ordres de prestation
+
+**texte**
+
+Je valide !
+
+**contexte et portée**
+
+Accord cumulatif sur la proposition U758 : Service Order Release Decision, type Decision, sous Fulfilment Orchestration, catégorie Coordonner et adapter ; comportements Batch Release et Consolidated Release. Décider quels ordres retenir/libérer ensemble et quand, en respectant promesse et affectations ; Process Orchestration applique. Les familles Picking/Packing portent le traitement commun requis, sans confondre libération, expédition, palette et vagues internes WMS. Paramètres de rétention et complétude restent des règles. Application canonique autorisée ; aucune release implicite.
+
+
+## U760
+
+**id**
+
+U760
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Conserver ATP CTP PTP comme capacités d’évaluation
+
+**texte**
+
+Pour moi, ATP, CTP et PTP sont des capacité d'évaluation, la décision étant portée par la capacité Promise Selection Decision. Donc PTP est exactement la définition que tu donnes pour Promise Cost Evaluation
+
+**contexte et portée**
+
+Clarification de responsabilité : ATP, CTP et PTP évaluent ; Promise Selection Decision choisit. Conserver PTP pour l’évaluation économique sans sélection, retirer le renommage Promise Cost Evaluation de la proposition. Le classement de ces évaluations en Decision recommandé au tour précédent par Codex ne correspond pas à cette séparation. Le type technique Evaluation et sa définition méthodologique restent à formaliser ; cette précision ne clôt pas les autres sujets de l’audit.
+
+
+## U761
+
+**id**
+
+U761
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Auditer la profondeur des évaluations ATP CTP PTP
+
+**texte**
+
+Les comportements d'ATP, CTP et PTP doivent refleter le niveau de profondeur de l'évaluation. Par exemple, ATP peut évaluer par rapport au stock courant mais peut prendre en compte aussi les stocks futurs.
+
+Tu peux scanner le marché et vérifier que les comportements des ces 3 capacités sont exhaustifs ?
+
+**contexte et portée**
+
+Étude marché des variantes par profondeur d’évaluation, comparaison aux quatre comportements ATP, deux CTP et absence de comportement PTP du backlog. Respecter U760 : évaluation sans sélection ; pas d’application du nouveau découpage avant validation. Rechercher une couverture explicite du périmètre Supply orchestration, sans promettre une exhaustivité universelle ni copier chaque option produit comme comportement.
+
+
+## U762
+
+**id**
+
+U762
+
+**date**
+
+2026-09-25
+
+**titre**
+
+PTP produit le dossier économique local des options
+
+**texte**
+
+C'est ce qu'on a dit : PTP évalue mais ne choisit pas. PTP permet de produire un micro dossier local et contextuel des avantages inconvénients des options du point de vue pognon.
+
+**contexte et portée**
+
+Réaffirmation U760 : PTP éclaire le choix sans le porter. Son résultat est un dossier économique local et contextuel des avantages et inconvénients des options, pas un gagnant ni une analyse globale de rentabilité. Corrige une proposition de profondeur trop centrée sur la marge ; cette dernière peut contribuer si pertinente et documentée, sans devenir un niveau obligatoire. L’étude U761 se poursuit sur cette base, sans validation implicite de tous les comportements proposés.
+
+
+## U763
+
+**id**
+
+U763
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Rendre les scénarios métier explicites dans les fiches
+
+**texte**
+
+Il ne manque pas au niveau capacité, domaine ou sous domaine un espace scénario ou use case pour expliquer les différentes situations ?
+
+**contexte et portée**
+
+Question sur un espace illustratif de scénarios métier aux niveaux Domain, Subdomain et Capability, pour expliquer les situations sans les transformer en comportements. Examiner l’existant fields.examples et sa présentation Atlas ; pas de nouveau niveau hiérarchique ni catalogue indépendant implicitement validé.
+
+
+## U764
+
+**id**
+
+U764
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Valider les scénarios métier multiples et partagés
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord cumulatif U763 et échange suivant : rubrique Scénarios métier facultative, plusieurs scénarios sans nombre imposé aux niveaux Domain, Subdomain et Capability. Situation, résultat recherché, contraintes, options pertinentes, contributions et résultat illustratif. Un scénario peut mobiliser plusieurs comportements et être référencé par plusieurs fiches avec une contribution locale, sans nouveau niveau de décomposition ni duplication du récit. Réutiliser les exemples structurés existants ; aucune validation implicite des propositions ATP/CTP/PTP en attente ni des nouvelles rédactions illustratives.
+
+
+## U765
+
+**id**
+
+U765
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Réexaminer un sous-domaine autonome de promesse réutilisable
+
+**texte**
+
+Dernier point : je commence à comprendre pourquoi le marché présente toujours un domaine ou un sous domaine Order Promising "à part". C'est parce que les évaluations de promesse peuvent être utilisées à tout moment : pendant le matching, à l'orchestration du fulfilment, au changement d'état d'un order etc.
+
+Avec cette vision, il ne faudrait pas un sous domaine Order Promising ou plus simplement Promising ?
+
+**contexte et portée**
+
+Laurent propose de réexaminer la frontière Inventory Management / Promising au regard de la réutilisation des évaluations dans plusieurs processus. Question sur la pertinence d’un sous-domaine autonome et son nom ; aucune validation d’un déplacement ni d’un renommage à ce stade. Vérifier la généralisation sur le marché et distinguer rattachement métier, usages transversaux, sélection de proposition et engagement porté par les Orders.
+
+
+## U766
+
+**id**
+
+U766
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Valider le sous-domaine Order Promising autonome
+
+**texte**
+
+Je valide ta proposition
+
+**contexte et portée**
+
+Accord sur la proposition complète U765 : Order Promising devient un sous-domaine autonome par finalité, portant ATP, CTP, PTP et Promise Selection Decision. Évaluations réutilisables pendant Matching, Fulfilment et prise ou révision des Orders, sans pipeline universel ni recalcul systématique. Inventory Management conserve stocks, mouvements, propriété et engagements de quantité ; Matching conserve master plan et affectations ; Fulfilment coordonne les prestations en préservant la promesse ; Order Management porte l’engagement confirmé et ses révisions autorisées. Une réévaluation ne modifie pas seule l’engagement. Le nom Order Promising est retenu. Les formulations illustratives, catégories de présentation et le détail des comportements d’évaluation ne sont pas implicitement adoptés par cet accord de frontière.
+
+
+## U767
+
+**id**
+
+U767
+
+**date**
+
+2026-09-25
+
+**titre**
+
+Clore les arbitrages Inventory Visibility et Order Promising
+
+**texte**
+
+Je valide
+
+**contexte et portée**
+
+Accord cumulatif sur les trois arbitrages récapitulés : deux profondeurs d’évaluation pour ATP (stock courant, extension aux disponibilités futures), CTP (faisabilité selon sources, matières et délais ; contrôle des capacités finies) et PTP (coûts ; avantages/inconvénients économiques contextuels). Réunir Inventory Visibility et Supply Visibility dans Inventory Visibility en préservant le détail des apports. Expliciter sélection initiale et réexamen individuel ou collectif des promesses dans Promise Selection Decision, sans transfert d’affectation depuis Matching. Formaliser Evaluation pour ATP/CTP/PTP applique le principe déjà acquis U760. Les noms détaillés et rédactions de mise en œuvre sont étayés par la proposition U761 ; pas d’approbation implicite de nouvelles observations Beaumanoir ni de release.

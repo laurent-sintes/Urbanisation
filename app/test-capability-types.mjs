@@ -4,10 +4,12 @@ import { capabilityNature, capabilityTypeLabel, capabilityTypes, sortCapabilitie
 import { adaptPublication, childrenOf } from './src/model.ts';
 
 const node = (id, nature, kind = 'capability') => ({ id, name: id, kind, fields: { nature } });
-test('explicit types drive labels and eight distinct icons; never names or IDs', () => {
-  assert.equal(Object.keys(capabilityTypes).length, 8);
-  assert.equal(new Set(Object.values(capabilityTypes).map(type => type.icon)).size, 8);
+test('explicit types drive labels and ten distinct icons; never names or IDs', () => {
+  assert.equal(Object.keys(capabilityTypes).length, 10);
+  assert.equal(new Set(Object.values(capabilityTypes).map(type => type.icon)).size, 10);
   assert.equal(capabilityTypeLabel(node('ingestion', 'integration')), 'Intégration');
+  assert.equal(capabilityTypeLabel(node('register', 'ledger')), 'Registre');
+  assert.equal(capabilityTypeLabel(node('ATP', 'evaluation')), 'Évaluation');
   assert.equal(capabilityTypeLabel(node('ATP', 'decision')), 'Décision');
   assert.equal(capabilityTypeLabel(node('rules', 'policy')), 'Politique');
   assert.equal(capabilityNature(node('Decision by name only', undefined)), undefined);
@@ -29,14 +31,14 @@ test('stable type grouping preserves the snapshot and separates every type', () 
     assert.equal(homogeneous.some((_, i) => startsCapabilityTypeSection(homogeneous, i)), false);
   }
 });
-test('all eight types group stably; unknown types stay neutral and non-capabilities retain order', () => {
+test('all ten types group stably; unknown types stay neutral and non-capabilities retain order', () => {
   const types = Object.keys(capabilityTypes);
   const input = types.toReversed().flatMap(type => [node(type + '1', type), node(type + '2', type)]);
   input.splice(2, 0, node('ref', undefined, 'reference'), node('area', undefined, 'area'));
   input.unshift(node('unknown', 'future'), node('missing', undefined));
   const output = sortCapabilitiesByType(input);
   assert.deepEqual(output.map(n => n.id), ['ref', 'area', ...types.flatMap(type => [type + '1', type + '2']), 'unknown', 'missing']);
-  assert.equal(output.filter((_, i) => startsCapabilityTypeSection(output, i)).length, 8);
+  assert.equal(output.filter((_, i) => startsCapabilityTypeSection(output, i)).length, 10);
   assert.equal(startsCapabilityTypeSection(output, 2), false);
   assert.equal(startsCapabilityTypeSection(output, output.length), false);
 });

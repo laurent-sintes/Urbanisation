@@ -1,6 +1,6 @@
 as_of: '2026-09-17'
 purpose: Analyse comparative des comportements manquants après refonte U290.
-status: proposed
+status: closed_U431
 author: Codex
 source_refs:
 - U292
@@ -104,6 +104,7 @@ source_refs:
 - ELM253
 - CMP164
 - U431
+- U757
 decision_boundary: Étude autorisée ; aucun nouveau comportement, nom ou rattachement adopté. Catalogue actif et publications
   inchangés. U297 adopte le nom Logistics Visibility dans la portée de feedback_U297 ; autres propositions et rattachements
   non adoptés. U299 valide les deux corrections P04/P10 dans adopted_corrections_U299, sans adoption de leurs fiches comme
@@ -5848,3 +5849,10 @@ closure_U431:
   scope: Clôture du catalogue de capacités et comportements de l’audit existant ; aucun changement de catalogue.
   limits: Ne valide pas globalement les champs éditoriaux, contrats, règles ou comparaisons ; ne prouve ni complétude du marché
     ni couverture installée ; aucune release.
+status_reconciliation_U757:
+  previous_status: proposed
+  reason: La clôture explicite closure_U431 fait autorité ; les précisions future_work restent conservées sans réouverture.
+  source_refs:
+  - U431
+  - U757
+  note: Mise en cohérence du suivi ; ne vaut ni nouvel accord métier ni adoption des formulations historiques.

@@ -5,10 +5,12 @@ export const capabilityTypes = {
   integration: { label: 'Intégration', icon: 'ArrowLeftRight' },
   action: { label: 'Action', icon: 'Zap' },
   management: { label: 'Gestion', icon: 'SlidersHorizontal' },
+  ledger: { label: 'Registre', icon: 'BookOpen' },
   knowledge: { label: 'Connaissance / visibilité', icon: 'Eye' },
   orchestration: { label: 'Orchestration', icon: 'Workflow' },
   planning: { label: 'Planification', icon: 'CalendarCheck' },
   policy: { label: 'Politique', icon: 'ShieldCheck' },
+  evaluation: { label: 'Évaluation', icon: 'Calculator' },
   decision: { label: 'Décision', icon: 'GitBranch' },
 } as const;
 export type CapabilityNature = keyof typeof capabilityTypes;

@@ -10,7 +10,7 @@ Origine des demandes : **Frontoffice** désigne une sollicitation externe au Dom
 
 | Repère | Nom | Niveau | Contenu direct | Statut |
 | --- | --- | --- | --- | --- |
-| universe-supply | Supply Chain Orchestration | Domain | Master Data, Policies, Plan Visibility, Order Management, Inventory Management, Demand & Supply Matching, Fulfilment Orchestration, Service Order Management | Proposé par l’IA |
+| universe-supply | Supply Chain Orchestration | Domain | Master Data, Policies, Plan Visibility, Order Management, Inventory Management, Demand & Supply Matching, Fulfilment Orchestration, Service Order Management, Order Promising | Proposé par l’IA |
 
 Les groupes de présentation conservent leur rôle distinct des niveaux de décomposition métier.
 
@@ -30,6 +30,7 @@ La Supply Chain Orchestration est l’organe de régulation qui organise et adap
 | D03 | Demand & Supply Matching | Sous-domaine | Proposé par l’IA |
 | D06 | Fulfilment Orchestration | Sous-domaine | Proposé par l’IA |
 | subdomain-service-orders | Service Order Management | Sous-domaine | En cours d’instruction — portée : name, definition |
+| subdomain-order-promising | Order Promising | Sous-domaine | Proposé par l’IA |
 
 
 ## business-references — Master Data
@@ -159,21 +160,17 @@ Gérer les commandes, leurs exigences et leurs évolutions, et porter les engage
 
 Statut : **Proposé par l’IA**.
 
-Établir et fiabiliser la référence de stock, tenir ses engagements de quantité et calculer les possibilités de satisfaction des commandes à partir du stock, des apports et des capacités mobilisables.
+Établir et fiabiliser la référence de stock, ses mouvements, sa propriété, ses disponibilités et ses engagements de quantité.
 
-| Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| D01.f | Inventory Tracking | integration | — | Proposé par l’IA | Capter et intégrer les faits et états de stock transmis par les sources, avec leur origine, leur date et les corrections associées. | Rendre les faits de stock reconnus et leurs corrections utilisables sans double compte. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D01.g | Inventory Ledger | knowledge | — | Proposé par l’IA | Établir, conserver et rendre consultable l’historique fiable des variations de stock, de statut et de propriété, avec leurs dates, origines et justifications. | Disposer d’un historique traçable des faits qui expliquent les variations du stock. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D01.c | Inventory Visibility | knowledge | — | Proposé par l’IA | Restituer les positions actuelles et projetées du stock par article, lieu, état, propriétaire et détenteur, avec les engagements de quantité, leur provenance et leur fraîcheur. | Permettre aux décisions de s’appuyer sur une connaissance partagée. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D01.d | Stocktaking | action | — | Proposé par l’IA | Organiser les vérifications de stock, rapprocher les quantités constatées et enregistrées et établir les corrections justifiées. | Fiabiliser les quantités enregistrées — Inventory accuracy. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D02.c | Reservation | action | — | Proposé par l’IA | Établir et tenir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte. | Donner effet à un engagement de ressource. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.i | Available-to-Promise (ATP) | knowledge | — | Proposé par l’IA | Établir les quantités et dates auxquelles une demande ou un ensemble de demandes peut être satisfait par les ressources présentes ou futures admissibles dans la situation de référence, et expliciter la couverture qui rend ces engagements possibles. | Établir une solution de promesse réalisable dans la situation de référence. | Proposé par l’IA |
-| D03.j | Capable-to-Promise (CTP) | knowledge | — | Proposé par l’IA | Évaluer les quantités, dates et conditions de satisfaction possibles grâce à des apports ou capacités supplémentaires, sans décider de leur mobilisation. | Établir à quelles conditions une promesse deviendrait réalisable après adaptation. | Proposé par l’IA |
-| D03.k | Profitable-to-Promise (PTP) | knowledge | — | Proposé par l’IA | Évaluer et comparer les conséquences économiques des possibilités de promesse, en explicitant les coûts, les conditions d’admissibilité et les incertitudes, sans sélectionner la réponse. | Retenir une solution économiquement pertinente parmi les possibilités examinées. | Proposé par l’IA |
-| D03.l | Promise Selection | decision | — | Proposé par l’IA | Choisir la réponse de promesse à proposer à une commande parmi les possibilités admissibles, en précisant quantités, dates et conditions, sans confirmer l’engagement. | Retenir un échéancier acceptable pour honorer la commande. | Proposé par l’IA |
-| D01.h | Inventory Ownership Transfer | action | — | Proposé par l’IA | Appliquer un changement de propriétaire autorisé aux quantités concernées, selon l’accord et le fait déclencheur, en conservant les preuves et les liens aux actes associés. | Respecter les droits et obligations sur le stock fournisseur détenu, pendant sa présence dans le réseau et lors de ses suites. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D18.a | Supply Visibility | knowledge | Domain-View | Proposé par l’IA | Rendre visibles les ressources attendues, leurs quantités, lieux, échéances, engagements et incertitudes, en reliant chaque apport à son origine et à son avancement. | Permettre de planifier la couverture des besoins avec une connaissance fiable des apports à venir. | Proposé par l’IA |
+| Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
+| --- | --- | --- | --- | --- | --- | --- |
+| D01.f | Inventory Tracking | integration | Proposé par l’IA | Capter et intégrer les faits et états de stock transmis par les sources, avec leur origine, leur date et les corrections associées. | Rendre les faits de stock reconnus et leurs corrections utilisables sans double compte. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D01.g | Inventory Ledger | ledger | Proposé par l’IA | Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections. | Disposer d’un historique traçable des faits qui expliquent les variations du stock. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D01.c | Inventory Visibility | knowledge | Proposé par l’IA | Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes. | Permettre aux décisions de s’appuyer sur une connaissance partagée. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D01.d | Stocktaking | action | Proposé par l’IA | Organiser les vérifications de stock, rapprocher les quantités constatées et enregistrées et établir les corrections justifiées. | Fiabiliser les quantités enregistrées — Inventory accuracy. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D02.c | Reservation | action | Proposé par l’IA | Établir et tenir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte. | Donner effet à un engagement de ressource. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| inventory-ownership-ledger | Inventory Ownership Ledger | ledger | Proposé par l’IA | Tenir le registre des changements de propriétaire reconnus, avec quantités, parties, date d’effet, accord, fait déclencheur, acte éventuel et preuve. | Expliquer qui possède quelles quantités, depuis quand et sur quel fondement. | Proposé par l’IA |
+| D01.h | Inventory Ownership Transfer Decision | decision | Proposé par l’IA | Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation. | Déterminer les conséquences des faits et accords sur la propriété du stock, avec leur justification. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## D06 — Fulfilment Orchestration
 
@@ -186,12 +183,13 @@ Composer et coordonner les prestations, suivre leurs dépendances et rechercher 
 | D06.b | Service Capacity Visibility | knowledge | Proposé par l’IA | Rendre visible la capacité opérationnelle communiquée par les exécutants, avec son contexte, sa période et sa fraîcheur, pour alimenter les décisions Supply. | Donner à D03, à D04 et aux décisions d’exécution une connaissance exploitable des capacités annoncées par les exécutants. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D07.c | Service Reconciliation | action | En cours d’instruction | Rapprocher les résultats constatés des prestations attendues, qualifier les écarts et fournir les faits utiles aux sous-domaines consommateurs. | Expliquer les écarts de réalisation et alimenter le rapprochement des Orders sans confondre leurs reliquats. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D07.d | Operations Tracking | integration | Proposé par l’IA | Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées. | Rendre les retours d’exécution fiables et utilisables par les capacités consommatrices. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D06.d | Process Orchestration | orchestration | En cours d’instruction — portée : name, definition | Coordonner les prestations et leurs dépendances. | Coordonner la réalisation du plan retenu entre les exécutants. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D06.d | Process Orchestration | orchestration | Proposé par l’IA | Coordonner les prestations et leurs dépendances. | Coordonner la réalisation du plan retenu entre les exécutants. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| operations-visibility | Operations Visibility | knowledge | Proposé par l’IA | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. | Comprendre l’avancement et les résultats des prestations et processus Supply. | Proposé par l’IA |
 | D07.a | Service Requirements Decision | decision | Proposé par l’IA | Déterminer les prestations nécessaires. | Déterminer les résultats de prestation nécessaires à la réalisation du besoin Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D06.e | Service Selection Decision | decision | En cours d’instruction — portée : name | Déterminer les services et exécutants à mobiliser pour les prestations nécessaires, en tenant compte de leur admissibilité et des contraintes. | Retenir des services utilisables pour réaliser les prestations requises dans le cadre Supply applicable. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D06.f | Process Adaptation Decision | decision | En cours d’instruction — portée : name | Déterminer les adaptations du plan d’exécution permettant de préserver la promesse de l’Order et les grands équilibres du Matching face aux aléas. | Retenir une variation de réalisation adaptée à l’aléa et aux contraintes Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D06.f | Process Adaptation Decision | decision | Proposé par l’IA | Déterminer les adaptations du plan d’exécution permettant de préserver la promesse de l’Order et les grands équilibres du Matching face aux aléas. | Retenir une variation de réalisation adaptée à l’aléa et aux contraintes Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D05.i | Return Disposition Decision | decision | Proposé par l’IA | Déterminer le devenir logistique d’un produit retourné, selon son état constaté, les politiques applicables et les possibilités de récupération de valeur. | Retenir une orientation pertinente pour récupérer la valeur des produits retournés et maîtriser leurs coûts et risques. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| operations-visibility | Operations Visibility | knowledge | Proposé par l’IA | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. | Comprendre l’avancement et les résultats des prestations et processus Supply. | Proposé par l’IA |
+| service-order-release-decision | Service Order Release Decision | decision | Proposé par l’IA | Déterminer quels ordres de prestation retenir ou libérer ensemble, et à quel moment, pour organiser leur traitement et favoriser les regroupements utiles tout en respectant les engagements. | Améliorer l’organisation du traitement et les regroupements logistiques sans compromettre les engagements. | Proposé par l’IA |
 
 ## D03 — Demand & Supply Matching
 
@@ -201,15 +199,16 @@ Construire et maintenir le master plan de matching qui arbitre la couverture de 
 
 | Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- |
-| D05.f | Demand & Supply Optimization Planning | planning | Proposé par l’IA | Construire, comparer, maintenir et faire appliquer le master plan de matching qui couvre les commandes et la demande prévisionnelle résiduelle en mobilisant les décisions spécialisées. | Maintenir un plan commun cohérent et rendre visibles ses effets pris en compte et les besoins restant à couvrir. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D05.a | Inventory Target Decision | decision | En cours d’instruction — portée : name, definition | Déterminer les objectifs de stock et les seuils associés, par produit, lieu et période, selon les besoins, le niveau de service recherché, les délais et les risques. | Définir les niveaux de stock auxquels comparer la situation connue ou attendue selon le compromis de service, immobilisation et risque. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D05.d | Group Protection Decision | decision | En cours d’instruction — portée : definition, name | Déterminer les quantités à protéger ou les limites d’usage par canal ou groupe de bénéficiaires. | Déterminer la répartition des droits d’usage du stock entre groupes, en préservant les usages retenus. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D05.e | Replenishment Decision | decision | Proposé par l’IA | Déterminer les apports successifs et leurs ajustements en quantité et en date pour entretenir la disponibilité pendant la commercialisation, selon les besoins, les objectifs de stock, les apports engagés et les contraintes applicables. | Entretenir la disponibilité en ajustant les apports continus, tout en maîtrisant l’immobilisation et le risque d’excédent. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D05.c | Stock Redistribution Decision | decision | En cours d’instruction — portée : name | Déterminer les transferts de stock existant entre sites pour mieux répondre aux besoins, reconstituer des assortiments utiles ou regrouper des stocks dispersés, en tenant compte des coûts et risques. | Obtenir une répartition du stock mieux adaptée aux besoins des périmètres concernés. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D05.g | Initial Stocking Decision | decision | En cours d’instruction — portée : name, definition | Déterminer les quantités à apporter à chaque magasin et leurs dates pour constituer le stock initial nécessaire au lancement, à partir de l’assortiment retenu, des objectifs de stock et des contraintes applicables. | Préparer la disponibilité initiale des produits en magasin, en maîtrisant l’immobilisation et le risque dès le lancement. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D05.h | Reservation Policy Decision | decision | En cours d’instruction — portée : name, definition | Déterminer dans quelles situations, à quel moment et pour quelle durée réserver des ressources afin de sécuriser la promesse, selon le risque de pénurie et le coût d’indisponibilité pour les autres demandes. | Choisir comment sécuriser les ressources d’une promesse tout en maîtrisant leur indisponibilité pour les autres demandes. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.m | Order Prioritization | decision | Proposé par l’IA | Établir et réviser les priorités relatives des commandes. | Arbitrer les commandes à satisfaire en priorité lorsque leurs besoins se trouvent en concurrence. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D03.o | Fulfillment Plan Decision | decision | Proposé par l’IA | Déterminer un scénario cohérent d’affectation des ressources Supply aux commandes et aux besoins prévisionnels identifiés, en mobilisant les décisions spécialisées et les politiques applicables, afin de maximiser la valeur multidimensionnelle de leur satisfaction. | Proposer un plan d’affectation collectivement cohérent pour satisfaire les commandes et les besoins prévisionnels identifiés selon les objectifs applicables. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D02.e | Plan Application | action | Proposé par l’IA | Faire appliquer les recommandations autorisées et constater leur prise en compte. | Distinguer le plan retenu des effets effectivement pris en compte et rendre visibles les écarts. | Proposé par l’IA |
+| D05.f | Master Planning | planning | Proposé par l’IA | Cadrer, maintenir et réviser le master plan commun en mobilisant les capacités de matching, de simulation et d’application. | Maintenir un plan commun cohérent et rendre visibles ses effets pris en compte et les besoins restant à couvrir. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| BHV006 | Simulation & Analysis | planning | Proposé par l’IA | Construire des alternatives de plan, projeter leurs conséquences et comparer leurs effets sur le service, les engagements, les stocks, les coûts et les risques pour éclairer les choix. | À préciser | Proposé par l’IA |
+| D05.a | Inventory Target Optimization | decision | Proposé par l’IA | Déterminer les objectifs de stock et les seuils associés, par produit, lieu et période, selon les besoins, le niveau de service recherché, les délais et les risques. | Définir les niveaux de stock auxquels comparer la situation connue ou attendue selon le compromis de service, immobilisation et risque. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D05.d | Group Protection Optimization | decision | Proposé par l’IA | Déterminer les quantités à protéger ou les limites d’usage par canal ou groupe de bénéficiaires. | Déterminer la répartition des droits d’usage du stock entre groupes, en préservant les usages retenus. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D05.e | Replenishment | decision | Proposé par l’IA | Déterminer les apports initiaux et successifs, leurs quantités, dates et ajustements, pour couvrir les besoins et les cibles de stock applicables. | Entretenir la disponibilité en ajustant les apports continus, tout en maîtrisant l’immobilisation et le risque d’excédent. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D05.c | Stock Redistribution | decision | Proposé par l’IA | Déterminer les transferts de stock existant entre sites pour mieux répondre aux besoins, reconstituer des assortiments utiles ou regrouper des stocks dispersés, en tenant compte des coûts et risques. | Obtenir une répartition du stock mieux adaptée aux besoins des périmètres concernés. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D05.h | Reservation Policy Optimization | decision | Proposé par l’IA | Déterminer dans quelles situations, à quel moment et pour quelle durée réserver des ressources afin de sécuriser la promesse, selon le risque de pénurie et le coût d’indisponibilité pour les autres demandes. | Choisir comment sécuriser les ressources d’une promesse tout en maîtrisant leur indisponibilité pour les autres demandes. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.m | Demand Prioritization | decision | Proposé par l’IA | Établir et réviser les priorités relatives des besoins à couvrir, selon les engagements et les politiques applicables. | Arbitrer les commandes à satisfaire en priorité lorsque leurs besoins se trouvent en concurrence. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D03.o | Supply Assignment | decision | Proposé par l’IA | Déterminer les affectations cohérentes des ressources aux besoins et leurs révisions autorisées dans le master plan commun. | Proposer un plan d’affectation collectivement cohérent pour satisfaire les commandes et les besoins prévisionnels identifiés selon les objectifs applicables. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
 ## subdomain-policies — Policies
 
@@ -219,7 +218,7 @@ Définir, maintenir et rendre applicables les règles qui encadrent les protecti
 
 | Repère | Capacité | Type | Gouvernance des données | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D02.b | Supply Protection Policy | policy | Domain-managed | En cours d’instruction — portée : name | Configurer et maintenir les politiques, règles et quantités qui encadrent l’usage et le renouvellement des ressources pour maîtriser pénurie, surstock et déséquilibre. | Encadrer l’usage et le renouvellement des ressources pour réduire pénurie, surstock et déséquilibre. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D02.b | Supply Protection Policy | policy | Domain-managed | Proposé par l’IA | Configurer et maintenir les politiques, règles et quantités qui encadrent l’usage et le renouvellement des ressources pour maîtriser pénurie, surstock et déséquilibre. | Encadrer l’usage et le renouvellement des ressources pour réduire pénurie, surstock et déséquilibre. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D19.a | Service Provider Policy | policy | Domain-managed | Proposé par l’IA | Définir, maintenir et rendre applicables les règles de recours aux fournisseurs et à leurs Services, notamment les exclusions et les limites de sollicitation, afin de tenir compte de leur fiabilité et de leur situation opérationnelle. | Protéger la réalisation des demandes contre des sollicitations de prestataires inadaptées à leur situation. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D19.b | Demand Protection Policy | policy | Domain-managed | Proposé par l’IA | Définir, maintenir et rendre applicables les règles qui protègent ou priorisent certaines demandes dans les arbitrages de couverture et de révision. | Préserver les exigences et engagements des demandes selon le cadre métier applicable. | Validé par l’urbaniste — portée : source_id, target_id, type |
 
@@ -243,8 +242,8 @@ Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagem
 
 | Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- |
-| service-order-picking | Picking Order | action | En cours d’instruction — portée : name | Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
-| service-order-packing | Packing Order | action | En cours d’instruction — portée : name | Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-picking | Picking Order | action | Proposé par l’IA | Gérer les demandes de prélèvement confiées aux exécutants, leurs exigences de quantité et de référence, leurs engagements et les suites des manquants constatés. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
+| service-order-packing | Packing Order | action | Proposé par l’IA | Tenir les demandes de conditionnement et de reconditionnement confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-cross-docking | Cross-Docking Order | action | En cours d’instruction — portée : name | Gérer les demandes de transit confiées aux exécutants et les engagements de passage des marchandises reçues vers les départs prévus. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-transport | Transport Order | action | Proposé par l’IA | Porter les demandes de déplacement de marchandises, leurs quantités, origine et destination, contraintes de collecte et de livraison, conditions de transport, engagements acceptés et suites des écarts. | Tenir une demande de déplacement et ses engagements en cohérence avec les autres prestations logistiques. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-labeling | Labeling Order | action | En cours d’instruction — portée : name | Tenir les demandes de marquage et d’étiquetage confiées aux exécutants, leurs exigences, engagements et suites des résultats. | Tenir les exigences et engagements de la prestation et expliquer ses suites. | En cours d’instruction — portée : source_id, target_id, type |
@@ -272,6 +271,19 @@ Gouvernance des données : **Projection**.
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | price-book-visibility | Price Book Visibility | knowledge | Domain-View | Proposé par l’IA | Retrouver les tarifs de référence des produits et services, leurs versions et conditions d’application pour éclairer les décisions Supply. | Fournir les tarifs de référence utiles aux décisions et opérations Supply. | Proposé par l’IA |
 
+## subdomain-order-promising — Order Promising
+
+Statut : **Proposé par l’IA**.
+
+Évaluer les possibilités de satisfaction d’une demande et sélectionner une proposition de promesse, en explicitant quantités, dates, conditions et conséquences économiques.
+
+| Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
+| --- | --- | --- | --- | --- | --- | --- |
+| D03.i | Available-to-Promise (ATP) | evaluation | Proposé par l’IA | Établir les quantités et dates auxquelles une demande ou un ensemble de demandes peut être satisfait par les ressources présentes ou futures admissibles dans la situation de référence, et expliciter la couverture qui rend ces engagements possibles. | Établir une solution de promesse réalisable dans la situation de référence. | Proposé par l’IA |
+| D03.j | Capable-to-Promise (CTP) | evaluation | Proposé par l’IA | Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation. | Établir à quelles conditions une promesse deviendrait réalisable après adaptation. | Proposé par l’IA |
+| D03.k | Profitable-to-Promise (PTP) | evaluation | Proposé par l’IA | Évaluer et comparer les conséquences économiques des possibilités de promesse, en explicitant les coûts, les conditions d’admissibilité et les incertitudes, sans sélectionner la réponse. | Éclairer le choix par un dossier économique local et contextuel des avantages et inconvénients des options, sans sélectionner la réponse. | Proposé par l’IA |
+| D03.l | Promise Selection Decision | decision | Proposé par l’IA | Choisir une proposition initiale ou révisée de promesse pour une demande ou un ensemble de commandes, parmi les possibilités admissibles, sans confirmer l’engagement ni affecter les ressources. | Retenir un échéancier acceptable pour honorer la commande. | Proposé par l’IA |
+
 **Justification de la décomposition — D01.d :** Établir une référence complète sur un périmètre, entretenir la fiabilité par contrôles récurrents et répondre rapidement à une situation ciblée correspondent à trois politiques ou variantes métier, avec des bénéfices distincts. Les mêmes responsabilités de rapprochement et de correction justifiée sont mobilisées ; les interfaces et outils de comptage ne créent pas de comportement supplémentaire.
 
 ## Comportements — Stocktaking
@@ -294,10 +306,10 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | --- | --- | --- | --- |
 | BHV017 | Group Supply Protection | Validé par l’urbaniste — portée : name | Configurer les droits préservant l’accès d’un groupe à des ressources face aux usages concurrents. |
 | BHV018 | Consumption Capping | Validé par l’urbaniste — portée : name | Configurer les limites de consommation d’un groupe sur le périmètre et la période retenus. |
-| BHV019 | Safety Stock Policy | Validé par l’urbaniste — portée : name | Configurer le stock tampon et ses conditions d’utilisation pour absorber les incertitudes. |
-| BHV020 | Replenishment Regulation | Validé par l’urbaniste — portée : name | Configurer les règles de déclenchement et de limitation du réassort qui encadrent le renouvellement du stock. |
+| BHV019 | Safety Stock Policy | Proposé par l’IA | Configurer le stock tampon et ses conditions d’utilisation pour absorber les incertitudes. |
+| BHV020 | Replenishment Regulation | Proposé par l’IA | Configurer les règles de déclenchement et de limitation du réassort qui encadrent le renouvellement du stock. |
 
-**Justification de la décomposition — D03.i :** Quatre différences combinables modifient les possibilités : droits engagés, réseau, mobilisation et ressources futures ; aucun comportement par lieu ou technologie.
+**Justification de la décomposition — D03.i :** Distinguer deux profondeurs : stock courant admissible puis extension temporelle aux réceptions futures. Engagements, réseau et délais restent des exigences communes.
 
 ## Comportements — Available-to-Promise (ATP)
 
@@ -305,12 +317,10 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV001 | Existing Commitment Consideration | Validé par l’urbaniste — portée : definition | Établir les quantités admissibles pour la demande en tenant compte des allocations, protections et réservations, sans double décompte. |
-| BHV002 | Network Stock Availability | En cours d’instruction — portée : definition | Établir les possibilités de satisfaction à partir des lieux admissibles, entrepôts, magasins, darkstores ou autres espaces de stockage. |
-| BHV003 | Operational Availability Timing | Validé par l’urbaniste — portée : definition | Déterminer quand une quantité peut effectivement contribuer à la promesse selon sa disponibilité opérationnelle. |
-| BHV004 | Future Supply Projection | Validé par l’urbaniste — portée : definition | Établir les possibilités à l’échéance en intégrant les réceptions attendues et les engagements concurrents, pour une promesse ou un ensemble. |
+| BHV002 | On-Hand ATP | Proposé par l’IA | Évaluer les quantités et dates promettables à partir du stock courant admissible, après engagements et contraintes applicables, sans ajouter de réception future. |
+| BHV004 | Projected ATP | Proposé par l’IA | Étendre l’évaluation aux réceptions attendues admissibles et aux besoins/engagements sur l’horizon, sans créer de nouvel apport. |
 
-**Justification de la décomposition — D03.j :** Distinguer la faisabilité d’un apport supplémentaire et celle d’une modalité de satisfaction sous capacité ou condition nouvelle ; deux mécanismes combinables, sans inclure le rééchelonnement des commandes concurrentes.
+**Justification de la décomposition — D03.j :** Distinguer faisabilité fondée sur les sources, matières et délais, puis contrôle approfondi des capacités finies. Exposer ce qui a effectivement été vérifié.
 
 ## Comportements — Capable-to-Promise (CTP)
 
@@ -318,8 +328,30 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV075 | Additional Supply Feasibility | Proposé par l’IA | Les possibilités de satisfaire la demande en obtenant des ressources supplémentaires, avec quantités, dates et conditions de disponibilité. |
-| BHV076 | Fulfillment Alternative Feasibility | Proposé par l’IA | Les possibilités obtenues en modifiant les modalités de satisfaction par rapport à la situation de référence. |
+| BHV075 | Supply-Based CTP | Proposé par l’IA | Évaluer la possibilité d’obtenir ou de constituer un apport à partir des sources, matières/composants et délais connus, sans contrôle détaillé des capacités finies. |
+| BHV076 | Capacity-Constrained CTP | Proposé par l’IA | Étendre la faisabilité aux ressources et capacités finies nécessaires, à leurs calendriers, charges et dépendances pertinentes. |
+
+**Justification de la décomposition — D03.k :** Distinguer chiffrage des coûts des options et approfondissement par leurs conséquences économiques contextuelles. Les deux niveaux évaluent sans sélectionner.
+
+## Comportements — Profitable-to-Promise (PTP)
+
+Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
+
+| Repère | Comportement | Statut | Définition |
+| --- | --- | --- | --- |
+| BHV107 | Fulfillment Cost Evaluation | Proposé par l’IA | Chiffrer les coûts pertinents de chaque option de promesse sur une base explicite et comparable, en distinguant ce qui est connu, estimé ou absent. |
+| BHV108 | Contextual Economic Impact Evaluation | Proposé par l’IA | Compléter le chiffrage par les avantages et inconvénients économiques des options dans le contexte local de la demande, avec écarts, hypothèses et incertitudes, sans choisir. |
+
+**Justification de la décomposition — D03.l :** Distinguer la première proposition et le réexamen de promesses existantes, notamment collectif ; les protections et effets sur les engagements rendent ces situations différentes.
+
+## Comportements — Promise Selection Decision
+
+Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
+
+| Repère | Comportement | Statut | Définition |
+| --- | --- | --- | --- |
+| BHV109 | Initial Promise Selection | Proposé par l’IA | Choisir une première proposition de promesse parmi les options admissibles pour une demande, avec quantités, dates et conditions. |
+| BHV110 | Promise Reassessment | Proposé par l’IA | Réexaminer les propositions de promesse pour une commande ou un ensemble de commandes lorsque la situation change, et sélectionner les réponses révisées admissibles. |
 
 **Justification de la décomposition — D04.i :** Livraison, retrait, livraison fournisseur et relation intersociétés changent la prise en charge de la commande, la preuve de satisfaction et les engagements à coordonner. Ces parcours doivent se lire dans la capacité. La vente sur stock consigné ajoute les droits et obligations envers son propriétaire, indépendamment du mode de livraison.
 
@@ -329,10 +361,10 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV066 | Ship to Customer | En cours d’instruction — portée : name, definition | Prendre en charge la commande à livrer au client depuis le réseau : entrepôt, magasin ou autre lieu admissible. |
-| BHV067 | Customer Pickup | En cours d’instruction — portée : name, definition | Prendre en charge la mise à disposition et le retrait au lieu convenu. Une commande prête reste distincte d’une commande effectivement retirée. |
-| BHV068 | Direct Delivery | En cours d’instruction — portée : name, definition | Prendre en charge la commande dont le fournisseur livre directement le client, en coordonnant les attendus de vente et d’achat. |
-| BHV069 | Intercompany Sales | En cours d’instruction — portée : name, definition | Prendre en charge une vente entre entités juridiques du groupe, avec cohérence entre engagements de vente et d’achat. |
+| BHV066 | Ship to Customer | Proposé par l’IA | Prendre en charge la commande à livrer au client depuis le réseau : entrepôt, magasin ou autre lieu admissible. |
+| BHV067 | Customer Pickup | Proposé par l’IA | Prendre en charge la mise à disposition et le retrait au lieu convenu. Une commande prête reste distincte d’une commande effectivement retirée. |
+| BHV068 | Direct Delivery | Proposé par l’IA | Prendre en charge la commande dont le fournisseur livre directement le client, en coordonnant les attendus de vente et d’achat. |
+| BHV069 | Intercompany Sales | Proposé par l’IA | Prendre en charge une vente entre entités juridiques du groupe, avec cohérence entre engagements de vente et d’achat. |
 | BHV096 | Consignment Issue | Proposé par l’IA | Prendre en charge une vente portant sur des marchandises consignées, en identifiant le propriétaire, les droits de vente et les effets de la vente sur le régime de consignation. |
 
 **Justification de la décomposition — D04.j :** Les parcours changent la nature de l’attendu, la destination, les dépendances entre commandes et les preuves de réalisation : apport en stock, livraison directe au client, prestation. Cette différence métier justifie la décomposition sans recopier le cycle de vie commun. Supplier Confirmation ajoute le mécanisme de construction d’un engagement avec une autre partie, qui peut répondre autrement que demandé : cette différence change le pilotage de l’achat et la fiabilité des ressources attendues. Il se combine avec les trois parcours ; les opérations accepter, refuser et reconfirmer ne sont pas des comportements séparés.
@@ -356,11 +388,11 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV070 | Initial Stocking | En cours d’instruction — portée : name, definition | Porter les transferts constituant le stock de départ : implantation d’une saison, d’une capsule ou d’un nouveau lieu. |
-| BHV071 | Continuous Replenishment | En cours d’instruction — portée : name, definition | Porter les transferts alimentant régulièrement un lieu pendant l’activité. |
-| BHV072 | Inventory Rebalancing | En cours d’instruction — portée : name, definition | Porter les transferts corrigeant un déséquilibre entre lieux, par exemple d’un magasin disposant d’un excédent vers un magasin qui manque de stock. |
-| BHV073 | Stock Consolidation | En cours d’instruction — portée : name, definition | Porter les transferts regroupant des stocks dispersés : reconstitution de tailles, concentration ou rapatriement de reliquats. |
-| BHV074 | Order-Driven Transfer | En cours d’instruction — portée : name, definition | Porter un transfert nécessaire à une commande identifiée, en conservant son lien et son échéance. |
+| BHV070 | Initial Stocking | Proposé par l’IA | Porter les transferts constituant le stock de départ : implantation d’une saison, d’une capsule ou d’un nouveau lieu. |
+| BHV071 | Continuous Replenishment | Proposé par l’IA | Porter les transferts alimentant régulièrement un lieu pendant l’activité. |
+| BHV072 | Inventory Rebalancing | Proposé par l’IA | Porter les transferts corrigeant un déséquilibre entre lieux, par exemple d’un magasin disposant d’un excédent vers un magasin qui manque de stock. |
+| BHV073 | Stock Consolidation | Proposé par l’IA | Porter les transferts regroupant des stocks dispersés : reconstitution de tailles, concentration ou rapatriement de reliquats. |
+| BHV074 | Order-Driven Transfer | Proposé par l’IA | Porter un transfert nécessaire à une commande identifiée, en conservant son lien et son échéance. |
 
 **Justification de la décomposition — D04.l :** Les parcours diffèrent par le devenir attendu, les responsabilités sollicitées, les immobilisations et les preuves nécessaires pour considérer le retour traité. Cette complexité justifie des comportements métier ; les étapes de saisie, inspection, validation et clôture ne constituent pas chacune un comportement.
 
@@ -402,61 +434,58 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 
 **Justification de la décomposition — D05.a :** Trois façons de déterminer les cibles selon la demande servie et le périmètre d’arbitrage : disponibilité client et contraintes locales du magasin ; alimentation de la demande aval du centre de distribution ; coordination des protections et des cibles entre échelons interdépendants. Le bénéfice est de rendre explicites les compromis locaux et globaux sans créer un comportement par type de bâtiment ni une séquence imposée.
 
-## Comportements — Inventory Target Decision
+## Comportements — Inventory Target Optimization
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV026 | Store Demand & Supply Optimization | En cours d’instruction | Déterminer les objectifs et seuils de stock d’un magasin pour assurer la disponibilité client, selon la demande locale, l’assortiment retenu, les contraintes de présentation et de capacité, les délais de réassort et le risque d’excédent. |
-| BHV027 | Distribution Center Demand & Supply Optimization | En cours d’instruction | Déterminer les objectifs et seuils de stock d’un centre de distribution pour servir les magasins ou canaux desservis, selon leurs besoins prévus, les délais fournisseurs, les aléas d’approvisionnement et les contraintes de stockage. |
-| BHV028 | Multi-Echelon Demand & Supply Optimization | En cours d’instruction — portée : definition | Déterminer conjointement les objectifs de stock de plusieurs échelons du réseau, en tenant compte de leurs dépendances, pour atteindre le service recherché au meilleur compromis de stock et de risque. |
+| BHV026 | Store Demand & Supply Optimization | Proposé par l’IA | Déterminer les objectifs et seuils de stock d’un magasin pour assurer la disponibilité client, selon la demande locale, l’assortiment retenu, les contraintes de présentation et de capacité, les délais de réassort et le risque d’excédent. |
+| BHV027 | Distribution Center Demand & Supply Optimization | Proposé par l’IA | Déterminer les objectifs et seuils de stock d’un centre de distribution pour servir les magasins ou canaux desservis, selon leurs besoins prévus, les délais fournisseurs, les aléas d’approvisionnement et les contraintes de stockage. |
+| BHV028 | Multi-Echelon Demand & Supply Optimization | Proposé par l’IA | Déterminer conjointement les objectifs de stock de plusieurs échelons du réseau, en tenant compte de leurs dépendances, pour atteindre le service recherché au meilleur compromis de stock et de risque. |
 
 **Justification de la décomposition — D05.e :** Deux politiques produisent des apports selon des logiques métier distinctes : satisfaire des besoins datés ou rétablir une cible de stock. L’ajustement des apports existants ajoute un mécanisme combinable qui évite de répondre à tout changement par une commande supplémentaire et traite pénuries, excédents ou décalages sous engagements. Cette différence et ce bénéfice justifient les trois comportements ; seuils, périodes et tailles de lot restent des paramètres. Détermination des cibles, décision d’apports, application aux Orders et réalisation restent distinctes.
 
-## Comportements — Replenishment Decision
+## Comportements — Replenishment
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV083 | Requirement-based Replenishment | Validé par l’urbaniste — portée : name, definition | Déterminer les apports pour satisfaire des besoins datés, après déduction des ressources utilisables et des apports attendus. |
-| BHV084 | Target-based Replenishment | Validé par l’urbaniste — portée : name, definition | Déterminer les apports pour retrouver une cible de stock selon les seuils applicables, sans nécessiter une commande identifiée pour chaque apport. |
+| BHV083 | Requirement-based Replenishment | Proposé par l’IA | Déterminer les apports pour satisfaire des besoins datés, après déduction des ressources utilisables et des apports attendus. |
+| BHV084 | Target-based Replenishment | Proposé par l’IA | Déterminer les apports pour retrouver une cible de stock selon les seuils applicables, sans nécessiter une commande identifiée pour chaque apport. |
 | BHV085 | Replenishment Adjustment | Proposé par l’IA | Déterminer comment modifier les apports déjà prévus pour éviter pénuries, excédents ou décalages, en respectant les engagements. |
 
 **Justification de la décomposition — D05.c :** Distinguer deux mécanismes aux bénéfices différents : améliorer la couverture des lieux receveurs en préservant les donneurs, ou réduire la fragmentation du stock par concentration, avec reconstitution d’assortiments ou regroupement de reliquats même sans manque immédiat à destination.
 
-## Comportements — Stock Redistribution Decision
+## Comportements — Stock Redistribution
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV024 | Inventory Rebalancing | En cours d’instruction — portée : definition | Déterminer les transferts de stock vers les sites où il répondra mieux aux besoins, en préservant ceux des sites donneurs. |
+| BHV024 | Inventory Rebalancing | Proposé par l’IA | Déterminer les transferts de stock vers les sites où il répondra mieux aux besoins, en préservant ceux des sites donneurs. |
 | BHV025 | Stock Consolidation | Validé par l’urbaniste — portée : definition | Déterminer les regroupements de stocks dispersés pour reconstituer des assortiments utiles ou libérer des sites. |
 
-**Justification de la décomposition — D05.f :** Le cadrage, la programmation, le lancement, l’arrêt confirmé et le nouveau calcul produisent des résultats distincts : question délimitée, calendrier établi, travail engagé, arrêt effectif et travail réengagé. Les distinguer évite de confondre lancement, autorisation et application, ou arrêt du calcul et annulation des effets. Ces comportements sont directs et combinables sans cycle imposé. La construction des alternatives, leur projection et leur analyse forment Simulation & Analysis ; application et ajustement conservent leurs résultats distincts, et les autorisations sont décrites dans ces travaux selon leur portée, sans comportement autonome ; Monitor Plan rend les écarts visibles, tandis qu’Adjust Plan prépare leur réponse cohérente. Ce bénéfice justifie deux comportements distincts sans séquence imposée ni reprise du suivi opérationnel des partenaires. Order Rescheduling isole le mécanisme d’étude des décalages entre commandes et de leurs impacts ; Simulation & Analysis reste la comparaison générale des scénarios, Adjust Plan la préparation des modifications du plan.
+**Justification de la décomposition — D05.f :** Distinguer cadrage, programmation, lancement, arrêt, relance, observation et révision du même plan : des résultats utiles au pilotage, sans confondre calcul, autorisation, application et effets acquis. Simulation et application sont des capacités distinctes dans ce sous-domaine selon U749.
 
-## Comportements — Demand & Supply Optimization Planning
+## Comportements — Master Planning
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| D02.e | Apply Plan | Proposé par l’IA | Faire appliquer les recommandations autorisées et constater leur prise en compte. |
-| BHV006 | Simulation & Analysis | En cours d’instruction — portée : name, definition, nature | Construire des alternatives de plan, projeter leurs conséquences et comparer leurs effets sur le service, les engagements, les stocks, les coûts et les risques pour éclairer les choix. |
-| BHV016 | Adjust Plan | En cours d’instruction — portée : name, definition, nature | Préparer une révision cohérente du plan face aux changements, en mobilisant les décisions spécialisées et en tenant compte des effets déjà acquis. |
-| BHV077 | Order Rescheduling | Proposé par l’IA | Évaluer des décalages de commandes et leurs conséquences pour construire une réponse cohérente aux besoins concurrents. |
+| BHV016 | Adjust Plan | Proposé par l’IA | Préparer une révision cohérente du plan face aux changements, en mobilisant les décisions spécialisées et en tenant compte des effets déjà acquis. |
 | D04.s | Scope Planning | En cours d’instruction — portée : name, definition, scope, nature | Définir la question à traiter, le périmètre, l’horizon, les objectifs et les hypothèses du travail. |
 | BHV097 | Schedule Planning | En cours d’instruction — portée : name, definition, scope, nature | Fixer quand le travail sera lancé, ponctuellement ou selon une récurrence. |
 | BHV098 | Run Planning | En cours d’instruction — portée : name, definition, scope, nature | Engager le travail cadré pour produire un résultat de planification en mobilisant les décisions nécessaires. |
 | BHV099 | Stop Planning | En cours d’instruction — portée : name, definition, scope, nature | Interrompre un travail devenu inutile ou inapproprié et constater son arrêt effectif. |
 | BHV100 | Rerun Planning | En cours d’instruction — portée : name, definition, scope, nature | Engager un nouveau calcul après interruption, échec ou demande de réexamen, avec un cadrage toujours pertinent. |
-| BHV101 | Monitor Plan | En cours d’instruction — portée : name, definition, scope, nature | Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre visibles les écarts et les besoins de réexamen. |
+| BHV101 | Monitor Plan | Proposé par l’IA | Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre visibles les écarts et les besoins de réexamen. |
 
 **Justification de la décomposition — D05.h :** Le jalon du parcours, la proximité du besoin, la différenciation des engagements de service et l’adaptation au risque changent chacun la façon de sécuriser une promesse et le coût d’immobilisation. Quatre mécanismes combinables sont retenus U343 ; durées, seuils, canaux et interfaces restent des paramètres ou des contextes. La complexité visée est l’arbitrage de ces mécanismes sans retirer implicitement les garanties existantes.
 
-## Comportements — Reservation Policy Decision
+## Comportements — Reservation Policy Optimization
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
@@ -464,8 +493,19 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | --- | --- | --- | --- |
 | BHV032 | Milestone-Based Reservation Policy | Validé par l’urbaniste — portée : name | Déterminer les événements du parcours métier à partir desquels la ressource doit être réservée, puis les conditions de maintien de cette protection au fil du parcours. |
 | BHV033 | Time-Fenced Reservation Policy | Validé par l’urbaniste — portée : name | Déterminer à quelle distance de la date de besoin commencer à réserver, afin de sécuriser l’échéance sans immobiliser trop tôt les ressources. |
-| BHV034 | Demand-Differentiated Reservation Policy | Validé par l’urbaniste — portée : name | Déterminer des conditions de réservation différentes selon les engagements de service attachés aux demandes, aux clients ou aux canaux, en respectant les priorités et droits d’usage établis. |
+| BHV034 | Demand-Differentiated Reservation Policy | Proposé par l’IA | Déterminer des conditions de réservation différentes selon les engagements de service attachés aux demandes, aux clients ou aux canaux, en respectant les priorités et droits d’usage établis. |
 | BHV035 | Risk-Adaptive Reservation Policy | Validé par l’urbaniste — portée : name | Adapter les conditions de déclenchement et de durée de réservation à la tension sur les ressources et au risque d’immobilisation inutile, dans les limites des engagements déjà accordés. |
+
+**Justification de la décomposition — D03.o :** Préserver et compléter les liens existants ou réaffecter les liens modifiables produisent des effets distincts sur la stabilité du plan et les engagements. Leur description rend explicites les protections et les impacts sans ajouter de sous-comportements.
+
+## Comportements — Supply Assignment
+
+Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
+
+| Repère | Comportement | Statut | Définition |
+| --- | --- | --- | --- |
+| BHV102 | Commitment-Preserving Assignment | Proposé par l’IA | Compléter le plan en préservant les affectations qui soutiennent les engagements protégés, dans le périmètre fixé. |
+| BHV103 | Supply Reassignment | Proposé par l’IA | Revoir les liens ressources-besoins autorisés à évoluer afin de produire un plan cohérent lorsque la situation change. |
 
 **Justification de la décomposition — D05.i :** Distinguer les cas dont la disposition est déterminée par une politique connue des cas nécessitant un arbitrage contextuel entre plusieurs devenirs autorisés ; rendre visibles la standardisation des prises en charge et la récupération de valeur, sans imposer une technologie de décision.
 
@@ -489,16 +529,17 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | BHV061 | Initial Stocking | Proposé par l’IA | Prendre en charge l’apport initial de stock consigné pour une saison, une capsule ou un lancement, et suivre sa satisfaction avant l’échéance de démarrage. |
 | BHV062 | Continuous Replenishment | Proposé par l’IA | Prendre en charge les apports successifs de stock consigné pendant l’activité, selon l’évolution du besoin, et suivre leur satisfaction. |
 
-**Justification de la décomposition — D01.h :** Distinguer deux déclencheurs contractuels de changement de propriétaire : consommation et échéance ; pas une séquence obligatoire ni une règle universelle.
+**Justification de la décomposition — D01.h :** Les faits de consommation/vente, les échéances et les autres jalons contractuels mobilisent des preuves et conditions distinctes. Trois variantes couvrent les mécanismes utiles sans créer un comportement par événement ou par contrat.
 
-## Comportements — Inventory Ownership Transfer
+## Comportements — Inventory Ownership Transfer Decision
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV063 | Consumption-Based Ownership Transfer | En cours d’instruction — portée : name, definition | Appliquer le transfert de propriété lors de la vente ou consommation prévue par l’accord. |
-| BHV064 | Aging-Based Ownership Transfer | En cours d’instruction — portée : name, definition | Appliquer l’acquisition à l’échéance d’une durée contractuelle. |
+| BHV063 | Consumption-Based Ownership Transfer | Proposé par l’IA | Déterminer les changements de propriétaire liés à une consommation ou à une vente selon les conditions de l’accord. |
+| BHV064 | Aging-Based Ownership Transfer | Proposé par l’IA | Déterminer les changements de propriétaire liés à une échéance contractuelle atteinte. |
+| BHV104 | Contractual Milestone-Based Ownership Transfer | Proposé par l’IA | Déterminer les changements de propriétaire liés aux autres jalons contractuels d’un achat, d’une vente ou d’un transport. |
 
 **Justification de la décomposition — service-order-transport :** Distinguer les engagements par arrêt, par étape, par départ programmé et par conditions de remise. Ces variantes changent la manière de tenir exigences, acceptations, modifications et clôture de l’ordre ; elles ne détaillent ni boutons TMS ni gestes du transporteur. Elles sont terminales et combinables.
 
@@ -539,7 +580,18 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | BHV081 | Store Visibility | Validé par l’urbaniste — portée : name, definition | Réception magasin, passage en réserve, mise en rayon et réassort de la surface de vente. |
 | BHV082 | Process Visibility | Proposé par l’IA | Suivre l’avancement des processus d’exécution Supply et de leurs Tasks métier, en reliant chaque Task aux prestations et appels de services qui contribuent à sa réalisation, pour rendre explicites les résultats acquis, les attentes, les échecs et leurs conséquences sur la progression. |
 
-## Exemples concrets — universe-supply Supply Chain Orchestration
+**Justification de la décomposition — service-order-release-decision :** Deux bénéfices et mécanismes distincts : organiser la réception de charge et éviter la fragmentation du traitement d’un ensemble client. Fenêtres, volumes et délais restent des paramètres de règles.
+
+## Comportements — Service Order Release Decision
+
+Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
+
+| Repère | Comportement | Statut | Définition |
+| --- | --- | --- | --- |
+| BHV105 | Batch Release | Proposé par l’IA | Regrouper les ordres éligibles en lots de libération selon les fenêtres et la charge communiquée par l’exécutant. |
+| BHV106 | Consolidated Release | Proposé par l’IA | Retenir les ordres ou quantités compatibles jusqu’à une complétude ou un regroupement utile pour leur traitement commun, notamment pour une commande ou un client B2B. |
+
+## Scénarios métier — universe-supply Supply Chain Orchestration
 
 ### Livrer 100 tee-shirts à un magasin vendredi
 
@@ -560,6 +612,39 @@ Une nouvelle variante de tee-shirt, bleu taille M, est créée dans l’applicat
 **Ce que cela illustre.** La projection sert aux opérations Supply. La création et les corrections de la référence restent dans la source de vérité externe.
 
 Références : U470, U97, U460.
+
+### Livrer une commande B2B avec un stock partiel
+
+Illustration FLOW fictive : un client B2B attend 100 vêtements ; 60 sont disponibles et une rentrée de 40 est annoncée. Plusieurs solutions de livraison sont examinées.
+
+**Déclencheur.** Une commande nécessite une proposition de quantité et de date.
+
+**Résultat recherché.** Préparer une promesse réalisable et expliquer les conséquences économiques des options.
+
+**Contraintes**
+
+- Date demandée et fractionnement autorisé par le client.
+- Disponibilité effective, fiabilité de la rentrée et délais de préparation et de transport.
+- Engagements existants et règles de protection du stock.
+
+**Options examinées**
+
+- Livraison fractionnée : Expédier les 60 disponibles, puis les 40 attendus : rendre visible le service anticipé et le coût des deux expéditions.
+- Livraison regroupée : Attendre les 40 pour préparer et expédier ensemble : examiner le gain logistique, le délai et les conséquences économiques d’une attente.
+
+**Contributions métier**
+
+- [Available-to-Promise (ATP)](model:D03.i) évalue ce que permettent le stock courant et les disponibilités futures pertinentes.
+- [Capable-to-Promise (CTP)](model:D03.j) évalue les faisabilités supplémentaires utiles si les disponibilités ne suffisent pas ; son invocation n’est pas systématique.
+- [Profitable-to-Promise (PTP)](model:D03.k) expose, par option, les coûts, bénéfices, risques économiques et hypothèses disponibles, sans choisir.
+- [Promise Selection Decision](model:D03.l) choisit la proposition en tenant compte des évaluations et des règles applicables.
+- [Fulfilment Orchestration](model:D06) coordonne les prestations après engagement et détermine leur libération, en cherchant à préserver la promesse.
+
+**Ce qui se passe.** Un dossier présente les options avec quantité, date et conséquences économiques ; le choix reste explicite et distinct de l’évaluation. Aucun gagnant n’est présumé.
+
+**Ce que cela illustre.** Les capacités coopèrent selon le besoin ; ce récit n’impose ni pipeline universel ni modification des grands équilibres du Matching. Promettre, affecter les ressources et libérer les prestations restent distincts.
+
+Références : U763, U764, U762, ELM763, ELM767, ELM768.
 
 ## Sources d’inspiration — universe-supply Supply Chain Orchestration
 
@@ -815,7 +900,7 @@ How Order-to-Cash Works in Order Management · Concept ou fonction documenté da
 
 Références : ELM652, CMP269, CMP270, U673.
 
-## Exemples concrets — D08 Product Reference
+## Scénarios métier — D08 Product Reference
 
 ### Une variante, plusieurs offres et plusieurs exemplaires
 
@@ -970,25 +1055,25 @@ Inventory Ledger
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/applications/jd-edwards/supply-chain-manufacturing/9.2/eoash/item-ledger-information.html) — Item Ledger Information | Historique détaillé des transactions par article, distinct de leur simple réception technique. | Établir, conserver et rendre consultable l’historique fiable des variations de stock, de statut et de propriété, avec leurs dates, origines et justifications. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting) — Design details: Inventory posting | Les item ledger entries portent les variations de quantité ; les value entries et la comptabilité générale ont des responsabilités distinctes. | Établir, conserver et rendre consultable l’historique fiable des variations de stock, de statut et de propriété, avec leurs dates, origines et justifications. |
-| Notre modèle — Inventory Ledger | Établir, conserver et rendre consultable l’historique fiable des variations de stock, de statut et de propriété, avec leurs dates, origines et justifications. | Tenir le registre métier des réceptions, sorties, transferts, changements d’état ou de propriété et ajustements reconnus. Conserver quantités, dimensions, dates du fait et de connaissance, provenance, justification et lien à toute correction. Établir et actualiser cette connaissance relève de Knowledge ; cela ne signifie pas consultation seule. Ledger n’est ni un journal technique des messages ni la comptabilité générale.  Inventory Tracking fournit les faits intégrés ; Stocktaking établit les corrections de comptage justifiées ; Inventory Ownership Transfer applique les changements de propriétaire autorisés. Ledger conserve leurs effets sans décider à leur place. Inventory Visibility utilise ce registre pour restituer les positions. Une réception corrigée de 100 à 80 conserve sa trace explicative et ne crée ni 180 pièces ni un second mouvement physique. Un solde initial ou externe est conservé avec sa portée sans fabriquer son historique. Les valeurs comptables et leur rapprochement restent dans Finance. |
+| [Oracle](https://docs.oracle.com/en/applications/jd-edwards/supply-chain-manufacturing/9.2/eoash/item-ledger-information.html) — Item Ledger Information | Historique détaillé des transactions par article, distinct de leur simple réception technique. | Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting) — Design details: Inventory posting | Les item ledger entries portent les variations de quantité ; les value entries et la comptabilité générale ont des responsabilités distinctes. | Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections. |
+| Notre modèle — Inventory Ledger | Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections. | Conserver les réceptions, sorties, déplacements, changements de statut et ajustements reconnus, avec quantités, dimensions, date du fait, date de connaissance et preuves. Le registre constitue une référence métier durable ; Ledger qualifie sa tenue, indépendamment des outils.  [Inventory Tracking](model:D01.f) fournit les faits intégrés et [Stocktaking](model:D01.d) les corrections de comptage justifiées. [Inventory Ownership Ledger](model:inventory-ownership-ledger) tient les changements de propriétaire ; les écritures correspondantes sont reliées aux positions de stock sans constituer un second registre de propriété. Un transfert de propriété seul ne crée ni réception physique ni sortie physique supplémentaire.  [Inventory Visibility](model:D01.c) compose les positions à partir des deux registres et des engagements de quantité. Un solde initial ou externe conserve sa portée sans fabriquer son historique. Une réception corrigée de 100 à 80 garde la justification de la correction ; elle ne devient pas 180 pièces. Valorisation et comptabilité générale restent sous leur responsabilité propre. |
 
 ### Ce que nous en retenons
 
-- Comparaison et frontière réexaminées U726–U733 ; le classement FLOW ne reproduit pas les produits.
+- Séparation décision/registre appliquée U756 ; correspondances produit partielles.
 
-### Exemple GS1 — compléter une expédition déclarée
+### Illustration FLOW — Inventory Ledger
 
-Le guide décrit trois produits déclarés expédiés, alors qu’un quatrième est aussi parti.
+Une réception de 100 pièces est corrigée à 80 avec sa justification.
 
-**Ce qui se passe.** Un fait complémentaire permet de reconnaître le quatrième produit.
+**Ce qui se passe.** Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections.
 
-**Ce que cela illustre dans FLOW.** Une correction explique la variation ; elle ne doit pas effacer la distinction entre ce qui s’est passé et ce qui était connu.
+**Ce que cela illustre dans FLOW.** Illustration fictive FLOW ; appui produit partiel, sans réalisation Beaumanoir attestée.
 
-Source : [EPCIS and CBV Implementation Guideline](https://ref.gs1.org/guidelines/epcis-cbv/2.0.0/).
+Source : [Item Ledger Information](https://docs.oracle.com/en/applications/jd-edwards/supply-chain-manufacturing/9.2/eoash/item-ledger-information.html).
 
-Références : U477, ELM463, CMP190.
+Références : ELM736, CMP284, U733.
 
 ### Détails des références
 
@@ -998,13 +1083,13 @@ Item Ledger Information · Fonction ou concept documenté · Recouvrement partie
 
 **Pourquoi ce terme.** Nom retenu dans le contexte FLOW ; le périmètre reste distinct des fonctions produits.
 
-**Pourquoi cette définition.** Établir, conserver et rendre consultable l’historique fiable des variations de stock, de statut et de propriété, avec leurs dates, origines et justifications.
+**Pourquoi cette définition.** Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections.
 
 **Points communs.** Historique détaillé des transactions par article, distinct de leur simple réception technique.
 
 **Différences.** Regroupement et type FLOW explicités ; aucune taxonomie universelle déduite du produit.
 
-**Position FLOW.** Établir, conserver et rendre consultable l’historique fiable des variations de stock, de statut et de propriété, avec leurs dates, origines et justifications.
+**Position FLOW.** Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections.
 
 [Item Ledger Information](https://docs.oracle.com/en/applications/jd-edwards/supply-chain-manufacturing/9.2/eoash/item-ledger-information.html) — JD Edwards EnterpriseOne 9.2, consulté le 2026-09-24.
 
@@ -1020,13 +1105,13 @@ Design details: Inventory posting · Fonction ou concept documenté · Recouvrem
 
 **Pourquoi ce terme.** Nom retenu dans le contexte FLOW ; le périmètre reste distinct des fonctions produits.
 
-**Pourquoi cette définition.** Établir, conserver et rendre consultable l’historique fiable des variations de stock, de statut et de propriété, avec leurs dates, origines et justifications.
+**Pourquoi cette définition.** Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections.
 
 **Points communs.** Les item ledger entries portent les variations de quantité ; les value entries et la comptabilité générale ont des responsabilités distinctes.
 
 **Différences.** Regroupement et type FLOW explicités ; aucune taxonomie universelle déduite du produit.
 
-**Position FLOW.** Établir, conserver et rendre consultable l’historique fiable des variations de stock, de statut et de propriété, avec leurs dates, origines et justifications.
+**Position FLOW.** Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections.
 
 [Design details: Inventory posting](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting) — Business Central, page évolutive, consulté le 2026-09-24.
 
@@ -1044,11 +1129,13 @@ Inventory Visibility
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility) — Inventory Visibility Add-in overview | Le produit réunit ingestion, états, réservations et ATP ; ce regroupement logiciel ne prescrit pas les frontières FLOW. | Restituer les positions actuelles et projetées du stock par article, lieu, état, propriétaire et détenteur, avec les engagements de quantité, leur provenance et leur fraîcheur. |
 | [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html) — How You Review Item Supply and Demand | Vue temporelle du stock, des apports et des besoins ; règles de non-double compte. Pas de taxonomie universelle séparant les deux Visibility. | Restituer les positions actuelles et projetées du stock par article, lieu, état, propriétaire et détenteur, avec les engagements de quantité, leur provenance et leur fraîcheur. |
-| Notre modèle — Inventory Visibility | Restituer les positions actuelles et projetées du stock par article, lieu, état, propriétaire et détenteur, avec les engagements de quantité, leur provenance et leur fraîcheur. | Exemple fictif : Afficher 70 présentes et 50 attendues à J+7 avec leur fraîcheur.  Précision éditoriale U435 : exposer les états corrigés et leur fraîcheur, avec la provenance permettant au consommateur de comprendre une variation. Une donnée absente ou périmée n’équivaut pas à une quantité nulle ou certaine. Les décisions de disponibilité ou de promesse doivent pouvoir identifier cette limite. Cette lecture ne corrige pas elle-même les mouvements et ne confirme pas une nouvelle promesse.  [Supply Visibility](model:D18.a) fournit les apports attendus et leur qualification. Inventory Visibility construit les positions et projections de stock ; les deux vues se relient sans dupliquer la tenue des demandes ni reconnaître une réception avant le fait correspondant.  Frontière U673 : Une projection de stock utilise Plans et Supply Visibility ; elle ne prouve pas qu’une quantité est promettable.  U717 : établir et actualiser les quantités physiques et états logiques à partir des faits reconnus intégrés par Inventory Tracking et des mouvements conservés. Distinguer quantité présente, état logique et ressource future ; une correction tardive actualise la représentation à la date pertinente.  U733 : Inventory Ledger fournit les faits conservés ; Inventory Tracking en assure l’intégration. Supply Visibility explique chaque apport attendu et son incertitude. Les projections consomment apports, sorties et réservations sans compter deux fois un Order et son effet réalisé. Une vue physique, logique ou projetée reste distincte d’un résultat ATP admissible pour une commande. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html) — Overview of Supply Chain Orchestration | Oracle suit les demandes et apports liés aux achats, transferts et autres modes d’approvisionnement. | Oracle suit les demandes et apports liés aux achats, transferts et autres modes d’approvisionnement. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list) — On-hand inventory | Microsoft distingue les quantités physiques des réceptions attendues et de la disponibilité calculée. | Microsoft distingue les quantités physiques des réceptions attendues et de la disponibilité calculée. |
+| Notre modèle — Inventory Visibility | Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes. | Composer les positions par article, lieu, état, propriétaire et détenteur, à partir des faits intégrés par Inventory Tracking, des mouvements reconnus dans Inventory Ledger et des changements de propriété dans Inventory Ownership Ledger. Une correction tardive actualise la représentation à la date pertinente ; un changement de propriétaire seul ne change pas la quantité physique totale.  Rapprocher achats, transferts entrants, retours, consignation et prévisions de mouvements de stock. Pour chaque apport attendu, conserver origine, confirmation, échéance, avancement, reliquat, engagements, incertitude et fraîcheur. Distinguer proposition, apport engagé, expédition et réception. Les Orders et Plans restent maîtres de leurs données ; l’APS demeure externe.  Un apport reconnu comme reçu devient un fait de stock et cesse d’être compté comme attente pour la même quantité. Éviter le double compte entre Orders, plans et réalisations. Une donnée absente ou périmée ne vaut ni zéro ni certitude. Propriété, détention, statut douanier, état logique et disponibilité physique restent distincts.  La projection ne prouve pas qu’une quantité est promettable : Order Promising applique les évaluations contextuelles. Cette capacité ne corrige pas les mouvements, ne réserve pas et ne confirme aucun engagement. La visibilité des capacités de production, transport ou prestation reste chez ses responsables.  Illustration FLOW : un achat de 100 pièces est expédié pour 80 ; la vue expose 80 en transit et un reliquat de 20 à confirmer, avec leurs échéances. Après réception de 60, elle distingue ces 60 présentes des 20 encore en transit et des 20 non expédiées. |
 
 ### Ce que nous en retenons
 
-- Comparaison et frontière réexaminées U726–U733 ; le classement FLOW ne reproduit pas les produits.
+- Frontière U767 : connaissance du stock, évaluation contextuelle et sélection de promesse restent des responsabilités distinctes.
 
 ### Illustration FLOW — Inventory Visibility
 
@@ -1070,13 +1157,13 @@ Inventory Visibility Add-in overview · Fonction ou concept documenté · Recouv
 
 **Pourquoi ce terme.** Nom retenu dans le contexte FLOW ; le périmètre reste distinct des fonctions produits.
 
-**Pourquoi cette définition.** Restituer les positions actuelles et projetées du stock par article, lieu, état, propriétaire et détenteur, avec les engagements de quantité, leur provenance et leur fraîcheur.
+**Pourquoi cette définition.** Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes.
 
 **Points communs.** Le produit réunit ingestion, états, réservations et ATP ; ce regroupement logiciel ne prescrit pas les frontières FLOW.
 
 **Différences.** Regroupement et type FLOW explicités ; aucune taxonomie universelle déduite du produit.
 
-**Position FLOW.** Restituer les positions actuelles et projetées du stock par article, lieu, état, propriétaire et détenteur, avec les engagements de quantité, leur provenance et leur fraîcheur.
+**Position FLOW.** Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes.
 
 [Inventory Visibility Add-in overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility) — Page évolutive, 2025-08-14, consulté le 2026-09-24.
 
@@ -1084,7 +1171,7 @@ Inventory Visibility Add-in overview · Fonction ou concept documenté · Recouv
 
 **Limite de preuve.** Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document.
 
-Références : ELM734, CMP284, U733.
+Références : ELM734, CMP284, U733, U767.
 
 #### Oracle — How You Review Item Supply and Demand
 
@@ -1092,13 +1179,13 @@ How You Review Item Supply and Demand · Fonction ou concept documenté · Recou
 
 **Pourquoi ce terme.** Nom retenu dans le contexte FLOW ; le périmètre reste distinct des fonctions produits.
 
-**Pourquoi cette définition.** Restituer les positions actuelles et projetées du stock par article, lieu, état, propriétaire et détenteur, avec les engagements de quantité, leur provenance et leur fraîcheur.
+**Pourquoi cette définition.** Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes.
 
 **Points communs.** Vue temporelle du stock, des apports et des besoins ; règles de non-double compte. Pas de taxonomie universelle séparant les deux Visibility.
 
 **Différences.** Regroupement et type FLOW explicités ; aucune taxonomie universelle déduite du produit.
 
-**Position FLOW.** Restituer les positions actuelles et projetées du stock par article, lieu, état, propriétaire et détenteur, avec les engagements de quantité, leur provenance et leur fraîcheur.
+**Position FLOW.** Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes.
 
 [How You Review Item Supply and Demand](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html) — Fusion 25D, consulté le 2026-09-24.
 
@@ -1106,7 +1193,49 @@ How You Review Item Supply and Demand · Fonction ou concept documenté · Recou
 
 **Limite de preuve.** Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document.
 
-Références : ELM745, CMP284, U733.
+Références : ELM745, CMP284, U733, U767.
+
+#### Oracle — Overview of Supply Chain Orchestration
+
+Fusion Cloud Supply Chain Orchestration · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Supply Chain Orchestration est un terme existant du marché, avec un périmètre FLOW propre.
+
+**Pourquoi cette définition.** Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes.
+
+**Points communs.** Oracle suit les demandes et apports liés aux achats, transferts et autres modes d’approvisionnement.
+
+**Différences.** Le produit couvre aussi création et exécution de supply orders ; FLOW sépare connaissance des apports, demande initiale et orchestration.
+
+**Position FLOW.** Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes.
+
+[Overview of Supply Chain Orchestration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html) — 26B, consulté le 2026-09-21.
+
+**Passage.** Introduction ; receive requests, create supply orders, manage changes ; drop shipment
+
+**Limite de preuve.** Le produit couvre aussi création et exécution de supply orders ; FLOW sépare connaissance des apports, demande initiale et orchestration. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
+
+Références : U470, U471, ELM294, CMP185, U474, U475, CMP188, U530, CMP215, U625, U626, U767.
+
+#### Microsoft — On-hand inventory
+
+Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Pourquoi cette définition.** Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes.
+
+**Points communs.** Microsoft distingue les quantités physiques des réceptions attendues et de la disponibilité calculée.
+
+**Différences.** La vue du produit réunit ces mesures ; elle ne définit pas les frontières des Purposes FLOW.
+
+**Position FLOW.** Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes.
+
+[Inventory on-hand list](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list) — 2026-06-15, consulté le 2026-09-19.
+
+**Passage.** Query your on-hand inventory ; tableau des quantités ; Examples
+
+**Limite de preuve.** La vue du produit réunit ces mesures ; elle ne définit pas les frontières des Purposes FLOW. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
+
+Références : U477, ELM408, CMP190, U625, U626, U767.
 
 ## Sources d’inspiration — D01.d Stocktaking
 
@@ -1325,7 +1454,7 @@ Composable Commerce · Concept documenté par la source primaire · Recouvrement
 
 Références : U341, ELM212, CMP120, U342, U343, U477, ELM334, CMP190, U560, CMP234.
 
-## Exemples concrets — D02.c Reservation
+## Scénarios métier — D02.c Reservation
 
 ### Réserver avant de choisir le lot
 
@@ -1345,7 +1474,7 @@ Reservation
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-reservations) — Inventory Visibility reservations | Réservation réduit les quantités disponibles pour réservation sans sortie physique ; consommation et libération évitent le double compte. | Établir et tenir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte. |
 | [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/reservations.html) — Reservations | Réservations à maille haute ou détaillée, pouvant porter sur stock ou apports attendus ; aucun blocage physique universel. | Établir et tenir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte. |
-| Notre modèle — Reservation | Établir et tenir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte. | Exemple fictif : Un droit exclusif sur 40 peut précéder l’affectation du lot précis.  U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.  Appliquer les conditions de réservation rendues applicables par [Supply Protection](model:D02.b). [Reservation Policy Decision](model:D05.h) peut être mobilisée pour déterminer ou réexaminer les conditions utiles ; son résultat n’active pas à lui seul une nouvelle politique. La gestion de chaque réservation conserve sa portée propre et les engagements déjà constitués sont réexaminés selon leurs conditions, sans libération implicite au changement de politique.  Frontière U673 : Matching demande une réservation mais ne la possède pas. Une affectation du plan ne réserve pas implicitement la ressource (U436).  U733 : tenir création, révision, consommation, libération et expiration selon les conditions applicables ; ce sont des responsabilités communes, pas des Behaviors supplémentaires. Réservation et sortie physique ne sont pas décomptées deux fois. Les parcours rapides d’Order Management peuvent solliciter cette capacité sans reconstruction systématique du plan collectif. |
+| Notre modèle — Reservation | Établir et tenir un engagement de quantité pour un besoin identifié, dont les usages concurrents doivent tenir compte. | Exemple fictif : Un droit exclusif sur 40 peut précéder l’affectation du lot précis.  U436 : seule la réservation bloque les usages concurrents ; l’affectation seule ne les bloque pas. Créer, conserver ou réviser un lien d’affectation ne crée donc pas implicitement une réservation. Les protections de groupe conservent leurs règles d’admissibilité, et un gel d’affectation sa restriction de modification. Expiration, consommation, libération et déclenchement automatique éventuel d’une réservation restent à préciser ; aucun mécanisme technique de concurrence n’est déduit de cette frontière.  Appliquer les conditions de réservation rendues applicables par [Supply Protection](model:D02.b). [Reservation Policy Optimization](model:D05.h) peut être mobilisée pour déterminer ou réexaminer les conditions utiles ; son résultat n’active pas à lui seul une nouvelle politique. La gestion de chaque réservation conserve sa portée propre et les engagements déjà constitués sont réexaminés selon leurs conditions, sans libération implicite au changement de politique.  Frontière U673 : Matching demande une réservation mais ne la possède pas. Une affectation du plan ne réserve pas implicitement la ressource (U436).  U733 : tenir création, révision, consommation, libération et expiration selon les conditions applicables ; ce sont des responsabilités communes, pas des Behaviors supplémentaires. Réservation et sortie physique ne sont pas décomptées deux fois. Les parcours rapides d’Order Management peuvent solliciter cette capacité sans reconstruction systématique du plan collectif. |
 
 ### Ce que nous en retenons
 
@@ -1656,7 +1785,7 @@ Dynamics 365 Commerce · Concept documenté par une source primaire · Recouvrem
 
 Références : U508, U509, ELM516, CMP206.
 
-## Exemples concrets — D02.e Apply Plan
+## Scénarios métier — D02.e Plan Application
 
 ### Répartir une pénurie sans scinder les commandes
 
@@ -1688,9 +1817,9 @@ Le plan de demande prévoit des ventes web en novembre ; 300 pièces de l’arri
 
 Références : U562, U564.
 
-## Sources d’inspiration — D02.e Apply Plan
+## Sources d’inspiration — D02.e Plan Application
 
-Apply Plan reprend les affectations et l’application des ajustements de stock dans un comportement du Planning commun.
+Plan Application reprend les affectations et l’application des ajustements de stock dans un comportement du Planning commun.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
@@ -1715,11 +1844,11 @@ Apply Plan reprend les affectations et l’application des ajustements de stock 
 | [Oracle](https://docs.oracle.com/en/industries/retail/retail-oms-suite-cloud/25.2.301.0/romoh/WEMT.htm) — Working with E-Mail Notification Templates (WEMT) | Générer des notifications client pour attentes de livraison, annulations et autres événements de commande. | Passer des résultats préparés aux opérations selon les mécanismes propres au produit. |
 | [Kinaxis](https://www.kinaxis.com/en/solutions/supply-chain-orchestration) — Supply Chain Orchestration | Relier planification, opérations et partenaires dans un périmètre allant jusqu’à la livraison. | Passer des résultats préparés aux opérations selon les mécanismes propres au produit. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/work-line-details) — Partial work quantity cancellation | Réduction partielle de quantité de travail de préparation et correction associée du chargement. | Mettre en cohérence travail et chargement après réduction partielle. |
-| Notre modèle — Apply Plan | Effets autorisés sur liens ressources-besoins, Orders, engagements et politiques, avec prise en compte et écarts. | Mobiliser les responsables métiers, maintenir les liens d’affectation et distinguer recommandations, effets pris en compte et réalisation physique. |
+| Notre modèle — Plan Application | Effets autorisés sur liens ressources-besoins, Orders, engagements et politiques, avec prise en compte et écarts. | Mobiliser les responsables métiers, maintenir les liens d’affectation et distinguer recommandations, effets pris en compte et réalisation physique. |
 
 ### Ce que nous en retenons
 
-- Oracle documente la transmission de recommandations nouvelles, replanifiées ou annulées et les exceptions. Microsoft documente la transformation de planned orders et son historique. Ce sont des appuis partiels à Apply Plan ; ils ne prouvent pas l’application universelle de toutes les politiques. Les preuves sur Supply Assignment conservées ci-dessous portent sur le mécanisme d’affectation inclus.
+- Oracle documente la transmission de recommandations nouvelles, replanifiées ou annulées et les exceptions. Microsoft documente la transformation de planned orders et son historique. Ce sont des appuis partiels à Plan Application ; ils ne prouvent pas l’application universelle de toutes les politiques. Les preuves sur Supply Assignment conservées ci-dessous portent sur le mécanisme d’affectation inclus.
 - SAP emploie Supply Assignment pour un traitement qui combine choix, affectation et préparation de la livraison. Microsoft parle notamment de pegging pour les liens entre ressources et demandes. Les mots se rejoignent sur la relation à maintenir, mais les effets produits diffèrent.
 - FLOW isole cette responsabilité : une [affectation](glossary:TER017) indique la ressource retenue ; seule la réservation empêche son usage concurrent. Le nom SAP est proche, sans importer tous les effets d’ARun.
 - Le rattachement comme comportement de Planning est un choix FLOW : Oracle inclut la mise en application dans le parcours du backlog ; SAP utilise Supply Assignment avec des effets plus larges, notamment sur les usages concurrents, que FLOW sépare de l’affectation.
@@ -1730,7 +1859,8 @@ Apply Plan reprend les affectations et l’application des ajustements de stock 
 - Oracle documente la transmission manuelle ou automatique de recommandations et les exceptions de prise en compte. Les deux documents décrivent des mécanismes du même éditeur, pas un consensus de taxonomie.
 - FLOW fait de cette application un comportement du Planning ; Supply Protection, les familles d’Orders et Process Orchestration gardent leurs responsabilités. Appliquer le plan n’équivaut pas à réaliser les prestations physiques.
 - U636 — Microsoft précise conversion, approbation, suggestions de révision et historique ; SAP relie déploiement et ordres de transfert ; Oracle documente release, refus et notifications côté commandes. Kinaxis situe la continuité planning-opérations sans en détailler les contrats.
-- Le passage à l’opérationnel est étayé ; la coordination des notifications et autres conséquences est une précision FLOW proposée. Aucune bascule atomique du plan ni autonomie d’une capacité Apply Plan ne sont démontrées.
+- Le passage à l’opérationnel est étayé ; la coordination des notifications et autres conséquences est une précision FLOW proposée. Aucune bascule atomique du plan ni autonomie d’une capacité Plan Application ne sont démontrées.
+- U749 distingue cette responsabilité comme capacité du Matching ; les formes Microsoft restent des appuis, sans correspondance automatique de niveaux.
 
 ### SAP — un arrivage lié à une commande
 
@@ -1814,7 +1944,7 @@ S/4HANA Fashion — Supply Assignment (ARun) · Concept ou mécanisme métier do
 
 **Différences.** Chez SAP, le lien protège aussi contre d’autres usages.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : FLOW sépare affectation, réservation et libération. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : FLOW sépare affectation, réservation et libération. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Explaining Supply Assignment](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-supply-assignment_af05618d-4954-4f22-9857-3dd12e3940c4) — Cours SAP S/4HANA for Fashion and Vertical Business ; édition non précisée, consulté le 2026-09-19.
 
@@ -1832,7 +1962,7 @@ Dynamics 365 SCM · Concept ou mécanisme métier documenté dans un produit · 
 
 **Différences.** Microsoft préserve aussi des éléments de la chaîne de planification selon sa configuration ; ce mécanisme dépasse le lien d’affectation FLOW et n’impose pas un gel permanent.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : FLOW réunit application, complément préservant les liens et réaffectation comme modalités de Supply Assignment, comportement de Demand & Supply Matching Planning. Les décisions, réservations, gels et engagements gardent leurs autorités propres. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : FLOW réunit application, complément préservant les liens et réaffectation comme modalités de Supply Assignment, comportement de Demand & Supply Matching Planning. Les décisions, réservations, gels et engagements gardent leurs autorités propres. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Keep supply for confirmed demand](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand) — Prérequis documenté : 10.0.48 build 10.0.2645.33 ou ultérieur, consulté le 2026-09-19.
 
@@ -1850,7 +1980,7 @@ Fusion Cloud Supply Chain Planning · Processus ou fonction produit · Appui fon
 
 **Différences.** La release Oracle transmet des résultats de planification ; elle ne prescrit pas la hiérarchie FLOW et ne se confond pas avec une réservation.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : FLOW porte l’application du résultat comme comportement du Planning ; les décisions et configurations consommées restent des responsabilités partenaires. Le catalogue de capacités ne reproduit pas la structure produit. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : FLOW porte l’application du résultat comme comportement du Planning ; les décisions et configurations consommées restent des responsabilités partenaires. Le catalogue de capacités ne reproduit pas la structure produit. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Overview of Backlog Management Processes](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/overview-of-backlog-management-processes.html) — 26B, consulté le 2026-09-21.
 
@@ -1868,7 +1998,7 @@ S/4HANA aATP · Concept ou mécanisme métier documenté dans un produit · Reco
 
 **Différences.** ARun peut aussi déterminer le choix et contrôler la libération.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : FLOW réunit application, complément préservant les liens et réaffectation comme modalités de Supply Assignment, comportement de Demand & Supply Matching Planning. Les décisions, réservations, gels et engagements gardent leurs autorités propres. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : FLOW réunit application, complément préservant les liens et réaffectation comme modalités de Supply Assignment, comportement de Demand & Supply Matching Planning. Les décisions, réservations, gels et engagements gardent leurs autorités propres. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Supply Assignment (ARun)](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/d335e3418f4348ffbae9f11888a62cc7.html) — SAP S/4HANA 2025 FPS01 (février 2026), consulté le 2026-09-19.
 
@@ -1886,7 +2016,7 @@ S/4HANA aATP · Concept ou mécanisme métier documenté dans un produit · Reco
 
 **Différences.** La page ne démontre pas l’import d’un plan arbitraire.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : FLOW réunit application, complément préservant les liens et réaffectation comme modalités de Supply Assignment, comportement de Demand & Supply Matching Planning. Les décisions, réservations, gels et engagements gardent leurs autorités propres. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : FLOW réunit application, complément préservant les liens et réaffectation comme modalités de Supply Assignment, comportement de Demand & Supply Matching Planning. Les décisions, réservations, gels et engagements gardent leurs autorités propres. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Supply Assignment Run Workflow using Apps](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/863bbfb47d384f6aafff5347fb7e3dba.html) — SAP S/4HANA 2025 FPS01 (février 2026), consulté le 2026-09-19.
 
@@ -1904,7 +2034,7 @@ S/4HANA Fashion — Supply Assignment / Backorder Processing · Mécanisme ou pr
 
 **Différences.** Prendre en compte un apport planifié ne démontre pas sa génération. Le comportement de chaque mode reste distinct.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : Supply Assignment applique les liens retenus ; la présence d’une ressource planifiée dans le calcul ne lui attribue pas la production de cette ressource. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : Supply Assignment applique les liens retenus ; la présence d’une ressource planifiée dans le calcul ne lui attribue pas la production de cette ressource. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Backorder Processing](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/6b8eb017a1d1431abde00056a249f72b.html) — 2025 FPS01 (Feb 2026), consulté le 2026-09-21.
 
@@ -1922,7 +2052,7 @@ Fusion Cloud Supply Planning — Project-specific planning · Mécanisme de plan
 
 **Différences.** Planification par projet ; la page ne démontre pas une application transactionnelle autonome ni le contexte retail du cas FLOW.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : Supply Assignment applique les liens retenus aux commandes et aux besoins prévisionnels identifiés. Planning et décision restent distincts de cette application. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : Supply Assignment applique les liens retenus aux commandes et aux besoins prévisionnels identifiés. Planning et décision restent distincts de cette application. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Review Supplies and Demands with Project Pegging](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/review-supplies-and-demands-with-project-pegging.html) — 26B, consulté le 2026-09-21.
 
@@ -1940,7 +2070,7 @@ S/4HANA PP/DS · Mécanisme de planification documenté dans un produit · Recou
 
 **Différences.** Les liens dynamiques SAP servent au calcul et ne sont généralement pas durables ; la granularité n’est pas spécifique au lot. FLOW décrit l’application des affectations retenues.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : L’affectation à un besoin prévisionnel est couverte, sans assimiler toute projection de calcul à une affectation appliquée ou réservée. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : L’affectation à un besoin prévisionnel est couverte, sans assimiler toute projection de calcul à une affectation appliquée ou réservée. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Dynamic Pegging](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f899ce30af9044299d573ea30b533f1c/862ac95360267614e10000000a174cb4.html) — Page évolutive ; édition non établie pour le passage consulté, consulté le 2026-09-21.
 
@@ -1958,7 +2088,7 @@ Dynamics 365 Business Central — Planning · Mécanisme de planification docume
 
 **Différences.** Business Central distingue ce calcul d’un lien order-to-order contraignant, que les prévisions ne doivent pas engendrer. Les priorités documentées ne sont pas importées dans FLOW.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : Supply Assignment matérialise le lien retenu vers le besoin identifié, sans réservation implicite. Le mécanisme Business Central ne prouve pas une application persistante identique. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : Supply Assignment matérialise le lien retenu vers le besoin identifié, sans réservation implicite. Le mécanisme Business Central ne prouve pas une application persistante identique. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Design details - Balancing supply and demand](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-balancing-demand-and-supply) — Documentation évolutive ; édition produit non fixée, consulté le 2026-09-21.
 
@@ -1976,7 +2106,7 @@ S/4HANA — Supply Protection during ARun · Mécanisme ou processus de planific
 
 **Différences.** Le document ne démontre pas que le run recalcule les seuils ou optimise automatiquement la politique de protection.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : Les protections sont des contraintes configurées hors de l’application des affectations. Aucun recalcul de seuils attribué automatiquement à Supply Assignment. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : Les protections sont des contraintes configurées hors de l’application des affectations. Aucun recalcul de seuils attribué automatiquement à Supply Assignment. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Supply Protection during Supply Assignment Run](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/0d49c4e5eb7e41c5b0f41e769728ddef.html?locale=en-US&state=PRODUCTION&version=2025.001) — 2025 FPS01 (Feb 2026), consulté le 2026-09-21.
 
@@ -1994,7 +2124,7 @@ Oracle Fusion Cloud SCM · Documentation fonctionnelle ou formation produit · R
 
 **Différences.** Le passage des recommandations aux systèmes responsables est documenté ; notification client et atomicité globale ne le sont pas.
 
-**Position FLOW.** Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+**Position FLOW.** Plan Application fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
 
 [Manually Release Plan Recommendations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html) — 26B, consulté le 2026-09-23.
 
@@ -2012,7 +2142,7 @@ Fusion Cloud Supply Chain Planning · Fonctions et parcours produit documentés 
 
 **Différences.** Les options diffèrent selon le type de plan ; leur paramétrage et leurs règles ne sont pas importés dans FLOW. Une copie de simulation n’hérite pas de la mise en application automatique.
 
-**Position FLOW.** Appui partiel à une famille d’effets de Apply Plan : FLOW porte l’application des ajustements de stock comme comportement du Planning, en conservant la gestion des Orders et des politiques chez leurs responsables. Le libellé complet est une formulation FLOW ; deux documents Oracle étayent les fonctions, pas un consensus de découpage. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
+**Position FLOW.** Appui partiel à une famille d’effets de Plan Application : FLOW porte l’application des ajustements de stock comme comportement du Planning, en conservant la gestion des Orders et des politiques chez leurs responsables. Le libellé complet est une formulation FLOW ; deux documents Oracle étayent les fonctions, pas un consensus de découpage. Le comportement commun ne reprend pas toutes les fonctions du produit et respecte les responsables métiers.
 
 [Automatic Release Options](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/automatic-release-options.html) — 26B, consulté le 2026-09-21.
 
@@ -2028,9 +2158,9 @@ Dynamics 365 Supply Chain Management · Mécanisme de produit documenté · Reco
 
 **Points communs.** Distinguer la proposition de sa prise en charge effective.
 
-**Différences.** Le firming est plus étroit que toutes les familles d’effets de Apply Plan ; il ne démontre ni mise à jour de toutes les politiques ni réalisation physique.
+**Différences.** Le firming est plus étroit que toutes les familles d’effets de Plan Application ; il ne démontre ni mise à jour de toutes les politiques ni réalisation physique.
 
-**Position FLOW.** Appui partiel au comportement Apply Plan, avec maintien des responsables des Orders et engagements.
+**Position FLOW.** Appui partiel au comportement Plan Application, avec maintien des responsables des Orders et engagements.
 
 [Maintain planned orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/maintain-planned-orders) — Documentation évolutive ; mise à jour 2025-08-05, consulté le 2026-09-23.
 
@@ -2048,7 +2178,7 @@ Dynamics 365 Supply Chain Management · Documentation fonctionnelle ou formation
 
 **Différences.** Le firming concerne la création de commandes d’achat, transfert ou production ; il ne couvre pas seul la révision des commandes client.
 
-**Position FLOW.** Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+**Position FLOW.** Plan Application fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
 
 [Firm planned orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/planned-order-firming) — Documentation évolutive ; mise à jour affichée 2026-03-25, consulté le 2026-09-23.
 
@@ -2066,7 +2196,7 @@ Dynamics 365 Supply Chain Management · Documentation fonctionnelle ou formation
 
 **Différences.** Approved reste un état du plan et ne prouve pas une commande réelle ; ne pas importer un workflow humain obligatoire.
 
-**Position FLOW.** Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+**Position FLOW.** Plan Application fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
 
 [View, manage, and approve planned orders](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/approved-planned-order) — Documentation évolutive ; mise à jour affichée 2026-09-02, consulté le 2026-09-23.
 
@@ -2084,7 +2214,7 @@ Dynamics 365 Supply Chain Management · Documentation fonctionnelle ou formation
 
 **Différences.** Une suggestion issue du calcul n’est pas sa réalisation ; la page ne démontre pas une application globale de plan.
 
-**Position FLOW.** Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+**Position FLOW.** Plan Application fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
 
 [Action messages](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages) — Documentation évolutive ; mise à jour affichée 2026-03-26, consulté le 2026-09-23.
 
@@ -2102,7 +2232,7 @@ SAP IBP / S/4HANA · Documentation fonctionnelle ou formation produit · Recouvr
 
 **Différences.** Appui spécialisé au déploiement de stock ; conversion et intégration ne prouvent ni transfert physique ni cycle complet des notifications client.
 
-**Position FLOW.** Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+**Position FLOW.** Plan Application fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
 
 [Describing Deployment Planning and Reasoning behind Execution](https://learning.sap.com/courses/mastering-sap-ibp-for-response-and-supply-order-based-planning/describing-deployment-planning-and-reasoning-behind-execution_ed054de6-f7e2-4928-89be-2dab21e6a043) — Cours SAP Learning évolutif, sans édition affichée dans le passage, consulté le 2026-09-23.
 
@@ -2120,7 +2250,7 @@ Oracle Fusion Cloud SCM · Documentation fonctionnelle ou formation produit · R
 
 **Différences.** Exemple de changement demandé par le client, pas de déclenchement démontré par Planning ; appui à la frontière de l’application.
 
-**Position FLOW.** Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+**Position FLOW.** Plan Application fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
 
 [Examine Error Messages for Sales Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fauom/examine-error-messages-for-sales-orders.html) — 26A, consulté le 2026-09-23.
 
@@ -2138,7 +2268,7 @@ Oracle Retail Order Administration · Documentation fonctionnelle ou formation p
 
 **Différences.** Fonction Order Administration distincte de Fusion Planning ; aucun lien natif automatique entre release du plan et mail n’est démontré.
 
-**Position FLOW.** Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+**Position FLOW.** Plan Application fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
 
 [Working with E-Mail Notification Templates (WEMT)](https://docs.oracle.com/en/industries/retail/retail-oms-suite-cloud/25.2.301.0/romoh/WEMT.htm) — Oracle Retail OMS Suite Cloud 25.2.301.0, consulté le 2026-09-23.
 
@@ -2156,7 +2286,7 @@ Maestro · Positionnement produit · Appui de positionnement général · statut
 
 **Différences.** Positionnement commercial général, moins probant qu’un contrat fonctionnel ; aucun détail suffisant sur refus, autorisations ou notifications.
 
-**Position FLOW.** Apply Plan fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
+**Position FLOW.** Plan Application fait appliquer les recommandations autorisées et constate leur prise en compte. U635/U636 proposent de préciser la coordination des conséquences ; cette extension détaillée reste à arbitrer.
 
 [Supply Chain Orchestration](https://www.kinaxis.com/en/solutions/supply-chain-orchestration) — Page produit évolutive, sans édition affichée, consulté le 2026-09-23.
 
@@ -2192,12 +2322,11 @@ Références : ELM646, CMP267, U642.
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Available-to-promise | Quantité promettable à une date. | Calculer ressources et consommations sur l’horizon. |
 | [Oracle](https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm) — Cumulative ATP | Quantités promettables par échéance. | Rapprocher offre et demandes déjà promises. |
-| Notre modèle — Available-to-Promise (ATP) | Ressources admissibles dans la situation de référence, pour une ou plusieurs demandes. | Croiser disponibilités, consommations, protections et délais sans changer les règles. |
+| Notre modèle — Available-to-Promise (ATP) | Établir les quantités et dates auxquelles une demande ou un ensemble de demandes peut être satisfait par les ressources présentes ou futures admissibles dans la situation de référence, et expliciter la couverture qui rend ces engagements possibles. | Évaluer le stock courant admissible avec On-Hand ATP, puis les disponibilités futures avec Projected ATP lorsque l’horizon le nécessite. Les deux profondeurs s’appliquent à un lieu ou à un réseau selon le périmètre autorisé.  Exigences communes : engagements, réservations et protections sans double décompte ; délais de mobilisation, préparation et transport ; calendriers, jours ouvrés, heures limites et fuseaux. Conserver origine, fraîcheur et validité des informations. Un stock après la dernière collecte ne permet pas un départ immédiat ; une donnée manquante ne devient pas certaine.  Consommer les faits et projections d’Inventory Visibility et les plans pertinents. Éviter le double compte entre prévisions, Orders et effets réalisés. Une réception à J+7 peut soutenir une promesse à J+60 sous réserve des autres consommations et contraintes. Les protections et droits admissibles restent applicables aux membres autorisés de leurs groupes.  L’évaluation ne modifie pas les politiques, ne réserve ni n’affecte et ne confirme pas la promesse. Les exécutants gardent leurs calendriers et opérations internes. |
 
 ### Ce que nous en retenons
 
-- Microsoft et PeopleSoft calculent une disponibilité dans le temps, au-delà du stock présent. PeopleSoft rapproche ce calcul du traitement des promesses et réservations ; Microsoft distingue notamment le délai de préparation à l’expédition.
-- FLOW nomme ATP la décision qui établit les possibilités et leur couverture. Calculer une [disponibilité](glossary:TER009) ne crée ni affectation ni réservation et ne confirme pas l’engagement.
+- Frontière U767 : connaissance du stock, évaluation contextuelle et sélection de promesse restent des responsabilités distinctes.
 
 ### Microsoft — deux arrivages pour honorer 150 pièces
 
@@ -2231,7 +2360,7 @@ Dynamics 365 SCM / Commerce / Intelligent Order Management · Concept ou mécani
 
 **Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
 
-Références : U435, U477, ELM434, CMP191.
+Références : U435, U477, ELM434, CMP191, U767.
 
 #### Oracle — Cumulative ATP
 
@@ -2251,7 +2380,7 @@ PeopleSoft Inventory · Concept ou mécanisme métier documenté dans un produit
 
 **Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
 
-Références : U470, U471, ELM300, CMP186, U477, ELM337, CMP191.
+Références : U470, U471, ELM300, CMP186, U477, ELM337, CMP191, U767.
 
 ## Sources d’inspiration — D03.j Capable-to-Promise (CTP)
 
@@ -2264,13 +2393,11 @@ Références : U470, U471, ELM300, CMP186, U477, ELM337, CMP191.
 | [SAP](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Backorder Processing | Confirmations devenues inadéquates. | Réexaminer les commandes concernées. |
 | [SAP](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f899ce30af9044299d573ea30b533f1c/4c56297de7c33a0de10000000a42189c.html) — Supply Creation-Based Confirmation (SBC) in PP/DS | SBC peut déclencher PP/DS pour créer planned orders, purchase requisitions ou stock transfer requisitions pour le manque. | Mobiliser PP/DS après un manque de disponibilité. |
 | [SAP](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/95cbb18b60da470cac8d340f0c6f5251.html) — Scenarios and Supported Features of PPAC and PAC with Supply Creation | Pour PAC avec supply creation, BOP ne déclenche pas la création d’apports ; seul PAC est exécuté. | Délimiter les combinaisons effectivement supportées. |
-| Notre modèle — Capable-to-Promise (CTP) | Possibilités après adaptation de la situation de référence. | Mobiliser les décisions responsables puis expliciter les conditions de faisabilité. |
+| Notre modèle — Capable-to-Promise (CTP) | Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation. | Supply-Based CTP examine la possibilité d’obtenir ou de constituer un apport selon les sources, matières, composants et délais. Capacity-Constrained CTP approfondit la faisabilité par les capacités finies, charges, calendriers et dépendances pertinentes. Les capacités contrôlées peuvent déjà exister ; elles ne sont pas nécessairement supplémentaires.  Une ressource déjà attendue et admissible relève d’ATP. Une simple alternative de stock, de date, de trajet ou de produit ne constitue pas automatiquement du CTP ; la substitution exige une équivalence autorisée. Une estimation par délai standard ou une disponibilité supposée infinie ne démontre pas une faisabilité contrôlée.  Matching propose et arbitre les apports et affectations dans le master plan ; Purchase Order porte l’achat autorisé et les Service Orders les prestations. CTP ne crée ni achat, ni affectation, ni engagement et ne reconstruit pas les plans APS. Les conditions restant à vérifier et les autorisations restant à obtenir accompagnent le résultat.  Illustration FLOW : un assemblage peut être réalisable au regard des composants, mais son créneau dépend encore d’une capacité d’atelier confirmée. Les prestations logistiques nécessaires peuvent être examinées à partir des capacités communiquées, sans piloter l’organisation interne de l’exécutant. |
 
 ### Ce que nous en retenons
 
-- Le CTP de Microsoft insiste sur les matières et capacités permettant de fabriquer. SAP traite d’autres leviers sous ABC, pour les alternatives, et BOP, pour les confirmations à réexaminer. Ces noms décrivent des fonctions différentes, pas une définition commune de CTP.
-- FLOW rassemble la faisabilité sous adaptation, tout en laissant les priorités, les choix économiques et les autorisations à leurs responsables. Un autre site déjà admissible relève encore d’ATP ; envisager une adaptation ne l’applique pas.
-- Microsoft relie Batch CTP au plan dynamique ; SAP SBC peut créer de nouveaux apports via PP/DS. Dans la version SAP examinée, BOP ne déclenche pas cette création. CTP ne suffit donc pas à prouver un optimiseur global du carnet.
+- Frontière U767 : connaissance du stock, évaluation contextuelle et sélection de promesse restent des responsabilités distinctes.
 
 ### Microsoft — fabriquer ce qui manque
 
@@ -2290,13 +2417,13 @@ Références : U477, ELM417, CMP191.
 
 Dynamics 365 Supply Chain Management — Planning Optimization · Mécanisme ou processus de planification documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi cette définition.** Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité.
+**Pourquoi cette définition.** Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation.
 
 **Points communs.** Éclaire la coordination entre besoins, ressources, propositions et contraintes.
 
 **Différences.** Le CTP à la ligne existe également ; aucune garantie d’optimum global ou de couverture de toutes les politiques.
 
-**Position FLOW.** Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité.
+**Position FLOW.** Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation.
 
 [Calculate sales order delivery dates using CTP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp) — Documentation évolutive ; mise à jour affichée 27 juillet 2026, consulté le 2026-09-21.
 
@@ -2304,19 +2431,19 @@ Dynamics 365 Supply Chain Management — Planning Optimization · Mécanisme ou 
 
 **Limite de preuve.** Document primaire directement consulté. Aucun déploiement Beaumanoir ou optimum universel déduit. U673 : comparaison partielle conservée ; l’extension historique à toute adaptation n’est plus retenue.
 
-Références : U402, ELM241, CMP152, U477, ELM417, CMP191, U567, CMP237.
+Références : U402, ELM241, CMP152, U477, ELM417, CMP191, U567, CMP237, U767.
 
 #### SAP — Alternative-Based Confirmation
 
 SAP S/4HANA aATP · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi cette définition.** Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité.
+**Pourquoi cette définition.** Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation.
 
 **Points communs.** Une autre solution peut rendre la demande satisfaisable.
 
 **Différences.** SAP classe ces fonctions dans aATP.
 
-**Position FLOW.** Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité.
+**Position FLOW.** Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation.
 
 [Alternative-Based Confirmation](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5) — Cours SAP S/4HANA, édition non précisée dans le passage, consulté le 2026-09-19.
 
@@ -2324,19 +2451,19 @@ SAP S/4HANA aATP · Concept ou mécanisme métier documenté dans un produit · 
 
 **Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit. U673 : comparaison partielle conservée ; l’extension historique à toute adaptation n’est plus retenue.
 
-Références : U402, ELM241, CMP152, U477, ELM456, CMP191.
+Références : U402, ELM241, CMP152, U477, ELM456, CMP191, U767.
 
 #### SAP — Backorder Processing
 
 SAP S/4HANA Cloud Public Edition / Backorder Processing · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi cette définition.** Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité.
+**Pourquoi cette définition.** Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation.
 
 **Points communs.** Une révision peut ouvrir une possibilité à une autre demande.
 
 **Différences.** BOP peut directement modifier les confirmations.
 
-**Position FLOW.** Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité.
+**Position FLOW.** Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation.
 
 [Exploring Backorder Processing](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Cours SAP S/4HANA Cloud Public Edition ; édition non précisée, consulté le 2026-09-19.
 
@@ -2344,19 +2471,19 @@ SAP S/4HANA Cloud Public Edition / Backorder Processing · Concept ou mécanisme
 
 **Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit. U673 : comparaison partielle conservée ; l’extension historique à toute adaptation n’est plus retenue.
 
-Références : U402, ELM241, CMP152, U477, ELM458, CMP191.
+Références : U402, ELM241, CMP152, U477, ELM458, CMP191, U767.
 
 #### SAP — Supply Creation-Based Confirmation (SBC) in PP/DS
 
 S/4HANA aATP / PP/DS · Mécanisme ou processus de planification documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi cette définition.** Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité.
+**Pourquoi cette définition.** Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation.
 
 **Points communs.** Éclaire la coordination entre besoins, ressources, propositions et contraintes.
 
 **Différences.** Le processus décrit traite le besoin reçu ; ce n’est pas la preuve d’un recalcul global du carnet ni d’un appel SBC depuis ARun.
 
-**Position FLOW.** Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité.
+**Position FLOW.** Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation.
 
 [Supply Creation-Based Confirmation (SBC) in PP/DS](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f899ce30af9044299d573ea30b533f1c/4c56297de7c33a0de10000000a42189c.html) — 2025 FPS01 (Feb 2026), consulté le 2026-09-21.
 
@@ -2364,19 +2491,19 @@ S/4HANA aATP / PP/DS · Mécanisme ou processus de planification documenté dans
 
 **Limite de preuve.** Texte primaire indexé consulté ; ouverture directe sans texte exploitable. Aucun déploiement Beaumanoir ou optimum universel déduit. U673 : comparaison partielle conservée ; l’extension historique à toute adaptation n’est plus retenue.
 
-Références : U567, ELM576, CMP237.
+Références : U567, ELM576, CMP237, U767.
 
 #### SAP — Scenarios and Supported Features of PPAC and PAC with Supply Creation
 
 S/4HANA aATP — PAC / PPAC with supply creation · Mécanisme ou processus de planification documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi cette définition.** Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité.
+**Pourquoi cette définition.** Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation.
 
 **Points communs.** Éclaire la coordination entre besoins, ressources, propositions et contraintes.
 
 **Différences.** Restriction de la version et du parcours documentés ; aucune exclusion universelle de toute intégration ou extension SAP.
 
-**Position FLOW.** Déterminer les quantités, dates et conditions auxquelles un besoin peut être satisfait en mobilisant des ressources ou des capacités supplémentaires, et expliciter les hypothèses de faisabilité.
+**Position FLOW.** Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation.
 
 [Scenarios and Supported Features of PPAC and PAC with Supply Creation](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/95cbb18b60da470cac8d340f0c6f5251.html) — 2025 FPS01 (Feb 2026), consulté le 2026-09-21.
 
@@ -2384,7 +2511,114 @@ S/4HANA aATP — PAC / PPAC with supply creation · Mécanisme ou processus de p
 
 **Limite de preuve.** Texte primaire indexé consulté ; ouverture directe sans texte exploitable. Aucun déploiement Beaumanoir ou optimum universel déduit. U673 : comparaison partielle conservée ; l’extension historique à toute adaptation n’est plus retenue.
 
-Références : U567, ELM577, CMP237.
+Références : U567, ELM577, CMP237, U767.
+
+## Scénarios métier — D03.k Profitable-to-Promise (PTP)
+
+### Comparer un transport standard et un transport express
+
+Illustration FLOW fictive : Deux modes peuvent être envisagés pour une même commande.
+
+**Résultat recherché.** Produire un dossier économique local et contextuel permettant de comprendre les avantages et inconvénients des options.
+
+**Options examinées**
+
+- Transport standard : Évaluer le coût et les conséquences économiques de la date obtenue.
+- Transport express : Évaluer le surcoût et les pertes ou pénalités éventuellement évitées.
+
+**Ce qui se passe.** Les montants comparables, hypothèses, incertitudes et données manquantes sont exposés pour chaque option. [Promise Selection Decision](model:D03.l) porte le choix.
+
+**Ce que cela illustre.** Séparer les montants connus des hypothèses ; un gain de délai ne devient pas automatiquement un gain financier.
+
+Références : U762, U763, U764, ELM762, ELM763.
+
+### Comparer un article demandé et un article de remplacement
+
+Illustration FLOW fictive : Une pénurie conduit à examiner un remplacement autorisé par les règles commerciales.
+
+**Résultat recherché.** Produire un dossier économique local et contextuel permettant de comprendre les avantages et inconvénients des options.
+
+**Options examinées**
+
+- Article demandé différé : Évaluer l’attente, ses coûts et ses risques économiques.
+- Article de remplacement : Évaluer le prix applicable, le coût produit et les gestes commerciaux éventuels.
+
+**Ce qui se passe.** Les montants comparables, hypothèses, incertitudes et données manquantes sont exposés pour chaque option. [Promise Selection Decision](model:D03.l) porte le choix.
+
+**Ce que cela illustre.** L’acceptabilité du remplacement et les règles de prix sont des contraintes fournies ; PTP ne les invente pas.
+
+Références : U762, U763, U764, ELM762, ELM763.
+
+### Comparer deux sites de départ
+
+Illustration FLOW fictive : Deux entrepôts offrent des options de satisfaction pour une commande.
+
+**Résultat recherché.** Produire un dossier économique local et contextuel permettant de comprendre les avantages et inconvénients des options.
+
+**Options examinées**
+
+- Site habituel : Évaluer les coûts de préparation et de transport ainsi que la date associée.
+- Autre site : Évaluer le trajet, les prestations et les éventuels coûts de transfert associés.
+
+**Ce qui se passe.** Les montants comparables, hypothèses, incertitudes et données manquantes sont exposés pour chaque option. [Promise Selection Decision](model:D03.l) porte le choix.
+
+**Ce que cela illustre.** Conserver le même périmètre de coût pour comparer les options ; l’évaluation locale n’affecte pas les ressources et ne rééquilibre pas le master plan.
+
+Références : U762, U763, U764, ELM762, ELM763.
+
+### Éclairer une option avec approvisionnement supplémentaire
+
+Illustration FLOW fictive : Une option conditionnelle repose sur un approvisionnement supplémentaire dont la faisabilité doit être établie.
+
+**Résultat recherché.** Produire un dossier économique local et contextuel permettant de comprendre les avantages et inconvénients des options.
+
+**Options examinées**
+
+- Disponibilités déjà prévues : Évaluer les conséquences économiques des quantités et dates accessibles.
+- Approvisionnement supplémentaire : Évaluer les coûts additionnels de fourniture, transport et prestations, ainsi que les effets économiques attendus.
+
+**Ce qui se passe.** Les montants comparables, hypothèses, incertitudes et données manquantes sont exposés pour chaque option. [Promise Selection Decision](model:D03.l) porte le choix.
+
+**Ce que cela illustre.** PTP éclaire une option fournie ; les décisions de réapprovisionnement et les affectations restent dans Matching. Aucun achat n’est déclenché par cette évaluation.
+
+Références : U762, U763, U764, ELM762, ELM763.
+
+### Livrer une commande B2B avec un stock partiel
+
+Illustration FLOW fictive : un client B2B attend 100 vêtements ; 60 sont disponibles et une rentrée de 40 est annoncée. Plusieurs solutions de livraison sont examinées.
+
+**Fiche d’origine.** universe-supply
+
+**Contribution de cette fiche.** Comparer les effets économiques locaux de la livraison fractionnée et de la livraison regroupée. Ne pas décider à la place de Promise Selection Decision.
+
+**Déclencheur.** Une commande nécessite une proposition de quantité et de date.
+
+**Résultat recherché.** Préparer une promesse réalisable et expliquer les conséquences économiques des options.
+
+**Contraintes**
+
+- Date demandée et fractionnement autorisé par le client.
+- Disponibilité effective, fiabilité de la rentrée et délais de préparation et de transport.
+- Engagements existants et règles de protection du stock.
+
+**Options examinées**
+
+- Livraison fractionnée : Expédier les 60 disponibles, puis les 40 attendus : rendre visible le service anticipé et le coût des deux expéditions.
+- Livraison regroupée : Attendre les 40 pour préparer et expédier ensemble : examiner le gain logistique, le délai et les conséquences économiques d’une attente.
+
+**Contributions métier**
+
+- [Available-to-Promise (ATP)](model:D03.i) évalue ce que permettent le stock courant et les disponibilités futures pertinentes.
+- [Capable-to-Promise (CTP)](model:D03.j) évalue les faisabilités supplémentaires utiles si les disponibilités ne suffisent pas ; son invocation n’est pas systématique.
+- [Profitable-to-Promise (PTP)](model:D03.k) expose, par option, les coûts, bénéfices, risques économiques et hypothèses disponibles, sans choisir.
+- [Promise Selection Decision](model:D03.l) choisit la proposition en tenant compte des évaluations et des règles applicables.
+- [Fulfilment Orchestration](model:D06) coordonne les prestations après engagement et détermine leur libération, en cherchant à préserver la promesse.
+
+**Ce qui se passe.** Un dossier présente les options avec quantité, date et conséquences économiques ; le choix reste explicite et distinct de l’évaluation. Aucun gagnant n’est présumé.
+
+**Ce que cela illustre.** Les capacités coopèrent selon le besoin ; ce récit n’impose ni pipeline universel ni modification des grands équilibres du Matching. Promettre, affecter les ressources et libérer les prestations restent distincts.
+
+Références : U763, U764, U762, ELM763, ELM767, ELM768.
 
 ## Sources d’inspiration — D03.k Profitable-to-Promise (PTP)
 
@@ -2394,13 +2628,11 @@ Choisir une promesse économiquement pertinente évite de gagner une livraison a
 | --- | --- | --- |
 | [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html) — Profitable to promise | Coût de satisfaction d’une ligne. | Départager les possibilités selon coût et délai. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/commerce/dom) — Cost-based fulfillment optimization | Choix des sources pour commandes ou lots. | Optimiser selon objectifs et contraintes. |
-| Notre modèle — Profitable-to-Promise (PTP) | Évaluer et comparer les conséquences économiques des possibilités de promesse, en explicitant les coûts, les conditions d’admissibilité et les incertitudes, sans sélectionner la réponse. | Établir les coûts et conséquences économiques des possibilités ATP et CTP : transport, préparation, fractionnement, substitution ou adaptation, selon tarifs, accords et hypothèses disponibles. Distinguer contraintes impératives et préférences économiques ; une valeur absente ne vaut pas zéro. Price Book fournit les données tarifaires sans transférer la maîtrise commerciale ou comptable.  PTP expose les résultats comparables et l’admissibilité économique selon les conditions applicables. Il ne sélectionne pas la réponse, ne modifie pas les prix confirmés et ne déclenche pas une prestation. Promise Selection utilise ces évaluations pour recommander l’échéancier d’une commande dans les possibilités autorisées. Fulfillment Plan Decision arbitre les scénarios concurrents à l’échelle du Matching, sans primauté économique implicite ni pondération universelle.  Exemple fictif : présenter une livraison accélérée à 120 et deux livraisons à 80 avec leurs dates et hypothèses. La solution moins coûteuse n’est pas choisie automatiquement, notamment si elle ne respecte pas le service exigé. Order Management confirme l’engagement retenu ; les exécutants réalisent les prestations. |
+| Notre modèle — Profitable-to-Promise (PTP) | Évaluer et comparer les conséquences économiques des possibilités de promesse, en explicitant les coûts, les conditions d’admissibilité et les incertitudes, sans sélectionner la réponse. | Établir les coûts et conséquences économiques des possibilités ATP et CTP : transport, préparation, fractionnement, substitution ou adaptation, selon tarifs, accords et hypothèses disponibles. Distinguer contraintes impératives et préférences économiques ; une valeur absente ne vaut pas zéro. Price Book fournit les données tarifaires sans transférer la maîtrise commerciale ou comptable.  PTP expose les résultats comparables et l’admissibilité économique selon les conditions applicables. Il ne sélectionne pas la réponse, ne modifie pas les prix confirmés et ne déclenche pas une prestation. Promise Selection Decision utilise ces évaluations pour recommander l’échéancier d’une commande dans les possibilités autorisées. Supply Assignment arbitre les scénarios concurrents à l’échelle du Matching, sans primauté économique implicite ni pondération universelle.  Exemple fictif : présenter une livraison accélérée à 120 et deux livraisons à 80 avec leurs dates et hypothèses. La solution moins coûteuse n’est pas choisie automatiquement, notamment si elle ne respecte pas le service exigé. Order Management confirme l’engagement retenu ; les exécutants réalisent les prestations.  Fulfillment Cost Evaluation chiffre les postes comparables ; Contextual Economic Impact Evaluation complète le dossier par les avantages et inconvénients locaux pertinents. La marge est facultative et ne remplace pas le dossier économique ; le choix appartient à Promise Selection Decision. |
 
 ### Ce que nous en retenons
 
-- Oracle nomme profitable to promise la recherche d’une solution à moindre coût dans son ordre de priorités de service. Microsoft DOM traite aussi coûts et contraintes, au niveau plus large de l’optimisation des commandes. Les deux rapprochent service rendu et moyens mobilisés.
-- FLOW isole l’arbitrage économique. Le coût n’annule pas une obligation de délai ; les valeurs inconnues restent inconnues. Le compromis collectif de service, engagements, coûts et risques reste multidimensionnel, sans formule adoptée par cette comparaison.
-- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en assure la compatibilité et appelle les réexamens nécessaires. les engagements portés par les Orders garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
+- Frontière U767 : connaissance du stock, évaluation contextuelle et sélection de promesse restent des responsabilités distinctes.
 
 ### Oracle — Seattle plutôt que Denver
 
@@ -2434,7 +2666,7 @@ Oracle Fusion Cloud SCM / Order Management / Global Order Promising · Concept o
 
 **Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
 
-Références : U435, U477, ELM372, CMP191.
+Références : U435, U477, ELM372, CMP191, U767.
 
 #### Microsoft — Cost-based fulfillment optimization
 
@@ -2454,9 +2686,9 @@ Dynamics 365 Commerce · Concept ou mécanisme métier documenté dans un produi
 
 **Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
 
-Références : U477, ELM393, CMP191, U560, CMP234.
+Références : U477, ELM393, CMP191, U560, CMP234, U767.
 
-## Sources d’inspiration — D03.l Promise Selection
+## Sources d’inspiration — D03.l Promise Selection Decision
 
 Retenir quelles quantités fournir à quelles dates rend la solution compréhensible pour le demandeur. Promise Selection choisit un échéancier réalisable et acceptable, sans modifier à elle seule la demande ni confirmer l’engagement.
 
@@ -2464,13 +2696,11 @@ Retenir quelles quantités fournir à quelles dates rend la solution compréhens
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules) — Delivery schedules | Dates et quantités de livraisons successives. | Représenter plusieurs échéances sous une commande. |
 | [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html) — Scheduled ship and arrival dates | Possibilités de dates d’une ligne. | Comparer puis retenir des dates. |
-| Notre modèle — Promise Selection | Une ou plusieurs échéances de satisfaction de la commande. | Choisir parmi les possibilités en respectant conditions et calendriers. |
+| Notre modèle — Promise Selection Decision | Choisir une proposition initiale ou révisée de promesse pour une demande ou un ensemble de commandes, parmi les possibilités admissibles, sans confirmer l’engagement ni affecter les ressources. | Choisir la répartition des quantités promises entre les échéances réalisables, en tenant compte des possibilités fournies par ATP/CTP, des conditions de la commande et des décisions économiques et de priorité utiles au cas. Distinguer date demandée, date proposée, date engagée, expédition et réception.  Les possibilités temporelles doivent expliciter les calendriers applicables, jours d'ouverture, heures limites et fuseaux pertinents, ainsi que les délais et dates de connaissance des informations. Ces références proviennent des responsables externes ou des projections applicables ; leur maître précis reste à identifier. Aucun calcul universel par simple ajout de jours ni calendrier administré implicitement par cette capacité.  Le résultat indique quantités et échéances retenues, conditions, hypothèses et reste non couvert. Une préférence pour une livraison unique ou des livraisons fractionnées s'applique selon les conditions connues ; elle n'est pas présumée universelle. Si l'échéance demandée est impossible, exposer les options et la partie non satisfaite sans modifier silencieusement la demande.  Exemple fictif : retenir 60 vendredi et 40 lundi parmi les options autorisées. Si la collecte de vendredi est fermée ou si lundi est non ouvré, réexaminer les options avant de les annoncer. Deux échéances ne signifient pas deux Sales Orders : Order Structuring conserve le découpage, les engagements portés par les Orders la proposition/confirmation/révision et les familles d’Orders les changements autorisés.  Lorsqu’un plan collectif est construit, [Supply Assignment](model:D03.o) porte la compatibilité du scénario d’ensemble. PTP fournit l’évaluation économique et Promise Selection Decision le choix d’échéancier ; si leurs résultats ne sont pas compatibles avec les ressources, priorités ou engagements du périmètre, la décision du plan fait réexaminer les résultats concernés et explicite le reste non couvert. Aucun second plan concurrent, ordre universel de calcul ou priorité économique implicite n’est instauré. [les engagements portés par les Orders](model:D04) conserve les propositions, confirmations et révisions autorisées ; un résultat calculé ne modifie pas seul les engagements. Toute réponse de promesse n’exige pas un plan collectif.  Frontière U673 : Conserver la décision de calendrier dans Order Promising ; confirmation et révision de l’engagement restent dans Order Management.  U733 : conserver la sélection d’un échéancier dans Order Promising, en utilisant l’évaluation économique PTP et les conditions de la commande. Cette décision recommande une réponse dans les possibilités autorisées ; elle ne réaffecte pas des ressources entre demandes. Un conflit global est soumis à Supply Assignment dans Matching. La confirmation appartient à Order Management.  U735 : Promise Selection Decision choisit une réponse admissible selon les conditions de la commande et les évaluations disponibles ; sa portée ne se limite pas au libellé d’un calendrier. Elle ne construit pas un nouveau plan d’achat ni ne réaffecte seule des ressources entre commandes. Le choix respecte les affectations et autorisations applicables ; Matching traite les arbitrages nécessaires. Le nom est un choix FLOW, sans équivalent lexical universel revendiqué.  Initial Promise Selection porte la première proposition ; Promise Reassessment porte le réexamen individuel ou collectif de type BOP. Le résultat peut recommander le maintien, le report ou la mise en attente d’une demande dans le périmètre autorisé. Les Orders appliquent les révisions confirmées ; Matching traite les réaffectations nécessaires. La décision de promesse ne tient pas un second master plan. |
 
 ### Ce que nous en retenons
 
-- Microsoft Delivery schedules représente une commande livrée en plusieurs fois. Oracle Check Availability permet de travailler les dates d’expédition et d’arrivée avant leur application. Microsoft insiste sur la représentation des livraisons ; Oracle sur le choix des possibilités.
-- FLOW nomme la décision qui retient l’échéancier. Deux dates de livraison n’imposent pas deux commandes ; la formalisation de la proposition puis sa confirmation gardent leur responsabilité.
-- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en assure la compatibilité et appelle les réexamens nécessaires. les engagements portés par les Orders garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
+- Frontière U767 : connaissance du stock, évaluation contextuelle et sélection de promesse restent des responsabilités distinctes.
 
 ### Illustration FLOW — une commande, deux dates
 
@@ -2490,11 +2720,13 @@ Références : U477, ELM435, CMP191.
 
 Dynamics 365 Supply Chain Management · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Choisir une proposition initiale ou révisée de promesse pour une demande ou un ensemble de commandes, parmi les possibilités admissibles, sans confirmer l’engagement ni affecter les ressources.
+
 **Points communs.** La satisfaction peut être répartie dans le temps.
 
 **Différences.** Le document gère également les lignes et documents de livraison.
 
-**Position FLOW.** FLOW isole le choix avant son enregistrement et sa confirmation.
+**Position FLOW.** Choisir une proposition initiale ou révisée de promesse pour une demande ou un ensemble de commandes, parmi les possibilités admissibles, sans confirmer l’engagement ni affecter les ressources.
 
 [Delivery schedules](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-schedules) — Documentation évolutive ; édition non précisée, consulté le 2026-09-19.
 
@@ -2502,17 +2734,19 @@ Dynamics 365 Supply Chain Management · Concept ou mécanisme métier documenté
 
 **Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
 
-Références : U470, U471, ELM302, CMP186, U477, ELM435, CMP191.
+Références : U470, U471, ELM302, CMP186, U477, ELM435, CMP191, U767.
 
 #### Oracle — Scheduled ship and arrival dates
 
 Global Order Promising · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Choisir une proposition initiale ou révisée de promesse pour une demande ou un ensemble de commandes, parmi les possibilités admissibles, sans confirmer l’engagement ni affecter les ressources.
+
 **Points communs.** Expédition et réception sont distinguées.
 
 **Différences.** Oracle regroupe exploration et application dans un parcours.
 
-**Position FLOW.** FLOW laisse chaque effet à sa responsabilité.
+**Position FLOW.** Choisir une proposition initiale ou révisée de promesse pour une demande ou un ensemble de commandes, parmi les possibilités admissibles, sans confirmer l’engagement ni affecter les ressources.
 
 [Check Availability](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/check-availability.html) — Oracle Fusion Cloud SCM 25C, consulté le 2026-09-19.
 
@@ -2520,17 +2754,17 @@ Global Order Promising · Concept ou mécanisme métier documenté dans un produ
 
 **Limite de preuve.** Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
 
-Références : U477, ELM350, CMP191.
+Références : U477, ELM350, CMP191, U767.
 
-## Sources d’inspiration — D03.m Order Prioritization
+## Sources d’inspiration — D03.m Demand Prioritization
 
-Déterminer quelles commandes passent avant les autres rend les pénuries arbitrables. Order Prioritization produit des priorités justifiées ; elle ne crée pas les ressources et ne lève pas une réservation.
+Déterminer quelles commandes passent avant les autres rend les pénuries arbitrables. Demand Prioritization produit des priorités justifiées ; elle ne crée pas les ressources et ne lève pas une réservation.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [SAP](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Reprioritization | Besoins de vente et de transfert. | Reclasser selon les règles de confirmation. |
 | [Oracle](https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm) — Inventory priority rank | Lignes à réserver ou promettre. | Trier avant distribution. |
-| Notre modèle — Order Prioritization | Commandes concurrentes et critères applicables. | Distinguer obligations, préférences et conflits restant à résoudre. |
+| Notre modèle — Demand Prioritization | Commandes concurrentes et critères applicables. | Distinguer obligations, préférences et conflits restant à résoudre. |
 
 ### Ce que nous en retenons
 
@@ -2775,7 +3009,7 @@ Dynamics 365 SCM · Concept et usage documentés · Recouvrement partiel · stat
 
 Références : U400, U401, ELM240, CMP151, U477, ELM437, CMP189.
 
-## Exemples concrets — D04.j Purchase Order
+## Scénarios métier — D04.j Purchase Order
 
 ### Réception partielle : rendre visible le reliquat
 
@@ -3216,7 +3450,7 @@ Dynamics GP · Concept et usage documentés · Recouvrement partiel · statut : 
 
 Références : U477, ELM387, CMP189.
 
-## Exemples concrets — D04.n Order Structuring
+## Scénarios métier — D04.n Order Structuring
 
 ### Scinder
 
@@ -3397,7 +3631,7 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 Références : U477, ELM445, CMP193.
 
-## Exemples concrets — D05.a Inventory Target Decision
+## Scénarios métier — D05.a Inventory Target Optimization
 
 ### Choisir où porter le stock de sécurité
 
@@ -3409,20 +3643,20 @@ Un même réseau comprend un entrepôt et plusieurs magasins.
 
 Références : U331, U332, U462.
 
-## Sources d’inspiration — D05.a Inventory Target Decision
+## Sources d’inspiration — D05.a Inventory Target Optimization
 
-Choisir combien de stock viser et quels seuils retenir : Inventory Target Decision détermine les objectifs par produit, lieu et période. Une cible est un résultat de décision, pas une commande de réassort.
+Choisir combien de stock viser et quels seuils retenir : Inventory Target Optimization détermine les objectifs par produit, lieu et période. Une cible est un résultat de décision, pas une commande de réassort.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-journal) — Safety stock calculation | Propositions de minimum par produit et lieu. | Calculer puis retenir un niveau. |
 | [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html) — Replenishment policy | Seuils, cibles et cycles de commande. | Calculer les paramètres puis les utiliser. |
-| Notre modèle — Inventory Target Decision | Objectifs et seuils de stock selon service, délais et risques. | Arbitrer la couverture souhaitable avant de déterminer les apports. |
+| Notre modèle — Inventory Target Optimization | Objectifs et seuils de stock selon service, délais et risques. | Arbitrer la couverture souhaitable avant de déterminer les apports. |
 
 ### Ce que nous en retenons
 
 - Microsoft distingue proposition de minimum et application ; Oracle relie minimum, sécurité et cible aux méthodes de réassort. Les nombres servent des rôles différents et doivent être nommés.
-- FLOW choisit Inventory Target Decision pour réunir la détermination des objectifs et seuils. Leur maintien relève de Supply Protection ; les apports sont décidés par les capacités de réapprovisionnement.
+- FLOW choisit Inventory Target Optimization pour réunir la détermination des objectifs et seuils. Leur maintien relève de Supply Protection ; les apports sont décidés par les capacités de réapprovisionnement.
 
 ### Illustration FLOW — objectif révisé avant application
 
@@ -3446,7 +3680,7 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 **Différences.** Le minimum Microsoft n’est pas toujours une cible complète de position de stock.
 
-**Position FLOW.** Choisir combien de stock viser et quels seuils retenir : Inventory Target Decision détermine les objectifs par produit, lieu et période. Une cible est un résultat de décision, pas une commande de réassort.
+**Position FLOW.** Choisir combien de stock viser et quels seuils retenir : Inventory Target Optimization détermine les objectifs par produit, lieu et période. Une cible est un résultat de décision, pas une commande de réassort.
 
 [Use the safety stock journal to update minimum coverage for items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-journal) — 2025-08-22, consulté le 2026-09-19.
 
@@ -3464,7 +3698,7 @@ Oracle Fusion Cloud SCM · Concept documenté par la source primaire · Recouvre
 
 **Différences.** La page couvre aussi les règles de commande, séparées dans FLOW.
 
-**Position FLOW.** Choisir combien de stock viser et quels seuils retenir : Inventory Target Decision détermine les objectifs par produit, lieu et période. Une cible est un résultat de décision, pas une commande de réassort.
+**Position FLOW.** Choisir combien de stock viser et quels seuils retenir : Inventory Target Optimization détermine les objectifs par produit, lieu et période. Une cible est un résultat de décision, pas une commande de réassort.
 
 [Policy Assignment Sets](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html) — 26B, consulté le 2026-09-19.
 
@@ -3474,15 +3708,15 @@ Oracle Fusion Cloud SCM · Concept documenté par la source primaire · Recouvre
 
 Références : U328, ELM204, CMP112, U329, U477, ELM371, CMP190.
 
-## Sources d’inspiration — D05.d Group Protection Decision
+## Sources d’inspiration — D05.d Group Protection Optimization
 
-Choisir combien préserver pour chaque groupe et quelles limites lui imposer : Group Protection Decision arbitre ces quantités selon les besoins et priorités. Les droits retenus sont ensuite appliqués par Supply Protection.
+Choisir combien préserver pour chaque groupe et quelles limites lui imposer : Group Protection Optimization arbitre ces quantités selon les besoins et priorités. Les droits retenus sont ensuite appliqués par Supply Protection.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation) — Inventory allocation | Enveloppes par canal, région ou groupe. | Préserver une part et suivre sa consommation. |
 | [SAP](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp-product-allocation-pal-_dd30c229-d63f-4aba-a950-a174280c4a58) — Product Allocation (PAL) | Limites de confirmation par groupe et période. | Plafonner l’accès à un stock commun. |
-| Notre modèle — Group Protection Decision | Quantités protégées et limites par canal ou population. | Comparer les besoins concurrents et expliquer le partage. |
+| Notre modèle — Group Protection Optimization | Quantités protégées et limites par canal ou population. | Comparer les besoins concurrents et expliquer le partage. |
 
 ### Ce que nous en retenons
 
@@ -3511,7 +3745,7 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 **Différences.** Microsoft décrit aussi l’application et la consommation ; FLOW isole ici le choix des quantités.
 
-**Position FLOW.** Choisir combien préserver pour chaque groupe et quelles limites lui imposer : Group Protection Decision arbitre ces quantités selon les besoins et priorités. Les droits retenus sont ensuite appliqués par Supply Protection.
+**Position FLOW.** Choisir combien préserver pour chaque groupe et quelles limites lui imposer : Group Protection Optimization arbitre ces quantités selon les besoins et priorités. Les droits retenus sont ensuite appliqués par Supply Protection.
 
 [Inventory Visibility inventory allocation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-allocation) — Documentation en ligne sans édition affichée, consulté le 2026-09-19.
 
@@ -3529,7 +3763,7 @@ SAP S/4HANA · Concept documenté par la source primaire · Recouvrement partiel
 
 **Différences.** PAL ne garantit pas que la quantité plafonnée restera disponible pour le groupe.
 
-**Position FLOW.** Choisir combien préserver pour chaque groupe et quelles limites lui imposer : Group Protection Decision arbitre ces quantités selon les besoins et priorités. Les droits retenus sont ensuite appliqués par Supply Protection.
+**Position FLOW.** Choisir combien préserver pour chaque groupe et quelles limites lui imposer : Group Protection Optimization arbitre ces quantités selon les besoins et priorités. Les droits retenus sont ensuite appliqués par Supply Protection.
 
 [Explaining aATP Product Allocation (PAL)](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-aatp-product-allocation-pal-_dd30c229-d63f-4aba-a950-a174280c4a58) — Cours en ligne sans édition affichée, consulté le 2026-09-19.
 
@@ -3539,80 +3773,17 @@ SAP S/4HANA · Concept documenté par la source primaire · Recouvrement partiel
 
 Références : U470, U471, ELM298, CMP186, U477, ELM448, CMP190.
 
-## Sources d’inspiration — D05.g Initial Stocking Decision
+## Sources d’inspiration — D05.e Replenishment
 
-Donner aux magasins le stock nécessaire au lancement : Initial Stocking Decision détermine les premiers apports et leurs dates à partir de l’assortiment retenu. Elle reste distincte du réassort pendant la vente.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Nextail](https://help.nextail.co/en/solution-specifications) — First Allocation / Replenishment / Store Transfers | Implantation, réassort et transferts magasins. | Adapter les apports à la demande locale. |
-| [SAP](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-retail-allocation-management_b6824f5b-1ad5-401c-b3f9-f32fecd254ca) — Retail allocation | Distribution initiale et ajustements saisonniers. | Répartir la collection vers les magasins. |
-| Notre modèle — Initial Stocking Decision | Quantités et dates d’implantation par magasin. | Adapter le lancement aux besoins locaux et aux contraintes. |
-
-### Ce que nous en retenons
-
-- Nextail nomme First Allocation le lancement ; SAP Retail Allocation suit une collection du premier apport aux ajustements ultérieurs. Leur mot Allocation ne désigne pas l’affectation de ressources à des Orders dans FLOW.
-- FLOW préfère Initial Stocking Decision pour rendre clair le résultat et sa frontière. L’assortiment est déjà retenu ; cette décision choisit les quantités et dates de démarrage.
-
-### Exemple SAP — première allocation de la collection
-
-Après examen du plan d’assortiment, le responsable demande la première répartition en magasins.
-
-**Ce qui se passe.** L’allocateur utilise la situation des achats pour préparer l’implantation.
-
-**Ce que cela illustre dans FLOW.** L’intention d’assortiment et les ressources attendues éclairent l’apport initial, sans se confondre avec lui.
-
-Source : [Explaining Retail Allocation Management](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-retail-allocation-management_b6824f5b-1ad5-401c-b3f9-f32fecd254ca).
-
-Références : U477, ELM451, CMP190.
-
-### Détails des références
-
-#### Nextail — First Allocation / Replenishment / Store Transfers
-
-Nextail · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** First Allocation vise la distribution initiale des nouveaux produits.
-
-**Différences.** La fonction inclut des prévisions produit ; FLOW peut les recevoir sans absorber leur production.
-
-**Position FLOW.** Donner aux magasins le stock nécessaire au lancement : Initial Stocking Decision détermine les premiers apports et leurs dates à partir de l’assortiment retenu. Elle reste distincte du réassort pendant la vente.
-
-[Solution specifications](https://help.nextail.co/en/solution-specifications) — Page en ligne sans édition affichée, consulté le 2026-09-19.
-
-**Passage.** First Allocation ; Replenishment ; Store Transfers
-
-**Limite de preuve.** Description fonctionnelle de l’éditeur ; ne donne pas les algorithmes ni les gains d’un déploiement FLOW.
-
-Références : U315, ELM200, CMP108, U316, U477, ELM375, CMP190.
-
-#### SAP — Retail allocation
-
-SAP S/4HANA · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Le scénario SAP commence par l’implantation d’une collection.
-
-**Différences.** Retail Allocation couvre aussi les redistributions ultérieures, plus larges que cette décision.
-
-**Position FLOW.** Donner aux magasins le stock nécessaire au lancement : Initial Stocking Decision détermine les premiers apports et leurs dates à partir de l’assortiment retenu. Elle reste distincte du réassort pendant la vente.
-
-[Explaining Retail Allocation Management](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-retail-allocation-management_b6824f5b-1ad5-401c-b3f9-f32fecd254ca) — Cours en ligne sans édition affichée, consulté le 2026-09-19.
-
-**Passage.** Merchandise Distribution Concept — Scenario
-
-**Limite de preuve.** Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
-
-Références : U477, ELM451, CMP190.
-
-## Sources d’inspiration — D05.e Replenishment Decision
-
-Maintenir la disponibilité pendant la commercialisation : Replenishment Decision détermine les apports successifs et les ajustements utiles. Les commandes et déplacements qui les concrétisent restent distincts.
+Maintenir la disponibilité pendant la commercialisation : Replenishment détermine les apports successifs et les ajustements utiles. Les commandes et déplacements qui les concrétisent restent distincts.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [SAP](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-replenishment_e87c10d4-3590-45a7-ad87-b04ed6e34bd7) — Replenishment | Approvisionnement selon situation de stock. | Calculer l’écart à la cible puis préparer les documents. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification) — Replenishment methods | Quantités d’apport et contraintes de lot. | Concilier manque, cible et conditionnement. |
-| Notre modèle — Replenishment Decision | Quantités et dates de réassort, y compris révision d’apports prévus. | Confronter besoins, cibles, ressources attendues et contraintes. |
+| [Nextail](https://help.nextail.co/en/solution-specifications) — First Allocation / Replenishment / Store Transfers | Implantation, réassort et transferts magasins. | Adapter les apports à la demande locale. |
+| [SAP](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-retail-allocation-management_b6824f5b-1ad5-401c-b3f9-f32fecd254ca) — Retail allocation | Distribution initiale et ajustements saisonniers. | Répartir la collection vers les magasins. |
+| Notre modèle — Replenishment | Quantités et dates de réassort, y compris révision d’apports prévus. | Confronter besoins, cibles, ressources attendues et contraintes. |
 
 ### Ce que nous en retenons
 
@@ -3641,7 +3812,7 @@ SAP S/4HANA · Concept documenté par la source primaire · Recouvrement partiel
 
 **Différences.** SAP génère aussi les documents suivants ; FLOW distingue le résultat de décision et les Orders.
 
-**Position FLOW.** Maintenir la disponibilité pendant la commercialisation : Replenishment Decision détermine les apports successifs et les ajustements utiles. Les commandes et déplacements qui les concrétisent restent distincts.
+**Position FLOW.** Maintenir la disponibilité pendant la commercialisation : Replenishment détermine les apports successifs et les ajustements utiles. Les commandes et déplacements qui les concrétisent restent distincts.
 
 [Explaining Replenishment](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-replenishment_e87c10d4-3590-45a7-ad87-b04ed6e34bd7) — Cours en ligne sans édition affichée, consulté le 2026-09-19.
 
@@ -3659,7 +3830,7 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 **Différences.** Les méthodes et contraintes de lot ne constituent pas des capacités autonomes.
 
-**Position FLOW.** Maintenir la disponibilité pendant la commercialisation : Replenishment Decision détermine les apports successifs et les ajustements utiles. Les commandes et déplacements qui les concrétisent restent distincts.
+**Position FLOW.** Maintenir la disponibilité pendant la commercialisation : Replenishment détermine les apports successifs et les ajustements utiles. Les commandes et déplacements qui les concrétisent restent distincts.
 
 [Replenishment methods and quantity modification](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/replenishment-methods-quantity-modification) — 2026-07-01, consulté le 2026-09-19.
 
@@ -3669,15 +3840,51 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 Références : U323, ELM202, CMP110, U324, C98, CMP111, U425, U427, U438, U477, ELM420, CMP190.
 
-## Sources d’inspiration — D05.c Stock Redistribution Decision
+#### Nextail — First Allocation / Replenishment / Store Transfers
 
-Mieux utiliser le stock déjà présent dans le réseau : Stock Redistribution Decision détermine les transferts utiles entre sites. Elle peut répondre à un manque ou rendre des stocks dispersés plus utiles.
+Nextail · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Points communs.** First Allocation vise la distribution initiale des nouveaux produits.
+
+**Différences.** La fonction inclut des prévisions produit ; FLOW peut les recevoir sans absorber leur production.
+
+**Position FLOW.** Donner aux magasins le stock nécessaire au lancement : Replenishment détermine les premiers apports et leurs dates à partir de l’assortiment retenu. Elle reste distincte du réassort pendant la vente.
+
+[Solution specifications](https://help.nextail.co/en/solution-specifications) — Page en ligne sans édition affichée, consulté le 2026-09-19.
+
+**Passage.** First Allocation ; Replenishment ; Store Transfers
+
+**Limite de preuve.** Description fonctionnelle de l’éditeur ; ne donne pas les algorithmes ni les gains d’un déploiement FLOW.
+
+Références : U315, ELM200, CMP108, U316, U477, ELM375, CMP190.
+
+#### SAP — Retail allocation
+
+SAP S/4HANA · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
+
+**Points communs.** Le scénario SAP commence par l’implantation d’une collection.
+
+**Différences.** Retail Allocation couvre aussi les redistributions ultérieures, plus larges que cette décision.
+
+**Position FLOW.** Donner aux magasins le stock nécessaire au lancement : Replenishment détermine les premiers apports et leurs dates à partir de l’assortiment retenu. Elle reste distincte du réassort pendant la vente.
+
+[Explaining Retail Allocation Management](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-retail-allocation-management_b6824f5b-1ad5-401c-b3f9-f32fecd254ca) — Cours en ligne sans édition affichée, consulté le 2026-09-19.
+
+**Passage.** Merchandise Distribution Concept — Scenario
+
+**Limite de preuve.** Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
+
+Références : U477, ELM451, CMP190.
+
+## Sources d’inspiration — D05.c Stock Redistribution
+
+Mieux utiliser le stock déjà présent dans le réseau : Stock Redistribution détermine les transferts utiles entre sites. Elle peut répondre à un manque ou rendre des stocks dispersés plus utiles.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html) — Inventory rebalancing | Transferts entre lieux excédentaires et déficitaires. | Protéger le donneur et recommander les mouvements. |
 | [Nextail](https://nextail.co/customer/merkal-footwear-inventory-planning/) — Inventory rebalancing / Consolidation | Répartition des tailles entre magasins. | Rendre les assortiments disponibles localement. |
-| Notre modèle — Stock Redistribution Decision | Origines, destinations, quantités et dates de redistribution. | Comparer bénéfices, coûts, délais et besoins des donneurs. |
+| Notre modèle — Stock Redistribution | Origines, destinations, quantités et dates de redistribution. | Comparer bénéfices, coûts, délais et besoins des donneurs. |
 
 ### Ce que nous en retenons
 
@@ -3706,7 +3913,7 @@ Oracle Fusion Cloud SCM · Concept documenté par la source primaire · Recouvre
 
 **Différences.** Le calcul Oracle à la date initiale n’épuise pas tous les horizons FLOW.
 
-**Position FLOW.** Mieux utiliser le stock déjà présent dans le réseau : Stock Redistribution Decision détermine les transferts utiles entre sites. Elle peut répondre à un manque ou rendre des stocks dispersés plus utiles.
+**Position FLOW.** Mieux utiliser le stock déjà présent dans le réseau : Stock Redistribution détermine les transferts utiles entre sites. Elle peut répondre à un manque ou rendre des stocks dispersés plus utiles.
 
 [Overview of Inventory Rebalancing](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-inventory-rebalancing.html) — 26B, consulté le 2026-09-19.
 
@@ -3724,7 +3931,7 @@ Nextail · Concept documenté par la source primaire · Recouvrement partiel · 
 
 **Différences.** Le cas Merkal est une expérience rapportée, pas une règle générale de gain.
 
-**Position FLOW.** Mieux utiliser le stock déjà présent dans le réseau : Stock Redistribution Decision détermine les transferts utiles entre sites. Elle peut répondre à un manque ou rendre des stocks dispersés plus utiles.
+**Position FLOW.** Mieux utiliser le stock déjà présent dans le réseau : Stock Redistribution détermine les transferts utiles entre sites. Elle peut répondre à un manque ou rendre des stocks dispersés plus utiles.
 
 [Merkal Implements AI to Streamline Inventory Planning](https://nextail.co/customer/merkal-footwear-inventory-planning/) — Étude de cas en ligne sans édition affichée, consulté le 2026-09-19.
 
@@ -3734,7 +3941,7 @@ Nextail · Concept documenté par la source primaire · Recouvrement partiel · 
 
 Références : U317, ELM201, CMP109, U318, U477, ELM462, CMP190.
 
-## Sources d’inspiration — D05.f Demand & Supply Optimization Planning
+## Sources d’inspiration — D05.f Master Planning
 
 FLOW réunit la gestion du plan commun dans une capacité Planning ; le nom courant décrit son périmètre sans revendiquer une appellation standard du marché.
 
@@ -3755,13 +3962,13 @@ FLOW réunit la gestion du plan commun dans une capacité Planning ; le nom cour
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/demand-forecast) — Plan commun intégrant demande connue et prévisions | Un master plan peut intégrer commandes et prévisions de demande. | Inclure les prévisions et, selon le paramétrage, consommer leur part déjà représentée par les commandes. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Master plans overview | Le master planning peut utiliser un achat existant retardé ou proposer un nouvel achat planifié ; le plan dynamique est lié au CTP. | Arbitrer la couverture en fonction de l’horizon et des délais. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/dynamic-positive-days) — Dynamic positive days for last-minute orders | Dans un même scénario, SO1 est liée à PO1 existant et SO2 à un nouvel achat planifié créé par le calcul. | Choisir entre réutilisation d’un apport et création d’une proposition. |
-| Notre modèle — Demand & Supply Optimization Planning | Commandes, besoins prévisionnels restants, affectations, apports et ajustements de stock coordonnés dans le même plan. | Mobiliser les décisions, comparer et maintenir les scénarios, faire appliquer les recommandations autorisées et suivre les effets. |
+| Notre modèle — Master Planning | Commandes, besoins prévisionnels restants, affectations, apports et ajustements de stock coordonnés dans le même plan. | Mobiliser les décisions, comparer et maintenir les scénarios, faire appliquer les recommandations autorisées et suivre les effets. |
 
 ### Ce que nous en retenons
 
 - U631 réunit les contributions auparavant séparées du carnet et du stock. Les appuis Oracle et Microsoft documentent familles de plans, simulations et mise en effet des recommandations. Ils ne prescrivent ni une seule capacité FLOW ni une optimisation conjointe de toutes les politiques. Les appuis spécialisés ci-dessous restent qualifiés par leur composante.
 - SAP et RELEX décrivent Demand & Supply Optimization comme un compromis entre disponibilité, niveau et positionnement du stock, incertitude et coûts. SAP insiste sur les cibles qui alimentent les plans Supply ; ces cibles restent portées par une décision spécialisée dans FLOW.
-- Oracle illustre les variantes de scénario et la mise en application ; Microsoft la coexistence de plans. FLOW distingue le travail sur le plan, les décisions mobilisées, la configuration consommée et les gestions partenaires. Le nom complet Demand & Supply Optimization Planning explicite ce choix de modèle, sans revendiquer une nomenclature universelle.
+- Oracle illustre les variantes de scénario et la mise en application ; Microsoft la coexistence de plans. FLOW distingue le travail sur le plan, les décisions mobilisées, la configuration consommée et les gestions partenaires. Le nom complet Master Planning explicite ce choix de modèle, sans revendiquer une nomenclature universelle.
 - La release manuelle ou automatique Oracle éclaire le passage aux actions et le suivi des exceptions. Le comportement d’application FLOW ne reprend pas les options techniques de l’éditeur.
 - Microsoft rapproche demande et reconstitution du stock de sécurité ; SAP IBP optimise conjointement achats, mouvements, production et stock. Un même plan de référence peut coordonner ces résultats sans fusionner les décisions ni garantir un optimum hors des contraintes modélisées.
 - Oracle réunit planification, examen, simulation et transmission des résultats dans Backlog Management ; SAP éclaire également les traitements d’affectation simulés.
@@ -3803,7 +4010,7 @@ Oracle Fusion Cloud SCM · Concept documenté par la source primaire · Recouvre
 
 **Différences.** La page décrit une fonction de plan, pas l’ensemble des responsabilités FLOW.
 
-**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Apply Plan en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
+**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Plan Application en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
 
 [Overview of Simulations for Replenishment Plans](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/overview-of-simulations-for-replenishment-plans.html) — 26B, consulté le 2026-09-19.
 
@@ -3821,7 +4028,7 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 **Différences.** Un plan produit regroupe aussi des calculs spécialisés que FLOW garde identifiés.
 
-**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Apply Plan en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
+**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Plan Application en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
 
 [Master plans overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Documentation en ligne consultée le 2026-09-19, consulté le 2026-09-19.
 
@@ -3839,7 +4046,7 @@ Fusion Cloud Supply Chain Planning · Fonctions et parcours produit documentés 
 
 **Différences.** Le passage à l’exécution Oracle est un appui fonctionnel ; il ne prouve ni une commande ferme automatique, ni une hiérarchie de capacités FLOW, ni une pratique MAP installée.
 
-**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Apply Plan en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
+**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Plan Application en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
 
 [Manually Release Plan Recommendations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html) — 26B, consulté le 2026-09-21.
 
@@ -3857,7 +4064,7 @@ Integrated Business Planning · Concept et fonctions produit · Appui sémantiqu
 
 **Différences.** L’appui porte fortement sur les cibles et leur optimisation. Il ne prouve pas un comportement complet d’application de tous les ajustements, ni le libellé exact Inventory Optimization Planning.
 
-**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Apply Plan en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
+**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Plan Application en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
 
 [Inventory optimisation](https://www.sap.com/uk/products/scm/integrated-business-planning/features/inventory-optimization.html) — Page produit évolutive sans édition indiquée, consulté le 2026-09-21.
 
@@ -3875,7 +4082,7 @@ Inventory optimization · Concept et fonctions produit · Appui sémantique et r
 
 **Différences.** Présentation éditeur, pas catalogue normatif de capacités. L’exemple de Tori est fictif ; aucun résultat installé ou horizon obligatoire importé dans FLOW.
 
-**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Apply Plan en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
+**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Plan Application en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
 
 [Inventory optimization: The key to improving your bottom line](https://www.relexsolutions.com/resources/inventory-optimization/) — Article daté du 12 avril 2024 ; titre affiché relu le 21 septembre 2026, titre antérieur conservé au registre, consulté le 2026-09-21.
 
@@ -3893,7 +4100,7 @@ Fusion Cloud Supply Chain Planning · Fonctions et parcours produit documentés 
 
 **Différences.** Les options diffèrent selon le type de plan ; leur paramétrage et leurs règles ne sont pas importés dans FLOW. Une copie de simulation n’hérite pas de la mise en application automatique.
 
-**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Apply Plan en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
+**Position FLOW.** Dans le plan commun FLOW, cet appui éclaire une contribution spécialisée : Demand & Supply Matching Planning construit, compare, actualise et applique un plan d’ajustements du stock. Plan Application en porte les effets pris en compte ; les décisions, les Orders et Supply Protection restent distincts. Le regroupement de ces travaux sous une capacité Planning conserve les responsables des décisions, des Orders, des engagements et des politiques.
 
 [Automatic Release Options](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fausp/automatic-release-options.html) — 26B, consulté le 2026-09-21.
 
@@ -4334,7 +4541,7 @@ Operations Tracking explicite la responsabilité FLOW.
 | --- | --- | --- |
 | [GS1](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard) — Critical Tracking Events | Faits liés aux objets pendant leur parcours. | Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées. |
 | [Microsoft](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview) — Business Process Tracking | Étapes métier reliées aux résultats des services. | Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées. |
-| Notre modèle — Operations Tracking | Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées. | Reconnaître origine, date, prestation, résultat métier et corrections ; distinguer estimation, engagement et constat. Capter les retours des opérations physiques et services distants, y compris documentaires et d’encaissement. Une fin technique ne prouve pas un résultat métier réussi. Alimenter [Operations Visibility](model:operations-visibility) pour l’avancement et les résultats et [Supply Visibility](model:D18.a) pour les ressources futures. Les doublons, retours tardifs, réalisations partielles et échecs restent identifiables. Exemple fictif : recevoir deux notifications identiques de fin de transport et n’intégrer qu’un fait métier. La restitution, la coordination, l’adaptation et la tenue des engagements restent distinctes. |
+| Notre modèle — Operations Tracking | Capter et intégrer les faits, jalons, estimations et retours de fin des prestations et processus Supply, en les rapprochant de la demande et de l’exécution concernées. | Reconnaître origine, date, prestation, résultat métier et corrections ; distinguer estimation, engagement et constat. Capter les retours des opérations physiques et services distants, y compris documentaires et d’encaissement. Une fin technique ne prouve pas un résultat métier réussi. Alimenter [Operations Visibility](model:operations-visibility) pour l’avancement et les résultats et [Inventory Visibility](model:D01.c) pour les ressources futures. Les doublons, retours tardifs, réalisations partielles et échecs restent identifiables. Exemple fictif : recevoir deux notifications identiques de fin de transport et n’intégrer qu’un fait métier. La restitution, la coordination, l’adaptation et la tenue des engagements restent distinctes. |
 
 ### Ce que nous en retenons
 
@@ -4467,19 +4674,58 @@ How Order-to-Cash Works in Order Management · Concept ou fonction documenté da
 
 Références : ELM652, CMP269, CMP270, U673.
 
+## Scénarios métier — D01 Inventory Management
+
+### Livrer une commande B2B avec un stock partiel
+
+Illustration FLOW fictive : un client B2B attend 100 vêtements ; 60 sont disponibles et une rentrée de 40 est annoncée. Plusieurs solutions de livraison sont examinées.
+
+**Fiche d’origine.** universe-supply
+
+**Contribution de cette fiche.** Fournir les positions de stock, les engagements de quantité et les apports attendus qui alimentent les évaluations d’Order Promising.
+
+**Déclencheur.** Une commande nécessite une proposition de quantité et de date.
+
+**Résultat recherché.** Préparer une promesse réalisable et expliquer les conséquences économiques des options.
+
+**Contraintes**
+
+- Date demandée et fractionnement autorisé par le client.
+- Disponibilité effective, fiabilité de la rentrée et délais de préparation et de transport.
+- Engagements existants et règles de protection du stock.
+
+**Options examinées**
+
+- Livraison fractionnée : Expédier les 60 disponibles, puis les 40 attendus : rendre visible le service anticipé et le coût des deux expéditions.
+- Livraison regroupée : Attendre les 40 pour préparer et expédier ensemble : examiner le gain logistique, le délai et les conséquences économiques d’une attente.
+
+**Contributions métier**
+
+- [Available-to-Promise (ATP)](model:D03.i) évalue ce que permettent le stock courant et les disponibilités futures pertinentes.
+- [Capable-to-Promise (CTP)](model:D03.j) évalue les faisabilités supplémentaires utiles si les disponibilités ne suffisent pas ; son invocation n’est pas systématique.
+- [Profitable-to-Promise (PTP)](model:D03.k) expose, par option, les coûts, bénéfices, risques économiques et hypothèses disponibles, sans choisir.
+- [Promise Selection Decision](model:D03.l) choisit la proposition en tenant compte des évaluations et des règles applicables.
+- [Fulfilment Orchestration](model:D06) coordonne les prestations après engagement et détermine leur libération, en cherchant à préserver la promesse.
+
+**Ce qui se passe.** Un dossier présente les options avec quantité, date et conséquences économiques ; le choix reste explicite et distinct de l’évaluation. Aucun gagnant n’est présumé.
+
+**Ce que cela illustre.** Les capacités coopèrent selon le besoin ; ce récit n’impose ni pipeline universel ni modification des grands équilibres du Matching. Promettre, affecter les ressources et libérer les prestations restent distincts.
+
+Références : U763, U764, U762, ELM763, ELM767, ELM768.
+
 ## Sources d’inspiration — D01 Inventory Management
 
 Inventory Management
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility) — Inventory Visibility Add-in overview | Le produit réunit ingestion, états, réservations et ATP ; ce regroupement logiciel ne prescrit pas les frontières FLOW. | Établir et fiabiliser la référence de stock, tenir ses engagements de quantité et calculer les possibilités de satisfaction des commandes à partir du stock, des apports et des capacités mobilisables. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html) — How You Review Item Supply and Demand | Vue temporelle du stock, des apports et des besoins ; règles de non-double compte. Pas de taxonomie universelle séparant les deux Visibility. | Établir et fiabiliser la référence de stock, tenir ses engagements de quantité et calculer les possibilités de satisfaction des commandes à partir du stock, des apports et des capacités mobilisables. |
-| Notre modèle — Inventory Management | Établir et fiabiliser la référence de stock, tenir ses engagements de quantité et calculer les possibilités de satisfaction des commandes à partir du stock, des apports et des capacités mobilisables. | Inventory Foundation tient la source de vérité locale du domaine : faits reconnus, historique, positions de référence, contrôles et corrections justifiées, engagements de quantité et changements de propriétaire autorisés. Les maîtres et responsabilités des domaines externes ne sont pas absorbés. Propriété, détention, emplacement, état qualitatif, droit d’usage, réservation et affectation restent distincts.  Availability & Promising compose les positions physiques, logiques et projetées, qualifie les apports et calcule les possibilités ATP/CTP ainsi que leurs conséquences économiques PTP. Promise Selection recommande un échéancier parmi les possibilités admissibles. Les capacités logistiques, calendriers et tarifs sont consommés auprès de leurs responsables. Les catégories classent les capacités sans ajouter de niveau métier ni imposer un type unique.  Matching arbitre les affectations et les conflits entre demandes ; Order Management confirme et porte la promesse. Une réponse locale peut utiliser les affectations et règles déjà applicables sans reconstruire le master plan. Une promesse calculée ne réserve pas automatiquement ; Reservation tient les engagements opposables aux usages concurrents. Les vues peuvent répondre directement au parcours de commande, sans garantie de latence déduite du modèle.  Exemple fictif : 70 pièces présentes, dont 20 réservées, et 30 attendues vendredi. Ledger explique les faits, Inventory Visibility expose les positions et réservations, Supply Visibility qualifie l’apport. ATP/CTP évaluent les possibilités et délais ; PTP expose leurs conséquences économiques. La somme des quantités ne garantit ni la réception ni la livraison au client. Fulfilment coordonne les prestations et fournit leurs résultats ; seuls les effets reconnus alimentent le stock. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility) — Inventory Visibility Add-in overview | Le produit réunit ingestion, états, réservations et ATP ; ce regroupement logiciel ne prescrit pas les frontières FLOW. | Établir et fiabiliser la référence de stock, ses mouvements, sa propriété, ses disponibilités et ses engagements de quantité. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html) — How You Review Item Supply and Demand | Vue temporelle du stock, des apports et des besoins ; règles de non-double compte. Pas de taxonomie universelle séparant les deux Visibility. | Établir et fiabiliser la référence de stock, ses mouvements, sa propriété, ses disponibilités et ses engagements de quantité. |
+| Notre modèle — Inventory Management | Établir et fiabiliser la référence de stock, ses mouvements, sa propriété, ses disponibilités et ses engagements de quantité. | Inventory Foundation tient la source de vérité locale du domaine : faits reconnus, historique, positions de référence, contrôles et corrections justifiées, engagements de quantité et changements de propriétaire autorisés. Les maîtres et responsabilités des domaines externes ne sont pas absorbés. Propriété, détention, emplacement, état qualitatif, droit d’usage, réservation et affectation restent distincts.  Inventory Visibility compose les positions physiques, logiques et projetées et qualifie les apports attendus. Cette connaissance alimente Order Promising, Matching, les Orders et Fulfilment. Les évaluations ATP, CTP et PTP et la sélection de proposition appartiennent à Order Promising.  Matching arbitre les affectations et les conflits entre demandes ; Order Management confirme et porte la promesse. Une réponse locale peut utiliser les affectations et règles déjà applicables sans reconstruire le master plan. Une promesse calculée ne réserve pas automatiquement ; Reservation tient les engagements opposables aux usages concurrents. Les vues peuvent répondre directement au parcours de commande, sans garantie de latence déduite du modèle.  Exemple fictif : 70 pièces présentes, dont 20 réservées, et 30 attendues vendredi. Ledger explique les faits, Inventory Visibility expose les positions et réservations, Inventory Visibility qualifie l’apport. ATP/CTP évaluent les possibilités et délais ; PTP expose leurs conséquences économiques. La somme des quantités ne garantit ni la réception ni la livraison au client. Fulfilment coordonne les prestations et fournit leurs résultats ; seuls les effets reconnus alimentent le stock.  Inventory Foundation distingue réception des faits, détermination du transfert selon les accords et tenue des deux registres. Inventory Ownership Transfer Decision couvre consommation, échéances et autres jalons contractuels, avec ou sans consignation. Inventory Ownership Ledger conserve le fondement des changements reconnus ; Inventory Ledger conserve les mouvements et états. Les faits douaniers sont qualifiés sans transfert automatique déduit de leur seul statut. |
 
 ### Ce que nous en retenons
 
-- Comparaison et frontière réexaminées U726–U733 ; le classement FLOW ne reproduit pas les produits.
+- La connaissance et la tenue du stock restent dans Inventory Management ; les évaluations et la sélection de promesse constituent Order Promising selon U766.
 
 ### Illustration FLOW — Inventory Management
 
@@ -4501,13 +4747,13 @@ Inventory Visibility Add-in overview · Fonction ou concept documenté · Recouv
 
 **Pourquoi ce terme.** Nom retenu dans le contexte FLOW ; le périmètre reste distinct des fonctions produits.
 
-**Pourquoi cette définition.** Établir et fiabiliser la référence de stock, tenir ses engagements de quantité et calculer les possibilités de satisfaction des commandes à partir du stock, des apports et des capacités mobilisables.
+**Pourquoi cette définition.** Établir et fiabiliser la référence de stock, ses mouvements, sa propriété, ses disponibilités et ses engagements de quantité.
 
 **Points communs.** Le produit réunit ingestion, états, réservations et ATP ; ce regroupement logiciel ne prescrit pas les frontières FLOW.
 
-**Différences.** Regroupement et type FLOW explicités ; aucune taxonomie universelle déduite du produit.
+**Différences.** Le produit peut réunir stock, réservations et ATP ; FLOW sépare la tenue et la connaissance du stock de l’évaluation et de la sélection de promesse dans Order Promising.
 
-**Position FLOW.** Établir et fiabiliser la référence de stock, tenir ses engagements de quantité et calculer les possibilités de satisfaction des commandes à partir du stock, des apports et des capacités mobilisables.
+**Position FLOW.** Établir et fiabiliser la référence de stock, ses mouvements, sa propriété, ses disponibilités et ses engagements de quantité.
 
 [Inventory Visibility Add-in overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility) — Page évolutive, 2025-08-14, consulté le 2026-09-24.
 
@@ -4515,7 +4761,7 @@ Inventory Visibility Add-in overview · Fonction ou concept documenté · Recouv
 
 **Limite de preuve.** Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document.
 
-Références : ELM734, CMP284, U733.
+Références : ELM734, CMP284, U733, U766.
 
 #### Oracle — How You Review Item Supply and Demand
 
@@ -4523,13 +4769,13 @@ How You Review Item Supply and Demand · Fonction ou concept documenté · Recou
 
 **Pourquoi ce terme.** Nom retenu dans le contexte FLOW ; le périmètre reste distinct des fonctions produits.
 
-**Pourquoi cette définition.** Établir et fiabiliser la référence de stock, tenir ses engagements de quantité et calculer les possibilités de satisfaction des commandes à partir du stock, des apports et des capacités mobilisables.
+**Pourquoi cette définition.** Établir et fiabiliser la référence de stock, ses mouvements, sa propriété, ses disponibilités et ses engagements de quantité.
 
 **Points communs.** Vue temporelle du stock, des apports et des besoins ; règles de non-double compte. Pas de taxonomie universelle séparant les deux Visibility.
 
-**Différences.** Regroupement et type FLOW explicités ; aucune taxonomie universelle déduite du produit.
+**Différences.** Le produit peut réunir stock, réservations et ATP ; FLOW sépare la tenue et la connaissance du stock de l’évaluation et de la sélection de promesse dans Order Promising.
 
-**Position FLOW.** Établir et fiabiliser la référence de stock, tenir ses engagements de quantité et calculer les possibilités de satisfaction des commandes à partir du stock, des apports et des capacités mobilisables.
+**Position FLOW.** Établir et fiabiliser la référence de stock, ses mouvements, sa propriété, ses disponibilités et ses engagements de quantité.
 
 [How You Review Item Supply and Demand](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/famml/how-you-review-item-supply-and-demand.html) — Fusion 25D, consulté le 2026-09-24.
 
@@ -4537,7 +4783,46 @@ How You Review Item Supply and Demand · Fonction ou concept documenté · Recou
 
 **Limite de preuve.** Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document.
 
-Références : ELM745, CMP284, U733.
+Références : ELM745, CMP284, U733, U766.
+
+## Scénarios métier — D06 Fulfilment Orchestration
+
+### Livrer une commande B2B avec un stock partiel
+
+Illustration FLOW fictive : un client B2B attend 100 vêtements ; 60 sont disponibles et une rentrée de 40 est annoncée. Plusieurs solutions de livraison sont examinées.
+
+**Fiche d’origine.** universe-supply
+
+**Contribution de cette fiche.** Retenir ou libérer les ordres de prestation en cohérence avec la promesse, notamment pour permettre une préparation regroupée.
+
+**Déclencheur.** Une commande nécessite une proposition de quantité et de date.
+
+**Résultat recherché.** Préparer une promesse réalisable et expliquer les conséquences économiques des options.
+
+**Contraintes**
+
+- Date demandée et fractionnement autorisé par le client.
+- Disponibilité effective, fiabilité de la rentrée et délais de préparation et de transport.
+- Engagements existants et règles de protection du stock.
+
+**Options examinées**
+
+- Livraison fractionnée : Expédier les 60 disponibles, puis les 40 attendus : rendre visible le service anticipé et le coût des deux expéditions.
+- Livraison regroupée : Attendre les 40 pour préparer et expédier ensemble : examiner le gain logistique, le délai et les conséquences économiques d’une attente.
+
+**Contributions métier**
+
+- [Available-to-Promise (ATP)](model:D03.i) évalue ce que permettent le stock courant et les disponibilités futures pertinentes.
+- [Capable-to-Promise (CTP)](model:D03.j) évalue les faisabilités supplémentaires utiles si les disponibilités ne suffisent pas ; son invocation n’est pas systématique.
+- [Profitable-to-Promise (PTP)](model:D03.k) expose, par option, les coûts, bénéfices, risques économiques et hypothèses disponibles, sans choisir.
+- [Promise Selection Decision](model:D03.l) choisit la proposition en tenant compte des évaluations et des règles applicables.
+- [Fulfilment Orchestration](model:D06) coordonne les prestations après engagement et détermine leur libération, en cherchant à préserver la promesse.
+
+**Ce qui se passe.** Un dossier présente les options avec quantité, date et conséquences économiques ; le choix reste explicite et distinct de l’évaluation. Aucun gagnant n’est présumé.
+
+**Ce que cela illustre.** Les capacités coopèrent selon le besoin ; ce récit n’impose ni pipeline universel ni modification des grands équilibres du Matching. Promettre, affecter les ressources et libérer les prestations restent distincts.
+
+Références : U763, U764, U762, ELM763, ELM767, ELM768.
 
 ## Sources d’inspiration — D06 Fulfilment Orchestration
 
@@ -4878,85 +5163,19 @@ Dynamics 365 Intelligent Order Management · Concept documenté par la source pr
 
 Références : U407, U408, U409, ELM244, CMP155, U477, ELM405, CMP193.
 
-## Sources d’inspiration — BHV001 Existing Commitment Consideration
+## Sources d’inspiration — BHV002 On-Hand ATP
 
-Calculer ce qui reste mobilisable exige de tenir compte de ce qui est déjà engagé ou protégé. Existing Commitment Consideration rend ce décompte explicite pour la demande considérée, sans compter deux fois le même engagement.
-
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [SAP](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/e541e617043545a0bb60e5067d037046.html) — Supply Protection in Product Availability Check | Quantités protégées par groupe et période. | Limiter la disponibilité selon les bénéficiaires. |
-| [Oracle](https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm) — Cumulative ATP demand | Demandes déjà promises. | Les inclure dans la disponibilité restante. |
-| Notre modèle — Existing Commitment Consideration | Réservations, protections et allocations applicables au calcul ATP. | Déterminer les quantités admissibles sans changer les droits existants. |
-
-### Ce que nous en retenons
-
-- SAP montre comment une protection limite la quantité accessible à une demande. PeopleSoft montre comment les demandes promises participent au calcul de disponibilité. Protection et promesse sont deux prises en compte différentes : les soustraire indistinctement peut masquer leurs bénéficiaires ou compter deux fois le même besoin.
-- FLOW regroupe leur examen dans ATP. Une quantité protégée pour un groupe peut rester disponible pour ses membres ; la règle précise de décompte dépend du contexte et reste à expliciter.
-
-### Illustration FLOW — protéger sans retrancher deux fois
-
-Sur 100 pièces, 30 sont protégées pour un groupe ; une commande de ce groupe en mobilise déjà 20.
-
-**Ce qui se passe.** Le calcul distingue la protection restante de l’engagement de la commande, au lieu de déduire mécaniquement 30 puis 20.
-
-**Ce que cela illustre dans FLOW.** SAP illustre la prise en compte des protections ; les nombres sont un cas FLOW, pas une formule SAP.
-
-Source : [Integration into Other Processes](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/e541e617043545a0bb60e5067d037046.html).
-
-Références : U477, ELM383, CMP191.
-
-### Détails des références
-
-#### SAP — Supply Protection in Product Availability Check
-
-S/4HANA aATP · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Le stock visible n’est pas admissible pour toute demande.
-
-**Différences.** La source traite les protections SAP, pas toutes les formes d’engagement.
-
-**Position FLOW.** FLOW rapproche les droits applicables avant de conclure.
-
-[Integration into Other Processes](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/f132c385e0234fe68ae9ff35b2da178c/e541e617043545a0bb60e5067d037046.html) — SAP S/4HANA 2025 FPS01 (février 2026), consulté le 2026-09-19.
-
-**Passage.** Product Availability Check ; Alternative-Based Confirmation
-
-**Limite de preuve.** Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
-
-Références : U477, ELM383, CMP191.
-
-#### Oracle — Cumulative ATP demand
-
-PeopleSoft Inventory · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Éviter de promettre une quantité déjà engagée ailleurs.
-
-**Différences.** La procédure PeopleSoft possède ses propres règles de consommation.
-
-**Position FLOW.** FLOW explicite le décompte, sans importer une formule universelle.
-
-[Promising and Reserving Inventory](https://docs.oracle.com/cd/E13228_01/fscm9pbr0/eng/psbooks/sinv/htm/sinv18.htm) — PeopleSoft Enterprise Inventory 9.0, consulté le 2026-09-19.
-
-**Passage.** Understanding Inventory Reservations ; Understanding the Order Line Processing Sequence ; Calculating ATP
-
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
-
-Références : U477, ELM337, CMP191.
-
-## Sources d’inspiration — BHV002 Network Stock Availability
-
-Chercher le stock dans tous les lieux admissibles élargit les possibilités de réponse à une commande. Network Stock Availability décrit cette recherche dans le réseau, sans supposer que tout magasin ou entrepôt peut servir toute demande.
+On-Hand ATP
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch) — Fulfillment sources | Entrepôts, magasins et autres sources. | Chercher dans une liste de lieux autorisés. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html) — Fulfillment locations | Sites et circuits de fourniture. | Appliquer les règles de recherche de sources. |
-| Notre modèle — Network Stock Availability | Lieux de stockage déjà admissibles dans la référence. | Appliquer les conditions de service et d’éligibilité existantes. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Order promising | ATP : stocks non engagés, délais, réceptions et sorties planifiées | Inclure tout lieu de stockage admissible, quel que soit son type. Retenir le stock courant utilisable pour la demande, net des engagements et protections applicables, sans double soustraction. Les délais de préparation et transport restent nécessaires : stock courant ne signifie pas expédition immédiate. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-available-to-promise) — Inventory Visibility on-hand change schedules and ATP | Calcul ATP à partir du stock et des mouvements planifiés | Inclure tout lieu de stockage admissible, quel que soit son type. Retenir le stock courant utilisable pour la demande, net des engagements et protections applicables, sans double soustraction. Les délais de préparation et transport restent nécessaires : stock courant ne signifie pas expédition immédiate. |
+| Notre modèle — On-Hand ATP | Évaluer les quantités et dates promettables à partir du stock courant admissible, après engagements et contraintes applicables, sans ajouter de réception future. | Inclure tout lieu de stockage admissible, quel que soit son type. Retenir le stock courant utilisable pour la demande, net des engagements et protections applicables, sans double soustraction. Les délais de préparation et transport restent nécessaires : stock courant ne signifie pas expédition immédiate. |
 
 ### Ce que nous en retenons
 
-- Microsoft IFO présente entrepôts, magasins et autres sources dans une même recherche. Oracle Global Demand Management décrit aussi un réseau de sites mobilisables. Les deux ouvrent la recherche au-delà d’un stock local, avec des règles de sélection.
-- FLOW garde ici l’information de faisabilité sur les lieux déjà admissibles. Choisir la meilleure source relève des décisions appropriées ; rendre admissible une autre solution peut demander un examen CTP.
+- La profondeur d’évaluation distingue les comportements ; les règles et hypothèses communes restent portées par la capacité.
 
 ### Microsoft — des sources différentes selon les commandes
 
@@ -4972,121 +5191,63 @@ Références : U477, ELM403, CMP191.
 
 ### Détails des références
 
-#### Microsoft — Fulfillment sources
+#### Microsoft — Order promising
 
-Dynamics 365 Intelligent Order Management · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
 
-**Points communs.** La disponibilité se lit à l’échelle du réseau.
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
 
-**Différences.** IFO détermine aussi une source optimale.
+**Pourquoi cette définition.** Évaluer les quantités et dates promettables à partir du stock courant admissible, après engagements et contraintes applicables, sans ajouter de réception future.
 
-**Position FLOW.** Ce comportement ATP établit les possibilités, sans refaire le choix du plan.
+**Points communs.** ATP : stocks non engagés, délais, réceptions et sorties planifiées
 
-[Intelligent Fulfillment Optimization architecture](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/ifo-arch) — Documentation évolutive, mise à jour affichée le 30 janvier 2026, consulté le 2026-09-19.
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
 
-**Passage.** Fulfillment sources ; Business constraints ; Fulfillment strategies ; Fulfillment optimization in order orchestration flows
+**Position FLOW.** Évaluer les quantités et dates promettables à partir du stock courant admissible, après engagements et contraintes applicables, sans ajouter de réception future.
 
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+[Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Page évolutive, consulté le 2026-09-25.
 
-Références : U477, ELM403, CMP191.
+**Passage.** ATP : stocks non engagés, délais, réceptions et sorties planifiées
 
-#### Oracle — Fulfillment locations
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
 
-Fusion Cloud Global Order Promising · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+Références : ELM727, U761, U765, U767.
 
-**Points communs.** Des lieux différents peuvent contribuer à une même demande.
+#### Microsoft — Inventory Visibility on-hand change schedules and ATP
 
-**Différences.** GOP couvre aussi apport nouveau et substitution.
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
 
-**Position FLOW.** FLOW limite ce comportement aux lieux déjà admissibles.
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
 
-[Overview of Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html) — Oracle Fusion Cloud SCM 25C, consulté le 2026-09-19.
+**Pourquoi cette définition.** Évaluer les quantités et dates promettables à partir du stock courant admissible, après engagements et contraintes applicables, sans ajouter de réception future.
 
-**Passage.** Introduction ; Principles of Promising ; Examples
+**Points communs.** Calcul ATP à partir du stock et des mouvements planifiés
 
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
 
-Références : U477, ELM352, CMP191.
+**Position FLOW.** Évaluer les quantités et dates promettables à partir du stock courant admissible, après engagements et contraintes applicables, sans ajouter de réception future.
 
-## Sources d’inspiration — BHV003 Operational Availability Timing
+[Inventory Visibility on-hand change schedules and ATP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-available-to-promise) — Page évolutive, consulté le 2026-09-25.
 
-Savoir quand un stock peut réellement être mobilisé évite de promettre un départ impossible. Operational Availability Timing intègre préparation, ouvertures et heures limites connues au calcul des dates possibles.
+**Passage.** Calcul ATP à partir du stock et des mouvements planifiés
 
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/fulfillment-returns-optimization) — Respect warehouse timings | Heures limites des entrepôts. | Vérifier si le traitement peut encore démarrer. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-database-centric-order-promising.html) — Postprocessing lead time | Délai entre réception et expédition possible. | Décaler la date selon la mobilisation nécessaire. |
-| Notre modèle — Operational Availability Timing | Délai réel entre ressource disponible et possibilité de satisfaction. | Utiliser les informations des exécutants et signaler les incertitudes. |
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
 
-### Ce que nous en retenons
+Références : ELM761, U761, U765, U767.
 
-- Microsoft distingue le délai de préparation dans ATP + Issue margin et, dans Fulfillment and Returns Optimization, les heures limites d’entrepôt. Oracle Database Promising tient compte du délai après réception. Les sources regardent le même problème depuis des étapes différentes.
-- FLOW rassemble les contraintes de temps utiles au calcul ATP. Il ne gère pas les calendriers maîtres, ne pilote pas le prélèvement et ne retient pas à lui seul la date qui sera engagée.
+## Sources d’inspiration — BHV004 Projected ATP
 
-### Microsoft — le camion du jour est déjà parti
-
-Le document Microsoft décrit des entrepôts dont les camions partent à des heures limites différentes.
-
-**Ce qui se passe.** La recherche peut écarter un entrepôt trop tardif et examiner un autre lieu encore ouvert.
-
-**Ce que cela illustre dans FLOW.** La présence du stock ne suffit pas à rendre un départ possible ; FLOW consomme cette contrainte opérationnelle.
-
-Source : [Fulfillment and Returns Optimization provider overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/fulfillment-returns-optimization).
-
-Références : U477, ELM402, CMP191.
-
-### Détails des références
-
-#### Microsoft — Respect warehouse timings
-
-Dynamics 365 Intelligent Order Management · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Une ressource présente peut être trop tardive.
-
-**Différences.** La fonction effectue aussi un choix de source.
-
-**Position FLOW.** FLOW utilise la contrainte sans absorber le choix de service.
-
-[Fulfillment and Returns Optimization provider overview](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/fulfillment-returns-optimization) — Documentation évolutive ; édition non précisée, consulté le 2026-09-19.
-
-**Passage.** Sources ; Respect warehouse timings ; Restrict partial fulfillment ; Limit number of warehouses
-
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
-
-Références : U477, ELM402, CMP191.
-
-#### Oracle — Postprocessing lead time
-
-Fusion Cloud Global Order Promising · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Arrivée physique et utilisabilité immédiate diffèrent.
-
-**Différences.** Le calcul Oracle dépend du flux configuré.
-
-**Position FLOW.** FLOW conserve origine et validité du délai.
-
-[Database Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-database-centric-order-promising.html) — Oracle Fusion Cloud SCM 25C, consulté le 2026-09-19.
-
-**Passage.** Back-to-Back ; Bill of Resources ; Profitable to Promise ; Consume Transfers at the Same Time
-
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
-
-Références : U477, ELM351, CMP191.
-
-## Sources d’inspiration — BHV004 Future Supply Projection
-
-Intégrer les arrivages attendus permet d’annoncer une fourniture future réaliste. Future Supply Projection rapproche ces ressources des consommations déjà prévues, sans créer d’approvisionnement par le calcul.
+Projected ATP
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Planned receipts in ATP | Réceptions et sorties prévues. | Calculer la quantité disponible à chaque échéance. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/keep-availability-in-global-order-promising-and-inventory-management-synchronized.html) — Future available-to-promise supply | Offre attendue avant la demande. | Distinguer cette offre du stock présent. |
-| Notre modèle — Future Supply Projection | Ressources futures déjà prévues et admissibles sur l’horizon. | Examiner quantité, échéance et besoins concurrents ensemble. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Order promising | ATP : stocks non engagés, délais, réceptions et sorties planifiées | Intégrer les réceptions futures admissibles et les besoins sur l’horizon, sans créer un nouvel apport. Éviter le double compte entre plans, Orders et réalisations. Exposer l’échéance, la provenance, l’incertitude et les engagements concurrents ; une quantité ne soutient pas des promesses incompatibles. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-available-to-promise) — Inventory Visibility on-hand change schedules and ATP | Calcul ATP à partir du stock et des mouvements planifiés | Intégrer les réceptions futures admissibles et les besoins sur l’horizon, sans créer un nouvel apport. Éviter le double compte entre plans, Orders et réalisations. Exposer l’échéance, la provenance, l’incertitude et les engagements concurrents ; une quantité ne soutient pas des promesses incompatibles. |
+| Notre modèle — Projected ATP | Étendre l’évaluation aux réceptions attendues admissibles et aux besoins/engagements sur l’horizon, sans créer de nouvel apport. | Intégrer les réceptions futures admissibles et les besoins sur l’horizon, sans créer un nouvel apport. Éviter le double compte entre plans, Orders et réalisations. Exposer l’échéance, la provenance, l’incertitude et les engagements concurrents ; une quantité ne soutient pas des promesses incompatibles. |
 
 ### Ce que nous en retenons
 
-- Microsoft ATP calcule les réceptions et consommations au fil des dates. Oracle distingue également offre future promettable et stock déjà reçu : l’une peut exister sans l’autre. Ces lectures éclairent le même horizon avec des effets différents.
-- FLOW conserve la projection dans ATP tant que l’apport appartient à la référence. Une possibilité d’approvisionnement supplémentaire relève de CTP ; une projection n’est pas une preuve de réception.
+- La profondeur d’évaluation distingue les comportements ; les règles et hypothèses communes restent portées par la capacité.
 
 ### Oracle — promettable au jour 30, absent au jour 1
 
@@ -5102,41 +5263,49 @@ Références : U477, ELM361, CMP191.
 
 ### Détails des références
 
-#### Microsoft — Planned receipts in ATP
+#### Microsoft — Order promising
 
-Dynamics 365 SCM / Commerce / Intelligent Order Management · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
 
-**Points communs.** Un arrivage peut soutenir une date future.
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
 
-**Différences.** Microsoft fixe une méthode et un horizon de calcul.
+**Pourquoi cette définition.** Étendre l’évaluation aux réceptions attendues admissibles et aux besoins/engagements sur l’horizon, sans créer de nouvel apport.
 
-**Position FLOW.** FLOW ne suppose pas tous les arrivages admissibles.
+**Points communs.** ATP : stocks non engagés, délais, réceptions et sorties planifiées
 
-[Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Documentation évolutive, mise à jour affichée le 21 avril 2026, consulté le 2026-09-19.
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
 
-**Passage.** Order promising ; ATP calculations ; Example ; CTP calculations
+**Position FLOW.** Étendre l’évaluation aux réceptions attendues admissibles et aux besoins/engagements sur l’horizon, sans créer de nouvel apport.
 
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+[Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Page évolutive, consulté le 2026-09-25.
 
-Références : U477, ELM434, CMP191.
+**Passage.** ATP : stocks non engagés, délais, réceptions et sorties planifiées
 
-#### Oracle — Future available-to-promise supply
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
 
-Global Order Promising · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+Références : ELM727, U761, U765, U767.
 
-**Points communs.** Une possibilité future n’est pas une réception réalisée.
+#### Microsoft — Inventory Visibility on-hand change schedules and ATP
 
-**Différences.** Le document porte sur la synchronisation de produits Oracle.
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
 
-**Position FLOW.** FLOW garde la distinction métier, indépendamment des échanges techniques.
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
 
-[Keep Global Order Promising and Inventory Management Synchronized](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/fascp/keep-availability-in-global-order-promising-and-inventory-management-synchronized.html) — Oracle Fusion Cloud SCM 26A, consulté le 2026-09-19.
+**Pourquoi cette définition.** Étendre l’évaluation aux réceptions attendues admissibles et aux besoins/engagements sur l’horizon, sans créer de nouvel apport.
 
-**Passage.** Back-to-Back Orders ; Set up Your Material Status and Subinventory
+**Points communs.** Calcul ATP à partir du stock et des mouvements planifiés
 
-**Limite de preuve.** Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
 
-Références : U477, ELM361, CMP191.
+**Position FLOW.** Étendre l’évaluation aux réceptions attendues admissibles et aux besoins/engagements sur l’horizon, sans créer de nouvel apport.
+
+[Inventory Visibility on-hand change schedules and ATP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-available-to-promise) — Page évolutive, consulté le 2026-09-25.
+
+**Passage.** Calcul ATP à partir du stock et des mouvements planifiés
+
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
+
+Références : ELM761, U761, U765, U767.
 
 ## Sources d’inspiration — BHV006 Simulation & Analysis
 
@@ -5160,6 +5329,7 @@ Simulation & Analysis réunit la construction des alternatives de plan, la proje
 - FLOW conserve simulation et analyse comme un comportement, distinct de l’autorisation et de l’application. Deux documents Oracle étayent ces fonctions sans établir un consensus de hiérarchie.
 - FLOW étend ce comportement au plan commun des commandes et prévisions identifié en U565. Les exemples de backlog déjà cités étayent le mécanisme sur les commandes ; ils ne prouvent pas à eux seuls cette extension de périmètre.
 - U640 — Oracle associe variation des hypothèses et comparaison avec le plan de référence ; Microsoft utilise plusieurs plans pour explorer des stratégies. FLOW regroupe ces activités afin de supprimer le chevauchement entre construction et simulation, sans reprendre une taxonomie éditeur.
+- U749 distingue cette responsabilité comme capacité du Matching ; les formes Microsoft restent des appuis, sans correspondance automatique de niveaux.
 
 ### Illustration FLOW — plus de service, plus de stock
 
@@ -5303,7 +5473,7 @@ Adjust Plan distingue la préparation d’une révision cohérente du lancement 
 | --- | --- | --- |
 | [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html) — Manually Release Plan Recommendations | Les recommandations peuvent réviser les apports existants ; leur transmission reste une étape distincte. | Les recommandations peuvent réviser les apports existants ; leur transmission reste une étape distincte. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages) — Action messages | Les suggestions portent sur avances, reports et variations de quantité ; leur application reste à décider. | Les suggestions portent sur avances, reports et variations de quantité ; leur application reste à décider. |
-| Notre modèle — Adjust Plan | Préparer une révision cohérente du plan face aux changements, en mobilisant les décisions spécialisées et en tenant compte des effets déjà acquis. | Une révision proposée ne devient pas automatiquement applicable. Ses suites passent par les autorisations nécessaires et Apply Plan ; Fulfillment conserve l’adaptation des prestations engagées. |
+| Notre modèle — Adjust Plan | Préparer une révision cohérente du plan face aux changements, en mobilisant les décisions spécialisées et en tenant compte des effets déjà acquis. | Une révision proposée ne devient pas automatiquement applicable. Ses suites passent par les autorisations nécessaires et Plan Application ; Fulfillment conserve l’adaptation des prestations engagées. |
 
 ### Ce que nous en retenons
 
@@ -5317,7 +5487,7 @@ Un transfert de 30 pièces est confirmé, mais un achat de 70 pièces est refus�
 
 **Ce qui se passe.** Préparer une autre couverture en conservant les 30 pièces acquises ; un nouveau calcul peut être mobilisé.
 
-**Ce que cela illustre dans FLOW.** Une révision proposée ne devient pas automatiquement applicable. Ses suites passent par les autorisations nécessaires et Apply Plan ; Fulfillment conserve l’adaptation des prestations engagées.
+**Ce que cela illustre dans FLOW.** Une révision proposée ne devient pas automatiquement applicable. Ses suites passent par les autorisations nécessaires et Plan Application ; Fulfillment conserve l’adaptation des prestations engagées.
 
 Source : [Manually Release Plan Recommendations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html).
 
@@ -5493,7 +5663,7 @@ Références : U477, ELM410, CMP190.
 
 ## Sources d’inspiration — BHV019 Safety Stock Policy
 
-Définir comment utiliser le stock tampon : Safety Stock Policy maintient les conditions qui permettent d’absorber les aléas. Le niveau à retenir est déterminé par Inventory Target Decision.
+Définir comment utiliser le stock tampon : Safety Stock Policy maintient les conditions qui permettent d’absorber les aléas. Le niveau à retenir est déterminé par Inventory Target Optimization.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
@@ -5528,7 +5698,7 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 **Différences.** Les règles strictes ou souples de Microsoft ne sont pas un choix FLOW implicite.
 
-**Position FLOW.** Définir comment utiliser le stock tampon : Safety Stock Policy maintient les conditions qui permettent d’absorber les aléas. Le niveau à retenir est déterminé par Inventory Target Decision.
+**Position FLOW.** Définir comment utiliser le stock tampon : Safety Stock Policy maintient les conditions qui permettent d’absorber les aléas. Le niveau à retenir est déterminé par Inventory Target Optimization.
 
 [Safety stock fulfillment for items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/safety-stock-replenishment) — 2026-03-26, consulté le 2026-09-19.
 
@@ -5546,7 +5716,7 @@ Oracle Fusion Cloud SCM · Concept documenté par la source primaire · Recouvre
 
 **Différences.** Additionner de nouveau ce tampon ferait compter deux fois la même protection.
 
-**Position FLOW.** Définir comment utiliser le stock tampon : Safety Stock Policy maintient les conditions qui permettent d’absorber les aléas. Le niveau à retenir est déterminé par Inventory Target Decision.
+**Position FLOW.** Définir comment utiliser le stock tampon : Safety Stock Policy maintient les conditions qui permettent d’absorber les aléas. Le niveau à retenir est déterminé par Inventory Target Optimization.
 
 [Policy Assignment Sets](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html) — 26B, consulté le 2026-09-19.
 
@@ -5558,7 +5728,7 @@ Références : U477, ELM371, CMP190.
 
 ## Sources d’inspiration — BHV020 Replenishment Regulation
 
-Encadrer quand et jusqu’où renouveler le stock : Replenishment Regulation maintient les seuils, cibles et règles de déclenchement retenus. Le calcul des apports reste dans Replenishment Decision.
+Encadrer quand et jusqu’où renouveler le stock : Replenishment Regulation maintient les seuils, cibles et règles de déclenchement retenus. Le calcul des apports reste dans Replenishment.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
@@ -5593,7 +5763,7 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 **Différences.** Ces modes ne deviennent pas autant de sous-comportements FLOW.
 
-**Position FLOW.** Encadrer quand et jusqu’où renouveler le stock : Replenishment Regulation maintient les seuils, cibles et règles de déclenchement retenus. Le calcul des apports reste dans Replenishment Decision.
+**Position FLOW.** Encadrer quand et jusqu’où renouveler le stock : Replenishment Regulation maintient les seuils, cibles et règles de déclenchement retenus. Le calcul des apports reste dans Replenishment.
 
 [Coverage settings](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/coverage-settings) — 2026-03-25, consulté le 2026-09-19.
 
@@ -5611,7 +5781,7 @@ Oracle Fusion Cloud SCM · Concept documenté par la source primaire · Recouvre
 
 **Différences.** Ses formules de calcul ne transfèrent pas la décision de niveau à cette gestion des règles.
 
-**Position FLOW.** Encadrer quand et jusqu’où renouveler le stock : Replenishment Regulation maintient les seuils, cibles et règles de déclenchement retenus. Le calcul des apports reste dans Replenishment Decision.
+**Position FLOW.** Encadrer quand et jusqu’où renouveler le stock : Replenishment Regulation maintient les seuils, cibles et règles de déclenchement retenus. Le calcul des apports reste dans Replenishment.
 
 [Policy Assignment Sets](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faurp/policy-assignment-sets.html) — 26B, consulté le 2026-09-19.
 
@@ -6141,16 +6311,16 @@ Oracle E-Business Suite · Concept documenté par la source primaire · Recouvre
 
 Références : U470, U471, ELM307, CMP186, U477, ELM341, CMP190.
 
-## Sources d’inspiration — D05.h Reservation Policy Decision
+## Sources d’inspiration — D05.h Reservation Policy Optimization
 
-Choisir quand et combien de temps sécuriser une demande : Reservation Policy Decision équilibre la garantie accordée et l’indisponibilité créée pour les autres ventes. Elle détermine une politique sans établir elle-même les réservations.
+Choisir quand et combien de temps sécuriser une demande : Reservation Policy Optimization équilibre la garantie accordée et l’indisponibilité créée pour les autres ventes. Elle détermine une politique sans établir elle-même les réservations.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [commercetools](https://docs.commercetools.com/api/inventory-overview) — ReserveOnCart / ReserveOnOrder | Protection au panier ou à la commande. | Choisir le jalon et une durée de maintien. |
 | [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48842/T373258T377249.htm) — Reservation Time Fence | Fenêtre de réservation avant expédition. | Déclencher la protection près de l’échéance. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities) — Inventory reservation policies | Règles de réservation par article et parcours. | Choisir quand et sur quoi réserver. |
-| Notre modèle — Reservation Policy Decision | Jalon, horizon, durée et conditions de maintien. | Arbitrer selon le service promis, la rareté et l’immobilisation. |
+| Notre modèle — Reservation Policy Optimization | Jalon, horizon, durée et conditions de maintien. | Arbitrer selon le service promis, la rareté et l’immobilisation. |
 
 ### Ce que nous en retenons
 
@@ -6180,7 +6350,7 @@ Composable Commerce · Concept documenté par la source primaire · Recouvrement
 
 **Différences.** Les modes produit ne déterminent pas automatiquement le meilleur compromis métier.
 
-**Position FLOW.** Choisir quand et combien de temps sécuriser une demande : Reservation Policy Decision équilibre la garantie accordée et l’indisponibilité créée pour les autres ventes. Elle détermine une politique sans établir elle-même les réservations.
+**Position FLOW.** Choisir quand et combien de temps sécuriser une demande : Reservation Policy Optimization équilibre la garantie accordée et l’indisponibilité créée pour les autres ventes. Elle détermine une politique sans établir elle-même les réservations.
 
 [Inventory overview](https://docs.commercetools.com/api/inventory-overview) — Documentation en ligne sans édition affichée, consulté le 2026-09-19.
 
@@ -6198,7 +6368,7 @@ Oracle E-Business Suite · Concept documenté par la source primaire · Recouvre
 
 **Différences.** L’horizon avant besoin est différent de la durée d’une réservation déjà prise.
 
-**Position FLOW.** Choisir quand et combien de temps sécuriser une demande : Reservation Policy Decision équilibre la garantie accordée et l’indisponibilité créée pour les autres ventes. Elle détermine une politique sans établir elle-même les réservations.
+**Position FLOW.** Choisir quand et combien de temps sécuriser une demande : Reservation Policy Optimization équilibre la garantie accordée et l’indisponibilité créée pour les autres ventes. Elle détermine une politique sans établir elle-même les réservations.
 
 [Order Management Implementation Manual — Scheduling](https://docs.oracle.com/cd/E26401_01/doc.122/e48842/T373258T377249.htm) — E-Business Suite 12.2, consulté le 2026-09-19.
 
@@ -6216,7 +6386,7 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 **Différences.** Prioriser des commandes et choisir un régime de réservation restent deux décisions FLOW.
 
-**Position FLOW.** Choisir quand et combien de temps sécuriser une demande : Reservation Policy Decision équilibre la garantie accordée et l’indisponibilité créée pour les autres ventes. Elle détermine une politique sans établir elle-même les réservations.
+**Position FLOW.** Choisir quand et combien de temps sécuriser une demande : Reservation Policy Optimization équilibre la garantie accordée et l’indisponibilité créée pour les autres ventes. Elle détermine une politique sans établir elle-même les réservations.
 
 [Reserve inventory quantities](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/reserve-inventory-quantities) — 2025-08-29, consulté le 2026-09-19.
 
@@ -6391,7 +6561,7 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 **Points communs.** Microsoft cite des besoins de réservation liés aux clients et types de commandes.
 
-**Différences.** La priorité mentionnée par l’éditeur ne doit pas absorber Order Prioritization.
+**Différences.** La priorité mentionnée par l’éditeur ne doit pas absorber Demand Prioritization.
 
 **Position FLOW.** Adapter la garantie au service convenu pour la demande : Demand-Differentiated Reservation Policy définit des régimes distincts quand les engagements métier le justifient. Elle ne classe pas les commandes gagnantes.
 
@@ -6551,9 +6721,9 @@ Dynamics 365 SCM · Concept et usage documentés · Recouvrement partiel · stat
 
 Références : U470, U471, ELM302, CMP186, U477, ELM435, CMP189.
 
-## Sources d’inspiration — D03.o Fulfillment Plan Decision
+## Sources d’inspiration — D03.o Supply Assignment
 
-Choisir ensemble les ressources destinées aux commandes et aux besoins prévisionnels identifiés produit un plan dont les engagements sont compatibles. Fulfillment Plan Decision construit ce scénario avec les décisions spécialisées, en explicitant les besoins non satisfaits.
+Choisir ensemble les ressources destinées aux commandes et aux besoins prévisionnels identifiés produit un plan dont les engagements sont compatibles. Supply Assignment construit ce scénario avec les décisions spécialisées, en explicitant les besoins non satisfaits.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
@@ -6561,13 +6731,16 @@ Choisir ensemble les ressources destinées aux commandes et aux besoins prévisi
 | [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faspc/start-backlog-planning.html) — Backlog plan | Demandes partageant les ressources collectées. | Replanifier la satisfaction selon les priorités. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/commerce/dom) — Cost-based fulfillment optimization | Choix des sources pour commandes ou lots. | Optimiser selon objectifs et contraintes. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/demand-forecast) — Plan commun intégrant demande connue et prévisions | Un master plan peut intégrer commandes et prévisions de demande. | Inclure les prévisions et, selon le paramétrage, consommer leur part déjà représentée par les commandes. |
-| Notre modèle — Fulfillment Plan Decision | Scénario cohérent de ressources, quantités et dates pour le périmètre examiné. | Rechercher une valeur multidimensionnelle sans formule ni optimum garanti. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking) — Supply Assignment | Pegging et marking ; liens recalculables, marquages et réservations respectés. | Pegging et marking ; liens recalculables, marquages et réservations respectés. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/make-to-order-supply-automation) — Supply Assignment | Séquence de mobilisation des ressources pour couvrir les besoins. | Séquence de mobilisation des ressources pour couvrir les besoins. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand) — Supply Assignment | Préservation paramétrable des ressources et liens soutenant les demandes confirmées. | Préservation paramétrable des ressources et liens soutenant les demandes confirmées. |
+| Notre modèle — Supply Assignment | Scénario cohérent de ressources, quantités et dates pour le périmètre examiné. | Rechercher une valeur multidimensionnelle sans formule ni optimum garanti. |
 
 ### Ce que nous en retenons
 
 - Microsoft IFO produit un fulfillment plan indiquant les sources et quantités retenues. Oracle Backlog Planning répartit l’offre sur le carnet selon des priorités. Microsoft met en avant les sources et contraintes ; Oracle, la replanification des demandes concurrentes.
 - FLOW reprend l’exigence de cohérence du [plan d’affectation](glossary:TER078), sans confondre stratégie et résultat. Décider le plan ne l’applique pas, ne confirme pas la promesse et ne réserve pas les ressources.
-- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Fulfillment Plan Decision en assure la compatibilité et appelle les réexamens nécessaires. les engagements portés par les Orders garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
+- FLOW conserve les résultats spécialisés ; lorsqu’un scénario collectif est construit, Supply Assignment en assure la compatibilité et appelle les réexamens nécessaires. les engagements portés par les Orders garde les engagements autorisés. Ce partage n’impose pas un plan collectif pour toute promesse ni une séquence d’algorithmes.
 - Microsoft Supply Chain Management considère commandes et prévisions dans un master plan et documente leur consommation. Ce plan produit aussi des Planned Orders, au-delà du périmètre FLOW retenu. Les exemples OMS Microsoft IFO et Oracle Backlog Management restent centrés sur les commandes : leur documentation ne démontre pas la couverture des prévisions dans le même optimiseur.
 
 ### Illustration FLOW — éviter deux réponses incompatibles
@@ -6628,7 +6801,7 @@ Dynamics 365 Commerce · Concept ou mécanisme métier documenté dans un produi
 
 **Différences.** DOM couvre aussi composition du plan et sourcing.
 
-**Position FLOW.** L’optimisation Microsoft éclaire la combinaison de critères ; FLOW confie la compatibilité du scénario collectif à Fulfillment Plan Decision en conservant les décisions spécialisées et l’autorité des engagements.
+**Position FLOW.** L’optimisation Microsoft éclaire la combinaison de critères ; FLOW confie la compatibilité du scénario collectif à Supply Assignment en conservant les décisions spécialisées et l’autorité des engagements.
 
 [Distributed order management (DOM)](https://learn.microsoft.com/en-us/dynamics365/commerce/dom) — Documentation évolutive, mise à jour affichée le 3 juin 2026, consulté le 2026-09-21.
 
@@ -6655,6 +6828,60 @@ Dynamics 365 Supply Chain Management — Master planning / Planning Optimization
 **Limite de preuve.** Document primaire directement consulté. Coexistence et consommation documentées, pas équivalence de taxonomie ni preuve de réalisation installée.
 
 Références : U565, U566, ELM573, CMP236.
+
+#### Microsoft — Inventory marking
+
+Dynamics 365 Supply Chain Management / Planning Optimization · Mécanisme de planification documenté · Recouvrement partiel · statut : proposed
+
+**Points communs.** Contribuer à la couverture cohérente des besoins par des ressources admissibles.
+
+**Différences.** FLOW distingue choix des liens, matérialisation, réservation et confirmation ; aucun périmètre produit identique présumé.
+
+**Position FLOW.** Un résultat du master plan commun, sans effet implicite sur les confirmations ou réservations.
+
+[Inventory marking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction et mécanismes de couverture
+
+**Limite de preuve.** Fonctionnalités selon version et configuration ; aucune preuve de déploiement Beaumanoir.
+
+Références : ELM757, U750, CMP294.
+
+#### Microsoft — Make-to-order supply automation
+
+Dynamics 365 Supply Chain Management / Planning Optimization · Mécanisme de planification documenté · Recouvrement partiel · statut : proposed
+
+**Points communs.** Contribuer à la couverture cohérente des besoins par des ressources admissibles.
+
+**Différences.** FLOW distingue choix des liens, matérialisation, réservation et confirmation ; aucun périmètre produit identique présumé.
+
+**Position FLOW.** Un résultat du master plan commun, sans effet implicite sur les confirmations ou réservations.
+
+[Make-to-order supply automation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/make-to-order-supply-automation) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction et mécanismes de couverture
+
+**Limite de preuve.** Fonctionnalités selon version et configuration ; aucune preuve de déploiement Beaumanoir.
+
+Références : ELM758, U750, CMP294.
+
+#### Microsoft — Keep supply for confirmed demand in Planning Optimization
+
+Dynamics 365 Supply Chain Management / Planning Optimization · Mécanisme de planification documenté · Recouvrement partiel · statut : proposed
+
+**Points communs.** Contribuer à la couverture cohérente des besoins par des ressources admissibles.
+
+**Différences.** FLOW distingue choix des liens, matérialisation, réservation et confirmation ; aucun périmètre produit identique présumé.
+
+**Position FLOW.** Un résultat du master plan commun, sans effet implicite sur les confirmations ou réservations.
+
+[Keep supply for confirmed demand in Planning Optimization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction et mécanismes de couverture
+
+**Limite de preuve.** Fonctionnalités selon version et configuration ; aucune preuve de déploiement Beaumanoir.
+
+Références : ELM759, U750, CMP294.
 
 ## Sources d’inspiration — D05.i Return Disposition Decision
 
@@ -7631,77 +7858,100 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 Références : U435, U477, ELM406, CMP190, U595, U600, U625, U626.
 
-## Sources d’inspiration — D01.h Inventory Ownership Transfer
+## Sources d’inspiration — D01.h Inventory Ownership Transfer Decision
 
-Inventory Ownership Transfer
+Inventory Ownership Transfer Decision
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment) — Set up consignment | Détention fournisseur séparée de propriété ; changement de propriétaire enregistré séparément. Scénario entrant de production, pas toutes les consignations fashion. | Appliquer un changement de propriétaire autorisé aux quantités concernées, selon l’accord et le fait déclencheur, en conservant les preuves et les liens aux actes associés. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/consigned-inventory-aging.html) — Consigned Inventory Aging | Échéance convenue et transfert de propriété distinct du mouvement ; la page décrit un transfert manuel, sans automatisme universel. | Appliquer un changement de propriétaire autorisé aux quantités concernées, selon l’accord et le fait déclencheur, en conservant les preuves et les liens aux actes associés. |
-| Notre modèle — Inventory Ownership Transfer | Appliquer un changement de propriétaire autorisé aux quantités concernées, selon l’accord et le fait déclencheur, en conservant les preuves et les liens aux actes associés. | Appliquer un transfert de propriété aux quantités identifiées selon l’accord et l’événement autorisé, indépendamment d’un déplacement physique. Consommer les conditions d’Agreement et les faits établis ; conserver autorisation, portée et preuve du transfert dans Inventory Ledger. Si le transfert est exécuté dans un domaine externe, recevoir son résultat sans l’appliquer une seconde fois. La négociation contractuelle, la valorisation, la facturation et le règlement restent externes.  Deux variantes conservées : Consumption-Based Ownership Transfer et Aging-Based Ownership Transfer. Vente, consommation ou échéance ne déclenchent un transfert que selon l’accord ; aucun automatisme universel. Propriétaire, détenteur, droits d’usage et rémunération du stockage sont distincts. Stock fournisseur détenu chez nous, stock propre chez un tiers et stock d’un client déposant ne sont pas interchangeables.  Les autres suites de consignation mobilisent les capacités existantes : Matching choisit le devenir selon les droits applicables ; les Orders portent achat, reprise, transfert ou autre demande ; Fulfilment coordonne les prestations ; Ledger et Visibility conservent les faits et états. La clôture du Fill-up Order ne termine pas les obligations sur le stock. Une fin de consignation n’implique pas un transfert de propriété et un transfert de propriété n’implique pas un déplacement. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment) — Set up consignment | Le journal conserve les transferts du fournisseur à l’entité acquéreuse ; propriété et présence physique sont distinctes. | Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/tasks/change-ownership-consignment) — Change the ownership of consignment inventory based on production demand | Les lignes du journal peuvent être préparées à partir des besoins de production et des statuts pertinents. | Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/landed-cost-overview) — Landed cost module overview | Les conditions de livraison et le parcours goods-in-transit permettent de représenter une acquisition avant réception physique. | Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation. |
+| Notre modèle — Inventory Ownership Transfer Decision | Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation. | Croiser les faits reçus par [Inventory Tracking](model:D01.f) avec les conditions applicables d’[Agreement](model:D11). Couvrir achats et ventes avec ou sans consignation, consommation, échéances et jalons des biens en transit. La réponse précise quantités, ancien et nouveau propriétaires, date d’effet, fondement et éventuel acte restant à réaliser.  Un événement de réception, expédition ou douane n’impose pas seul un changement de propriétaire. Propriété, détention, transfert de risque, disponibilité et statut douanier restent distincts. La décision applique les conditions établies ; elle ne négocie pas l’accord et n’invente pas une condition manquante. Des faits insuffisants conduisent à une détermination en attente de justification.  Si un acte distinct est requis, les familles d’Orders portent la demande et [Fulfilment Orchestration](model:D06) coordonne sa réalisation et la réception du résultat, y compris externe. Une recommandation ne vaut pas réalisation. [Inventory Ownership Ledger](model:inventory-ownership-ledger) conserve le changement reconnu et ses preuves. Un transfert déjà établi par une source autorisée est intégré sans seconde décision ni nouvelle exécution.  Les comportements distinguent consommation/vente, échéance et autres jalons contractuels. Ces mécanismes peuvent se combiner selon l’accord, sans ordre universel. Exemple fictif : la vente de 20 vêtements parmi 100 pièces fournisseur satisfait la clause d’acquisition ; déterminer les 20 pièces et leur date, sans confondre cette conséquence avec leur expédition physique. |
 
 ### Ce que nous en retenons
 
-- Comparaison et frontière réexaminées U726–U733 ; le classement FLOW ne reproduit pas les produits.
+- Séparation décision/registre appliquée U756 ; correspondances produit partielles.
 
-### Exemple Microsoft — matière fournisseur dans l’usine
+### Illustration FLOW — Inventory Ownership Transfer Decision
 
-USMF reçoit puis conserve de la matière appartenant au fournisseur.
+ fictif : la vente de 20 vêtements parmi 100 pièces fournisseur satisfait la clause d’acquisition ; déterminer les 20 pièces et leur date, sans confondre cette conséquence avec leur expédition physique.
 
-**Ce qui se passe.** La propriété des quantités destinées à la production change avant leur consommation.
+**Ce qui se passe.** Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation.
 
-**Ce que cela illustre dans FLOW.** Détention et propriété doivent rester visibles séparément ; le mécanisme est adapté à l’accord applicable.
+**Ce que cela illustre dans FLOW.** Illustration fictive FLOW ; appui produit partiel, sans réalisation Beaumanoir attestée.
 
 Source : [Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment).
 
-Références : U477, ELM406, CMP190.
+Références : ELM739, CMP297, CMP298, U756.
 
 ### Détails des références
 
 #### Microsoft — Set up consignment
 
-Set up consignment · Fonction ou concept documenté · Recouvrement partiel · statut : proposed
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Nom retenu dans le contexte FLOW ; le périmètre reste distinct des fonctions produits.
+**Pourquoi ce terme.** Nom FLOW décrivant la responsabilité métier ; pas un nom de fonction Microsoft repris à l’identique.
 
-**Pourquoi cette définition.** Appliquer un changement de propriétaire autorisé aux quantités concernées, selon l’accord et le fait déclencheur, en conservant les preuves et les liens aux actes associés.
+**Pourquoi cette définition.** Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation.
 
-**Points communs.** Détention fournisseur séparée de propriété ; changement de propriétaire enregistré séparément. Scénario entrant de production, pas toutes les consignations fashion.
+**Points communs.** Le journal conserve les transferts du fournisseur à l’entité acquéreuse ; propriété et présence physique sont distinctes.
 
-**Différences.** Regroupement et type FLOW explicités ; aucune taxonomie universelle déduite du produit.
+**Différences.** Consignation entrante ; la généralisation à tous les contrats et le type Ledger sont des choix FLOW.
 
-**Position FLOW.** Appliquer un changement de propriétaire autorisé aux quantités concernées, selon l’accord et le fait déclencheur, en conservant les preuves et les liens aux actes associés.
+**Position FLOW.** Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation.
 
-[Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment) — Page évolutive, 2026-05-06, consulté le 2026-09-24.
+[Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment) — Documentation évolutive, consulté le 2026-09-25.
 
-**Passage.** Ownership change journal / Owner dimension
+**Passage.** Introduction et processus de propriété
 
-**Limite de preuve.** Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document.
+**Limite de preuve.** Consignation entrante ; la généralisation à tous les contrats et le type Ledger sont des choix FLOW.
 
-Références : ELM739, CMP284, U733.
+Références : ELM739, CMP297, CMP298, U756.
 
-#### Oracle — Consigned Inventory Aging
+#### Microsoft — Change the ownership of consignment inventory based on production demand
 
-Consigned Inventory Aging · Fonction ou concept documenté · Recouvrement partiel · statut : proposed
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Nom retenu dans le contexte FLOW ; le périmètre reste distinct des fonctions produits.
+**Pourquoi ce terme.** Nom FLOW décrivant la responsabilité métier ; pas un nom de fonction Microsoft repris à l’identique.
 
-**Pourquoi cette définition.** Appliquer un changement de propriétaire autorisé aux quantités concernées, selon l’accord et le fait déclencheur, en conservant les preuves et les liens aux actes associés.
+**Pourquoi cette définition.** Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation.
 
-**Points communs.** Échéance convenue et transfert de propriété distinct du mouvement ; la page décrit un transfert manuel, sans automatisme universel.
+**Points communs.** Les lignes du journal peuvent être préparées à partir des besoins de production et des statuts pertinents.
 
-**Différences.** Regroupement et type FLOW explicités ; aucune taxonomie universelle déduite du produit.
+**Différences.** Le traitement automatique du journal est explicitement non pris en charge ; pas preuve d’un moteur réactif de décision.
 
-**Position FLOW.** Appliquer un changement de propriétaire autorisé aux quantités concernées, selon l’accord et le fait déclencheur, en conservant les preuves et les liens aux actes associés.
+**Position FLOW.** Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation.
 
-[Consigned Inventory Aging](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/famml/consigned-inventory-aging.html) — Fusion 25C, consulté le 2026-09-24.
+[Change the ownership of consignment inventory based on production demand](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/tasks/change-ownership-consignment) — Documentation évolutive, consulté le 2026-09-25.
 
-**Passage.** Aging process / Transfer to Owned
+**Passage.** Introduction et processus de propriété
 
-**Limite de preuve.** Documentation primaire consultée ; appui partiel, sans équivalence de capacité ni preuve de réalisation Beaumanoir. Synthèse sélective sans copie du document.
+**Limite de preuve.** Le traitement automatique du journal est explicitement non pris en charge ; pas preuve d’un moteur réactif de décision.
 
-Références : ELM740, CMP284, U733.
+Références : ELM764, CMP297, CMP298, U756.
+
+#### Microsoft — Landed cost module overview
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW décrivant la responsabilité métier ; pas un nom de fonction Microsoft repris à l’identique.
+
+**Pourquoi cette définition.** Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation.
+
+**Points communs.** Les conditions de livraison et le parcours goods-in-transit permettent de représenter une acquisition avant réception physique.
+
+**Différences.** Reconnaissance produit et financière ; aucune règle universelle de propriété ni causalité douanière démontrée.
+
+**Position FLOW.** Déterminer si les faits des processus, les échéances et les conditions applicables de l’accord conduisent à reconnaître ou à demander un transfert de propriété, pour quelles quantités, entre quelles parties et à quelle date, avec ou sans consignation.
+
+[Landed cost module overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/landed-cost-overview) — Documentation évolutive, consulté le 2026-09-25.
+
+**Passage.** Introduction et processus de propriété
+
+**Limite de preuve.** Reconnaissance produit et financière ; aucune règle universelle de propriété ni causalité douanière démontrée.
+
+Références : ELM765, CMP297, CMP298, U756.
 
 ## Sources d’inspiration — BHV061 Initial Stocking
 
@@ -7835,30 +8085,29 @@ Références : U477, ELM354, CMP189.
 
 ## Sources d’inspiration — BHV063 Consumption-Based Ownership Transfer
 
-Acquérir les quantités lorsqu’elles sont utilisées selon l’accord : Consumption-Based Ownership Transfer applique ce déclencheur de propriété. Le stock restant peut continuer à appartenir au fournisseur.
+Consumption-Based Ownership Transfer
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment) — Consignment inventory | Stock détenu chez le client, propriété fournisseur. | Séparer réception et acquisition. |
-| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm) — Consumption / Aging Based Ownership Transfer | Consommation et acquisition du stock consigné. | Distinguer les motifs de transfert de propriété. |
-| Notre modèle — Consumption-Based Ownership Transfer | Quantités dont la vente ou consommation déclenche l’acquisition. | Reconnaître l’événement convenu et ses effets de propriété. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment) — Consignment inventory | Stock détenu chez le client, propriété fournisseur. | Déterminer les changements de propriétaire liés à une consommation ou à une vente selon les conditions de l’accord. |
+| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm) — Consumption / Aging Based Ownership Transfer | Consommation et acquisition du stock consigné. | Déterminer les changements de propriétaire liés à une consommation ou à une vente selon les conditions de l’accord. |
+| Notre modèle — Consumption-Based Ownership Transfer | Déterminer les changements de propriétaire liés à une consommation ou à une vente selon les conditions de l’accord. | Examiner les faits de consommation ou vente et les quantités concernées au regard de l’accord. Déterminer si la condition est satisfaite, pour quelles parties et à quelle date ; demander un acte si nécessaire. Une simple réservation ou une prévision de consommation ne constitue pas une preuve de consommation réalisée. Le résultat alimente la détermination de propriété, puis le registre reçoit le changement reconnu. Exemple : la vente de 20 vêtements satisfait une clause d’acquisition des seules pièces vendues. |
 
 ### Ce que nous en retenons
 
-- Microsoft et Oracle relient la consommation convenue à l’acquisition de stock consigné. Les deux décrivent aussi les documents financiers, qui restent distincts dans FLOW.
-- Le nom précise le déclencheur : l’utilisation. Une acquisition fondée sur l’ancienneté relève du comportement voisin et ne prouve aucune sortie physique.
+- Séparation décision/registre appliquée U756 ; correspondances produit partielles.
 
-### Illustration FLOW — seules vingt pièces sont acquises
+### Illustration FLOW — Consumption-Based Ownership Transfer
 
-Sur cent pièces consignées, vingt sont vendues dans un accord qui lie vente et acquisition.
+ : la vente de 20 vêtements satisfait une clause d’acquisition des seules pièces vendues.
 
-**Ce qui se passe.** Ces vingt changent de propriétaire ; quatre-vingts restent consignées.
+**Ce qui se passe.** Déterminer les changements de propriétaire liés à une consommation ou à une vente selon les conditions de l’accord.
 
-**Ce que cela illustre dans FLOW.** Le fait de vente et la clause doivent être établis avant d’appliquer le transfert de propriété.
+**Ce que cela illustre dans FLOW.** Illustration fictive FLOW ; appui produit partiel, sans réalisation Beaumanoir attestée.
 
 Source : [Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment).
 
-Références : U477, ELM406, CMP190.
+Références : U400, U401, ELM240, CMP151, U477, ELM406, CMP190.
 
 ### Détails des références
 
@@ -7866,11 +8115,13 @@ Références : U477, ELM406, CMP190.
 
 Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Déterminer les changements de propriétaire liés à une consommation ou à une vente selon les conditions de l’accord.
+
 **Points communs.** L’utilisation en production déclenche le changement de propriétaire.
 
 **Différences.** Cette séquence de fabrication ne signifie pas que toute vente retail déclenche automatiquement un achat.
 
-**Position FLOW.** Acquérir les quantités lorsqu’elles sont utilisées selon l’accord : Consumption-Based Ownership Transfer applique ce déclencheur de propriété. Le stock restant peut continuer à appartenir au fournisseur.
+**Position FLOW.** Déterminer les changements de propriétaire liés à une consommation ou à une vente selon les conditions de l’accord.
 
 [Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment) — 2026-05-06, consulté le 2026-09-19.
 
@@ -7884,11 +8135,13 @@ Références : U400, U401, ELM240, CMP151, U477, ELM406, CMP190.
 
 Oracle E-Business Suite · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Déterminer les changements de propriétaire liés à une consommation ou à une vente selon les conditions de l’accord.
+
 **Points communs.** Oracle distingue consommation et changement de propriété.
 
 **Différences.** Les écritures d’achat et de règlement dépassent ce comportement FLOW.
 
-**Position FLOW.** Acquérir les quantités lorsqu’elles sont utilisées selon l’accord : Consumption-Based Ownership Transfer applique ce déclencheur de propriété. Le stock restant peut continuer à appartenir au fournisseur.
+**Position FLOW.** Déterminer les changements de propriétaire liés à une consommation ou à une vente selon les conditions de l’accord.
 
 [Consuming Material](https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm) — E-Business Suite 12.2, consulté le 2026-09-19.
 
@@ -7900,30 +8153,29 @@ Références : U477, ELM339, CMP190.
 
 ## Sources d’inspiration — BHV064 Aging-Based Ownership Transfer
 
-Appliquer une obligation d’acquisition lorsque la durée convenue est atteinte : Aging-Based Ownership Transfer rend ce déclencheur explicite. Il dépend du contrat, pas d’une règle générale sur les invendus.
+Aging-Based Ownership Transfer
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/famml/consigned-inventory-aging.html) — Consigned inventory aging | Acquisition après une durée convenue. | Appliquer une échéance contractuelle. |
-| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm) — Consumption / Aging Based Ownership Transfer | Consommation et acquisition du stock consigné. | Distinguer les motifs de transfert de propriété. |
-| Notre modèle — Aging-Based Ownership Transfer | Stock consigné arrivé à l’échéance d’acquisition. | Identifier les quantités échues et appliquer la clause. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/famml/consigned-inventory-aging.html) — Consigned inventory aging | Acquisition après une durée convenue. | Déterminer les changements de propriétaire liés à une échéance contractuelle atteinte. |
+| [Oracle](https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm) — Consumption / Aging Based Ownership Transfer | Consommation et acquisition du stock consigné. | Déterminer les changements de propriétaire liés à une échéance contractuelle atteinte. |
+| Notre modèle — Aging-Based Ownership Transfer | Déterminer les changements de propriétaire liés à une échéance contractuelle atteinte. | Examiner l’ancienneté et les dates applicables aux quantités selon l’accord, avec ses exceptions et justificatifs. Une échéance peut nécessiter un acte ou une vérification supplémentaire ; elle ne prouve pas un mouvement physique. L’examen peut être déclenché par le passage du temps sans clôture d’Order. Déterminer parties, quantités et date puis faire enregistrer uniquement le changement reconnu. Exemple fictif : une clause prévoit l’acquisition des pièces encore consignées après une durée convenue ; examiner uniquement les pièces et conditions éligibles. |
 
 ### Ce que nous en retenons
 
-- Oracle Cloud et EBS décrivent le même motif : une durée contractuelle peut rendre le stock acquérable sans consommation préalable. Cloud insiste sur l’opération de transfert ; EBS sur le repérage des quantités échues.
-- FLOW reprend ce mécanisme sous un nom explicite. Détenir une pièce depuis longtemps ne suffit pas : la clause et son point de départ doivent être connus.
+- Séparation décision/registre appliquée U756 ; correspondances produit partielles.
 
-### Illustration FLOW — acquisition à quatre-vingt-dix jours
+### Illustration FLOW — Aging-Based Ownership Transfer
 
-Un accord prévoit d’acquérir les pièces encore présentes après 90 jours.
+ fictif : une clause prévoit l’acquisition des pièces encore consignées après une durée convenue ; examiner uniquement les pièces et conditions éligibles.
 
-**Ce qui se passe.** Les quantités concernées changent de propriétaire à l’échéance applicable.
+**Ce qui se passe.** Déterminer les changements de propriétaire liés à une échéance contractuelle atteinte.
 
-**Ce que cela illustre dans FLOW.** Ces valeurs illustrent un contrat possible ; elles ne décrivent aucune règle Beaumanoir.
+**Ce que cela illustre dans FLOW.** Illustration fictive FLOW ; appui produit partiel, sans réalisation Beaumanoir attestée.
 
 Source : [Consigned Inventory Aging](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/famml/consigned-inventory-aging.html).
 
-Références : U477, ELM359, CMP190.
+Références : U400, U401, ELM240, CMP151, U477, ELM359, CMP190.
 
 ### Détails des références
 
@@ -7931,11 +8183,13 @@ Références : U477, ELM359, CMP190.
 
 Oracle Fusion Cloud SCM · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Déterminer les changements de propriétaire liés à une échéance contractuelle atteinte.
+
 **Points communs.** Oracle Cloud relie ancienneté convenue et transfert de propriété.
 
 **Différences.** La page prévoit une opération de transfert ; elle n’établit pas un automatisme obligatoire.
 
-**Position FLOW.** Appliquer une obligation d’acquisition lorsque la durée convenue est atteinte : Aging-Based Ownership Transfer rend ce déclencheur explicite. Il dépend du contrat, pas d’une règle générale sur les invendus.
+**Position FLOW.** Déterminer les changements de propriétaire liés à une échéance contractuelle atteinte.
 
 [Consigned Inventory Aging](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26a/famml/consigned-inventory-aging.html) — 26A, consulté le 2026-09-19.
 
@@ -7949,11 +8203,13 @@ Références : U400, U401, ELM240, CMP151, U477, ELM359, CMP190.
 
 Oracle E-Business Suite · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
+**Pourquoi cette définition.** Déterminer les changements de propriétaire liés à une échéance contractuelle atteinte.
+
 **Points communs.** Oracle EBS décrit l’achat de stock non consommé à échéance.
 
 **Différences.** Deux versions Oracle documentent le mécanisme, sans prouver un consensus de tous les éditeurs.
 
-**Position FLOW.** Appliquer une obligation d’acquisition lorsque la durée convenue est atteinte : Aging-Based Ownership Transfer rend ce déclencheur explicite. Il dépend du contrat, pas d’une règle générale sur les invendus.
+**Position FLOW.** Déterminer les changements de propriétaire liés à une échéance contractuelle atteinte.
 
 [Consuming Material](https://docs.oracle.com/cd/E26401_01/doc.122/e48822/T260819T260824.htm) — E-Business Suite 12.2, consulté le 2026-09-19.
 
@@ -8548,20 +8804,19 @@ Intelligent Order Management · Concept et usage documentés · Recouvrement par
 
 Références : U400, U401, ELM240, CMP151, U477, ELM404, CMP189.
 
-## Sources d’inspiration — BHV075 Additional Supply Feasibility
+## Sources d’inspiration — BHV075 Supply-Based CTP
 
-Évaluer un apport supplémentaire permet de savoir si la quantité manquante peut être obtenue à temps. Additional Supply Feasibility établit quantités, dates et conditions sans créer automatiquement l’achat ou la fabrication.
+Supply-Based CTP
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp) — CTP material and capacity check | Produit à fabriquer et ressources nécessaires. | Évaluer la quantité réalisable. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html) — Create new supply with CTP | Apport à produire, acheter ou transférer. | Établir une solution de fourniture supplémentaire. |
-| Notre modèle — Additional Supply Feasibility | Ressources supplémentaires envisagées hors de la référence. | Interroger leurs possibilités et expliciter les conditions d’obtention. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp) — Calculate sales order delivery dates using CTP | Faisabilité matière et capacité selon le moteur et les paramètres | Évaluer l’obtention ou la constitution d’un apport selon sources, matières, composants et délais connus, sans contrôle détaillé des capacités finies. Distinguer disponibilité matière établie et délai seulement estimé. Aucun achat, affectation ou autorisation d’exécution n’est créé par l’évaluation ; Matching décide de la mobilisation et les Orders portent les actes. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/promising-attributes-for-supply-chain-availability-searches.html) — Promising Attributes for Supply Chain Availability Searches | Options de recherche et prise en compte des composants et ressources | Évaluer l’obtention ou la constitution d’un apport selon sources, matières, composants et délais connus, sans contrôle détaillé des capacités finies. Distinguer disponibilité matière établie et délai seulement estimé. Aucun achat, affectation ou autorisation d’exécution n’est créé par l’évaluation ; Matching décide de la mobilisation et les Orders portent les actes. |
+| Notre modèle — Supply-Based CTP | Évaluer la possibilité d’obtenir ou de constituer un apport à partir des sources, matières/composants et délais connus, sans contrôle détaillé des capacités finies. | Évaluer l’obtention ou la constitution d’un apport selon sources, matières, composants et délais connus, sans contrôle détaillé des capacités finies. Distinguer disponibilité matière établie et délai seulement estimé. Aucun achat, affectation ou autorisation d’exécution n’est créé par l’évaluation ; Matching décide de la mobilisation et les Orders portent les actes. |
 
 ### Ce que nous en retenons
 
-- Microsoft CTP vérifie les matières et moyens de fabrication. Oracle Global Demand Management distingue l’offre existante de celle qu’il faut produire, acheter ou transférer. Les deux examinent un moyen de combler un manque, avec des périmètres produits différents.
-- FLOW retient ici l’hypothèse d’apport supplémentaire. Un arrivage déjà prévu appartient à ATP ; obtenir un apport pour une commande ne se confond pas avec décider un stock cible.
+- La profondeur d’évaluation distingue les comportements ; les règles et hypothèses communes restent portées par la capacité.
 
 ### Microsoft — un produit sans stock, des composants disponibles
 
@@ -8577,179 +8832,121 @@ Références : U477, ELM417, CMP191.
 
 ### Détails des références
 
-#### Microsoft — CTP material and capacity check
+#### Microsoft — Calculate sales order delivery dates using CTP
 
-Dynamics 365 Supply Chain Management / Planning Optimization · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
 
-**Points communs.** Un manque peut être comblé par un apport nouveau.
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
 
-**Différences.** Le cas Microsoft est industriel.
+**Pourquoi cette définition.** Évaluer la possibilité d’obtenir ou de constituer un apport à partir des sources, matières/composants et délais connus, sans contrôle détaillé des capacités finies.
 
-**Position FLOW.** FLOW couvre les apports pertinents à la commande.
+**Points communs.** Faisabilité matière et capacité selon le moteur et les paramètres
 
-[Calculate delivery dates using CTP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp) — Documentation évolutive, mise à jour affichée le 27 juillet 2026, consulté le 2026-09-19.
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
 
-**Passage.** How CTP compares to ATP ; exemple Item A composé de B et C ; View confirmed delivery dates
+**Position FLOW.** Évaluer la possibilité d’obtenir ou de constituer un apport à partir des sources, matières/composants et délais connus, sans contrôle détaillé des capacités finies.
 
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+[Calculate sales order delivery dates using CTP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp) — Page évolutive, consulté le 2026-09-25.
 
-Références : U402, ELM241, CMP152, U477, ELM417, CMP191.
+**Passage.** Faisabilité matière et capacité selon le moteur et les paramètres
 
-#### Oracle — Create new supply with CTP
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
 
-Fusion Cloud Global Order Promising · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+Références : ELM746, U761, U765, U767.
 
-**Points communs.** Distinguer offre déjà prévue et offre à obtenir.
+#### Oracle — Promising Attributes for Supply Chain Availability Searches
 
-**Différences.** GOP peut ensuite alimenter d’autres applications.
+Global Order Promising · Fonction produit documentée · Recouvrement partiel · statut : proposed
 
-**Position FLOW.** FLOW sépare faisabilité, autorisation et création de l’Order.
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
 
-[Overview of Global Order Promising](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25c/fascp/overview-of-global-order-promising.html) — Oracle Fusion Cloud SCM 25C, consulté le 2026-09-19.
+**Pourquoi cette définition.** Évaluer la possibilité d’obtenir ou de constituer un apport à partir des sources, matières/composants et délais connus, sans contrôle détaillé des capacités finies.
 
-**Passage.** Introduction ; Principles of Promising ; Examples
+**Points communs.** Options de recherche et prise en compte des composants et ressources
 
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
 
-Références : U470, U471, ELM316, CMP186, U477, ELM352, CMP191.
+**Position FLOW.** Évaluer la possibilité d’obtenir ou de constituer un apport à partir des sources, matières/composants et délais connus, sans contrôle détaillé des capacités finies.
 
-## Sources d’inspiration — BHV076 Fulfillment Alternative Feasibility
+[Promising Attributes for Supply Chain Availability Searches](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/promising-attributes-for-supply-chain-availability-searches.html) — 25D, consulté le 2026-09-25.
 
-Examiner une autre façon de servir la commande ouvre des solutions quand la référence ne suffit plus. Fulfillment Alternative Feasibility décrit leurs conditions et conséquences, avec les décisions responsables des services et équivalences.
+**Passage.** Options de recherche et prise en compte des composants et ressources
 
-| Source et nom employé | Périmètre | Approche |
-| --- | --- | --- |
-| [SAP](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5) — Alternative-Based Confirmation | Sites ou articles alternatifs. | Chercher une réponse compatible. |
-| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-alternatives) — Delivery alternatives | Transport, lieu, quantité et date. | Comparer les options présentées. |
-| Notre modèle — Fulfillment Alternative Feasibility | Modalités de satisfaction qui nécessitent une adaptation. | Vérifier leur admissibilité et leur faisabilité sans les appliquer. |
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
 
-### Ce que nous en retenons
+Références : ELM762, U761, U765, U767.
 
-- SAP ABC explore des sites et produits alternatifs. Microsoft Delivery alternatives compare aussi transports, dates et quantités. Tous deux rendent visibles plusieurs réponses, mais leur qualification ATP ou CTP dépend du produit.
-- FLOW utilise un critère explicite : ce qui était déjà admissible dans la référence reste ATP. Un produit ressemblant ne devient pas un substitut autorisé ; le choix du service garde son responsable.
+## Sources d’inspiration — BHV076 Capacity-Constrained CTP
 
-### Illustration FLOW — envisager une livraison express
-
-Le service standard ne permet pas de respecter la date ; un service express pourrait l’atteindre.
-
-**Ce qui se passe.** La possibilité reste conditionnée à la capacité et à l’autorisation de ce service.
-
-**Ce que cela illustre dans FLOW.** Microsoft montre la comparaison de modes de transport ; FLOW qualifie séparément l’adaptation et son choix.
-
-Source : [Delivery alternatives](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-alternatives).
-
-Références : U477, ELM433, CMP191.
-
-### Détails des références
-
-#### SAP — Alternative-Based Confirmation
-
-SAP S/4HANA aATP · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** L’option initiale n’est pas toujours la seule.
-
-**Différences.** ABC relève d’aATP chez SAP.
-
-**Position FLOW.** FLOW ne classe pas toute alternative en CTP.
-
-[Alternative-Based Confirmation](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/using-advanced-available-to-promise-aatp-in-sap-s-4hana_ef38afd2-4730-433f-854a-613b8e4afec5) — Cours SAP S/4HANA, édition non précisée dans le passage, consulté le 2026-09-19.
-
-**Passage.** Advanced ATP Scenario: Alternative-Based Confirmation ; Release for Delivery
-
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
-
-Références : U402, ELM241, CMP152, U477, ELM456, CMP191.
-
-#### Microsoft — Delivery alternatives
-
-Dynamics 365 SCM · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
-
-**Points communs.** Un changement de modalité peut améliorer la satisfaction.
-
-**Différences.** La page mêle des possibilités déjà admises et des adaptations.
-
-**Position FLOW.** FLOW précise ce qui doit changer pour rendre l’option possible.
-
-[Delivery alternatives](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-alternatives) — Documentation évolutive ; édition non précisée, consulté le 2026-09-19.
-
-**Passage.** Delivery date control methods ; Delivery alternatives ; Availability information
-
-**Limite de preuve.** Passage primaire consulté ; périmètre du produit documenté, sans preuve d’installation chez Beaumanoir.
-
-Références : U477, ELM433, CMP191.
-
-## Sources d’inspiration — BHV077 Order Rescheduling
-
-Order Rescheduling
+Capacity-Constrained CTP
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
-| [SAP](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Redistribution of confirmations | Confirmations de demandes concurrentes. | Réexaminer selon disponibilité et priorité. |
-| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html) — Enforce Current Commit simulation | Engagements existants dans un scénario. | Tester sans changer la planification visible au client. |
-| Notre modèle — Order Rescheduling | Évaluer des décalages de commandes et leurs conséquences pour construire une réponse cohérente aux besoins concurrents. | Étudier les possibilités de décaler des commandes modifiables, en explicitant les quantités, nouvelles dates, ressources libérées et impacts sur les autres demandes. Les conditions contractuelles, réservations opposables, gels et autorisations restent contraignants. Le résultat peut montrer qu’aucun décalage acceptable n’existe.  Ce comportement de Demand & Supply Optimization Planning éclaire Fulfillment Plan Decision ; il ne confirme pas les nouvelles dates et ne modifie pas seul un engagement. Promise Selection utilise les possibilités autorisées ; Order Management porte toute révision confirmée ; Apply Plan met en effet les affectations retenues.  Exemple fictif : examiner si le report autorisé de 20 pièces d’une commande permet de servir une demande urgente, en rendant visible le préjudice et le reste à couvrir. Une urgence ne donne pas le droit de décaler une autre commande. Ce mécanisme de rééchelonnement entre commandes est distinct de la faisabilité intrinsèque CTP et des adaptations locales de Fulfilment. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp) — Calculate sales order delivery dates using CTP | Faisabilité matière et capacité selon le moteur et les paramètres | Prendre en compte les capacités finies nécessaires, disponibles ou supplémentaires, leurs calendriers, charges et dépendances pertinentes. Inclure fabrication ou assemblage multiniveau et prestations logistiques lorsque les données le permettent, sans un comportement par ressource. Une substitution autorisée ou une autre date déjà réalisable ne suffit pas à constituer du CTP. Les exécutants gardent leurs opérations internes ; les données non contrôlées restent des hypothèses. |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/promising-attributes-for-supply-chain-availability-searches.html) — Promising Attributes for Supply Chain Availability Searches | Options de recherche et prise en compte des composants et ressources | Prendre en compte les capacités finies nécessaires, disponibles ou supplémentaires, leurs calendriers, charges et dépendances pertinentes. Inclure fabrication ou assemblage multiniveau et prestations logistiques lorsque les données le permettent, sans un comportement par ressource. Une substitution autorisée ou une autre date déjà réalisable ne suffit pas à constituer du CTP. Les exécutants gardent leurs opérations internes ; les données non contrôlées restent des hypothèses. |
+| Notre modèle — Capacity-Constrained CTP | Étendre la faisabilité aux ressources et capacités finies nécessaires, à leurs calendriers, charges et dépendances pertinentes. | Prendre en compte les capacités finies nécessaires, disponibles ou supplémentaires, leurs calendriers, charges et dépendances pertinentes. Inclure fabrication ou assemblage multiniveau et prestations logistiques lorsque les données le permettent, sans un comportement par ressource. Une substitution autorisée ou une autre date déjà réalisable ne suffit pas à constituer du CTP. Les exécutants gardent leurs opérations internes ; les données non contrôlées restent des hypothèses. |
 
 ### Ce que nous en retenons
 
-- SAP BOP peut modifier les confirmations selon les priorités. Oracle Backlog Management permet de simuler des changements sans modifier immédiatement les dates visibles des clients. SAP décrit un traitement de redistribution ; Oracle rend particulièrement visible l’étape de simulation.
-- FLOW isole l’examen conditionnel : une urgence ne prouve pas la modifiabilité d’une promesse. Le choix collectif, la révision de promesse et la réaffectation des ressources restent distincts.
+- La profondeur d’évaluation distingue les comportements ; les règles et hypothèses communes restent portées par la capacité.
 
-### Illustration FLOW — décaler une commande pour en servir une autre
+### Illustration FLOW — vérifier la capacité nécessaire
 
-Une commande urgente serait satisfaisable si une autre acceptait deux jours de décalage.
+Les composants nécessaires sont disponibles, mais le créneau d’assemblage dépend de la charge réelle de l’atelier.
 
-**Ce qui se passe.** Le scénario explicite ce décalage et reste hypothétique jusqu’à l’autorisation correspondante.
+**Ce qui se passe.** L’évaluation vérifie les capacités finies et calendriers avant de qualifier la date comme faisable ; une charge inconnue reste une condition non vérifiée.
 
-**Ce que cela illustre dans FLOW.** Oracle étaye la séparation simulation/application ; aucune priorité ni autorisation client n’est présumée dans le cas FLOW.
+**Ce que cela illustre dans FLOW.** CTP approfondit la faisabilité sans choisir une affectation ni créer un ordre de fabrication.
 
-Source : [Key Actions on Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html).
+Source : [Calculate sales order delivery dates using CTP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp).
 
-Références : U477, ELM357, CMP191.
+Références : ELM746, U761, U767.
 
 ### Détails des références
 
-#### SAP — Redistribution of confirmations
+#### Microsoft — Calculate sales order delivery dates using CTP
 
-SAP S/4HANA Cloud Public Edition / Backorder Processing · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Order Rescheduling est un libellé FLOW simplifié ; la responsabilité reste l’évaluation des décalages avant arbitrage et confirmation.
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
 
-**Pourquoi cette définition.** Évaluer des décalages de commandes et leurs conséquences pour construire une réponse cohérente aux besoins concurrents.
+**Pourquoi cette définition.** Étendre la faisabilité aux ressources et capacités finies nécessaires, à leurs calendriers, charges et dépendances pertinentes.
 
-**Points communs.** Un changement pour l’une peut affecter l’autre.
+**Points communs.** Faisabilité matière et capacité selon le moteur et les paramètres
 
-**Différences.** BOP peut appliquer la nouvelle répartition.
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
 
-**Position FLOW.** Évaluer des décalages de commandes et leurs conséquences pour construire une réponse cohérente aux besoins concurrents.
+**Position FLOW.** Étendre la faisabilité aux ressources et capacités finies nécessaires, à leurs calendriers, charges et dépendances pertinentes.
 
-[Exploring Backorder Processing](https://learning.sap.com/courses/optimizing-advanced-logistics-and-analytics-in-sap-s-4hana-cloud-public-edition/exploring-backorder-processing_fed6ddd5-39be-41ab-a977-e41a1c3715fe) — Cours SAP S/4HANA Cloud Public Edition ; édition non précisée, consulté le 2026-09-19.
+[Calculate sales order delivery dates using CTP](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/calculate-delivery-dates-using-ctp) — Page évolutive, consulté le 2026-09-25.
 
-**Passage.** Backorder Processing — Introduction, Reprioritization & Reallocation, Order Confirmations
+**Passage.** Faisabilité matière et capacité selon le moteur et les paramètres
 
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
 
-Références : U402, ELM241, CMP152, U477, ELM458, CMP191.
+Références : ELM746, U761, U765, U767.
 
-#### Oracle — Enforce Current Commit simulation
+#### Oracle — Promising Attributes for Supply Chain Availability Searches
 
-Fusion Cloud SCM 25D · Concept ou mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+Global Order Promising · Fonction produit documentée · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Order Rescheduling est un libellé FLOW simplifié ; la responsabilité reste l’évaluation des décalages avant arbitrage et confirmation.
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
 
-**Pourquoi cette définition.** Évaluer des décalages de commandes et leurs conséquences pour construire une réponse cohérente aux besoins concurrents.
+**Pourquoi cette définition.** Étendre la faisabilité aux ressources et capacités finies nécessaires, à leurs calendriers, charges et dépendances pertinentes.
 
-**Points communs.** Évaluer un compromis avant sa mise en action.
+**Points communs.** Options de recherche et prise en compte des composants et ressources
 
-**Différences.** Le paramètre Oracle ne vaut pas autorisation métier universelle.
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
 
-**Position FLOW.** Évaluer des décalages de commandes et leurs conséquences pour construire une réponse cohérente aux besoins concurrents.
+**Position FLOW.** Étendre la faisabilité aux ressources et capacités finies nécessaires, à leurs calendriers, charges et dépendances pertinentes.
 
-[Key Actions on Orders](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/faubm/key-actions-on-orders.html) — Oracle Fusion Cloud SCM 25D, consulté le 2026-09-19.
+[Promising Attributes for Supply Chain Availability Searches](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/promising-attributes-for-supply-chain-availability-searches.html) — 25D, consulté le 2026-09-25.
 
-**Passage.** Plan Run Actions ; Review Actions ; Attribute Data Simulation Actions ; Release Actions
+**Passage.** Options de recherche et prise en compte des composants et ressources
 
-**Limite de preuve.** Documentation primaire consultée ; aucun choix de produit ni déploiement Beaumanoir déduit.
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
 
-Références : U477, ELM357, CMP191.
+Références : ELM762, U761, U765, U767.
 
 ## Sources d’inspiration — BHV078 Supplier Confirmation
 
@@ -9158,7 +9355,7 @@ Rétablir le stock vers la cible retenue : Target-based Replenishment détermine
 ### Ce que nous en retenons
 
 - Microsoft montre l’effet des conditionnements sur une cible ; Oracle distingue le seuil qui déclenche et la quantité visée. Une cible n’est donc ni un ordre ferme ni nécessairement le résultat exact après arrondi.
-- FLOW utilise les paramètres d’Inventory Target Decision. Il expose les écarts dus aux contraintes au lieu de réécrire silencieusement la cible.
+- FLOW utilise les paramètres d’Inventory Target Optimization. Il expose les écarts dus aux contraintes au lieu de réécrire silencieusement la cible.
 
 ### Exemple Microsoft — le multiple change l’apport
 
@@ -9964,48 +10161,6 @@ S/4HANA · Type de document et processus de vente · Appui sémantique · statut
 
 Références : ELM629, CMP262, U607.
 
-## Sources d’inspiration — D18.a Supply Visibility
-
-### Oracle — Overview of Supply Chain Orchestration
-
-Fusion Cloud Supply Chain Orchestration · Fonction produit documentée · Recouvrement partiel · statut : proposed
-
-**Pourquoi ce terme.** Supply Chain Orchestration est un terme existant du marché, avec un périmètre FLOW propre.
-
-**Pourquoi cette définition.** Le nom met l’accent sur la coordination des engagements et des moyens de les satisfaire ; il ne signifie ni adoption du module Oracle ni équivalence de catalogue.
-
-**Points communs.** Oracle suit les demandes et apports liés aux achats, transferts et autres modes d’approvisionnement.
-
-**Différences.** Le produit couvre aussi création et exécution de supply orders ; FLOW sépare connaissance des apports, demande initiale et orchestration.
-
-**Position FLOW.** Availability & Promising au sein d’Inventory Management connaît les apports attendus, leurs quantités, échéances et incertitudes ; Demand conserve les Orders et le plan détermine les adaptations.
-
-[Overview of Supply Chain Orchestration](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html) — 26B, consulté le 2026-09-21.
-
-**Passage.** Introduction ; receive requests, create supply orders, manage changes ; drop shipment
-
-**Limite de preuve.** Le produit couvre aussi création et exécution de supply orders ; FLOW sépare connaissance des apports, demande initiale et orchestration. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
-
-Références : U470, U471, ELM294, CMP185, U474, U475, CMP188, U530, CMP215, U625, U626.
-
-### Microsoft — On-hand inventory
-
-Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
-
-**Points communs.** Microsoft distingue les quantités physiques des réceptions attendues et de la disponibilité calculée.
-
-**Différences.** La vue du produit réunit ces mesures ; elle ne définit pas les frontières des Purposes FLOW.
-
-**Position FLOW.** Availability & Promising au sein d’Inventory Management connaît les apports attendus, leurs quantités, échéances et incertitudes ; Demand conserve les Orders et le plan détermine les adaptations.
-
-[Inventory on-hand list](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list) — 2026-06-15, consulté le 2026-09-19.
-
-**Passage.** Query your on-hand inventory ; tableau des quantités ; Examples
-
-**Limite de preuve.** La vue du produit réunit ces mesures ; elle ne définit pas les frontières des Purposes FLOW. Aucune réalisation installée Beaumanoir ni équivalence universelle déduite.
-
-Références : U477, ELM408, CMP190, U625, U626.
-
 ## Sources d’inspiration — D19.a Service Provider Policy
 
 ### Oracle — Active/Inactive Flag Added to Service Provider
@@ -10419,7 +10574,7 @@ Monitor Plan distingue le constat des effets et besoins de réexamen de la révi
 | --- | --- | --- |
 | [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html) — Manually Release Plan Recommendations | Les résultats de transmission et les demandes non traitées sont consultables. | Les résultats de transmission et les demandes non traitées sont consultables. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/action-messages) — Action messages | Les changements de besoins font apparaître des suggestions d’action, indices d’un besoin de réexamen. | Les changements de besoins font apparaître des suggestions d’action, indices d’un besoin de réexamen. |
-| Notre modèle — Monitor Plan | Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre visibles les écarts et les besoins de réexamen. | Le suivi ne modifie ni le plan ni les commandes. Il utilise les constats d’Apply Plan et des partenaires, sans reprendre leur suivi opérationnel. |
+| Notre modèle — Monitor Plan | Observer les résultats du plan, les recommandations prises en compte et les nouvelles conditions pour rendre visibles les écarts et les besoins de réexamen. | Le suivi ne modifie ni le plan ni les commandes. Il utilise les constats d’Plan Application et des partenaires, sans reprendre leur suivi opérationnel. |
 
 ### Ce que nous en retenons
 
@@ -10433,7 +10588,7 @@ Un transfert de 30 pièces est confirmé, mais un achat de 70 pièces est refus�
 
 **Ce qui se passe.** Rendre visible le manque restant sans compter l’achat refusé comme acquis.
 
-**Ce que cela illustre dans FLOW.** Le suivi ne modifie ni le plan ni les commandes. Il utilise les constats d’Apply Plan et des partenaires, sans reprendre leur suivi opérationnel.
+**Ce que cela illustre dans FLOW.** Le suivi ne modifie ni le plan ni les commandes. Il utilise les constats d’Plan Application et des partenaires, sans reprendre leur suivi opérationnel.
 
 Source : [Manually Release Plan Recommendations](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faupc/manually-release-plan-recommendations.html).
 
@@ -10557,7 +10712,7 @@ Plan Visibility explicite la responsabilité FLOW.
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/master-plans) — Master plans overview | Plans distincts, recalculs, simulations, conversion des propositions et suggestions de modification des ordres. | Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching. |
 | [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-production-planning/outlining-program-planning_be612648-050c-4353-a60a-808b38c67c5a) — Outlining Program Planning | Les prévisions IBP alimentent des besoins indépendants planifiés, consommés par des commandes selon la stratégie. Demand Management gère leur interaction pour alimenter MRP. | Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching. |
-| Notre modèle — Plan Visibility | Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching. | Recevoir les plans du domaine externe PLAN, porté par l’APS, par [Plan Ingestion](model:plans-ingestion). Ce domaine source existe mais n’est pas référencé dans cette cartographie. [Supply Plan Visibility](model:plans-visibility) expose les prévisions d’entrées et de sorties de stock hors achats ; [Demand Plan Visibility](model:demand-plan-visibility) expose la demande prévisionnelle. Les deux vues rendent explicites versions, horizons, provenance et incertitudes pour Availability & Promising au sein d’Inventory Management et Matching. Le calcul des prévisions reste externe. Le master plan d’affectation est construit et géré dans [Demand & Supply Matching](model:D03). Une projection ne crée ni Order ferme ni mouvement de stock. |
+| Notre modèle — Plan Visibility | Recevoir et rendre utilisables les Demand Plans et Supply Plans calculés hors du domaine pour éclairer la promesse et le Matching. | Recevoir les plans du domaine externe PLAN, porté par l’APS, par [Plan Ingestion](model:plans-ingestion). Ce domaine source existe mais n’est pas référencé dans cette cartographie. [Supply Plan Visibility](model:plans-visibility) expose les prévisions d’entrées et de sorties de stock hors achats ; [Demand Plan Visibility](model:demand-plan-visibility) expose la demande prévisionnelle. Les deux vues rendent explicites versions, horizons, provenance et incertitudes pour Order Promising et Matching. Le calcul des prévisions reste externe. Le master plan d’affectation est construit et géré dans [Demand & Supply Matching](model:D03). Une projection ne crée ni Order ferme ni mouvement de stock. |
 
 ### Ce que nous en retenons
 
@@ -12309,7 +12464,7 @@ Operations Visibility explicite la responsabilité FLOW.
 | --- | --- | --- |
 | [GS1](https://www.gs1.org/standards/gs1-global-traceability-standard/current-standard) — Critical Tracking Events | Faits liés aux objets pendant leur parcours. | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. |
 | [Microsoft](https://learn.microsoft.com/en-us/azure/business-process-tracking/overview) — Business Process Tracking | Étapes métier reliées aux résultats des services. | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. |
-| Notre modèle — Operations Visibility | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. | Consolider les faits, jalons, estimations et résultats acquis, partiels ou en échec reçus par [Operations Tracking](model:D07.d). Distinguer fait, engagement et estimation, expliciter origine, fraîcheur et informations absentes. Présenter les perspectives entrepôt, transport, magasin et processus sans imposer un cycle commun aux services. Les exécutants conservent leurs opérations internes ; Orchestration coordonne, Adaptation Decision choisit les adaptations et Service Order Management tient les engagements. [Supply Visibility](model:D18.a) conserve la vue des ressources futures ; Inventory Visibility tient les positions de stock. Exemple fictif : une prestation documentaire est en échec tandis que le transport est achevé ; exposer séparément leurs résultats et les attentes du processus. |
+| Notre modèle — Operations Visibility | Rendre visibles l’avancement, les résultats et les attentes des prestations et processus Supply à partir des faits intégrés. | Consolider les faits, jalons, estimations et résultats acquis, partiels ou en échec reçus par [Operations Tracking](model:D07.d). Distinguer fait, engagement et estimation, expliciter origine, fraîcheur et informations absentes. Présenter les perspectives entrepôt, transport, magasin et processus sans imposer un cycle commun aux services. Les exécutants conservent leurs opérations internes ; Orchestration coordonne, Adaptation Decision choisit les adaptations et Service Order Management tient les engagements. [Inventory Visibility](model:D01.c) conserve la vue des ressources futures ; Inventory Visibility tient les positions de stock. Exemple fictif : une prestation documentaire est en échec tandis que le transport est achevé ; exposer séparément leurs résultats et les attentes du processus. |
 
 ### Ce que nous en retenons
 
@@ -12723,6 +12878,704 @@ Approve and confirm purchase orders · Concept documenté par la source primaire
 **Limite de preuve.** Appui fonctionnel, pas taxonomie universelle ni preuve de réalisation Beaumanoir.
 
 Références : ELM725, CMP283, U725.
+
+## Sources d’inspiration — BHV102 Commitment-Preserving Assignment
+
+Compléter le plan en préservant les affectations qui soutiennent les engagements protégés, dans le périmètre fixé.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking) — Commitment-Preserving Assignment | Pegging et marking ; liens recalculables, marquages et réservations respectés. | Pegging et marking ; liens recalculables, marquages et réservations respectés. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand) — Commitment-Preserving Assignment | Préservation paramétrable des ressources et liens soutenant les demandes confirmées. | Préservation paramétrable des ressources et liens soutenant les demandes confirmées. |
+| Notre modèle — Commitment-Preserving Assignment | Affectations du master plan de matching. | Conserver les engagements et les autorisations applicables, expliciter les impacts. |
+
+### Ce que nous en retenons
+
+- Pegging et marking ; liens recalculables, marquages et réservations respectés.
+- Préservation paramétrable des ressources et liens soutenant les demandes confirmées.
+
+### Illustration FLOW
+
+Une nouvelle commande consomme le solde ; les ressources protégées pour une commande confirmée restent attachées.
+
+**Ce qui se passe.** Une proposition de liens cohérente, soumise aux autorisations applicables.
+
+**Ce que cela illustre dans FLOW.** Le calcul ne confirme ni ne réserve seul.
+
+Source : [Inventory marking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking).
+
+Références : ELM757, ELM759.
+
+### Détails des références
+
+#### Microsoft — Inventory marking
+
+Dynamics 365 Supply Chain Management / Planning Optimization · Mécanisme de planification documenté · Recouvrement partiel · statut : proposed
+
+**Points communs.** Contribuer à la couverture cohérente des besoins par des ressources admissibles.
+
+**Différences.** FLOW distingue choix des liens, matérialisation, réservation et confirmation ; aucun périmètre produit identique présumé.
+
+**Position FLOW.** Un résultat du master plan commun, sans effet implicite sur les confirmations ou réservations.
+
+[Inventory marking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction et mécanismes de couverture
+
+**Limite de preuve.** Fonctionnalités selon version et configuration ; aucune preuve de déploiement Beaumanoir.
+
+Références : ELM757, U750, CMP294.
+
+#### Microsoft — Keep supply for confirmed demand in Planning Optimization
+
+Dynamics 365 Supply Chain Management / Planning Optimization · Mécanisme de planification documenté · Recouvrement partiel · statut : proposed
+
+**Points communs.** Contribuer à la couverture cohérente des besoins par des ressources admissibles.
+
+**Différences.** FLOW distingue choix des liens, matérialisation, réservation et confirmation ; aucun périmètre produit identique présumé.
+
+**Position FLOW.** Un résultat du master plan commun, sans effet implicite sur les confirmations ou réservations.
+
+[Keep supply for confirmed demand in Planning Optimization](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/keep-supply-for-confirmed-demand) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction et mécanismes de couverture
+
+**Limite de preuve.** Fonctionnalités selon version et configuration ; aucune preuve de déploiement Beaumanoir.
+
+Références : ELM759, U750, CMP294.
+
+## Sources d’inspiration — BHV103 Supply Reassignment
+
+Revoir les liens ressources-besoins autorisés à évoluer afin de produire un plan cohérent lorsque la situation change.
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking) — Supply Reassignment | Pegging et marking ; liens recalculables, marquages et réservations respectés. | Pegging et marking ; liens recalculables, marquages et réservations respectés. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/make-to-order-supply-automation) — Supply Reassignment | Séquence de mobilisation des ressources pour couvrir les besoins. | Séquence de mobilisation des ressources pour couvrir les besoins. |
+| Notre modèle — Supply Reassignment | Affectations du master plan de matching. | Conserver les engagements et les autorisations applicables, expliciter les impacts. |
+
+### Ce que nous en retenons
+
+- Pegging et marking ; liens recalculables, marquages et réservations respectés.
+- Séquence de mobilisation des ressources pour couvrir les besoins.
+
+### Illustration FLOW
+
+Remplacer une réception retardée par une autre ressource ; transmettre un impact de promesse s’il ne peut être absorbé.
+
+**Ce qui se passe.** Une proposition de liens cohérente, soumise aux autorisations applicables.
+
+**Ce que cela illustre dans FLOW.** Le calcul ne confirme ni ne réserve seul.
+
+Source : [Inventory marking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking).
+
+Références : ELM757, ELM758.
+
+### Détails des références
+
+#### Microsoft — Inventory marking
+
+Dynamics 365 Supply Chain Management / Planning Optimization · Mécanisme de planification documenté · Recouvrement partiel · statut : proposed
+
+**Points communs.** Contribuer à la couverture cohérente des besoins par des ressources admissibles.
+
+**Différences.** FLOW distingue choix des liens, matérialisation, réservation et confirmation ; aucun périmètre produit identique présumé.
+
+**Position FLOW.** Un résultat du master plan commun, sans effet implicite sur les confirmations ou réservations.
+
+[Inventory marking](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/marking) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction et mécanismes de couverture
+
+**Limite de preuve.** Fonctionnalités selon version et configuration ; aucune preuve de déploiement Beaumanoir.
+
+Références : ELM757, U750, CMP294.
+
+#### Microsoft — Make-to-order supply automation
+
+Dynamics 365 Supply Chain Management / Planning Optimization · Mécanisme de planification documenté · Recouvrement partiel · statut : proposed
+
+**Points communs.** Contribuer à la couverture cohérente des besoins par des ressources admissibles.
+
+**Différences.** FLOW distingue choix des liens, matérialisation, réservation et confirmation ; aucun périmètre produit identique présumé.
+
+**Position FLOW.** Un résultat du master plan commun, sans effet implicite sur les confirmations ou réservations.
+
+[Make-to-order supply automation](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/make-to-order-supply-automation) — Documentation évolutive consultée le 24 septembre 2026, consulté le 2026-09-24.
+
+**Passage.** Introduction et mécanismes de couverture
+
+**Limite de preuve.** Fonctionnalités selon version et configuration ; aucune preuve de déploiement Beaumanoir.
+
+Références : ELM758, U750, CMP294.
+
+## Sources d’inspiration — inventory-ownership-ledger Inventory Ownership Ledger
+
+### Microsoft — Set up consignment
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW décrivant la responsabilité métier ; pas un nom de fonction Microsoft repris à l’identique.
+
+**Pourquoi cette définition.** Tenir le registre des changements de propriétaire reconnus, avec quantités, parties, date d’effet, accord, fait déclencheur, acte éventuel et preuve.
+
+**Points communs.** Le journal conserve les transferts du fournisseur à l’entité acquéreuse ; propriété et présence physique sont distinctes.
+
+**Différences.** Consignation entrante ; la généralisation à tous les contrats et le type Ledger sont des choix FLOW.
+
+**Position FLOW.** Tenir le registre des changements de propriétaire reconnus, avec quantités, parties, date d’effet, accord, fait déclencheur, acte éventuel et preuve.
+
+[Set up consignment](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/consignment) — Documentation évolutive, consulté le 2026-09-25.
+
+**Passage.** Introduction et processus de propriété
+
+**Limite de preuve.** Consignation entrante ; la généralisation à tous les contrats et le type Ledger sont des choix FLOW.
+
+Références : ELM739, CMP297, CMP298, U756.
+
+### Microsoft — Goods-in-transit processing and receiving
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW décrivant la responsabilité métier ; pas un nom de fonction Microsoft repris à l’identique.
+
+**Pourquoi cette définition.** Tenir le registre des changements de propriétaire reconnus, avec quantités, parties, date d’effet, accord, fait déclencheur, acte éventuel et preuve.
+
+**Points communs.** Distinguer biens acquis en transit et biens physiquement disponibles à destination.
+
+**Différences.** Le parcours produit ne définit pas la règle juridique applicable à chaque contrat ; pas équivalence à une capacité de décision générale.
+
+**Position FLOW.** Tenir le registre des changements de propriétaire reconnus, avec quantités, parties, date d’effet, accord, fait déclencheur, acte éventuel et preuve.
+
+[Goods-in-transit processing and receiving](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/in-transit-processing) — Documentation évolutive, consulté le 2026-09-25.
+
+**Passage.** Introduction et processus de propriété
+
+**Limite de preuve.** Le parcours produit ne définit pas la règle juridique applicable à chaque contrat ; pas équivalence à une capacité de décision générale.
+
+Références : ELM766, CMP297, CMP298, U756.
+
+## Sources d’inspiration — BHV104 Contractual Milestone-Based Ownership Transfer
+
+### Microsoft — Landed cost module overview
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW décrivant la responsabilité métier ; pas un nom de fonction Microsoft repris à l’identique.
+
+**Pourquoi cette définition.** Déterminer les changements de propriétaire liés aux autres jalons contractuels d’un achat, d’une vente ou d’un transport.
+
+**Points communs.** Les conditions de livraison et le parcours goods-in-transit permettent de représenter une acquisition avant réception physique.
+
+**Différences.** Reconnaissance produit et financière ; aucune règle universelle de propriété ni causalité douanière démontrée.
+
+**Position FLOW.** Déterminer les changements de propriétaire liés aux autres jalons contractuels d’un achat, d’une vente ou d’un transport.
+
+[Landed cost module overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/landed-cost-overview) — Documentation évolutive, consulté le 2026-09-25.
+
+**Passage.** Introduction et processus de propriété
+
+**Limite de preuve.** Reconnaissance produit et financière ; aucune règle universelle de propriété ni causalité douanière démontrée.
+
+Références : ELM765, CMP297, CMP298, U756.
+
+### Microsoft — Goods-in-transit processing and receiving
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW décrivant la responsabilité métier ; pas un nom de fonction Microsoft repris à l’identique.
+
+**Pourquoi cette définition.** Déterminer les changements de propriétaire liés aux autres jalons contractuels d’un achat, d’une vente ou d’un transport.
+
+**Points communs.** Distinguer biens acquis en transit et biens physiquement disponibles à destination.
+
+**Différences.** Le parcours produit ne définit pas la règle juridique applicable à chaque contrat ; pas équivalence à une capacité de décision générale.
+
+**Position FLOW.** Déterminer les changements de propriétaire liés aux autres jalons contractuels d’un achat, d’une vente ou d’un transport.
+
+[Goods-in-transit processing and receiving](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/in-transit-processing) — Documentation évolutive, consulté le 2026-09-25.
+
+**Passage.** Introduction et processus de propriété
+
+**Limite de preuve.** Le parcours produit ne définit pas la règle juridique applicable à chaque contrat ; pas équivalence à une capacité de décision générale.
+
+Références : ELM766, CMP297, CMP298, U756.
+
+## Sources d’inspiration — service-order-release-decision Service Order Release Decision
+
+### Microsoft — Release to warehouse
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de capacité ou de comportement FLOW ; vocabulaire inspiré de release et consolidation, sans consensus de taxonomie revendiqué.
+
+**Pourquoi cette définition.** Déterminer quels ordres de prestation retenir ou libérer ensemble, et à quel moment, pour organiser leur traitement et favoriser les regroupements utiles tout en respectant les engagements.
+
+**Points communs.** Libération de plusieurs ordres, traitement récurrent, sélection des quantités et regroupement par client. La création de vagues et de travail dépend du paramétrage.
+
+**Différences.** Page primaire ouverte ; mécanisme produit, pas taxonomie FLOW ni garantie d’optimisation.
+
+**Position FLOW.** Déterminer quels ordres de prestation retenir ou libérer ensemble, et à quel moment, pour organiser leur traitement et favoriser les regroupements utiles tout en respectant les engagements.
+
+[Release to warehouse](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process) — Documentation évolutive, édition précise non indiquée, consulté le 2026-09-25.
+
+**Passage.** Automatic release to the warehouse
+
+**Limite de preuve.** Page primaire ouverte ; mécanisme produit, pas taxonomie FLOW ni garantie d’optimisation.
+
+Références : ELM767, CMP300, U759.
+
+### Microsoft — Configure shipment consolidation policies
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de capacité ou de comportement FLOW ; vocabulaire inspiré de release et consolidation, sans consensus de taxonomie revendiqué.
+
+**Pourquoi cette définition.** Déterminer quels ordres de prestation retenir ou libérer ensemble, et à quel moment, pour organiser leur traitement et favoriser les regroupements utiles tout en respectant les engagements.
+
+**Points communs.** Regrouper des lignes de plusieurs commandes pour un même compte, entrepôt et mode de livraison selon un pool ; la documentation distingue explicitement le besoin piloté par le client.
+
+**Différences.** Page primaire ouverte ; consolidation d’expéditions, pas garantie d’une seule palette.
+
+**Position FLOW.** Déterminer quels ordres de prestation retenir ou libérer ensemble, et à quel moment, pour organiser leur traitement et favoriser les regroupements utiles tout en respectant les engagements.
+
+[Configure shipment consolidation policies](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/configure-shipment-consolidation-policies) — Documentation évolutive, édition précise non indiquée, consulté le 2026-09-25.
+
+**Passage.** Scenario 3, Order pool, client-driven consolidation
+
+**Limite de preuve.** Page primaire ouverte ; consolidation d’expéditions, pas garantie d’une seule palette.
+
+Références : ELM768, CMP300, U759.
+
+### IBM — Using economic shipping parameters
+
+Sterling Order Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de capacité ou de comportement FLOW ; vocabulaire inspiré de release et consolidation, sans consensus de taxonomie revendiqué.
+
+**Pourquoi cette définition.** Déterminer quels ordres de prestation retenir ou libérer ensemble, et à quel moment, pour organiser leur traitement et favoriser les regroupements utiles tout en respectant les engagements.
+
+**Points communs.** Un ordre ou une expédition peut être retenu en anticipation d’un autre pour consolidation ; délai autorisé et fenêtre d’expédition limitent les regroupements.
+
+**Différences.** Passages primaires indexés consultés ; ouverture directe refusée HTTP 403. Rétention économique documentée, pas preuve d’optimisation de toutes les charges WMS.
+
+**Position FLOW.** Déterminer quels ordres de prestation retenir ou libérer ensemble, et à quel moment, pour organiser leur traitement et favoriser les regroupements utiles tout en respectant les engagements.
+
+[Using economic shipping parameters](https://www.ibm.com/docs/en/order-management?topic=features-using-economic-shipping-parameters) — Documentation évolutive, édition précise non indiquée, consulté le 2026-09-25.
+
+**Passage.** Scenarios ; Allow shipment delay ; shipping window
+
+**Limite de preuve.** Passages primaires indexés consultés ; ouverture directe refusée HTTP 403. Rétention économique documentée, pas preuve d’optimisation de toutes les charges WMS.
+
+Références : ELM770, CMP300, U759.
+
+## Sources d’inspiration — BHV105 Batch Release
+
+### Microsoft — Release to warehouse
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de capacité ou de comportement FLOW ; vocabulaire inspiré de release et consolidation, sans consensus de taxonomie revendiqué.
+
+**Pourquoi cette définition.** Regrouper les ordres éligibles en lots de libération selon les fenêtres et la charge communiquée par l’exécutant.
+
+**Points communs.** Libération de plusieurs ordres, traitement récurrent, sélection des quantités et regroupement par client. La création de vagues et de travail dépend du paramétrage.
+
+**Différences.** Page primaire ouverte ; mécanisme produit, pas taxonomie FLOW ni garantie d’optimisation.
+
+**Position FLOW.** Regrouper les ordres éligibles en lots de libération selon les fenêtres et la charge communiquée par l’exécutant.
+
+[Release to warehouse](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/release-to-warehouse-process) — Documentation évolutive, édition précise non indiquée, consulté le 2026-09-25.
+
+**Passage.** Automatic release to the warehouse
+
+**Limite de preuve.** Page primaire ouverte ; mécanisme produit, pas taxonomie FLOW ni garantie d’optimisation.
+
+Références : ELM767, CMP300, U759.
+
+### Microsoft — Wave creation and processing
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de capacité ou de comportement FLOW ; vocabulaire inspiré de release et consolidation, sans consensus de taxonomie revendiqué.
+
+**Pourquoi cette définition.** Regrouper les ordres éligibles en lots de libération selon les fenêtres et la charge communiquée par l’exécutant.
+
+**Points communs.** La constitution, le traitement et la libération des vagues organisent le travail de préparation dans l’entrepôt.
+
+**Différences.** Page primaire consultée ; responsabilité WMS plus détaillée que la libération des ordres par FLOW.
+
+**Position FLOW.** Regrouper les ordres éligibles en lots de libération selon les fenêtres et la charge communiquée par l’exécutant.
+
+[Wave creation and processing](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wave-processing) — Documentation évolutive, édition précise non indiquée, consulté le 2026-09-25.
+
+**Passage.** Wave processing ; release to picking and packing
+
+**Limite de preuve.** Page primaire consultée ; responsabilité WMS plus détaillée que la libération des ordres par FLOW.
+
+Références : ELM769, CMP300, U759.
+
+## Sources d’inspiration — BHV106 Consolidated Release
+
+### Microsoft — Configure shipment consolidation policies
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de capacité ou de comportement FLOW ; vocabulaire inspiré de release et consolidation, sans consensus de taxonomie revendiqué.
+
+**Pourquoi cette définition.** Retenir les ordres ou quantités compatibles jusqu’à une complétude ou un regroupement utile pour leur traitement commun, notamment pour une commande ou un client B2B.
+
+**Points communs.** Regrouper des lignes de plusieurs commandes pour un même compte, entrepôt et mode de livraison selon un pool ; la documentation distingue explicitement le besoin piloté par le client.
+
+**Différences.** Page primaire ouverte ; consolidation d’expéditions, pas garantie d’une seule palette.
+
+**Position FLOW.** Retenir les ordres ou quantités compatibles jusqu’à une complétude ou un regroupement utile pour leur traitement commun, notamment pour une commande ou un client B2B.
+
+[Configure shipment consolidation policies](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/configure-shipment-consolidation-policies) — Documentation évolutive, édition précise non indiquée, consulté le 2026-09-25.
+
+**Passage.** Scenario 3, Order pool, client-driven consolidation
+
+**Limite de preuve.** Page primaire ouverte ; consolidation d’expéditions, pas garantie d’une seule palette.
+
+Références : ELM768, CMP300, U759.
+
+### IBM — Using economic shipping parameters
+
+Sterling Order Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de capacité ou de comportement FLOW ; vocabulaire inspiré de release et consolidation, sans consensus de taxonomie revendiqué.
+
+**Pourquoi cette définition.** Retenir les ordres ou quantités compatibles jusqu’à une complétude ou un regroupement utile pour leur traitement commun, notamment pour une commande ou un client B2B.
+
+**Points communs.** Un ordre ou une expédition peut être retenu en anticipation d’un autre pour consolidation ; délai autorisé et fenêtre d’expédition limitent les regroupements.
+
+**Différences.** Passages primaires indexés consultés ; ouverture directe refusée HTTP 403. Rétention économique documentée, pas preuve d’optimisation de toutes les charges WMS.
+
+**Position FLOW.** Retenir les ordres ou quantités compatibles jusqu’à une complétude ou un regroupement utile pour leur traitement commun, notamment pour une commande ou un client B2B.
+
+[Using economic shipping parameters](https://www.ibm.com/docs/en/order-management?topic=features-using-economic-shipping-parameters) — Documentation évolutive, édition précise non indiquée, consulté le 2026-09-25.
+
+**Passage.** Scenarios ; Allow shipment delay ; shipping window
+
+**Limite de preuve.** Passages primaires indexés consultés ; ouverture directe refusée HTTP 403. Rétention économique documentée, pas preuve d’optimisation de toutes les charges WMS.
+
+Références : ELM770, CMP300, U759.
+
+### IBM — Consolidate to shipment
+
+Sterling Order Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom de capacité ou de comportement FLOW ; vocabulaire inspiré de release et consolidation, sans consensus de taxonomie revendiqué.
+
+**Pourquoi cette définition.** Retenir les ordres ou quantités compatibles jusqu’à une complétude ou un regroupement utile pour leur traitement commun, notamment pour une commande ou un client B2B.
+
+**Points communs.** La transaction du pipeline Order Fulfillment cherche une expédition compatible avec la release, selon site, destination, vendeur, transporteur et statuts modifiables.
+
+**Différences.** Texte primaire indexé consulté ; ouverture directe en erreur. Consolidation logique d’expédition, pas algorithme de palettisation.
+
+**Position FLOW.** Retenir les ordres ou quantités compatibles jusqu’à une complétude ou un regroupement utile pour leur traitement commun, notamment pour une commande ou un client B2B.
+
+[Consolidate to shipment](https://www.ibm.com/docs/en/order-management?topic=transactions-consolidate-shipment) — Documentation évolutive, édition précise non indiquée, consulté le 2026-09-25.
+
+**Passage.** Transaction CONSOLIDATE_TO_SHIPMENT ; conditions de compatibilité
+
+**Limite de preuve.** Texte primaire indexé consulté ; ouverture directe en erreur. Consolidation logique d’expédition, pas algorithme de palettisation.
+
+Références : ELM771, CMP300, U759.
+
+## Scénarios métier — subdomain-order-promising Order Promising
+
+### Livrer une commande B2B avec un stock partiel
+
+Illustration FLOW fictive : un client B2B attend 100 vêtements ; 60 sont disponibles et une rentrée de 40 est annoncée. Plusieurs solutions de livraison sont examinées.
+
+**Fiche d’origine.** universe-supply
+
+**Contribution de cette fiche.** Évaluer les disponibilités, faisabilités et conséquences économiques des options, puis sélectionner une proposition distincte de l’engagement confirmé.
+
+**Déclencheur.** Une commande nécessite une proposition de quantité et de date.
+
+**Résultat recherché.** Préparer une promesse réalisable et expliquer les conséquences économiques des options.
+
+**Contraintes**
+
+- Date demandée et fractionnement autorisé par le client.
+- Disponibilité effective, fiabilité de la rentrée et délais de préparation et de transport.
+- Engagements existants et règles de protection du stock.
+
+**Options examinées**
+
+- Livraison fractionnée : Expédier les 60 disponibles, puis les 40 attendus : rendre visible le service anticipé et le coût des deux expéditions.
+- Livraison regroupée : Attendre les 40 pour préparer et expédier ensemble : examiner le gain logistique, le délai et les conséquences économiques d’une attente.
+
+**Contributions métier**
+
+- [Available-to-Promise (ATP)](model:D03.i) évalue ce que permettent le stock courant et les disponibilités futures pertinentes.
+- [Capable-to-Promise (CTP)](model:D03.j) évalue les faisabilités supplémentaires utiles si les disponibilités ne suffisent pas ; son invocation n’est pas systématique.
+- [Profitable-to-Promise (PTP)](model:D03.k) expose, par option, les coûts, bénéfices, risques économiques et hypothèses disponibles, sans choisir.
+- [Promise Selection Decision](model:D03.l) choisit la proposition en tenant compte des évaluations et des règles applicables.
+- [Fulfilment Orchestration](model:D06) coordonne les prestations après engagement et détermine leur libération, en cherchant à préserver la promesse.
+
+**Ce qui se passe.** Un dossier présente les options avec quantité, date et conséquences économiques ; le choix reste explicite et distinct de l’évaluation. Aucun gagnant n’est présumé.
+
+**Ce que cela illustre.** Les capacités coopèrent selon le besoin ; ce récit n’impose ni pipeline universel ni modification des grands équilibres du Matching. Promettre, affecter les ressources et libérer les prestations restent distincts.
+
+Références : U763, U764, U762, ELM763, ELM767, ELM768.
+
+## Sources d’inspiration — subdomain-order-promising Order Promising
+
+Order Promising
+
+| Source et nom employé | Périmètre | Approche |
+| --- | --- | --- |
+| [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/how-the-order-orchestration-and-order-promising-processes-use.html) — Order Promising | L’orchestration interroge GOP pour obtenir une disponibilité ou une réponse de scheduling. | FLOW distingue évaluation, choix de proposition et engagement confirmé ; le module Oracle ne constitue pas une taxonomie métier. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Order Promising | Le nom Order promising et les évaluations de dates ATP/CTP étayent la finalité de promesse. | Microsoft rattache aussi ATP à Inventory Visibility ; FLOW sépare les sous-domaines par finalité sans reproduire un découpage produit. |
+| Notre modèle — Order Promising | Évaluer les possibilités de satisfaction d’une demande et sélectionner une proposition de promesse, en explicitant quantités, dates, conditions et conséquences économiques. | ATP, CTP et PTP produisent des évaluations indépendamment mobilisables. Promise Selection Decision choisit une proposition dans les possibilités admissibles. Les catégories Promise Evaluation et Promise Selection Decision facilitent la lecture sans ajouter de niveau.  Order Promising peut être sollicité avant la prise d’une commande, pendant sa révision, lors de la construction ou de la révision du master plan de Matching et pendant l’adaptation du Fulfilment. Le contexte détermine les évaluations utiles ; aucune séquence universelle ATP puis CTP puis PTP ni recalcul à chaque changement d’état n’est imposé.  Inventory Management fournit la connaissance des stocks, apports et engagements de quantité ; Plan Visibility fournit les plans. Les capacités logistiques, calendriers, tarifs et règles sont consommés auprès de leurs responsables. PTP expose les avantages et inconvénients économiques locaux ; CTP ne déclenche pas les achats.  Matching conserve le master plan, les arbitrages collectifs et les affectations. Fulfilment coordonne les prestations et recherche des solutions locales préservant la promesse et les grands équilibres du Matching. Les Orders portent la confirmation et les révisions autorisées de l’engagement. Une proposition recalculée ne confirme, ne réserve et ne réaffecte rien à elle seule. |
+
+### Ce que nous en retenons
+
+- La finalité de promesse est autonome et réutilisable par plusieurs processus.
+- Oracle distingue les requêtes adressées à GOP ; Microsoft propose aussi un ATP intégré à Inventory Visibility. Le découpage FLOW reste un choix métier.
+
+### Illustration FLOW — Réévaluer une solution pendant le Fulfilment
+
+Un aléa de préparation conduit à examiner une autre expédition pour préserver la date promise.
+
+**Ce qui se passe.** Le Fulfilment sollicite les évaluations utiles ; les effets économiques et conditions sont exposés. Une réévaluation ne révise pas automatiquement l’engagement.
+
+Source : [How the Order Orchestration and Order Promising Processes Use the Collected Planning Data](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/how-the-order-orchestration-and-order-promising-processes-use.html).
+
+Références : U765, U766, ELM778.
+
+### Détails des références
+
+#### Oracle — How the Order Orchestration and Order Promising Processes Use the Collected Planning Data
+
+Global Order Promising · Fonction et processus produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Order Promising précise l’objet de la promesse sans restreindre ses moments d’utilisation ni son rattachement à Order Management.
+
+**Pourquoi cette définition.** Évaluer puis sélectionner une proposition ; confirmer l’engagement et affecter les ressources restent distincts.
+
+**Points communs.** L’orchestration interroge GOP pour obtenir une disponibilité ou une réponse de scheduling.
+
+**Différences.** FLOW distingue évaluation, choix de proposition et engagement confirmé ; le module Oracle ne constitue pas une taxonomie métier.
+
+**Position FLOW.** Évaluer les possibilités de satisfaction d’une demande et sélectionner une proposition de promesse, en explicitant quantités, dates, conditions et conséquences économiques.
+
+[How the Order Orchestration and Order Promising Processes Use the Collected Planning Data](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/faubm/how-the-order-orchestration-and-order-promising-processes-use.html) — 26B, consulté le 2026-09-25.
+
+**Passage.** Order Promising
+
+**Limite de preuve.** Documentation primaire consultée ; aucun découpage universel ni preuve de réalisation Beaumanoir. Synthèse sans reproduction substantielle.
+
+Références : ELM778, CMP303, U766.
+
+#### Microsoft — Order promising
+
+Dynamics 365 Supply Chain Management · Fonction et processus produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Order Promising précise l’objet de la promesse sans restreindre ses moments d’utilisation ni son rattachement à Order Management.
+
+**Pourquoi cette définition.** Évaluer puis sélectionner une proposition ; confirmer l’engagement et affecter les ressources restent distincts.
+
+**Points communs.** Le nom Order promising et les évaluations de dates ATP/CTP étayent la finalité de promesse.
+
+**Différences.** Microsoft rattache aussi ATP à Inventory Visibility ; FLOW sépare les sous-domaines par finalité sans reproduire un découpage produit.
+
+**Position FLOW.** Évaluer les possibilités de satisfaction d’une demande et sélectionner une proposition de promesse, en explicitant quantités, dates, conditions et conséquences économiques.
+
+[Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Page évolutive, 21 avril 2026, consulté le 2026-09-25.
+
+**Passage.** Order promising ; ATP et CTP
+
+**Limite de preuve.** Documentation primaire consultée ; aucun découpage universel ni preuve de réalisation Beaumanoir. Synthèse sans reproduction substantielle.
+
+Références : ELM727, CMP303, U766.
+
+## Sources d’inspiration — BHV107 Fulfillment Cost Evaluation
+
+### Oracle — Promising Attributes for Supply Chain Availability Searches
+
+Global Order Promising · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Chiffrer les coûts pertinents de chaque option de promesse sur une base explicite et comparable, en distinguant ce qui est connu, estimé ou absent.
+
+**Points communs.** Coûts des options et composants ou ressources mobilisés
+
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
+
+**Position FLOW.** Chiffrer les coûts pertinents de chaque option de promesse sur une base explicite et comparable, en distinguant ce qui est connu, estimé ou absent.
+
+[Promising Attributes for Supply Chain Availability Searches](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/promising-attributes-for-supply-chain-availability-searches.html) — 25D, consulté le 2026-09-25.
+
+**Passage.** Coûts des options et composants ou ressources mobilisés
+
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
+
+Références : ELM762, U761, U765, U767.
+
+### Oracle — Create Alternative Fulfillment Scenarios to Reduce Cost
+
+Global Order Promising · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Chiffrer les coûts pertinents de chaque option de promesse sur une base explicite et comparable, en distinguant ce qui est connu, estimé ou absent.
+
+**Points communs.** Comparaison des dates et coûts de scénarios alternatifs
+
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
+
+**Position FLOW.** Chiffrer les coûts pertinents de chaque option de promesse sur une base explicite et comparable, en distinguant ce qui est connu, estimé ou absent.
+
+[Create Alternative Fulfillment Scenarios to Reduce Cost](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html) — 25D, consulté le 2026-09-25.
+
+**Passage.** Comparaison des dates et coûts de scénarios alternatifs
+
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
+
+Références : ELM763, U761, U765, U767.
+
+## Sources d’inspiration — BHV108 Contextual Economic Impact Evaluation
+
+### Oracle — Promising Attributes for Supply Chain Availability Searches
+
+Global Order Promising · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Compléter le chiffrage par les avantages et inconvénients économiques des options dans le contexte local de la demande, avec écarts, hypothèses et incertitudes, sans choisir.
+
+**Points communs.** Coûts des options et composants ou ressources mobilisés
+
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
+
+**Position FLOW.** Compléter le chiffrage par les avantages et inconvénients économiques des options dans le contexte local de la demande, avec écarts, hypothèses et incertitudes, sans choisir.
+
+[Promising Attributes for Supply Chain Availability Searches](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/promising-attributes-for-supply-chain-availability-searches.html) — 25D, consulté le 2026-09-25.
+
+**Passage.** Coûts des options et composants ou ressources mobilisés
+
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
+
+Références : ELM762, U761, U765, U767.
+
+### Oracle — Create Alternative Fulfillment Scenarios to Reduce Cost
+
+Global Order Promising · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Compléter le chiffrage par les avantages et inconvénients économiques des options dans le contexte local de la demande, avec écarts, hypothèses et incertitudes, sans choisir.
+
+**Points communs.** Comparaison des dates et coûts de scénarios alternatifs
+
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
+
+**Position FLOW.** Compléter le chiffrage par les avantages et inconvénients économiques des options dans le contexte local de la demande, avec écarts, hypothèses et incertitudes, sans choisir.
+
+[Create Alternative Fulfillment Scenarios to Reduce Cost](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/25d/fascp/create-alternative-fulfillment-scenarios-to-reduce-cost.html) — 25D, consulté le 2026-09-25.
+
+**Passage.** Comparaison des dates et coûts de scénarios alternatifs
+
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
+
+Références : ELM763, U761, U765, U767.
+
+## Sources d’inspiration — BHV109 Initial Promise Selection
+
+### Microsoft — Order promising
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Choisir une première proposition de promesse parmi les options admissibles pour une demande, avec quantités, dates et conditions.
+
+**Points communs.** Calcul de dates et réexamen après modification de commande
+
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
+
+**Position FLOW.** Choisir une première proposition de promesse parmi les options admissibles pour une demande, avec quantités, dates et conditions.
+
+[Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Page évolutive, consulté le 2026-09-25.
+
+**Passage.** Calcul de dates et réexamen après modification de commande
+
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
+
+Références : ELM727, U761, U765, U767.
+
+### Oracle — Order Promises REST Endpoints
+
+Global Order Promising · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Choisir une première proposition de promesse parmi les options admissibles pour une demande, avec quantités, dates et conditions.
+
+**Points communs.** Résultats de consultation, options alternatives et mise à jour des commandes
+
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
+
+**Position FLOW.** Choisir une première proposition de promesse parmi les options admissibles pour une demande, avec quantités, dates et conditions.
+
+[Order Promises REST Endpoints](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fasrp/api-order-management-order-promises.html) — 26C, consulté le 2026-09-25.
+
+**Passage.** Résultats de consultation, options alternatives et mise à jour des commandes
+
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
+
+Références : ELM779, U761, U765, U767.
+
+## Sources d’inspiration — BHV110 Promise Reassessment
+
+### Microsoft — Order promising
+
+Dynamics 365 Supply Chain Management · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Réexaminer les propositions de promesse pour une commande ou un ensemble de commandes lorsque la situation change, et sélectionner les réponses révisées admissibles.
+
+**Points communs.** Calcul de dates et réexamen après modification de commande
+
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
+
+**Position FLOW.** Réexaminer les propositions de promesse pour une commande ou un ensemble de commandes lorsque la situation change, et sélectionner les réponses révisées admissibles.
+
+[Order promising](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/delivery-dates-available-promise-calculations) — Page évolutive, consulté le 2026-09-25.
+
+**Passage.** Calcul de dates et réexamen après modification de commande
+
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
+
+Références : ELM727, U761, U765, U767.
+
+### Oracle — Order Promises REST Endpoints
+
+Global Order Promising · Fonction produit documentée · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom FLOW explicitant la profondeur ou le moment du raisonnement ; aucune nomenclature universelle revendiquée.
+
+**Pourquoi cette définition.** Réexaminer les propositions de promesse pour une commande ou un ensemble de commandes lorsque la situation change, et sélectionner les réponses révisées admissibles.
+
+**Points communs.** Résultats de consultation, options alternatives et mise à jour des commandes
+
+**Différences.** FLOW distingue évaluation, sélection de proposition, engagement confirmé et affectation ; les comportements sont des variantes métier et non une taxonomie uniforme des éditeurs.
+
+**Position FLOW.** Réexaminer les propositions de promesse pour une commande ou un ensemble de commandes lorsque la situation change, et sélectionner les réponses révisées admissibles.
+
+[Order Promises REST Endpoints](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26c/fasrp/api-order-management-order-promises.html) — 26C, consulté le 2026-09-25.
+
+**Passage.** Résultats de consultation, options alternatives et mise à jour des commandes
+
+**Limite de preuve.** Passages primaires déjà consultés pour U761/U765. Analogie de fonctions ; deux documents ne prouvent pas un consensus. Aucune réalisation Beaumanoir déduite.
+
+Références : ELM779, U761, U765, U767.
 
 ## Sources d’inspiration — Capacité métier
 
@@ -21096,7 +21949,7 @@ Conditions de satisfaction proposées pour une partie identifiée d’une demand
 **Usages par les capacités :**
 
 - Sales Order — établit et révise : la proposition de satisfaction BHV021 formalise ce qui peut être proposé sans refaire la décision d’échéancier.
-- Promise Selection — détermine les conditions utilisées : Delivery Schedule Decision choisit la distribution quantité–date qui alimente la proposition ; ne la confirme pas pour autant.
+- Promise Selection Decision — détermine les conditions utilisées : Delivery Schedule Decision choisit la distribution quantité–date qui alimente la proposition ; ne la confirme pas pour autant.
 
 **Exemples :**
 
@@ -21228,8 +22081,8 @@ Lien retenu entre une ressource et une partie de demande à satisfaire, avec la 
 
 **Usages par les capacités :**
 
-- Demand & Supply Optimization Planning — établit et fait évoluer : Par son comportement Apply Plan, pour les affectations, applique et maintient les liens choisis ; ne décide pas à nouveau le plan.
-- Fulfillment Plan Decision — détermine le choix utilisé : Fulfillment Plan Decision choisit le scénario dont découlent les affectations à appliquer.
+- Master Planning — établit et fait évoluer : Par son comportement Apply Plan, pour les affectations, applique et maintient les liens choisis ; ne décide pas à nouveau le plan.
+- Supply Assignment — détermine le choix utilisé : Fulfillment Plan Decision choisit le scénario dont découlent les affectations à appliquer.
 
 **Exemples :**
 
@@ -21274,7 +22127,7 @@ Droit établi pour un besoin bénéficiaire sur une quantité de ressources déf
 **Usages par les capacités :**
 
 - Reservation — établit et fait évoluer : Maintient le droit opposable selon les règles métier de réservation.
-- Demand & Supply Optimization Planning — utilise : Par son comportement Apply Plan, pour les affectations, tient compte des droits de réservation lors de l’application d’une affectation.
+- Master Planning — utilise : Par son comportement Apply Plan, pour les affectations, tient compte des droits de réservation lors de l’application d’une affectation.
 
 **Exemples :**
 

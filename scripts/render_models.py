@@ -3,9 +3,11 @@ import json
 from collections import Counter
 from pathlib import Path
 try:
+    from .business_scenarios import scenarios_for_node
     from .release_catalog import resolve_release
     from .lifecycle import lifecycle_label
 except ImportError:
+    from business_scenarios import scenarios_for_node
     from release_catalog import resolve_release
     from lifecycle import lifecycle_label
 
@@ -144,10 +146,22 @@ def render(model, label):
             lines.append('| ' + ' | '.join(cell(v) for v in values) + ' |')
         lines += ['']
     for node in model['nodes']:
-        if node['fields'].get('examples'):
-            lines += [f"## Exemples concrets — {node['id']} {node['fields'].get('name', '')}", '']
-            for example in node['fields']['examples']:
+        scenarios = scenarios_for_node(node, nodes)
+        if scenarios:
+            lines += [f"## Scénarios métier — {node['id']} {node['fields'].get('name', '')}", '']
+            for example in scenarios:
                 lines += ['### ' + example['title'], '', example['situation'], '']
+                for key, label in [('source_node', 'Fiche d’origine'), ('contribution', 'Contribution de cette fiche'),
+                                   ('trigger', 'Déclencheur'), ('objective', 'Résultat recherché')]:
+                    if example.get(key):
+                        lines += ['**' + label + '.** ' + example[key], '']
+                for key, label in [('constraints', 'Contraintes'), ('options', 'Options examinées'), ('contributions', 'Contributions métier')]:
+                    if example.get(key):
+                        lines += ['**' + label + '**', '']
+                        for value in example[key]:
+                            text = value if isinstance(value, str) else value.get('role') or value['title'] + ' : ' + value['description']
+                            lines += ['- ' + text]
+                        lines += ['']
                 for key, label in [('outcome', 'Ce qui se passe'), ('lesson', 'Ce que cela illustre')]:
                     if example.get(key):
                         lines += ['**' + label + '.** ' + example[key], '']
