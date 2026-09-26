@@ -568,6 +568,22 @@
     {
       "path": "modeles/decisions/2026-09-26.1.json",
       "commit": "217f12728ad0a86214438c36a728cc61856d4a2c"
+    },
+    {
+      "path": "modeles/release/2026-09-26.2",
+      "commit": "b75cdb17242867ed3c586224cd8de80c6089d7f8"
+    },
+    {
+      "path": "modeles/revisions/2026-09-26.2",
+      "commit": "b75cdb17242867ed3c586224cd8de80c6089d7f8"
+    },
+    {
+      "path": "modeles/provenance/2026-09-26.2",
+      "commit": "b75cdb17242867ed3c586224cd8de80c6089d7f8"
+    },
+    {
+      "path": "modeles/decisions/2026-09-26.2.json",
+      "commit": "b75cdb17242867ed3c586224cd8de80c6089d7f8"
     }
   ]
 }

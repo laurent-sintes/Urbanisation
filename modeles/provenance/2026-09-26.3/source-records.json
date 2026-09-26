@@ -18073,6 +18073,30 @@
       "line": 19208,
       "content_sha256": "037333bdac89d4531200dbf325225dc13bfd42eec2a52eaaddebb5b4cc8e53c9",
       "captured_text": "## U781\n\n**id**\n\nU781\n\n**date**\n\n2026-09-26\n\n**titre**\n\nPublier le backlog courant après intégration des systèmes métier\n\n**texte**\n\nrelease\n\n**contexte et portée**\n\nPublication locale du backlog courant dans FLOW Atlas, incluant le lot U780. Les accords restent limités à leurs champs et contextes ; cette demande ne valide pas les rédactions nouvelles par extension. Aucun commit ni push demandé."
+    },
+    {
+      "id": "U782",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u782",
+      "line": 19231,
+      "content_sha256": "e6dc5243b909cd49c9fd2e30eb11815ed4e81e362e839a948f7cd8fea8f8a8e8",
+      "captured_text": "## U782\n\n**id**\n\nU782\n\n**date**\n\n2026-09-26\n\n**titre**\n\nÉvaluer une numérotation lisible dans l’ordre affiché et des préfixes courts\n\n**texte**\n\nJE souhaite maintenant revoir les ids des objets.\nLeur numérotation : je souhaite que ça corresponde à ce qui est affiché (l'ordre)\nLe préfixe : peut être un préfixe sur quelques caractères.\nJe souhaite que tu évalues le constat et que tu me fasses des propositions.\n\n**contexte et portée**\n\nDemande d’évaluation et de propositions pour les identifiants des éléments du modèle et leur lecture dans Atlas. Examiner le rapport entre identité persistante, code visible, ordre et préfixe. Le terme « objets » est ici compris comme les éléments du modèle, sans le limiter au type technique object. Aucun format, renommage, migration des identifiants, changement d’ordre, modification du modèle ou publication n’est encore adopté."
+    },
+    {
+      "id": "U783",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u783",
+      "line": 19257,
+      "content_sha256": "f37d8645848da5d2dc38fdc4c3bf3624cb16d2feff520e11119c2658a3579d6b",
+      "captured_text": "## U783\n\n**id**\n\nU783\n\n**date**\n\n2026-09-26\n\n**titre**\n\nAdopter les codes courts ordonnés et inscrire leurs règles dans le méta modèle\n\n**texte**\n\nIl faut enregistrer ces règles au niveau du méta modèle afin qu'il soit clair.\n\nGo pour le refacto\n\n**contexte et portée**\n\nAccord sur la proposition complète présentée après U782 : codes visibles SYS/DOM/SUB/REF/CAP/BHV, trois chiffres au minimum, séquence globale par type selon le parcours de l’arbre de haut en bas ; identité persistante conservée pour les relations, accords et liens. Ordre de référence partagé entre arbre, cartes et fiches ; recherche, filtre, repli et disposition du graphe sans renumérotation. Codes et ordre figés dans chaque nouvelle publication ; historiques inchangés ; recherche par code visible ou identifiant historique ; liens partagés conservant identité et version. L’option de chemin hiérarchique et l’option de code stable avec rang distinct ne sont pas retenues. Formaliser dans le méta modèle et implémenter. Aucun changement de responsabilité, nom métier ou parent adopté par extension ; aucune release, commit ni push demandés."
+    },
+    {
+      "id": "U784",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u784",
+      "line": 19282,
+      "content_sha256": "d8f824e025fc780cb05452c166ffc945695484f77d694f8a380d514b1e71379a",
+      "captured_text": "## U784\n\n**id**\n\nU784\n\n**date**\n\n2026-09-26\n\n**titre**\n\nPublier les codes de lecture puis committer et pousser Urbanisation SCM\n\n**texte**\n\nrelease, commit & push\n\n**contexte et portée**\n\nPublication locale du backlog courant après U783, incluant la politique de codes de lecture et son ordre figé ; commit des changements de cette tâche et push vers le dépôt Urbanisation-SCM. Préserver les publications historiques dans Git avant leur retrait de l’arbre actif. La publication ne donne aucun accord métier supplémentaire et ne valide pas les rédactions nouvelles par extension."
     }
   ]
 }
