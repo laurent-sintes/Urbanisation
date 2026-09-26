@@ -91,6 +91,15 @@ def catalog(folder):
 
 def register(folder, release, notes_path, write, activate):
     """Write immutable descriptors, activate the index last, retain old pointer bytes."""
+    try:
+        from .atlas_lock import atlas_lock
+    except ImportError:
+        from atlas_lock import atlas_lock
+    with atlas_lock(Path(folder).resolve().parents[1]):
+        return _register(folder, release, notes_path, write, activate)
+
+
+def _register(folder, release, notes_path, write, activate):
     folder=Path(folder); version=release['version']
     stamp=datetime.now(timezone.utc)
     filename=f"urbanisation-v{release['revision']:03d}-{stamp.strftime('%Y-%m-%d-%H%M%S')}.yaml"

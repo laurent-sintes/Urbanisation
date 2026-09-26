@@ -26,17 +26,17 @@ Pour **redémarrer**, exécuter l’arrêt puis le démarrage séquentiellement 
 Lire l’état avec une requête bornée dans le temps :
 
 ```powershell
-Invoke-RestMethod -Uri 'http://127.0.0.1:8765/api/status' -TimeoutSec 3
+Invoke-RestMethod -Uri 'http://127.0.0.1:8765/__atlas__/identity.json' -TimeoutSec 3
 ```
 
-Le résultat attendu identifie `appName: FLOW Atlas`, `repositoryRoot` égal à la racine du projet, un PID, une version d’API et l’espace courant. Avant un arrêt, le lanceur vérifie également le fichier `app/.runtime/server-<port>.json` et la date de démarrage, afin de ne pas arrêter un PID réutilisé. Ne pas remplacer ces contrôles par un arrêt global des processus Python ou par un arrêt fondé seulement sur le numéro du port.
+Le résultat attendu identifie `appName: FLOW Atlas`, `repositoryRoot` égal à la racine du projet, un PID et `mode: static`. Avant un arrêt, le lanceur vérifie également le fichier `app/.runtime/server-<port>.json` et la date de démarrage, afin de ne pas arrêter un PID réutilisé. Ne pas remplacer ces contrôles par un arrêt global des processus Python ou par un arrêt fondé seulement sur le numéro du port.
 
 ## Vérifier le résultat et traiter les échecs
 
-Après démarrage ou redémarrage, vérifier l’identité du serveur via l’API et l’accès à l’Urbanisation : `/api/model` doit servir l’espace `release` et la version désignée par `modeles/release/index.json` et son descripteur courant. Le backlog et le panorama ne sont plus exposés par Atlas selon U117. Après arrêt, vérifier que le processus suivi a disparu et que l’API de ce serveur ne répond plus. Une panne de l’API seule ne prouve pas l’arrêt du processus : en cas de doute, lire le suivi et les journaux.
+Après démarrage ou redémarrage, vérifier l’identité du serveur puis lire `/data/index.json` et `/data/VERSION/model.json` : le modèle doit servir l’espace `release` et la version désignée par `modeles/release/index.json` et son descripteur courant. Le backlog et le panorama ne sont plus exposés par Atlas selon U117. Après arrêt, vérifier que le processus suivi a disparu et que le point d’identité de ce serveur ne répond plus. Une panne HTTP seule ne prouve pas l’arrêt du processus : en cas de doute, lire le suivi et les journaux.
 
 Les journaux sont `app/.runtime/server-<port>.stdout.log` et `server-<port>.stderr.log`. En cas de port occupé, d’identité incohérente ou de suivi périmé, diagnostiquer avant toute nouvelle action ; conserver les services non identifiés comme ceux du projet. Si une permission système empêche l’action autorisée, demander uniquement l’élévation nécessaire à la commande ciblée, sans modifier les politiques PowerShell ni contourner les contrôles du lanceur.
 
-L’administration seule ne modifie ni le modèle ni le pointeur de release. Une nouvelle donnée YAML/JSON se lit après actualisation ; une modification du code Python exige un redémarrage. Terminer par l’état vérifié, l’URL et le port, ou l’erreur concrète qui empêche d’atteindre l’état demandé.
+L’administration seule ne modifie ni le modèle ni le pointeur de release. Les JSON réexportés par la release se lisent après actualisation ; une modification du code Python exige un redémarrage. Terminer par l’état vérifié, l’URL et le port, ou l’erreur concrète qui empêche d’atteindre l’état demandé.
 
-Le lecteur YAML nécessite PyYAML, épinglé dans `requirements.txt`. Si absent, installer localement depuis la racine avec `python -m pip install --target .tools/yaml-runtime -r requirements.txt`. Le serveur lit le modèle YAML ou JSON historique et sérialise les réponses API en JSON.
+Le serveur ne lit aucun YAML et n’a besoin que de Python standard. `pnpm --dir app build` prépare interface et données ; `python scripts/export_atlas.py` actualise seulement les JSON après contrôle des publications. PyYAML, épinglé dans `requirements.txt`, est requis pour cet export uniquement. Le lanceur accepte l’ancien `/api/status` seulement lors d’un arrêt de migration, afin de vérifier et arrêter l’ancien serveur avant le premier démarrage statique.

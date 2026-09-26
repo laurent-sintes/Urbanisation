@@ -7,6 +7,7 @@ import { plainInlineText } from './inlineLinks.ts';
 import { sortCapabilitiesByType } from './capabilityTypes.ts';
 import { categorySections } from './categories.ts';
 import { searchPublication } from './search.ts';
+import { validateDisplayIndex } from './displayCodes.ts';
 const structuralTypes = new Set<string>(['contains', 'presents']);
 export const isStructural = (relation: AtlasRelation): boolean => structuralTypes.has(relation.type);
 
@@ -42,6 +43,7 @@ export function adaptPublication(input: RawPublication): PublishedModel {
   }
   // Cloning prevents either renderer from altering the API response or another view.
   const raw = freezeDeep(structuredClone(input));
+  validateDisplayIndex(raw);
   const usesPurposes = Array.isArray(raw.principles) && raw.principles.some(p => p?.id === 'PRINCIPLE-DOMAIN-PURPOSE');
   const usesSubdomains = Array.isArray(raw.principles) && raw.principles.some(p => p?.id === 'PRINCIPLE-DOMAIN-SUBDOMAIN');
   const referenceParents = new Map(raw.nodes.filter(node => node.kind === 'reference').map(node => [node.id, textField(node.fields?.name)]));
@@ -49,7 +51,7 @@ export function adaptPublication(input: RawPublication): PublishedModel {
   const nodes: AtlasNode[] = raw.nodes.map(node => {
     const fields = node.fields ?? {};
     return freezeDeep({
-      id: node.id, name: plainInlineText(textField(fields.name)) || node.id, kind: node.kind,
+      id: node.id, displayCode: raw.display_index?.codes[node.id], name: plainInlineText(textField(fields.name)) || node.id, kind: node.kind,
       hierarchyLabel: node.kind === 'area' ? (usesSubdomains ? 'Sous-domaine' : usesPurposes ? 'Purpose' : 'Area') : undefined,
       referenceParentName: node.kind === 'capability' ? referenceByChild.get(node.id) : undefined,
       groupRole: node.group_role, levelRef: node.level_ref,
@@ -156,6 +158,9 @@ export function structuralRelations(model: PublishedModel, type?: StructuralRela
 }
 
 export function childrenOf(model: PublishedModel, id: string, type?: StructuralRelationType): AtlasNode[] {
+  if (model.raw.display_index) return (model.raw.display_index.children[id] ?? [])
+    .filter(child => !type || model.relations.some(r => r.sourceId === id && r.targetId === child && r.type === type))
+    .map(child => model.nodeById.get(child)!);
   const children = structuralRelations(model, type).filter(relation => relation.sourceId === id).map(relation => model.nodeById.get(relation.targetId)!);
   const kind = model.nodeById.get(id)?.kind;
   if (kind === 'area') return categorySections(children).flatMap(section => sortCapabilitiesByType(section.items));
@@ -171,6 +176,7 @@ export function parentRelationOf(model: PublishedModel, id: string): AtlasRelati
 }
 
 export function rootsOf(model: PublishedModel): AtlasNode[] {
+  if (model.raw.display_index) return model.raw.display_index.roots.map(id => model.nodeById.get(id)!);
   const children = new Set(structuralRelations(model).map(relation => relation.targetId));
   return model.nodes.filter(node => !children.has(node.id));
 }
@@ -185,13 +191,16 @@ export function isCapabilityContainer(model: PublishedModel, node: AtlasNode): b
 }
 
 export interface CardChildList {
-  kind: 'capability' | 'reference' | 'behavior' | 'mixed';
+  kind: 'domain' | 'capability' | 'reference' | 'behavior' | 'mixed';
   items: AtlasNode[];
 }
 
 /** Preserve explicit reference boundaries inside an Area or a historical presentation group. */
 export function cardChildListOf(model: PublishedModel, node: AtlasNode): CardChildList | undefined {
   const children = childrenOf(model, node.id);
+  if (node.kind === 'business_system' && children.some(child => child.kind === 'domain')) {
+    return { kind: 'domain', items: children.filter(child => child.kind === 'domain') };
+  }
   const references = children.filter(child => child.kind === 'reference');
   if (references.length && (node.kind === 'area' || (node.kind === 'group' && node.groupRole !== 'urbanism_level'))) {
     const capabilities = children.filter(child => child.kind === 'capability');

@@ -9,6 +9,7 @@ import uuid
 from . import prepare_release as workflow
 from . import git_history
 from .record_decision import _registry_lock
+from .atlas_lock import atlas_lock
 from .decision_registry import atomic_replace
 from .structured_io import read, dumps
 
@@ -160,7 +161,7 @@ def run(root, version=None, source_refs=None, *, activate=False, review_path=Non
         decisions_path=None, guide_path=None, atlas_url='http://127.0.0.1:8765', verify_site=True):
     root = Path(root).resolve()
     (root / '.runtime').mkdir(exist_ok=True)
-    with _registry_lock(root / 'modeles/backlog/decision-intents.yaml'):
+    with atlas_lock(root), _registry_lock(root / 'modeles/backlog/decision-intents.yaml'):
         return _run(root, version, source_refs, activate=activate, review_path=review_path,
                     decisions_path=decisions_path, guide_path=guide_path, atlas_url=atlas_url, verify_site=verify_site)
 
@@ -195,7 +196,7 @@ def _run(root, version, source_refs, *, activate, review_path, decisions_path, g
             return {'status': 'needs_review', 'version': version, **dossier}
         has_changes = any(any(delta.values()) if isinstance(delta, dict) else bool(delta) for delta in report['changes'].values())
         if not has_changes and not report['glossary_changes'] and not report['new_decision_ids'] and guide_path is None:
-            return finish(root, {'status': 'unchanged', 'version': current[1]['version']}, verify_site, atlas_url, started)
+            return finish(root, {'status': 'unchanged', 'version': current[1]['version']}, activate and verify_site, atlas_url, started, export_site=activate)
         stage, manifest = stage_candidate(root, bundle, guide_path)
     try:
         result = publish(root, stage, manifest) if activate else {'status': 'prepared', 'version': version, 'prepared_manifest': str(stage / 'manifest.json'), 'summary': manifest['summary']}
@@ -207,7 +208,14 @@ def _run(root, version, source_refs, *, activate, review_path, decisions_path, g
     return finish(root, result, activate and verify_site, atlas_url, started)
 
 
-def finish(root, result, verify_site, atlas_url, started):
+def finish(root, result, verify_site, atlas_url, started, export_site=True):
+    if export_site and result['status'] in ('published', 'unchanged'):
+        from .export_atlas import export_atlas
+        try:
+            result['static_export'] = export_atlas(root)
+        except (ValueError, OSError) as exc:
+            result.update(status='published_checks_failed', static_export={'error': str(exc)})
+            verify_site = False
     if verify_site:
         from .release import verify_atlas
         try:

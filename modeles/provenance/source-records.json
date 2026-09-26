@@ -6219,6 +6219,62 @@
       "captured_text": "## U777\n\n**id**\n\nU777\n\n**date**\n\n2026-09-26\n\n**titre**\n\nApplication du lot transport, rebut, traçabilité et disposition avec scénarios\n\n**texte**\n\nPense à enrichir les scénarios pour expliquer ces capacités et comportements.\n\nJE valide\n\n**contexte et portée**\n\nValidation de la proposition complète U775 corrigée dans la réponse à U776 : Transport Plan Decision et ses deux comportements Load Consolidation et Routing & Scheduling ; Scrapping Order ; traçabilité répartie entre Inventory Tracking, Inventory Ledger et Inventory Visibility sans nouvelle capacité ni comportement isolé ; élargissement de Return Disposition Decision en Inventory Disposition Decision, incluant usage autorisé et devenir logistique, avec les deux stratégies existantes. Demande explicite de scénarios concrets et de leurs contributions de capacités. Les rédactions nouvelles illustrent ce lot sans approbation mot à mot ni preuve de pratique installée. Les pistes U775 sur les variantes d’inspection, les références de substitution et un éventuel Stocktaking Order ne font pas partie de la proposition corrigée validée ici."
     },
     {
+      "id": "U778",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u778",
+      "line": 19129,
+      "content_sha256": "b2ad42a77b3ee6787d3722f4110e85fe3f189c016bb69e98b8a7288a13287900",
+      "captured_text": "## U778\n\n**id**\n\nU778\n\n**date**\n\n2026-09-26\n\n**titre**\n\nAvis préalable sur un niveau de regroupement des domaines et une overview Atlas\n\n**texte**\n\nJe souhaite enrichir le modèle avec un niveau supplémentaire amont.\n\nJe souhaite regrouper les domaines dans des fonctions ou des univers ou des systèmes. Le terme reste à déterminer.\n\nJe souhaite isoler le \"système opérant\" qui contient le domaine Commerce (les achats et les ventes), la Supply Chain Orchestration et la Supply (entrepot, transport, douane ...) du sytème amont (Etudes et développements) du système aval \"post opérations\" (Finance, contrôle de gestion, conformité, performance entreprise).\n\nJe souhaite une overview dans atlas.\n\nAvant d'auditer et prendre en compte les actions, j'aimerais ton avis et l'avis du marché.\n\n**contexte et portée**\n\nDemande d’avis et de comparaison marché avant audit ou application. Le terme du niveau supérieur, ses périmètres et la représentation Atlas restent à discuter. Aucun accord de modification de la hiérarchie, de création ou déplacement de domaines, d’implémentation Atlas ou de publication n’est déduit de cette demande."
+    },
+    {
+      "id": "U779",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u779",
+      "line": 19160,
+      "content_sha256": "f42f2355b6a17ef87e03f4ca369bcdb1aa5a7ea5a655f7c3a195e49188595358",
+      "captured_text": "## U779\n\n**id**\n\nU779\n\n**date**\n\n2026-09-26\n\n**titre**\n\nSéparation Sales / Sourcing and Procurement et profondeur ciblée du modèle FLOW\n\n**texte**\n\nPeut être découper commerce en *Sales*, *Sourcing and Procurement*  comme SAP, qu'en penses-tu ?\n\nL'idée est d'avoir un focus précis des domaines de Business Opérations. un focus encore plus précis (capacités et comportements) pour la supply chain orchestration. et une vision moins précise pour ce qui entoure les business opération car normalement, FLOW ne devrait pas y toucher. Il faudrait juste faire apparaitre à termes les referentiels source pour les ingestions mais c'est tout.\n\n**contexte et portée**\n\nPrécision du cadrage U778 : domaines de Business Operations décrits précisément, Supply Chain Orchestration approfondie jusqu’aux capacités et comportements, environnement extérieur décrit sommairement et référentiels sources des ingestions à rendre visibles à terme. L’absence prévue d’intervention FLOW sur cet environnement ne prouve pas une absence de dépendance. La séparation de Commerce en Sales et Sourcing and Procurement est soumise à avis ; aucun accord de création, déplacement, audit, implémentation Atlas ou publication. Aucun propriétaire de référentiel ni flux installé n’est inféré."
+    },
+    {
+      "id": "U780",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u780",
+      "line": 19185,
+      "content_sha256": "19a992da628ca076c75e11ed1a40a38414492f8062c95bd600a9b375c3153aaa",
+      "captured_text": "## U780\n\n**id**\n\nU780\n\n**date**\n\n2026-09-26\n\n**titre**\n\nIntégrer les systèmes métier, les domaines de Business Operations et la profondeur ciblée FLOW\n\n**texte**\n\nTu peux prendre en compte les modifs ?\n\n**contexte et portée**\n\nDemande d’application de la proposition U778 précisée U779 : Business System au-dessus de Domain ; Design & Development et Enterprise Management & Control décrits sommairement autour de Business Operations ; Sales, Sourcing and Procurement, Supply Chain Orchestration et Logistics Execution dans Business Operations ; approfondissement jusqu’aux capacités et comportements pour Supply Chain Orchestration. Préparer l’overview Atlas sur cette structure. Les référentiels sources des ingestions restent un besoin futur, sans inventer leurs autorités ou flux. Aucun déplacement automatique des capacités Sales Order et Purchase Order, aucune décomposition nouvelle des domaines périphériques. L’application ne vaut pas approbation mot à mot des rédactions, exemples et comparaisons rédigés ensuite. Ni release, ni commit, ni push demandés."
+    },
+    {
+      "id": "U781",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u781",
+      "line": 19208,
+      "content_sha256": "037333bdac89d4531200dbf325225dc13bfd42eec2a52eaaddebb5b4cc8e53c9",
+      "captured_text": "## U781\n\n**id**\n\nU781\n\n**date**\n\n2026-09-26\n\n**titre**\n\nPublier le backlog courant après intégration des systèmes métier\n\n**texte**\n\nrelease\n\n**contexte et portée**\n\nPublication locale du backlog courant dans FLOW Atlas, incluant le lot U780. Les accords restent limités à leurs champs et contextes ; cette demande ne valide pas les rédactions nouvelles par extension. Aucun commit ni push demandé."
+    },
+    {
+      "id": "U782",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u782",
+      "line": 19231,
+      "content_sha256": "e6dc5243b909cd49c9fd2e30eb11815ed4e81e362e839a948f7cd8fea8f8a8e8",
+      "captured_text": "## U782\n\n**id**\n\nU782\n\n**date**\n\n2026-09-26\n\n**titre**\n\nÉvaluer une numérotation lisible dans l’ordre affiché et des préfixes courts\n\n**texte**\n\nJE souhaite maintenant revoir les ids des objets.\nLeur numérotation : je souhaite que ça corresponde à ce qui est affiché (l'ordre)\nLe préfixe : peut être un préfixe sur quelques caractères.\nJe souhaite que tu évalues le constat et que tu me fasses des propositions.\n\n**contexte et portée**\n\nDemande d’évaluation et de propositions pour les identifiants des éléments du modèle et leur lecture dans Atlas. Examiner le rapport entre identité persistante, code visible, ordre et préfixe. Le terme « objets » est ici compris comme les éléments du modèle, sans le limiter au type technique object. Aucun format, renommage, migration des identifiants, changement d’ordre, modification du modèle ou publication n’est encore adopté."
+    },
+    {
+      "id": "U783",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u783",
+      "line": 19257,
+      "content_sha256": "f37d8645848da5d2dc38fdc4c3bf3624cb16d2feff520e11119c2658a3579d6b",
+      "captured_text": "## U783\n\n**id**\n\nU783\n\n**date**\n\n2026-09-26\n\n**titre**\n\nAdopter les codes courts ordonnés et inscrire leurs règles dans le méta modèle\n\n**texte**\n\nIl faut enregistrer ces règles au niveau du méta modèle afin qu'il soit clair.\n\nGo pour le refacto\n\n**contexte et portée**\n\nAccord sur la proposition complète présentée après U782 : codes visibles SYS/DOM/SUB/REF/CAP/BHV, trois chiffres au minimum, séquence globale par type selon le parcours de l’arbre de haut en bas ; identité persistante conservée pour les relations, accords et liens. Ordre de référence partagé entre arbre, cartes et fiches ; recherche, filtre, repli et disposition du graphe sans renumérotation. Codes et ordre figés dans chaque nouvelle publication ; historiques inchangés ; recherche par code visible ou identifiant historique ; liens partagés conservant identité et version. L’option de chemin hiérarchique et l’option de code stable avec rang distinct ne sont pas retenues. Formaliser dans le méta modèle et implémenter. Aucun changement de responsabilité, nom métier ou parent adopté par extension ; aucune release, commit ni push demandés."
+    },
+    {
+      "id": "U784",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u784",
+      "line": 19282,
+      "content_sha256": "d8f824e025fc780cb05452c166ffc945695484f77d694f8a380d514b1e71379a",
+      "captured_text": "## U784\n\n**id**\n\nU784\n\n**date**\n\n2026-09-26\n\n**titre**\n\nPublier les codes de lecture puis committer et pousser Urbanisation SCM\n\n**texte**\n\nrelease, commit & push\n\n**contexte et portée**\n\nPublication locale du backlog courant après U783, incluant la politique de codes de lecture et son ordre figé ; commit des changements de cette tâche et push vers le dépôt Urbanisation-SCM. Préserver les publications historiques dans Git avant leur retrait de l’arbre actif. La publication ne donne aucun accord métier supplémentaire et ne valide pas les rédactions nouvelles par extension."
+    },
+    {
       "id": "F001",
       "path": "connaissance/02-assertions.md",
       "anchor": "f001",
@@ -14979,6 +15035,14 @@
       "captured_text": "## CMP308\n\nU775 — Codex, 25 septembre 2026. Confrontation de couverture des neuf sous-domaines, 72 capacités et 75 comportements à Dynamics et S/4HANA. Réemploi de l’étude U774 et sources ciblées sur interdiction d’usage, traçabilité, transport, mise au rebut et protocoles d’inspection. Les fonctions éditeur mêlent fréquemment décision, enregistrement et exécution ; la proposition FLOW les distingue sans imposer leur implantation.\n\nQuatre capacités candidates : Inventory Usage Decision, Inventory Traceability, Transport Plan Decision et Scrapping Order. Extension proposée de Return Disposition Decision hors retours ; deux variantes contractuelles d’Inspection Order ; provenance des alternatives à préciser. Stocktaking Order reste conditionnel à une prestation autonome ; pas de nouvelle capacité de cycle de vie, de comptage par seuil ni de promising par option. Le rappel produit est d’abord un scénario transverse ; le rangement interne ne devient pas automatiquement un ordre.\n\nLes appuis de chaque proposition, leur frontière, les écarts et limites sont enregistrés dans l’annexe du backlog modeles/backlog/market-coverage-audit-U775.yaml. Les termes et décompositions sont des recommandations, non une nomenclature native commune ni un consensus. Absence documentaire n’est pas absence fonctionnelle. Aucun changement canonique ni accord déduit de la demande d’audit."
     },
     {
+      "id": "CMP309",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp309",
+      "line": 2882,
+      "content_sha256": "083c56ee18668574c762e00ebad702eb751971624e4df79e1443df3b22891628",
+      "captured_text": "## CMP309\n\nU778–U780 — Codex, 26 septembre 2026. Comparaison de la vue d’ensemble et des frontières de domaine aux périmètres SAP S/4HANA 2025 et aux processus Microsoft Dynamics 365, ELM840–ELM846. Recouvrement partiel : les noms Sales et Sourcing and Procurement ont un appui SAP direct ; les trois Business Systems et l’autonomie de l’orchestration sont des conventions FLOW. Aucun consensus ni équivalence exacte de système n’est établi. Chaque nouvelle fiche et son terme associé portent leurs deux appuis primaires et leurs limites.\n\nLe découpage distingue responsabilité commerciale, satisfaction opérationnelle et réalisation. Les processus éditeur traversent aussi Finance ; leurs frontières ne sont pas reprises automatiquement. La douane reste partiellement documentée par les appuis logistiques généraux, et la gouvernance de conformité dépasse les appuis Finance. U780 autorise le cadrage, les noms et les rattachements ; les comparaisons et rédactions nouvelles restent proposées. Sources, justification et contrôles de livraison : [lot canonique](../modeles/backlog/business-systems-U780.yaml)."
+    },
+    {
       "id": "CMP003",
       "path": "marche/comparaisons.md",
       "anchor": "",
@@ -21689,6 +21753,62 @@
       "line": 6202,
       "content_sha256": "cf19102f9ab65036a3c160749b44927b61611c22d44758315b1c62bf358497ca",
       "captured_text": "### ELM839\n\nMKT14 — Microsoft Dynamics 365, [Quality management item sampling - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/quality-item-sampling). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Set up item sampling ; sampling quantity ; full blocking. Documentation évolutive ; édition du cours/application cité, version globale non présumée. Nature : mécanisme produit. Reformulation : L’étendue du contrôle peut être une quantité, un pourcentage ou une unité logistique complète ; elle diffère du périmètre éventuellement bloqué. Limites : Un pourcentage ou une technique de prélèvement ne justifie pas à lui seul un comportement métier. U775, CMP308.\n\n\nActualisation U775 / CMP308 : réemploi ciblé des sources existantes ELM207, ELM540, ELM805, ELM825. Périmètres et limites de consultation dans market-coverage-audit-U775.yaml ; aucune modification des preuves historiques."
+    },
+    {
+      "id": "ELM840",
+      "path": "marche/elements.md",
+      "anchor": "elm840",
+      "line": 6210,
+      "content_sha256": "f61f55f4d7c53d961c04ab72284f85e94f0844377f48b9db572142f52cdde57b",
+      "captured_text": "### ELM840\n\nMKT13 — SAP S/4HANA 2025. [SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68). SAP S/4HANA 2025 ; document 1.0 du 2025-10-08. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Sommaire §2 : Finance, R&D / Engineering, Sales, Sourcing and Procurement, Supply Chain ; §2.11 et §2.11.3. Reformulation : SAP distingue ventes, achats, chaîne logistique, conception et finance ; les achats couvrent biens et services. Limites : Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309."
+    },
+    {
+      "id": "ELM841",
+      "path": "marche/elements.md",
+      "anchor": "elm841",
+      "line": 6215,
+      "content_sha256": "fd0d09ed6732b98769cc05fe41c4323a01b88d32c60a19d1bbdf54a79c74f9e8",
+      "captured_text": "### ELM841\n\nMKT14 — Microsoft Dynamics 365. [What are the end-to-end scenarios and business processes in Dynamics 365?](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/overview). Page évolutive ; catalogue juillet 2026 mentionné. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : End-to-end scenarios. Reformulation : Le catalogue distingue les parcours de conception, achats, vente, logistique et restitution financière. Limites : Scénarios de bout en bout ; ne prescrit pas une hiérarchie de domaines ou de systèmes métier. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309."
+    },
+    {
+      "id": "ELM842",
+      "path": "marche/elements.md",
+      "anchor": "elm842",
+      "line": 6220,
+      "content_sha256": "590384d727377ad8bb186fcd00860f680aa484272b9b813425ef35837f598b9f",
+      "captured_text": "### ELM842\n\nMKT14 — Microsoft Dynamics 365 Supply Chain Management et Commerce. [Design to retire end-to-end overview](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/design-to-retire-overview). Page évolutive ; version globale non précisée. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Design to retire process relationship ; business process areas. Reformulation : Conception produit, introduction et cycle de vie ; les relations amont et aval varient selon les stratégies. Limites : Parcours produit tangible ; ne couvre pas toutes les études ou transformations de l’entreprise. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309."
+    },
+    {
+      "id": "ELM843",
+      "path": "marche/elements.md",
+      "anchor": "elm843",
+      "line": 6225,
+      "content_sha256": "394b83ee44b650c2a8730fe3172736e103f75783e7f105f1baf7da493e0dc3de",
+      "captured_text": "### ELM843\n\nMKT14 — Microsoft Dynamics 365 Sales, Commerce, Supply Chain Management et Finance. [Order to cash business process flow overview and relationships to other business processes](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/order-to-cash-overview). Page évolutive ; catalogue juillet 2026 mentionné. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Order to cash business process flow. Reformulation : Le parcours de vente traverse prise de commande, réalisation et traitement financier. Limites : Processus plus large que Sales ; ne décide pas du rattachement des capacités FLOW. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309."
+    },
+    {
+      "id": "ELM844",
+      "path": "marche/elements.md",
+      "anchor": "elm844",
+      "line": 6230,
+      "content_sha256": "ce95e3cff7294d175f30e674c823e0419984728c9dbb0dd86ac9e828af644941",
+      "captured_text": "### ELM844\n\nMKT14 — Microsoft Dynamics 365 Supply Chain Management et Finance. [Help organizations manage and optimize the source to pay business processes](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/source-to-pay-introduction). Page évolutive ; mise à jour affichée 2024-05-28. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Source to pay overview ; steps 1–8. Reformulation : Sélection fournisseur, contrats et achats de biens ou prestations ; le parcours inclut factures et paiement, et renvoie la réception à Inventory to deliver. Limites : Processus transverse plus large que le domaine achats FLOW ; paiement et exécution physique ne sont pas absorbés. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309."
+    },
+    {
+      "id": "ELM845",
+      "path": "marche/elements.md",
+      "anchor": "elm845",
+      "line": 6235,
+      "content_sha256": "d23254609d4456eaf3860c471b1886e6a957197a01d4933c93cae6cb6e676299",
+      "captured_text": "### ELM845\n\nMKT14 — Microsoft Dynamics 365. [Introduction to inventory to deliver business process](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/inventory-to-deliver-introduction). Page évolutive ; version globale non précisée. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Inventory to deliver overview. Reformulation : Gestion des stocks et réalisation des mouvements et livraisons. Limites : Recouvrement partiel ; la référence ne suffit pas à établir toutes les formalités douanières ni leur réalisation Beaumanoir. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309."
+    },
+    {
+      "id": "ELM846",
+      "path": "marche/elements.md",
+      "anchor": "elm846",
+      "line": 6240,
+      "content_sha256": "a945dd70aeebf5282bb01b46fc33c8c762a5b198f188a9534567a7b2997a3c09",
+      "captured_text": "### ELM846\n\nMKT14 — Microsoft Dynamics 365 Finance. [Record to report end-to-end overview](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/record-to-report-overview). Page évolutive ; version globale non précisée. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Record to report process relationship ; Forecast to plan. Reformulation : La restitution financière coopère avec planification et budgets. Limites : Appui partiel pour Finance et contrôle ; ne définit pas tout Enterprise Management & Control, notamment sa gouvernance de conformité. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309."
     },
     {
       "id": "ELM003",

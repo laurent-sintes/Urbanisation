@@ -1,3 +1,4 @@
+import { staticUrl } from './publication';
 import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import { ArrowLeft, BookOpen, ChevronRight, Compass, Copy, FileText, GitBranch, LayoutGrid, Lightbulb, Maximize2, PanelLeft, RefreshCw, X } from 'lucide-react';
 import { usePublication } from './usePublication';
@@ -50,7 +51,7 @@ export function App() {
   const selected = model?.nodeById.get(route.node);
   const view: View = route.view || (selected && !childrenOf(model!, selected.id).length ? 'sheet' : 'map');
   const validScope = route.scope && model?.nodeById.has(route.scope) ? route.scope : '';
-  const scopeId = route.scope === '@root' ? undefined : validScope || (selected ? (childrenOf(model!, selected.id).length || ['group', 'domain', 'area', 'reference'].includes(selected.kind) ? selected.id : parentRelationOf(model!, selected.id)?.sourceId) : undefined);
+  const scopeId = route.scope === '@root' ? undefined : validScope || (selected ? (childrenOf(model!, selected.id).length || ['business_system', 'group', 'domain', 'area', 'reference'].includes(selected.kind) ? selected.id : parentRelationOf(model!, selected.id)?.sourceId) : undefined);
   const scope = scopeId ? model?.nodeById.get(scopeId) : undefined;
   // Keep the map context stable on selection, including between double-clicks.
   const referenceView = view === 'glossary' || view === 'principles';
@@ -142,7 +143,7 @@ export function App() {
     try {
       const pinned = { ...route, version: model?.version || route.version };
       const hash = routeHash(pinned);
-      await navigator.clipboard.writeText(`${location.origin}/${hash.startsWith('#') ? hash : ''}`);
+      await navigator.clipboard.writeText(`${location.origin}${location.pathname}${hash}`);
       setAnnouncement('Lien copié vers cette publication.');
     } catch { setAnnouncement('La copie est indisponible. Tu peux copier l’adresse dans le navigateur.'); }
   };
@@ -152,7 +153,7 @@ export function App() {
     <header className="topbar" inert={mobile && drawer}>
       <div className="app-brand-area">
         {model && mobile && <button id="fa-tree-open" className="mobile-menu" aria-label="Ouvrir l’arbre" title="Ouvrir l’arbre" aria-expanded={drawer} aria-controls="atlas-tree-panel" onClick={() => setDrawer(true)}><PanelLeft size={20} /></button>}
-        <button className="brand" onClick={() => navigate('')} aria-label="FLOW Atlas, accueil"><span className="brand-symbol" aria-hidden="true"><img className="flow-source-mark" src="/assets/flow-original.png" width="1024" height="1024" alt="" /></span><strong>FLOW <b>Atlas</b></strong></button>
+        <button className="brand" onClick={() => navigate('')} aria-label="FLOW Atlas, accueil"><span className="brand-symbol" aria-hidden="true"><img className="flow-source-mark" src={staticUrl('assets/flow-original.png')} width="1024" height="1024" alt="" /></span><strong>FLOW <b>Atlas</b></strong></button>
       </div>
       {model && !mobile && <div className="topbar-navigation">{breadcrumbs}{shareButton}</div>}
       <button id="fa-refresh" className={`topbar-icon ${loading ? 'loading' : ''}`} aria-label="Actualiser la publication" title="Actualiser" disabled={loading} onClick={reload}><RefreshCw size={17} /></button>
@@ -170,7 +171,7 @@ export function App() {
         <div className="workspace-header">
         {mobile && <div className="breadcrumb-row">{breadcrumbs}{shareButton}</div>}
         <header className="page-heading"><div className="heading-icon">{headingNode ? <NodeIcon node={headingNode} size={30} framed /> : <span className="node-icon framed tone-universe">{view === 'principles' ? <Lightbulb size={30} /> : <Compass size={30} />}</span>}</div><div>
-          <div className="eyebrow"><span>{headingNode ? kindLabel(headingNode) : view === 'principles' ? 'LE MÉTA MODÈLE' : view === 'glossary' ? 'LE VOCABULAIRE PUBLIÉ' : 'LE MODÈLE PUBLIÉ'}</span>{headingNode && <span>{headingNode.id}</span>}</div>
+          <div className="eyebrow"><span>{headingNode ? kindLabel(headingNode) : view === 'principles' ? 'LE MÉTA MODÈLE' : view === 'glossary' ? 'LE VOCABULAIRE PUBLIÉ' : 'LE MODÈLE PUBLIÉ'}</span>{headingNode && <span title={`Identité persistante : ${headingNode.id}`}>{headingNode.displayCode ?? headingNode.id}</span>}</div>
           <h1 id="page-title" ref={heading} tabIndex={-1}>{view === 'principles' ? 'Comprendre le méta modèle' : view === 'glossary' ? glossaryTitle : headingNode?.name || 'Urbanisation'}</h1>
           {view !== 'sheet' && <p><ModelText text={view === 'principles' ? 'Six repères pour lire la carte et contribuer à sa construction.' : view === 'glossary' ? 'Les notions et leurs définitions dans la publication consultée.' : headingNode?.purpose || (headingNode ? 'Explore cet élément et ses relations dans le modèle publié.' : 'Parcours le modèle, explore les capacités et découvre les liens qui les relient.')}/></p>}
         </div></header>
@@ -179,7 +180,7 @@ export function App() {
           e.preventDefault(); const items = [...e.currentTarget.parentElement!.querySelectorAll<HTMLButtonElement>('button')];
           items[(items.indexOf(e.currentTarget) + (e.key === 'ArrowRight' ? 1 : items.length - 1)) % items.length].click();
           items[(items.indexOf(e.currentTarget) + (e.key === 'ArrowRight' ? 1 : items.length - 1)) % items.length].focus();
-        }}><tab.Icon size={16} />{tab.label}{tab.id === 'relations' && selected && !['group', 'domain', 'area', 'reference'].includes(selected.kind) && <span className="count">{links.length}</span>}</button>)}</div>{view === 'map' && selected && selected.id !== headingNode?.id && <div className="view-context"><span className="view-selection" title={`Sélection : ${selected.name}`}>Sélection : {selected.name}</span></div>}</div>}
+        }}><tab.Icon size={16} />{tab.label}{tab.id === 'relations' && selected && !['business_system', 'group', 'domain', 'area', 'reference'].includes(selected.kind) && <span className="count">{links.length}</span>}</button>)}</div>{view === 'map' && selected && selected.id !== headingNode?.id && <div className="view-context"><span className="view-selection" title={`Sélection : ${selected.name}`}>Sélection : {selected.name}</span></div>}</div>}
         </div>
         <div className="workspace-content" ref={content} tabIndex={0} role="region" aria-label="Contenu de la vue">
         <div id="atlas-view" role={referenceView ? 'region' : 'tabpanel'} aria-labelledby={referenceView ? 'page-title' : `tab-${['sheet', 'market'].includes(view) && !selected ? 'map' : view}`}>

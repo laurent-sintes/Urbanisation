@@ -19125,3 +19125,178 @@ JE valide
 **contexte et portée**
 
 Validation de la proposition complète U775 corrigée dans la réponse à U776 : Transport Plan Decision et ses deux comportements Load Consolidation et Routing & Scheduling ; Scrapping Order ; traçabilité répartie entre Inventory Tracking, Inventory Ledger et Inventory Visibility sans nouvelle capacité ni comportement isolé ; élargissement de Return Disposition Decision en Inventory Disposition Decision, incluant usage autorisé et devenir logistique, avec les deux stratégies existantes. Demande explicite de scénarios concrets et de leurs contributions de capacités. Les rédactions nouvelles illustrent ce lot sans approbation mot à mot ni preuve de pratique installée. Les pistes U775 sur les variantes d’inspection, les références de substitution et un éventuel Stocktaking Order ne font pas partie de la proposition corrigée validée ici.
+
+## U778
+
+**id**
+
+U778
+
+**date**
+
+2026-09-26
+
+**titre**
+
+Avis préalable sur un niveau de regroupement des domaines et une overview Atlas
+
+**texte**
+
+Je souhaite enrichir le modèle avec un niveau supplémentaire amont.
+
+Je souhaite regrouper les domaines dans des fonctions ou des univers ou des systèmes. Le terme reste à déterminer.
+
+Je souhaite isoler le "système opérant" qui contient le domaine Commerce (les achats et les ventes), la Supply Chain Orchestration et la Supply (entrepot, transport, douane ...) du sytème amont (Etudes et développements) du système aval "post opérations" (Finance, contrôle de gestion, conformité, performance entreprise).
+
+Je souhaite une overview dans atlas.
+
+Avant d'auditer et prendre en compte les actions, j'aimerais ton avis et l'avis du marché.
+
+**contexte et portée**
+
+Demande d’avis et de comparaison marché avant audit ou application. Le terme du niveau supérieur, ses périmètres et la représentation Atlas restent à discuter. Aucun accord de modification de la hiérarchie, de création ou déplacement de domaines, d’implémentation Atlas ou de publication n’est déduit de cette demande.
+
+
+## U779
+
+**id**
+
+U779
+
+**date**
+
+2026-09-26
+
+**titre**
+
+Séparation Sales / Sourcing and Procurement et profondeur ciblée du modèle FLOW
+
+**texte**
+
+Peut être découper commerce en *Sales*, *Sourcing and Procurement*  comme SAP, qu'en penses-tu ?
+
+L'idée est d'avoir un focus précis des domaines de Business Opérations. un focus encore plus précis (capacités et comportements) pour la supply chain orchestration. et une vision moins précise pour ce qui entoure les business opération car normalement, FLOW ne devrait pas y toucher. Il faudrait juste faire apparaitre à termes les referentiels source pour les ingestions mais c'est tout.
+
+**contexte et portée**
+
+Précision du cadrage U778 : domaines de Business Operations décrits précisément, Supply Chain Orchestration approfondie jusqu’aux capacités et comportements, environnement extérieur décrit sommairement et référentiels sources des ingestions à rendre visibles à terme. L’absence prévue d’intervention FLOW sur cet environnement ne prouve pas une absence de dépendance. La séparation de Commerce en Sales et Sourcing and Procurement est soumise à avis ; aucun accord de création, déplacement, audit, implémentation Atlas ou publication. Aucun propriétaire de référentiel ni flux installé n’est inféré.
+
+
+## U780
+
+**id**
+
+U780
+
+**date**
+
+2026-09-26
+
+**titre**
+
+Intégrer les systèmes métier, les domaines de Business Operations et la profondeur ciblée FLOW
+
+**texte**
+
+Tu peux prendre en compte les modifs ?
+
+**contexte et portée**
+
+Demande d’application de la proposition U778 précisée U779 : Business System au-dessus de Domain ; Design & Development et Enterprise Management & Control décrits sommairement autour de Business Operations ; Sales, Sourcing and Procurement, Supply Chain Orchestration et Logistics Execution dans Business Operations ; approfondissement jusqu’aux capacités et comportements pour Supply Chain Orchestration. Préparer l’overview Atlas sur cette structure. Les référentiels sources des ingestions restent un besoin futur, sans inventer leurs autorités ou flux. Aucun déplacement automatique des capacités Sales Order et Purchase Order, aucune décomposition nouvelle des domaines périphériques. L’application ne vaut pas approbation mot à mot des rédactions, exemples et comparaisons rédigés ensuite. Ni release, ni commit, ni push demandés.
+
+
+## U781
+
+**id**
+
+U781
+
+**date**
+
+2026-09-26
+
+**titre**
+
+Publier le backlog courant après intégration des systèmes métier
+
+**texte**
+
+release
+
+**contexte et portée**
+
+Publication locale du backlog courant dans FLOW Atlas, incluant le lot U780. Les accords restent limités à leurs champs et contextes ; cette demande ne valide pas les rédactions nouvelles par extension. Aucun commit ni push demandé.
+
+
+## U782
+
+**id**
+
+U782
+
+**date**
+
+2026-09-26
+
+**titre**
+
+Évaluer une numérotation lisible dans l’ordre affiché et des préfixes courts
+
+**texte**
+
+JE souhaite maintenant revoir les ids des objets.
+Leur numérotation : je souhaite que ça corresponde à ce qui est affiché (l'ordre)
+Le préfixe : peut être un préfixe sur quelques caractères.
+Je souhaite que tu évalues le constat et que tu me fasses des propositions.
+
+**contexte et portée**
+
+Demande d’évaluation et de propositions pour les identifiants des éléments du modèle et leur lecture dans Atlas. Examiner le rapport entre identité persistante, code visible, ordre et préfixe. Le terme « objets » est ici compris comme les éléments du modèle, sans le limiter au type technique object. Aucun format, renommage, migration des identifiants, changement d’ordre, modification du modèle ou publication n’est encore adopté.
+
+
+## U783
+
+**id**
+
+U783
+
+**date**
+
+2026-09-26
+
+**titre**
+
+Adopter les codes courts ordonnés et inscrire leurs règles dans le méta modèle
+
+**texte**
+
+Il faut enregistrer ces règles au niveau du méta modèle afin qu'il soit clair.
+
+Go pour le refacto
+
+**contexte et portée**
+
+Accord sur la proposition complète présentée après U782 : codes visibles SYS/DOM/SUB/REF/CAP/BHV, trois chiffres au minimum, séquence globale par type selon le parcours de l’arbre de haut en bas ; identité persistante conservée pour les relations, accords et liens. Ordre de référence partagé entre arbre, cartes et fiches ; recherche, filtre, repli et disposition du graphe sans renumérotation. Codes et ordre figés dans chaque nouvelle publication ; historiques inchangés ; recherche par code visible ou identifiant historique ; liens partagés conservant identité et version. L’option de chemin hiérarchique et l’option de code stable avec rang distinct ne sont pas retenues. Formaliser dans le méta modèle et implémenter. Aucun changement de responsabilité, nom métier ou parent adopté par extension ; aucune release, commit ni push demandés.
+
+
+## U784
+
+**id**
+
+U784
+
+**date**
+
+2026-09-26
+
+**titre**
+
+Publier les codes de lecture puis committer et pousser Urbanisation SCM
+
+**texte**
+
+release, commit & push
+
+**contexte et portée**
+
+Publication locale du backlog courant après U783, incluant la politique de codes de lecture et son ordre figé ; commit des changements de cette tâche et push vers le dépôt Urbanisation-SCM. Préserver les publications historiques dans Git avant leur retrait de l’arbre actif. La publication ne donne aucun accord métier supplémentaire et ne valide pas les rédactions nouvelles par extension.

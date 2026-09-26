@@ -26,7 +26,7 @@ test('legacy type filters cannot restrict a shared search invisibly', () => {
 test('a direct capability URL leaves view selection to its published structure', () => {
   assert.equal(readRoute('#node=D04.e').view, undefined);
   assert.equal(readRoute('#node=D04.e&view=unknown').view, undefined);
-  assert.equal(routeHash(readRoute('')), '/');
+  assert.equal(routeHash(readRoute('')), '#');
 });
 
 test('market view is shareable and old sheet market anchors open the dedicated tab', () => {

@@ -2877,3 +2877,10 @@ U775 — Codex, 25 septembre 2026. Confrontation de couverture des neuf sous-dom
 Quatre capacités candidates : Inventory Usage Decision, Inventory Traceability, Transport Plan Decision et Scrapping Order. Extension proposée de Return Disposition Decision hors retours ; deux variantes contractuelles d’Inspection Order ; provenance des alternatives à préciser. Stocktaking Order reste conditionnel à une prestation autonome ; pas de nouvelle capacité de cycle de vie, de comptage par seuil ni de promising par option. Le rappel produit est d’abord un scénario transverse ; le rangement interne ne devient pas automatiquement un ordre.
 
 Les appuis de chaque proposition, leur frontière, les écarts et limites sont enregistrés dans l’annexe du backlog modeles/backlog/market-coverage-audit-U775.yaml. Les termes et décompositions sont des recommandations, non une nomenclature native commune ni un consensus. Absence documentaire n’est pas absence fonctionnelle. Aucun changement canonique ni accord déduit de la demande d’audit.
+
+
+## CMP309
+
+U778–U780 — Codex, 26 septembre 2026. Comparaison de la vue d’ensemble et des frontières de domaine aux périmètres SAP S/4HANA 2025 et aux processus Microsoft Dynamics 365, ELM840–ELM846. Recouvrement partiel : les noms Sales et Sourcing and Procurement ont un appui SAP direct ; les trois Business Systems et l’autonomie de l’orchestration sont des conventions FLOW. Aucun consensus ni équivalence exacte de système n’est établi. Chaque nouvelle fiche et son terme associé portent leurs deux appuis primaires et leurs limites.
+
+Le découpage distingue responsabilité commerciale, satisfaction opérationnelle et réalisation. Les processus éditeur traversent aussi Finance ; leurs frontières ne sont pas reprises automatiquement. La douane reste partiellement documentée par les appuis logistiques généraux, et la gouvernance de conformité dépasse les appuis Finance. U780 autorise le cadrage, les noms et les rattachements ; les comparaisons et rédactions nouvelles restent proposées. Sources, justification et contrôles de livraison : [lot canonique](../modeles/backlog/business-systems-U780.yaml).

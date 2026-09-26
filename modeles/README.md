@@ -1,5 +1,7 @@
 # Modèles structurés
 
+**Backlog U780 — systèmes métier et profondeur ciblée.** Business System → Domain → Subdomain → Capability → Behavior. Trois systèmes, dont Business Operations avec Sales, Sourcing and Procurement, Supply Chain Orchestration et Logistics Execution. Le détail des capacités et comportements reste concentré sur l’orchestration ; les systèmes périphériques sont des vues de contexte. [Portée et livraison](backlog/business-systems-U780.yaml). `business_system` et ses relations `presents` sont contrôlés par `PRINCIPLE-BUSINESS-SYSTEM` ; `modeling_depth` distingue profondeur de description, accord et réalisation. Les déclarations `publication_delivery.required_nodes` peuvent préciser `kind`, `parent` et `parent_type` (`contains` par défaut, `presents` pour les domaines). Ce lot n’est visible dans Atlas qu’après une release demandée ; les publications historiques restent figées.
+
 Les intentions d’accord non encore publiées peuvent être suspendues explicitement dans `decision-intents.yaml`, sans modifier leur capture historique : `suspensions` précise l’identifiant, le responsable et la date du réexamen, ses sources et sa justification. Une suspension ne crée aucun accord. Les intentions déjà publiées relèvent toujours du parcours de réexamen des décisions ; une suspension figée ne peut pas être effacée ou réécrite.
 
 **Publication courante :** [index](release/index.json) et [restitution générée](../restitutions/release.md). Le [parcours regroupé](#parcours-de-release-regroupé--u504) évite de recopier les compteurs et de refaire les contrôles manuellement.
@@ -59,7 +61,7 @@ Le backlog vivant et les nouvelles publications du modèle métier sont en **YAM
 
 La prochaine publication produira `<publication>/model.yaml`, un descripteur `urbanisation-vNNN-YYYY-MM-DD-HHMMSS.yaml` et une entrée figée `revisions/<publication>/backlog.yaml`. `index.json`, `manifest.json`, décisions, preuves et rapports restent des métadonnées techniques JSON. Les anciennes releases JSON et leurs empreintes ne sont jamais réécrites. La release active v003 demeure celle publiée avant cette migration.
 
-Le serveur charge YAML/JSON avec `scripts/structured_io.py` puis renvoie du JSON aux API. Aucun modèle parallèle n’est stocké dans Atlas. Les valeurs métier et leurs empreintes canoniques ne dépendent pas de la mise en forme YAML ; l’empreinte du fichier publié reste calculée sur ses octets exacts.
+L’exporteur `scripts/export_atlas.py` charge les publications YAML/JSON avec `scripts/structured_io.py` et vérifie leurs empreintes, puis génère les JSON statiques d’Atlas. Ces sorties ignorées par Git sont des artefacts de lecture, sans autorité concurrente. La release activée actualise les données locales ; le build les régénère pour GitHub Pages. Les valeurs métier et leurs empreintes canoniques ne dépendent pas de la mise en forme YAML ; l’empreinte du fichier publié reste calculée sur ses octets exacts.
 
 Installer la dépendance locale avec `python -m pip install --target .tools/yaml-runtime -r requirements.txt`. Les dates, identifiants et mots comme `on` restent des chaînes ; seules les valeurs booléennes `true`/`false`, nombres JSON et `null` sont typées implicitement. Les clés dupliquées, alias, objets Python et valeurs hors du contrat JSON sont refusés. Un champ multiligne peut utiliser `|` ; `|-` évite d’ajouter une fin de ligne à sa valeur. Les textes balisés du glossaire restent une proposition de syntaxe distincte du présent refactoring.
 
@@ -289,3 +291,10 @@ Les champs facultatifs `fields.request_origins` (capacité uniquement) et `field
 ### Application des accords cumulatifs — U709
 
 Un accord valide la proposition complète construite dans la discussion, avec ses conditions explicites. Le modèle canonique porte son application ; les annexes conservent preuves et correspondances. Une déclaration `publication_delivery` dans l’annexe rend le lot vérifiable : `applied` contrôle les nœuds attendus, leurs champs, parents et retraits ; `pending` reste visible sans être adopté automatiquement. La préparation expose ces lots dans son bilan et bloque une application incomplète. Ce contrôle repose sur des déclarations explicites et ne déduit pas les accords du texte libre des anciennes études.
+
+
+## Identité persistante et codes de lecture — U783
+
+`identification_rules` dans le glossaire méthodologique définit les règles adoptées ; `PRINCIPLE-DISPLAY-CODES` et `display_policy: typed-tree-v1` les appliquent au backlog. L’identité `id` reste immuable et porte les accords et relations. Les codes visibles suivent une séquence globale par type dans l’ordre de lecture ; un code n’a de sens durable qu’avec sa publication.
+
+`publish_release.compile_snapshot` génère `display_index` après filtrage des illustrations. Il fige les racines, les enfants et les codes à partir du même arbre explicite ; les validateurs contrôlent cohérence, unicité, séquence et identité de politique avec le snapshot source. Le backlog ne maintient pas de seconde liste de codes. Les anciens snapshots sont inchangés. Les règles ne modifient ni les fiches métier ni leur glossaire : celui-ci a été contrôlé, sans terme méthodologique ajouté.

@@ -40,8 +40,11 @@ def check_delivery(root, candidate):
             for field, expected in item.get('fields', {}).items():
                 if node['fields'].get(field) != expected:
                     errors.append(f'backlog-delivery: {label}: field mismatch: {ident}.{field}')
-            if 'parent' in item and not any(r['type'] == 'contains' and r['source_id'] == item['parent']
-                                            and r['target_id'] == ident for r in relations):
+            if 'kind' in item and node.get('kind') != item['kind']:
+                errors.append(f'backlog-delivery: {label}: kind mismatch: {ident}')
+            parent_type = item.get('parent_type', 'contains')
+            if 'parent' in item and (parent_type not in ('contains', 'presents') or not any(r['type'] == parent_type and r['source_id'] == item['parent']
+                                            and r['target_id'] == ident for r in relations)):
                 errors.append(f'backlog-delivery: {label}: missing parent: {ident}')
         for ident in absent:
             if ident in nodes:

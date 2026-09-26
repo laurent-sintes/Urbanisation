@@ -1,5 +1,11 @@
 /* FLOW identity adopted in U208. Exact colors and logos: ../BRANDING.md.
    Surface tints, neutral ink and borders are adaptations for the screen. */
+.modeling-depth { display: inline-block; margin: 2px 0 8px; padding: 3px 8px; border-radius: 5px; background: var(--flow-mint); color: var(--flow-green); font-size: 12px; font-weight: 600; }
+.business-card[data-depth="context"] .modeling-depth { background: var(--flow-lavender); }
+.business-card[data-kind="business_system"] { border-top: 4px solid var(--flow-green); height: auto; min-height: 220px; }
+.business-card[data-depth="context"] { border-top-color: #aab6d4; }
+.business-card[data-depth]:not([data-depth=""]) { height: auto; min-height: 220px; }
+.domain-card-summary { display: block; padding: 0 6px 7px 28px; font-size: 12px; color: var(--muted); line-height: 1.4; }
 :root {
   --flow-green: #236159;
   --flow-mint: #d9f2ea;

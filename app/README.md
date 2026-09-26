@@ -1,4 +1,22 @@
-# FLOW Atlas — application locale
+# FLOW Atlas — SPA statique
+
+## Publication statique et GitHub Pages
+
+Atlas charge `data/index.json`, puis `data/VERSION/model.json` et le guide `data/VERSION/guide.json`. Le chargement, les erreurs, la relance et le suivi automatique du courant sont conservés. Une sélection historique reste fixe. Les JSON sont téléchargés séparément du JavaScript ; l’historique complet n’est pas chargé à l’ouverture.
+
+`python scripts/export_atlas.py` exporte les publications désignées par `modeles/release/index.json`, vérifie les empreintes des descripteurs, modèles et guides, puis active le catalogue statique en dernier. Les snapshots retirés sont lus dans leurs commits exacts via `modeles/git-history.json`. Le YAML reste l’autorité. Aucun backlog ni corpus documentaire vivant n’est exporté. Les JSON conservent les métadonnées déjà présentes dans les snapshots ; masquer un champ dans l’interface ne le supprime pas des fichiers téléchargés.
+
+Les sorties `app/public/data/` et `app/dist/` sont générées et ignorées par Git. Le build exporte les données avant Vite ; une release activée réexporte les données vers `public/data/` et vers `dist/data/` si l’interface est compilée. Une simple préparation ne les publie pas. En cas d’export interrompu, relancer l’export ; aucun nouveau numéro de release n’est nécessaire.
+
+Publication, export et compilation partagent le verrou système `.runtime/atlas.lock`. Une opération concurrente est refusée : attendre la fin de l’opération en cours puis relancer. Le fichier de verrou peut rester présent ; le verrou est libéré par le système à la fermeture du processus. `scripts/build_atlas.py` protège toute la compilation, contrôle TypeScript avant l’export et appelle Vite. Chaque requête JSON a un délai maximal de 15 secondes, après lequel l’écran propose de réessayer.
+
+Le [workflow Pages](../.github/workflows/atlas-pages.yml) compile et déploie `app/dist/` après un push sur `main` touchant le site ou les publications, ou sur déclenchement manuel. Le checkout récupère l’historique complet nécessaire aux snapshots archivés. Configurer **Settings → Pages → Source → GitHub Actions** avant le premier déploiement. La conversion locale ne réalise ni push, ni activation distante. Les chemins relatifs et les liens `#…` fonctionnent à la racine et sous `/Urbanisation-SCM/`.
+
+Le contenu exporté est intégralement lisible par les visiteurs autorisés du site : choisir la visibilité Pages en conséquence. Un dépôt privé ne rend pas automatiquement son site privé. [Configuration des workflows GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+## Vue d’ensemble des systèmes métier — U780
+
+Une publication portant des nœuds `business_system` présente ses systèmes à l’accueil. Les domaines explicitement reliés par `presents` sont visibles dans leurs cartes ; les vues de contexte restent compactes. Le champ `modeling_depth` indique la profondeur choisie : contexte, domaines, ou capacités et comportements. Le niveau Systèmes métier est également disponible dans Relations. Arbre, fiches, infobulles et liens directs restent liés au snapshot sélectionné. Une publication historique conserve sa structure ; aucun complément backlog n’est injecté. L’interface est prête avant publication du [lot U780](../modeles/backlog/business-systems-U780.yaml).
 
 ## Niveaux Domain / Area — U482/U507
 
@@ -18,9 +36,9 @@ Un changement de vue ou de périmètre remet le contenu en haut ; un lien vers u
 
 Les accès aux deux glossaires et au guide du méta modèle sont alignés à gauche dans la navigation. La recherche porte sur tous les types, sans filtre ; les anciens paramètres `type` sont ignorés. La version du modèle complet apparaît une seule fois, sous la forme **Modèle · vNNN**, dans le pied de la navigation près des statistiques et du logo Beaumanoir. Son survol précise l’identifiant de publication et le suivi courant ou fixe ; elle n’est plus affichée dans le bandeau de chaque objet.
 
-Recette sur le serveur local compilé : `node app/verify-fixed-header.mjs`. Elle contrôle le défilement, les sélections, les liens de section, le clavier et les petits écrans.
+Les contrôles navigateur courants sont décrits dans « Données statiques et contrôles » ci-dessous. Les recettes historiques du bandeau restent conservées dans `legacy/qa-before-static-repair/`.
 
-`node app/verify-shell.mjs` contrôle la répartition de la barre, les cinq tailles d’écran, la largeur variable de l’arbre, le logo, la copie de lien et l’accès clavier. L’option `--baseline` mesure une version avant modification pour comparer la hauteur réellement gagnée.
+L’ancienne recette `verify-shell.mjs` et son option `--baseline` documentent les contrôles de la précédente interface ; l’entrée actuelle lance la suite consolidée.
 
 ## Informations métier — réalisation U468, masquée depuis U470
 
@@ -57,9 +75,9 @@ pnpm --dir app install --frozen-lockfile
 pnpm --dir app build
 ```
 
-La compilation vérifie TypeScript puis produit `app/dist/index.html` et ses ressources dans `app/dist/assets/`. Le fichier de verrouillage pnpm fixe les dépendances. Après une modification du code React, recompiler puis recharger la page. La compilation de l’interface ne publie aucun modèle métier et ne copie pas le modèle dans le bundle.
+La compilation exporte les publications, vérifie TypeScript puis produit `app/dist/index.html` et ses ressources dans `app/dist/assets/`. Le fichier de verrouillage pnpm fixe les dépendances. Après une modification du code React, recompiler puis recharger la page. La compilation de l’interface ne publie aucun modèle métier et ne copie pas le modèle dans le bundle.
 
-Node.js et pnpm servent à la compilation et au développement. L’application compilée utilise ensuite le serveur Python local avec PyYAML, sans serveur Node permanent. Installer le lecteur YAML depuis la racine avec `python -m pip install --target .tools/yaml-runtime -r requirements.txt`. Un dossier `dist` absent produit un diagnostic explicite ; aucune ancienne interface n’est servie en remplacement.
+Node.js et pnpm servent à la compilation et au développement. L’application compilée utilise un hébergement HTTP statique. Le serveur Python local emploie uniquement la bibliothèque standard, sans PyYAML ni serveur Node permanent. PyYAML sert uniquement à la génération des exports. Installer le lecteur YAML depuis la racine avec `python -m pip install --target .tools/yaml-runtime -r requirements.txt`. Un dossier `dist` absent produit un diagnostic explicite ; aucune ancienne interface n’est servie en remplacement.
 
 ## Lancer l’application
 
@@ -95,19 +113,7 @@ Ouvrir ensuite l’adresse locale ci-dessus ; `Ctrl+C` arrête ce serveur exécu
 
 ## Développer l’interface
 
-Le serveur Python conserve l’autorité sur la lecture des publications. Dans un premier terminal, le lancer sans navigateur :
-
-```powershell
-python app/server.py --port 8765
-```
-
-Dans un second terminal :
-
-```powershell
-pnpm --dir app dev
-```
-
-Vite sert l’interface de développement sur [http://127.0.0.1:5173/](http://127.0.0.1:5173/) et transmet les requêtes `/api` au serveur Python sur 8765. Le rechargement de développement concerne le code ; la sélection de publication et les règles de lecture restent les mêmes. Pour vérifier la livraison locale, recompiler puis consulter le serveur Python sur 8765.
+`pnpm --dir app dev` exporte les publications puis lance Vite sur [http://127.0.0.1:5173/](http://127.0.0.1:5173/), sans proxy API ni serveur Python parallèle. Après une nouvelle publication, la release actualise les JSON servis par Vite. Pour vérifier la livraison locale, recompiler puis consulter le serveur statique sur 8765.
 
 ## Urbanisation publiée
 
@@ -137,41 +143,44 @@ La carte **Authoritative Data**, anciennement Business References, offre le mêm
 
 La recherche porte sur les noms, identifiants et textes publiés, avec un filtre par type d’élément. Ctrl+K place le focus dans la recherche ; flèche bas entre dans les résultats, Entrée ouvre le résultat ciblé. Les synonymes français non présents dans la publication ne sont pas inventés. Les anciens paramètres d’URL relatifs au statut ou aux sources internes ne réactivent pas leur affichage.
 
-## API et contrôles
+## Données statiques et contrôles
 
-- `/api/releases` : publications disponibles et identifiant de la publication courante.
-- `/api/model` : urbanisation courante ; `?version=2026-09-13.2` pour une publication précise.
-- `/api/status` : identité du serveur et révision des données ; même paramètre `version` facultatif.
-- `/api/source?path=…&anchor=…` : source documentaire autorisée.
+- `data/index.json` : catalogue et pointeur courant explicites, empreintes des exports.
+- `data/VERSION/model.json` : modèle et glossaire figés dans la même publication.
+- `data/VERSION/guide.json` : guide associé et ses extraits figés, ou état indisponible explicite.
+- `/__atlas__/identity.json` : identité du serveur local pour le lanceur ; absent de GitHub Pages et inutilisé par la SPA.
 
-Les demandes d’espace backlog sont refusées, et `/api/panorama` n’est plus exposé. Une publication absente ou invalide provoque une erreur, sans repli vers un autre modèle. Les modèles publiés et descripteurs sont vérifiés par empreintes. Le suivi du catalogue `/api/releases` détecte le changement de publication courante ; `revision` conserve la version entière du modèle.
+Les anciennes routes `/api/*` ne sont plus servies. Le navigateur refuse une identité de modèle différente de la sélection. Un historique manquant affiche une erreur, sans repli. Les empreintes canoniques sont vérifiées lors de chaque export, avant activation du catalogue.
 
 ```powershell
 python app/server.py --check
-python -m unittest discover -s app -p test_data.py
+python -m unittest discover -s scripts -p "test_*.py"
+python -m unittest discover -s app -p "test_*.py"
+pnpm --dir app install --frozen-lockfile
 pnpm --dir app test
 pnpm --dir app build
+pnpm --dir app exec playwright install chromium
 pnpm --dir app verify
 ```
 
-Les tests navigateur vérifient les domaines et références contre le modèle publié, les anciens liens, la recherche, les sources, les versions historiques, le rafraîchissement automatique et les petits écrans. Le test de publication suivante intercepte les réponses HTTP dans un navigateur de test et ne modifie aucun fichier publié. Captures dans `app/.runtime/qa-react/`. Playwright est utilisé uniquement pour le développement ; `ATLAS_URL` et `ATLAS_PLAYWRIGHT_PATH` permettent de préciser le serveur et le module.
+`pnpm test` découvre tous les fichiers `test-*.mjs`, y compris catégories et rôles de sous-domaines. Les suites Python distinguent les invariants courants des décisions historiques, éprouvées sur leurs snapshots figés. Elles couvrent aussi le serveur statique, les guides, les archives Git, les exports interrompus et le verrou entre processus. Le test du lanceur Windows utilise une copie temporaire et un port libre ; il contrôle l’absence de doublon et les refus d’arrêt pour identité, PID ou date de démarrage incohérents.
 
-`verify-tree.mjs` contrôle les rattachements déplacés, l’expansion persistante, le focus, les sources repliées, les filtres, le redimensionnement et le tiroir mobile. Une fixture HTTP synthétique éprouve quatre niveaux supplémentaires et un objet relié sans parent hiérarchique ; aucune donnée de test n’entre dans le modèle. Captures dans `app/.runtime/qa-tree/`.
+`pnpm verify` exécute quatre recettes maintenues sur les fichiers compilés : `verify-browser.mjs` (cartes et parents explicites, fiches, comportements, recherche, clavier, glossaire, marché, graphe et mobile), `verify-static.mjs` (sous-chemin Pages, attente, erreur, relance et historique) et `verify-modeling-guide.mjs` (guide associé, exercices, liens et réponse obsolète après sélection) et `verify-display-codes.mjs` (politique de codes dans une fixture isolée). Leurs réponses HTTP sont servies dans le contexte isolé du navigateur, sans serveur utilisateur et sans modifier de publication. Les résultats courants vont uniquement dans `app/.runtime/`.
 
-`verify-universe.mjs` contrôle les liens de capacité des cartes de domaines et les cinq référentiels de la carte Business References dans Supply, contre les publications courante et v003. Il vérifie l’ouverture directe des fiches au clic/clavier, les infobulles, le retour navigateur, les univers vides et les listes sur petit écran. Captures dans `app/.runtime/qa-universe/`.
+Playwright est une dépendance de développement verrouillée. Chromium est le navigateur par défaut ; `ATLAS_BROWSER_CHANNEL=msedge` permet de tester Edge déjà installé. Aucun chemin de module personnel n’est nécessaire. La CI Linux installe Chromium avec ses dépendances système et exécute ces contrôles avant déploiement ; un job Windows teste le lanceur. La présence de tests ne garantit pas une couverture exhaustive.
 
-`verify-references.mjs` vérifie les mêmes liens dans les cinq cartes de référentiels : rattachements explicites, clic et clavier, publication historique et affichage desktop/mobile. Captures dans `app/.runtime/qa-references/`.
+Les anciennes recettes spécifiques sont archivées dans `legacy/qa-before-static-repair/`. Leurs entrées de commande historiques, notamment `verify:behaviors`, `verify:market`, `verify:dependencies` et `verify:presentation`, lancent désormais la recette consolidée ; elles ne rejouent pas tous les scénarios historiques. Les archives et preuves datées ne sont jamais réécrites par les tests courants.
 
-Le serveur de production sert exclusivement l’entrée et les ressources autorisées dans `app/dist/`. Les anciens scripts de l’interface, les sources TypeScript, les dépendances, les source maps et les copies JSON ne sont pas accessibles comme fichiers statiques. Les API restent limitées à la lecture locale, avec vérification de l’hôte et de l’origine, absence de cache et types de contenu explicites. La politique CSP limite scripts et feuilles de style aux fichiers locaux ; seuls les attributs de style nécessaires au placement React Flow sont autorisés en ligne. Elle n’autorise ni scripts en ligne ni évaluation dynamique.
+Le serveur de production sert exclusivement l’entrée et les ressources autorisées dans `app/dist/`. Le serveur expose les JSON générés sous `data/`, mais pas les sources TypeScript, les dépendances, les source maps ni les fichiers du dépôt. Il conserve la vérification de l’hôte et de l’origine, l’absence de cache et les types de contenu explicites. La politique CSP limite scripts et feuilles de style aux fichiers locaux ; seuls les attributs de style nécessaires au placement React Flow sont autorisés en ligne. Elle n’autorise ni scripts en ligne ni évaluation dynamique.
 
 ## Structure du frontend
 
 - `src/brand.css`, `public/assets/` : identité FLOW adoptée en U208, logos originaux et palette du template ; sources et maintenance dans [BRANDING.md](BRANDING.md).
 - `src/App.tsx` : composition des vues et navigation ; `navigation.ts` encode les liens et les préférences locales.
 - `src/model.ts`, `types.ts` : projection immuable et parcours des relations explicites.
-- `src/publication.ts`, `usePublication.ts` : API, catalogue, annulation des requêtes et suivi courant/historique.
+- `src/publication.ts`, `usePublication.ts` : fichiers JSON, catalogue, annulation des requêtes et suivi courant/historique.
 - `src/components/Sidebar.tsx` : arbre accessible, recherche et filtres de la publication.
-- `src/components/BusinessSheet.tsx`, `SourceDialog.tsx` : lecture métier, preuves et document complet.
+- `src/components/BusinessSheet.tsx` : lecture métier. Les sources internes restent masquées ; le guide dispose de ses propres extraits figés.
 - `src/ReactFlowPane.tsx` : cartes de structure et listes de capacités ; placement en grille.
 - `src/dependencyGraph.ts` : projection pure des relations publiées et de leurs regroupements, conservant les liens originaux.
 - `src/DependenciesPane.tsx`, `CytoscapeCanvas.tsx`, `dependencies.css` : contrôles, inspecteur accessible et rendu Cytoscape avec fCoSE/Dagre.
@@ -181,25 +190,25 @@ Les anciennes sources `app.js`, `model.js` et `styles.css` ont été remplacées
 
 Les cartes et leurs styles sont chargés à la demande. Cytoscape et ses dispositions ne sont chargés que pour la vue Relations ; les dépendances sont intégrées au build et verrouillées dans pnpm, sans CDN ni changement de CSP. L’ancien moteur ELK n’est plus nécessaire. Le chunk Cytoscape reste volumineux et déclenche l’avertissement de taille de Vite ; les calculs de placement s’exécutent sur le fil principal. Aucune promesse de performance sur des milliers d’éléments n’est déduite du modèle actuel.
 
-Contrôles des dépendances : `pnpm --dir app test` et `pnpm --dir app verify:dependencies`. Ce dernier utilise les publications courante et v003 ainsi qu’une fixture HTTP synthétique isolée, sans lecture du backlog ni modification des publications. Il couvre sens, qualifications, comportements, agrégations, source documentaire, liens directs et mobile. Avec `ATLAS_URL`, il vérifie aussi le serveur réel et sa CSP dans un contexte sans interception. Résultats dans `audits/2026-09-19-atlas-dependencies/browser/` ; [bilan d’intégration](../audits/2026-09-19-atlas-dependencies/README.md).
+Contrôles des dépendances : `pnpm --dir app test` vérifie projections, sens, qualifications et agrégations ; la recette consolidée vérifie le rendu Cytoscape et les préférences de disposition. Le [bilan historique](../audits/2026-09-19-atlas-dependencies/README.md) conserve les preuves antérieures.
 
 ## Lecture YAML — U202
 
-Installer `requirements.txt` depuis la racine : `python -m pip install --target .tools/yaml-runtime -r requirements.txt`. Le lecteur commun accepte le modèle YAML publié et les anciens JSON ; les API gardent `application/json`. Aucun changement de contrat HTTP ni de modèle copié dans le navigateur. Après modification du lecteur Python, redémarrer avec le lanceur. Les outils Node qui lisent les fichiers publiés utilisent le même lecteur via `scripts/load-publication.mjs` ; `ATLAS_PYTHON` peut préciser l’interpréteur.
+Installer `requirements.txt` depuis la racine : `python -m pip install --target .tools/yaml-runtime -r requirements.txt`. Le lecteur commun sert aux outils de validation et de génération, jamais au serveur statique. Après modification du lecteur, régénérer les JSON avec le build ou l’export ; aucun redémarrage HTTP nécessaire. Les outils Node lisant les fichiers publiés utilisent ce lecteur via `scripts/load-publication.mjs` ; `ATLAS_PYTHON` peut préciser l’interpréteur.
 ## Glossaire et infobulles — U203
 
 Deux accès sont placés hors de l’arbre métier : **Glossaire métier** et **Glossaire du méta modèle**. Le premier lit les termes métier du snapshot ; le second combine les termes méthodologiques figés du guide explicitement associé et les termes TER classés comme méthodologiques par ce guide. Les anciens liens TER gardent leur identité et ouvrent le bon glossaire. Une publication sans guide associé ne récupère aucun complément du backlog. La liste et la définition disposent de panneaux de défilement indépendants ; sélectionner un terme remet sa définition en haut. Sur mobile, les panneaux sont empilés et bornés.
 
 Les chaînes `[libellé](glossary:TER059)` et `[libellé](model:D01.f#definition)` sont rendues par `ModelText`. Elles restent des chaînes YAML/JSON ; aucun HTML ni liaison automatique par mot. `ReferenceLink` ajoute une vraie URL, un aperçu au survol/focus et le passage à la fiche. Échap ferme l’aperçu, le pointeur peut passer sur celui-ci ; Entrée, clic, ouverture dans un nouvel onglet et rechargement d’un lien profond conservent la publication. Une cible absente produit un repère explicite, sans redirection vers un autre sens. Les liens de fiches existants utilisent aussi ce composant.
 
-Compiler avec `pnpm --dir app build`, puis recharger la page. Vérifications complémentaires : `node --test --test-isolation=none app/test-glossary.mjs` et `node app/verify-glossary.mjs`. Ce dernier contrôle v003 réelle, puis injecte des données de test uniquement dans son navigateur ; il ne crée pas de release. Captures de contrôle dans `app/.runtime/qa-glossary/` ; captures initiales U203 conservées dans `audits/2026-09-14-glossaire-atlas/`. Le test vérifie aussi le glossaire de la publication courante lorsqu’il existe.
+Compiler avec `pnpm --dir app build`, puis recharger la page. Le glossaire est vérifié par `app/test-glossary.mjs`, la recette consolidée et la recette du guide. Les captures initiales U203 restent conservées dans `audits/2026-09-14-glossaire-atlas/`.
 
 
 ## Comportements de capacités — U264
 
 Atlas reconnaît les nœuds `behavior` et leur rattachement explicite à une capacité. Arbre terminal et navigation clavier, filtre Comportement et recherche par contenu/ascendance, icône distincte, liste des descriptions dans la fiche de capacité, fiche individuelle avec retour au parent, liens sur les cartes de capacités. Les nombres de comportements et de capacités restent distincts. L’adaptateur refuse les comportements orphelins, rattachés à un autre type ou possédant des enfants. Le champ historique layer n’est plus un critère de parenté depuis U455/U458.
 
-`pnpm --dir app verify:behaviors` vérifie les parcours bureau/mobile dans Edge headless contre le serveur local. Le test intercepte les API **dans son seul navigateur** pour afficher une fixture issue du backlog sous une identité de test. Il ne publie aucune version et contrôle que la publication réelle reste inchangée. Captures et résultats : audits/2026-09-17-comportements-atlas/browser/. Les anciennes publications n’obtiennent aucun contenu du backlog.
+`pnpm --dir app verify:behaviors` lance la recette consolidée sur les comportements de la publication courante, sans injection de backlog. La recette précédente et ses preuves restent historiques.
 
 
 ## Comparaison par rapport au marché — U311
@@ -212,7 +221,7 @@ L’entrée **Comprendre le méta modèle**, à côté des deux glossaires et ho
 
 Les réponses et les variantes restent éphémères, sans score ni historique de parcours. Le lien direct `#view=principles&principle=ID&version=PUBLICATION` conserve la clé et la publication ; le bouton Copier le lien fixe la publication affichée. Les liens de fiches sont résolus uniquement dans son snapshot.
 
-Le contenu pédagogique est distinct du glossaire métier et du catalogue de capacités. `modeles/modeling-guides/index.yaml` associe explicitement une publication à une version de guide et à son empreinte. `app/modeling_guide.py` lit uniquement cette association et le document YAML figé via `structured_io.py`. `/api/modeling-guide?version=…` renvoie le guide associé ou un état d’absence ; il ne complète jamais une ancienne publication depuis le backlog ni depuis un autre guide. La disponibilité du guide n’altère pas `/api/model`.
+Le contenu pédagogique est distinct du glossaire métier et du catalogue de capacités. `modeles/modeling-guides/index.yaml` associe explicitement une publication à une version de guide et à son empreinte. `app/modeling_guide.py` lit uniquement cette association et le document YAML figé via `structured_io.py`. `data/VERSION/guide.json` contient le guide associé ou un état d’absence ; il ne complète jamais une ancienne publication depuis le backlog ni depuis un autre guide. La disponibilité du guide n’altère pas `data/VERSION/model.json`.
 
 Le premier guide du 18 septembre est associé rétrospectivement à v007 (publication du 16 septembre). Sa date et sa portée sont indiquées ; les principes adoptés plus tard et les illustrations sont distingués du contenu du snapshot. L’accord de réalisation U321 ne transforme pas les formulations pédagogiques ou les généralisations proposées en nouveaux accords métier. Les extraits de sources sont figés avec le guide, sans ouvrir une version courante différente à leur place.
 
@@ -220,7 +229,7 @@ Pour une évolution, créer une nouvelle version de guide puis actualiser volont
 
 Depuis U451, les comportements portent une forme principale dans `fields.nature` : politique/stratégie, variante de parcours, mécanisme, périmètre métier, dimension de raisonnement, effet métier ou pratique de planification. Chaque forme possède son pictogramme ; les types inconnus restent neutres. Les capacités contenues par les référentiels conservent une icône propre au référentiel, déterminée par leur parent explicite. Les décisions restent en fin de liste avec leur séparation légère.
 
-Contrôle U450 : `node app/verify-atlas-presentation.mjs` sur le serveur local compilé. Il vérifie guide, glossaires, anciens liens, défilement, mobile, sources internes masquées et icônes. Les sept formes sont également éprouvées avec une fixture de publication isolée dans le navigateur. Aucun fichier publié n’est modifié par ce contrôle.
+La recette U450 antérieure reste conservée dans `legacy/qa-before-static-repair/verify-atlas-presentation.mjs`. Le guide est désormais contrôlé par la recette maintenue `verify-modeling-guide.mjs`.
 
 Contrôles : `python -m unittest discover -s app -p test_modeling_guide.py`, `pnpm --dir app test`, `pnpm --dir app build`, puis `pnpm --dir app verify:principles`. La vérification navigateur sert les fichiers compilés dans son contexte de test et utilise les publications réelles en lecture seule ; elle ne nécessite pas de démarrer le serveur utilisateur.
 
@@ -253,7 +262,7 @@ L’onglet **Sources d’inspiration** est voisin de Carte, Fiche et Relations s
 
 La fiche place **Exemples concrets** après la définition. `fields.examples` permet situation, résultat et leçon métier. Les anciens périmètres restent lisibles par extraction des passages explicitement signalés comme exemples, y compris les exemples discutés et les marqueurs Markdown historiques. Sources internes et statuts restent privés. La recherche indexe seulement le contenu public des exemples et des raisons de vocabulaire.
 
-Contrôle courant : `node app/verify-market.mjs`, puis lecture des captures dans `.runtime/verify-market/` sous le sous-dossier horodaté annoncé. Lecture du serveur local, puis fixture isolée pour les contenus encore non publiés ; aucune mutation de la publication.
+Contrôle courant : `pnpm --dir app verify` vérifie les sources d’inspiration de la publication sélectionnée. Les tests de présentation et de recherche complètent ce parcours ; aucune mutation de publication.
 
 ### Sources d’inspiration — lecture métier U475
 
@@ -261,12 +270,12 @@ Lorsqu’une fiche ou un terme publié contient `market_inspiration`, l’onglet
 
 Le tableau reçoit les champs `concept_name`, `scope_summary` et `approach_summary` des comparaisons publiées. L’objet `market_inspiration` porte `choice`, `flow_scope`, `flow_approach`, `synthesis` et les `examples` avec `source_title` / `source_url`. La ligne FLOW prend le nom du nœud ou du terme consulté. La recherche indexe ces textes publics, sans les références internes ni les qualifications de travail. Cet objet n’est pas exposé comme un bloc brut dans la fiche.
 
-Les publications sans cet objet conservent la présentation par référence ; aucun complément ni résumé n’est récupéré dans le backlog. Sur petit écran, le tableau garde ses en-têtes et défile horizontalement dans une région accessible au clavier. La recette maintenue vérifie cette branche lorsqu’un exemple structuré existe dans sa fixture isolée.
+Les publications sans cet objet conservent la présentation par référence ; aucun complément ni résumé n’est récupéré dans le backlog. Sur petit écran, le tableau garde ses en-têtes et défile horizontalement dans une région accessible au clavier.
 
 
 ## Allègement de la revue — U470
 
-Le catalogue Informations métier est temporairement masqué : pas de bouton de navigation, de section dans les fiches, de résultat ni de filtre de recherche. Un ancien lien `view=information` revient à la fiche de son nœud, ou à la carte, dans la même version. Les données publiées et le travail interne sont conservés ; ce masquage n’est pas un contrôle d’accès à l’API locale. Les composants internes sont conservés sans point d’entrée public.
+Le catalogue Informations métier reste masqué : pas de bouton de navigation, de section dans les fiches, de résultat ni de filtre de recherche. Un ancien lien `view=information` revient à la fiche de son nœud, ou à la carte, dans la même version. Les données publiées et le travail interne sont conservés ; ce masquage ne retire pas les champs des JSON exportés. Le composant sans consommateur et ses styles ont été retirés lors du nettoyage technique.
 
 Les mots clés explicitement reliés au glossaire ouvrent une infobulle au survol et au focus clavier. Elle donne priorité à la définition complète, plutôt qu’au résumé court. U470 ajoute ces liens dans l’univers Supply ; leur disponibilité publique dépend du snapshot publié, sans repli backlog.
 
@@ -282,3 +291,10 @@ Les capacités peuvent porter `fields.category: { id, display_name, order? }`. A
 
 
 U711 : les sous-domaines peuvent porter `fields.dominant_role` (id et display_name). Atlas affiche un badge textuel avec accent coloré et un filtre de finalité sur les vues comportant des sous-domaines. Aucun rôle n’est inféré des noms dans les publications historiques. Les catégories de capacités restent un classement distinct, applicable aussi à Matching et Fulfilment.
+
+
+## Codes de lecture — U783
+
+Les nouvelles publications portant `display_policy: typed-tree-v1` contiennent un `display_index` figé : codes SYS/DOM/SUB/REF/CAP/BHV et ordre de l’arbre. Atlas les affiche dans l’arbre, les cartes, les fiches et les sélecteurs de relations. La recherche accepte code ou identité persistante ; les liens gardent `node=ID` et la version. Recherche, filtres et repli ne renumérotent rien. Les historiques sans cette politique conservent leurs identifiants affichés. La page du méta modèle explique ces règles à partir de la politique du snapshot, même sans guide associé.
+
+`pnpm --dir app verify:codes` vérifie ce parcours sur une publication de test isolée, fabriquée avec le générateur Python à partir des données publiées. Aucun catalogue utilisateur n’est modifié. Une compilation seule n’ajoute pas de codes aux publications existantes : leur activation nécessite une nouvelle release.

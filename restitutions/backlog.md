@@ -1,6 +1,6 @@
 # Backlog — 2026-09-13.3
 
-Restitution générée depuis le modèle structuré, connaissance au 2026-09-23. Ne pas éditer cette vue pour modifier le modèle.
+Restitution générée depuis le modèle structuré, connaissance au 2026-09-26. Ne pas éditer cette vue pour modifier le modèle.
 
 Publication et validation sont distinctes. Le statut d’un rattachement peut différer de celui de la capacité.
 
@@ -10,9 +10,62 @@ Origine des demandes : **Frontoffice** désigne une sollicitation externe au Dom
 
 | Repère | Nom | Niveau | Contenu direct | Statut |
 | --- | --- | --- | --- | --- |
+| system-design-development | Design & Development | Business System | Exploration différée | Validé par l’urbaniste — portée : name, modeling_depth |
+| system-business-operations | Business Operations | Business System | Sales, Sourcing and Procurement, Supply Chain Orchestration, Logistics Execution | Validé par l’urbaniste — portée : name, modeling_depth |
+| system-enterprise-management-control | Enterprise Management & Control | Business System | Exploration différée | Validé par l’urbaniste — portée : name, modeling_depth |
 | universe-supply | Supply Chain Orchestration | Domain | Master Data, Policies, Plan Visibility, Order Management, Inventory Management, Demand & Supply Matching, Fulfilment Orchestration, Service Order Management, Order Promising | Proposé par l’IA |
 
 Les groupes de présentation conservent leur rôle distinct des niveaux de décomposition métier.
+
+## system-design-development — Design & Development
+
+Statut : **Validé par l’urbaniste — portée : name, modeling_depth**.
+
+[Design & Development](glossary:TER105) : préparer ce que l’entreprise proposera et saura réaliser, depuis les études jusqu’au développement de l’offre et des produits.
+
+| Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
+| --- | --- | --- | --- | --- | --- | --- |
+
+## system-business-operations — Business Operations
+
+Statut : **Validé par l’urbaniste — portée : name, modeling_depth**.
+
+[Business Operations](glossary:TER106) : faire fonctionner l’activité d’achat, de vente et de réalisation en faisant coopérer Sales, Sourcing and Procurement, Supply Chain Orchestration et Logistics Execution.
+
+| Repère | Nom | Type | Statut |
+| --- | --- | --- | --- |
+| domain-sales | Sales | Domain | Validé par l’urbaniste — portée : name, modeling_depth |
+| domain-sourcing-procurement | Sourcing and Procurement | Domain | Validé par l’urbaniste — portée : name, modeling_depth |
+| universe-supply | Supply Chain Orchestration | Domain | Proposé par l’IA |
+| domain-logistics-execution | Logistics Execution | Domain | Validé par l’urbaniste — portée : name, modeling_depth |
+
+
+## system-enterprise-management-control — Enterprise Management & Control
+
+Statut : **Validé par l’urbaniste — portée : name, modeling_depth**.
+
+[Enterprise Management & Control](glossary:TER107) : orienter et financer l’activité, mesurer ses résultats et organiser la maîtrise des risques et de la conformité à l’échelle de l’entreprise.
+
+| Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
+| --- | --- | --- | --- | --- | --- | --- |
+
+## domain-sales — Sales
+
+Statut : **Validé par l’urbaniste — portée : name, modeling_depth**.
+
+[Sales](glossary:TER108) : construire et gérer la relation commerciale côté client : offres, négociations et conditions de vente.
+
+| Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
+| --- | --- | --- | --- | --- | --- | --- |
+
+## domain-sourcing-procurement — Sourcing and Procurement
+
+Statut : **Validé par l’urbaniste — portée : name, modeling_depth**.
+
+[Sourcing and Procurement](glossary:TER109) : sélectionner les fournisseurs, négocier les accords et gérer les achats de biens et de prestations.
+
+| Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
+| --- | --- | --- | --- | --- | --- | --- |
 
 ## universe-supply — Supply Chain Orchestration
 
@@ -286,6 +339,15 @@ Statut : **Proposé par l’IA**.
 | D03.j | Capable-to-Promise (CTP) | evaluation | Proposé par l’IA | Évaluer la faisabilité conditionnelle de satisfaction d’une demande selon les sources, matières, délais et capacités nécessaires, sans décider de leur mobilisation. | Établir à quelles conditions une promesse deviendrait réalisable après adaptation. | Proposé par l’IA |
 | D03.k | Profitable-to-Promise (PTP) | evaluation | Proposé par l’IA | Évaluer et comparer les conséquences économiques des possibilités de promesse, en explicitant les coûts, les conditions d’admissibilité et les incertitudes, sans sélectionner la réponse. | Éclairer le choix par un dossier économique local et contextuel des avantages et inconvénients des options, sans sélectionner la réponse. | Proposé par l’IA |
 | D03.l | Promise Selection Decision | decision | Proposé par l’IA | Choisir une proposition initiale ou révisée de promesse pour une demande ou un ensemble de commandes, parmi les possibilités admissibles, sans confirmer l’engagement ni affecter les ressources. | Retenir un échéancier acceptable pour honorer la commande. | Proposé par l’IA |
+
+## domain-logistics-execution — Logistics Execution
+
+Statut : **Validé par l’urbaniste — portée : name, modeling_depth**.
+
+[Logistics Execution](glossary:TER110) : réaliser les opérations physiques et les formalités associées : entrepôt, transport et douane.
+
+| Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
+| --- | --- | --- | --- | --- | --- | --- |
 
 **Justification de la décomposition — D01.d :** Établir une référence complète sur un périmètre, entretenir la fiabilité par contrôles récurrents et répondre rapidement à une situation ciblée correspondent à trois politiques ou variantes métier, avec des bénéfices distincts. Les mêmes responsabilités de rapprochement et de correction justifiée sont mobilisées ; les interfaces et outils de comptage ne créent pas de comportement supplémentaire.
 
@@ -579,6 +641,286 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | --- | --- | --- | --- |
 | transport-load-consolidation | Load Consolidation | Proposé par l’IA | Constituer des chargements compatibles selon les marchandises, capacités, destinations et échéances. |
 | transport-routing-scheduling | Routing & Scheduling | Proposé par l’IA | Déterminer les étapes, arrêts et échéances du plan de transport selon les trajets et contraintes admissibles. |
+
+## Scénarios métier — system-design-development Design & Development
+
+### Illustration de responsabilité
+
+Illustration FLOW fictive. Une nouvelle variante de vêtement est définie avant d’être proposée aux achats et à la vente. Sa référence utile pourra être ingérée par l’orchestration une fois sa source identifiée.
+
+**Ce que cela illustre.** Le récit explique la frontière métier ; il ne prouve aucun flux ou déploiement installé.
+
+Références : U780.
+
+## Sources d’inspiration — system-design-development Design & Development
+
+### SAP — R&D / Engineering
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Préparation et développement des produits.
+
+**Différences.** FLOW conserve un contexte sommaire ; le périmètre ne reprend pas toutes les fonctions R&D SAP ni tout le processus Design to retire.
+
+**Position FLOW.** Design & Development est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.8 R&D / Engineering
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — Design to retire end-to-end overview
+
+Microsoft Dynamics 365 Supply Chain Management et Commerce · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Préparation et développement des produits.
+
+**Différences.** FLOW conserve un contexte sommaire ; le périmètre ne reprend pas toutes les fonctions R&D SAP ni tout le processus Design to retire.
+
+**Position FLOW.** Design & Development est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[Design to retire end-to-end overview](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/design-to-retire-overview) — Page évolutive ; version globale non précisée, consulté le 2026-09-26.
+
+**Passage.** Design to retire process relationship ; business process areas
+
+**Limite de preuve.** Parcours produit tangible ; ne couvre pas toutes les études ou transformations de l’entreprise.
+
+Références : ELM842, CMP309.
+
+## Scénarios métier — system-business-operations Business Operations
+
+### Illustration de responsabilité
+
+Illustration FLOW fictive. Pour livrer une commande de vêtements, la vente établit les conditions commerciales, les achats gèrent les apports nécessaires, l’orchestration organise la satisfaction et les exécutants réalisent les prestations.
+
+**Ce que cela illustre.** Le récit explique la frontière métier ; il ne prouve aucun flux ou déploiement installé.
+
+Références : U780.
+
+## Sources d’inspiration — system-business-operations Business Operations
+
+### SAP — Sales ; Sourcing and Procurement ; Supply Chain
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Distinction des responsabilités de vente, d’achat et de chaîne logistique.
+
+**Différences.** Le regroupement Business Operations et le domaine autonome d’orchestration sont une convention FLOW ; les périmètres produit et les processus éditeur ne constituent pas son arbre.
+
+**Position FLOW.** Business Operations est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.9, §2.11, §2.12 ; périmètres de la suite
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — What are the end-to-end scenarios and business processes in Dynamics 365?
+
+Microsoft Dynamics 365 · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Distinction des responsabilités de vente, d’achat et de chaîne logistique.
+
+**Différences.** Le regroupement Business Operations et le domaine autonome d’orchestration sont une convention FLOW ; les périmètres produit et les processus éditeur ne constituent pas son arbre.
+
+**Position FLOW.** Business Operations est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[What are the end-to-end scenarios and business processes in Dynamics 365?](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/overview) — Page évolutive ; catalogue juillet 2026 mentionné, consulté le 2026-09-26.
+
+**Passage.** End-to-end scenarios
+
+**Limite de preuve.** Scénarios de bout en bout ; ne prescrit pas une hiérarchie de domaines ou de systèmes métier.
+
+Références : ELM841, CMP309.
+
+## Scénarios métier — system-enterprise-management-control Enterprise Management & Control
+
+### Illustration de responsabilité
+
+Illustration FLOW fictive. Un budget oriente les achats avant la saison ; les résultats et la marge sont ensuite analysés pour adapter les orientations. Cet exemple ne prescrit aucun flux technique installé.
+
+**Ce que cela illustre.** Le récit explique la frontière métier ; il ne prouve aucun flux ou déploiement installé.
+
+Références : U780.
+
+## Sources d’inspiration — system-enterprise-management-control Enterprise Management & Control
+
+### SAP — Finance
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** La Finance couvre aussi planification et contrôle, au-delà de la clôture.
+
+**Différences.** L’ensemble FLOW est plus large que Finance ou Record to report. La gouvernance de conformité est regroupée ici sans déplacer les contrôles opérationnels. Aucun équivalent exact de système n’est établi.
+
+**Position FLOW.** Enterprise Management & Control est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.5 Finance ; Financial Planning and Analysis ; Governance, Risk, and Compliance
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — Record to report end-to-end overview
+
+Microsoft Dynamics 365 Finance · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** La Finance couvre aussi planification et contrôle, au-delà de la clôture.
+
+**Différences.** L’ensemble FLOW est plus large que Finance ou Record to report. La gouvernance de conformité est regroupée ici sans déplacer les contrôles opérationnels. Aucun équivalent exact de système n’est établi.
+
+**Position FLOW.** Enterprise Management & Control est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[Record to report end-to-end overview](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/record-to-report-overview) — Page évolutive ; version globale non précisée, consulté le 2026-09-26.
+
+**Passage.** Record to report process relationship ; Forecast to plan
+
+**Limite de preuve.** Appui partiel pour Finance et contrôle ; ne définit pas tout Enterprise Management & Control, notamment sa gouvernance de conformité.
+
+Références : ELM846, CMP309.
+
+## Scénarios métier — domain-sales Sales
+
+### Illustration de responsabilité
+
+Illustration FLOW fictive. Un client B2B négocie les conditions d’une commande de 100 vêtements. L’orchestration examine ensuite comment satisfaire la quantité et la date demandées dans les conditions convenues.
+
+**Ce que cela illustre.** Le récit explique la frontière métier ; il ne prouve aucun flux ou déploiement installé.
+
+Références : U780.
+
+## Sources d’inspiration — domain-sales Sales
+
+### SAP — Sales
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Relation commerciale, vente et contrats côté client.
+
+**Différences.** Les éditeurs couvrent aussi la commande et des traitements aval. FLOW garde ses capacités opérationnelles existantes et ne transpose pas le découpage des modules.
+
+**Position FLOW.** Sales est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.9 Sales ; Sales Force Support ; Order and Contract Management
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — Order to cash business process flow overview and relationships to other business processes
+
+Microsoft Dynamics 365 Sales, Commerce, Supply Chain Management et Finance · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Relation commerciale, vente et contrats côté client.
+
+**Différences.** Les éditeurs couvrent aussi la commande et des traitements aval. FLOW garde ses capacités opérationnelles existantes et ne transpose pas le découpage des modules.
+
+**Position FLOW.** Sales est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[Order to cash business process flow overview and relationships to other business processes](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/order-to-cash-overview) — Page évolutive ; catalogue juillet 2026 mentionné, consulté le 2026-09-26.
+
+**Passage.** Order to cash business process flow
+
+**Limite de preuve.** Processus plus large que Sales ; ne décide pas du rattachement des capacités FLOW.
+
+Références : ELM843, CMP309.
+
+## Scénarios métier — domain-sourcing-procurement Sourcing and Procurement
+
+### Illustration de responsabilité
+
+Illustration FLOW fictive. Un fournisseur est sélectionné et les conditions d’achat de vêtements sont négociées. L’orchestration coordonne les apports attendus ; l’entrepôt réalise la réception.
+
+**Ce que cela illustre.** Le récit explique la frontière métier ; il ne prouve aucun flux ou déploiement installé.
+
+Références : U780.
+
+## Sources d’inspiration — domain-sourcing-procurement Sourcing and Procurement
+
+### SAP — Sourcing and Procurement
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Choix fournisseurs, contrats et achats de biens ou de services.
+
+**Différences.** Le domaine FLOW ne reprend pas l’ensemble du processus Source to pay ni toutes les fonctions SAP de réception et facturation. La frontière des commandes existantes est conservée.
+
+**Position FLOW.** Sourcing and Procurement est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.11 ; §2.11.3 Sourcing and Contract Management
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — Help organizations manage and optimize the source to pay business processes
+
+Microsoft Dynamics 365 Supply Chain Management et Finance · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Choix fournisseurs, contrats et achats de biens ou de services.
+
+**Différences.** Le domaine FLOW ne reprend pas l’ensemble du processus Source to pay ni toutes les fonctions SAP de réception et facturation. La frontière des commandes existantes est conservée.
+
+**Position FLOW.** Sourcing and Procurement est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[Help organizations manage and optimize the source to pay business processes](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/source-to-pay-introduction) — Page évolutive ; mise à jour affichée 2024-05-28, consulté le 2026-09-26.
+
+**Passage.** Source to pay overview ; steps 1–8
+
+**Limite de preuve.** Processus transverse plus large que le domaine achats FLOW ; paiement et exécution physique ne sont pas absorbés.
+
+Références : ELM844, CMP309.
 
 ## Scénarios métier — universe-supply Supply Chain Orchestration
 
@@ -19527,6 +19869,62 @@ SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement par
 
 Références : ELM833, U775, U777.
 
+## Scénarios métier — domain-logistics-execution Logistics Execution
+
+### Illustration de responsabilité
+
+Illustration FLOW fictive. Pour une expédition, l’entrepôt prépare les colis et le transporteur les achemine ; les formalités douanières sont exécutées lorsqu’elles sont requises. L’orchestration suit le résultat des prestations confiées.
+
+**Ce que cela illustre.** Le récit explique la frontière métier ; il ne prouve aucun flux ou déploiement installé.
+
+Références : U780.
+
+## Sources d’inspiration — domain-logistics-execution Logistics Execution
+
+### SAP — Supply Chain — Delivery and Transportation ; Warehousing
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Réalisation des mouvements, des opérations d’entrepôt et du transport.
+
+**Différences.** Supply Chain et Inventory to deliver sont plus larges que l’exécution FLOW. Les appuis consultés sont partiels pour les formalités douanières ; aucun équivalent exact du domaine n’est affirmé.
+
+**Position FLOW.** Logistics Execution est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.12 Supply Chain ; Delivery and Transportation ; Warehousing
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — Introduction to inventory to deliver business process
+
+Microsoft Dynamics 365 · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Réalisation des mouvements, des opérations d’entrepôt et du transport.
+
+**Différences.** Supply Chain et Inventory to deliver sont plus larges que l’exécution FLOW. Les appuis consultés sont partiels pour les formalités douanières ; aucun équivalent exact du domaine n’est affirmé.
+
+**Position FLOW.** Logistics Execution est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[Introduction to inventory to deliver business process](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/inventory-to-deliver-introduction) — Page évolutive ; version globale non précisée, consulté le 2026-09-26.
+
+**Passage.** Inventory to deliver overview
+
+**Limite de preuve.** Recouvrement partiel ; la référence ne suffit pas à établir toutes les formalités douanières ni leur réalisation Beaumanoir.
+
+Références : ELM845, CMP309.
+
 ## Sources d’inspiration — Capacité métier
 
 Décrire ce que l’entreprise sait faire permet de conserver un repère quand ses équipes ou ses outils changent. Capacité métier désigne cette aptitude durable.
@@ -29254,6 +29652,282 @@ SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement par
 **Limite de preuve.** Une écriture de sortie ne prouve pas une destruction ; le document ne définit pas un ordre de service externe universel. Scrapping Order est le nom FLOW de la prestation ; aucun objet natif commun aux éditeurs n’est déduit. La restriction WMS Microsoft sur la quarantaine est conservée.
 
 Références : ELM833, U775, U777.
+
+## Sources d’inspiration — Design & Development
+
+### SAP — R&D / Engineering
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Préparation et développement des produits.
+
+**Différences.** FLOW conserve un contexte sommaire ; le périmètre ne reprend pas toutes les fonctions R&D SAP ni tout le processus Design to retire.
+
+**Position FLOW.** Design & Development est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.8 R&D / Engineering
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — Design to retire end-to-end overview
+
+Microsoft Dynamics 365 Supply Chain Management et Commerce · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Préparation et développement des produits.
+
+**Différences.** FLOW conserve un contexte sommaire ; le périmètre ne reprend pas toutes les fonctions R&D SAP ni tout le processus Design to retire.
+
+**Position FLOW.** Design & Development est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[Design to retire end-to-end overview](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/design-to-retire-overview) — Page évolutive ; version globale non précisée, consulté le 2026-09-26.
+
+**Passage.** Design to retire process relationship ; business process areas
+
+**Limite de preuve.** Parcours produit tangible ; ne couvre pas toutes les études ou transformations de l’entreprise.
+
+Références : ELM842, CMP309.
+
+## Sources d’inspiration — Business Operations
+
+### SAP — Sales ; Sourcing and Procurement ; Supply Chain
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Distinction des responsabilités de vente, d’achat et de chaîne logistique.
+
+**Différences.** Le regroupement Business Operations et le domaine autonome d’orchestration sont une convention FLOW ; les périmètres produit et les processus éditeur ne constituent pas son arbre.
+
+**Position FLOW.** Business Operations est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.9, §2.11, §2.12 ; périmètres de la suite
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — What are the end-to-end scenarios and business processes in Dynamics 365?
+
+Microsoft Dynamics 365 · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Distinction des responsabilités de vente, d’achat et de chaîne logistique.
+
+**Différences.** Le regroupement Business Operations et le domaine autonome d’orchestration sont une convention FLOW ; les périmètres produit et les processus éditeur ne constituent pas son arbre.
+
+**Position FLOW.** Business Operations est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[What are the end-to-end scenarios and business processes in Dynamics 365?](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/overview) — Page évolutive ; catalogue juillet 2026 mentionné, consulté le 2026-09-26.
+
+**Passage.** End-to-end scenarios
+
+**Limite de preuve.** Scénarios de bout en bout ; ne prescrit pas une hiérarchie de domaines ou de systèmes métier.
+
+Références : ELM841, CMP309.
+
+## Sources d’inspiration — Enterprise Management & Control
+
+### SAP — Finance
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** La Finance couvre aussi planification et contrôle, au-delà de la clôture.
+
+**Différences.** L’ensemble FLOW est plus large que Finance ou Record to report. La gouvernance de conformité est regroupée ici sans déplacer les contrôles opérationnels. Aucun équivalent exact de système n’est établi.
+
+**Position FLOW.** Enterprise Management & Control est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.5 Finance ; Financial Planning and Analysis ; Governance, Risk, and Compliance
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — Record to report end-to-end overview
+
+Microsoft Dynamics 365 Finance · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** La Finance couvre aussi planification et contrôle, au-delà de la clôture.
+
+**Différences.** L’ensemble FLOW est plus large que Finance ou Record to report. La gouvernance de conformité est regroupée ici sans déplacer les contrôles opérationnels. Aucun équivalent exact de système n’est établi.
+
+**Position FLOW.** Enterprise Management & Control est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[Record to report end-to-end overview](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/record-to-report-overview) — Page évolutive ; version globale non précisée, consulté le 2026-09-26.
+
+**Passage.** Record to report process relationship ; Forecast to plan
+
+**Limite de preuve.** Appui partiel pour Finance et contrôle ; ne définit pas tout Enterprise Management & Control, notamment sa gouvernance de conformité.
+
+Références : ELM846, CMP309.
+
+## Sources d’inspiration — Sales
+
+### SAP — Sales
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Relation commerciale, vente et contrats côté client.
+
+**Différences.** Les éditeurs couvrent aussi la commande et des traitements aval. FLOW garde ses capacités opérationnelles existantes et ne transpose pas le découpage des modules.
+
+**Position FLOW.** Sales est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.9 Sales ; Sales Force Support ; Order and Contract Management
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — Order to cash business process flow overview and relationships to other business processes
+
+Microsoft Dynamics 365 Sales, Commerce, Supply Chain Management et Finance · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Relation commerciale, vente et contrats côté client.
+
+**Différences.** Les éditeurs couvrent aussi la commande et des traitements aval. FLOW garde ses capacités opérationnelles existantes et ne transpose pas le découpage des modules.
+
+**Position FLOW.** Sales est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[Order to cash business process flow overview and relationships to other business processes](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/order-to-cash-overview) — Page évolutive ; catalogue juillet 2026 mentionné, consulté le 2026-09-26.
+
+**Passage.** Order to cash business process flow
+
+**Limite de preuve.** Processus plus large que Sales ; ne décide pas du rattachement des capacités FLOW.
+
+Références : ELM843, CMP309.
+
+## Sources d’inspiration — Sourcing and Procurement
+
+### SAP — Sourcing and Procurement
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Choix fournisseurs, contrats et achats de biens ou de services.
+
+**Différences.** Le domaine FLOW ne reprend pas l’ensemble du processus Source to pay ni toutes les fonctions SAP de réception et facturation. La frontière des commandes existantes est conservée.
+
+**Position FLOW.** Sourcing and Procurement est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.11 ; §2.11.3 Sourcing and Contract Management
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — Help organizations manage and optimize the source to pay business processes
+
+Microsoft Dynamics 365 Supply Chain Management et Finance · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Choix fournisseurs, contrats et achats de biens ou de services.
+
+**Différences.** Le domaine FLOW ne reprend pas l’ensemble du processus Source to pay ni toutes les fonctions SAP de réception et facturation. La frontière des commandes existantes est conservée.
+
+**Position FLOW.** Sourcing and Procurement est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[Help organizations manage and optimize the source to pay business processes](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/source-to-pay-introduction) — Page évolutive ; mise à jour affichée 2024-05-28, consulté le 2026-09-26.
+
+**Passage.** Source to pay overview ; steps 1–8
+
+**Limite de preuve.** Processus transverse plus large que le domaine achats FLOW ; paiement et exécution physique ne sont pas absorbés.
+
+Références : ELM844, CMP309.
+
+## Sources d’inspiration — Logistics Execution
+
+### SAP — Supply Chain — Delivery and Transportation ; Warehousing
+
+SAP S/4HANA 2025 · Périmètre produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Réalisation des mouvements, des opérations d’entrepôt et du transport.
+
+**Différences.** Supply Chain et Inventory to deliver sont plus larges que l’exécution FLOW. Les appuis consultés sont partiels pour les formalités douanières ; aucun équivalent exact du domaine n’est affirmé.
+
+**Position FLOW.** Logistics Execution est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68) — SAP S/4HANA 2025 ; document 1.0 du 2025-10-08, consulté le 2026-09-26.
+
+**Passage.** §2.12 Supply Chain ; Delivery and Transportation ; Warehousing
+
+**Limite de preuve.** Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières.
+
+Références : ELM840, CMP309.
+
+### Microsoft — Introduction to inventory to deliver business process
+
+Microsoft Dynamics 365 · Processus de bout en bout · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Nom retenu dans le cadrage U778–U780 ; appui lexical SAP pour Sales et Sourcing and Procurement, convention FLOW pour les ensembles.
+
+**Pourquoi cette définition.** Responsabilité concrète et frontière avec les autres domaines ; aucune extension du périmètre d’intervention FLOW.
+
+**Points communs.** Réalisation des mouvements, des opérations d’entrepôt et du transport.
+
+**Différences.** Supply Chain et Inventory to deliver sont plus larges que l’exécution FLOW. Les appuis consultés sont partiels pour les formalités douanières ; aucun équivalent exact du domaine n’est affirmé.
+
+**Position FLOW.** Logistics Execution est décrit à la profondeur utile à FLOW ; les frontières métier sont explicites et indépendantes des applications.
+
+[Introduction to inventory to deliver business process](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/inventory-to-deliver-introduction) — Page évolutive ; version globale non précisée, consulté le 2026-09-26.
+
+**Passage.** Inventory to deliver overview
+
+**Limite de preuve.** Recouvrement partiel ; la référence ne suffit pas à établir toutes les formalités douanières ni leur réalisation Beaumanoir.
+
+Références : ELM845, CMP309.
 
 ## Informations métier
 

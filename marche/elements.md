@@ -6205,3 +6205,38 @@ MKT14 — Microsoft Dynamics 365, [Quality management item sampling - Supply Cha
 
 
 Actualisation U775 / CMP308 : réemploi ciblé des sources existantes ELM207, ELM540, ELM805, ELM825. Périmètres et limites de consultation dans market-coverage-audit-U775.yaml ; aucune modification des preuves historiques.
+
+
+### ELM840
+
+MKT13 — SAP S/4HANA 2025. [SAP S/4HANA 2025 — Feature Scope Description](https://help.sap.com/doc/e2048712f0ab45e791e6d15ba5e20c68). SAP S/4HANA 2025 ; document 1.0 du 2025-10-08. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Sommaire §2 : Finance, R&D / Engineering, Sales, Sourcing and Procurement, Supply Chain ; §2.11 et §2.11.3. Reformulation : SAP distingue ventes, achats, chaîne logistique, conception et finance ; les achats couvrent biens et services. Limites : Catalogue de périmètres produit ; aucun Business System commun aux trois ensembles FLOW ni équivalence exacte avec leurs frontières. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309.
+
+
+### ELM841
+
+MKT14 — Microsoft Dynamics 365. [What are the end-to-end scenarios and business processes in Dynamics 365?](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/overview). Page évolutive ; catalogue juillet 2026 mentionné. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : End-to-end scenarios. Reformulation : Le catalogue distingue les parcours de conception, achats, vente, logistique et restitution financière. Limites : Scénarios de bout en bout ; ne prescrit pas une hiérarchie de domaines ou de systèmes métier. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309.
+
+
+### ELM842
+
+MKT14 — Microsoft Dynamics 365 Supply Chain Management et Commerce. [Design to retire end-to-end overview](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/design-to-retire-overview). Page évolutive ; version globale non précisée. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Design to retire process relationship ; business process areas. Reformulation : Conception produit, introduction et cycle de vie ; les relations amont et aval varient selon les stratégies. Limites : Parcours produit tangible ; ne couvre pas toutes les études ou transformations de l’entreprise. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309.
+
+
+### ELM843
+
+MKT14 — Microsoft Dynamics 365 Sales, Commerce, Supply Chain Management et Finance. [Order to cash business process flow overview and relationships to other business processes](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/order-to-cash-overview). Page évolutive ; catalogue juillet 2026 mentionné. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Order to cash business process flow. Reformulation : Le parcours de vente traverse prise de commande, réalisation et traitement financier. Limites : Processus plus large que Sales ; ne décide pas du rattachement des capacités FLOW. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309.
+
+
+### ELM844
+
+MKT14 — Microsoft Dynamics 365 Supply Chain Management et Finance. [Help organizations manage and optimize the source to pay business processes](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/source-to-pay-introduction). Page évolutive ; mise à jour affichée 2024-05-28. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Source to pay overview ; steps 1–8. Reformulation : Sélection fournisseur, contrats et achats de biens ou prestations ; le parcours inclut factures et paiement, et renvoie la réception à Inventory to deliver. Limites : Processus transverse plus large que le domaine achats FLOW ; paiement et exécution physique ne sont pas absorbés. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309.
+
+
+### ELM845
+
+MKT14 — Microsoft Dynamics 365. [Introduction to inventory to deliver business process](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/inventory-to-deliver-introduction). Page évolutive ; version globale non précisée. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Inventory to deliver overview. Reformulation : Gestion des stocks et réalisation des mouvements et livraisons. Limites : Recouvrement partiel ; la référence ne suffit pas à établir toutes les formalités douanières ni leur réalisation Beaumanoir. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309.
+
+
+### ELM846
+
+MKT14 — Microsoft Dynamics 365 Finance. [Record to report end-to-end overview](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/record-to-report-overview). Page évolutive ; version globale non précisée. Consulté le 2026-09-26. Nature : documentation primaire produit ou processus. Passage : Record to report process relationship ; Forecast to plan. Reformulation : La restitution financière coopère avec planification et budgets. Limites : Appui partiel pour Finance et contrôle ; ne définit pas tout Enterprise Management & Control, notamment sa gouvernance de conformité. Réutilisation : Synthèse originale et lien ; pas de redistribution du document source. U780, CMP309.

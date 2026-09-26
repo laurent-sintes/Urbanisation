@@ -1,4 +1,4 @@
 interface:
-  display_name: "Commit Urbanisation"
+  display_name: "Commit Urbanisation SCM"
   short_description: "Vérifier et enregistrer les changements dans Git"
-  default_prompt: "Utilise $commit pour vérifier et enregistrer les changements du projet Urbanisation dans un commit local."
+  default_prompt: "Utilise $commit pour vérifier et enregistrer les changements du projet Urbanisation SCM dans un commit local."

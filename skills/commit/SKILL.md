@@ -1,11 +1,11 @@
 ---
 name: commit
-description: Vérifier et créer un commit local des changements du projet Beaumanoir Cartographie / Urbanisation. Utiliser pour une demande de commit Git de ce projet ; ne publie ni release métier ni commits sur GitHub.
+description: Vérifier et créer un commit local des changements du projet Beaumanoir Cartographie / Urbanisation SCM. Utiliser pour une demande de commit Git de ce projet ; ne publie ni release métier ni commits sur GitHub.
 ---
 
-# Commit du projet Urbanisation
+# Commit du projet Urbanisation SCM
 
-Travailler dans le dépôt courant s’il correspond au projet, sinon dans `C:/Dev/Beaumanoir Cartographie`. Lire `AGENTS.md`, puis vérifier la racine avec `git rev-parse --show-toplevel`. Parler français et tutoyer Laurent. Le remote attendu est `https://github.com/laurent-sintes/Urbanisation.git` (l’équivalent SSH sur ce même dépôt est acceptable).
+Travailler dans le dépôt courant s’il correspond au projet, sinon dans `C:/Dev/Beaumanoir Cartographie`. Lire `AGENTS.md`, puis vérifier la racine avec `git rev-parse --show-toplevel`. Parler français et tutoyer Laurent. Le remote attendu est `https://github.com/laurent-sintes/Urbanisation-SCM.git` (l’équivalent SSH sur ce même dépôt est acceptable).
 
 Une demande de commit autorise sa création locale. Ne pas ajouter une confirmation systématique. Une demande de revue seule n’autorise pas le commit. Le backlog reste l’espace métier de travail ; un commit n’est pas une validation de capacité ni une release du modèle.
 

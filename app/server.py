@@ -10,13 +10,12 @@ import sys
 from functools import partial
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import parse_qs, unquote, urlsplit
+from urllib.parse import unquote, urlsplit
 
-from atlas_data import (
-    DEFAULT_SPACE, ModelError, REPOSITORY_ROOT, SCHEMA_VERSION, SourceAccessError,
-    get_revision, load_model, load_panorama, read_source, catalog,
-)
-from modeling_guide import ModelingGuideError, load_modeling_guide
+REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+
+class SourceAccessError(ValueError):
+    pass
 
 BUILT_ROOT_FILES = {
     "/": ("index.html", "text/html; charset=utf-8"),
@@ -46,12 +45,7 @@ CSP = (
 
 
 def built_file(root: Path, route: str) -> tuple[Path, str] | None:
-    """Resolve only the Vite entry, its explicit public files and flat assets.
-
-    JSON models, source maps, source files and dependency trees are deliberately
-    excluded, even if a copy were accidentally placed in the build directory.
-    No route falls back to the previous interface or to an arbitrary index.
-    """
+    """Serve only compiled assets and generated publication JSON, never sources."""
     if route in BUILT_ROOT_FILES:
         filename, content_type = BUILT_ROOT_FILES[route]
     elif re.fullmatch(r"/assets/[A-Za-z0-9][A-Za-z0-9._-]*", route) and ".." not in route:
@@ -59,6 +53,8 @@ def built_file(root: Path, route: str) -> tuple[Path, str] | None:
         content_type = BUILT_ASSET_TYPES.get(Path(filename).suffix)
         if content_type is None:
             return None
+    elif route == '/data/index.json' or re.fullmatch(r'/data/\d{4}-\d{2}-\d{2}\.[1-9]\d*/(?:model|guide)\.json', route):
+        filename, content_type = route.lstrip('/'), 'application/json; charset=utf-8'
     else:
         return None
     build_dir = root / "app" / "dist"
@@ -128,35 +124,11 @@ class AtlasHandler(BaseHTTPRequestHandler):
         try:
             request = urlsplit(self.path)
             route = unquote(request.path, errors="strict")
-            if route in {"/api/model", "/api/status"}:
-                query = parse_qs(request.query, keep_blank_values=True, max_num_fields=3)
-                if set(query) - {"space", "version"} or len(query.get("space", ["release"])) != 1 or len(query.get('version', [''])) != 1:
-                    raise ValueError("Espace unique attendu.")
-                space = query.get("space", ["release"])[0]
-                version = query.get('version', [''])[0] or None
-                if space != "release":
-                    raise ModelError("Atlas affiche uniquement l’urbanisation publiée.")
-            if route == "/api/model":
-                self._json(200, load_model(self.root, space, version), head)
-            elif route == "/api/modeling-guide":
-                query = parse_qs(request.query, keep_blank_values=True, max_num_fields=2)
-                if set(query) - {"version"} or len(query.get("version", [None])) != 1 or query.get("version") == [""]:
-                    raise ValueError("Une version unique est attendue.")
-                self._json(200, load_modeling_guide(self.root, query.get("version", [None])[0]), head)
-            elif route == '/api/releases':
-                self._json(200, catalog(self.root/'modeles/release'), head)
-            elif route == "/api/status":
+            if route == '/__atlas__/identity.json':
                 self._json(200, {
-                    "appName": "FLOW Atlas", "schemaVersion": SCHEMA_VERSION,
-                    "pid": os.getpid(), "repositoryRoot": str(self.root),
-                    "revision": get_revision(self.root, space, version), "space": space,
+                    'appName': 'FLOW Atlas', 'mode': 'static',
+                    'pid': os.getpid(), 'repositoryRoot': str(self.root),
                 }, head)
-            elif route == "/api/source":
-                args = parse_qs(request.query, keep_blank_values=True, max_num_fields=4)
-                if set(args) - {"path", "anchor"} or len(args.get("path", [])) != 1 or len(args.get("anchor", [""])) != 1:
-                    self._error(400, "Une source path unique et une ancre facultative sont attendues.", head)
-                    return
-                self._json(200, read_source(args["path"][0], args.get("anchor", [""])[0], self.root), head)
             else:
                 asset = built_file(self.root, route)
                 if asset is None:
@@ -171,8 +143,6 @@ class AtlasHandler(BaseHTTPRequestHandler):
             self._error(403, str(exc), head)
         except FileNotFoundError:
             self._error(404, "Source ou fichier de l’application introuvable.", head)
-        except (ModelError, ModelingGuideError) as exc:
-            self._error(422, str(exc), head)
         except (ValueError, UnicodeError):
             self._error(400, "Requête invalide.", head)
         except (ConnectionError, BrokenPipeError):
@@ -194,39 +164,17 @@ def create_server(port=8765, root=REPOSITORY_ROOT):
 def main(argv=None):
     parser = argparse.ArgumentParser(description="FLOW Atlas — explorateur local du modèle métier")
     parser.add_argument("--port", type=int, default=8765)
-    parser.add_argument("--check", action="store_true", help="Vérifier la lecture du modèle et quitter")
+    parser.add_argument("--check", action="store_true", help="Vérifier la présence du site statique et quitter")
     args = parser.parse_args(argv)
     if not 1 <= args.port <= 65535:
         parser.error("Le port doit être compris entre 1 et 65535.")
-    try:
-        backlog = load_model()
-    except (ModelError, OSError) as exc:
-        print(json.dumps({"error": str(exc)}, ensure_ascii=False), file=sys.stderr)
-        return 1
+    ready = all((REPOSITORY_ROOT / 'app/dist' / name).is_file() for name in ('index.html', 'data/index.json'))
     if args.check:
-        try:
-            model = load_model(space="release")
-            panorama = load_panorama()
-        except (ModelError, OSError) as exc:
-            print(json.dumps({"error": str(exc)}, ensure_ascii=False), file=sys.stderr)
-            return 1
-        try:
-            entry, _ = built_file(REPOSITORY_ROOT, "/")
-        except SourceAccessError as exc:
-            print(json.dumps({"error": str(exc)}, ensure_ascii=False), file=sys.stderr)
-            return 1
-        frontend_ready = entry.is_file()
-        print(json.dumps({
-            "release": {"version": model["version"], "nodes": len(model["nodes"]), "capabilities": sum(n["kind"] == "capability" for n in model["nodes"])},
-            "backlog": {"version": backlog["version"], "nodes": len(backlog["nodes"]), "capabilities": sum(n["kind"] == "capability" for n in backlog["nodes"])},
-            "panorama_as_is": {"version": panorama["version"], "systems": len(panorama["panoramas"])},
-            "frontend": {"ready": frontend_ready, "entry": "app/dist/index.html"},
-            "warnings": model["warnings"],
-        }, ensure_ascii=False))
-        if not frontend_ready:
-            print(json.dumps({"error": MISSING_BUILD}, ensure_ascii=False), file=sys.stderr)
-            return 1
-        return 0
+        print(json.dumps({'frontend': {'ready': ready}, 'mode': 'static'}))
+        return 0 if ready else 1
+    if not ready:
+        print(MISSING_BUILD, file=sys.stderr)
+        return 1
     try:
         server = create_server(args.port)
     except OSError as exc:

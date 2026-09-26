@@ -1,4 +1,4 @@
 interface:
-  display_name: "Push Urbanisation"
-  short_description: "Envoyer les commits Urbanisation vers GitHub"
-  default_prompt: "Utilise $push pour envoyer les commits du projet vers la branche suivie du dépôt GitHub Urbanisation."
+  display_name: "Push Urbanisation SCM"
+  short_description: "Envoyer les commits Urbanisation SCM vers GitHub"
+  default_prompt: "Utilise $push pour envoyer les commits du projet vers la branche suivie du dépôt GitHub Urbanisation SCM."

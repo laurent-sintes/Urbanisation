@@ -63,7 +63,7 @@ function Lesson({ guide, lesson, model, index }: { guide: ModelingGuide; lesson:
   </article>;
 }
 
-export function ModelingGuidePage({ model, selected, onSelect, state, retry }: { model: PublishedModel; selected?: string; onSelect: (id: string) => void; state: GuideState; retry: () => void }) {
+function GuideContent({ model, selected, onSelect, state, retry }: { model: PublishedModel; selected?: string; onSelect: (id: string) => void; state: GuideState; retry: () => void }) {
   if (state.version !== model.version || state.status === 'loading') return <section className="guide-status" role="status" aria-live="polite"><p>Chargement du méta modèle pour {model.version}…</p></section>;
   if (state.status === 'error') return <section className="guide-status"><div role="alert"><h2>Le guide n’est pas accessible</h2><p>{state.message}</p></div><button type="button" className="secondary-button" onClick={retry}><RefreshCw size={16} aria-hidden="true"/>Réessayer</button></section>;
   const { response } = state;
@@ -81,4 +81,17 @@ export function ModelingGuidePage({ model, selected, onSelect, state, retry }: {
       : <section className="guide-status"><h2>Principe absent de ce guide</h2><p>La référence « {selected} » ne figure pas dans cette version. Choisis l’un des repères ci-dessus.</p></section>}
     <p className="guide-footer">Explore librement. Les choix servent à comprendre les principes ; ils ne sont pas enregistrés.</p>
   </div>;
+}
+
+
+/** Rules are read only for publications that explicitly carry the frozen policy. */
+export function ModelingGuidePage(props: Parameters<typeof GuideContent>[0]) {
+  return <>{props.model.raw.display_index && <section className="guide-lesson" aria-label="Identité et codes de lecture">
+    <h2>Identité et codes de lecture</h2>
+    <p>Le code situe un élément dans l’ordre de lecture de cette publication. Son identité persistante conserve les relations, les accords et les liens même si le code change dans une publication suivante.</p>
+    <p><strong>SYS</strong> : système métier · <strong>DOM</strong> : domaine · <strong>SUB</strong> : sous-domaine · <strong>REF</strong> : référentiel · <strong>CAP</strong> : capacité · <strong>BHV</strong> : comportement.</p>
+    <p>Trois chiffres au minimum, par exemple CAP-025. Chaque type possède sa séquence globale dans le parcours de l’arbre de haut en bas. Catégories et rôles ne créent pas de niveau numéroté.</p>
+    <p>Arbre, cartes et fiches suivent le même ordre. Rechercher, filtrer, replier l’arbre ou déplacer le graphe ne renumérote rien. Codes et ordre restent figés pour cette publication.</p>
+    <p>La recherche accepte le code ou l’identifiant persistant. Pour une référence durable, partage le lien de la fiche : il conserve son identité et sa publication. Les publications antérieures gardent leurs repères.</p>
+  </section>}<GuideContent {...props}/></>;
 }

@@ -1,4 +1,4 @@
-import { fetchJson, type FetchLike } from './publication.ts';
+import { fetchJson, guideUrl, type FetchLike } from './publication.ts';
 
 export interface GuideSource {
   readonly id: string;
@@ -61,7 +61,7 @@ export interface GuideResponse {
 
 /** Every read is pinned to the displayed publication, including live-current mode. */
 export async function fetchModelingGuide(version: string, signal?: AbortSignal, fetcher: FetchLike = fetch): Promise<GuideResponse> {
-  const raw = await fetchJson('/api/modeling-guide?' + new URLSearchParams({ version }), signal, fetcher) as GuideResponse;
+  const raw = await fetchJson(guideUrl(version), signal, fetcher) as GuideResponse;
   if (!raw || raw.schema_version !== '1.0.0' || raw.publication_version !== version
     || !['available', 'unavailable'].includes(raw.status) || typeof raw.message !== 'string'
     || (raw.status === 'available' && (!raw.guide?.version || !Array.isArray(raw.guide.lessons) || !raw.guide.lessons.length || !Array.isArray(raw.guide.sources)))) {

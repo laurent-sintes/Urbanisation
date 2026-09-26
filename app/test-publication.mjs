@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   adaptCatalog, createPublicationClient, fetchJson,
-  publicationUrl, sourceUrl,
+  publicationUrl, guideUrl, staticUrl,
 } from './src/publication.ts';
 
 const snapshot = version => ({
@@ -33,10 +33,10 @@ test('current load follows explicit catalog pointer and pins its model request',
     calls.push(url);
     assert.equal(init.cache, 'no-store');
     assert.ok(init.signal instanceof AbortSignal);
-    return response(url === '/api/releases' ? catalog('v2') : snapshot('v2'));
+    return response(url === './data/index.json' ? catalog('v2') : snapshot('v2'));
   });
   await client.setVersion();
-  assert.deepEqual(calls, ['/api/releases', '/api/model?version=v2']);
+  assert.deepEqual(calls, ['./data/index.json', './data/v2/model.json']);
   assert.equal(client.getState().model.version, 'v2');
   assert.equal(client.getState().loading, false);
   client.dispose();
@@ -46,9 +46,9 @@ test('periodic check refreshes current on a new pointer, and preserves unchanged
   let current = 'v2';
   let modelReads = 0;
   const client = createPublicationClient(async url => {
-    if (url === '/api/releases') return response(catalog(current));
+    if (url === './data/index.json') return response(catalog(current));
     modelReads++;
-    return response(snapshot(new URL(url, 'http://local').searchParams.get('version')));
+    return response(snapshot(url.split('/').at(-2)));
   });
   await client.setVersion();
   const initial = client.getState().model;
@@ -68,20 +68,20 @@ test('historical selection stays fixed when the current publication changes', as
   const calls = [];
   const client = createPublicationClient(async url => {
     calls.push(url);
-    return response(url === '/api/releases' ? catalog(current) : snapshot('v1'));
+    return response(url === './data/index.json' ? catalog(current) : snapshot('v1'));
   });
   await client.setVersion('v1');
   current = 'v3';
   await client.check();
   assert.equal(client.getState().model.version, 'v1');
   assert.equal(client.getState().catalog.current, 'v3');
-  assert.equal(calls.filter(url => url.startsWith('/api/model')).length, 1);
+  assert.equal(calls.filter(url => url.endsWith('/model.json')).length, 1);
   client.dispose();
 });
 
 test('an explicitly pinned current version becomes historical without following a new pointer', async () => {
   let current = 'v2';
-  const client = createPublicationClient(async url => response(url === '/api/releases' ? catalog(current) : snapshot('v2')));
+  const client = createPublicationClient(async url => response(url === './data/index.json' ? catalog(current) : snapshot('v2')));
   await client.setVersion('v2');
   current = 'v3';
   await client.check();
@@ -94,7 +94,7 @@ test('failed current refresh keeps previous publication and automatically retrie
   let current = 'v2';
   let failing = false;
   const client = createPublicationClient(async url => {
-    if (url === '/api/releases') return response(catalog(current));
+    if (url === './data/index.json') return response(catalog(current));
     if (failing) return response({ error: 'Publication momentanément indisponible' }, 503);
     return response(snapshot(current));
   });
@@ -116,7 +116,7 @@ test('failed manual refresh retries even if the selected immutable version did n
   let failing = false;
   let modelReads = 0;
   const client = createPublicationClient(async url => {
-    if (url === '/api/releases') return response(catalog());
+    if (url === './data/index.json') return response(catalog());
     modelReads++;
     if (failing) throw new Error('offline');
     return response(snapshot('v3'));
@@ -136,7 +136,7 @@ test('changing to unavailable history clears current data without any fallback',
   const calls = [];
   const client = createPublicationClient(async url => {
     calls.push(url);
-    if (url === '/api/releases') return response(catalog());
+    if (url === './data/index.json') return response(catalog());
     return response(snapshot('v3'));
   });
   await client.setVersion();
@@ -145,7 +145,7 @@ test('changing to unavailable history clears current data without any fallback',
   await pending;
   assert.equal(client.getState().model, undefined);
   assert.match(client.getState().error, /missing/);
-  assert.equal(calls.filter(url => url.startsWith('/api/model')).length, 1);
+  assert.equal(calls.filter(url => url.endsWith('/model.json')).length, 1);
   client.dispose();
 });
 
@@ -153,17 +153,17 @@ test('historical model HTTP failure never falls back to a different publication'
   const calls = [];
   const client = createPublicationClient(async url => {
     calls.push(url);
-    return url === '/api/releases' ? response(catalog()) : response({ error: { message: 'Historique indisponible' } }, 404);
+    return url === './data/index.json' ? response(catalog()) : response({ error: { message: 'Historique indisponible' } }, 404);
   });
   await client.setVersion('v1');
   assert.equal(client.getState().model, undefined);
   assert.match(client.getState().error, /Historique indisponible/);
-  assert.deepEqual(calls, ['/api/releases', '/api/model?version=v1']);
+  assert.deepEqual(calls, ['./data/index.json', './data/v1/model.json']);
   client.dispose();
 });
 
 test('unexpected model identity is rejected rather than accepted as historical data', async () => {
-  const client = createPublicationClient(async url => response(url === '/api/releases' ? catalog() : snapshot('v3')));
+  const client = createPublicationClient(async url => response(url === './data/index.json' ? catalog() : snapshot('v3')));
   await client.setVersion('v1');
   assert.equal(client.getState().model, undefined);
   assert.match(client.getState().error, /ne correspond pas/);
@@ -175,8 +175,8 @@ test('obsolete requests are aborted and ignored even when transport ignores Abor
   const oldStarted = deferred();
   let oldSignal;
   const client = createPublicationClient(async (url, init) => {
-    if (url === '/api/releases') return response(catalog());
-    if (url.endsWith('version=v1')) {
+    if (url === './data/index.json') return response(catalog());
+    if (url.endsWith('/v1/model.json')) {
       oldSignal = init.signal;
       oldStarted.resolve();
       return oldResponse.promise;
@@ -216,7 +216,7 @@ test('catalog network failure preserves loaded data and reconnects automatically
   let failing = false;
   const client = createPublicationClient(async url => {
     if (failing) throw new Error('Serveur déconnecté');
-    return response(url === '/api/releases' ? catalog() : snapshot('v3'));
+    return response(url === './data/index.json' ? catalog() : snapshot('v3'));
   });
   await client.setVersion();
   const before = client.getState().model;
@@ -241,14 +241,20 @@ test('malformed initial catalog and HTTP errors expose their concrete error', as
   await assert.rejects(fetchJson('/api/model', undefined, async () => response({ error: 'Service indisponible' }, 503)), /Service indisponible/);
 });
 
-test('publication and source URL parameters preserve literal values', () => {
-  assert.equal(publicationUrl(), '/api/model');
-  assert.equal(publicationUrl('version&other=value'), '/api/model?version=version%26other%3Dvalue');
-  assert.equal(new URL(sourceUrl('connaissance/test.md', 'ancre & suite'), 'http://local').searchParams.get('anchor'), 'ancre & suite');
+test('static URLs preserve project prefixes and reject path traversal', () => {
+  assert.equal(staticUrl('assets/logo.png'), './assets/logo.png');
+  assert.equal(publicationUrl('v3'), './data/v3/model.json');
+  assert.equal(guideUrl('v3'), './data/v3/guide.json');
+  assert.equal(new URL(publicationUrl('v3'), 'https://example.org/Urbanisation/').pathname, '/Urbanisation/data/v3/model.json');
+  for (const version of ['../secret', 'v1?other=x', '', '..']) assert.throws(() => publicationUrl(version), /invalide/);
+});
+
+test('HTML 404 from a static host produces an actionable HTTP error', async () => {
+  await assert.rejects(fetchJson('./data/missing.json', undefined, async () => new Response('<html>404</html>', { status: 404 })), /HTTP 404/);
 });
 
 test('unchanged polling preserves state identity and does not notify React', async () => {
-  const client = createPublicationClient(async url => response(url === '/api/releases' ? catalog() : snapshot('v3')));
+  const client = createPublicationClient(async url => response(url === './data/index.json' ? catalog() : snapshot('v3')));
   await client.setVersion();
   const before = client.getState();
   let notifications = 0;
@@ -258,4 +264,18 @@ test('unchanged polling preserves state identity and does not notify React', asy
   assert.equal(client.getState(), before);
   assert.equal(notifications, 0);
   client.dispose();
+});
+
+test('deadline covers stalled transport and stalled JSON body; abort and recovery work', async () => {
+  let signal;
+  await assert.rejects(fetchJson('data', undefined, async (_, init) => {
+    signal = init.signal; return new Promise(() => {});
+  }, 20), /trop de temps/);
+  assert.equal(signal.aborted, true);
+  await assert.rejects(fetchJson('data', undefined, async () => ({ ok: true, json: () => new Promise(() => {}) }), 20), /trop de temps/);
+  assert.deepEqual(await fetchJson('data', undefined, async () => response({ recovered: true }), 100), { recovered: true });
+  const controller = new AbortController();
+  const request = fetchJson('data', controller.signal, async () => new Promise(() => {}), 1000);
+  controller.abort(new Error('cancelled selection'));
+  await assert.rejects(request, /cancelled selection/);
 });

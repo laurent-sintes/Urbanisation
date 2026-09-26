@@ -1,4 +1,4 @@
-#Requires -Version 5.1
+﻿#Requires -Version 5.1
 [CmdletBinding()]
 param(
     [ValidateRange(1024, 65535)]
@@ -18,9 +18,13 @@ $atlasUrl = "http://127.0.0.1:$Port/"
 
 function Get-AtlasStatus {
     try {
-        return Invoke-RestMethod -Uri ($atlasUrl + 'api/status') -TimeoutSec 2 -ErrorAction Stop
+        return Invoke-RestMethod -Uri ($atlasUrl + '__atlas__/identity.json') -TimeoutSec 2 -ErrorAction Stop
     }
     catch {
+        if ($Stop) {
+            try { return Invoke-RestMethod -Uri ($atlasUrl + 'api/status') -TimeoutSec 2 -ErrorAction Stop }
+            catch { return $null }
+        }
         return $null
     }
 }
@@ -144,11 +148,10 @@ if (-not (Test-Path -LiteralPath $atlasServer -PathType Leaf)) {
     throw "Serveur introuvable : $atlasServer"
 }
 
-$atlasPython = Find-AtlasPython
-& $atlasPython -c "import sys; sys.path.insert(0, sys.argv[1]); import scripts.structured_io" $atlasRoot
-if ($LASTEXITCODE -ne 0) {
-    throw 'Lecteur YAML indisponible. Installer depuis la racine : python -m pip install --target .tools/yaml-runtime -r requirements.txt'
+if (-not (Test-Path -LiteralPath (Join-Path $atlasRoot 'app\dist\data\index.json') -PathType Leaf)) {
+    throw 'Donnees statiques absentes. Execute pnpm --dir app build.'
 }
+$atlasPython = Find-AtlasPython
 [void][System.IO.Directory]::CreateDirectory($atlasRuntime)
 $atlasStdout = Join-Path $atlasRuntime "server-$Port.stdout.log"
 $atlasStderr = Join-Path $atlasRuntime "server-$Port.stderr.log"

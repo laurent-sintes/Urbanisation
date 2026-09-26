@@ -1,7 +1,7 @@
 import type { AtlasNode, AtlasRelation, PublishedModel } from './types.ts';
 import { hasAreaLevels, isStructural } from './model.ts';
 
-export type DependencyLevel = 'capability' | 'area' | 'domain' | 'universe';
+export type DependencyLevel = 'capability' | 'area' | 'domain' | 'business_system' | 'universe';
 export type DependencyFamily = 'needs' | 'other';
 
 export interface DependencyOptions {
@@ -51,19 +51,21 @@ export interface DependencyProjection {
 
 type EndpointRelation = { relation: AtlasRelation; source: string; target: string; family: DependencyFamily };
 const isUniverse = (node: AtlasNode): boolean => node.levelRef === 'universe';
-const isGrouping = (node: AtlasNode): boolean => ['group', 'domain', 'area', 'reference'].includes(node.kind) || isUniverse(node);
+const isGrouping = (node: AtlasNode): boolean => ['business_system', 'group', 'domain', 'area', 'reference'].includes(node.kind) || isUniverse(node);
 const familyOf = (relation: AtlasRelation): DependencyFamily => relation.qualification.role === 'needs' ? 'needs' : 'other';
 
 export function dependencyLevels(model: PublishedModel): { value: DependencyLevel; label: string }[] {
+  const systems = model.nodes.some(node => node.kind === 'business_system');
   const purposeLabel = model.nodes.some(node => node.kind === 'area' && node.hierarchyLabel === 'Purpose')
     ? 'Purposes et référentiels' : 'Areas et référentiels';
   return hasAreaLevels(model)
-    ? [{ value: 'capability', label: 'Capacités' }, { value: 'area', label: purposeLabel }, { value: 'domain', label: 'Domaines' }]
+    ? [{ value: 'capability', label: 'Capacités' }, { value: 'area', label: purposeLabel }, { value: 'domain', label: 'Domaines' }, ...(systems ? [{ value: 'business_system' as const, label: 'Systèmes métier' }] : [])]
     : [{ value: 'capability', label: 'Capacités' }, { value: 'domain', label: 'Domaines et référentiels' }, { value: 'universe', label: 'Univers' }];
 }
 
 /** Retain shareable links when changing publication without relabeling its objects. */
 export function dependencyLevel(model: PublishedModel, requested: DependencyLevel): DependencyLevel {
+  if (requested === 'business_system') return model.nodes.some(node => node.kind === 'business_system') ? requested : hasAreaLevels(model) ? 'domain' : 'universe';
   if (hasAreaLevels(model)) return requested === 'universe' ? 'domain' : requested;
   return requested === 'area' ? 'domain' : requested;
 }
@@ -75,7 +77,7 @@ export function dependencyLevel(model: PublishedModel, requested: DependencyLeve
  * default; additional links between neighbors require the explicit option.
  */
 export function projectDependencies(model: PublishedModel, options: DependencyOptions): DependencyProjection {
-  if (!['capability', 'area', 'domain', 'universe'].includes(options.level)) throw new Error('Niveau de dépendances inconnu.');
+  if (!['capability', 'area', 'domain', 'business_system', 'universe'].includes(options.level)) throw new Error('Niveau de dépendances inconnu.');
   if (![0, 1, 2, 3].includes(options.depth)) throw new Error('La profondeur doit être 0, 1, 2 ou 3.');
   if (!['both', 'incoming', 'outgoing'].includes(options.direction)) throw new Error('Sens de parcours inconnu.');
   if (!['all', 'needs', 'other'].includes(options.family)) throw new Error('Famille de relations inconnue.');
@@ -84,7 +86,7 @@ export function projectDependencies(model: PublishedModel, options: DependencyOp
   const areaLevels = hasAreaLevels(model);
   const atLevel = (item: AtlasNode): boolean => level === 'area' ? item.kind === 'area' || item.kind === 'reference'
     : level === 'domain' ? item.kind === 'domain' || (!areaLevels && item.kind === 'reference')
-    : level === 'universe' && isUniverse(item);
+    : level === 'business_system' ? item.kind === 'business_system' : level === 'universe' && isUniverse(item);
 
   // adaptPublication already guarantees an unambiguous, acyclic structural hierarchy.
   const parents = new Map<string, AtlasRelation>();

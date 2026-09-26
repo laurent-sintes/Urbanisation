@@ -13,9 +13,9 @@ Lire les règles applicables d’AGENTS.md. Après les modifications du lot et l
 python scripts/release.py --source SOURCE --activate
 ```
 
-Le parcours léger construit et valide une fois le candidat, prépare dans `.runtime/publication/VERSION/`, vérifie la fraîcheur et les empreintes, active le catalogue puis vérifie Atlas. Sans `--activate`, il prépare seulement. Ne pas ajouter systématiquement un rapport préalable ni une validation globale après cette commande.
+Le parcours léger construit et valide une fois le candidat, prépare dans `.runtime/publication/VERSION/`, vérifie la fraîcheur et les empreintes, active le catalogue, exporte les JSON statiques puis vérifie Atlas. `scripts/export_atlas.py` lit les snapshots vérifiés et régénère `app/public/data/` ainsi que `app/dist/data/` si le build existe. Le courant se met à jour sans redémarrer le serveur. Sans `--activate`, il prépare seulement. Ne pas ajouter systématiquement un rapport préalable ni une validation globale après cette commande.
 
-Les fichiers de la publication remplacée doivent déjà être conservés à l’identique dans Git pour pouvoir quitter l’arbre actif. Si ce contrôle bloque, expliquer le fichier concerné ; ne pas créer un commit sans autorisation. Le backlog peut contenir les modifications à publier : ses empreintes et celles du code garantissent la fraîcheur de la préparation. Les versions historiques sont lues depuis les commits exacts du catalogue technique, sans copies permanentes.
+Les fichiers de la publication remplacée doivent déjà être conservés à l’identique dans Git pour pouvoir quitter l’arbre actif. Si ce contrôle bloque, expliquer le fichier concerné ; ne pas créer un commit sans autorisation. Le backlog peut contenir les modifications à publier : ses empreintes et celles du code garantissent la fraîcheur de la préparation. Les versions historiques canoniques sont lues depuis les commits exacts du catalogue technique. Les copies JSON d’Atlas sont des artefacts générés ignorés par Git.
 
 ## Résultats et reprise
 
@@ -24,7 +24,7 @@ Les fichiers de la publication remplacée doivent déjà être conservés à l�
 - `unchanged` : aucune nouvelle publication nécessaire.
 - `needs_review` : lire le dossier fourni avec `prepare_release.py inspect DOSSIER --section review --id ID`, renseigner seulement les arbitrages explicitement autorisés dans `assessment.yaml`, puis reprendre avec `--review DOSSIER`.
 - `blocked` : corriger les erreurs de la synthèse. Une intention périmée ne devient pas automatiquement un accord.
-- `published_checks_failed` : la publication existe ; corriger la disponibilité d’Atlas, sans publier une nouvelle version.
+- `published_checks_failed` : la publication existe ; corriger l’export statique ou la disponibilité d’Atlas, sans publier une nouvelle version. Relancer `python scripts/export_atlas.py` pour réparer les artefacts générés.
 
 Une source, un artefact ou le code modifié après préparation impose une nouvelle préparation. En cas d’interruption pendant les écritures, examiner les fichiers et le pointeur avant une reprise ; ne pas écraser une version existante.
 

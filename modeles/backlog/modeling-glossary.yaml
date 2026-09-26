@@ -1,6 +1,6 @@
 id: flow-modeling-glossary
 kind: modeling_glossary
-as_of: '2026-09-25'
+as_of: '2026-09-26'
 source_refs:
 - U229
 - U230
@@ -45,6 +45,7 @@ source_refs:
 - U753
 - U756
 - U767
+- U780
 purpose: Vocabulaire de modélisation en support à la définition des objets du modèle ; distinct du glossaire métier.
 boundary:
   business_glossary: modeles/backlog/glossary.yaml
@@ -53,6 +54,42 @@ boundary:
     des termes historiques réalisée.
   links: Les identifiants MOD appartiennent au méta modèle. Atlas sépare les deux glossaires selon une association méthodologique
     figée ; les liens TER historiques restent résolus dans leur publication.
+identification_rules:
+  policy: typed-tree-v1
+  source_refs:
+  - U782
+  - U783
+  persistent_identity: id immuable, sans réutilisation après retrait ; porte les relations, accords et liens historiques.
+  prefixes:
+    business_system: SYS
+    domain: DOM
+    area: SUB
+    reference: REF
+    capability: CAP
+    behavior: BHV
+  format: PREFIX-NNN ; padding minimal de trois chiffres, sans limite à 999.
+  scope: Séquence globale distincte par type, sur les éléments effectivement publiés ; catégories, rôles, termes, relations
+    et illustrations hors de cette numérotation.
+  traversal: Parcours en profondeur préordre, racines dans l’ordre canonique. Enfants selon les relations explicites, regroupements
+    de catégories puis types de capacités existants ; Déclenchement avant Activité pour les comportements.
+  freeze: display_index généré dans le snapshot à la préparation ; codes, racines et listes d’enfants figés. Aucun calcul
+    dépendant de la largeur, des filtres, du repli ou de la recherche.
+  evolution: Insertion ou déplacement peut décaler les codes dans une nouvelle publication ; les anciennes conservent leurs
+    codes ou leur absence historique.
+  navigation: Recherche par code visible ou id persistant ; liens partagés par id et version. Un code seul ne désigne pas
+    durablement un objet entre publications.
+  display: Même ordre dans l’arbre, les cartes et les fiches ; la disposition du graphe Relations et le classement des résultats
+    de recherche sont indépendants.
+  authority: Convention de présentation FLOW adoptée U783 ; ne modifie ni identité, ni parent, ni responsabilité métier.
+  references:
+  - url: https://www.apqc.org/process-frameworks/pcf-faqs
+    consulted_on: '2026-09-26'
+    support: Distinction hierarchy ID / PCF element ID. Analogie d’identification ; le PCF décrit des processus et ne prescrit
+      pas les préfixes FLOW.
+  - url: https://learn.microsoft.com/en-us/power-apps/maker/data-platform/access-migrate-linked-tables
+    consulted_on: '2026-09-26'
+    support: Identité système distincte des valeurs présentées. Appui technique Dataverse, pas une norme de numérotation des
+      capacités.
 terms:
 - id: MOD001
   name: Decision
@@ -403,9 +440,10 @@ terms:
 - id: MOD008
   name: Domain
   label_fr: Domaine
-  definition: Grand périmètre cohérent de problèmes métier qui organise des Purposes et des référentiels en interaction. Supply
-    Chain Orchestration est le Domain actuellement travaillé.
-  role: Situer les périmètres de responsabilité sans les confondre avec leurs capacités ni avec les groupes de présentation.
+  definition: Grand périmètre cohérent de responsabilités métier au sein d’un Business System. Il peut être détaillé en Subdomains
+    puis en capacités et comportements selon la profondeur utile à FLOW.
+  role: Délimiter une responsabilité métier et ses coopérations. Sales, Sourcing and Procurement, Supply Chain Orchestration
+    et Logistics Execution appartiennent à Business Operations.
   source_refs:
   - U141
   - U446
@@ -415,6 +453,7 @@ terms:
   - U626
   - U646
   - U650
+  - U780
   review:
     state: partial
     adopted_scope: 'U482 : nom Domain et position au-dessus des Areas.'
@@ -422,6 +461,8 @@ terms:
   notes:
   - U482 remplace Universe par Domain à ce niveau. L’identifiant MOD008 est conservé ; les publications historiques gardent
     leur vocabulaire.
+  - U780 ajoute Business System au-dessus de Domain ; la profondeur de description varie selon le périmètre. Les publications
+    historiques gardent leurs niveaux.
 - id: MOD013
   name: Subdomain
   label_fr: Sous-domaine
@@ -1088,3 +1129,59 @@ terms:
   review:
     state: partial
     note: Distinction évaluation/sélection validée ; définition méthodologique rédigée pour l’appliquer.
+- id: MOD022
+  name: Business System
+  label_fr: Système métier
+  definition: Ensemble de domaines métier qui coopèrent pour une finalité commune, indépendamment de leur organisation et
+    de leurs applications.
+  role: Situer les domaines dans la vue d’ensemble de l’entreprise sans imposer une séquence opérationnelle ni une décomposition
+    exhaustive.
+  source_refs:
+  - U778
+  - U779
+  - U780
+  review:
+    state: partial
+    adopted_scope: Nom du niveau, position au-dessus de Domain et regroupements U778–U780.
+    proposed_scope: Rédaction pédagogique ; aucun standard universel revendiqué.
+  notes:
+  - La notion méthodologique reste distincte des noms des systèmes dans le glossaire métier.
+  - 'Design & Development et Enterprise Management & Control : contexte ; Business Operations : domaines ; Supply Chain Orchestration
+    : capacités et comportements.'
+  - Les sources marché comparent les périmètres ; elles ne définissent pas un équivalent exact de ce niveau FLOW.
+- id: MOD023
+  name: Persistent Identifier
+  label_fr: Identifiant persistant
+  definition: Repère immuable qui distingue un élément au fil des publications, déplacements et changements de code visible.
+  role: Conserver les relations, accords et liens historiques ; ne jamais réutiliser un identifiant retiré.
+  source_refs:
+  - U782
+  - U783
+  review:
+    state: partial
+    adopted_scope: Distinction identité/code/ordre et règles identification_rules adoptées U783.
+    proposed_scope: Rédaction pédagogique de la définition.
+- id: MOD024
+  name: Display Code
+  label_fr: Code de lecture
+  definition: Repère court composé d’un préfixe de type et d’un numéro suivant l’ordre de lecture dans une publication déterminée.
+  role: Citer et rechercher un élément dans sa publication ; le code peut changer dans une publication suivante.
+  source_refs:
+  - U782
+  - U783
+  review:
+    state: partial
+    adopted_scope: Distinction identité/code/ordre et règles identification_rules adoptées U783.
+    proposed_scope: Rédaction pédagogique de la définition.
+- id: MOD025
+  name: Reading Order
+  label_fr: Ordre de lecture
+  definition: Ordre de référence du parcours de l’arbre, partagé par les cartes et fiches, figé avec la publication.
+  role: Numéroter sans dépendre du filtrage, du repli, de la recherche ni de la disposition du graphe.
+  source_refs:
+  - U782
+  - U783
+  review:
+    state: partial
+    adopted_scope: Distinction identité/code/ordre et règles identification_rules adoptées U783.
+    proposed_scope: Rédaction pédagogique de la définition.

@@ -93,14 +93,14 @@ export function BusinessSheet({ model, node, onShowMarket }: { model: PublishedM
         {behaviorGroups.map(group => <div className="behavior-reading-group" key={group.key}>
           {group.label && <h3>{group.label}</h3>}
           <div className="behavior-list">{group.behaviors.map(behavior => <details className="behavior-summary" key={behavior.id} data-behavior-id={behavior.id}>
-            <summary><NodeIcon node={behavior} size={21}/><span>{behavior.name}<small>{behaviorTypeLabel(behavior)}</small></span></summary>
+            <summary><NodeIcon node={behavior} size={21}/><span>{behavior.displayCode && <small className="reading-code">{behavior.displayCode}</small>}{behavior.name}<small>{behaviorTypeLabel(behavior)}</small></span></summary>
             <p><ModelText text={publicText(behavior.definition)}/></p><ReferenceLink target={behavior.id}>Lire le comportement <ArrowUpRight size={16}/></ReferenceLink>
           </details>)}</div>
         </div>)}
       </section>}
     </div>
     <div className="sheet-market-entry"><p>{marketCount ? `${marketCount} rapprochement${marketCount > 1 ? 's' : ''} documenté${marketCount > 1 ? 's' : ''} : vocabulaire, périmètre retenu et sources.` : 'Le positionnement marché de cet élément reste à documenter dans cette publication.'}</p><button className="secondary-button" onClick={onShowMarket}>Sources d’inspiration <ArrowUpRight size={16}/></button></div>
-    {otherChildren.length > 0 && <section className="sheet-children"><h2>Explorer ce périmètre <span>{otherChildren.length}</span></h2><div className="detail-children-list">{otherChildren.map((child, index) => <Fragment key={child.id}>{startsCapabilityTypeSection(otherChildren, index) && <hr className="capability-type-divider" aria-label="Changement de type de capacité"/>}<ReferenceLink target={child.id}><NodeIcon node={child} size={22}/><span><small>{kindLabel(child)}</small><strong>{child.name}</strong></span><ArrowRight size={18} aria-hidden="true"/></ReferenceLink></Fragment>)}</div></section>}
+    {otherChildren.length > 0 && <section className="sheet-children"><h2>Explorer ce périmètre <span>{otherChildren.length}</span></h2><div className="detail-children-list">{otherChildren.map((child, index) => <Fragment key={child.id}>{startsCapabilityTypeSection(otherChildren, index) && <hr className="capability-type-divider" aria-label="Changement de type de capacité"/>}<ReferenceLink target={child.id}><NodeIcon node={child} size={22}/><span><small>{kindLabel(child)}</small><strong>{child.displayCode && <small className="reading-code">{child.displayCode} · </small>}{child.name}</strong></span><ArrowRight size={18} aria-hidden="true"/></ReferenceLink></Fragment>)}</div></section>}
   </article>;
 }
 

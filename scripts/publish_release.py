@@ -165,6 +165,12 @@ def compile_snapshot(snapshot, decisions, version, publication_refs):
         'Les alternatives non intégrées et les illustrations restent dans le backlog.',
         'Le modèle processus détaillé reste à construire ; les autorités et frontières ouvertes ne sont pas arbitrées par cette publication.'
     ]
+    if release.get('display_policy'):
+        try:
+            from .display_codes import build_display_index
+        except ImportError:
+            from display_codes import build_display_index
+        release['display_index'] = build_display_index(release)
     return release
 
 

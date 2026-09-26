@@ -1,13 +1,15 @@
 ---
 name: push
-description: Envoyer les commits du projet Beaumanoir Cartographie / Urbanisation vers github.com/laurent-sintes/Urbanisation. Utiliser pour une demande de push de ce dépôt ; ce n’est ni une release métier ni le workflow FLOW-Program.
+description: Envoyer les commits du projet Beaumanoir Cartographie / Urbanisation SCM vers github.com/laurent-sintes/Urbanisation-SCM. Utiliser pour une demande de push de ce dépôt ; ce n’est ni une release métier ni le workflow FLOW-Program.
 ---
 
-# Push du projet Urbanisation
+# Push du projet Urbanisation SCM
 
-Situer le dépôt courant, ou utiliser `C:/Dev/Beaumanoir Cartographie`, puis lire `AGENTS.md`. Le dépôt distant autorisé pour ce workflow est **laurent-sintes/Urbanisation**, normalement nommé `origin`, en HTTPS ou avec son URL SSH équivalente. Ne pas utiliser le skill `flow-push`, propre à un autre dépôt.
+Situer le dépôt courant, ou utiliser `C:/Dev/Beaumanoir Cartographie`, puis lire `AGENTS.md`. Le dépôt distant autorisé pour ce workflow est **laurent-sintes/Urbanisation-SCM**, normalement nommé `origin`, en HTTPS ou avec son URL SSH équivalente. Ne pas utiliser le skill `flow-push`, propre à un autre dépôt.
 
 Une demande de push autorise l’envoi des commits dans son périmètre, sans confirmation systématique. Une demande de préparation ou de diagnostic seule n’autorise pas l’envoi. La création du skill ne l’invoque pas. Le push n’appelle pas automatiquement le skill `release` et ne valide aucun contenu métier.
+
+À chaque demande de push de ce dépôt, rappeler dans la réponse finale le lien [Atlas distant](https://laurent-sintes.github.io/Urbanisation-SCM/), y compris si aucun commit n’est à envoyer ou si le push est bloqué. Distinguer le résultat du push de celui du déploiement Pages ; ne pas annoncer le site actualisé sans vérification du déploiement.
 
 ## Établir ce qui sera envoyé
 

@@ -3,17 +3,20 @@
   "version": "0.3.0",
   "private": true,
   "type": "module",
-  "description": "Explorateur du modèle publié FLOW : React, React Flow et serveur local Python.",
+  "description": "Explorateur statique du modèle publié FLOW : React et React Flow.",
   "scripts": {
-    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
-    "build": "tsc --noEmit && vite build",
-    "test": "node --test --test-isolation=none test-model.mjs test-publication.mjs test-navigation.mjs test-glossary.mjs test-modeling-guide.mjs test-dependency-graph.mjs test-capability-types.mjs test-behavior-types.mjs test-request-metadata.mjs test-public-text.mjs test-reader-search.mjs test-examples.mjs test-information.mjs",
-    "verify": "node verify-browser.mjs && node verify-tree.mjs && node verify-glossary.mjs && node verify-universe.mjs && node verify-references.mjs",
+    "dev": "pnpm run export && vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "python ../scripts/build_atlas.py",
+    "test": "node --test --test-isolation=none test-*.mjs",
+    "verify": "node verify-browser.mjs && node verify-static.mjs && node verify-modeling-guide.mjs && node verify-display-codes.mjs",
+    "verify:codes": "node verify-display-codes.mjs",
     "verify:behaviors": "node verify-behaviors.mjs",
     "verify:market": "node verify-market.mjs",
     "verify:principles": "node verify-modeling-guide.mjs",
     "verify:dependencies": "node verify-dependencies.mjs",
-    "verify:presentation": "node verify-atlas-presentation.mjs"
+    "verify:presentation": "node verify-atlas-presentation.mjs",
+    "export": "python ../scripts/export_atlas.py",
+    "verify:static": "node verify-static.mjs"
   },
   "dependencies": {
     "@xyflow/react": "12.11.6",
@@ -29,6 +32,7 @@
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.1",
+    "playwright": "1.62.1",
     "typescript": "7.0.2",
     "vite": "8.3.0"
   }

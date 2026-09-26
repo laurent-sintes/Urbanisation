@@ -317,6 +317,9 @@ def model_diff(previous, candidate):
             if delta:
                 result[collection]['modified'].append({'id': identifier, 'changes': delta})
     result['principles'] = changes(previous.get('principles', []), candidate.get('principles', []))
+    if 'display_policy' in previous or 'display_policy' in candidate:
+        result['display_policy'] = changes(previous.get('display_policy'), candidate.get('display_policy'))
+        result['display_index'] = changes(previous.get('display_index'), candidate.get('display_index'))
     if 'information_catalog' in previous or 'information_catalog' in candidate:
         result['information_catalog'] = changes(
             {k:v for k,v in previous.get('information_catalog', {}).items() if k not in ('items','links')},

@@ -31,12 +31,12 @@ def verify_atlas(root, version, base_url='http://127.0.0.1:8765'):
     def get(route):
         with urlopen(base_url.rstrip('/') + route, timeout=10) as response:
             return json.load(response)
-    status = get('/api/status')
-    if status.get('appName') != 'FLOW Atlas' or Path(status.get('repositoryRoot', '')).resolve() != Path(root).resolve() or status.get('space') != 'release':
+    status = get('/__atlas__/identity.json')
+    if status.get('appName') != 'FLOW Atlas' or Path(status.get('repositoryRoot', '')).resolve() != Path(root).resolve() or status.get('mode') != 'static':
         raise ValueError('The local service is not this project’s FLOW Atlas')
     pointer = workflow.resolve_release(Path(root) / 'modeles/release', version)
     expected = workflow.read(Path(root) / 'modeles/release' / pointer['path'])
-    actual = get('/api/model')
+    actual = get('/data/' + version + '/model.json')
     if actual.get('version') != version or actual.get('sourcePath') != 'modeles/release/' + pointer['path']:
         raise ValueError('Atlas serves another publication')
     for collection in ('nodes', 'relations'):
@@ -46,11 +46,11 @@ def verify_atlas(root, version, base_url='http://127.0.0.1:8765'):
         for item in expected[collection]:
             if any(items.get(item['id'], {}).get(k) != v for k, v in item.items()):
                 raise ValueError('Atlas content differs: ' + item['id'])
-    if actual.get('glossary') != expected.get('glossary') or get('/api/releases').get('current_version') != version:
+    if actual.get('glossary') != expected.get('glossary') or get('/data/index.json').get('current_version') != version:
         raise ValueError('Atlas glossary or catalog differs')
     if (Path(root) / 'modeles/modeling-guides/index.yaml').exists():
         from app.modeling_guide import load_modeling_guide
-        if get('/api/modeling-guide') != load_modeling_guide(root, version):
+        if get('/data/' + version + '/guide.json') != load_modeling_guide(root, version):
             raise ValueError('Atlas methodology differs')
     return {'verified': True, 'version': version, 'sourcePath': actual['sourcePath']}
 
@@ -74,6 +74,11 @@ def _complete(root, version, source_refs, result, measure, timings, atlas_url, v
         result['checks'] = measure('final_checks', lambda: final_checks(root))
     except (ValueError, OSError) as exc:
         errors.append(str(exc))
+    try:
+        from scripts.export_atlas import export_atlas
+        result['static_export'] = measure('static_export', lambda: export_atlas(root))
+    except (ValueError, OSError) as exc:
+        errors.append('Static export: ' + str(exc))
     if verify_site:
         try:
             result['atlas'] = measure('atlas', lambda: verify_atlas(root, version, atlas_url))
@@ -178,7 +183,14 @@ def run(root, version=None, source_refs=None, *, activate=False, review_path=Non
                           for delta in report['changes'].values())
         if not has_changes and not report['glossary_changes'] and not report['new_decision_ids'] and guide_path is None:
             result = {'status': 'unchanged', 'version': current['version'], 'timings_seconds': timings}
-            if verify_site:
+            if activate:
+                try:
+                    from scripts.export_atlas import export_atlas
+                    result['static_export'] = measure('static_export', lambda: export_atlas(root))
+                except (ValueError, OSError) as exc:
+                    result.update(status='unchanged_checks_failed', static_export={'error': str(exc)})
+                    return result
+            if activate and verify_site:
                 try:
                     result['atlas'] = measure('atlas', lambda: verify_atlas(root, current['version'], atlas_url))
                 except (ValueError, OSError) as exc:

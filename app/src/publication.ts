@@ -11,7 +11,7 @@ export interface ReleaseEntry {
 }
 export interface PublicationCatalog {
   readonly current: string;
-  /** Server ordering is authoritative: latest publication first. */
+  /** Catalog ordering is authoritative: latest publication first. */
   readonly releases: readonly ReleaseEntry[];
 }
 export interface PublicationState {
@@ -23,15 +23,36 @@ export interface PublicationState {
 }
 export type FetchLike = (input: string, init?: RequestInit) => Promise<Response>;
 
-export async function fetchJson(url: string, signal?: AbortSignal, fetcher: FetchLike = fetch): Promise<unknown> {
-  const response = await fetcher(url, { signal, cache: 'no-store' });
-  const body = await response.json();
-  if (!response.ok) {
-    const error = body && typeof body === 'object' ? (body as Record<string, unknown>).error : undefined;
-    const message = typeof error === 'string' ? error : error && typeof error === 'object' ? (error as Record<string, unknown>).message : undefined;
-    throw new Error(typeof message === 'string' ? message : `Le serveur répond avec une erreur ${response.status}.`);
+export async function fetchJson(url: string, signal?: AbortSignal, fetcher: FetchLike = fetch, timeoutMs = 15000): Promise<unknown> {
+  if (signal?.aborted) throw signal.reason;
+  const controller = new AbortController();
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  let cancel = () => {};
+  const interrupted = new Promise<never>((_, reject) => {
+    cancel = () => { controller.abort(); reject(signal?.reason ?? new Error('Chargement annulé.')); };
+    signal?.addEventListener('abort', cancel, { once: true });
+    timer = setTimeout(() => {
+      controller.abort();
+      reject(new Error('Le chargement prend trop de temps. Réessaie dans quelques instants.'));
+    }, timeoutMs);
+  });
+  try {
+    return await Promise.race([interrupted, (async () => {
+      const response = await fetcher(url, { signal: controller.signal, cache: 'no-store' });
+      let body: unknown;
+      try { body = await response.json(); }
+      catch { throw new Error(response.ok ? 'Le fichier JSON reçu est invalide.' : `Chargement impossible (HTTP ${response.status}).`); }
+      if (!response.ok) {
+        const error = body && typeof body === 'object' ? (body as Record<string, unknown>).error : undefined;
+        const message = typeof error === 'string' ? error : error && typeof error === 'object' ? (error as Record<string, unknown>).message : undefined;
+        throw new Error(typeof message === 'string' ? message : `Le serveur répond avec une erreur ${response.status}.`);
+      }
+      return body;
+    })()]);
+  } finally {
+    clearTimeout(timer);
+    signal?.removeEventListener('abort', cancel);
   }
-  return body;
 }
 
 export function adaptCatalog(input: unknown): PublicationCatalog {
@@ -47,12 +68,16 @@ export function adaptCatalog(input: unknown): PublicationCatalog {
   return Object.freeze({ current: raw.current_version, releases: Object.freeze(entries) });
 }
 
-export function publicationUrl(version?: string): string {
-  return '/api/model' + (version ? `?version=${encodeURIComponent(version)}` : '');
+/** Relative URLs work at localhost and below a GitHub Pages project path. */
+export function staticUrl(path: string): string {
+  return (import.meta.env?.BASE_URL ?? './') + path;
 }
-
-export function sourceUrl(path: string, anchor = ''): string {
-  return '/api/source?' + new URLSearchParams({ path, anchor });
+export function publicationUrl(version: string): string {
+  if (!/^[A-Za-z0-9][A-Za-z0-9.-]*$/.test(version) || version.includes('..')) throw new Error('Version invalide.');
+  return staticUrl(`data/${version}/model.json`);
+}
+export function guideUrl(version: string): string {
+  return publicationUrl(version).replace(/model\.json$/, 'guide.json');
 }
 
 /** Request orchestration is independent of React so races and error retention can be tested. */
@@ -83,7 +108,7 @@ export function createPublicationClient(fetcher: FetchLike = fetch) {
     const task = (async () => {
       let nextCatalog: PublicationCatalog | undefined;
       try {
-        nextCatalog = adaptCatalog(await fetchJson('/api/releases', abort.signal, fetcher));
+        nextCatalog = adaptCatalog(await fetchJson(staticUrl('data/index.json'), abort.signal, fetcher));
         if (!isLatest()) return;
         const target = selection || nextCatalog.current;
         if (!nextCatalog.releases.some(entry => entry.version === target)) throw new Error(`La publication ${target} est absente du catalogue.`);

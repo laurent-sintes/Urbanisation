@@ -1,3 +1,4 @@
+import { staticUrl } from '../publication';
 import { useEffect, useRef, useState, type KeyboardEvent, type RefObject } from 'react';
 import { ChevronDown, ChevronRight, Search, X, PanelLeftClose, Compass, BookOpen, Lightbulb } from 'lucide-react';
 import type { AtlasNode, PublishedModel } from '../types';
@@ -101,7 +102,7 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
           {isExpanded ? <ChevronDown size={13} /> : <ChevronRight size={13} />}
         </button> : <span className="tree-spacer" />}
         <NodeIcon node={node} size={17} />
-        <span className="tree-label" title={`${node.id} · ${kindLabel(node)}`}>{node.name}</span>
+        <span className="tree-label" title={`${node.id} · ${kindLabel(node)}`}>{node.displayCode && <small className="reading-code">{node.displayCode} · </small>}{node.name}</span>
         {children.length > 0 && <small>{children.length}</small>}
       </div>
       {children.length > 0 && isExpanded && <ul role="group">{children.map((child, index) => renderNode(child, depth + 1, startsCapabilityTypeSection(children, index)))}</ul>}
@@ -120,13 +121,13 @@ export function Sidebar({ model, route, open, mobile, searchRef, onClose, onNavi
     {searching ? <div className="search-results" aria-label="Résultats de recherche"><p role="status">{matches.length} résultat{matches.length > 1 ? 's' : ''}</p>{matches.map(result => <button key={`${result.kind}:${result.id}`} data-search-result={result.id} onClick={() => result.kind === 'glossary' ? onOpenTerm(result.id) : onNavigate(result.id, true)} onKeyDown={e => {
       if (e.key === 'ArrowDown') { e.preventDefault(); (e.currentTarget.nextElementSibling as HTMLElement)?.focus(); }
       if (e.key === 'ArrowUp') { e.preventDefault(); const previous = e.currentTarget.previousElementSibling; previous?.tagName === 'BUTTON' ? (previous as HTMLElement).focus() : searchRef.current?.focus(); }
-    }}>{result.node ? <NodeIcon node={result.node} size={20} framed /> : <BookOpen size={22}/>}<span><strong>{result.name}</strong><small>{result.node ? `${kindLabel(result.node)} · ${lineageOf(model, result.id).slice(0, -1).map(n => n.name).join(' / ')}` : 'Terme du glossaire'} · {result.id}</small>{result.excerpt && <span className="search-excerpt">{result.excerpt}</span>}</span></button>)}{!matches.length && <p>Aucun élément ne correspond dans cette publication.</p>}</div>
+    }}>{result.node ? <NodeIcon node={result.node} size={20} framed /> : <BookOpen size={22}/>}<span><strong>{result.name}</strong><small>{result.node ? `${kindLabel(result.node)} · ${lineageOf(model, result.id).slice(0, -1).map(n => n.name).join(' / ')}` : 'Terme du glossaire'} · {result.node?.displayCode ?? result.id}</small>{result.excerpt && <span className="search-excerpt">{result.excerpt}</span>}</span></button>)}{!matches.length && <p>Aucun élément ne correspond dans cette publication.</p>}</div>
       : <div className="model-tree" ref={tree} role="tree" aria-label="Arbre d’urbanisation"><ul role="group">{rootsOf(model).filter(n => !['object','document','event'].includes(n.kind)).map(n => renderNode(n, 1))}</ul></div>}
     <nav className="sidebar-help" aria-label="Aide à la lecture">
       <button className="glossary-nav" onClick={() => onOpenGlossary('model')} aria-current={route.view === 'glossary' && route.glossary !== 'meta' ? 'page' : undefined}><BookOpen size={17}/>Glossaire métier</button>
       <button className="glossary-nav" onClick={() => onOpenGlossary('meta')} aria-current={route.view === 'glossary' && route.glossary === 'meta' ? 'page' : undefined}><BookOpen size={17}/>Glossaire du méta modèle</button>
       <button className="glossary-nav principles-nav" onClick={onOpenPrinciples} aria-current={route.view === 'principles' ? 'page' : undefined}><Lightbulb size={17}/>Comprendre le méta modèle</button>
     </nav>
-    <div className="sidebar-bottom"><div className="sidebar-stats"><span id="fa-version" className="model-version" data-version={model.version} title={publicationLabel} aria-label={publicationLabel}><span className={`live-dot ${route.version ? 'fixed' : ''}`} aria-hidden="true"/>Modèle · {revision}</span><span>{model.nodes.length} éléments</span><span>{model.nodes.filter(n => n.kind === 'capability').length} capacités{model.nodes.some(n => n.kind === 'behavior') && <> · {model.nodes.filter(n => n.kind === 'behavior').length} comportements</>}</span></div><img className="beaumanoir-source-logo" src="/assets/beaumanoir-original.png" width="1564" height="605" alt="Groupe Beaumanoir" /></div>
+    <div className="sidebar-bottom"><div className="sidebar-stats"><span id="fa-version" className="model-version" data-version={model.version} title={publicationLabel} aria-label={publicationLabel}><span className={`live-dot ${route.version ? 'fixed' : ''}`} aria-hidden="true"/>Modèle · {revision}</span><span>{model.nodes.length} éléments</span><span>{model.nodes.filter(n => n.kind === 'capability').length} capacités{model.nodes.some(n => n.kind === 'behavior') && <> · {model.nodes.filter(n => n.kind === 'behavior').length} comportements</>}</span></div><img className="beaumanoir-source-logo" src={staticUrl('assets/beaumanoir-original.png')} width="1564" height="605" alt="Groupe Beaumanoir" /></div>
   </aside>;
 }

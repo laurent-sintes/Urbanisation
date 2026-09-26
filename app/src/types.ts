@@ -106,6 +106,8 @@ export interface GlossaryTerm extends JsonRecord {
   revision?: number; last_modified?: string;
 }
 export interface RawPublication extends JsonRecord {
+  display_policy?: 'typed-tree-v1';
+  display_index?: { policy: 'typed-tree-v1'; roots: string[]; children: Record<string, string[]>; codes: Record<string, string> };
   information_catalog?: InformationCatalogue;
   glossary?: { terms: GlossaryTerm[] };
   space: string;
@@ -121,6 +123,7 @@ export interface RawPublication extends JsonRecord {
   published_at?: string;
 }
 export interface AtlasNode {
+  readonly displayCode?: string;
   readonly hierarchyLabel?: string;
   readonly referenceParentName?: string;
   readonly id: string;

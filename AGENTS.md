@@ -30,9 +30,10 @@ Réutiliser les lectures, sources marché et contrôles déjà valables dans la 
 
 Pour toute modification métier, lire les [invariants détaillés](CONVENTIONS-MODELE.md#invariants-de-travail-u772) et les sections de `CONVENTIONS-MODELE.md` concernées. Ces règles restent obligatoires ; les noms et parents du YAML courant priment sur les repères historiques.
 
-- Hiérarchie : **Domain → Subdomain → Capability → Behavior**. Une capacité décrit un savoir-faire durable, indépendant de l’organisation et des outils ; une fonction produit ne suffit pas.
+- Hiérarchie : **Business System → Domain → Subdomain → Capability → Behavior** (U780). Business Operations regroupe Sales, Sourcing and Procurement, Supply Chain Orchestration et Logistics Execution. Les domaines opérationnels sont précis ; seule Supply Chain Orchestration est approfondie jusqu’aux capacités et comportements. Design & Development et Enterprise Management & Control restent des vues de contexte, avec référentiels sources des ingestions à documenter à terme sur preuve. Une capacité décrit un savoir-faire durable, indépendant de l’organisation et des outils ; une fonction produit ne suffit pas.
 - Zéro ou au moins deux comportements différenciants, un parent explicite, aucun sous-comportement ; justifier la décomposition. Catégories et rôles sont des attributs de présentation, pas des niveaux.
 - Arbre par relations explicites ; distinguer décomposition, dépendance, décision, application, réalisation, proposition et engagement. Ne jamais réutiliser un identifiant retiré.
+- U783 : identité `id` persistante distincte des codes de lecture SYS/DOM/SUB/REF/CAP/BHV. Règles dans `modeling-glossary.yaml` (`identification_rules`) ; codes et ordre figés à la préparation de chaque nouvelle publication, jamais renumérotés par filtre ou recherche. Voir `CONVENTIONS-MODELE.md`, « Identité et codes de lecture ».
 - Noms anglais, définitions françaises, cas concrets, jargon expliqué et relié au glossaire. Préférer les termes établis à périmètre équivalent, sans consensus inventé ni renommage automatique.
 - **À chaque changement métier, aligner modèle et glossaire dans le même lot**, dans les deux sens : noms, sens, frontières, résumés, exemples, liens et commentaires marché concernés. Contrôler l’autre référentiel même s’il ne nécessite aucune modification. Aucun désalignement reporté à un audit ; aucun accord étendu automatiquement. Voir [la règle complète](CONVENTIONS-MODELE.md#alignement-du-modèle-et-du-glossaire-u772).
 
@@ -69,13 +70,13 @@ Le checkpoint local d’audit vérifie les empreintes des fichiers et du code av
 
 ## Atlas et opérations
 
-Release, commit, push et administration serveur sont distincts : utiliser leurs skills seulement pour la demande correspondante. Pas de déclenchement implicite ni confirmation répétée pour une action autorisée. `push` cible Urbanisation ; `flow-push` concerne FLOW-Program. Ne pas changer l’identité Git globale.
+Release, commit, push et administration serveur sont distincts : utiliser leurs skills seulement pour la demande correspondante. Pas de déclenchement implicite ni confirmation répétée pour une action autorisée. `push` cible Urbanisation-SCM ; `flow-push` concerne FLOW-Program. Ne pas changer l’identité Git globale.
 
 Préserver le contenu des publications et les portées d’accord. Git conserve leurs états historiques ; les copies retirées de l’arbre sont référencées dans `modeles/git-history.json`. Une correction métier publiée exige une nouvelle version. Une release part d’une préparation figée contrôlée du backlog courant. Les caches ne dispensent jamais des contrôles d’intégrité.
 
 Atlas présente exclusivement les publications sous Urbanisation : historique sélectionné fixe, courant suivi automatiquement, glossaire et liens du même snapshot. Aucun repli backlog ni glossaire méthodologique présenté comme métier. React/TypeScript, structure React Flow, relations Cytoscape ; conserver les relations publiées et leurs qualifications. Arbre gauche, fiche centrale, recherche, comportements et liens directs ; aucun historique de visites. Identité : `app/BRANDING.md`.
 
-Python sert `app/dist/`, sans Node permanent. Serveur local en lecture seule, port 8765, lanceur `Lancer-FLOW-Atlas.ps1` : vérifier l’identité avant arrêt/redémarrage, redémarrer après modification Python si nécessaire, pas après simple changement de données. Aucun navigateur sans demande. Les procédures détaillées sont dans `app/README.md`, `modeles/README.md` et les skills ; répercuter une modification de skill dans sa copie personnelle sans écraser un skill tiers.
+Atlas est une SPA statique : `scripts/export_atlas.py` produit les JSON depuis le catalogue publié et les snapshots vérifiés, sans backlog. Build et release activée actualisent ces artefacts ignorés par Git. Python sert seulement `app/dist/`, avec sa bibliothèque standard, sans Node permanent ni API métier. Le lanceur vérifie `/__atlas__/identity.json`. GitHub Pages sert le même dossier ; push et déploiement restent distincts de la release locale. Serveur local en lecture seule, port 8765, lanceur `Lancer-FLOW-Atlas.ps1` : vérifier l’identité avant arrêt/redémarrage, redémarrer après modification Python si nécessaire, pas après simple changement de données. Aucun navigateur sans demande. Les procédures détaillées sont dans `app/README.md`, `modeles/README.md` et les skills ; répercuter une modification de skill dans sa copie personnelle sans écraser un skill tiers.
 
 ## Procédures ciblées
 

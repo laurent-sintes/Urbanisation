@@ -168,8 +168,16 @@ class PublicationWorkflowTests(unittest.TestCase):
         self.root = self.temp.__enter__()
         self.addCleanup(self.temp.__exit__, None, None, None)
         # Copy only inputs used by the publisher, never the live backlog.
-        for relative in ('schemas', 'decisions', 'revisions', 'provenance', 'release/2026-09-13.2'):
-            shutil.copytree(ROOT / 'modeles' / relative, self.root / 'modeles' / relative)
+        from scripts.git_history import read_bytes
+        shutil.copytree(ROOT / 'modeles/schemas', self.root / 'modeles/schemas')
+        manifest_path = ROOT / 'modeles/release/2026-09-13.2/manifest.json'
+        manifest = publisher.read(manifest_path)
+        paths = [manifest_path, manifest_path.parent / 'model.json', ROOT / 'modeles/provenance/source-records.json']
+        paths += [(manifest_path.parent / manifest[key + '_path']).resolve() for key in ('input_revision', 'decisions', 'provenance')]
+        for source_path in paths:
+            target = self.root / source_path.relative_to(ROOT)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(read_bytes(source_path))
         save(self.root / 'modeles/release/current.json', {'version': 'unchanged'})
         self.manifest = self.root / 'modeles/release/2026-09-13.2/manifest.json'
         self.version = '2026-09-13.99'

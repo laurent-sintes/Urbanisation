@@ -38,7 +38,7 @@ BEHAVIOR_ASPECTS = {'trigger', 'activity'}
 RELATION_KINDS = {
     # The former lower-level domain remains supported in frozen publications.
     "contains": ({"domain", "area", "reference", "capability"}, {"capability", "behavior"}),
-    "presents": ({"group", "domain", "area"}, {"domain", "area", "reference", "group", "capability"}),
+    "presents": ({"business_system", "group", "domain", "area"}, {"domain", "area", "reference", "group", "capability"}),
     "confirms": ({"capability"}, {"object"}),
     "associated-document": ({"capability"}, {"document"}),
     "observed-result": ({"capability"}, {"event"}),
@@ -112,6 +112,10 @@ def validate_sources(source_document):
 
 def validate_urbanism(model, sources, schema=None):
     try:
+        from .display_codes import validate_display_index
+    except ImportError:
+        from display_codes import validate_display_index
+    try:
         from .information_catalog import validate_information, versioned_items
     except ImportError:
         from information_catalog import validate_information, versioned_items
@@ -126,6 +130,7 @@ def validate_urbanism(model, sources, schema=None):
     errors = validate_contract(model, schema) if schema is not None else validate_contract(model, True)
     if errors:
         return errors
+    errors += validate_display_index(model)
     if not isinstance(model, dict):
         return ["model: expected object"]
     if any(not isinstance(model.get(k), list) for k in ("nodes", "relations")):
@@ -176,6 +181,9 @@ def validate_urbanism(model, sources, schema=None):
             errors.append(f"nodes/{identifier}: urbanism_level requires an explicit level_ref")
         if level is not None and role != "urbanism_level":
             errors.append(f"nodes/{identifier}: level_ref is not a presentation grouping")
+        if 'modeling_depth' in fields:
+            if node.get('kind') not in ('business_system', 'domain') or fields['modeling_depth'] not in ('context', 'domains', 'behaviors'):
+                errors.append(f'nodes/{identifier}: modeling_depth requires a business system/domain and context/domains/behaviors')
     # U757 opts current models into exhaustive presentation categories; frozen models remain unchanged.
     if any(p.get('id') == 'PRINCIPLE-CAPABILITY-CATEGORY' for p in model.get('principles', [])):
         for identifier, node in nodes.items():
@@ -210,6 +218,8 @@ def validate_urbanism(model, sources, schema=None):
             errors.append(f"relations/{identifier}: unsupported relation type")
         elif source.get("kind") not in rule[0] or target.get("kind") not in rule[1]:
             errors.append(f"relations/{identifier}: incompatible endpoint kinds for {rel.get('type')}")
+        if source.get('kind') == 'business_system' and rel.get('type') == 'presents' and target.get('kind') != 'domain':
+            errors.append(f'relations/{identifier}: business system presents only domains')
         if (rel.get("type") == "presents" and source.get("kind") == "domain"
                 and target.get("kind") not in {"area", "reference", "group"}):
             errors.append(f"relations/{identifier}: domain presents only areas, references or presentation groups")
@@ -260,6 +270,21 @@ def validate_urbanism(model, sources, schema=None):
 
     for identifier in graph:
         traverse(identifier)
+    # U780 is opt-in: frozen publications keep their historical root contract.
+    if any(p.get('id') == 'PRINCIPLE-BUSINESS-SYSTEM' for p in model.get('principles', [])):
+        parents = {identifier: [] for identifier in nodes}
+        for source, children in graph.items():
+            for target in children:
+                parents[target].append(source)
+        for identifier, node in nodes.items():
+            if node.get('kind') in ('business_system', 'domain'):
+                for field in ('name', 'definition', 'finality', 'scope', 'modeling_depth'):
+                    if not node.get('fields', {}).get(field):
+                        errors.append(f'business-system/{identifier}: {field} must be nonempty')
+            if node.get('kind') == 'business_system' and parents[identifier]:
+                errors.append(f'business-system/{identifier}: business system must be a root')
+            if node.get('kind') == 'domain' and (len(parents[identifier]) != 1 or nodes[parents[identifier][0]].get('kind') != 'business_system'):
+                errors.append(f'business-system/{identifier}: domain requires exactly one business system parent')
     # U624/U626 is an opt-in contract; old snapshots keep their own hierarchy.
     if any(p.get('id') in ('PRINCIPLE-DOMAIN-PURPOSE', 'PRINCIPLE-DOMAIN-SUBDOMAIN') for p in model.get('principles', [])):
         structural_parents = {identifier: set() for identifier in nodes}
@@ -389,6 +414,8 @@ def validate_release(release, decisions_document, snapshot, sources, schema=None
         errors.append("release: incorrect publication or frozen input space")
     if release.get("model_id") != snapshot.get("model_id"):
         errors.append("release: model_id differs from frozen input")
+    if release.get('display_policy') != snapshot.get('display_policy'):
+        errors.append('release: display_policy differs from frozen input')
     published_snapshot = release.get("release_kind") == "published_snapshot"
     if snapshot.get("version") != decisions_document.get("version"):
         errors.append("release: decisions/frozen input version mismatch")

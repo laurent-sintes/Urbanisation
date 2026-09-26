@@ -1,13 +1,13 @@
 {
   "name": "FLOW Atlas",
   "short_name": "Atlas",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#fcfdfd",
   "theme_color": "#236159",
   "icons": [
     {
-      "src": "/assets/flow-original.png",
+      "src": "./assets/flow-original.png",
       "sizes": "1024x1024",
       "type": "image/png"
     }

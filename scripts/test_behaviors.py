@@ -21,25 +21,26 @@ class BehaviorTests(unittest.TestCase):
 
     def test_adopted_definitions_and_parentage(self):
         self.assertEqual(self.check_model(self.model), [])
+        historical = read(ROOT / 'audits/2026-09-17-refonte-appliquee/model-before.yaml')
         adopted = read(ROOT / 'modeles/backlog/d03-review.yaml')['atp_behaviors_U263']['behaviors']
         for entry in adopted:
-            node = next(n for n in self.model['nodes'] if n['id'] == entry['node_id'])
+            node = next(n for n in historical['nodes'] if n['id'] == entry['node_id'])
             self.assertEqual(value_hash(node['fields']['definition']), entry['definition_sha256'])
             self.assertEqual(node['lifecycle']['validated_fields'], ['definition'])
-            parents = [r for r in self.model['relations'] if r['target_id'] == node['id'] and r['type'] == 'contains']
+            parents = [r for r in historical['relations'] if r['target_id'] == node['id'] and r['type'] == 'contains']
             self.assertEqual([r['source_id'] for r in parents], ['D03.i'])
 
     def test_invalid_hierarchies_rejected(self):
         for case in ('orphan', 'two_parents', 'domain_parent', 'behavior_child', 'empty_definition'):
             with self.subTest(case=case):
                 model = deepcopy(self.model)
-                rel = next(r for r in model['relations'] if r['id'] == 'REL-ATP-BHV001')
-                node = next(n for n in model['nodes'] if n['id'] == 'BHV001')
+                node = next(n for n in model['nodes'] if n['kind'] == 'behavior')
+                rel = next(r for r in model['relations'] if r['type'] == 'contains' and r['target_id'] == node['id'])
                 if case == 'orphan': model['relations'].remove(rel)
                 if case == 'two_parents':
-                    other = deepcopy(rel); other['id'] += '-SECOND'; other.pop('lifecycle'); model['relations'].append(other)
-                if case == 'domain_parent': rel['source_id'] = 'D03'
-                if case == 'behavior_child': rel['source_id'] = 'BHV002'
+                    other = deepcopy(rel); other['id'] += '-SECOND'; other.pop('lifecycle', None); model['relations'].append(other)
+                if case == 'domain_parent': rel['source_id'] = next(n['id'] for n in model['nodes'] if n['kind'] == 'domain')
+                if case == 'behavior_child': rel['source_id'] = next(n['id'] for n in model['nodes'] if n['kind'] == 'behavior' and n['id'] != node['id'])
                 if case == 'empty_definition': node['fields']['definition'] = ' '
                 errors = self.check_model(model)
                 self.assertTrue(any('behavior/' in e for e in errors), errors)
@@ -63,7 +64,7 @@ class BehaviorTests(unittest.TestCase):
             parents = [r['source_id'] for r in historical['relations'] if r['type'] == 'contains' and r['target_id'] == node['id']]
             self.assertEqual(parents, ['D05.f'])
         for identifier in ('D05.a', 'D05.d', 'D05.e', 'D05.c'):
-            parents = [r['source_id'] for r in self.model['relations'] if r['type'] == 'contains' and r['target_id'] == identifier]
+            parents = [r['source_id'] for r in historical['relations'] if r['type'] == 'contains' and r['target_id'] == identifier]
             self.assertEqual(parents, ['D05'])
         planning = next(n for n in historical['nodes'] if n['id'] == 'D05.f')
         self.assertNotIn('definition', planning['lifecycle']['validated_fields'])
@@ -82,11 +83,13 @@ class BehaviorTests(unittest.TestCase):
             self.assertIn('U271', current['lifecycle']['source_refs'])
 
     def test_refactored_behaviors_keep_one_parent_and_concrete_responsibilities(self):
-        nodes = {n['id']: n for n in self.model['nodes']}
+        # Frozen post-refactoring revision: later approved moves are independent.
+        historical = read(ROOT / 'modeles/revisions/2026-09-23.1/backlog.yaml')
+        nodes = {n['id']: n for n in historical['nodes']}
         for parent, expected in {'D05.f': ['BHV005','BHV006','BHV016','BHV094'],
                                  'D02.b': ['BHV017','BHV018','BHV019','BHV020'],
                                  'D03.n': ['BHV021','BHV022','BHV023']}.items():
-            children = [r['target_id'] for r in self.model['relations'] if r['type']=='contains' and r['source_id']==parent]
+            children = [r['target_id'] for r in historical['relations'] if r['type']=='contains' and r['source_id']==parent]
             self.assertEqual(set(children), set(expected))
             self.assertTrue(nodes[parent]['fields']['decomposition_rationale'])
         registry = read(ROOT / 'modeles/backlog/refactoring-implementation.yaml')
@@ -99,7 +102,7 @@ class BehaviorTests(unittest.TestCase):
             self.assertIn(operation, scope)
         # A promise merge does not drop illustrative object/document/event links.
         for identifier in ('REL-ILL-001','REL-ILL-002','REL-ILL-003'):
-            rel = next(r for r in self.model['relations'] if r['id']==identifier)
+            rel = next(r for r in historical['relations'] if r['id']==identifier)
             self.assertEqual(rel['source_id'], 'D03.n')
 
     def test_historical_publication_still_valid(self):

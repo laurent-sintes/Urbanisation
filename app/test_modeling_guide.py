@@ -220,6 +220,8 @@ class ModelingGuideTests(GuideFixture):
 class ModelingGuideHttpTests(GuideFixture):
     def setUp(self):
         super().setUp()
+        from scripts.export_atlas import export_atlas
+        export_atlas(self.root, [self.root / 'app/dist/data'])
         self.server = create_server(0, self.root)
         self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
         self.thread.start()
@@ -241,31 +243,33 @@ class ModelingGuideHttpTests(GuideFixture):
             connection.close()
 
     def test_get_head_and_unassociated_publication(self):
-        status, headers, payload = self.request("/api/modeling-guide")
+        status, headers, payload = self.request("/data/" + CURRENT + "/guide.json")
         self.assertEqual(status, 200)
         self.assertEqual(headers["Cache-Control"], "no-store")
         self.assertEqual(json.loads(payload)["publication_version"], CURRENT)
-        status, head_headers, body = self.request("/api/modeling-guide?version=" + CURRENT, "HEAD")
+        status, head_headers, body = self.request("/data/" + CURRENT + "/guide.json", "HEAD")
         self.assertEqual(status, 200)
         self.assertEqual(body, b"")
         self.assertEqual(head_headers["Content-Length"], str(len(payload)))
-        status, _, payload = self.request("/api/modeling-guide?version=" + HISTORICAL)
+        status, _, payload = self.request("/data/" + HISTORICAL + "/guide.json")
         self.assertEqual(status, 200)
         self.assertEqual(json.loads(payload)["status"], "unavailable")
-        self.assertEqual(self.request("/api/modeling-guide?version=" + FUTURE)[0], 422)
+        self.assertEqual(self.request("/data/" + FUTURE + "/guide.json")[0], 404)
 
     def test_query_is_strictly_single_version(self):
         for query in ("version=", "version=" + CURRENT + "&version=" + CURRENT,
                       "space=backlog", "version=../backlog/model.yaml", "unused=1", "version=v007"):
             with self.subTest(query=query):
-                self.assertEqual(self.request("/api/modeling-guide?" + query)[0], 400)
+                self.assertEqual(self.request("/api/modeling-guide?" + query)[0], 404)
 
-    def test_corrupt_guide_does_not_prevent_model_api(self):
-        self.guide_path.write_bytes(b"corrupt")
-        self.assertEqual(self.request("/api/modeling-guide?version=" + CURRENT)[0], 422)
-        status, _, payload = self.request("/api/model?version=" + CURRENT)
-        self.assertEqual(status, 200)
-        self.assertEqual(json.loads(payload)["version"], CURRENT)
+    def test_corrupt_source_blocks_export_without_damaging_served_snapshot(self):
+        from scripts.export_atlas import export_atlas
+        before = self.request('/data/' + CURRENT + '/guide.json')[2]
+        self.guide_path.write_bytes(b'corrupt')
+        with self.assertRaises(ValueError):
+            export_atlas(self.root, [self.root / 'app/dist/data'])
+        self.assertEqual(self.request('/data/' + CURRENT + '/guide.json')[2], before)
+        self.assertEqual(self.request('/data/' + CURRENT + '/model.json')[0], 200)
 
 
 if __name__ == "__main__":

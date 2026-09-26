@@ -50,7 +50,8 @@ export function searchPublication(model: PublishedModel, query: string): SearchR
     const id = normalize(entry.id);
     const titleWords = words(entry.name), bodyWords = words(entry.excerpt);
     const has = (values: string[], word: string) => values.some(value => value === word || (word.length >= 3 && value.startsWith(word)));
-    const exact = id === needle || title === needle;
+    const code = normalize(entry.node?.displayCode ?? '');
+    const exact = id === needle || code === needle || title === needle;
     if (!exact && !queryWords.every(word => has(titleWords, word) || has(bodyWords, word) || id === word)) return [];
     const phrase = queryWords.join(' ');
     const bodyPhrase = bodyWords.filter(word => !stopWords.has(word)).join(' ');

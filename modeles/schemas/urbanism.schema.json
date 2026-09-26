@@ -281,7 +281,9 @@
       "const": 1
     },
     "market_reference_policy": {
-      "enum": ["two_primary_sources"]
+      "enum": [
+        "two_primary_sources"
+      ]
     },
     "lifecycle_policy": {
       "const": 1
@@ -311,6 +313,48 @@
     },
     "information_catalog": {
       "$ref": "#/$defs/informationCatalog"
+    },
+    "display_policy": {
+      "const": "typed-tree-v1"
+    },
+    "display_index": {
+      "type": "object",
+      "properties": {
+        "policy": {
+          "const": "typed-tree-v1"
+        },
+        "roots": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "children": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          }
+        },
+        "codes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^(SYS|DOM|SUB|REF|CAP|BHV)-[0-9]{3,}$"
+          }
+        }
+      },
+      "required": [
+        "policy",
+        "roots",
+        "children",
+        "codes"
+      ],
+      "additionalProperties": false
     }
   },
   "required": [
@@ -340,6 +384,7 @@
         },
         "kind": {
           "enum": [
+            "business_system",
             "domain",
             "area",
             "reference",
@@ -401,7 +446,11 @@
             },
             "data_governance": {
               "description": "Responsabilité sur les données ou leur vue, indépendante de la nature de capacité (U613–U615).",
-              "enum": ["Domain-managed", "Projection", "Domain-View"]
+              "enum": [
+                "Domain-managed",
+                "Projection",
+                "Domain-View"
+              ]
             },
             "nature": {
               "type": "string"
@@ -415,26 +464,56 @@
             "dominant_role": {
               "description": "Finalité dominante facultative du sous-domaine, sans niveau ni frontière exclusive.",
               "type": "object",
-              "required": ["id", "display_name"],
+              "required": [
+                "id",
+                "display_name"
+              ],
               "properties": {
-                "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
-                "display_name": { "type": "string", "minLength": 1, "pattern": "\\S" }
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9-]*$"
+                },
+                "display_name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
               },
               "additionalProperties": false
             },
             "category": {
               "description": "Classement visuel facultatif des capacités dans leur sous-domaine ; aucun niveau ni lien métier supplémentaire.",
               "type": "object",
-              "required": ["id", "display_name"],
+              "required": [
+                "id",
+                "display_name"
+              ],
               "properties": {
-                "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
-                "display_name": { "type": "string", "minLength": 1, "pattern": "\\S" },
-                "order": { "type": "integer" }
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9-]*$"
+                },
+                "display_name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "order": {
+                  "type": "integer"
+                }
               },
               "additionalProperties": false
             },
             "decomposition_rationale": {
               "type": "string"
+            },
+            "modeling_depth": {
+              "description": "Profondeur de description choisie pour un système métier ou un domaine ; ni statut d’accord ni preuve de réalisation.",
+              "enum": [
+                "context",
+                "domains",
+                "behaviors"
+              ]
             },
             "request_origins": {
               "description": "Origines possibles de la famille de demandes portée par une capacité. Frontoffice est externe au Domain ; Backoffice est interne. Les deux valeurs peuvent se combiner et restent distinctes de la nature de capacité et de la provenance d'un événement.",
@@ -587,23 +666,47 @@
       "anyOf": [
         {
           "properties": {
-            "kind": { "const": "capability" },
-            "fields": { "properties": { "behavior_aspect": false } }
-          }
-        },
-        {
-          "properties": {
-            "kind": { "const": "behavior" },
-            "fields": { "properties": { "request_origins": false } }
+            "kind": {
+              "const": "capability"
+            },
+            "fields": {
+              "properties": {
+                "behavior_aspect": false
+              }
+            }
           }
         },
         {
           "properties": {
             "kind": {
-              "enum": ["domain", "area", "reference", "group", "object", "document", "event"]
+              "const": "behavior"
             },
             "fields": {
-              "properties": { "request_origins": false, "behavior_aspect": false }
+              "properties": {
+                "request_origins": false
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "kind": {
+              "enum": [
+                "business_system",
+                "domain",
+                "area",
+                "reference",
+                "group",
+                "object",
+                "document",
+                "event"
+              ]
+            },
+            "fields": {
+              "properties": {
+                "request_origins": false,
+                "behavior_aspect": false
+              }
             }
           }
         }
@@ -997,12 +1100,24 @@
                 "pattern": "^https?://[^\\s]+$"
               }
             },
-            "required": ["title", "situation", "source_refs", "source_title", "source_url"],
+            "required": [
+              "title",
+              "situation",
+              "source_refs",
+              "source_title",
+              "source_url"
+            ],
             "additionalProperties": false
           }
         }
       },
-      "required": ["choice", "flow_scope", "flow_approach", "synthesis", "examples"],
+      "required": [
+        "choice",
+        "flow_scope",
+        "flow_approach",
+        "synthesis",
+        "examples"
+      ],
       "additionalProperties": false
     },
     "businessExamples": {

@@ -32,3 +32,5 @@ Desktop.ini
 
 # Compiled frontend; rebuild with pnpm build in app/
 /app/dist/
+
+/app/public/data/

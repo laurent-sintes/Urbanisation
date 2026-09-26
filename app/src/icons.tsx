@@ -43,7 +43,7 @@ const namedIcons: Record<string, LucideIcon> = {
   'Catalog Ingestion': Download, 'Fulfillment Network Ingestion': Download,
 };
 const typeIcons: Record<string, LucideIcon> = {
-  domain: Boxes, area: Boxes, capability: Workflow, behavior: ListFilter, reference: BookOpen, group: FolderTree,
+  business_system: Network, domain: Boxes, area: Boxes, capability: Workflow, behavior: ListFilter, reference: BookOpen, group: FolderTree,
   object: Box, document: FileText, event: Zap,
 };
 export function iconFor(node: AtlasNode): LucideIcon {

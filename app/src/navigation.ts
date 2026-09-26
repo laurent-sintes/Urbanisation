@@ -1,6 +1,6 @@
 export type View = 'map' | 'sheet' | 'relations' | 'market' | 'glossary' | 'principles' | 'information';
 export interface GraphRoute {
-  graphLevel?: 'capability' | 'area' | 'domain' | 'universe';
+  graphLevel?: 'capability' | 'area' | 'domain' | 'business_system' | 'universe';
   graphDepth?: 0 | 1 | 2 | 3;
   graphDirection?: 'both' | 'incoming' | 'outgoing';
   graphFamily?: 'all' | 'needs' | 'other';
@@ -26,7 +26,7 @@ export function readRoute(hash: string): RouteState {
   const requestedView = p.get('view') === 'sheet' && p.get('section') === 'market_comparisons' ? 'market' : p.get('view');
   const view = requestedView === 'market' && (!node || legacyRoots.includes(node)) ? 'map' : requestedView;
   const graph: GraphRoute = {};
-  if (['capability', 'area', 'domain', 'universe'].includes(p.get('level') || '')) graph.graphLevel = p.get('level') as GraphRoute['graphLevel'];
+  if (['capability', 'area', 'domain', 'business_system', 'universe'].includes(p.get('level') || '')) graph.graphLevel = p.get('level') as GraphRoute['graphLevel'];
   if (p.has('depth') && ['0', '1', '2', '3'].includes(p.get('depth')!)) graph.graphDepth = Number(p.get('depth')) as GraphRoute['graphDepth'];
   if (['both', 'incoming', 'outgoing'].includes(p.get('direction') || '')) graph.graphDirection = p.get('direction') as GraphRoute['graphDirection'];
   if (['all', 'needs', 'other'].includes(p.get('qualification') || '')) graph.graphFamily = p.get('qualification') as GraphRoute['graphFamily'];
@@ -59,7 +59,7 @@ export function routeHash(route: RouteState): string {
     information: route.view === 'information' ? route.information : undefined,
     ...(route.view === 'relations' ? { level: route.graphLevel, depth: route.graphDepth, direction: route.graphDirection, qualification: route.graphFamily, layout: route.graphLayout, labels: route.graphLabels, neighbors: route.graphNeighbors ? 'all' : undefined } : {}),
   })) if (value !== undefined && value !== '') p.set(key, String(value));
-  return p.size ? `#${p}` : '/';
+  return p.size ? `#${p}` : '#';
 }
 export function preference<T>(key: string, fallback: T): T {
   try { const value = localStorage.getItem(`flow-atlas:${key}`); return value ? JSON.parse(value) as T : fallback; }

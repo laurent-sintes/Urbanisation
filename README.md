@@ -34,7 +34,7 @@ Les sections suivantes retracent la progression des analyses ; leurs versions da
 
 ## Git et workflows
 
-Le dépôt distant est [laurent-sintes/Urbanisation](https://github.com/laurent-sintes/Urbanisation), configuré comme `origin`. Le backlog reste l’espace de travail par défaut.
+Le dépôt distant est [laurent-sintes/Urbanisation-SCM](https://github.com/laurent-sintes/Urbanisation-SCM), configuré comme `origin`. Le backlog reste l’espace de travail par défaut.
 
 - [`commit`](skills/commit/SKILL.md) vérifie et enregistre les changements dans Git localement.
 - [`push`](skills/push/SKILL.md) envoie les commits vers ce dépôt GitHub et vérifie la branche distante.
