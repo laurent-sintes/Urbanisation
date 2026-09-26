@@ -1648,6 +1648,8 @@ publication_delivery:
         validation_points:
         - Le retour ne réalise pas lui-même la réparation.
         - Un simple accusé de réception de prestation ne vaut pas réalisation conforme.
+        - Inventory Disposition Decision couvre ce retour comme les incidents sur stock existant ; Policy-based Disposition
+          applique les règles et Value Recovery Optimization compare les devenirs admissibles.
         source_refs:
         - U768
       - id: consignment-sale-pickup
@@ -2080,7 +2082,8 @@ publication_delivery:
           - node_id: service-order-transport
             role: Porter l’obligation d’acheminement.
         - title: Comparer les solutions locales
-          description: Une liaison routière offre 80 places ; sa disponibilité et ses contraintes sont qualifiées.
+          description: Une liaison routière offre 80 places ; sa disponibilité et ses contraintes sont qualifiées. Routing
+            & Scheduling réexamine le parcours confié ; un changement d’engagement reste soumis aux capacités responsables.
           outcome: Une alternative réalisable et ses impacts sont exposés.
           contributions:
           - node_id: D06.b
@@ -2091,6 +2094,8 @@ publication_delivery:
             role: Éclairer le surcoût et les risques économiques.
           - node_id: D06.f
             role: Déterminer l’adaptation locale préservant la promesse.
+          - node_id: transport-plan-decision
+            role: Réexaminer les étapes et horaires du transport confié dans les contraintes de promesse.
         - title: Appliquer ou faire réexaminer
           description: Si la solution tient vendredi, les ordres sont adaptés ; sinon une réévaluation de promesse et des
             affectations est nécessaire.
@@ -2469,6 +2474,165 @@ publication_delivery:
         source_refs:
         - U768
         - U769
+      - id: trace-accessory-kits
+        title: Retrouver les coffrets contenant un accessoire défectueux
+        situation: Illustration FLOW fictive. Le fournisseur signale un défaut sur le lot d’accessoires A17. Ce lot a servi
+          à assembler 120 coffrets ; 70 ont été expédiés à deux magasins et 50 sont encore à l’entrepôt.
+        steps:
+        - title: Relier composants et coffrets
+          description: Les faits d’assemblage identifient A17, les coffrets obtenus, puis les expéditions. Les corrections
+            conservent leur justification.
+          outcome: Les filiations connues sont conservées ; l’origine du message ne tient pas lieu de généalogie.
+          contributions:
+          - node_id: D01.f
+            role: Intégrer composants, transformations et destinations transmis.
+          - node_id: D01.g
+            role: Conserver les faits et liens reconnus.
+        - title: Reconstituer les deux sens du parcours
+          description: À partir d’un coffret, retrouver A17 ; à partir d’A17, retrouver les 120 coffrets et leurs destinations.
+            Signaler toute rupture de lien.
+          outcome: Le responsable distingue les 50 présents, les 70 expédiés et les éventuelles zones non documentées.
+          contributions:
+          - node_id: D01.c
+            role: Restituer origines amont et destinations aval avec les limites connues.
+        - title: Décider des suites autorisées
+          description: 'Policy-based Disposition applique la politique au signalement qualifié et aux biens concernés : interdire
+            l’usage des 50 coffrets présents jusqu’au contrôle requis. Les suites pour les expédiés sont confiées après autorisation
+            par les responsables concernés.'
+          outcome: Une trace n’est ni un ordre de rappel ni une autorisation automatique de retour.
+          contributions:
+          - node_id: D05.i
+            role: Déterminer restrictions et orientation selon les faits et politiques.
+          - node_id: D06.d
+            role: Coordonner les suites effectivement autorisées.
+          - node_id: D01.f
+            role: Intégrer les états reconnus.
+          - node_id: D01.g
+            role: Conserver restrictions et justifications.
+        validation_points:
+        - La traçabilité reste répartie entre intégration, registre et visibilité.
+        - Une origine seule ne suffit pas après assemblage.
+        - Le scénario ne transfère pas la décision réglementaire ou commerciale de rappel au registre.
+        outcome: Les biens potentiellement concernés sont identifiés sans inventer une capacité autonome de traçabilité.
+        source_refs:
+        - U777
+      - id: damaged-stock-disposition
+        title: Traiter des vestes abîmées sans retour client
+        situation: Illustration FLOW fictive. Une fuite a touché 100 vestes déjà stockées. Une inspection autonome est confiée
+          avant d’autoriser leur usage.
+        steps:
+        - title: Obtenir les constats
+          description: L’inspection identifie 80 vestes conformes et 20 endommagées ; ses résultats et les quantités sont
+            rapprochés de l’attendu.
+          outcome: La décision dispose de faits ; le contrôle ne vaut pas encore disposition.
+          contributions:
+          - node_id: service-order-inspection
+            role: Porter la prestation de contrôle.
+          - node_id: D07.d
+            role: Intégrer les résultats distants.
+          - node_id: D07.c
+            role: Rapprocher le contrôle demandé et réalisé.
+        - title: Appliquer la politique
+          description: Policy-based Disposition autorise les 80 conformes et maintient les 20 autres bloquées pour la vente.
+            Les états reconnus alimentent registre et visibilité.
+          outcome: Un résultat par quantité est distingué de la règle qui le justifie.
+          contributions:
+          - node_id: D05.i
+            role: Déterminer les usages permis selon la politique.
+          - node_id: D01.f
+            role: Intégrer les décisions et états reconnus.
+          - node_id: D01.g
+            role: Conserver états, quantités et justifications.
+          - node_id: D01.c
+            role: Exposer les positions utilisables et bloquées.
+        - title: Comparer les devenirs admissibles
+          description: Value Recovery Optimization confronte remise en état et rebut pour les 20 pièces. Dans ce cas fictif,
+            la remise en état coûte davantage que la valeur récupérable ; les règles permettent le rebut, qui est retenu.
+          outcome: L’optimisation choisit parmi les issues autorisées ; elle ne lève pas une interdiction obligatoire.
+          contributions:
+          - node_id: D05.i
+            role: Comparer les coûts, délais, risques et valeur récupérable, puis retenir l’orientation.
+        - title: Confier puis rapprocher le rebut
+          description: Scrapping Order confie les 20 pièces avec preuves requises. Le prestataire ne prouve d’abord le traitement
+            que de 18 ; les deux restantes restent ouvertes et bloquées.
+          outcome: L’ordre et le registre reflètent le réalisé reconnu, pas les 20 demandées comme déjà détruites.
+          contributions:
+          - node_id: service-order-scrapping
+            role: Porter autorisation, preuve et reliquat de la prestation.
+          - node_id: D06.d
+            role: Coordonner l’exécution et la suite des deux restantes.
+          - node_id: D07.d
+            role: Recevoir les preuves et quantités traitées.
+          - node_id: D07.c
+            role: Qualifier l’écart de deux pièces.
+          - node_id: D01.f
+            role: Intégrer les effets de stock reconnus.
+          - node_id: D01.g
+            role: Enregistrer les 18 sorties justifiées.
+        validation_points:
+        - Aucun Return Order artificiel pour des biens déjà stockés.
+        - Blocage et libération sont des résultats, pas des comportements supplémentaires.
+        - La décision, l’ordre de service et la preuve d’exécution restent distincts.
+        outcome: Les deux stratégies de disposition et la prestation de rebut sont expliquées par leurs contributions propres.
+        source_refs:
+        - U777
+      - id: transport-loads-six-stores
+        title: Planifier deux chargements pour six magasins
+        situation: Illustration FLOW fictive. Douze palettes de vêtements doivent être livrées à six magasins. La capacité
+          proposée est de six palettes par véhicule ; deux magasins ferment leur réception à 10 h. Les affectations et promesses
+          sont déjà établies.
+        steps:
+        - title: Constituer les chargements
+          description: Load Consolidation examine volumes, compatibilités, destinations et échéances pour répartir les douze
+            palettes en deux chargements admissibles.
+          outcome: Deux chargements sont proposés sans fusionner les commandes magasin.
+          contributions:
+          - node_id: transport-plan-decision
+            role: Constituer les chargements du plan.
+          - node_id: D06.b
+            role: Fournir les capacités et contraintes connues.
+        - title: Organiser les arrêts et les horaires
+          description: Routing & Scheduling place les magasins à fermeture matinale en début de parcours et vérifie les durées.
+            Service Selection Decision retient les prestations et prestataires compatibles ; le plan est ajusté si une offre
+            ne convient pas.
+          outcome: Le plan est conditionné aux capacités confirmées et respecte les échéances promises.
+          contributions:
+          - node_id: transport-plan-decision
+            role: Déterminer parcours, arrêts et horaires réalisables.
+          - node_id: D06.e
+            role: Sélectionner les prestations et prestataires admissibles.
+        - title: Engager puis libérer les ordres
+          description: Les Transport Orders portent les arrêts et obligations retenus, avec la variante Multi-Stop Transport.
+            Les préparations B2B sont retenues jusqu’à leur regroupement admissible, puis libérées selon leur échéance limite.
+          outcome: La constitution des chargements est séparée de la décision du moment d’envoi.
+          contributions:
+          - node_id: service-order-transport
+            role: Porter les engagements de chaque transport multi-arrêts.
+          - node_id: service-order-picking
+            role: Porter les préparations confiées.
+          - node_id: service-order-release-decision
+            role: Décider de la rétention et de la libération des ordres.
+          - node_id: D06.d
+            role: Coordonner les dépendances entre préparation et transport.
+        - title: Adapter un parcours devenu impossible
+          description: Un créneau change. Process Adaptation Decision sollicite un nouveau parcours local ; Transport Plan
+            Decision vérifie qu’il préserve toutes les promesses. À défaut, les responsables des engagements et affectations
+            doivent être sollicités.
+          outcome: Le plan ne déplace pas silencieusement la promesse ou les ressources réservées.
+          contributions:
+          - node_id: D07.d
+            role: Intégrer la modification communiquée.
+          - node_id: D06.f
+            role: Choisir et coordonner l’adaptation locale admissible.
+          - node_id: transport-plan-decision
+            role: Réviser chargements ou parcours dans les contraintes.
+        validation_points:
+        - Load Consolidation et Routing & Scheduling traitent deux problèmes combinables.
+        - Multi-Stop Transport décrit l’engagement ; Routing & Scheduling construit le plan.
+        - Libérer un lot d’ordres ne calcule pas le plan de transport.
+        outcome: Les capacités de planification, sélection, engagement et libération se confrontent à une tournée concrète.
+        source_refs:
+        - U777
   - id: D04.k
     fields:
       examples:
@@ -4273,3 +4437,10 @@ previous_qualification_U769:
     review:
       state: partial
       note: Décisions antérieures transcrites ; nouvelles formulations et contextes proposés U626, sans accord global.
+delivery_alignment_U777:
+  source_refs:
+  - U777
+  fields:
+  - id: universe-supply
+    field: examples
+  note: Attendus courants alignés sur le lot validé ; états et accords historiques conservés.

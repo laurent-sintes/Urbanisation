@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "captured_at": "2026-09-25",
+  "captured_at": "2026-09-26",
   "records": [
     {
       "id": "U01",
@@ -6201,6 +6201,22 @@
       "line": 19056,
       "content_sha256": "608920241ba22cd2374a891f65c1bf6c12df2a3e63ea9a3e2625bcf28a51b75b",
       "captured_text": "## U775\n\n**id**\n\nU775\n\n**date**\n\n2026-09-25\n\n**titre**\n\nRechercher les capacités et comportements manquants par confrontation au marché\n\n**texte**\n\nMaintenant, je voudrais que tu recherches dans le marché si des capacités ou comportements manquent dans le modèle.\n\n**contexte et portée**\n\nComparer le backlog courant aux responsabilités et variantes documentées chez Microsoft Dynamics et SAP S/4HANA. Rechercher des écarts de couverture métier, distinguer capacité absente, comportement ou précision insuffisante, scénario transverse, couverture existante et hors périmètre. Préserver le périmètre orchestration, les arbitrages précédents et les audits historiques clos. Les propositions restent à arbitrer ; aucune création canonique ni publication déduite de la demande d’étude."
+    },
+    {
+      "id": "U776",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u776",
+      "line": 19079,
+      "content_sha256": "9e68bc9163235bdea036a1f7bf8383e9924e5ef653a14213d94373724aa4f23b",
+      "captured_text": "## U776\n\n**id**\n\nU776\n\n**date**\n\n2026-09-26\n\n**titre**\n\nAccords transport et rebut ; réexamen de la traçabilité et de la décision d’usage\n\n**texte**\n\nTransport Plan Decision  : ok\nScrapping Order  : ok\nInventory Traceability  : on ne peut pas considérer que c'est aussi le role de Inventory tracking ? Voire du ledger ? on pourrait mettre un comportement tracing dans tracking dont le rôle est de remplir le ledger qui contient l'origine ?\nInventory Usage Decision  : est-ce vraiment une capacité à proprement parlé ? Ou est-ce une règle ou un comportement ?\n\n**contexte et portée**\n\nAccord explicite sur les propositions Transport Plan Decision et Scrapping Order de U775. Leur application canonique reste à réaliser ; aucun accord étendu aux autres constats. Questions sur le rattachement de la traçabilité à Tracking/Ledger et sur l’autonomie de la décision d’usage. Les pistes de consolidation formulées en réponse restent proposées, sans validation implicite."
+    },
+    {
+      "id": "U777",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u777",
+      "line": 19105,
+      "content_sha256": "5440631b8e91d53933ea27ecc9b85b62ecaa173cb25bb3b85ac3a3f6da960ac1",
+      "captured_text": "## U777\n\n**id**\n\nU777\n\n**date**\n\n2026-09-26\n\n**titre**\n\nApplication du lot transport, rebut, traçabilité et disposition avec scénarios\n\n**texte**\n\nPense à enrichir les scénarios pour expliquer ces capacités et comportements.\n\nJE valide\n\n**contexte et portée**\n\nValidation de la proposition complète U775 corrigée dans la réponse à U776 : Transport Plan Decision et ses deux comportements Load Consolidation et Routing & Scheduling ; Scrapping Order ; traçabilité répartie entre Inventory Tracking, Inventory Ledger et Inventory Visibility sans nouvelle capacité ni comportement isolé ; élargissement de Return Disposition Decision en Inventory Disposition Decision, incluant usage autorisé et devenir logistique, avec les deux stratégies existantes. Demande explicite de scénarios concrets et de leurs contributions de capacités. Les rédactions nouvelles illustrent ce lot sans approbation mot à mot ni preuve de pratique installée. Les pistes U775 sur les variantes d’inspection, les références de substitution et un éventuel Stocktaking Order ne font pas partie de la proposition corrigée validée ici."
     },
     {
       "id": "F001",

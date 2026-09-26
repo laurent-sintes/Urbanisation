@@ -1,5 +1,9 @@
 # Couverture métier face au marché — U775
 
+**Application U777 — 26 septembre 2026 :** lot corrigé validé et appliqué dans le backlog. Transport Plan Decision et ses deux comportements, Scrapping Order, traçabilité répartie entre Tracking/Ledger/Visibility et Inventory Disposition Decision (D05.i, deux stratégies conservées). Trois scénarios concrets ajoutés avec contributions explicites des capacités ; scénarios de retour et de correspondance transport enrichis. Glossaire aligné. GAP-01 à GAP-05 sont traités selon ces arbitrages ; GAP-06 à GAP-08 restent à arbitrer. Aucune release déclenchée. Les paragraphes antérieurs ci-dessous conservent l’histoire de la proposition et ne décrivent pas tous la cible retenue.
+
+**Point d’arbitrage U776, 26 septembre 2026 :** Transport Plan Decision et Scrapping Order sont acceptés, avec application canonique en attente. Inventory Traceability et Inventory Usage Decision sont en réexamen. Les développements ci-dessous restituent la proposition initiale U775 ; ils ne valent pas approbation globale. La réponse proposée privilégie une traçabilité répartie entre Tracking, Ledger et Visibility, et examine le regroupement de la décision d’usage avec la disposition élargie. Ces deux révisions restent à discuter.
+
 Le modèle couvre déjà une grande partie des responsabilités attendues. La recherche fait ressortir **quatre capacités candidates**, **une extension**, **une décomposition de comportements** et **une clarification de référentiel**. Une famille de comptage confié reste conditionnelle.
 
 Ce sont des propositions : le catalogue canonique conserve ses 72 capacités et 75 comportements. Les neuf sous-domaines ont été balayés à partir du modèle et des sources Dynamics / S/4HANA ; les écarts ont fait l’objet de lectures ciblées. Ce balayage ne prétend pas certifier l’exhaustivité du marché.

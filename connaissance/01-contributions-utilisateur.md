@@ -19074,3 +19074,54 @@ Maintenant, je voudrais que tu recherches dans le marché si des capacités ou c
 **contexte et portée**
 
 Comparer le backlog courant aux responsabilités et variantes documentées chez Microsoft Dynamics et SAP S/4HANA. Rechercher des écarts de couverture métier, distinguer capacité absente, comportement ou précision insuffisante, scénario transverse, couverture existante et hors périmètre. Préserver le périmètre orchestration, les arbitrages précédents et les audits historiques clos. Les propositions restent à arbitrer ; aucune création canonique ni publication déduite de la demande d’étude.
+
+
+## U776
+
+**id**
+
+U776
+
+**date**
+
+2026-09-26
+
+**titre**
+
+Accords transport et rebut ; réexamen de la traçabilité et de la décision d’usage
+
+**texte**
+
+Transport Plan Decision  : ok
+Scrapping Order  : ok
+Inventory Traceability  : on ne peut pas considérer que c'est aussi le role de Inventory tracking ? Voire du ledger ? on pourrait mettre un comportement tracing dans tracking dont le rôle est de remplir le ledger qui contient l'origine ?
+Inventory Usage Decision  : est-ce vraiment une capacité à proprement parlé ? Ou est-ce une règle ou un comportement ?
+
+**contexte et portée**
+
+Accord explicite sur les propositions Transport Plan Decision et Scrapping Order de U775. Leur application canonique reste à réaliser ; aucun accord étendu aux autres constats. Questions sur le rattachement de la traçabilité à Tracking/Ledger et sur l’autonomie de la décision d’usage. Les pistes de consolidation formulées en réponse restent proposées, sans validation implicite.
+
+
+## U777
+
+**id**
+
+U777
+
+**date**
+
+2026-09-26
+
+**titre**
+
+Application du lot transport, rebut, traçabilité et disposition avec scénarios
+
+**texte**
+
+Pense à enrichir les scénarios pour expliquer ces capacités et comportements.
+
+JE valide
+
+**contexte et portée**
+
+Validation de la proposition complète U775 corrigée dans la réponse à U776 : Transport Plan Decision et ses deux comportements Load Consolidation et Routing & Scheduling ; Scrapping Order ; traçabilité répartie entre Inventory Tracking, Inventory Ledger et Inventory Visibility sans nouvelle capacité ni comportement isolé ; élargissement de Return Disposition Decision en Inventory Disposition Decision, incluant usage autorisé et devenir logistique, avec les deux stratégies existantes. Demande explicite de scénarios concrets et de leurs contributions de capacités. Les rédactions nouvelles illustrent ce lot sans approbation mot à mot ni preuve de pratique installée. Les pistes U775 sur les variantes d’inspection, les références de substitution et un éventuel Stocktaking Order ne font pas partie de la proposition corrigée validée ici.

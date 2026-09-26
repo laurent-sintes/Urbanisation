@@ -164,7 +164,7 @@ Statut : **Proposé par l’IA**.
 
 | Repère | Capacité | Type | Statut | Définition | Finalité | Rattachement |
 | --- | --- | --- | --- | --- | --- | --- |
-| D01.f | Inventory Tracking | integration | Proposé par l’IA | Capter et intégrer les faits et états de stock transmis par les sources, avec leur origine, leur date et les corrections associées. | Rendre les faits de stock reconnus et leurs corrections utilisables sans double compte. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D01.f | Inventory Tracking | integration | Proposé par l’IA | Capter et intégrer les faits et états de stock transmis par les sources, ainsi que les origines et liens de filiation des biens, avec leurs dates et corrections. | Rendre les faits de stock reconnus et leurs corrections utilisables sans double compte. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D01.g | Inventory Ledger | ledger | Proposé par l’IA | Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections. | Disposer d’un historique traçable des faits qui expliquent les variations du stock. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D01.c | Inventory Visibility | knowledge | Proposé par l’IA | Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes. | Permettre aux décisions de s’appuyer sur une connaissance partagée. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D01.d | Stocktaking | action | Proposé par l’IA | Organiser les vérifications de stock, rapprocher les quantités constatées et enregistrées et établir les corrections justifiées. | Fiabiliser les quantités enregistrées — Inventory accuracy. | Validé par l’urbaniste — portée : source_id, target_id, type |
@@ -188,8 +188,9 @@ Composer et coordonner les prestations, suivre leurs dépendances et rechercher 
 | D07.a | Service Requirements Decision | decision | Proposé par l’IA | Établir les prestations et résultats nécessaires pour satisfaire un besoin Supply : biens concernés, quantités, lieux, échéances et contraintes à porter dans les ordres confiés. | Déterminer les résultats de prestation nécessaires à la réalisation du besoin Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D06.e | Service Selection Decision | decision | En cours d’instruction — portée : name | Déterminer les services et exécutants à mobiliser pour les prestations nécessaires, en tenant compte de leur admissibilité et des contraintes. | Retenir des services utilisables pour réaliser les prestations requises dans le cadre Supply applicable. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | D06.f | Process Adaptation Decision | decision | Proposé par l’IA | Déterminer les adaptations du plan d’exécution permettant de préserver la promesse de l’Order et les grands équilibres du Matching face aux aléas. | Retenir une variation de réalisation adaptée à l’aléa et aux contraintes Supply. | Validé par l’urbaniste — portée : source_id, target_id, type |
-| D05.i | Return Disposition Decision | decision | Proposé par l’IA | Déterminer le devenir logistique d’un produit retourné, selon son état constaté, les politiques applicables et les possibilités de récupération de valeur. | Retenir une orientation pertinente pour récupérer la valeur des produits retournés et maîtriser leurs coûts et risques. | Validé par l’urbaniste — portée : source_id, target_id, type |
+| D05.i | Inventory Disposition Decision | decision | Proposé par l’IA | Déterminer les usages autorisés et le devenir logistique de biens selon leur état constaté, les politiques applicables et les possibilités de récupération de valeur, lors d’un retour ou en cours de stockage. | Maîtriser l’usage et le devenir des biens en conciliant conformité, engagements, coûts, risques et valeur récupérable. | Validé par l’urbaniste — portée : source_id, target_id, type |
 | service-order-release-decision | Service Order Release Decision | decision | Proposé par l’IA | Déterminer quels ordres de prestation retenir ou libérer ensemble, et à quel moment, pour organiser leur traitement et favoriser les regroupements utiles tout en respectant les engagements. | Améliorer l’organisation du traitement et les regroupements logistiques sans compromettre les engagements. | Proposé par l’IA |
+| transport-plan-decision | Transport Plan Decision | decision | Proposé par l’IA | Construire et réviser un plan de transport qui regroupe les marchandises en chargements et détermine leurs trajets, arrêts et échéances compatibles avec les engagements. | À préciser | Proposé par l’IA |
 
 ## D03 — Demand & Supply Matching
 
@@ -259,6 +260,7 @@ Gérer les prestations confiées aux exécutants, leurs exigences, leurs engagem
 | service-order-billing | Billing Order | action | En cours d’instruction — portée : name, definition | Demander et suivre la facturation des éléments éligibles d’une commande ou prestation, avec confirmation, rejet et correction. | Tenir les exigences, engagements et résultats de la prestation confiée. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-payment-collection | Payment Collection Order | action | En cours d’instruction — portée : name, definition | Demander et suivre une opération d’encaissement rattachée à la commande, lorsque FLOW en pilote effectivement le déclenchement et les suites. | Tenir les exigences, engagements et résultats de la prestation confiée. | En cours d’instruction — portée : source_id, target_id, type |
 | service-order-receiving | Receiving Order | action | Proposé par l’IA | Gérer les demandes de réception de marchandises confiées aux exécutants, leurs quantités et conditions attendues, leurs engagements et les suites des réceptions partielles, refusées ou non conformes. | À préciser | Proposé par l’IA |
+| service-order-scrapping | Scrapping Order | action | Proposé par l’IA | Porter une demande de mise au rebut de biens, ses autorisations, quantités, consignes et preuves attendues jusqu’à son résultat reconnu. | À préciser | Proposé par l’IA |
 
 ## price-book — Price Book
 
@@ -496,13 +498,13 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 
 **Justification de la décomposition — D05.i :** Distinguer les cas dont la disposition est déterminée par une politique connue des cas nécessitant un arbitrage contextuel entre plusieurs devenirs autorisés ; rendre visibles la standardisation des prises en charge et la récupération de valeur, sans imposer une technologie de décision.
 
-## Comportements — Return Disposition Decision
+## Comportements — Inventory Disposition Decision
 
 Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
 
 | Repère | Comportement | Statut | Définition |
 | --- | --- | --- | --- |
-| BHV048 | Policy-based Disposition | Validé par l’urbaniste — portée : name, definition | Déterminer l’orientation selon une politique établie, en fonction de l’état du produit, de sa catégorie et des conditions applicables. |
+| BHV048 | Policy-based Disposition | Validé par l’urbaniste — portée : name | Déterminer les usages autorisés et l’orientation logistique de biens en appliquant une politique établie à leur état et aux conditions du cas. |
 | BHV049 | Value Recovery Optimization | Validé par l’urbaniste — portée : name, definition | Comparer plusieurs devenirs autorisés selon la valeur récupérable, les coûts, les délais et les risques. |
 
 **Justification de la décomposition — D01.h :** Les faits de consommation/vente, les échéances et les autres jalons contractuels mobilisent des preuves et conditions distinctes. Trois variantes couvrent les mécanismes utiles sans créer un comportement par événement ou par contrat.
@@ -566,6 +568,17 @@ Dernier niveau de détail de la capacité ; les comportements ne sont pas des ca
 | --- | --- | --- | --- |
 | BHV105 | Batch Release | Proposé par l’IA | Regrouper les ordres éligibles en lots de libération selon les fenêtres et la charge communiquée par l’exécutant. |
 | BHV106 | Consolidated Release | Proposé par l’IA | Retenir les ordres ou quantités compatibles jusqu’à une complétude ou un regroupement utile pour leur traitement commun, notamment pour une commande ou un client B2B. |
+
+**Justification de la décomposition — transport-plan-decision :** Deux problèmes différenciants et combinables : constituer les chargements compatibles et organiser leurs parcours dans le temps. Des objectifs de coût ou de remplissage ne créent pas de comportements supplémentaires.
+
+## Comportements — Transport Plan Decision
+
+Dernier niveau de détail de la capacité ; les comportements ne sont pas des capacités supplémentaires.
+
+| Repère | Comportement | Statut | Définition |
+| --- | --- | --- | --- |
+| transport-load-consolidation | Load Consolidation | Proposé par l’IA | Constituer des chargements compatibles selon les marchandises, capacités, destinations et échéances. |
+| transport-routing-scheduling | Routing & Scheduling | Proposé par l’IA | Déterminer les étapes, arrêts et échéances du plan de transport selon les trajets et contraintes admissibles. |
 
 ## Scénarios métier — universe-supply Supply Chain Orchestration
 
@@ -690,7 +703,7 @@ La réparation est autorisée et jugée pertinente pour cette robe ; une pièce 
 
 | Capacité mobilisée | Contribution |
 | --- | --- |
-| Return Disposition Decision (D05.i) | Décider de la destination et du traitement de l’article retourné. |
+| Inventory Disposition Decision (D05.i) | Décider de la destination et du traitement de l’article retourné. |
 | Repair & Alteration Order (service-order-repair-alteration) | Porter la prestation de réparation confiée. |
 | Process Orchestration (D06.d) | Coordonner les dépendances et attendre la fin de réparation. |
 
@@ -712,6 +725,7 @@ Après réparation et contrôle conforme, les faits reconnus autorisent le recla
 
 - Le retour ne réalise pas lui-même la réparation.
 - Un simple accusé de réception de prestation ne vaut pas réalisation conforme.
+- Inventory Disposition Decision couvre ce retour comme les incidents sur stock existant ; Policy-based Disposition applique les règles et Value Recovery Optimization compare les devenirs admissibles.
 
 Références : U768.
 
@@ -1182,7 +1196,7 @@ Le transporteur annonce le retard ; la réservation initiale n’est plus suffis
 
 #### 2. Comparer les solutions locales
 
-Une liaison routière offre 80 places ; sa disponibilité et ses contraintes sont qualifiées.
+Une liaison routière offre 80 places ; sa disponibilité et ses contraintes sont qualifiées. Routing & Scheduling réexamine le parcours confié ; un changement d’engagement reste soumis aux capacités responsables.
 
 | Capacité mobilisée | Contribution |
 | --- | --- |
@@ -1190,6 +1204,7 @@ Une liaison routière offre 80 places ; sa disponibilité et ses contraintes son
 | Service Selection Decision (D06.e) | Sélectionner une prestation compatible. |
 | Profitable-to-Promise (PTP) (D03.k) | Éclairer le surcoût et les risques économiques. |
 | Process Adaptation Decision (D06.f) | Déterminer l’adaptation locale préservant la promesse. |
+| Transport Plan Decision (transport-plan-decision) | Réexaminer les étapes et horaires du transport confié dans les contraintes de promesse. |
 
 **Résultat attendu.** Une alternative réalisable et ses impacts sont exposés.
 
@@ -1375,7 +1390,7 @@ Les défauts et l’accord déterminent les suites ; un retour client éventuel 
 | Capacité mobilisée | Contribution |
 | --- | --- |
 | Return Order (D04.l) | Tenir le retour client lié le cas échéant. |
-| Return Disposition Decision (D05.i) | Déterminer le devenir autorisé. |
+| Inventory Disposition Decision (D05.i) | Déterminer le devenir autorisé. |
 | Supplier Return Order (D04.m) | Porter les trois engagements fournisseur distincts. |
 
 **Résultat attendu.** Chaque groupe de quatre possède un attendu explicite.
@@ -1608,6 +1623,179 @@ Les 20 sont retardés ; une solution locale est recherchée avant de réexaminer
 - L’optimisation de release ne remplace pas les vagues et tâches détaillées de l’entrepôt.
 
 Références : U768, U769.
+
+### Retrouver les coffrets contenant un accessoire défectueux
+
+Illustration FLOW fictive. Le fournisseur signale un défaut sur le lot d’accessoires A17. Ce lot a servi à assembler 120 coffrets ; 70 ont été expédiés à deux magasins et 50 sont encore à l’entrepôt.
+
+**Ce qui se passe.** Les biens potentiellement concernés sont identifiés sans inventer une capacité autonome de traçabilité.
+
+#### 1. Relier composants et coffrets
+
+Les faits d’assemblage identifient A17, les coffrets obtenus, puis les expéditions. Les corrections conservent leur justification.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Inventory Tracking (D01.f) | Intégrer composants, transformations et destinations transmis. |
+| Inventory Ledger (D01.g) | Conserver les faits et liens reconnus. |
+
+**Résultat attendu.** Les filiations connues sont conservées ; l’origine du message ne tient pas lieu de généalogie.
+
+#### 2. Reconstituer les deux sens du parcours
+
+À partir d’un coffret, retrouver A17 ; à partir d’A17, retrouver les 120 coffrets et leurs destinations. Signaler toute rupture de lien.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Inventory Visibility (D01.c) | Restituer origines amont et destinations aval avec les limites connues. |
+
+**Résultat attendu.** Le responsable distingue les 50 présents, les 70 expédiés et les éventuelles zones non documentées.
+
+#### 3. Décider des suites autorisées
+
+Policy-based Disposition applique la politique au signalement qualifié et aux biens concernés : interdire l’usage des 50 coffrets présents jusqu’au contrôle requis. Les suites pour les expédiés sont confiées après autorisation par les responsables concernés.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Inventory Disposition Decision (D05.i) | Déterminer restrictions et orientation selon les faits et politiques. |
+| Process Orchestration (D06.d) | Coordonner les suites effectivement autorisées. |
+| Inventory Tracking (D01.f) | Intégrer les états reconnus. |
+| Inventory Ledger (D01.g) | Conserver restrictions et justifications. |
+
+**Résultat attendu.** Une trace n’est ni un ordre de rappel ni une autorisation automatique de retour.
+
+**Ce que ce cas permet de vérifier**
+
+- La traçabilité reste répartie entre intégration, registre et visibilité.
+- Une origine seule ne suffit pas après assemblage.
+- Le scénario ne transfère pas la décision réglementaire ou commerciale de rappel au registre.
+
+Références : U777.
+
+### Traiter des vestes abîmées sans retour client
+
+Illustration FLOW fictive. Une fuite a touché 100 vestes déjà stockées. Une inspection autonome est confiée avant d’autoriser leur usage.
+
+**Ce qui se passe.** Les deux stratégies de disposition et la prestation de rebut sont expliquées par leurs contributions propres.
+
+#### 1. Obtenir les constats
+
+L’inspection identifie 80 vestes conformes et 20 endommagées ; ses résultats et les quantités sont rapprochés de l’attendu.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Inspection Order (service-order-inspection) | Porter la prestation de contrôle. |
+| Operations Tracking (D07.d) | Intégrer les résultats distants. |
+| Service Reconciliation (D07.c) | Rapprocher le contrôle demandé et réalisé. |
+
+**Résultat attendu.** La décision dispose de faits ; le contrôle ne vaut pas encore disposition.
+
+#### 2. Appliquer la politique
+
+Policy-based Disposition autorise les 80 conformes et maintient les 20 autres bloquées pour la vente. Les états reconnus alimentent registre et visibilité.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Inventory Disposition Decision (D05.i) | Déterminer les usages permis selon la politique. |
+| Inventory Tracking (D01.f) | Intégrer les décisions et états reconnus. |
+| Inventory Ledger (D01.g) | Conserver états, quantités et justifications. |
+| Inventory Visibility (D01.c) | Exposer les positions utilisables et bloquées. |
+
+**Résultat attendu.** Un résultat par quantité est distingué de la règle qui le justifie.
+
+#### 3. Comparer les devenirs admissibles
+
+Value Recovery Optimization confronte remise en état et rebut pour les 20 pièces. Dans ce cas fictif, la remise en état coûte davantage que la valeur récupérable ; les règles permettent le rebut, qui est retenu.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Inventory Disposition Decision (D05.i) | Comparer les coûts, délais, risques et valeur récupérable, puis retenir l’orientation. |
+
+**Résultat attendu.** L’optimisation choisit parmi les issues autorisées ; elle ne lève pas une interdiction obligatoire.
+
+#### 4. Confier puis rapprocher le rebut
+
+Scrapping Order confie les 20 pièces avec preuves requises. Le prestataire ne prouve d’abord le traitement que de 18 ; les deux restantes restent ouvertes et bloquées.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Scrapping Order (service-order-scrapping) | Porter autorisation, preuve et reliquat de la prestation. |
+| Process Orchestration (D06.d) | Coordonner l’exécution et la suite des deux restantes. |
+| Operations Tracking (D07.d) | Recevoir les preuves et quantités traitées. |
+| Service Reconciliation (D07.c) | Qualifier l’écart de deux pièces. |
+| Inventory Tracking (D01.f) | Intégrer les effets de stock reconnus. |
+| Inventory Ledger (D01.g) | Enregistrer les 18 sorties justifiées. |
+
+**Résultat attendu.** L’ordre et le registre reflètent le réalisé reconnu, pas les 20 demandées comme déjà détruites.
+
+**Ce que ce cas permet de vérifier**
+
+- Aucun Return Order artificiel pour des biens déjà stockés.
+- Blocage et libération sont des résultats, pas des comportements supplémentaires.
+- La décision, l’ordre de service et la preuve d’exécution restent distincts.
+
+Références : U777.
+
+### Planifier deux chargements pour six magasins
+
+Illustration FLOW fictive. Douze palettes de vêtements doivent être livrées à six magasins. La capacité proposée est de six palettes par véhicule ; deux magasins ferment leur réception à 10 h. Les affectations et promesses sont déjà établies.
+
+**Ce qui se passe.** Les capacités de planification, sélection, engagement et libération se confrontent à une tournée concrète.
+
+#### 1. Constituer les chargements
+
+Load Consolidation examine volumes, compatibilités, destinations et échéances pour répartir les douze palettes en deux chargements admissibles.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Transport Plan Decision (transport-plan-decision) | Constituer les chargements du plan. |
+| Service Capacity Visibility (D06.b) | Fournir les capacités et contraintes connues. |
+
+**Résultat attendu.** Deux chargements sont proposés sans fusionner les commandes magasin.
+
+#### 2. Organiser les arrêts et les horaires
+
+Routing & Scheduling place les magasins à fermeture matinale en début de parcours et vérifie les durées. Service Selection Decision retient les prestations et prestataires compatibles ; le plan est ajusté si une offre ne convient pas.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Transport Plan Decision (transport-plan-decision) | Déterminer parcours, arrêts et horaires réalisables. |
+| Service Selection Decision (D06.e) | Sélectionner les prestations et prestataires admissibles. |
+
+**Résultat attendu.** Le plan est conditionné aux capacités confirmées et respecte les échéances promises.
+
+#### 3. Engager puis libérer les ordres
+
+Les Transport Orders portent les arrêts et obligations retenus, avec la variante Multi-Stop Transport. Les préparations B2B sont retenues jusqu’à leur regroupement admissible, puis libérées selon leur échéance limite.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Transport Order (service-order-transport) | Porter les engagements de chaque transport multi-arrêts. |
+| Picking Order (service-order-picking) | Porter les préparations confiées. |
+| Service Order Release Decision (service-order-release-decision) | Décider de la rétention et de la libération des ordres. |
+| Process Orchestration (D06.d) | Coordonner les dépendances entre préparation et transport. |
+
+**Résultat attendu.** La constitution des chargements est séparée de la décision du moment d’envoi.
+
+#### 4. Adapter un parcours devenu impossible
+
+Un créneau change. Process Adaptation Decision sollicite un nouveau parcours local ; Transport Plan Decision vérifie qu’il préserve toutes les promesses. À défaut, les responsables des engagements et affectations doivent être sollicités.
+
+| Capacité mobilisée | Contribution |
+| --- | --- |
+| Operations Tracking (D07.d) | Intégrer la modification communiquée. |
+| Process Adaptation Decision (D06.f) | Choisir et coordonner l’adaptation locale admissible. |
+| Transport Plan Decision (transport-plan-decision) | Réviser chargements ou parcours dans les contraintes. |
+
+**Résultat attendu.** Le plan ne déplace pas silencieusement la promesse ou les ressources réservées.
+
+**Ce que ce cas permet de vérifier**
+
+- Load Consolidation et Routing & Scheduling traitent deux problèmes combinables.
+- Multi-Stop Transport décrit l’engagement ; Routing & Scheduling construit le plan.
+- Libérer un lot d’ordres ne calcule pas le plan de transport.
+
+Références : U777.
 
 ## Sources d’inspiration — universe-supply Supply Chain Orchestration
 
@@ -2104,6 +2292,8 @@ Inventory Tracking
 | [GS1](https://ref.gs1.org/guidelines/epcis-cbv/2.0.0/) — EPCIS and CBV Implementation Guideline | Propriété et possession distinguées dans les événements ; erreurs et corrections explicites. Standard de partage de faits, pas catalogue de capacités. | Capter et intégrer les faits et états de stock transmis par les sources, avec leur origine, leur date et les corrections associées. |
 | [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/understanding-sap-s-4hana-cloud-public-edition-warehouse-management_ff02ecf3-9fe0-499d-b96d-8cc0f7f66900) — Analyzing SAP S/4HANA Cloud Public Edition, Warehouse Management | L’intégration WMS échange données maîtres, demandes entrantes et sortantes et retours de réalisation ; le monitoring expose l’activité. | Rapprochement avec Inventory Tracking : L’intégration WMS échange données maîtres, demandes entrantes et sortantes et retours de réalisation ; le monitoring expose l’activité. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/wms-only-mode-exchange-data) — Exchange data between systems | Les échanges avec les systèmes externes comprennent données maîtres, demandes d’entrepôt et retours d’exécution. | Rapprochement avec Inventory Tracking : Les échanges avec les systèmes externes comprennent données maîtres, demandes d’entrepôt et retours d’exécution. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/trace-items-raw-materials-inventory-production-sales) — Item and raw material tracing in inventory, production, and sales - Supply Chain Management \| Dynamics 365 \| Microsoft Learn | La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
+| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-execution/batch-management-traceability-in-sap-s-4hana-cloud_d396525c-87eb-4af9-a718-041af5cba51c) — Batch Management & Traceability in SAP S/4HANA Cloud | Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
 | Notre modèle — Inventory Tracking | Capter et intégrer les faits et états de stock transmis par les sources, avec leur origine, leur date et les corrections associées. | Intégrer événements, états transmis et corrections avec origine, portée, date du fait et date de connaissance. Rapprocher produits, lieux, propriétaires et détenteurs et reconnaître les doublons sans appliquer deux fois un effet. Un solde externe peut être reçu comme référence datée sans inventer les mouvements inconnus. Une estimation ou une demande ne vaut pas un fait réalisé.  Fournir les faits intégrés à [Inventory Ledger](model:D01.g), qui tient leur historique métier ; [Inventory Visibility](model:D01.c) compose les positions. Operations Tracking peut fournir les effets de prestations, mais ne constitue pas un passage obligatoire pour toutes les sources. Un même fait commun aux deux Tracking ne produit qu’un effet de stock. Une correction documentaire n’est pas une sortie physique. |
 
 ### Ce que nous en retenons
@@ -2212,6 +2402,50 @@ Microsoft Dynamics 365 — application indiquée par la source · Mécanisme ou 
 
 Références : U774, CMP307, ELM281.
 
+#### Microsoft — Item and raw material tracing in inventory, production, and sales - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Tracking nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi. Frontière FLOW : Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Points communs.** La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi.
+
+**Différences.** Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Position FLOW.** Capter et intégrer les faits et états de stock transmis par les sources, ainsi que les origines et liens de filiation des biens, avec leurs dates et corrections.
+
+[Item and raw material tracing in inventory, production, and sales - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/trace-items-raw-materials-inventory-production-sales) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** What is item tracing? ; limitations ; trace direction
+
+**Limite de preuve.** La traçabilité dépend des données captées ; restrictions natives par entité juridique et profondeur. Aucun historique externe inventé. Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+Références : ELM830, U775, U777.
+
+#### SAP — Batch Management & Traceability in SAP S/4HANA Cloud
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Tracking nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés. Frontière FLOW : Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Points communs.** Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés.
+
+**Différences.** Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Position FLOW.** Capter et intégrer les faits et états de stock transmis par les sources, ainsi que les origines et liens de filiation des biens, avec leurs dates et corrections.
+
+[Batch Management & Traceability in SAP S/4HANA Cloud](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-execution/batch-management-traceability-in-sap-s-4hana-cloud_d396525c-87eb-4af9-a718-041af5cba51c) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** End-to-End Visibility: The Batch Information Cockpit
+
+**Limite de preuve.** Exemple de production par lots ; ne prouve pas des données de généalogie disponibles dans la fashion ni une réalisation Beaumanoir. Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+Références : ELM831, U775, U777.
+
 ## Sources d’inspiration — D01.g Inventory Ledger
 
 Inventory Ledger
@@ -2221,6 +2455,8 @@ Inventory Ledger
 | [Oracle](https://docs.oracle.com/en/applications/jd-edwards/supply-chain-manufacturing/9.2/eoash/item-ledger-information.html) — Item Ledger Information | Historique détaillé des transactions par article, distinct de leur simple réception technique. | Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/business-central/design-details-inventory-posting) — Design details: Inventory posting | Les item ledger entries portent les variations de quantité ; les value entries et la comptabilité générale ont des responsabilités distinctes. | Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections. |
 | [SAP](https://learning.sap.com/courses/managing-inventory-movements-and-stock-transfers-in-sap-s-4hana-cloud-public-edition/introducing-goods-movements_ba906e87-54e8-4f56-837e-bde4d82599de) — Introducing Goods Movements | Les mouvements de stock sont enregistrés avec des documents matériels permettant leur traçabilité. | Rapprochement avec Inventory Ledger : Les mouvements de stock sont enregistrés avec des documents matériels permettant leur traçabilité. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/trace-items-raw-materials-inventory-production-sales) — Item and raw material tracing in inventory, production, and sales - Supply Chain Management \| Dynamics 365 \| Microsoft Learn | La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
+| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-execution/batch-management-traceability-in-sap-s-4hana-cloud_d396525c-87eb-4af9-a718-041af5cba51c) — Batch Management & Traceability in SAP S/4HANA Cloud | Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
 | Notre modèle — Inventory Ledger | Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections. | Conserver les réceptions, sorties, déplacements, changements de statut et ajustements reconnus, avec quantités, dimensions, date du fait, date de connaissance et preuves. Le registre constitue une référence métier durable ; Ledger qualifie sa tenue, indépendamment des outils.  [Inventory Tracking](model:D01.f) fournit les faits intégrés et [Stocktaking](model:D01.d) les corrections de comptage justifiées. [Inventory Ownership Ledger](model:inventory-ownership-ledger) tient les changements de propriétaire ; les écritures correspondantes sont reliées aux positions de stock sans constituer un second registre de propriété. Un transfert de propriété seul ne crée ni réception physique ni sortie physique supplémentaire.  [Inventory Visibility](model:D01.c) compose les positions à partir des deux registres et des engagements de quantité. Un solde initial ou externe conserve sa portée sans fabriquer son historique. Une réception corrigée de 100 à 80 garde la justification de la correction ; elle ne devient pas 180 pièces. Valorisation et comptabilité générale restent sous leur responsabilité propre. |
 
 ### Ce que nous en retenons
@@ -2307,6 +2543,50 @@ SAP S/4HANA — périmètre du cours cité · Mécanisme ou objet documenté dan
 
 Références : U774, CMP307, ELM786.
 
+#### Microsoft — Item and raw material tracing in inventory, production, and sales - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Ledger nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi. Frontière FLOW : Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Points communs.** La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi.
+
+**Différences.** Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Position FLOW.** Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections.
+
+[Item and raw material tracing in inventory, production, and sales - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/trace-items-raw-materials-inventory-production-sales) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** What is item tracing? ; limitations ; trace direction
+
+**Limite de preuve.** La traçabilité dépend des données captées ; restrictions natives par entité juridique et profondeur. Aucun historique externe inventé. Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+Références : ELM830, U775, U777.
+
+#### SAP — Batch Management & Traceability in SAP S/4HANA Cloud
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Ledger nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés. Frontière FLOW : Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Points communs.** Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés.
+
+**Différences.** Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Position FLOW.** Tenir le registre fiable des mouvements et états de stock reconnus, avec leurs dates, origines, justifications et corrections.
+
+[Batch Management & Traceability in SAP S/4HANA Cloud](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-execution/batch-management-traceability-in-sap-s-4hana-cloud_d396525c-87eb-4af9-a718-041af5cba51c) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** End-to-End Visibility: The Batch Information Cockpit
+
+**Limite de preuve.** Exemple de production par lots ; ne prouve pas des données de généalogie disponibles dans la fashion ni une réalisation Beaumanoir. Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+Références : ELM831, U775, U777.
+
 ## Sources d’inspiration — D01.c Inventory Visibility
 
 Inventory Visibility
@@ -2318,6 +2598,8 @@ Inventory Visibility
 | [Oracle](https://docs.oracle.com/en/cloud/saas/supply-chain-and-manufacturing/26b/fauco/overview-of-supply-orchestration.html) — Overview of Supply Chain Orchestration | Oracle suit les demandes et apports liés aux achats, transferts et autres modes d’approvisionnement. | Oracle suit les demandes et apports liés aux achats, transferts et autres modes d’approvisionnement. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-on-hand-list) — On-hand inventory | Microsoft distingue les quantités physiques des réceptions attendues et de la disponibilité calculée. | Microsoft distingue les quantités physiques des réceptions attendues et de la disponibilité calculée. |
 | [SAP](https://learning.sap.com/courses/exploring-foundations-of-physical-inventory-in-sap-s-4hana-cloud-private-edition/using-overview-apps-in-physical-inventory) — Exploring SAP Fiori Apps for Inventory Reporting and Optimization | Les vues de stock et de traitement rapprochent inventaire, livraisons, commandes et faits de mouvement. | Rapprochement avec Inventory Visibility : Les vues de stock et de traitement rapprochent inventaire, livraisons, commandes et faits de mouvement. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/trace-items-raw-materials-inventory-production-sales) — Item and raw material tracing in inventory, production, and sales - Supply Chain Management \| Dynamics 365 \| Microsoft Learn | La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
+| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-execution/batch-management-traceability-in-sap-s-4hana-cloud_d396525c-87eb-4af9-a718-041af5cba51c) — Batch Management & Traceability in SAP S/4HANA Cloud | Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
 | Notre modèle — Inventory Visibility | Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes. | Composer les positions par article, lieu, état, propriétaire et détenteur, à partir des faits intégrés par Inventory Tracking, des mouvements reconnus dans Inventory Ledger et des changements de propriété dans Inventory Ownership Ledger. Une correction tardive actualise la représentation à la date pertinente ; un changement de propriétaire seul ne change pas la quantité physique totale.  Rapprocher achats, transferts entrants, retours, consignation et prévisions de mouvements de stock. Pour chaque apport attendu, conserver origine, confirmation, échéance, avancement, reliquat, engagements, incertitude et fraîcheur. Distinguer proposition, apport engagé, expédition et réception. Les Orders et Plans restent maîtres de leurs données ; l’APS demeure externe.  Un apport reconnu comme reçu devient un fait de stock et cesse d’être compté comme attente pour la même quantité. Éviter le double compte entre Orders, plans et réalisations. Une donnée absente ou périmée ne vaut ni zéro ni certitude. Propriété, détention, statut douanier, état logique et disponibilité physique restent distincts.  La projection ne prouve pas qu’une quantité est promettable : Order Promising applique les évaluations contextuelles. Cette capacité ne corrige pas les mouvements, ne réserve pas et ne confirme aucun engagement. La visibilité des capacités de production, transport ou prestation reste chez ses responsables.  Illustration FLOW : un achat de 100 pièces est expédié pour 80 ; la vue expose 80 en transit et un reliquat de 20 à confirmer, avec leurs échéances. Après réception de 60, elle distingue ces 60 présentes des 20 encore en transit et des 20 non expédiées. |
 
 ### Ce que nous en retenons
@@ -2447,6 +2729,50 @@ SAP S/4HANA — périmètre du cours cité · Mécanisme ou objet documenté dan
 **Limite de preuve.** Passages primaires consultés. Correspondance partielle ; aucun consensus, équivalence complète ou déploiement Beaumanoir déduit. La connaissance restituée est distincte de l’ingestion ; le périmètre entrepôt ne démontre pas la visibilité de toutes les opérations FLOW.
 
 Références : U774, CMP307, ELM822.
+
+#### Microsoft — Item and raw material tracing in inventory, production, and sales - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Visibility nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi. Frontière FLOW : Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Points communs.** La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi.
+
+**Différences.** Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Position FLOW.** Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes.
+
+[Item and raw material tracing in inventory, production, and sales - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/trace-items-raw-materials-inventory-production-sales) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** What is item tracing? ; limitations ; trace direction
+
+**Limite de preuve.** La traçabilité dépend des données captées ; restrictions natives par entité juridique et profondeur. Aucun historique externe inventé. Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+Références : ELM830, U775, U777.
+
+#### SAP — Batch Management & Traceability in SAP S/4HANA Cloud
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Visibility nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés. Frontière FLOW : Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Points communs.** Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés.
+
+**Différences.** Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+**Position FLOW.** Restituer les positions actuelles et projetées du stock et le détail des apports attendus, avec quantités, échéances, engagements, provenance et incertitudes.
+
+[Batch Management & Traceability in SAP S/4HANA Cloud](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-execution/batch-management-traceability-in-sap-s-4hana-cloud_d396525c-87eb-4af9-a718-041af5cba51c) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** End-to-End Visibility: The Batch Information Cockpit
+
+**Limite de preuve.** Exemple de production par lots ; ne prouve pas des données de généalogie disponibles dans la fashion ni une réalisation Beaumanoir. Microsoft et SAP montrent la reconstruction amont/aval à partir de transactions et liens de lots. La séparation FLOW entre intégration des faits, registre et restitution est un choix de modèle ; les pages ne décrivent pas trois capacités natives équivalentes ni une généalogie complète sans données sources.
+
+Références : ELM831, U775, U777.
 
 ## Sources d’inspiration — D01.d Stocktaking
 
@@ -9965,21 +10291,23 @@ SAP S/4HANA — périmètre du cours cité · Mécanisme ou objet documenté dan
 
 Références : U774, CMP307, ELM208.
 
-## Sources d’inspiration — D05.i Return Disposition Decision
+## Sources d’inspiration — D05.i Inventory Disposition Decision
 
-Choisir le devenir logistique d’un produit retourné : Return Disposition Decision utilise son état constaté, les règles applicables et la valeur récupérable. Décider son orientation ne réalise ni inspection, ni remboursement, ni traitement physique.
+Déterminer les usages autorisés et le devenir logistique de biens selon leur état constaté, les politiques applicables et les possibilités de récupération de valeur, lors d’un retour ou en cours de stockage.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items) — Disposition | Orientation d’un produit retourné. | Séparer motif de retour et devenir. |
 | [Blue Yonder](https://blueyonder.com/solutions/returns-management/smart-disposition) — Smart Disposition | Choix du devenir et du lieu de retour. | Croiser état, valeur récupérable et règles. |
-| [SAP](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc) — Managing Customer Returns | Le retour client articule inspection, décision de suite et traitement ou restitution au client. | Rapprochement avec Return Disposition Decision : Le retour client articule inspection, décision de suite et traitement ou restitution au client. |
-| Notre modèle — Return Disposition Decision | Remise en stock, réparation, renvoi ou autre filière autorisée. | Évaluer les options possibles et leurs conditions. |
+| [SAP](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc) — Managing Customer Returns | Le retour client articule inspection, décision de suite et traitement ou restitution au client. | Rapprochement avec Inventory Disposition Decision : Le retour client articule inspection, décision de suite et traitement ou restitution au client. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-blocking) — Inventory blocking - Supply Chain Management \| Dynamics 365 \| Microsoft Learn | Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
+| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/performing-internal-inspections-in-the-warehouse_a8dd0fcf-85c3-47d5-9da2-0058a81ebed5) — Performing Internal Inspections in the Warehouse | Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
+| Notre modèle — Inventory Disposition Decision | Usage autorisé et orientation des biens, en retour ou déjà stockés ; inspection, exécution, registre, remboursement et réaffectation restent distincts. | Évaluer les options possibles et leurs conditions. |
 
 ### Ce que nous en retenons
 
-- Microsoft présente les issues et leurs règles ; Blue Yonder insiste sur le meilleur devenir selon le contexte. Les politiques peuvent borner l’optimisation, sans opposition entre règles et calcul.
-- FLOW conserve la décision sur le bien retourné. L’accord commercial, le remboursement et les prestations nécessaires restent dans leurs périmètres propres.
+- Les parcours de retour Microsoft et SAP étayent le devenir des retours. Inventory blocking Microsoft et les inspections internes SAP étayent aussi les restrictions d’usage des biens déjà stockés.
+- FLOW regroupe ces décisions dans une capacité existante et conserve deux stratégies. Les sources de blocage ne prouvent pas une optimisation de récupération de valeur ; les appuis complémentaires conservent leurs limites.
 
 ### Exemple Blue Yonder — choisir le lieu du retour
 
@@ -9999,15 +10327,15 @@ Références : U477, ELM328, CMP190.
 
 Dynamics 365 Supply Chain Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Le repère natif « Disposition » étaye le rapprochement décrit ci-dessous. « Return Disposition Decision » nomme la responsabilité FLOW à cette maille ; la proximité des termes ne prouve pas une nomenclature commune.
+**Pourquoi ce terme.** Le repère natif « Disposition » étaye le rapprochement décrit ci-dessous. « Inventory Disposition Decision » nomme la responsabilité FLOW à cette maille ; la proximité des termes ne prouve pas une nomenclature commune.
 
 **Pourquoi cette définition.** Appui de Disposition : Microsoft sépare motif du retour et orientation du bien. Limite de reprise dans FLOW : Les codes produit comprennent des suites commerciales que FLOW garde distinctes.
 
 **Points communs.** Microsoft sépare motif du retour et orientation du bien.
 
-**Différences.** Les codes produit comprennent des suites commerciales que FLOW garde distinctes.
+**Différences.** Les codes produit comprennent des suites commerciales que FLOW garde distinctes. Appui au cas des retours seulement ; l’extension FLOW aux biens déjà stockés est étayée séparément.
 
-**Position FLOW.** Choisir le devenir logistique du retour dans Fulfilment ; mobiliser Matching pour les effets sur les ressources partagées, sans reprendre inspection, remboursement ou stock.
+**Position FLOW.** Déterminer les usages autorisés et le devenir logistique de biens selon leur état constaté, les politiques applicables et les possibilités de récupération de valeur, lors d’un retour ou en cours de stockage.
 
 [Specify how to dispose of returned items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items) — Documentation en ligne consultée le 2026-09-19, consulté le 2026-09-19.
 
@@ -10021,15 +10349,15 @@ Références : U379, ELM229, CMP140, U380, U382, U383, ELM230, ELM231, CMP141, C
 
 Blue Yonder Returns Management · Concept documenté par la source primaire · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Le repère natif « Smart Disposition » étaye le rapprochement décrit ci-dessous. « Return Disposition Decision » nomme la responsabilité FLOW à cette maille ; la proximité des termes ne prouve pas une nomenclature commune.
+**Pourquoi ce terme.** Le repère natif « Smart Disposition » étaye le rapprochement décrit ci-dessous. « Inventory Disposition Decision » nomme la responsabilité FLOW à cette maille ; la proximité des termes ne prouve pas une nomenclature commune.
 
 **Pourquoi cette définition.** Appui de Smart Disposition : Blue Yonder confronte état, destination et potentiel de revente. Limite de reprise dans FLOW : L’offre inclut aussi admissibilité du retour et remboursement, hors de cette décision.
 
 **Points communs.** Blue Yonder confronte état, destination et potentiel de revente.
 
-**Différences.** L’offre inclut aussi admissibilité du retour et remboursement, hors de cette décision.
+**Différences.** L’offre inclut aussi admissibilité du retour et remboursement, hors de cette décision. Appui au cas des retours seulement ; l’extension FLOW aux biens déjà stockés est étayée séparément.
 
-**Position FLOW.** Choisir le devenir logistique du retour dans Fulfilment ; mobiliser Matching pour les effets sur les ressources partagées, sans reprendre inspection, remboursement ou stock.
+**Position FLOW.** Déterminer les usages autorisés et le devenir logistique de biens selon leur état constaté, les politiques applicables et les possibilités de récupération de valeur, lors d’un retour ou en cours de stockage.
 
 [Smart Disposition](https://blueyonder.com/solutions/returns-management/smart-disposition) — Page solution sans édition affichée, consulté le 2026-09-19.
 
@@ -10043,15 +10371,15 @@ Références : U382, U383, ELM230, ELM231, CMP141, CMP142, U477, ELM328, CMP190.
 
 SAP S/4HANA — périmètre du cours cité · Mécanisme ou objet documenté dans un produit · Recouvrement partiel · statut : proposed
 
-**Pourquoi ce terme.** Le nom Return Disposition Decision reste celui du modèle FLOW ; la source étaye le rapprochement, pas nécessairement cette appellation ni sa maille.
+**Pourquoi ce terme.** Le nom Inventory Disposition Decision reste celui du modèle FLOW ; la source étaye le rapprochement, pas nécessairement cette appellation ni sa maille.
 
 **Pourquoi cette définition.** Le retour client articule inspection, décision de suite et traitement ou restitution au client. Frontière conservée : L’inspection de retour est une partie de la famille Inspection Order ; ce parcours ne démontre pas une optimisation financière de la récupération de valeur.
 
 **Points communs.** Le retour client articule inspection, décision de suite et traitement ou restitution au client.
 
-**Différences.** L’inspection de retour est une partie de la famille Inspection Order ; ce parcours ne démontre pas une optimisation financière de la récupération de valeur.
+**Différences.** L’inspection de retour est une partie de la famille Inspection Order ; ce parcours ne démontre pas une optimisation financière de la récupération de valeur. Appui au cas des retours seulement ; l’extension FLOW aux biens déjà stockés est étayée séparément.
 
-**Position FLOW.** FLOW conserve le périmètre métier de Return Disposition Decision. L’inspection de retour est une partie de la famille Inspection Order ; ce parcours ne démontre pas une optimisation financière de la récupération de valeur.
+**Position FLOW.** Déterminer les usages autorisés et le devenir logistique de biens selon leur état constaté, les politiques applicables et les possibilités de récupération de valeur, lors d’un retour ou en cours de stockage.
 
 [Managing Customer Returns](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc) — Documentation évolutive ; périmètre produit du cours ou de la page cité, version globale non présumée., consulté le 2026-09-25.
 
@@ -10061,21 +10389,67 @@ SAP S/4HANA — périmètre du cours cité · Mécanisme ou objet documenté dan
 
 Références : U774, CMP307, ELM455.
 
+#### Microsoft — Inventory blocking - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Disposition Decision nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer. Frontière FLOW : FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Points communs.** Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer.
+
+**Différences.** FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Position FLOW.** Déterminer les usages autorisés et le devenir logistique de biens selon leur état constaté, les politiques applicables et les possibilités de récupération de valeur, lors d’un retour ou en cours de stockage.
+
+[Inventory blocking - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-blocking) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Inventory blocking ; blocking manually, quality orders and inventory status
+
+**Limite de preuve.** Le produit combine règles, décisions et écritures ; ne pas assimiler le blocage qualité à une réservation pour une demande. FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+Références : ELM828, U775, U777.
+
+#### SAP — Performing Internal Inspections in the Warehouse
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Disposition Decision nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut. Frontière FLOW : FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Points communs.** Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut.
+
+**Différences.** FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Position FLOW.** Déterminer les usages autorisés et le devenir logistique de biens selon leur état constaté, les politiques applicables et les possibilités de récupération de valeur, lors d’un retour ou en cours de stockage.
+
+[Performing Internal Inspections in the Warehouse](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/performing-internal-inspections-in-the-warehouse_a8dd0fcf-85c3-47d5-9da2-0058a81ebed5) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Warehouse Internal Inspections ; usage decision and follow-up actions
+
+**Limite de preuve.** Le parcours comprend réalisation et écritures ; FLOW peut recevoir les résultats et décisions de responsables externes. FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+Références : ELM829, U775, U777.
+
 ## Sources d’inspiration — BHV048 Policy-based Disposition
 
-Orienter un retour de façon cohérente lorsque les règles suffisent : Policy-based Disposition applique une politique au cas constaté. Le résultat reste conditionné par la qualité des informations reçues.
+Déterminer les usages autorisés et l’orientation logistique de biens en appliquant une politique établie à leur état et aux conditions du cas.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items) — Disposition | Orientation d’un produit retourné. | Séparer motif de retour et devenir. |
 | [Blue Yonder](https://blueyonder.com/solutions/returns-management/smart-disposition) — Smart Disposition | Choix du devenir et du lieu de retour. | Croiser état, valeur récupérable et règles. |
 | [SAP](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc) — Managing Customer Returns | Le retour client articule inspection, décision de suite et traitement ou restitution au client. | Rapprochement avec Policy-based Disposition : Le retour client articule inspection, décision de suite et traitement ou restitution au client. |
-| Notre modèle — Policy-based Disposition | Orientation selon état, catégorie et règles applicables. | Choisir une issue autorisée sans réinventer la règle à chaque cas. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-blocking) — Inventory blocking - Supply Chain Management \| Dynamics 365 \| Microsoft Learn | Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
+| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/performing-internal-inspections-in-the-warehouse_a8dd0fcf-85c3-47d5-9da2-0058a81ebed5) — Performing Internal Inspections in the Warehouse | Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
+| Notre modèle — Policy-based Disposition | Usage autorisé et orientation des biens, en retour ou déjà stockés ; inspection, exécution, registre, remboursement et réaffectation restent distincts. | Choisir une issue autorisée sans réinventer la règle à chaque cas. |
 
 ### Ce que nous en retenons
 
-- Microsoft décrit un vocabulaire d’issues ; Blue Yonder permet des règles qui orientent le retour. Les deux soutiennent une décision reproductible à partir d’un cas qualifié.
-- FLOW nomme le mécanisme de décision, pas l’administration des règles. Une politique peut délimiter les issues que Value Recovery Optimization comparera ensuite, sans séquence imposée.
+- Les parcours de retour Microsoft et SAP étayent le devenir des retours. Inventory blocking Microsoft et les inspections internes SAP étayent aussi les restrictions d’usage des biens déjà stockés.
+- FLOW regroupe ces décisions dans une capacité existante et conserve deux stratégies. Les sources de blocage ne prouvent pas une optimisation de récupération de valeur ; les appuis complémentaires conservent leurs limites.
 
 ### Illustration FLOW — réparer selon la politique
 
@@ -10101,9 +10475,9 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 **Points communs.** Des codes et actions décrivent le devenir retenu.
 
-**Différences.** Un code n’est pas un comportement et ne prouve pas l’inspection du produit.
+**Différences.** Un code n’est pas un comportement et ne prouve pas l’inspection du produit. Appui au cas des retours seulement ; l’extension FLOW aux biens déjà stockés est étayée séparément.
 
-**Position FLOW.** Orienter un retour de façon cohérente lorsque les règles suffisent : Policy-based Disposition applique une politique au cas constaté. Le résultat reste conditionné par la qualité des informations reçues.
+**Position FLOW.** Déterminer les usages autorisés et l’orientation logistique de biens en appliquant une politique établie à leur état et aux conditions du cas.
 
 [Specify how to dispose of returned items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items) — Documentation en ligne consultée le 2026-09-19, consulté le 2026-09-19.
 
@@ -10123,9 +10497,9 @@ Blue Yonder Returns Management · Concept documenté par la source primaire · R
 
 **Points communs.** Des règles et motifs contribuent au choix de la filière.
 
-**Différences.** Blue Yonder couvre aussi la politique commerciale du retour, distincte dans FLOW.
+**Différences.** Blue Yonder couvre aussi la politique commerciale du retour, distincte dans FLOW. Appui au cas des retours seulement ; l’extension FLOW aux biens déjà stockés est étayée séparément.
 
-**Position FLOW.** Orienter un retour de façon cohérente lorsque les règles suffisent : Policy-based Disposition applique une politique au cas constaté. Le résultat reste conditionné par la qualité des informations reçues.
+**Position FLOW.** Déterminer les usages autorisés et l’orientation logistique de biens en appliquant une politique établie à leur état et aux conditions du cas.
 
 [Smart Disposition](https://blueyonder.com/solutions/returns-management/smart-disposition) — Page solution sans édition affichée, consulté le 2026-09-19.
 
@@ -10145,9 +10519,9 @@ SAP S/4HANA — périmètre du cours cité · Mécanisme ou objet documenté dan
 
 **Points communs.** Le retour client articule inspection, décision de suite et traitement ou restitution au client.
 
-**Différences.** L’inspection de retour est une partie de la famille Inspection Order ; ce parcours ne démontre pas une optimisation financière de la récupération de valeur.
+**Différences.** L’inspection de retour est une partie de la famille Inspection Order ; ce parcours ne démontre pas une optimisation financière de la récupération de valeur. Appui au cas des retours seulement ; l’extension FLOW aux biens déjà stockés est étayée séparément.
 
-**Position FLOW.** FLOW conserve le périmètre métier de Policy-based Disposition. L’inspection de retour est une partie de la famille Inspection Order ; ce parcours ne démontre pas une optimisation financière de la récupération de valeur.
+**Position FLOW.** Déterminer les usages autorisés et l’orientation logistique de biens en appliquant une politique établie à leur état et aux conditions du cas.
 
 [Managing Customer Returns](https://learning.sap.com/courses/functions-innovations-in-sap-s-4hana-sales/managing-customer-returns_f224d287-07ad-41fe-9897-2eb2ee4b33dc) — Documentation évolutive ; périmètre produit du cours ou de la page cité, version globale non présumée., consulté le 2026-09-25.
 
@@ -10157,20 +10531,66 @@ SAP S/4HANA — périmètre du cours cité · Mécanisme ou objet documenté dan
 
 Références : U774, CMP307, ELM455.
 
+#### Microsoft — Inventory blocking - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Policy-based Disposition nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer. Frontière FLOW : FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Points communs.** Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer.
+
+**Différences.** FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Position FLOW.** Déterminer les usages autorisés et l’orientation logistique de biens en appliquant une politique établie à leur état et aux conditions du cas.
+
+[Inventory blocking - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-blocking) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Inventory blocking ; blocking manually, quality orders and inventory status
+
+**Limite de preuve.** Le produit combine règles, décisions et écritures ; ne pas assimiler le blocage qualité à une réservation pour une demande. FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+Références : ELM828, U775, U777.
+
+#### SAP — Performing Internal Inspections in the Warehouse
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Policy-based Disposition nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut. Frontière FLOW : FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Points communs.** Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut.
+
+**Différences.** FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Position FLOW.** Déterminer les usages autorisés et l’orientation logistique de biens en appliquant une politique établie à leur état et aux conditions du cas.
+
+[Performing Internal Inspections in the Warehouse](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/performing-internal-inspections-in-the-warehouse_a8dd0fcf-85c3-47d5-9da2-0058a81ebed5) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Warehouse Internal Inspections ; usage decision and follow-up actions
+
+**Limite de preuve.** Le parcours comprend réalisation et écritures ; FLOW peut recevoir les résultats et décisions de responsables externes. FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+Références : ELM829, U775, U777.
+
 ## Sources d’inspiration — BHV049 Value Recovery Optimization
 
-Préserver la valeur d’un retour en comparant ses devenirs autorisés : Value Recovery Optimization confronte récupération possible, coûts, délais et risques. Une issue plus rentable ne rend pas une filière interdite acceptable.
+Comparer plusieurs devenirs autorisés selon la valeur récupérable, les coûts, les délais et les risques.
 
 | Source et nom employé | Périmètre | Approche |
 | --- | --- | --- |
 | [Blue Yonder](https://blueyonder.com/solutions/returns-management/smart-disposition) — Smart Disposition | Choix du devenir et du lieu de retour. | Croiser état, valeur récupérable et règles. |
 | [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items) — Disposition | Orientation d’un produit retourné. | Séparer motif de retour et devenir. |
-| Notre modèle — Value Recovery Optimization | Comparaison de plusieurs orientations logistiques permises. | Expliquer le compromis de valeur au-delà d’une règle uniforme. |
+| [Microsoft](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-blocking) — Inventory blocking - Supply Chain Management \| Dynamics 365 \| Microsoft Learn | Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
+| [SAP](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/performing-internal-inspections-in-the-warehouse_a8dd0fcf-85c3-47d5-9da2-0058a81ebed5) — Performing Internal Inspections in the Warehouse | Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut. | Appui à la responsabilité décrite, avec les frontières FLOW explicitées. |
+| Notre modèle — Value Recovery Optimization | Usage autorisé et orientation des biens, en retour ou déjà stockés ; inspection, exécution, registre, remboursement et réaffectation restent distincts. | Expliquer le compromis de valeur au-delà d’une règle uniforme. |
 
 ### Ce que nous en retenons
 
-- Blue Yonder éclaire le choix selon valeur et destination ; Microsoft documente des alternatives concrètes. La deuxième source définit des issues, elle ne prouve pas à elle seule leur optimisation.
-- FLOW conserve la comparaison de devenirs autorisés, avec plusieurs objectifs possibles. Le choix ne rembourse pas le client et ne réalise pas le traitement du produit.
+- Les parcours de retour Microsoft et SAP étayent le devenir des retours. Inventory blocking Microsoft et les inspections internes SAP étayent aussi les restrictions d’usage des biens déjà stockés.
+- FLOW regroupe ces décisions dans une capacité existante et conserve deux stratégies. Les sources de blocage ne prouvent pas une optimisation de récupération de valeur ; les appuis complémentaires conservent leurs limites.
 
 ### Illustration FLOW — réparer avant la fin de saison
 
@@ -10196,9 +10616,9 @@ Blue Yonder Returns Management · Concept documenté par la source primaire · R
 
 **Points communs.** Le potentiel de revente et les coûts éclairent le routage.
 
-**Différences.** La promesse commerciale d’optimisation ne donne pas les pondérations ni les résultats FLOW.
+**Différences.** La promesse commerciale d’optimisation ne donne pas les pondérations ni les résultats FLOW. Appui au cas des retours seulement ; l’extension FLOW aux biens déjà stockés est étayée séparément.
 
-**Position FLOW.** Préserver la valeur d’un retour en comparant ses devenirs autorisés : Value Recovery Optimization confronte récupération possible, coûts, délais et risques. Une issue plus rentable ne rend pas une filière interdite acceptable.
+**Position FLOW.** Comparer plusieurs devenirs autorisés selon la valeur récupérable, les coûts, les délais et les risques.
 
 [Smart Disposition](https://blueyonder.com/solutions/returns-management/smart-disposition) — Page solution sans édition affichée, consulté le 2026-09-19.
 
@@ -10218,9 +10638,9 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 
 **Points communs.** Les filières de réparation, revente ou renvoi forment des alternatives.
 
-**Différences.** Microsoft décrit les issues sans démontrer un calcul qui les départage selon leur valeur.
+**Différences.** Microsoft décrit les issues sans démontrer un calcul qui les départage selon leur valeur. Appui au cas des retours seulement ; l’extension FLOW aux biens déjà stockés est étayée séparément.
 
-**Position FLOW.** Préserver la valeur d’un retour en comparant ses devenirs autorisés : Value Recovery Optimization confronte récupération possible, coûts, délais et risques. Une issue plus rentable ne rend pas une filière interdite acceptable.
+**Position FLOW.** Comparer plusieurs devenirs autorisés selon la valeur récupérable, les coûts, les délais et les risques.
 
 [Specify how to dispose of returned items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/sales-marketing/specify-how-to-dispose-of-returned-items) — Documentation en ligne consultée le 2026-09-19, consulté le 2026-09-19.
 
@@ -10229,6 +10649,50 @@ Dynamics 365 Supply Chain Management · Concept documenté par la source primair
 **Limite de preuve.** Documentation primaire de produit ; aucune preuve de réalisation Beaumanoir ni équivalence de catalogue de capacités.
 
 Références : U477, ELM438, CMP190.
+
+#### Microsoft — Inventory blocking - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Value Recovery Optimization nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer. Frontière FLOW : FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Points communs.** Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer.
+
+**Différences.** FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Position FLOW.** Comparer plusieurs devenirs autorisés selon la valeur récupérable, les coûts, les délais et les risques.
+
+[Inventory blocking - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-blocking) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Inventory blocking ; blocking manually, quality orders and inventory status
+
+**Limite de preuve.** Le produit combine règles, décisions et écritures ; ne pas assimiler le blocage qualité à une réservation pour une demande. FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+Références : ELM828, U775, U777.
+
+#### SAP — Performing Internal Inspections in the Warehouse
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Value Recovery Optimization nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut. Frontière FLOW : FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Points communs.** Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut.
+
+**Différences.** FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+**Position FLOW.** Comparer plusieurs devenirs autorisés selon la valeur récupérable, les coûts, les délais et les risques.
+
+[Performing Internal Inspections in the Warehouse](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/performing-internal-inspections-in-the-warehouse_a8dd0fcf-85c3-47d5-9da2-0058a81ebed5) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Warehouse Internal Inspections ; usage decision and follow-up actions
+
+**Limite de preuve.** Le parcours comprend réalisation et écritures ; FLOW peut recevoir les résultats et décisions de responsables externes. FLOW regroupe usage autorisé et devenir logistique. Blocage, inspection et usage decision étayent cette frontière ; ces pages ne démontrent pas à elles seules une optimisation économique de récupération de valeur, dont les appuis complémentaires sont conservés.
+
+Références : ELM829, U775, U777.
 
 ## Sources d’inspiration — BHV050 Return to Stock
 
@@ -10325,7 +10789,7 @@ Un article retourné est réparé ; le contrôle final décrit son état avant l
 
 **Ce qui se passe.** Le résultat de l’intervention est lié au retour.
 
-**Ce que cela illustre dans FLOW.** La réalisation et son contrôle fournissent les faits ; Return Disposition Decision conserve le choix du devenir.
+**Ce que cela illustre dans FLOW.** La réalisation et son contrôle fournissent les faits ; Inventory Disposition Decision conserve le choix du devenir.
 
 Source : [Manage Repair Orders from the Depot Repair Page](https://docs.oracle.com/en/cloud/saas/service-logistics/26b/fasul/manage-repair-orders-from-the-depot-repair-page.html).
 
@@ -18856,6 +19320,212 @@ SAP S/4HANA — périmètre du cours cité · Mécanisme ou objet documenté dan
 **Limite de preuve.** Passages primaires consultés. Correspondance partielle ; aucun consensus, équivalence complète ou déploiement Beaumanoir déduit. FLOW distingue demande de prestation, réalisation physique et reconnaissance du stock ; la maille Receiving Order est un choix métier local.
 
 Références : U774, CMP307, ELM796.
+
+## Sources d’inspiration — transport-plan-decision Transport Plan Decision
+
+### Microsoft — Load building workbench - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Transport Plan Decision nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La constitution de chargements rapproche les marchandises et les contraintes de poids et de volume des moyens de transport. Frontière FLOW : FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Points communs.** La constitution de chargements rapproche les marchandises et les contraintes de poids et de volume des moyens de transport.
+
+**Différences.** FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Position FLOW.** Construire et réviser un plan de transport qui regroupe les marchandises en chargements et détermine leurs trajets, arrêts et échéances compatibles avec les engagements.
+
+[Load building workbench - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/tasks/load-building-workbench) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Create a load building strategy ; use a load building strategy
+
+**Limite de preuve.** La stratégie standard documentée est fondée sur le volume ; pas de preuve d’un optimiseur universel ni d’une maille métier imposée. FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+Références : ELM832, U775, U777.
+
+### Microsoft — Plan freight transportation routes with multiple stops - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Transport Plan Decision nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Les itinéraires, arrêts, dates, adresses et capacités servent à constituer et affecter les chargements aux trajets. Frontière FLOW : FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Points communs.** Les itinéraires, arrêts, dates, adresses et capacités servent à constituer et affecter les chargements aux trajets.
+
+**Différences.** FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Position FLOW.** Construire et réviser un plan de transport qui regroupe les marchandises en chargements et détermine leurs trajets, arrêts et échéances compatibles avec les engagements.
+
+[Plan freight transportation routes with multiple stops - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/plan-freight-transportation-routes-multiple-stops) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Route plans ; Route guides ; Scheduled routes ; Load building workbench
+
+**Limite de preuve.** Appui à la décision de transport ; ni reprise des tournées internes d’un prestataire ni preuve d’une optimisation globale identique entre éditeurs. FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+Références : ELM805, U775, U777.
+
+### SAP — Planning Loads
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Transport Plan Decision nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La consolidation répartit les marchandises entre ressources de transport, avec contraintes de capacité et de compatibilité. Frontière FLOW : FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Points communs.** La consolidation répartit les marchandises entre ressources de transport, avec contraintes de capacité et de compatibilité.
+
+**Différences.** FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Position FLOW.** Construire et réviser un plan de transport qui regroupe les marchandises en chargements et détermine leurs trajets, arrêts et échéances compatibles avec les engagements.
+
+[Planning Loads](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-transportation-management/planning-loads_e752a3f5-f4a9-4957-9f4d-e6e550c15409) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Load Planning as Part of the Planning Process ; Load Consolidation
+
+**Limite de preuve.** Le produit descend aussi au placement physique 3D ; cette partie reste hors proposition FLOW. Le plan d’acheminement n’est pas le master plan Supply. FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+Références : ELM834, U775, U777.
+
+## Sources d’inspiration — transport-load-consolidation Load Consolidation
+
+### Microsoft — Load building workbench - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Load Consolidation nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La constitution de chargements rapproche les marchandises et les contraintes de poids et de volume des moyens de transport. Frontière FLOW : FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Points communs.** La constitution de chargements rapproche les marchandises et les contraintes de poids et de volume des moyens de transport.
+
+**Différences.** FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Position FLOW.** Constituer des chargements compatibles selon les marchandises, capacités, destinations et échéances.
+
+[Load building workbench - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/tasks/load-building-workbench) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Create a load building strategy ; use a load building strategy
+
+**Limite de preuve.** La stratégie standard documentée est fondée sur le volume ; pas de preuve d’un optimiseur universel ni d’une maille métier imposée. FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+Références : ELM832, U775, U777.
+
+### SAP — Planning Loads
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Load Consolidation nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La consolidation répartit les marchandises entre ressources de transport, avec contraintes de capacité et de compatibilité. Frontière FLOW : FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Points communs.** La consolidation répartit les marchandises entre ressources de transport, avec contraintes de capacité et de compatibilité.
+
+**Différences.** FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Position FLOW.** Constituer des chargements compatibles selon les marchandises, capacités, destinations et échéances.
+
+[Planning Loads](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-transportation-management/planning-loads_e752a3f5-f4a9-4957-9f4d-e6e550c15409) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Load Planning as Part of the Planning Process ; Load Consolidation
+
+**Limite de preuve.** Le produit descend aussi au placement physique 3D ; cette partie reste hors proposition FLOW. Le plan d’acheminement n’est pas le master plan Supply. FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+Références : ELM834, U775, U777.
+
+## Sources d’inspiration — transport-routing-scheduling Routing & Scheduling
+
+### Microsoft — Plan freight transportation routes with multiple stops - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Routing & Scheduling nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Les itinéraires, arrêts, dates, adresses et capacités servent à constituer et affecter les chargements aux trajets. Frontière FLOW : FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Points communs.** Les itinéraires, arrêts, dates, adresses et capacités servent à constituer et affecter les chargements aux trajets.
+
+**Différences.** FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Position FLOW.** Déterminer les étapes, arrêts et échéances du plan de transport selon les trajets et contraintes admissibles.
+
+[Plan freight transportation routes with multiple stops - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/plan-freight-transportation-routes-multiple-stops) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Route plans ; Route guides ; Scheduled routes ; Load building workbench
+
+**Limite de preuve.** Appui à la décision de transport ; ni reprise des tournées internes d’un prestataire ni preuve d’une optimisation globale identique entre éditeurs. FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+Références : ELM805, U775, U777.
+
+### SAP — Planning Loads
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Routing & Scheduling nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La consolidation répartit les marchandises entre ressources de transport, avec contraintes de capacité et de compatibilité. Frontière FLOW : FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Points communs.** La consolidation répartit les marchandises entre ressources de transport, avec contraintes de capacité et de compatibilité.
+
+**Différences.** FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+**Position FLOW.** Déterminer les étapes, arrêts et échéances du plan de transport selon les trajets et contraintes admissibles.
+
+[Planning Loads](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-transportation-management/planning-loads_e752a3f5-f4a9-4957-9f4d-e6e550c15409) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Load Planning as Part of the Planning Process ; Load Consolidation
+
+**Limite de preuve.** Le produit descend aussi au placement physique 3D ; cette partie reste hors proposition FLOW. Le plan d’acheminement n’est pas le master plan Supply. FLOW isole la décision sur les transports confiés et préserve promesses et affectations ; les fonctions produit comprennent aussi une planification détaillée et une exécution non reprises intégralement. Planning Loads SAP est un appui partiel à l’articulation chargement/parcours, pas la preuve de toutes les variantes de routage.
+
+Références : ELM834, U775, U777.
+
+## Sources d’inspiration — service-order-scrapping Scrapping Order
+
+### Microsoft — Quarantine orders - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Scrapping Order nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Le parcours de quarantaine permet une sortie au rebut distincte de la remise en stock. Frontière FLOW : Le parcours produit étaye la demande, le traitement et la sortie au rebut ; Scrapping Order est la maille de prestation FLOW, pas un nom natif commun. La restriction Microsoft des quarantine orders aux retours de vente en WMS ne limite pas le périmètre métier FLOW démontré aussi par le cas SAP hors retour.
+
+**Points communs.** Le parcours de quarantaine permet une sortie au rebut distincte de la remise en stock.
+
+**Différences.** Le parcours produit étaye la demande, le traitement et la sortie au rebut ; Scrapping Order est la maille de prestation FLOW, pas un nom natif commun. La restriction Microsoft des quarantine orders aux retours de vente en WMS ne limite pas le périmètre métier FLOW démontré aussi par le cas SAP hors retour.
+
+**Position FLOW.** Porter une demande de mise au rebut de biens, ses autorisations, quantités, consignes et preuves attendues jusqu’à son résultat reconnu.
+
+[Quarantine orders - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/quarantine-orders) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Quarantine order scrap ; quarantine order statuses
+
+**Limite de preuve.** Avec les processus WMS, la page limite ce parcours de quarantine order aux retours de vente ; ne pas généraliser sa disponibilité native. Le parcours produit étaye la demande, le traitement et la sortie au rebut ; Scrapping Order est la maille de prestation FLOW, pas un nom natif commun. La restriction Microsoft des quarantine orders aux retours de vente en WMS ne limite pas le périmètre métier FLOW démontré aussi par le cas SAP hors retour.
+
+Références : ELM835, U775, U777.
+
+### SAP — Carrying out Warehouse Ad Hoc Goods Issue
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Scrapping Order nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La mise au rebut mobilise une demande de changement, un travail de déplacement vers la zone prévue, puis une sortie reconnue. Frontière FLOW : Le parcours produit étaye la demande, le traitement et la sortie au rebut ; Scrapping Order est la maille de prestation FLOW, pas un nom natif commun. La restriction Microsoft des quarantine orders aux retours de vente en WMS ne limite pas le périmètre métier FLOW démontré aussi par le cas SAP hors retour.
+
+**Points communs.** La mise au rebut mobilise une demande de changement, un travail de déplacement vers la zone prévue, puis une sortie reconnue.
+
+**Différences.** Le parcours produit étaye la demande, le traitement et la sortie au rebut ; Scrapping Order est la maille de prestation FLOW, pas un nom natif commun. La restriction Microsoft des quarantine orders aux retours de vente en WMS ne limite pas le périmètre métier FLOW démontré aussi par le cas SAP hors retour.
+
+**Position FLOW.** Porter une demande de mise au rebut de biens, ses autorisations, quantités, consignes et preuves attendues jusqu’à son résultat reconnu.
+
+[Carrying out Warehouse Ad Hoc Goods Issue](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/carrying-out-warehouse-ad-hoc-goods-issue_e15b00c8-2b28-4341-9cdc-7da58ded5b89) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Warehouse Ad Hoc Goods Issue ; scrapping
+
+**Limite de preuve.** Une écriture de sortie ne prouve pas une destruction ; le document ne définit pas un ordre de service externe universel. Le parcours produit étaye la demande, le traitement et la sortie au rebut ; Scrapping Order est la maille de prestation FLOW, pas un nom natif commun. La restriction Microsoft des quarantine orders aux retours de vente en WMS ne limite pas le périmètre métier FLOW démontré aussi par le cas SAP hors retour.
+
+Références : ELM833, U775, U777.
 
 ## Sources d’inspiration — Capacité métier
 
@@ -28378,6 +29048,212 @@ SAP S/4HANA — périmètre du cours cité · Mécanisme ou objet documenté dan
 **Limite de preuve.** Passages primaires consultés. Correspondance partielle ; aucun consensus, équivalence complète ou déploiement Beaumanoir déduit. Les propositions d’approvisionnement sont un appui partiel ; le master plan FLOW porte aussi les affectations, et son optimisation ne se réduit pas au MRP.
 
 Références : U774, CMP307, ELM784.
+
+## Sources d’inspiration — Inventory Traceability
+
+### Microsoft — Item and raw material tracing in inventory, production, and sales - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Traceability nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi. Frontière FLOW : Les outils présentent la traçabilité amont/aval ; FLOW répartit ce savoir-faire entre trois responsabilités existantes et explicite les liens manquants.
+
+**Points communs.** La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi.
+
+**Différences.** Les outils présentent la traçabilité amont/aval ; FLOW répartit ce savoir-faire entre trois responsabilités existantes et explicite les liens manquants.
+
+**Position FLOW.** Capacité à retrouver l’origine et les destinations de biens à partir des faits et filiations connus.
+
+[Item and raw material tracing in inventory, production, and sales - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/trace-items-raw-materials-inventory-production-sales) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** What is item tracing? ; limitations ; trace direction
+
+**Limite de preuve.** La traçabilité dépend des données captées ; restrictions natives par entité juridique et profondeur. Aucun historique externe inventé. Les outils présentent la traçabilité amont/aval ; FLOW répartit ce savoir-faire entre trois responsabilités existantes et explicite les liens manquants.
+
+Références : ELM830, U775, U777.
+
+### SAP — Batch Management & Traceability in SAP S/4HANA Cloud
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Traceability nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés. Frontière FLOW : Les outils présentent la traçabilité amont/aval ; FLOW répartit ce savoir-faire entre trois responsabilités existantes et explicite les liens manquants.
+
+**Points communs.** Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés.
+
+**Différences.** Les outils présentent la traçabilité amont/aval ; FLOW répartit ce savoir-faire entre trois responsabilités existantes et explicite les liens manquants.
+
+**Position FLOW.** Capacité à retrouver l’origine et les destinations de biens à partir des faits et filiations connus.
+
+[Batch Management & Traceability in SAP S/4HANA Cloud](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-execution/batch-management-traceability-in-sap-s-4hana-cloud_d396525c-87eb-4af9-a718-041af5cba51c) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** End-to-End Visibility: The Batch Information Cockpit
+
+**Limite de preuve.** Exemple de production par lots ; ne prouve pas des données de généalogie disponibles dans la fashion ni une réalisation Beaumanoir. Les outils présentent la traçabilité amont/aval ; FLOW répartit ce savoir-faire entre trois responsabilités existantes et explicite les liens manquants.
+
+Références : ELM831, U775, U777.
+
+## Sources d’inspiration — Inventory Disposition
+
+### Microsoft — Inventory blocking - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Disposition nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer. Frontière FLOW : FLOW regroupe usage et orientation dans une responsabilité existante ; le produit peut aussi réaliser inspections, écritures et traitements, laissés aux capacités responsables.
+
+**Points communs.** Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer.
+
+**Différences.** FLOW regroupe usage et orientation dans une responsabilité existante ; le produit peut aussi réaliser inspections, écritures et traitements, laissés aux capacités responsables.
+
+**Position FLOW.** Usage autorisé et devenir logistique retenus pour des biens selon leur état, les politiques et les options admissibles.
+
+[Inventory blocking - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-blocking) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Inventory blocking ; blocking manually, quality orders and inventory status
+
+**Limite de preuve.** Le produit combine règles, décisions et écritures ; ne pas assimiler le blocage qualité à une réservation pour une demande. FLOW regroupe usage et orientation dans une responsabilité existante ; le produit peut aussi réaliser inspections, écritures et traitements, laissés aux capacités responsables.
+
+Références : ELM828, U775, U777.
+
+### SAP — Performing Internal Inspections in the Warehouse
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Inventory Disposition nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut. Frontière FLOW : FLOW regroupe usage et orientation dans une responsabilité existante ; le produit peut aussi réaliser inspections, écritures et traitements, laissés aux capacités responsables.
+
+**Points communs.** Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut.
+
+**Différences.** FLOW regroupe usage et orientation dans une responsabilité existante ; le produit peut aussi réaliser inspections, écritures et traitements, laissés aux capacités responsables.
+
+**Position FLOW.** Usage autorisé et devenir logistique retenus pour des biens selon leur état, les politiques et les options admissibles.
+
+[Performing Internal Inspections in the Warehouse](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/performing-internal-inspections-in-the-warehouse_a8dd0fcf-85c3-47d5-9da2-0058a81ebed5) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Warehouse Internal Inspections ; usage decision and follow-up actions
+
+**Limite de preuve.** Le parcours comprend réalisation et écritures ; FLOW peut recevoir les résultats et décisions de responsables externes. FLOW regroupe usage et orientation dans une responsabilité existante ; le produit peut aussi réaliser inspections, écritures et traitements, laissés aux capacités responsables.
+
+Références : ELM829, U775, U777.
+
+## Sources d’inspiration — Transport Plan
+
+### Microsoft — Load building workbench - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Transport Plan nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La constitution de chargements rapproche les marchandises et les contraintes de poids et de volume des moyens de transport. Frontière FLOW : Le plan FLOW s’arrête aux transports confiés et ne reprend pas toute la planification détaillée ou l’exécution des outils transport.
+
+**Points communs.** La constitution de chargements rapproche les marchandises et les contraintes de poids et de volume des moyens de transport.
+
+**Différences.** Le plan FLOW s’arrête aux transports confiés et ne reprend pas toute la planification détaillée ou l’exécution des outils transport.
+
+**Position FLOW.** Plan organisant les marchandises en chargements et leurs parcours, arrêts et échéances pour les transports confiés.
+
+[Load building workbench - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/tasks/load-building-workbench) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Create a load building strategy ; use a load building strategy
+
+**Limite de preuve.** La stratégie standard documentée est fondée sur le volume ; pas de preuve d’un optimiseur universel ni d’une maille métier imposée. Le plan FLOW s’arrête aux transports confiés et ne reprend pas toute la planification détaillée ou l’exécution des outils transport.
+
+Références : ELM832, U775, U777.
+
+### Microsoft — Plan freight transportation routes with multiple stops - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Transport Plan nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Les itinéraires, arrêts, dates, adresses et capacités servent à constituer et affecter les chargements aux trajets. Frontière FLOW : Le plan FLOW s’arrête aux transports confiés et ne reprend pas toute la planification détaillée ou l’exécution des outils transport.
+
+**Points communs.** Les itinéraires, arrêts, dates, adresses et capacités servent à constituer et affecter les chargements aux trajets.
+
+**Différences.** Le plan FLOW s’arrête aux transports confiés et ne reprend pas toute la planification détaillée ou l’exécution des outils transport.
+
+**Position FLOW.** Plan organisant les marchandises en chargements et leurs parcours, arrêts et échéances pour les transports confiés.
+
+[Plan freight transportation routes with multiple stops - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/plan-freight-transportation-routes-multiple-stops) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Route plans ; Route guides ; Scheduled routes ; Load building workbench
+
+**Limite de preuve.** Appui à la décision de transport ; ni reprise des tournées internes d’un prestataire ni preuve d’une optimisation globale identique entre éditeurs. Le plan FLOW s’arrête aux transports confiés et ne reprend pas toute la planification détaillée ou l’exécution des outils transport.
+
+Références : ELM805, U775, U777.
+
+### SAP — Planning Loads
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Transport Plan nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La consolidation répartit les marchandises entre ressources de transport, avec contraintes de capacité et de compatibilité. Frontière FLOW : Le plan FLOW s’arrête aux transports confiés et ne reprend pas toute la planification détaillée ou l’exécution des outils transport.
+
+**Points communs.** La consolidation répartit les marchandises entre ressources de transport, avec contraintes de capacité et de compatibilité.
+
+**Différences.** Le plan FLOW s’arrête aux transports confiés et ne reprend pas toute la planification détaillée ou l’exécution des outils transport.
+
+**Position FLOW.** Plan organisant les marchandises en chargements et leurs parcours, arrêts et échéances pour les transports confiés.
+
+[Planning Loads](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-transportation-management/planning-loads_e752a3f5-f4a9-4957-9f4d-e6e550c15409) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Load Planning as Part of the Planning Process ; Load Consolidation
+
+**Limite de preuve.** Le produit descend aussi au placement physique 3D ; cette partie reste hors proposition FLOW. Le plan d’acheminement n’est pas le master plan Supply. Le plan FLOW s’arrête aux transports confiés et ne reprend pas toute la planification détaillée ou l’exécution des outils transport.
+
+Références : ELM834, U775, U777.
+
+## Sources d’inspiration — Scrapping Order
+
+### Microsoft — Quarantine orders - Supply Chain Management | Dynamics 365 | Microsoft Learn
+
+Microsoft Dynamics 365 · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Scrapping Order nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** Le parcours de quarantaine permet une sortie au rebut distincte de la remise en stock. Frontière FLOW : Scrapping Order est le nom FLOW de la prestation ; aucun objet natif commun aux éditeurs n’est déduit. La restriction WMS Microsoft sur la quarantaine est conservée.
+
+**Points communs.** Le parcours de quarantaine permet une sortie au rebut distincte de la remise en stock.
+
+**Différences.** Scrapping Order est le nom FLOW de la prestation ; aucun objet natif commun aux éditeurs n’est déduit. La restriction WMS Microsoft sur la quarantaine est conservée.
+
+**Position FLOW.** Porter une demande de mise au rebut de biens, ses autorisations, quantités, consignes et preuves attendues jusqu’à son résultat reconnu.
+
+[Quarantine orders - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/quarantine-orders) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Quarantine order scrap ; quarantine order statuses
+
+**Limite de preuve.** Avec les processus WMS, la page limite ce parcours de quarantine order aux retours de vente ; ne pas généraliser sa disponibilité native. Scrapping Order est le nom FLOW de la prestation ; aucun objet natif commun aux éditeurs n’est déduit. La restriction WMS Microsoft sur la quarantaine est conservée.
+
+Références : ELM835, U775, U777.
+
+### SAP — Carrying out Warehouse Ad Hoc Goods Issue
+
+SAP S/4HANA · Mécanisme métier documenté dans un produit · Recouvrement partiel · statut : proposed
+
+**Pourquoi ce terme.** Scrapping Order nomme la responsabilité FLOW ; la source ne prouve ni appellation native identique ni consensus de nomenclature.
+
+**Pourquoi cette définition.** La mise au rebut mobilise une demande de changement, un travail de déplacement vers la zone prévue, puis une sortie reconnue. Frontière FLOW : Scrapping Order est le nom FLOW de la prestation ; aucun objet natif commun aux éditeurs n’est déduit. La restriction WMS Microsoft sur la quarantaine est conservée.
+
+**Points communs.** La mise au rebut mobilise une demande de changement, un travail de déplacement vers la zone prévue, puis une sortie reconnue.
+
+**Différences.** Scrapping Order est le nom FLOW de la prestation ; aucun objet natif commun aux éditeurs n’est déduit. La restriction WMS Microsoft sur la quarantaine est conservée.
+
+**Position FLOW.** Porter une demande de mise au rebut de biens, ses autorisations, quantités, consignes et preuves attendues jusqu’à son résultat reconnu.
+
+[Carrying out Warehouse Ad Hoc Goods Issue](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/carrying-out-warehouse-ad-hoc-goods-issue_e15b00c8-2b28-4341-9cdc-7da58ded5b89) — Documentation évolutive ; version globale non présumée., consulté le 2026-09-25.
+
+**Passage.** Warehouse Ad Hoc Goods Issue ; scrapping
+
+**Limite de preuve.** Une écriture de sortie ne prouve pas une destruction ; le document ne définit pas un ordre de service externe universel. Scrapping Order est le nom FLOW de la prestation ; aucun objet natif commun aux éditeurs n’est déduit. La restriction WMS Microsoft sur la quarantaine est conservée.
+
+Références : ELM833, U775, U777.
 
 ## Informations métier
 

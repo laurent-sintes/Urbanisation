@@ -17473,6 +17473,510 @@
       "line": 18916,
       "content_sha256": "bf7a9b6c2ac840d1d617d9683374aafa4d3ecc2e2129fc036ba0d7b34cba1e5e",
       "captured_text": "## U769\n\n**id**\n\nU769\n\n**date**\n\n2026-09-25\n\n**titre**\n\nAppliquer l’audit des comportements et scénarios\n\n**texte**\n\nApplique l’audit\n\n**contexte et portée**\n\nApplication de la proposition complète U768 : retirer les sept comportements qui décrivent des motifs de commande en conservant ces situations dans les scénarios, préciser les cinq variantes de Return Order, compléter les treize familles de scénarios recensées et leur mapping explicite. Les quatre comportements de pilotage Master Planning sont conservés conformément à la recommandation de ne pas les reclasser en scénarios ; leur granularité reste une question distincte, sans refacto implicite. Les sept récits pilotes préexistants sont inclus dans le lot accepté ; les nouvelles rédactions sont une mise en œuvre illustrative, pas des faits Beaumanoir ni une validation exhaustive du modèle. Pas de release, commit ou push demandé."
+    },
+    {
+      "id": "CMP306",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp306",
+      "line": 2855,
+      "content_sha256": "af1179f5c1fcaec4f821c52b185272ae12fef71c9e79a101886deabaa3a118a1",
+      "captured_text": "## CMP306\n\nU771 — Application autonome de l’audit U770, Codex, 25 septembre 2026. État comparé : backlog après publication 2026-09-25.3. Les contradictions lexicales et les frontières signalées sont corrigées ; les écarts intentionnels avec les produits sont conservés. Les arguments des comparaisons existantes sont reformulés à partir de leurs rapprochements et limites documentés, sans prétendre à une nouvelle consultation de toutes leurs sources ni à un consensus.\n\nReceiving Order est ajouté dans Service Order Management. Microsoft ELM133 et ELM445, relus le 25 septembre 2026, distinguent la demande entrante de prestation d’entrepôt, la commande commerciale source et les retours de réception. Recouvrement partiel : FLOW porte la demande, les engagements et le résultat attendu ; l’exécutant réalise, Inventory reconnaît les faits de stock, Fulfilment coordonne. Le nom Receiving Order et sa maille de capacité sont des choix FLOW, pas une appellation universelle démontrée par deux documents du même éditeur. Le scénario fictif de réception partielle expose ces responsabilités sans preuve de réalisation Beaumanoir. Application autorisée par délégation U771 ; aucune validation mot à mot des nouvelles rédactions ni publication implicite."
+    },
+    {
+      "id": "CMP307",
+      "path": "marche/comparaisons.md",
+      "anchor": "cmp307",
+      "line": 2862,
+      "content_sha256": "1b6510c05923d93efa2770429a10ec884209947defa93f6f1e15877fdb46e594",
+      "captured_text": "## CMP307\n\nU774 — Codex, 25 septembre 2026. Recherche primaire conduite à partir des responsabilités du backlog pour vérifier U772 : Microsoft Dynamics et SAP S/4HANA sur chaque fiche comparée. Les rapprochements sont appliqués dans les comparaisons du modèle et du glossaire, avec limites, dates et sources. Aucune modification des frontières ni validation implicite des nouveaux textes.\n\nConvergences documentées : stock et journal des mouvements, engagements commerciaux, prestations confiées, kitting, transport, données maîtres, orchestration et promesse. Écarts conservés : ARun affecte tandis que BOP revoit la confirmation ; le MRP ne représente pas tout le master plan FLOW ; une vague WMS ne suffit pas à démontrer la décision de rétention amont ; les coûts calculés ne sont pas un PTP économique complet ; les interfaces ne définissent pas les domaines sources Commerce, Finance et Design. Les documents de service SAP et Dynamics ont souvent un périmètre vendu ou exécuté, distinct de la demande de prestation FLOW.\n\nEncaissement : SAP Digital Payments documente l’appel à un prestataire et le retour de résultat ; le document Microsoft sur les autorisations indique une limite sur le résultat asynchrone de capture. Douane : la délégation S/4HANA vers GTS appuie la frontière ; la source Dynamics consultée est une localisation Russie, pas une preuve de couverture française. Les spécialités textiles ne sont pas couvertes par une simple documentation générique de services.\n\nLa présence de deux familles produit ne certifie pas une équivalence de périmètre. Les lacunes, sources inaccessibles et appuis partiels restent dans le contrôle courant U773, enrichi par cette recherche ; aucune seconde backlog ni publication."
+    },
+    {
+      "id": "ELM600",
+      "path": "marche/elements.md",
+      "anchor": "elm600",
+      "line": 4877,
+      "content_sha256": "cbbd52d205ea7e216c97a091f450ecb5ac4b24c93a6774e2ca9f0ad326e67b5e",
+      "captured_text": "### ELM600\n\nMKT14 — [Inventory forecasts](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/inventory-forecast). Microsoft Dynamics 365 SCM ; documentation évolutive, édition non indiquée. Consulté le 22 septembre 2026. Passages : introduction, Supply forecast lines, Demand forecast lines, Inventory forecast. Nature : fonctions produit ; identifiant natif non indiqué.\n\nReformulation : distinguer besoins prévisionnels, apports prévisionnels et position de stock résultante. Appui partiel aux frontières Demand/Supply/Inventory ; aucun découpage métier universel ni ajout canonique. CMP247 ; localisateurs et limites dans l'annexe U584."
+    },
+    {
+      "id": "ELM720",
+      "path": "marche/elements.md",
+      "anchor": "elm720",
+      "line": 5597,
+      "content_sha256": "0bc6f2bd0c0a621e16a566a6cb0b2a1bb3fd02381efbcccd6cf9d8ea84ea8cfa",
+      "captured_text": "### ELM720\n\nMKT14 — Microsoft, [Landed cost module overview](https://learn.microsoft.com/en-us/dynamics365/supply-chain/landed-cost/landed-cost-overview). Page évolutive. Consulté le 24 septembre 2026. Texte primaire ; passage : Overview / cost estimation. Reformulation : Estimer les coûts logistiques et les affecter aux marchandises importées ; coût rendu ne signifie pas prix de vente au client. Ne démontre ni refacturation automatique ni responsabilité universelle de pricing commercial. CMP281, U720."
+    },
+    {
+      "id": "ELM754",
+      "path": "marche/elements.md",
+      "anchor": "elm754",
+      "line": 5764,
+      "content_sha256": "0aca22fd4b7fb92f4a8f4fc26a7b7817951e594fe1c36dc205e7c50bc8bed0dd",
+      "captured_text": "### ELM754\n\nMKT14 — Microsoft, [Priority-based planning](https://learn.microsoft.com/en-us/dynamics365/supply-chain/master-planning/planning-optimization/priority-based-planning). Documentation évolutive consultée le 24 septembre 2026 ; passages : Planning priority models / Coverage group / Action messages. Reformulation : Modèles de priorité affectés aux groupes de couverture ; les codes de couverture en priority-based planning ne génèrent pas d’action messages. Limite : configuration Dynamics 365 SCM, pas taxonomie FLOW ni preuve d’équivalence complète au BOP SAP. CMP288, U739."
+    },
+    {
+      "id": "ELM783",
+      "path": "marche/elements.md",
+      "anchor": "elm783",
+      "line": 5916,
+      "content_sha256": "ff558135dabc3b7eae87e0790316b0114039a9a99c61a5d7d807f1399b3f8eca",
+      "captured_text": "### ELM783\n\nMKT13 — SAP, [Running an Available-to-Promise (ATP) Check in SAP S/4HANA Sales](https://learning.sap.com/courses/performing-the-availability-check/running-an-available-to-promise-atp-check-in-sap-s-4hana-sales_a2b4c5e3-1618-418d-a4f6-efe5ff43f7f1). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Running an Available-to-Promise (ATP) Check in SAP S/4HANA Sales, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : L’ATP confronte quantité et date demandées aux disponibilités, puis propose des échéances confirmables. Limites : Le produit enchaîne calcul et confirmation ; FLOW sépare évaluation, sélection de proposition et engagement de la commande. Les stocks futurs restent dans le périmètre ATP de référence. U774, CMP307."
+    },
+    {
+      "id": "ELM784",
+      "path": "marche/elements.md",
+      "anchor": "elm784",
+      "line": 5921,
+      "content_sha256": "d42ecb7b16c59bcbdede303b21d9758a7ba17a15f11042de98b3e3937993d6a1",
+      "captured_text": "### ELM784\n\nMKT13 — SAP, [Running Materials Requirements Planning](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-sourcing-procurement/running-materials-requirements-planning). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Running Materials Requirements Planning, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le MRP couvre les besoins nets et produit des propositions de réapprovisionnement selon les règles de lotissement. Limites : Les propositions d’approvisionnement sont un appui partiel ; le master plan FLOW porte aussi les affectations, et son optimisation ne se réduit pas au MRP. U774, CMP307."
+    },
+    {
+      "id": "ELM785",
+      "path": "marche/elements.md",
+      "anchor": "elm785",
+      "line": 5926,
+      "content_sha256": "741ecd1ac698cfce37f123807f0e3ae6aeb4a179530e2b97da971f6d5db87c54",
+      "captured_text": "### ELM785\n\nMKT13 — SAP, [Using Wave Management in Warehousing](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/using-wave-management-in-warehousing_f5d66de1-603e-40a0-b6f8-a671760c84ce). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Using Wave Management in Warehousing, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les vagues regroupent des besoins d’entrepôt pour une libération et un traitement coordonnés. Limites : Mécanisme aval WMS : ne démontre pas à lui seul la rétention amont orchestrée par FLOW ni l’optimisation économique d’une palette client complète. U774, CMP307."
+    },
+    {
+      "id": "ELM786",
+      "path": "marche/elements.md",
+      "anchor": "elm786",
+      "line": 5931,
+      "content_sha256": "63ab178eb17872a69eb91e136b1aecb32f82bc3007f99cc6e9fab956d7045b43",
+      "captured_text": "### ELM786\n\nMKT13 — SAP, [Introducing Goods Movements](https://learning.sap.com/courses/managing-inventory-movements-and-stock-transfers-in-sap-s-4hana-cloud-public-edition/introducing-goods-movements_ba906e87-54e8-4f56-837e-bde4d82599de). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Introducing Goods Movements, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les mouvements de stock sont enregistrés avec des documents matériels permettant leur traçabilité. Limites : Le document matériel est une réalisation du journal métier, pas sa définition universelle ; le journal comptable reste distinct. U774, CMP307."
+    },
+    {
+      "id": "ELM787",
+      "path": "marche/elements.md",
+      "anchor": "elm787",
+      "line": 5936,
+      "content_sha256": "f2c5ae4ecf82d5f4b8207f251d88e4da1a831bee0abb4cc86ebba71b91139351",
+      "captured_text": "### ELM787\n\nMKT13 — SAP, [Conducting Physical Inventory](https://learning.sap.com/courses/inventory-management-and-physical-inventory-in-sap-s-4hana/conducting-physical-inventory). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Conducting Physical Inventory, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le comptage physique est comparé au stock enregistré et les écarts sont rapprochés avant correction. Limites : Le parcours d’inventaire documenté ne justifie pas toutes les méthodes de comptage ni un comportement par écran. U774, CMP307."
+    },
+    {
+      "id": "ELM788",
+      "path": "marche/elements.md",
+      "anchor": "elm788",
+      "line": 5941,
+      "content_sha256": "b279070eb0a09713f7b99dcdf1101f408d4e529992e161b78bbbad589ef9a4aa",
+      "captured_text": "### ELM788\n\nMKT13 — SAP, [Setting up a Stock Transfer Process for an Intra-Company Stock Tr](https://learning.sap.com/courses/configuring-cross-application-processes-in-sap-s-4hana-sales-and-procurement/setting-up-a-stock-transfer-process-for-an-intra-company-stock-transfer_ad0e9a99-4f15-42d1-9ba5-8eecac49d235). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Setting up a Stock Transfer Process for an Intra-Company Stock Tr, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le stock transport order organise un transfert avec expédition, transit et réception. Limites : Un ordre de transfert ne prouve pas une décision d’optimisation du rééquilibrage des stocks. U774, CMP307."
+    },
+    {
+      "id": "ELM789",
+      "path": "marche/elements.md",
+      "anchor": "elm789",
+      "line": 5946,
+      "content_sha256": "2c1b80032455df883556853998a8eb02a042ee51eb95dd63e07c75b5151716c3",
+      "captured_text": "### ELM789\n\nMKT13 — SAP, [Executing Sales Order Management](https://learning.sap.com/courses/executing-basic-erp-processes-with-sap-s-4hana/executing-sales-order-management). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Executing Sales Order Management, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le sales order porte les articles, quantités, dates et conditions convenus ; la livraison et la facturation poursuivent son exécution. Limites : La structure du document SAP éclaire l’engagement, sans imposer le cycle applicatif ou l’organisation ERP à FLOW. U774, CMP307."
+    },
+    {
+      "id": "ELM790",
+      "path": "marche/elements.md",
+      "anchor": "elm790",
+      "line": 5951,
+      "content_sha256": "786aac590bcccd6d8760633558aa09f0673e4b46f0d162064e35f362b27f2283",
+      "captured_text": "### ELM790\n\nMKT13 — SAP, [Executing Purchase Order Management](https://learning.sap.com/courses/executing-basic-erp-processes-with-sap-s-4hana/executing-purchase-order-management). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Executing Purchase Order Management, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le purchase order formalise les articles, quantités et conditions de l’achat, éventuellement à partir de documents de référence. Limites : Le document d’achat ne se confond pas avec la prestation logistique confiée pour exécuter cet achat. U774, CMP307."
+    },
+    {
+      "id": "ELM791",
+      "path": "marche/elements.md",
+      "anchor": "elm791",
+      "line": 5956,
+      "content_sha256": "bfa437e151d9501deb1e19238f4795993ccad2725cb028a9d1e45d0994757001",
+      "captured_text": "### ELM791\n\nMKT13 — SAP, [Exploring the Return to Supplier (BMK) Scenario](https://learning.sap.com/courses/establishing-core-supply-chain-processes-in-sap-s-4hana-cloud-public-edition/exploring-the-return-to-supplier-bmk-scenario_c73e0390-45fc-4929-95d1-8af0a467f0a9). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Exploring the Return to Supplier (BMK) Scenario, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le retour fournisseur peut donner lieu à crédit ou à remplacement avec une nouvelle commande d’achat. Limites : Une annulation immédiate de réception est distincte ; la réparation fournisseur n’est pas démontrée par ce seul parcours. U774, CMP307."
+    },
+    {
+      "id": "ELM792",
+      "path": "marche/elements.md",
+      "anchor": "elm792",
+      "line": 5961,
+      "content_sha256": "f761765d7884170e8cc99b541c5c37deced43d4b8b1204af40a0ef86e30e4fab",
+      "captured_text": "### ELM792\n\nMKT13 — SAP, [Managing Freight Orders and Freight Bookings](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-transportation-management/managing-freight-orders-and-freight-bookings_a83a6371-2f56-4fa2-8e12-ae0aab3c74c2). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Managing Freight Orders and Freight Bookings, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Freight orders et bookings portent étapes, transporteurs, dates, échanges de statut et documents de transport. Limites : Les documents de transport étayent seulement une partie de Document Production ; aucun catalogue universel d’ordres FLOW n’est natif de ce produit. U774, CMP307."
+    },
+    {
+      "id": "ELM793",
+      "path": "marche/elements.md",
+      "anchor": "elm793",
+      "line": 5966,
+      "content_sha256": "8005f6ef6c42623c730f9700264617225ff4b808c583534d5a4d519fca0777d5",
+      "captured_text": "### ELM793\n\nMKT13 — SAP, [Selecting Carriers and Tendering](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-transportation-management/selecting-carriers-and-tendering_d66f6116-ed5d-491f-b91b-e958fdedf2a5). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Selecting Carriers and Tendering, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : La sélection du transporteur rapproche coûts, contraintes et capacités disponibles avant sollicitation. Limites : Le périmètre documenté est le transport ; il ne prouve pas la visibilité de capacité de toutes les prestations. U774, CMP307."
+    },
+    {
+      "id": "ELM794",
+      "path": "marche/elements.md",
+      "anchor": "elm794",
+      "line": 5971,
+      "content_sha256": "657f2e3fdc20f8bf84dd573656e66b79dd30d394f206a400867d53f1b90cf62e",
+      "captured_text": "### ELM794\n\nMKT13 — SAP, [Configuring Charge Management and Explaining the Charge Calculati](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-transportation-management/configuring-charge-management-and-explaining-the-charge-calculation-process_d2c3b050-5874-4439-a88e-8dcfa231311c). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Configuring Charge Management and Explaining the Charge Calculati, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les accords et barèmes permettent de calculer des charges de transport selon les étapes, distances et conditions. Limites : Appui à la composante coût, pas preuve d’un PTP natif SAP couvrant le dossier économique contextuel FLOW ; ni choix de promesse ni marge globale déduits. U774, CMP307."
+    },
+    {
+      "id": "ELM795",
+      "path": "marche/elements.md",
+      "anchor": "elm795",
+      "line": 5976,
+      "content_sha256": "9e9884608ee4a7297a30c695120f9effd6bdad368314d196c8c23f6c8cf844e6",
+      "captured_text": "### ELM795\n\nMKT13 — SAP, [Performing Value-Added Services (VAS)](https://learning.sap.com/courses/exploring-business-processes-for-supply-chain-execution-in-sap-s-4hana-cloud-private-edition/performing-value-added-services-vas-). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Performing Value-Added Services (VAS), parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les VAS orders encadrent le kitting et les consommations de composants associées. Limites : Appui au kitting ; le dekitting n’est pas démontré ici. FLOW garde ses familles spécialisées, sans réintroduire une capacité générique Value-Added Service Order. U774, CMP307."
+    },
+    {
+      "id": "ELM796",
+      "path": "marche/elements.md",
+      "anchor": "elm796",
+      "line": 5981,
+      "content_sha256": "88a8c8d6c2f22333477289caadea6dec482bcd67b61dad96296864784932b232",
+      "captured_text": "### ELM796\n\nMKT13 — SAP, [Processing a Goods Receipt in SAP EWM](https://learning.sap.com/courses/exploring-business-processes-in-sap-ewm-for-sap-s-4hana-cloud-private-edition/processing-a-goods-receipt-in-sap-ewm). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Processing a Goods Receipt in SAP EWM, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : La livraison entrante encadre la réception EWM et l’enregistrement de son résultat. Limites : FLOW distingue demande de prestation, réalisation physique et reconnaissance du stock ; la maille Receiving Order est un choix métier local. U774, CMP307."
+    },
+    {
+      "id": "ELM797",
+      "path": "marche/elements.md",
+      "anchor": "elm797",
+      "line": 5986,
+      "content_sha256": "84ba8caee54e6ea5fb6e1ba0c588a881731323d613fffe8db634a6e70345e163",
+      "captured_text": "### ELM797\n\nMKT13 — SAP, [Introducing Service Order Management and Monitoring](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-service-management/introducing-service-order-management-and-monitoring_c75846f1-6c1c-4ae4-b1a7-12f560575119). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Introducing Service Order Management and Monitoring, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le service product et les transactions de service décrivent des prestations et leurs conditions. Limites : Les services vendus dans SAP ne se confondent pas avec toutes les prestations achetées ou pilotées par FLOW ; appui partiel au Service Catalog. U774, CMP307."
+    },
+    {
+      "id": "ELM798",
+      "path": "marche/elements.md",
+      "anchor": "elm798",
+      "line": 5991,
+      "content_sha256": "d8d65517a167dca5382283926223b4087a41c1290da18e3f0b9bff5de4138b5e",
+      "captured_text": "### ELM798\n\nMKT13 — SAP, [Configuring Pricing for Service Transactions](https://learning.sap.com/courses/performing-basic-customizing-for-service-in-sap-s-4hana-and-sap-s-4hana-cloud-private-edition/configuring-pricing-for-service-transactions_c9d5bd5a-5032-410b-8632-579a947eedcc). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Configuring Pricing for Service Transactions, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les conditions de prix s’appliquent aux produits et services des transactions de service. Limites : Le calcul de prix SAP ne définit pas une frontière de domaine FLOW ; le Price Book porte les conditions, les capacités utilisatrices les évaluent. U774, CMP307."
+    },
+    {
+      "id": "ELM799",
+      "path": "marche/elements.md",
+      "anchor": "elm799",
+      "line": 5996,
+      "content_sha256": "2bd90f3c534ea72584b648dc56b6c7fee04eca537306e861ce827b9c5deca50e",
+      "captured_text": "### ELM799\n\nMKT13 — SAP, [Introducing Common Features of Consolidation and Mass Processing](https://learning.sap.com/courses/sap-master-data-governance-on-sap-s-4hana/introducing-common-features-of-consolidation-and-mass-processing). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Introducing Common Features of Consolidation and Mass Processing, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : La consolidation MDG rapproche et contrôle les données maîtres de plusieurs origines. Limites : La gouvernance d’entreprise du produit est plus large que l’autorité locale du référentiel Supply FLOW. U774, CMP307."
+    },
+    {
+      "id": "ELM800",
+      "path": "marche/elements.md",
+      "anchor": "elm800",
+      "line": 6001,
+      "content_sha256": "b3e53019b1e48522919080bc2ff3781cd91eae36bdb894fce12b0a9f47ac12bb",
+      "captured_text": "### ELM800\n\nMKT13 — SAP, [Analyzing SAP S/4HANA Cloud Public Edition, Warehouse Management](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/understanding-sap-s-4hana-cloud-public-edition-warehouse-management_ff02ecf3-9fe0-499d-b96d-8cc0f7f66900). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Analyzing SAP S/4HANA Cloud Public Edition, Warehouse Management, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : L’intégration WMS échange données maîtres, demandes entrantes et sortantes et retours de réalisation ; le monitoring expose l’activité. Limites : FLOW sépare captation Integration, connaissance Visibility et ordres de prestation ; la documentation WMS ne prescrit pas ces capacités comme taxonomie native. U774, CMP307."
+    },
+    {
+      "id": "ELM801",
+      "path": "marche/elements.md",
+      "anchor": "elm801",
+      "line": 6006,
+      "content_sha256": "0ce87fa063e742fbd2debbdfb895a338a43d15c9208300692cb6276a571d9dce",
+      "captured_text": "### ELM801\n\nMKT14 — Microsoft, [Create orchestration flows | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/intelligent-order-management/orchestration-flows). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Create orchestration flows | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les flows relient événements reçus, règles et actions d’orchestration. Limites : Les étapes techniques ne sont pas automatiquement des capacités ou comportements ; FLOW exprime les responsabilités et résultats métier. U774, CMP307."
+    },
+    {
+      "id": "ELM802",
+      "path": "marche/elements.md",
+      "anchor": "elm802",
+      "line": 6011,
+      "content_sha256": "cd4a2d57840008a734878d956802395aea27d406108ac7b4160838331d546a91",
+      "captured_text": "### ELM802\n\nMKT14 — Microsoft, [Quality management for warehouse processes - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/quality-management-for-warehouses-processes). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Quality management for warehouse processes - Supply Chain Management | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les quality orders organisent contrôles et suites logistiques selon leurs résultats. Limites : Le produit exécute les contrôles ; FLOW porte la demande, les critères attendus et le résultat de la prestation. U774, CMP307."
+    },
+    {
+      "id": "ELM803",
+      "path": "marche/elements.md",
+      "anchor": "elm803",
+      "line": 6016,
+      "content_sha256": "672362bfa52b365a93ef773687749edd3f91bab9a7b45678277135a863d28570",
+      "captured_text": "### ELM803\n\nMKT14 — Microsoft, [Process kit assembly and disassembly orders - Commerce | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/commerce/process-kit-assembly-and-disassembly-orders). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Process kit assembly and disassembly orders - Commerce | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Des ordres distincts encadrent l’assemblage et le désassemblage de kits et mettent à jour les quantités. Limites : FLOW réunit kitting et dekitting dans une famille ; il ne reprend pas automatiquement la décomposition des écrans Commerce. U774, CMP307."
+    },
+    {
+      "id": "ELM804",
+      "path": "marche/elements.md",
+      "anchor": "elm804",
+      "line": 6021,
+      "content_sha256": "08565d8be05691931f824191cc690a42762cd8c068a7a342536be93de61d21e4",
+      "captured_text": "### ELM804\n\nMKT14 — Microsoft, [Global address book overview - Finance & Operations | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/sv-se/dynamics365/fin-ops-core/fin-ops/organization-administration/overview-global-address-book). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Global address book overview - Finance & Operations | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le carnet d’adresses identifie personnes et organisations avec plusieurs rôles et adresses. Limites : Appui à l’identité commune et aux rôles ; la gouvernance locale Supply n’est pas la maîtrise globale du carnet d’adresses de l’entreprise. U774, CMP307."
+    },
+    {
+      "id": "ELM805",
+      "path": "marche/elements.md",
+      "anchor": "elm805",
+      "line": 6026,
+      "content_sha256": "8aaab761d0238c1d998761d98ac5ae0743978b9eb4a7675fb18b61eac51b2221",
+      "captured_text": "### ELM805\n\nMKT14 — Microsoft, [Plan freight transportation routes with multiple stops - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/plan-freight-transportation-routes-multiple-stops). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Plan freight transportation routes with multiple stops - Supply Chain Management | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les routes de transport comportent arrêts, segments, hubs, transporteurs et horaires. Limites : Une route planifiée n’est pas une preuve de booking confirmé ; plusieurs variantes FLOW peuvent coopérer dans un même trajet. U774, CMP307."
+    },
+    {
+      "id": "ELM806",
+      "path": "marche/elements.md",
+      "anchor": "elm806",
+      "line": 6031,
+      "content_sha256": "00e86348c7b36c6640d7f8d15daf1caa2b63021c513717c8cfd1f42407aeabf7",
+      "captured_text": "### ELM806\n\nMKT13 — SAP, [Explaining Customer Consignment (Wholesale)](https://learning.sap.com/courses/exploring-fashion-functions-and-business-processes-in-sap-s-4hana-for-fashion-and-vertical-business/explaining-customer-consignment-wholesale-_fb6f5f03-ab73-4df3-a15a-d5a253d0d2f6). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Explaining Customer Consignment (Wholesale), parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : La consignation client distingue mise à disposition, consommation facturable, retour et reprise. Limites : Le vocabulaire SAP ne doit pas être attribué à Microsoft ; ces opérations ne justifient pas une capacité générique de gestion du stock consigné. U774, CMP307."
+    },
+    {
+      "id": "ELM807",
+      "path": "marche/elements.md",
+      "anchor": "elm807",
+      "line": 6036,
+      "content_sha256": "c945db710ba79548982660e904041b09ba2f51e5f413fab2a7e3942f1c72003c",
+      "captured_text": "### ELM807\n\nMKT13 — SAP, [Performing the Process of Vendor Consignment](https://learning.sap.com/courses/inventory-management-and-physical-inventory-in-sap-s-4hana/performing-the-process-of-vendor-consignment). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Performing the Process of Vendor Consignment, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : La consommation ou le transfert du stock fournisseur consigné produit le changement de propriété pertinent. Limites : Appui à un événement de propriété ; le ledger FLOW rassemble plusieurs régimes contractuels, pas seulement la consignation fournisseur. U774, CMP307."
+    },
+    {
+      "id": "ELM808",
+      "path": "marche/elements.md",
+      "anchor": "elm808",
+      "line": 6041,
+      "content_sha256": "cb188253dfddd446c7b7561a767856b1f9d2517024b73974ebf53029de4e90d2",
+      "captured_text": "### ELM808\n\nMKT13 — SAP, [Describing Omnichannel Convergent Billing (1MC)](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-sales-automation-and-analytics/describing-omnichannel-convergent-billing-1mc-_e8281711-58ac-4058-93e3-f9fb65eb4537). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Describing Omnichannel Convergent Billing (1MC), parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Des demandes de facturation externes sont intégrées puis regroupées ou traitées pour produire les factures. Limites : Le pilotage FLOW reste distinct du moteur de facturation, de la comptabilisation et du recouvrement. U774, CMP307."
+    },
+    {
+      "id": "ELM809",
+      "path": "marche/elements.md",
+      "anchor": "elm809",
+      "line": 6046,
+      "content_sha256": "5074e2e8c8734f38c880be7984cfbb9cf9cf4c19823b713cfdf85999998b7735",
+      "captured_text": "### ELM809\n\nMKT14 — Microsoft, [Overview of the Service to deliver business process areas - Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/guidance/business-processes/service-to-cash-areas-overview). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Overview of the Service to deliver business process areas - Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le processus de service formalise les travaux demandés, les ressources et la progression de leur réalisation. Limites : Appui transversal au service demandé ; ne démontre pas chaque prestation textile comme fonction native Dynamics. U774, CMP307."
+    },
+    {
+      "id": "ELM810",
+      "path": "marche/elements.md",
+      "anchor": "elm810",
+      "line": 6051,
+      "content_sha256": "3d13d438caae5ffbd0ece0b615bedb26daa66f6ae0bb33f6519644d68670a298",
+      "captured_text": "### ELM810\n\nMKT14 — Microsoft, [Set up an appointment for a load - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/tasks/set-up-appointment-load). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Set up an appointment for a load - Supply Chain Management | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Un rendez-vous fixe les créneaux d’enlèvement ou de livraison et les contraintes du quai. Limites : Ce rendez-vous logistique ne prouve pas à lui seul une capacité de réservation de transport auprès d’un transporteur. U774, CMP307."
+    },
+    {
+      "id": "ELM811",
+      "path": "marche/elements.md",
+      "anchor": "elm811",
+      "line": 6056,
+      "content_sha256": "691afd6fbbb7556b1bf743abcb114244c591bc9b3adf87ced44554a4ee5aa875",
+      "captured_text": "### ELM811\n\nMKT14 — Microsoft, [Manage payment authorizations - Commerce | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/commerce/dev-itpro/manage-payment-authorizations). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Manage payment authorizations - Commerce | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : La documentation distingue autorisation et capture du paiement, avec un statut retourné par le prestataire. Limites : Limite explicite : un accusé de capture n’est pas toujours le résultat final asynchrone. Ce document ne prouve pas une notification complète de fin ; FLOW doit suivre ce résultat distant. U774, CMP307."
+    },
+    {
+      "id": "ELM812",
+      "path": "marche/elements.md",
+      "anchor": "elm812",
+      "line": 6061,
+      "content_sha256": "b43917720c3a220451cf7583a780ad210eb2e7b9aa8929f6e5eed98335a5b508",
+      "captured_text": "### ELM812\n\nMKT13 — SAP, [Explaining Digital Payments](https://learning.sap.com/courses/configuring-additional-settings-in-financial-accounting-in-sap-s-4hana/explaining-digital-payments). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Explaining Digital Payments, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : S/4HANA sollicite un prestataire de paiement via Digital Payments et reçoit les résultats pour actualiser le statut. Limites : Le prestataire réalise le paiement ; FLOW orchestre sa demande et son résultat sans absorber les responsabilités financières. U774, CMP307."
+    },
+    {
+      "id": "ELM813",
+      "path": "marche/elements.md",
+      "anchor": "elm813",
+      "line": 6066,
+      "content_sha256": "a915000100bea5a1f653a99fa1df246915c3a39865cd36f3cee461961b84d006",
+      "captured_text": "### ELM813\n\nMKT13 — SAP, [Describing the Integration into SAP Global Trade Services](https://learning.sap.com/courses/introducing-the-sap-s-4hana-for-international-trade/describing-the-integration-into-sap-global-trade-services_a4529c6b-0cb6-4361-944a-a5c0b540745b). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Describing the Integration into SAP Global Trade Services, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : S/4HANA transmet des données et documents à GTS pour la prise en charge des opérations de commerce international. Limites : Appui à la délégation depuis S/4HANA ; GTS demeure un exécutant distinct. Aucun Customs Clearance Order FLOW natif ni maîtrise douanière interne n’est déduit. U774, CMP307."
+    },
+    {
+      "id": "ELM814",
+      "path": "marche/elements.md",
+      "anchor": "elm814",
+      "line": 6071,
+      "content_sha256": "4adcd767c50d4fbe034826f481429b9c801617ac90cd751f412828e6420733bf",
+      "captured_text": "### ELM814\n\nMKT13 — SAP, [Working with Service Order Management: External Service Processin](https://learning.sap.com/courses/identifying-business-processes-in-sap-s4hana-service/working-with-service-order-management-external-service-processing_ca8699f0-3870-43c2-bb6e-4c68bddda055). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Working with Service Order Management: External Service Processin, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Un service externe est demandé, acheté, puis rapproché d’une entrée de service acceptée. Limites : FLOW distingue exigence de prestation, engagement d’achat et rapprochement opérationnel ; l’entrée de service SAP ne couvre pas tous les faits attendus d’une prestation logistique. U774, CMP307."
+    },
+    {
+      "id": "ELM815",
+      "path": "marche/elements.md",
+      "anchor": "elm815",
+      "line": 6076,
+      "content_sha256": "2524cc722a43ab5b7d54a891a60972c335c4f060c6b826fce85691d6e38e4756",
+      "captured_text": "### ELM815\n\nMKT13 — SAP, [Setting Up Cross-Docking](https://learning.sap.com/courses/advanced-customizing-in-sap-s-4hana-ewm/setting-up-cross-docking). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Setting Up Cross-Docking, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le cross-docking relie besoins entrants et sortants pour un transit sans stockage intermédiaire normal. Limites : Le mécanisme d’exécution EWM étaye la prestation, pas l’existence native d’un ordre autonome portant toutes les exigences FLOW. U774, CMP307."
+    },
+    {
+      "id": "ELM816",
+      "path": "marche/elements.md",
+      "anchor": "elm816",
+      "line": 6081,
+      "content_sha256": "ba7eaf5a62e55ab8936a122f95a763bf4f91ddd09ebb51ffad15bda1d0cd0f60",
+      "captured_text": "### ELM816\n\nMKT13 — SAP, [Using the Planning Run in SAP S/4HANA](https://learning.sap.com/courses/exploring-business-processes-in-sap-s-4hana-production-planning/using-the-planning-run-in-sap-s-4hana_df4a8fa8-cfc9-44cf-adb0-a1e5d4129180). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Using the Planning Run in SAP S/4HANA, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le run de planification choisit son périmètre et exécute le calcul des besoins. Limites : Appui à la conduite de planification ; le master plan FLOW rassemble aussi affectations et arbitrages absents de ce seul exemple MRP. U774, CMP307."
+    },
+    {
+      "id": "ELM817",
+      "path": "marche/elements.md",
+      "anchor": "elm817",
+      "line": 6086,
+      "content_sha256": "bfa213f3686f960031811cb365f143fab39982e66bc355258172b67a89abf61a",
+      "captured_text": "### ELM817\n\nMKT13 — SAP, [Running Material Requirements Planning](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-sourcing-and-procurement/running-material-requirements-planning_c1d3cbe3-3fad-495a-a3ec-afede9d83ab4). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Running Material Requirements Planning, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les exécutions MRP peuvent être programmées et leurs résultats suivis par les responsables de l’approvisionnement. Limites : La programmation d’un job éclaire le déclenchement ; elle ne suffit pas à justifier la maille métier de toutes les opérations de conduite du plan. U774, CMP307."
+    },
+    {
+      "id": "ELM818",
+      "path": "marche/elements.md",
+      "anchor": "elm818",
+      "line": 6091,
+      "content_sha256": "dbb5d9664121379be18bc135b1be9080bef008aed7ca82ba9d8677de5bf88c64",
+      "captured_text": "### ELM818\n\nMKT14 — Microsoft, [Repair management - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/service-management/repair-management). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Repair management - Supply Chain Management | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les lignes de réparation décrivent symptômes, diagnostic et résultat de remise en état. Limites : Le parcours de réparation ne prouve pas toutes les retouches fashion ; aucune spécialisation vêtement native n’est affirmée. U774, CMP307."
+    },
+    {
+      "id": "ELM819",
+      "path": "marche/elements.md",
+      "anchor": "elm819",
+      "line": 6096,
+      "content_sha256": "6e23c49aaf670bf2c093b8f5cf854ca65c00bc2c1c97b508436a7192d16d9fbd",
+      "captured_text": "### ELM819\n\nMKT14 — Microsoft, [Develop and establish service agreements overview - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/service-management/service-agreements). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Develop and establish service agreements overview - Supply Chain Management | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les accords de service définissent travaux, période de validité et modalités de déclenchement. Limites : Les SLA et accords FLOW couvrent plusieurs prestations ; les paramètres d’un service agreement ne démontrent pas tous les engagements de performance. U774, CMP307."
+    },
+    {
+      "id": "ELM820",
+      "path": "marche/elements.md",
+      "anchor": "elm820",
+      "line": 6101,
+      "content_sha256": "6d306ce9c483258f4d80b22391720b0143d2f589fa8bb16c1e7bef4cd27a8b6d",
+      "captured_text": "### ELM820\n\nMKT14 — Microsoft, [Service templates - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/service-management/service-template). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Service templates - Supply Chain Management | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les modèles de service conservent des lignes réutilisables pour établir accords et ordres de service. Limites : Appui partiel à une offre structurée ; un modèle de service n’est pas à lui seul un catalogue multi-prestataire. U774, CMP307."
+    },
+    {
+      "id": "ELM821",
+      "path": "marche/elements.md",
+      "anchor": "elm821",
+      "line": 6106,
+      "content_sha256": "350f6046bac231c4dd440fe57e59f8a38698dc29a9397d745518fc8d055dd575",
+      "captured_text": "### ELM821\n\nMKT14 — Microsoft, [Work with customs clearance - Finance | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/finance/localizations/russia/rus-work-with-customs-clearance). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Work with customs clearance - Finance | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le parcours douanier rattache déclaration et intervenants au traitement des importations. Limites : Localisation Russie : appui documentaire limité, pas preuve d’un processus générique ni d’une réalisation douanière française. U774, CMP307."
+    },
+    {
+      "id": "ELM822",
+      "path": "marche/elements.md",
+      "anchor": "elm822",
+      "line": 6111,
+      "content_sha256": "6d68cb1aa645c0bf95381b6ed914ae62573eaa02860c9ba273de3241e6dd023a",
+      "captured_text": "### ELM822\n\nMKT13 — SAP, [Exploring SAP Fiori Apps for Inventory Reporting and Optimization](https://learning.sap.com/courses/exploring-foundations-of-physical-inventory-in-sap-s-4hana-cloud-private-edition/using-overview-apps-in-physical-inventory). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Exploring SAP Fiori Apps for Inventory Reporting and Optimization, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les vues de stock et de traitement rapprochent inventaire, livraisons, commandes et faits de mouvement. Limites : La connaissance restituée est distincte de l’ingestion ; le périmètre entrepôt ne démontre pas la visibilité de toutes les opérations FLOW. U774, CMP307."
+    },
+    {
+      "id": "ELM823",
+      "path": "marche/elements.md",
+      "anchor": "elm823",
+      "line": 6116,
+      "content_sha256": "5f58399c909a53a8567389d5d460dedd1c8d4af334854b6e992fb778d04e5a2e",
+      "captured_text": "### ELM823\n\nMKT14 — Microsoft, [Control warehouse work by using work templates and location directives - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/warehousing/control-warehouse-location-directives). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Control warehouse work by using work templates and location directives - Supply Chain Management | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Le travail d’entrepôt distingue instructions de prélèvement et de dépôt, avec quantités et lieux concernés. Limites : FLOW porte une demande et un résultat de prestation ; les lignes de travail exécutables ne définissent pas seules la capacité métier. U774, CMP307.\n\n\nActualisation U774 / CMP307 — 25 septembre 2026 : réemploi des documents déjà identifiés ELM018, ELM063, ELM070, ELM095, ELM208, ELM279, ELM281, ELM322, ELM455, ELM458, ELM516, ELM517, ELM600, ELM656, ELM720, ELM754. Passages réexaminés pour les correspondances et limites enregistrées dans les fiches ; aucune altération des preuves antérieures."
+    },
+    {
+      "id": "ELM824",
+      "path": "marche/elements.md",
+      "anchor": "elm824",
+      "line": 6124,
+      "content_sha256": "eceb84818c33db6b63a32f9f7b6709fb0d0942eae979a789b190b8cba88d551d",
+      "captured_text": "### ELM824\n\nMKT14 — Microsoft, [Transportation management statuses - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/transportation-management-status). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Transportation management statuses - Supply Chain Management | Dynamics 365 | Microsoft Learn, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les statuts reçus des transporteurs sont interprétés pour suivre chargements, expéditions et conteneurs. Limites : La donnée vient de l’intégration ; sa lecture relève de Visibility. Un code reçu ne constitue pas à lui seul une preuve physique de livraison. U774, CMP307."
+    },
+    {
+      "id": "ELM825",
+      "path": "marche/elements.md",
+      "anchor": "elm825",
+      "line": 6129,
+      "content_sha256": "5c0243db118244f11ffc21a6e5284955cbd46a9b54ceec2754f0c9393ef3f40c",
+      "captured_text": "### ELM825\n\nMKT13 — SAP, [Performing a Physical Inventory](https://learning.sap.com/courses/processes-in-sap-s-4hana-ewm-br/performing-a-physical-inventory). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Performing a Physical Inventory, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : EWM distingue le comptage tournant par intervalles et le comptage ad hoc sur produits ou emplacements. Limites : Les procédures d’exécution étayent ces variantes métier sans imposer les écrans ou rôles SAP au modèle. U774, CMP307."
+    },
+    {
+      "id": "ELM826",
+      "path": "marche/elements.md",
+      "anchor": "elm826",
+      "line": 6134,
+      "content_sha256": "254f0e9d5e8170f522c6ec289d9db5a4e062c1485f0bd234ae3c07d280190af4",
+      "captured_text": "### ELM826\n\nMKT13 — SAP, [Performing In-Store Inventory Management (3HR)](https://learning.sap.com/courses/exploring-sap-s-4hana-cloud-public-edition-retail/performing-in-store-inventory-management-3hr-). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Performing In-Store Inventory Management (3HR), parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : Les opérations magasin rapprochent quantités enregistrées, comptages et écarts. Limites : Appui à la visibilité du stock et des opérations de magasin ; ne démontre pas une vision exhaustive de tous les processus retail. U774, CMP307."
+    },
+    {
+      "id": "ELM827",
+      "path": "marche/elements.md",
+      "anchor": "elm827",
+      "line": 6139,
+      "content_sha256": "da82f6e2a3d5f9c69ea190f8fdc7f0d255b57bfe8e186193aaccbe49c6321f51",
+      "captured_text": "### ELM827\n\nMKT13 — SAP, [Integrating into Warehouse Processes](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-transportation-management/integrating-into-warehouse-processes_a60ea8b3-d0d8-4c89-be2f-7a4a912240c4). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Integrating into Warehouse Processes, parties correspondant au mécanisme ci-dessous. Édition : périmètre du cours ou de l’application cité ; documentation évolutive, pas de version globale présumée. Nature : mécanisme ou objet de produit, pas capacité normative. Reformulation : L’intégration TM-EWM transmet les exigences aux opérations de picking, packing et chargement et remonte progression et écarts. Limites : Le processus produit associe orchestration et exécution ; FLOW garde les ordres de prestation et leur coordination distincts des gestes physiques. Les limites multi-arrêts du scénario natif sont conservées. U774, CMP307.\n\n\nActualisation U774 / CMP307 — 25 septembre 2026 : réemploi des documents déjà identifiés ELM018, ELM063, ELM070, ELM095, ELM208, ELM279, ELM281, ELM322, ELM455, ELM458, ELM516, ELM517, ELM600, ELM656, ELM720, ELM754. Passages réexaminés pour les correspondances et limites enregistrées dans les fiches ; aucune altération des preuves antérieures."
+    },
+    {
+      "id": "ELM828",
+      "path": "marche/elements.md",
+      "anchor": "elm828",
+      "line": 6147,
+      "content_sha256": "e8baed30df723c4e688e72ce50b9a0b490f4296a93cfb7efa17dfdbe4be76231",
+      "captured_text": "### ELM828\n\nMKT14 — Microsoft Dynamics 365, [Inventory blocking - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-blocking). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Inventory blocking ; blocking manually, quality orders and inventory status. Documentation évolutive ; édition du cours/application cité, version globale non présumée. Nature : mécanisme produit. Reformulation : Bloquer un stock interdit son traitement ou sa consommation ; quantité inspectée et quantité bloquée peuvent différer. Limites : Le produit combine règles, décisions et écritures ; ne pas assimiler le blocage qualité à une réservation pour une demande. U775, CMP308."
+    },
+    {
+      "id": "ELM829",
+      "path": "marche/elements.md",
+      "anchor": "elm829",
+      "line": 6152,
+      "content_sha256": "cc5f827df683d64e8457bb1141aa27bae9161119569402aaa14fdce8a84e92d6",
+      "captured_text": "### ELM829\n\nMKT13 — SAP S/4HANA, [Performing Internal Inspections in the Warehouse](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/performing-internal-inspections-in-the-warehouse_a8dd0fcf-85c3-47d5-9da2-0058a81ebed5). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Warehouse Internal Inspections ; usage decision and follow-up actions. Documentation évolutive ; édition du cours/application cité, version globale non présumée. Nature : mécanisme produit. Reformulation : Un contrôle de biens déjà stockés aboutit à un usage autorisé, un maintien bloqué ou une sortie au rebut. Limites : Le parcours comprend réalisation et écritures ; FLOW peut recevoir les résultats et décisions de responsables externes. U775, CMP308."
+    },
+    {
+      "id": "ELM830",
+      "path": "marche/elements.md",
+      "anchor": "elm830",
+      "line": 6157,
+      "content_sha256": "d59ecbdfb64c30b1147b5950c2c321ef62e70545138984ef453d4ae4b429c185",
+      "captured_text": "### ELM830\n\nMKT14 — Microsoft Dynamics 365, [Item and raw material tracing in inventory, production, and sales - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/trace-items-raw-materials-inventory-production-sales). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : What is item tracing? ; limitations ; trace direction. Documentation évolutive ; édition du cours/application cité, version globale non présumée. Nature : mécanisme produit. Reformulation : La recherche reconstitue provenance, transformations, destinataires et commandes concernées à partir des transactions et identifiants de suivi. Limites : La traçabilité dépend des données captées ; restrictions natives par entité juridique et profondeur. Aucun historique externe inventé. U775, CMP308."
+    },
+    {
+      "id": "ELM831",
+      "path": "marche/elements.md",
+      "anchor": "elm831",
+      "line": 6162,
+      "content_sha256": "381194d3bdfc7c3e36409f6c14ee8d6d548339889be1f8bda28eb49b5be337d4",
+      "captured_text": "### ELM831\n\nMKT13 — SAP S/4HANA, [Batch Management & Traceability in SAP S/4HANA Cloud](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-manufacturing-execution/batch-management-traceability-in-sap-s-4hana-cloud_d396525c-87eb-4af9-a718-041af5cba51c). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : End-to-End Visibility: The Batch Information Cockpit. Documentation évolutive ; édition du cours/application cité, version globale non présumée. Nature : mécanisme produit. Reformulation : Le suivi de lots permet de remonter aux composants et fournisseurs ou de retrouver produits, livraisons et destinataires affectés. Limites : Exemple de production par lots ; ne prouve pas des données de généalogie disponibles dans la fashion ni une réalisation Beaumanoir. U775, CMP308."
+    },
+    {
+      "id": "ELM832",
+      "path": "marche/elements.md",
+      "anchor": "elm832",
+      "line": 6167,
+      "content_sha256": "8768e11c08e26d44c342cc05bee1944e0a8e56df4514f54bb2c82743d1870b44",
+      "captured_text": "### ELM832\n\nMKT14 — Microsoft Dynamics 365, [Load building workbench - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/transportation/tasks/load-building-workbench). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Create a load building strategy ; use a load building strategy. Documentation évolutive ; édition du cours/application cité, version globale non présumée. Nature : mécanisme produit. Reformulation : La constitution de chargements rapproche les marchandises et les contraintes de poids et de volume des moyens de transport. Limites : La stratégie standard documentée est fondée sur le volume ; pas de preuve d’un optimiseur universel ni d’une maille métier imposée. U775, CMP308."
+    },
+    {
+      "id": "ELM833",
+      "path": "marche/elements.md",
+      "anchor": "elm833",
+      "line": 6172,
+      "content_sha256": "0188fbeb9c375ab52a9947ac100fec3abd3b9ffeee741b8357b7a17dccb8cc98",
+      "captured_text": "### ELM833\n\nMKT13 — SAP S/4HANA, [Carrying out Warehouse Ad Hoc Goods Issue](https://learning.sap.com/courses/implementing-sap-s-4hana-cloud-public-edition-warehouse-management/carrying-out-warehouse-ad-hoc-goods-issue_e15b00c8-2b28-4341-9cdc-7da58ded5b89). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Warehouse Ad Hoc Goods Issue ; scrapping. Documentation évolutive ; édition du cours/application cité, version globale non présumée. Nature : mécanisme produit. Reformulation : La mise au rebut mobilise une demande de changement, un travail de déplacement vers la zone prévue, puis une sortie reconnue. Limites : Une écriture de sortie ne prouve pas une destruction ; le document ne définit pas un ordre de service externe universel. U775, CMP308."
+    },
+    {
+      "id": "ELM834",
+      "path": "marche/elements.md",
+      "anchor": "elm834",
+      "line": 6177,
+      "content_sha256": "e76e0cbd435de8b6f6c1f8d86a5c27a7b4802b7f956198eb36e702b24b5da6cf",
+      "captured_text": "### ELM834\n\nMKT13 — SAP S/4HANA, [Planning Loads](https://learning.sap.com/courses/business-processes-in-sap-s-4hana-transportation-management/planning-loads_e752a3f5-f4a9-4957-9f4d-e6e550c15409). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Load Planning as Part of the Planning Process ; Load Consolidation. Documentation évolutive ; édition du cours/application cité, version globale non présumée. Nature : mécanisme produit. Reformulation : La consolidation répartit les marchandises entre ressources de transport, avec contraintes de capacité et de compatibilité. Limites : Le produit descend aussi au placement physique 3D ; cette partie reste hors proposition FLOW. Le plan d’acheminement n’est pas le master plan Supply. U775, CMP308."
+    },
+    {
+      "id": "ELM835",
+      "path": "marche/elements.md",
+      "anchor": "elm835",
+      "line": 6182,
+      "content_sha256": "27be17aec55dc1993324e9fa5d1c5f69cb8359816e86f614b6cbfc3faa7f809a",
+      "captured_text": "### ELM835\n\nMKT14 — Microsoft Dynamics 365, [Quarantine orders - Supply Chain Management | Dynamics 365 | Microsoft Learn](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/quarantine-orders). Consulté le 25 septembre 2026 ; passages primaires lus. Localisateur : Quarantine order scrap ; quarantine order statuses. Documentation évolutive ; édition du cours/application cité, version globale non présumée. Nature : mécanisme produit. Reformulation : Le parcours de quarantaine permet une sortie au rebut distincte de la remise en stock. Limites : Avec les processus WMS, la page limite ce parcours de quarantine order aux retours de vente ; ne pas généraliser sa disponibilité native. U775, CMP308."
+    },
+    {
+      "id": "U771",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u771",
+      "line": 18962,
+      "content_sha256": "443f5067ccddd73292294ef872b73b9c8cff922ebb051f9df12f81ad9d605139",
+      "captured_text": "## U771\n\n**id**\n\nU771\n\n**date**\n\n2026-09-25\n\n**titre**\n\nAppliquer en autonomie l’audit du vocabulaire et des frontières\n\n**texte**\n\nTu peux mettre à jour en autonomie ?\n\n**contexte et portée**\n\nAutorisation d’appliquer le lot cohérent U770 : corriger les contradictions du glossaire et des fiches, clarifier les responsabilités, améliorer les justifications marché et traiter le point de couverture de la réception confiée. Préserver les choix validés, les écarts FLOW assumés, les preuves et publications historiques. La délégation couvre les choix rédactionnels et de modélisation nécessaires ; elle ne constitue pas une approbation textuelle anticipée de nouvelles définitions ni une preuve de réalisation Beaumanoir. Aucune release, commit ou push demandé."
+    },
+    {
+      "id": "U774",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u774",
+      "line": 19034,
+      "content_sha256": "810935fe26388153c5f1df1ec19e10ba4cbcc1885a59aae20ca78ba370d7f2aa",
+      "captured_text": "## U774\n\n**id**\n\nU774\n\n**date**\n\n2026-09-25\n\n**titre**\n\nRechercher les correspondances marché à partir du modèle\n\n**texte**\n\nJe veux que par rapport au modèle tu trouve les refs du marché qui correspondent afin de vérifier les règles de agents.md\n\n**contexte et portée**\n\nRecherche primaire Microsoft Dynamics et SAP S/4HANA à partir des responsabilités et notions du backlog, au-delà du constat de références manquantes U773. Enrichir les correspondances pertinentes dans les fiches et le glossaire ; qualifier recouvrements, différences et lacunes sans importer les frontières produits ni inventer une équivalence. Vérifier la conformité documentaire et distinguer appui pertinent, appui partiel et preuve insuffisante. Aucune release, commit ou push demandé."
+    },
+    {
+      "id": "U775",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u775",
+      "line": 19056,
+      "content_sha256": "608920241ba22cd2374a891f65c1bf6c12df2a3e63ea9a3e2625bcf28a51b75b",
+      "captured_text": "## U775\n\n**id**\n\nU775\n\n**date**\n\n2026-09-25\n\n**titre**\n\nRechercher les capacités et comportements manquants par confrontation au marché\n\n**texte**\n\nMaintenant, je voudrais que tu recherches dans le marché si des capacités ou comportements manquent dans le modèle.\n\n**contexte et portée**\n\nComparer le backlog courant aux responsabilités et variantes documentées chez Microsoft Dynamics et SAP S/4HANA. Rechercher des écarts de couverture métier, distinguer capacité absente, comportement ou précision insuffisante, scénario transverse, couverture existante et hors périmètre. Préserver le périmètre orchestration, les arbitrages précédents et les audits historiques clos. Les propositions restent à arbitrer ; aucune création canonique ni publication déduite de la demande d’étude."
+    },
+    {
+      "id": "U776",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u776",
+      "line": 19079,
+      "content_sha256": "9e68bc9163235bdea036a1f7bf8383e9924e5ef653a14213d94373724aa4f23b",
+      "captured_text": "## U776\n\n**id**\n\nU776\n\n**date**\n\n2026-09-26\n\n**titre**\n\nAccords transport et rebut ; réexamen de la traçabilité et de la décision d’usage\n\n**texte**\n\nTransport Plan Decision  : ok\nScrapping Order  : ok\nInventory Traceability  : on ne peut pas considérer que c'est aussi le role de Inventory tracking ? Voire du ledger ? on pourrait mettre un comportement tracing dans tracking dont le rôle est de remplir le ledger qui contient l'origine ?\nInventory Usage Decision  : est-ce vraiment une capacité à proprement parlé ? Ou est-ce une règle ou un comportement ?\n\n**contexte et portée**\n\nAccord explicite sur les propositions Transport Plan Decision et Scrapping Order de U775. Leur application canonique reste à réaliser ; aucun accord étendu aux autres constats. Questions sur le rattachement de la traçabilité à Tracking/Ledger et sur l’autonomie de la décision d’usage. Les pistes de consolidation formulées en réponse restent proposées, sans validation implicite."
+    },
+    {
+      "id": "U777",
+      "path": "connaissance/01-contributions-utilisateur.md",
+      "anchor": "u777",
+      "line": 19105,
+      "content_sha256": "5440631b8e91d53933ea27ecc9b85b62ecaa173cb25bb3b85ac3a3f6da960ac1",
+      "captured_text": "## U777\n\n**id**\n\nU777\n\n**date**\n\n2026-09-26\n\n**titre**\n\nApplication du lot transport, rebut, traçabilité et disposition avec scénarios\n\n**texte**\n\nPense à enrichir les scénarios pour expliquer ces capacités et comportements.\n\nJE valide\n\n**contexte et portée**\n\nValidation de la proposition complète U775 corrigée dans la réponse à U776 : Transport Plan Decision et ses deux comportements Load Consolidation et Routing & Scheduling ; Scrapping Order ; traçabilité répartie entre Inventory Tracking, Inventory Ledger et Inventory Visibility sans nouvelle capacité ni comportement isolé ; élargissement de Return Disposition Decision en Inventory Disposition Decision, incluant usage autorisé et devenir logistique, avec les deux stratégies existantes. Demande explicite de scénarios concrets et de leurs contributions de capacités. Les rédactions nouvelles illustrent ce lot sans approbation mot à mot ni preuve de pratique installée. Les pistes U775 sur les variantes d’inspection, les références de substitution et un éventuel Stocktaking Order ne font pas partie de la proposition corrigée validée ici."
     }
   ]
 }

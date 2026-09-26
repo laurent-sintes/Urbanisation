@@ -127,3 +127,7 @@ associations:
   guide_version: 2026-09-25.2
   scope: carried_frozen_methodology
   note: Édition méthodologique figée reprise explicitement depuis 2026-09-25.2 ; aucune lecture du backlog.
+- publication_version: 2026-09-26.1
+  guide_version: 2026-09-25.2
+  scope: carried_frozen_methodology
+  note: Édition méthodologique figée reprise explicitement depuis 2026-09-25.3 ; aucune lecture du backlog.
