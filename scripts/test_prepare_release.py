@@ -285,7 +285,7 @@ class BacklogPublicationTests(unittest.TestCase):
         self.assertEqual(entries['versions'][0]['version'],self.version)
         self.assertEqual(workflow.resolve_release(self.models/'release','2026-09-13.2')['version'],'2026-09-13.2')
         descriptor=workflow.read(self.models/'release/index.json')['current']
-        self.assertRegex(descriptor,r'^urbanisation-v\d{3,}-\d{4}-\d{2}-\d{2}-\d{6}\.yaml$')
+        self.assertRegex(descriptor,r'^urbanisation-v\d{3,}-\d{4}-\d{2}-\d{2}\.[1-9]\d*\.yaml$')
         self.assertTrue((self.models/f'release/{self.version}/release-notes.md').exists())
         self.assertFalse(bundle['report']['validation_errors'])
         published_cap = next(n for n in workflow.read(self.models / f'release/{self.version}/model.yaml')['nodes'] if n['id'] == 'D03.a')

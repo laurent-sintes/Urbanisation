@@ -131,7 +131,11 @@ class ReleaseRunTests(unittest.TestCase):
                 release.verify_atlas(self.root, self.version, 'https://example.com')
         network.assert_not_called()
 
-    def test_new_approval_without_business_edit_is_not_discarded_as_unchanged(self):
+    @patch('scripts.release_catalog.datetime')
+    def test_new_approval_without_business_edit_is_not_discarded_as_unchanged(self, clock):
+        from datetime import datetime, timezone
+        # A fast runner can publish both versions at the very same instant.
+        clock.now.return_value = datetime(2026, 9, 26, 12, 0, tzinfo=timezone.utc)
         self.editorial_change()
         with patch.object(release, 'final_checks', return_value={'validation_errors': 0}):
             first = release.run(self.root, self.version, ['PUB-TEST-NEW'], activate=True, verify_site=False)

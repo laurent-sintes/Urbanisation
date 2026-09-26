@@ -102,7 +102,8 @@ def register(folder, release, notes_path, write, activate):
 def _register(folder, release, notes_path, write, activate):
     folder=Path(folder); version=release['version']
     stamp=datetime.now(timezone.utc)
-    filename=f"urbanisation-v{release['revision']:03d}-{stamp.strftime('%Y-%m-%d-%H%M%S')}.yaml"
+    # Distinct versions can share a model revision and publication second.
+    filename=f"urbanisation-v{release['revision']:03d}-{version}.yaml"
     descriptor={'schema_version':'1.0.0','model_id':release['model_id'],'space':'release',
                 'version':version,'revision':release['revision'],'published_at':stamp.isoformat(timespec='microseconds').replace('+00:00','Z'),
                 'last_modified':release['last_modified'],'path':version+'/model.yaml','sha256':digest(folder/version/'model.yaml'),

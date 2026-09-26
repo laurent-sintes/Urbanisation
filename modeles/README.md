@@ -298,3 +298,6 @@ Un accord valide la proposition complète construite dans la discussion, avec se
 `identification_rules` dans le glossaire méthodologique définit les règles adoptées ; `PRINCIPLE-DISPLAY-CODES` et `display_policy: typed-tree-v1` les appliquent au backlog. L’identité `id` reste immuable et porte les accords et relations. Les codes visibles suivent une séquence globale par type dans l’ordre de lecture ; un code n’a de sens durable qu’avec sa publication.
 
 `publish_release.compile_snapshot` génère `display_index` après filtrage des illustrations. Il fige les racines, les enfants et les codes à partir du même arbre explicite ; les validateurs contrôlent cohérence, unicité, séquence et identité de politique avec le snapshot source. Le backlog ne maintient pas de seconde liste de codes. Les anciens snapshots sont inchangés. Les règles ne modifient ni les fiches métier ni leur glossaire : celui-ci a été contrôlé, sans terme méthodologique ajouté.
+
+
+Les nouveaux descripteurs utilisent désormais `urbanisation-vNNN-YYYY-MM-DD.N.yaml` : la version de publication rend le nom unique même si deux publications ont la même révision et le même instant. L’horodatage UTC reste porté par `published_at`. Les descripteurs historiques et leurs noms restent inchangés.
